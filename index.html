@@ -6,7 +6,7 @@
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TW543GK8');</script>
+})(window,document,'script','dataLayer','GTM-P88VGFHR');</script>
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@ window.PP = {
   SITE_URL:      'https://www.protectedlegacyfl.com',
   CONTACT_EMAIL: 'chrisrhandier96@gmail.com',
   FORM_ENDPOINT: '',        // Netlify: dejar vacio. Otro host: pegar la URL de Formspree
-  GA4_ID:        '',        // G-XXXXXXXXXX  (Google Analytics 4) — pendiente
+  GA4_ID:        '',        // G-XXXXXXXXXX (Google Analytics 4) — leave blank; GA4 is configured inside Tag Manager (GTM-P88VGFHR) instead, see note below
   ADS_ID:        '',        // AW-XXXXXXXXX  (Google Ads) — pendiente
   ADS_LABEL:     '',        // etiqueta de conversion de Google Ads — pendiente
   LICENSED:      true,
@@ -90,7 +90,8 @@ button{font-family:var(--body);cursor:pointer}
 
 
 /* ===== IMAGENES EDITORIALES / EDITORIAL IMAGE SYSTEM ===== */
-.plates{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:44px 0 56px}
+.plates{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin:44px 0 56px}
+@media(max-width:1080px){.plates{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:940px){.plates{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.plates{grid-template-columns:1fr;max-width:320px}}
 .plate{margin:0;position:relative}
@@ -244,8 +245,13 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 .vquote{font-family:var(--accent);font-style:italic;font-weight:600;font-size:20px;line-height:1.35;color:var(--blanco)}
 .vquote::before{content:"“"}.vquote::after{content:"”"}
 .vtag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:700}
-.vinsight{font-size:14.5px;color:#C9D6CC;border-top:1px dashed rgba(194,155,64,.3);padding-top:13px;margin-top:auto}
+.vinsight{font-size:14.5px;color:#C9D6CC;padding-top:0;margin-top:0;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .3s ease,padding-top .3s ease,margin-top .3s ease}
 .vinsight b{color:var(--oro-claro)}
+.vcard.open .vinsight{max-height:280px;opacity:1;padding-top:2px;margin-top:2px}
+.vtoggle{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;background:none;border:none;border-top:1px dashed rgba(194,155,64,.3);padding-top:13px;margin-top:auto;cursor:pointer;font:700 11px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:var(--oro);text-align:left}
+.vtoggle:hover{color:var(--oro-claro)}
+.vt-icon{font-size:17px;line-height:1;flex:none;transition:transform .3s ease}
+.vcard.open .vt-icon{transform:rotate(45deg)}
 @media(max-width:960px){.vida-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.vida-grid{grid-template-columns:1fr}}
 
@@ -379,7 +385,7 @@ section:hover .eyebrow::before{width:52px}
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW543GK8"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P88VGFHR"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div id="scrollbar" aria-hidden="true"></div>
@@ -536,7 +542,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M36 300c22-9 44-9 66 0s44 9 66 0 44-9 66 0 M60 322c18-7 36-7 54 0 M196 318c16-6 32-6 48 0"/>
             <path d="M252 96c0 26-18 40-18 40s-18-14-18-40c0-11 8-20 18-20s18 9 18 20z M234 136v32"/>
             <path d="M48 84c8 3 16 3 24 0 M40 96c6 2 12 2 18 0"/>
-          </svg></div>
+          </svg><img src="https://images.pexels.com/photos/38661696/pexels-photo-38661696.jpeg?w=800" alt="" loading="lazy"></div>
           <figcaption data-es="La residencia frente al agua" data-en="The waterfront residence">La residencia frente al agua</figcaption>
         </figure>
         <figure class="plate reveal">
@@ -546,7 +552,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M118 210h30 M124 190h20"/>
             <path d="M28 300c24-10 48-10 72 0s48 10 72 0 48-10 72 0 M74 326c20-8 40-8 60 0 M186 322c18-7 36-7 54 0"/>
             <circle cx="242" cy="72" r="20"/><path d="M242 44v-10 M242 110v-10 M270 72h10 M204 72h10"/>
-          </svg></div>
+          </svg><img src="https://images.pexels.com/photos/5368730/pexels-photo-5368730.jpeg?w=800" alt="" loading="lazy"></div>
           <figcaption data-es="La embarcación" data-en="The vessel">La embarcación</figcaption>
         </figure>
         <figure class="plate reveal">
@@ -556,7 +562,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M150 122v-8 M150 238v-8 M204 176h8 M88 176h8 M188 138l6-6 M106 214l6 6 M188 214l6 6 M106 138l6-6"/>
             <path d="M128 104l-10-46h64l-10 46 M128 248l-10 46h64l-10-46"/>
             <path d="M62 320h176 M84 338h132"/>
-          </svg></div>
+          </svg><img src="https://images.pexels.com/photos/380782/pexels-photo-380782.jpeg?w=800" alt="" loading="lazy"></div>
           <figcaption data-es="La colección" data-en="The collection">La colección</figcaption>
         </figure>
         <figure class="plate reveal">
@@ -566,8 +572,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M97 115l35 35 M203 115l-35 35 M97 221l35-35 M203 221l-35 35"/>
             <circle cx="150" cy="168" r="6"/>
             <path d="M46 300c26-10 52-10 78 0s52 10 78 0 52-10 78 0 M92 326c19-8 38-8 58 0 M188 322c17-7 34-7 52 0"/>
-          </svg></div>
+          </svg><img src="https://images.pexels.com/photos/9385084/pexels-photo-9385084.jpeg?w=800" alt="" loading="lazy"></div>
           <figcaption data-es="El legado" data-en="The legacy">El legado</figcaption>
+        </figure>
+        <figure class="plate reveal">
+          <div class="plate-art"><svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path class="soft" d="M0 300h300v75H0z"/>
+            <path d="M40 210l90-30 40 14 90-30 20 44-90 30-40-14-90 30z"/>
+            <path d="M130 180l14-46h18l14 46 M118 224v20 M182 224v20"/>
+            <path d="M20 300c24-10 48-10 72 0s48 10 72 0 48-10 72 0 M66 326c19-8 38-8 58 0"/>
+          </svg><img src="https://images.pexels.com/photos/20562279/pexels-photo-20562279.jpeg?w=800" alt="" loading="lazy"></div>
+          <figcaption data-es="La aviación privada" data-en="Private aviation">La aviación privada</figcaption>
         </figure>
       </div>
 
@@ -578,6 +593,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="vbody">
             <span class="vtag" data-es="La familia internacional" data-en="The international family">La familia internacional</span>
             <p class="vquote" data-es="Dividimos el año entre Miami y Madrid. Los nietos esquían con nosotros cada invierno." data-en="We split the year between Miami and Madrid. The grandchildren ski with us every winter.">Dividimos el año entre Miami y Madrid. Los nietos esquían con nosotros cada invierno.</p>
+            <button class="vtoggle" onclick="toggleVida(this)" aria-expanded="false"><span class="vt-label" data-es="Lo que pocos le dicen" data-en="What few tell you">Lo que pocos le dicen</span><span class="vt-icon">+</span></button>
             <p class="vinsight" data-es="<b>Lo que pocos le dicen:</b> las pólizas tienen límites territoriales, y la propiedad en el extranjero rara vez queda cubierta por la póliza americana. Una evacuación médica internacional puede superar los $100,000, y existe cobertura específica de viaje y de responsabilidad global para familias con vida en dos países." data-en="<b>What few tell you:</b> policies carry territorial limits, and property abroad is rarely covered by a U.S. policy. An international medical evacuation can exceed $100,000, and specific travel and worldwide liability coverage exists for families living across two countries."><b>Lo que pocos le dicen:</b> las pólizas tienen límites territoriales, y la propiedad en el extranjero rara vez queda cubierta por la póliza americana. Una evacuación médica internacional puede superar los $100,000, y existe cobertura específica de viaje y de responsabilidad global para familias con vida en dos países.</p>
           </div>
         </div>
@@ -587,6 +603,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="vbody">
             <span class="vtag" data-es="La vida en el agua" data-en="Life on the water">La vida en el agua</span>
             <p class="vquote" data-es="Los sábados salimos a Elliott Key en el barco. Los muchachos llevan las motos acuáticas." data-en="Saturdays we take the boat out to Elliott Key. The boys bring the PWCs.">Los sábados salimos a Elliott Key en el barco. Los muchachos llevan las motos acuáticas.</p>
+            <button class="vtoggle" onclick="toggleVida(this)" aria-expanded="false"><span class="vt-label" data-es="Lo que pocos le dicen" data-en="What few tell you">Lo que pocos le dicen</span><span class="vt-icon">+</span></button>
             <p class="vinsight" data-es='<b>Lo que pocos le dicen:</b> las motos acuáticas (PWC) fueron el 17% de las embarcaciones registradas de la Florida en 2025, pero el 23% de los accidentes reportables.<a class="fn" href="#fuentes">4</a> Y cuando se le presta una a un invitado, la responsabilidad sigue siendo del dueño. Cada embarcación necesita su propia póliza y su línea en la umbrella.' data-en='<b>What few tell you:</b> personal watercraft (PWCs) were 17% of Florida&#39;s registered vessels in 2025, but 23% of reportable accidents.<a class="fn" href="#fuentes">4</a> And when you lend one to a guest, the liability remains the owner&#39;s. Each vessel needs its own policy and its own line on the umbrella.'><b>Lo que pocos le dicen:</b> las motos acuáticas (PWC) fueron el 17% de las embarcaciones registradas de la Florida en 2025, pero el 23% de los accidentes reportables.<a class="fn" href="#fuentes">4</a> Y cuando se le presta una a un invitado, la responsabilidad sigue siendo del dueño. Cada embarcación necesita su propia póliza y su línea en la umbrella.</p>
           </div>
         </div>
@@ -596,6 +613,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="vbody">
             <span class="vtag" data-es="La familia ecuestre" data-en="The equestrian family">La familia ecuestre</span>
             <p class="vquote" data-es="Nuestra hija entrena en Wellington. Este año clasificó al circuito de invierno." data-en="Our daughter trains in Wellington. This year she qualified for the winter circuit.">Nuestra hija entrena en Wellington. Este año clasificó al circuito de invierno.</p>
+            <button class="vtoggle" onclick="toggleVida(this)" aria-expanded="false"><span class="vt-label" data-es="Lo que pocos le dicen" data-en="What few tell you">Lo que pocos le dicen</span><span class="vt-icon">+</span></button>
             <p class="vinsight" data-es="<b>Lo que pocos le dicen:</b> un caballo de competencia es un activo de seis cifras que la póliza de hogar ignora por completo. Existen seguros de mortalidad y de cirugía equina, y la responsabilidad si el animal lesiona a alguien en el establo o en el traslado requiere su propia cobertura." data-en="<b>What few tell you:</b> a competition horse is a six-figure asset a home policy ignores entirely. Equine mortality and surgical coverage exist, and the liability if the animal injures someone at the barn or in transport requires its own protection."><b>Lo que pocos le dicen:</b> un caballo de competencia es un activo de seis cifras que la póliza de hogar ignora por completo. Existen seguros de mortalidad y de cirugía equina, y la responsabilidad si el animal lesiona a alguien en el establo o en el traslado requiere su propia cobertura.</p>
           </div>
         </div>
@@ -605,6 +623,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="vbody">
             <span class="vtag" data-es="El coleccionista" data-en="The collector">El coleccionista</span>
             <p class="vquote" data-es="La colección empezó con el reloj de mi padre. Hoy son catorce piezas, y cada una tiene su historia." data-en="The collection began with my father's watch. Today it is fourteen pieces, and each one has its story.">La colección empezó con el reloj de mi padre. Hoy son catorce piezas, y cada una tiene su historia.</p>
+            <button class="vtoggle" onclick="toggleVida(this)" aria-expanded="false"><span class="vt-label" data-es="Lo que pocos le dicen" data-en="What few tell you">Lo que pocos le dicen</span><span class="vt-icon">+</span></button>
             <p class="vinsight" data-es='<b>Lo que pocos le dicen:</b> la póliza de hogar típica limita el robo de joyas a unos $1,500 a $2,500 en total, no por pieza.<a class="fn" href="#fuentes">7</a> Una colección seria se protege pieza por pieza, por valor acordado, con avalúos actualizados cada 3 a 5 años y cobertura en viaje, que es donde más piezas se pierden.' data-en='<b>What few tell you:</b> a typical home policy caps jewelry theft at roughly $1,500 to $2,500 in total, not per piece.<a class="fn" href="#fuentes">7</a> A serious collection is protected piece by piece, at agreed value, with appraisals updated every 3 to 5 years and coverage in transit, which is where most pieces are lost.'><b>Lo que pocos le dicen:</b> la póliza de hogar típica limita el robo de joyas a unos $1,500 a $2,500 en total, no por pieza.<a class="fn" href="#fuentes">7</a> Una colección seria se protege pieza por pieza, por valor acordado, con avalúos actualizados cada 3 a 5 años y cobertura en viaje, que es donde más piezas se pierden.</p>
           </div>
         </div>
@@ -614,6 +633,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="vbody">
             <span class="vtag" data-es="La propiedad que produce" data-en="The property that produces">La propiedad que produce</span>
             <p class="vquote" data-es="La casa de Islamorada se renta las semanas que no la usamos. Prácticamente se mantiene sola." data-en="The Islamorada house rents out the weeks we are not using it. It practically maintains itself.">La casa de Islamorada se renta las semanas que no la usamos. Prácticamente se mantiene sola.</p>
+            <button class="vtoggle" onclick="toggleVida(this)" aria-expanded="false"><span class="vt-label" data-es="Lo que pocos le dicen" data-en="What few tell you">Lo que pocos le dicen</span><span class="vt-icon">+</span></button>
             <p class="vinsight" data-es="<b>Lo que pocos le dicen:</b> la renta por noches convierte la casa en un negocio, y muchas pólizas de hogar excluyen o anulan la cobertura durante rentas de corto plazo. Existe seguro específico para renta vacacional. Sin él, un huésped lesionado presenta su demanda directamente contra el patrimonio de la familia." data-en="<b>What few tell you:</b> nightly rentals turn the home into a business, and many home policies exclude or void coverage during short-term rentals. Specific vacation-rental insurance exists. Without it, an injured guest files their claim directly against the family's estate."><b>Lo que pocos le dicen:</b> la renta por noches convierte la casa en un negocio, y muchas pólizas de hogar excluyen o anulan la cobertura durante rentas de corto plazo. Existe seguro específico para renta vacacional. Sin él, un huésped lesionado presenta su demanda directamente contra el patrimonio de la familia.</p>
           </div>
         </div>
@@ -623,6 +643,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="vbody">
             <span class="vtag" data-es="El anfitrión" data-en="The host">El anfitrión</span>
             <p class="vquote" data-es="En el palco del estadio se han cerrado más acuerdos que en cualquier sala de juntas." data-en="More agreements have closed in our stadium suite than in any boardroom.">En el palco del estadio se han cerrado más acuerdos que en cualquier sala de juntas.</p>
+            <button class="vtoggle" onclick="toggleVida(this)" aria-expanded="false"><span class="vt-label" data-es="Lo que pocos le dicen" data-en="What few tell you">Lo que pocos le dicen</span><span class="vt-icon">+</span></button>
             <p class="vinsight" data-es="<b>Lo que pocos le dicen:</b> quien invita y sirve alcohol, en el palco, en el yate o en la celebración de fin de año en casa, asume responsabilidad de anfitrión. Si un invitado maneja después y causa un accidente, la hospitalidad puede convertirse en demanda. La umbrella es la primera línea de defensa del anfitrión." data-en="<b>What few tell you:</b> whoever hosts and serves alcohol, in the suite, on the yacht, or at the year-end celebration at home, takes on host liability. If a guest drives afterward and causes an accident, hospitality can become litigation. The umbrella is the host's first line of defense."><b>Lo que pocos le dicen:</b> quien invita y sirve alcohol, en el palco, en el yate o en la celebración de fin de año en casa, asume responsabilidad de anfitrión. Si un invitado maneja después y causa un accidente, la hospitalidad puede convertirse en demanda. La umbrella es la primera línea de defensa del anfitrión.</p>
           </div>
         </div>
@@ -682,9 +703,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <a class="btn btn-oro" href="#contacto" data-es="Iniciar la conversación" data-en="Start the conversation">Iniciar la conversación</a><br>
         <button class="restart" onclick="restartQuiz()" data-es="Volver a empezar" data-en="Start over">Volver a empezar</button>
+        <p style="font-size:12px;color:var(--humo);max-width:44ch;margin:14px auto 0" data-es="Si continúa al formulario de contacto, su puntaje y sus 12 respuestas se incluyen con su mensaje para que la conversación llegue preparada." data-en="If you continue to the contact form, your score and your 12 answers are included with your message so the conversation arrives prepared.">Si continúa al formulario de contacto, su puntaje y sus 12 respuestas se incluyen con su mensaje para que la conversación llegue preparada.</p>
       </div>
     </div>
-    <p class="mapa-note" data-es="Esta autoevaluación es una herramienta educativa de reflexión. No constituye asesoría de seguros ni un análisis de sus pólizas, y no reemplaza la revisión de un profesional con licencia. Sus respuestas no se guardan ni se envían a ningún lugar." data-en="This self-assessment is an educational reflection tool. It does not constitute insurance advice or an analysis of your policies, and it does not replace a review by a licensed professional. Your answers are not stored or sent anywhere.">Esta autoevaluación es una herramienta educativa de reflexión. No constituye asesoría de seguros ni un análisis de sus pólizas, y no reemplaza la revisión de un profesional con licencia. Sus respuestas no se guardan ni se envían a ningún lugar.</p>
+    <p class="mapa-note" data-es="Esta autoevaluación es una herramienta educativa de reflexión. No constituye asesoría de seguros ni un análisis de sus pólizas, y no reemplaza la revisión de un profesional con licencia. Sus respuestas quedan solo en su navegador y no se envían a ningún lugar, a menos que usted decida incluirlas al enviar el formulario de contacto." data-en="This self-assessment is an educational reflection tool. It does not constitute insurance advice or an analysis of your policies, and it does not replace a review by a licensed professional. Your answers stay only in your browser and are not sent anywhere, unless you choose to include them when you submit the contact form.">Esta autoevaluación es una herramienta educativa de reflexión. No constituye asesoría de seguros ni un análisis de sus pólizas, y no reemplaza la revisión de un profesional con licencia. Sus respuestas quedan solo en su navegador y no se envían a ningún lugar, a menos que usted decida incluirlas al enviar el formulario de contacto.</p>
   </div>
 </section>
 
@@ -724,13 +746,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p style="font-size:14px;color:var(--humo)" data-es="Respondo personalmente, normalmente dentro de 48 horas. Solo le escribiré si usted me escribe primero. Los campos de perfil son opcionales; ayudan a que nuestra primera conversación llegue preparada." data-en="I reply personally, usually within 48 hours. I will only write to you if you write to me first. The profile fields are optional; they help our first conversation arrive prepared.">Respondo personalmente, normalmente dentro de 48 horas. Solo le escribiré si usted me escribe primero. Los campos de perfil son opcionales; ayudan a que nuestra primera conversación llegue preparada.</p>
     </div>
     <div class="form-card reveal">
-      <form action='/' id='ppForm' method='POST' name='contacto'>
+      <form id="ppForm" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
         <input type="hidden" name="form-name" value="contacto">
         <input type="hidden" name="idioma_sitio" id="f-lang-site" value="es">
         <input type="hidden" name="origen" id="f-src" value="">
         <input type="hidden" name="campana" id="f-camp" value="">
         <input type="hidden" name="termino" id="f-term" value="">
         <input type="hidden" name="gclid" id="f-gclid" value="">
+        <input type="hidden" name="autoevaluacion_puntaje" id="f-quiz-score" value="">
+        <input type="hidden" name="autoevaluacion_respuestas" id="f-quiz-answers" value="">
+        <input type="hidden" name="autoevaluacion_zonas_en_blanco" id="f-quiz-gaps" value="">
         <p class="hp" style="position:absolute;left:-9999px" aria-hidden="true"><label>No llenar <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div id="formFields">
         <div class="two-col">
@@ -822,7 +847,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <b>Fuentes de los datos citados:</b> [1] The Zebra, análisis nacional de subaseguramiento. [2] Universidad de Colorado Boulder, estudio “Coverage Neglect in Homeowners Insurance” sobre el incendio de Boulder County, Colorado, en 2021. [3] FEMA / National Flood Insurance Program y análisis de U.S. News de datos NFIP 2020–2024. [4] Florida Fish and Wildlife Conservation Commission, Reportes Estadísticos de Accidentes Náuticos 2024 y 2025 (1,027,742 embarcaciones registradas; 694 accidentes y 51 fatalidades en 2025). [5] Reserva Federal, Encuesta de Finanzas del Consumidor (riqueza mediana hispana, 2013 a 2022) y LIMRA, 2025 Insurance Barometer Study. [6] LIMRA y Life Happens, Insurance Barometer Studies 2024 y 2025, y estudio “Empowering Hispanic Consumers in the Life Insurance Market”, 2025. [7] Insurance Information Institute, sublímites típicos de pólizas de hogar. Datos verificados a julio de 2026.
     </div>
     <div class="fin">
-      <span data-es="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='privacidad.html' style='color:inherit'>Privacidad</a>" data-en="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='privacidad.html' style='color:inherit'>Privacy</a>">© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='/privacidad' style='color:inherit'>Privacidad</a></span>
+      <span data-es="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='privacidad.html' style='color:inherit'>Privacidad</a>" data-en="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='privacidad.html' style='color:inherit'>Privacy</a>">© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href="privacidad.html" style="color:inherit">Privacidad</a></span>
       <span data-es="Hecho con orgullo para la comunidad hispana de la Florida" data-en="Made with pride for Florida's Hispanic community">Hecho con orgullo para la comunidad hispana de la Florida</span>
     </div>
   </div>
@@ -901,6 +926,7 @@ function buildDomains(){
   }).join('');
 }
 function toggleDom(btn){const c=btn.closest('.dom');const o=c.classList.toggle('open');btn.setAttribute('aria-expanded',o);}
+function toggleVida(btn){const c=btn.closest('.vcard');const o=c.classList.toggle('open');btn.setAttribute('aria-expanded',o);}
 function revealMito(el){el.classList.add('revealed');}
 function toggleMenu(){
   const m=document.getElementById('mobileMenu');
@@ -944,7 +970,7 @@ const questions=[
  {d:'leg',es:"¿Sabe su familia dónde están las pólizas, escrituras y contactos de asesores si algo le pasara a usted mañana?",en:"Would your family know where the policies, deeds, and advisor contacts are if something happened to you tomorrow?"}
 ];
 const ANS={si:{es:"Sí, con certeza",en:"Yes, with certainty"},ns:{es:"No estoy seguro/a",en:"I'm not sure"},no:{es:"No / Nunca lo he pensado",en:"No / I've never thought about it"},na:{es:"No aplica a mi familia",en:"Doesn't apply to my family"}};
-let qi=0,score=0,maxScore=0,finished=false,weak=[];
+let qi=0,score=0,maxScore=0,finished=false,weak=[],userAnswers=[];
 function renderQuestion(){
   if(finished){renderResult();return;}
   const q=questions[qi];
@@ -961,6 +987,8 @@ function renderQuestion(){
 }
 function answer(p){
   const q=questions[qi];
+  const ansKey=p===2?'si':p===1?'ns':p===0?'no':'na';
+  userAnswers.push({n:qi+1,domain:DOM_NAMES[q.d].es,question:q.es,answer:ANS[ansKey].es});
   if(p>=0){score+=p;maxScore+=2;if(p<2&&!weak.includes(q.d))weak.push(q.d);}
   qi++;
   if(qi>=questions.length){finished=true;showResult();}else renderQuestion();
@@ -988,7 +1016,7 @@ function renderResult(){
   if(weak.length){gl.style.display='block';gi.innerHTML=weak.map(d=>'<li>'+DOM_NAMES[d][lang]+'</li>').join('');}
   else gl.style.display='none';
 }
-function restartQuiz(){qi=0;score=0;maxScore=0;finished=false;weak=[];document.getElementById('resultado').style.display='none';document.getElementById('quiz').style.display='block';document.getElementById('gaugeVal').style.strokeDashoffset=534;document.getElementById('gaugePct').textContent='0%';renderQuestion();}
+function restartQuiz(){qi=0;score=0;maxScore=0;finished=false;weak=[];userAnswers=[];document.getElementById('resultado').style.display='none';document.getElementById('quiz').style.display='block';document.getElementById('gaugeVal').style.strokeDashoffset=534;document.getElementById('gaugePct').textContent='0%';renderQuestion();}
 renderQuestion();
 
 /* ===== FORM =====
@@ -1006,6 +1034,12 @@ function ppSubmit(ev){
   const form=document.getElementById('ppForm');
   const btn=document.getElementById('ppSend');
   document.getElementById('f-lang-site').value=lang;
+  if(finished&&userAnswers.length){
+    const pct=maxScore>0?Math.round(score/maxScore*100):100;
+    document.getElementById('f-quiz-score').value=pct+'%';
+    document.getElementById('f-quiz-answers').value=userAnswers.map(a=>'P'+a.n+' ('+a.domain+'): '+a.question+' -> '+a.answer).join(' | ');
+    document.getElementById('f-quiz-gaps').value=weak.map(d=>DOM_NAMES[d].es).join(', ');
+  }
   btn.disabled=true;
   const perfil=[...document.querySelectorAll('input[name="perfil"]:checked')].map(x=>x.value).join(', ');
   const fd=new FormData(form); fd.set('perfil',perfil);
