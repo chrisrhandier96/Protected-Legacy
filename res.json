@@ -1,0 +1,480 @@
+{
+  "key": "res",
+  "slug_es": "residencias-huracanes",
+  "slug_en": "homes-hurricanes",
+  "updated": "2026-09-24",
+  "es": {
+    "title": "Seguro de casa en Florida de alto valor y huracanes",
+    "meta": "Seguro de casa en Florida de alto valor: costo de reemplazo, cómo se calcula el deducible de huracán, ley u ordenanza, edad del techo y plazos de reclamo.",
+    "kicker": "Guía · Residencias",
+    "h1": "Cómo asegurar una residencia de alto valor en Florida contra huracanes y viento",
+    "dek": "Cómo el costo de reemplazo, el deducible de huracán, la cobertura de ley u ordenanza y el techo determinan lo que paga una póliza después de una tormenta.",
+    "summary": [
+      "Asegure la casa por lo que cuesta reconstruirla, no por su precio de mercado: el terreno no se reconstruye, pero los acabados a la medida y la mano de obra después de una tormenta pueden costar más de lo previsto.",
+      "El deducible de huracán en Florida es un porcentaje del límite de la vivienda. Con un límite hipotético de $3,000,000, un deducible de 5% equivale a $150,000 de su bolsillo por año calendario.",
+      "La cobertura de ley u ordenanza paga el costo adicional de reconstruir según el código vigente. En Florida se incluye al 25% del límite de la vivienda salvo que usted la rechace por escrito, y puede elegirse el 50%.",
+      "La edad del techo y las mejoras de mitigación de viento influyen en la elegibilidad y la tarifa. El formulario de inspección de mitigación es válido hasta cinco años si no hay cambios importantes.",
+      "Según la ley vigente en Florida, el aviso de un reclamo nuevo o reabierto debe darse dentro de 1 año desde la fecha de la pérdida, y el de un reclamo suplementario dentro de 18 meses."
+    ],
+    "sections": [
+      {
+        "id": "costo-de-reemplazo",
+        "h2": "Seguro de casa en Florida: costo de reemplazo frente a valor de mercado",
+        "blocks": [
+          {
+            "p": "La primera cifra de una póliza de propietario es el límite de la vivienda, conocido como Cobertura A. En una residencia de alto valor en Florida, ese límite debería reflejar lo que costaría reconstruir la casa con materiales y mano de obra de tipo y calidad similares, no el precio al que se vendería [5]. El valor de mercado incluye el terreno, la vista y la ubicación, y nada de eso hay que reconstruirlo. El costo de reconstrucción, en cambio, refleja acabados a la medida, vidrios de impacto y el sobreprecio de mano de obra que suele seguir a un huracán fuerte."
+          },
+          {
+            "p": "Además, el costo de reconstruir cambia. Verisk estimó que el costo de reconstrucción residencial en Estados Unidos subió alrededor de 25.9% entre marzo de 2020 y mayo de 2023 [6]. Un límite fijado hace años puede quedarse atrás. Un estudio sobre el incendio Marshall de 2021 en Colorado encontró que el 74% de los asegurados que perdieron su casa estaban infraasegurados, y el 36% de forma severa [7]. Fue un incendio forestal, pero la lección aplica a los huracanes: una pérdida total revela límites que parecían suficientes en el papel."
+          },
+          {
+            "table": {
+              "head": [
+                "Concepto",
+                "Qué significa",
+                "Papel en la póliza"
+              ],
+              "rows": [
+                [
+                  "Valor de mercado",
+                  "Precio de venta, incluidos el terreno y la ubicación",
+                  "No es la medida adecuada para el límite de la vivienda"
+                ],
+                [
+                  "Costo de reemplazo",
+                  "Costo de reponer con tipo y calidad similares, sin descontar depreciación [4]",
+                  "La referencia habitual para la Cobertura A"
+                ],
+                [
+                  "Valor real en efectivo (ACV)",
+                  "Costo de reemplazo menos depreciación [4]",
+                  "Puede dejar una brecha grande en techos y acabados antiguos"
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "reemplazo-extendido",
+        "h2": "Costo de reemplazo extendido y garantizado",
+        "blocks": [
+          {
+            "p": "Como cualquier estimado puede fallar, muchas pólizas para residencias de alto valor agregan un margen por encima del límite de la vivienda. El costo de reemplazo extendido paga un porcentaje fijo sobre el límite, de 20 por ciento o más según la aseguradora [4]. El costo de reemplazo garantizado, que hoy ofrecen pocas aseguradoras, paga lo que cueste reconstruir la casa tal como estaba antes de la pérdida, aun por encima del límite [4]. Las condiciones varían: algunas versiones exigen asegurar según la valuación de la aseguradora, reportar remodelaciones importantes o reconstruir en el mismo lugar."
+          },
+          {
+            "p": "La ley de Florida también define cómo se paga el costo de reemplazo. Las aseguradoras deben ofrecer cobertura de costo de reemplazo para la vivienda. En una pérdida total, deben pagar el costo de reemplazo sin retener depreciación. En una pérdida parcial, deben pagar inicialmente al menos el valor real en efectivo de la pérdida, menos el deducible, y pagar el resto a medida que se hacen las reparaciones [3]."
+          },
+          {
+            "callout": "El margen de reemplazo extendido no sustituye un límite de vivienda bien calculado. Protege contra un alza de costos después de un desastre, no contra una valuación que ya estaba desactualizada antes de la tormenta."
+          }
+        ]
+      },
+      {
+        "id": "deducible-de-huracan",
+        "h2": "El deducible de huracán en Florida: cómo funcionan los números",
+        "blocks": [
+          {
+            "p": "Según el estatuto 627.701, las aseguradoras deben ofrecer opciones de deducible de huracán de $500, 2%, 5% y 10% del límite de la vivienda, con variaciones para casas de mayor valor: la opción de $500 no es obligatoria cuando el límite es de $250,000 o más, y la de 2% no es obligatoria desde $3 millones [1]. El deducible se aplica una vez por año calendario a las pérdidas por huracán con la misma aseguradora o grupo asegurador. Si un segundo huracán causa daños el mismo año, el deducible para ese evento es el mayor entre el saldo pendiente del deducible de huracán y el deducible de otros riesgos [1][2]. Cuando se aplica el deducible de huracán, no se aplica ningún otro deducible de la póliza [2]."
+          },
+          {
+            "p": "La ley de Florida define el período del huracán desde que el Centro Nacional de Huracanes emite un aviso de huracán para cualquier parte de Florida hasta 72 horas después de que termine la última vigilancia o aviso de huracán para cualquier parte del estado [12]. Como el deducible es un porcentaje, la cifra en dólares crece con la casa. Imagine una residencia hipotética con un límite de vivienda de $3,000,000:"
+          },
+          {
+            "table": {
+              "head": [
+                "Deducible de huracán",
+                "De su bolsillo por año calendario (límite hipotético de $3,000,000)"
+              ],
+              "rows": [
+                [
+                  "2% (puede no ofrecerse con este límite)",
+                  "$60,000"
+                ],
+                [
+                  "5%",
+                  "$150,000"
+                ],
+                [
+                  "10%",
+                  "$300,000"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "Un porcentaje más alto suele reducir la prima, pero la familia asume entonces la mayor parte del daño de una tormenta moderada: reparaciones del techo, cerramientos de malla, jardinería y entrada de agua. El nivel adecuado depende de la liquidez, no de una regla general. Algunas familias mantienen una reserva igual al deducible; otras eligen un porcentaje menor y una prima más alta."
+          }
+        ]
+      },
+      {
+        "id": "ley-u-ordenanza",
+        "h2": "Cobertura de ley u ordenanza: reconstruir según el código vigente",
+        "blocks": [
+          {
+            "p": "Después de una pérdida grave, por lo general la casa debe reconstruirse según los códigos vigentes al momento de la obra. En Florida eso puede significar conexiones más fuertes entre techo y paredes, aberturas resistentes a impactos, instalaciones eléctricas y de plomería actualizadas o requisitos de elevación en zonas inundables. El pago del costo de reemplazo, por sí solo, puede no incluir esas mejoras. La ley de Florida exige que las aseguradoras ofrezcan cobertura de ley u ordenanza limitada al 25% o al 50% del límite de la vivienda, según elija el asegurado, y el nivel de 25% se incluye salvo que el asegurado lo rechace por escrito [3]."
+          },
+          {
+            "p": "En casas antiguas o frente al agua, la diferencia entre el costo de reemplazo y el de cumplir con el código puede ser grande. Muchos endosos de ley u ordenanza tienen tres partes:"
+          },
+          {
+            "ul": [
+              "El valor de la parte no dañada del edificio que debe demolerse por exigencia del código.",
+              "El costo de demoler esa parte no dañada y retirar los escombros.",
+              "El costo adicional de construir según el código vigente, por encima del costo de reemplazo normal."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "techo-mitigacion",
+        "h2": "Edad del techo y mitigación de viento",
+        "blocks": [
+          {
+            "p": "Según el estatuto 627.7011, una aseguradora no puede negarse a emitir ni a renovar una póliza de propietario únicamente por la edad de un techo de menos de 15 años. Si el techo tiene 15 años o más y la inspección de un inspector autorizado indica al menos 5 años de vida útil restante, la aseguradora tampoco puede negarse solo por la edad [3]. Esa regla trata sobre la elegibilidad, no sobre cómo se paga un reclamo del techo, así que pregunte si la póliza paga el daño al techo a costo de reemplazo o con depreciación."
+          },
+          {
+            "p": "Florida también exige que las solicitudes de tarifas residenciales incluyan descuentos, créditos u otras diferencias de tarifa actuarialmente razonables para las características que reducen las pérdidas por viento, como la resistencia del techo, el desempeño de la cubierta, la conexión entre techo y paredes y la protección de aberturas [8]. Esas características se documentan en el formulario de verificación de mitigación OIR-B1-1802, que completa un inspector autorizado. El formulario es válido hasta cinco años si no hay cambios importantes en la estructura, y una versión actualizada entró en vigor el 1 de abril de 2026 [9]."
+          },
+          {
+            "ul": [
+              "El permiso y la fecha de instalación del techo, y el producto utilizado.",
+              "El formulario de mitigación más reciente, y uno nuevo después de mejorar el techo o las aberturas.",
+              "Fotos de los anclajes o grapas del techo, las contraventanas o ventanas de impacto, y las facturas de esas mejoras."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "segundas-residencias",
+        "h2": "Segundas residencias, alquileres y desocupación",
+        "blocks": [
+          {
+            "p": "Muchas familias tienen más de una propiedad en Florida. Una póliza para una residencia principal ocupada por su dueño normalmente supone que el dueño vive allí. Cuando la propiedad se alquila a terceros, a largo plazo o por temporada, la forma adecuada suele ser una póliza de arrendador o de vivienda (dwelling), que puede cubrir el edificio, la responsabilidad del dueño y la pérdida de ingresos por alquiler. Los alquileres de corto plazo plantean preguntas aparte que muchas formas estándar no contemplan."
+          },
+          {
+            "p": "Las casas de temporada plantean otro tema: la desocupación. La mayoría de las pólizas de propietario incluyen una cláusula de desocupación que limita o excluye la cobertura si la propiedad queda sin ocupantes, por lo general, entre 30 y 60 días consecutivos, sobre todo para robo y vandalismo [10]. La temporada de huracanes del Atlántico va del 1 de junio al 30 de noviembre [14], cuando muchas casas de temporada quedan vacías. Pregunte si las visitas regulares de un encargado cuentan como ocupación y si la póliza exige cerrar el agua o detectar fugas."
+          }
+        ]
+      },
+      {
+        "id": "antes-y-despues",
+        "h2": "Antes de la tormenta: inventario, documentación y proceso de reclamo",
+        "blocks": [
+          {
+            "p": "Un reclamo es tan sólido como los registros que lo respaldan. El Insurance Information Institute recomienda mantener una lista actualizada de los bienes personales y guardarla en un lugar seguro fuera de la casa [5]. Las pólizas estándar también fijan límites especiales para categorías como joyas y platería, y una lista programada aparte (floater) es una forma común de atenderlas [5]."
+          },
+          {
+            "ul": [
+              "Un video, cuarto por cuarto, del interior, incluidos los clósets, y del exterior y el techo.",
+              "Avalúos y recibos de arte, joyas, relojes y colecciones, actualizados periódicamente.",
+              "Una copia de la póliza y de la página de declaraciones guardada en la nube, no solo en la casa."
+            ]
+          },
+          {
+            "p": "Según el estatuto 627.70132, el aviso de un reclamo nuevo o reabierto debe darse a la aseguradora dentro de 1 año después de la fecha de la pérdida, y el aviso de un reclamo suplementario dentro de 18 meses; en un huracán, la fecha de la pérdida es la fecha en que el huracán tocó tierra [11]. Las pólizas también suelen exigir aviso oportuno y medidas razonables para evitar más daños, así que fotografíe el daño, haga reparaciones temporales y guarde cada recibo. El agua de crecida o de marejada ciclónica se considera inundación, que la póliza de propietario estándar no cubre [13]."
+          },
+          {
+            "callout": "El plazo legal de 1 año es un límite máximo, no una meta. Reportar a tiempo facilita separar el daño del huracán del desgaste posterior."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      "¿Cuándo se comparó por última vez el límite de la vivienda con un estimado actual del costo de reconstrucción, y refleja las remodelaciones recientes?",
+      "¿La póliza incluye costo de reemplazo extendido o garantizado, y qué condiciones aplican?",
+      "¿Qué porcentaje de deducible de huracán tiene la póliza, cuánto es en dólares y está ese monto reservado en activos líquidos?",
+      "¿La cobertura de ley u ordenanza está al 25% o al 50% del límite de la vivienda, y es suficiente para la edad y ubicación de la casa?",
+      "¿Cómo liquida la póliza los reclamos del techo, y tiene la aseguradora un formulario de mitigación de viento vigente?",
+      "En cada segunda residencia o propiedad alquilada, ¿la forma de la póliza corresponde al uso real, y qué dice la cláusula de desocupación?",
+      "¿Tiene cada propiedad una póliza de inundación aparte, y sus límites reflejan el valor de la casa y de su contenido?"
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo funciona el deducible de huracán en Florida?",
+        "a": "Por lo general es un porcentaje del límite de la vivienda, como 2%, 5% o 10%, y no una cantidad fija. Se aplica una vez por año calendario a las pérdidas por huracán con la misma aseguradora, y un huracán posterior en el mismo año usa el mayor entre el saldo pendiente del deducible de huracán y el deducible de otros riesgos. Por ejemplo, con un límite de $2,000,000, un deducible de 5% equivale a $100,000."
+      },
+      {
+        "q": "¿Debo asegurar mi casa en Florida por su valor de mercado o por su costo de reemplazo?",
+        "a": "El seguro de propietario está pensado para pagar la reconstrucción, así que el límite de la vivienda debería seguir el costo de reemplazo: lo que costaría reconstruir con materiales y calidad similares. El valor de mercado incluye el terreno y la ubicación, que no se reconstruyen. En casas a la medida o antiguas, el costo de reemplazo puede superar el valor de mercado y sube con los costos de construcción."
+      },
+      {
+        "q": "¿Cuál es el plazo para presentar un reclamo por huracán en Florida?",
+        "a": "Según el estatuto 627.70132, el aviso de un reclamo de propiedad nuevo o reabierto debe darse dentro de 1 año después de la fecha de la pérdida, y el de un reclamo suplementario dentro de 18 meses. En un huracán, la fecha de la pérdida es la fecha en que tocó tierra. Las pólizas también suelen exigir aviso oportuno, por lo que reportar pronto y documentar el daño es la práctica más segura."
+      }
+    ]
+  },
+  "en": {
+    "title": "High-Value Home Insurance in Florida: Hurricane Guide",
+    "meta": "How high value home insurance in Florida handles hurricanes: replacement cost, the hurricane deductible math, ordinance or law, roof age and claim deadlines.",
+    "kicker": "Guide · Homes",
+    "h1": "Insuring a high-value Florida home against hurricanes and wind",
+    "dek": "How replacement cost, the hurricane deductible, ordinance or law coverage and your roof shape what a policy pays after a storm.",
+    "summary": [
+      "Insure the house for what it costs to rebuild, not for its market price: the land does not need rebuilding, but custom finishes and post-storm labor can cost more than expected.",
+      "The Florida hurricane deductible is a percentage of the dwelling limit. On a hypothetical $3,000,000 dwelling limit, a 5% deductible means $150,000 out of pocket per calendar year.",
+      "Ordinance or law coverage pays the extra cost of rebuilding to current code. Florida policies include 25% of the dwelling limit unless you reject it in writing, and 50% can be selected.",
+      "Roof age and wind mitigation features affect eligibility and rating. A wind mitigation inspection form is valid for up to five years if nothing material changes.",
+      "Under current Florida law, notice of a new or reopened claim must be given within 1 year of the date of loss, and a supplemental claim within 18 months."
+    ],
+    "sections": [
+      {
+        "id": "replacement-cost",
+        "h2": "Replacement cost vs. market value in high value home insurance in Florida",
+        "blocks": [
+          {
+            "p": "The first number on a homeowners policy is the dwelling limit, often called Coverage A. For a high-value home in Florida, that limit should reflect what it would cost to rebuild the house with materials and workmanship of similar kind and quality, not the price it would sell for [5]. Market value includes the land, the view and the location, none of which needs to be rebuilt. Rebuilding cost, by contrast, reflects custom finishes, impact-rated glass and the labor premium that tends to follow a major hurricane."
+          },
+          {
+            "p": "Rebuilding costs also move. Verisk estimated that U.S. residential reconstruction costs rose about 25.9% from March 2020 to May 2023 [6]. A limit set years ago can fall behind. Research on the 2021 Marshall Fire in Colorado found that 74% of policyholders who lost their homes were underinsured, and 36% were severely underinsured [7]. The event was a wildfire, but the lesson applies to hurricanes: a total loss exposes limits that looked adequate on paper."
+          },
+          {
+            "table": {
+              "head": [
+                "Concept",
+                "What it means",
+                "Role in the policy"
+              ],
+              "rows": [
+                [
+                  "Market value",
+                  "Sale price, including land and location",
+                  "Not the right measure for the dwelling limit"
+                ],
+                [
+                  "Replacement cost",
+                  "Cost to replace with similar kind and quality, without deducting depreciation [4]",
+                  "The usual target for Coverage A"
+                ],
+                [
+                  "Actual cash value",
+                  "Replacement cost minus depreciation [4]",
+                  "Can leave a large gap on older roofs and finishes"
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "extended-replacement",
+        "h2": "Extended and guaranteed replacement cost",
+        "blocks": [
+          {
+            "p": "Because any estimate can miss, many high-value policies add a cushion above the dwelling limit. Extended replacement cost pays a set percentage over the limit, 20 percent or more depending on the insurer [4]. Guaranteed replacement cost, which fewer insurers still offer, pays what it costs to rebuild the home as it was before the loss, even above the limit [4]. Conditions vary: some versions require insuring to the insurer's valuation, reporting major renovations or rebuilding at the same location."
+          },
+          {
+            "p": "Florida law also shapes how replacement cost is paid. Insurers must offer replacement cost coverage on the dwelling. On a total loss, they must pay replacement cost without holding back depreciation. On a partial loss, they must initially pay at least the actual cash value of the loss, less the deductible, and pay the remaining amounts as repairs are performed [3]."
+          },
+          {
+            "callout": "An extended replacement cost cushion is not a substitute for an accurate dwelling limit. It protects against a surge in costs after a disaster, not against a valuation that was out of date before the storm."
+          }
+        ]
+      },
+      {
+        "id": "hurricane-deductible",
+        "h2": "The Florida hurricane deductible: how the math works",
+        "blocks": [
+          {
+            "p": "Under Fla. Stat. 627.701, insurers must offer hurricane deductible options of $500, 2%, 5% and 10% of the dwelling limit, with variations for higher-value homes: the $500 option is not required when the dwelling limit is $250,000 or more, and the 2% option is not required at $3 million or more [1]. The deductible applies once per calendar year to hurricane losses with the same insurer or insurer group. If a second hurricane causes a loss in the same year, the deductible for it is the greater of the remaining hurricane deductible or the deductible for other perils [1][2]. When a hurricane deductible applies, no other deductible under the policy applies [2]."
+          },
+          {
+            "p": "Florida law defines the hurricane period as beginning when the National Hurricane Center issues a hurricane warning for any part of Florida and ending 72 hours after the last hurricane watch or warning for any part of the state ends [12]. Because the deductible is a percentage, the dollar amount grows with the home. Imagine a hypothetical home with a dwelling limit of $3,000,000:"
+          },
+          {
+            "table": {
+              "head": [
+                "Hurricane deductible",
+                "Out of pocket per calendar year (hypothetical $3,000,000 dwelling limit)"
+              ],
+              "rows": [
+                [
+                  "2% (may not be offered at this limit)",
+                  "$60,000"
+                ],
+                [
+                  "5%",
+                  "$150,000"
+                ],
+                [
+                  "10%",
+                  "$300,000"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "A higher percentage typically lowers the premium, but the family then absorbs most of the damage from a moderate storm: roof repairs, screen enclosures, landscaping and water intrusion. The right level depends on liquidity, not on a rule of thumb. Some families keep a reserve equal to the deductible; others choose a lower percentage and a higher premium."
+          }
+        ]
+      },
+      {
+        "id": "ordinance-law",
+        "h2": "Ordinance or law coverage: rebuilding to current code",
+        "blocks": [
+          {
+            "p": "After a major loss, a home generally must be rebuilt to the codes in force at the time of the rebuild. In Florida that can mean stronger roof-to-wall connections, impact-rated openings, updated electrical and plumbing, or elevation requirements in flood zones. A replacement cost payment alone may not include those upgrades. Florida law requires insurers to offer ordinance or law coverage limited to 25% or 50% of the dwelling limit, as selected by the policyholder, and the 25% level is included unless the policyholder rejects it in writing [3]."
+          },
+          {
+            "p": "For older or waterfront homes, the gap between replacement cost and code-compliant cost can be large. Many ordinance or law endorsements have three parts:"
+          },
+          {
+            "ul": [
+              "The value of the undamaged portion of the building that must be torn down because of a code requirement.",
+              "The cost to demolish that undamaged portion and remove the debris.",
+              "The increased cost to build to current code, beyond ordinary replacement cost."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "roof-wind-mitigation",
+        "h2": "Roof age and wind mitigation",
+        "blocks": [
+          {
+            "p": "Under Fla. Stat. 627.7011, an insurer may not refuse to issue or renew a homeowners policy solely because of the age of a roof that is less than 15 years old. For a roof 15 years or older, if an inspection by an authorized inspector shows at least 5 years of useful life remaining, the insurer also may not refuse solely because of age [3]. That rule is about eligibility, not about how a roof claim is paid, so it is worth asking whether the policy pays roof damage at replacement cost or on a depreciated basis."
+          },
+          {
+            "p": "Florida also requires residential rate filings to include actuarially reasonable discounts, credits or other rate differentials for features shown to reduce windstorm loss, such as roof strength, roof covering performance, roof-to-wall strength and opening protection [8]. Those features are documented on the uniform mitigation verification form OIR-B1-1802, completed by an authorized inspector. The form is valid for up to five years if no material changes are made to the structure, and an updated version took effect April 1, 2026 [9]."
+          },
+          {
+            "ul": [
+              "Roof permit and installation date, and the product used.",
+              "The most recent wind mitigation form, and a new one after any roof or opening upgrade.",
+              "Photos of roof straps or clips, shutters or impact windows, and invoices for those upgrades."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "second-homes-rentals",
+        "h2": "Second homes, rentals and vacancy",
+        "blocks": [
+          {
+            "p": "Many families own more than one property in Florida. A policy written for an owner-occupied primary residence typically assumes the owner lives there. When a property is rented to others, whether long term or seasonally, the appropriate form is often a landlord or dwelling policy, which can cover the building, the owner's liability and lost rental income. Short-term rentals raise separate questions that many standard forms do not address."
+          },
+          {
+            "p": "Seasonal homes raise a different issue: vacancy. Most homeowners policies include a vacancy clause that limits or excludes coverage if the property is unoccupied for typically 30 to 60 consecutive days, particularly for theft and vandalism [10]. The Atlantic hurricane season runs from June 1 to November 30 [14], a period when many seasonal homes sit empty. Ask whether a caretaker's regular visits count as occupancy and whether the policy requires a water shutoff or leak detection."
+          }
+        ]
+      },
+      {
+        "id": "before-after-storm",
+        "h2": "Before the storm: inventory, documentation and the claims process",
+        "blocks": [
+          {
+            "p": "A claim is only as strong as the records behind it. The Insurance Information Institute recommends keeping an up-to-date list of personal possessions and storing it somewhere safe away from the home [5]. Standard policies also set special limits on categories such as jewelry and silverware, and a separate schedule or floater is a common way to address them [5]."
+          },
+          {
+            "ul": [
+              "A room-by-room video of the interior, including closets, and of the exterior and roof.",
+              "Appraisals and receipts for art, jewelry, watches and collections, updated periodically.",
+              "A copy of the policy and declarations page stored in the cloud, not only in the house."
+            ]
+          },
+          {
+            "p": "Under Fla. Stat. 627.70132, notice of a new or reopened claim must be given to the insurer within 1 year after the date of loss, and notice of a supplemental claim within 18 months; for a hurricane, the date of loss is the date the hurricane made landfall [11]. Policies also typically require prompt notice and reasonable steps to prevent further damage, so photograph the damage, make temporary repairs and keep every receipt. Rising water and storm surge count as flood, which a standard homeowners policy does not cover [13]."
+          },
+          {
+            "callout": "The 1-year statutory deadline is an outer limit, not a target. Reporting promptly makes it easier to separate hurricane damage from later wear or deterioration."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      "When was the dwelling limit last compared with a current rebuilding cost estimate, and does it reflect recent renovations?",
+      "Does the policy include extended or guaranteed replacement cost, and what conditions apply to it?",
+      "What hurricane deductible percentage is on the policy, what is it in dollars, and is that amount set aside in liquid reserves?",
+      "Is ordinance or law coverage at 25% or 50% of the dwelling limit, and is that enough for the age and location of the home?",
+      "How does the policy settle roof claims, and is a current wind mitigation form on file with the insurer?",
+      "For each second home or rental, is the policy form correct for how the property is used, and what does the vacancy clause say?",
+      "Is there a separate flood policy on each property, and do the limits reflect the value of the home and contents?"
+    ],
+    "faq": [
+      {
+        "q": "How does the hurricane deductible work in Florida?",
+        "a": "It is usually a percentage of the dwelling limit, such as 2%, 5% or 10%, rather than a flat dollar amount. It applies once per calendar year to hurricane losses with the same insurer, and a later hurricane in the same year uses the greater of the remaining hurricane deductible or the other-perils deductible. For example, on a $2,000,000 dwelling limit, a 5% deductible equals $100,000."
+      },
+      {
+        "q": "Should I insure my Florida home for its market value or its replacement cost?",
+        "a": "Homeowners coverage is generally meant to pay for rebuilding, so the dwelling limit should track replacement cost: what it would cost to rebuild with similar materials and quality. Market value includes land and location, which do not need rebuilding. On custom or older homes, replacement cost can be higher than market value, and it rises with construction costs."
+      },
+      {
+        "q": "What is the deadline to file a hurricane claim in Florida?",
+        "a": "Under Fla. Stat. 627.70132, notice of a new or reopened property claim must be given within 1 year after the date of loss, and a supplemental claim within 18 months. For a hurricane, the date of loss is the landfall date. Policies also typically require prompt notice, so reporting early and documenting damage is the safer practice."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "n": 1,
+      "label": "Florida Legislature, Fla. Stat. 627.701, Liability of insureds; coinsurance; deductibles (2026)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2026/627.701"
+    },
+    {
+      "n": 2,
+      "label": "Florida Department of Financial Services, Florida's Hurricane Deductible (consumer guide)",
+      "url": "https://www.myfloridacfo.com/division/consumers/consumerprotections/floridashurricanedeductible"
+    },
+    {
+      "n": 3,
+      "label": "Florida Legislature, Fla. Stat. 627.7011, Homeowners' policies; offer of replacement cost coverage and law and ordinance coverage (2026)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2026/627.7011"
+    },
+    {
+      "n": 4,
+      "label": "Insurance Information Institute, How is the settlement amount determined?",
+      "url": "https://www.iii.org/article/how-is-the-settlement-amount-determined"
+    },
+    {
+      "n": 5,
+      "label": "Insurance Information Institute, Insurance for your house and personal possessions",
+      "url": "https://www.iii.org/article/insurance-for-your-house-and-personal-possessions"
+    },
+    {
+      "n": 6,
+      "label": "Verisk, Residential and Commercial Reconstruction Costs Rose Over 60% the Past 10 Years (2025)",
+      "url": "https://www.verisk.com/company/newsroom/residential-and-commercial-reconstruction-costs-rose-over-60-the-past-10-years/"
+    },
+    {
+      "n": 7,
+      "label": "Cookson, Gallagher and Mulder, Coverage Neglect in Homeowners Insurance, Federal Reserve Bank of Philadelphia WP 25-09 (2025)",
+      "url": "https://www.philadelphiafed.org/-/media/frbp/assets/working-papers/2025/wp25-09.pdf"
+    },
+    {
+      "n": 8,
+      "label": "Florida Legislature, Fla. Stat. 627.0629, Residential property insurance; rate filings (2026)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2026/627.0629"
+    },
+    {
+      "n": 9,
+      "label": "Florida Office of Insurance Regulation, Wind Mitigation Resources",
+      "url": "https://floir.gov/consumers/wind-mitigation-resources"
+    },
+    {
+      "n": 10,
+      "label": "Triple-I, When No One's Home: Understanding the Role of Vacancy Insurance",
+      "url": "https://www.iii.org/blog/when-no-ones-home-understanding-roleof-vacancy-insurance"
+    },
+    {
+      "n": 11,
+      "label": "Florida Legislature, Fla. Stat. 627.70132, Notice of property insurance claim (2026)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2026/627.70132"
+    },
+    {
+      "n": 12,
+      "label": "Florida Legislature, Fla. Stat. 627.4025, Residential coverage and hurricane coverage defined (2026)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2026/627.4025"
+    },
+    {
+      "n": 13,
+      "label": "FEMA, Everyone Needs Flood Insurance, fact sheet (2023)",
+      "url": "https://agents.floodsmart.gov/sites/default/files/media/document/2025-07/fema-nfip-everyone-needs-flood-insurance-fact-sheet-05-2023.pdf"
+    },
+    {
+      "n": 14,
+      "label": "NOAA Climate Prediction Center, Background Information: North Atlantic Hurricane Season",
+      "url": "https://www.cpc.ncep.noaa.gov/products/outlooks/Background.html"
+    }
+  ]
+}

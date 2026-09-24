@@ -1,0 +1,375 @@
+{
+  "key": "emp",
+  "slug_es": "personal-del-hogar-legado",
+  "slug_en": "household-staff-legacy",
+  "updated": "2026-09-24",
+  "es": {
+    "title": "Empleada doméstica y seguro: personal del hogar y legado",
+    "meta": "Empleada doméstica, niñera o chofer en Florida: obligaciones del empleador, compensación laboral, reclamos laborales y planificación patrimonial y seguros.",
+    "kicker": "Guía · Personal y legado",
+    "h1": "Personal del hogar y legado familiar: seguros, obligaciones y orden patrimonial",
+    "dek": "Qué cambia cuando una familia contrata niñeras, amas de llaves, choferes o cuidadores, y cómo el seguro encaja con el plan patrimonial.",
+    "summary": [
+      "Para el IRS, una empleada doméstica es su empleada si usted controla qué trabajo se hace y cómo se hace; en 2026, pagarle $3,000 o más en efectivo activa Seguro Social y Medicare [1].",
+      "La ley de compensación laboral de Florida excluye a los empleados domésticos en hogares privados, pero el empleador puede elegir cubrirlos de forma voluntaria [2][3].",
+      "Los reclamos laborales, las verificaciones de antecedentes y el uso de los autos familiares por el personal son riesgos que conviene revisar por separado.",
+      "Un inventario familiar de pólizas, escrituras, cuentas y asesores facilita cualquier transición.",
+      "Si un fideicomiso o una LLC es dueño de un bien, la póliza debe reflejarlo; la estructura la definen su abogado y su CPA."
+    ],
+    "sections": [
+      {
+        "id": "empleador-del-hogar",
+        "h2": "Empleada doméstica y seguro: cuando la familia se convierte en empleador",
+        "blocks": [
+          {
+            "p": "Muchas familias en Florida cuentan con una empleada doméstica, una niñera, un chofer o un cuidador. En ese momento, la familia suele convertirse en empleador, con obligaciones fiscales y riesgos que una póliza de hogar no siempre contempla. La Publicación 926 del IRS explica que el trabajador es su empleado si usted puede controlar no solo qué trabajo se hace, sino también cómo se hace, e incluye entre los ejemplos a niñeras, amas de llaves, cocineros, choferes, cuidadores y enfermeras privadas [1]. Si una agencia provee al trabajador y controla qué trabajo hace y cómo lo hace, el trabajador no es su empleado [1]."
+          },
+          {
+            "ul": [
+              "<b>Seguro Social y Medicare:</b> en 2026, si paga a un empleado del hogar $3,000 o más en salarios en efectivo, esos salarios están sujetos a estos impuestos [1]. Hay excepciones, como el cónyuge, los hijos menores de 21 años, los padres y, en general, los menores de 18 cuya ocupación principal no sea el trabajo del hogar.",
+              "<b>Desempleo federal (FUTA):</b> aplica si paga $1,000 o más en salarios en efectivo a empleados del hogar en cualquier trimestre calendario del año en curso o del anterior [1].",
+              "<b>Impuesto de reempleo de Florida:</b> el Departamento de Ingresos de Florida indica que el empleador de trabajadores domésticos queda sujeto si paga al menos $1,000 en salarios en un trimestre calendario del año en curso o del anterior [4].",
+              "<b>Formularios:</b> el Anexo H (Schedule H) con la declaración federal, el Formulario W-2 para el empleado y el Formulario I-9 de verificación de elegibilidad de empleo cuando se contrata a alguien de forma regular [1].",
+              "<b>Retención del impuesto sobre la renta:</b> no es obligatoria; se hace solo si el empleado la pide y usted acepta [1]."
+            ]
+          },
+          {
+            "callout": "Estas son reglas generales federales y de Florida. La clasificación del trabajador, la nómina y los impuestos de cada caso se revisan con un CPA."
+          }
+        ]
+      },
+      {
+        "id": "compensacion-laboral",
+        "h2": "Compensación laboral para una niñera o empleada doméstica en Florida",
+        "blocks": [
+          {
+            "p": "La ley de compensación laboral de Florida (workers' comp) excluye de la definición de empleo a los empleados domésticos en hogares privados [2]. Por eso, en general, una familia no está obligada a tener esta cobertura para su niñera o su ama de llaves. La misma ley permite que un empleador renuncie a esa exclusión y acepte el sistema de forma voluntaria, con la protección que la ley otorga a los empleadores cubiertos [3]."
+          },
+          {
+            "p": "Que no sea obligatoria no significa que el riesgo desaparezca. Un cuidador que levanta a un adulto mayor, una empleada que resbala en una escalera o un chofer que se lesiona en un accidente pueden generar gastos médicos y salarios perdidos. Muchas pólizas de hogar definen al empleado residencial (residence employee) y pueden ofrecer algo de cobertura de pagos médicos o de responsabilidad civil, pero las condiciones y exclusiones varían mucho entre pólizas. Antes de decidir, conviene revisar:"
+          },
+          {
+            "ul": [
+              "Qué tareas realiza cada persona y con qué riesgo físico, como el cuidado de adultos mayores, la jardinería o la conducción.",
+              "Cómo tratan su póliza de hogar y su póliza umbrella las lesiones de empleados residenciales.",
+              "Quién es el empleador formal: la familia, un fideicomiso, una LLC o una oficina familiar. Si el personal cobra a través de una empresa con otros empleados, el análisis puede ser distinto.",
+              "Si el personal trabaja también en otra propiedad o en otro estado, donde las reglas pueden cambiar."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "reclamos-laborales",
+        "h2": "Reclamos laborales, verificación de antecedentes y confidencialidad",
+        "blocks": [
+          {
+            "p": "Una familia empleadora puede enfrentar los mismos tipos de reclamos que una empresa: despido injustificado, discriminación, acoso o represalias. Muchas pólizas de hogar y umbrella excluyen o limitan los reclamos relacionados con el empleo. El seguro de responsabilidad por prácticas laborales (EPLI) existe también para hogares, como endoso o póliza separada, aunque las disputas sobre salarios y horas suelen estar excluidas o muy limitadas. Vale la pena preguntar si su programa actual incluye esta cobertura y con qué límites."
+          },
+          {
+            "p": "La verificación de antecedentes también tiene reglas. La FTC y la EEOC explican que, si usa una empresa de informes de consumidores, debe avisar por escrito al candidato, en un documento independiente, que podría usar la información para decisiones de empleo, y obtener su permiso por escrito. Antes de tomar una decisión adversa basada en el informe, debe entregarle una copia del informe y el resumen de sus derechos bajo la Ley de Informe Justo de Crédito (FCRA) [5]."
+          },
+          {
+            "ul": [
+              "Un acuerdo de confidencialidad, redactado por un abogado, que cubra información financiera, agendas de viaje, códigos de seguridad, fotos y redes sociales.",
+              "Protocolos de acceso: llaves, tarjetas y códigos de alarma que se cambian cuando alguien deja de trabajar en la casa.",
+              "Un contrato o carta de empleo que describa funciones, horario, salario y uso de bienes de la familia.",
+              "Registros ordenados de pagos, permisos y evaluaciones, útiles ante cualquier reclamo."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "personal-al-volante",
+        "h2": "Cuando el personal conduce los autos de la familia",
+        "blocks": [
+          {
+            "p": "En Florida, el dueño de un vehículo puede responder por los daños que cause quien lo conduce con su permiso, bajo la doctrina del instrumento peligroso (dangerous instrumentality). Además, los mínimos de auto del estado son bajos: $10,000 de protección contra lesiones personales (PIP) y $10,000 de daños a la propiedad, sin exigencia de responsabilidad por lesiones corporales para autos particulares. Cuando un chofer o una niñera lleva a los niños al colegio en el auto de la familia, la póliza de ese auto y la umbrella son las que responden primero."
+          },
+          {
+            "ul": [
+              "Informar a la aseguradora quién conduce los vehículos de forma habitual; muchas pólizas piden listar a los conductores regulares del hogar.",
+              "Revisar el historial de manejo (MVR) del candidato con su autorización y repetir la revisión de forma periódica.",
+              "Definir por escrito qué vehículos puede usar el personal y para qué: traslados de los niños, compras o uso personal.",
+              "Si el empleado usa su propio auto para tareas de la familia, su póliza personal suele responder primero y sus límites pueden ser bajos.",
+              "Confirmar que los límites de auto cumplen los mínimos que exige la póliza umbrella de la familia."
+            ]
+          },
+          {
+            "p": "Imagine una familia hipotética cuyo chofer causa un accidente con varios lesionados mientras recoge a los niños. La pregunta no es solo si hay seguro, sino si los límites de auto y umbrella son suficientes, si el chofer figuraba como conductor y quién era su empleador formal."
+          }
+        ]
+      },
+      {
+        "id": "inventario-familiar",
+        "h2": "Planificación patrimonial y seguros: el inventario familiar",
+        "blocks": [
+          {
+            "p": "La segunda mitad de esta guía trata del legado. En la planificación patrimonial, los seguros son una pieza entre muchas, y a menudo la más dispersa: pólizas en distintas aseguradoras, escrituras en una notaría, cuentas en varios bancos y asesores que no siempre se conocen entre sí. Un inventario familiar ordenado reduce la confusión en el momento en que más se necesita claridad."
+          },
+          {
+            "ul": [
+              "<b>Pólizas:</b> tipo, número, asegurado nombrado, límites, deducibles, fechas de renovación y contacto del agente.",
+              "<b>Bienes:</b> escrituras de viviendas, títulos de autos y embarcaciones, colecciones y sus tasaciones.",
+              "<b>Cuentas:</b> instituciones, tipo de cuenta y quién tiene firma o acceso, sin anotar contraseñas en el documento.",
+              "<b>Entidades:</b> fideicomisos, LLC y sociedades, con sus documentos constitutivos y quién las administra.",
+              "<b>Asesores:</b> abogado, CPA, agente de seguros, asesor financiero y banquero, con sus datos de contacto.",
+              "<b>Personal del hogar:</b> contratos, salarios, beneficios, acuerdos de confidencialidad y quién los supervisa."
+            ]
+          },
+          {
+            "callout": "Guarde el inventario en un lugar seguro, con una copia fuera de la casa, y actualícelo con cada compra, venta, cambio de asesor o nueva póliza. El FDIC recuerda que las reglas para abrir una caja de seguridad después de un fallecimiento dependen de la ley estatal [6]."
+          }
+        ]
+      },
+      {
+        "id": "fideicomisos-llc",
+        "h2": "Fideicomisos, LLC y seguro de vida: la propiedad debe coincidir con la póliza",
+        "blocks": [
+          {
+            "p": "Muchas familias usan fideicomisos y LLC para ser dueñas de viviendas, autos, embarcaciones o colecciones. Esa decisión la toman con su abogado y su CPA; esta guía no ofrece asesoría legal ni fiscal. Lo que sí conviene saber es que, cuando cambia el dueño legal de un bien, la póliza debe reflejar ese cambio. Si una vivienda pasa a un fideicomiso pero la póliza sigue a nombre de las personas, o si una LLC es dueña de una embarcación asegurada con una póliza personal, puede haber discusiones en un reclamo o vacíos en la cobertura de responsabilidad."
+          },
+          {
+            "ul": [
+              "Cuando una vivienda pasa a un fideicomiso, pregunte si el fideicomiso o el fideicomisario deben figurar como asegurado nombrado o adicional.",
+              "Cuando una LLC es dueña de un vehículo, una embarcación o una propiedad de alquiler, confirme que la póliza cubre a la entidad y no solo a las personas.",
+              "Revise que la póliza umbrella de la familia reconozca a las entidades que son dueñas de los bienes.",
+              "Coordine el dueño y los beneficiarios de las pólizas de vida con el plan patrimonial."
+            ]
+          },
+          {
+            "p": "El seguro de vida cumple un papel de liquidez en muchos planes: puede aportar efectivo para pagar gastos, deudas o impuestos, o para igualar herencias cuando un hijo recibe la empresa familiar y otro no. Quién debe ser el dueño de la póliza, a menudo un fideicomiso, es una decisión del abogado y del CPA. Según LIMRA, la cobertura de vida entre los hispanos bajó del 51% en 2021 al 40% en 2025, la más baja de cualquier grupo étnico [7]."
+          },
+          {
+            "p": "Como siguiente paso, reúna su inventario y revise las preguntas de abajo con su agente licenciado, su abogado de planificación patrimonial y su CPA, idealmente en una misma conversación."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      "¿Mis trabajadores del hogar son mis empleados según el IRS, o los provee una agencia que controla su trabajo?",
+      "¿Estoy cumpliendo con los impuestos federales y el impuesto de reempleo de Florida, y quién prepara el Anexo H y los W-2?",
+      "¿Conviene elegir de forma voluntaria la compensación laboral para mi personal, y cómo trata mi póliza de hogar a los empleados residenciales?",
+      "¿Mi programa de seguros incluye responsabilidad por prácticas laborales para el hogar, y con qué límites y exclusiones?",
+      "¿Están listados en mis pólizas de auto las personas del personal que conducen, y son suficientes mis límites de auto y umbrella?",
+      "¿Coinciden los dueños legales de mis bienes (fideicomisos, LLC, personas) con los asegurados nombrados en cada póliza?",
+      "¿Cómo encaja el seguro de vida en mi plan patrimonial y quién debe ser el dueño de la póliza?"
+    ],
+    "faq": [
+      {
+        "q": "¿Es obligatorio el seguro de compensación laboral para una empleada doméstica en Florida?",
+        "a": "En general, no. La ley de compensación laboral de Florida excluye de la definición de empleo a los empleados domésticos en hogares privados. Sin embargo, la ley permite que el empleador elija la cobertura de forma voluntaria. La decisión depende de las tareas, de lo que cubre su póliza de hogar y de quién es el empleador formal. Conviene revisarla con su agente licenciado y su abogado."
+      },
+      {
+        "q": "¿Cuándo debo pagar impuestos por una niñera o empleada doméstica?",
+        "a": "Según la Publicación 926 del IRS, en 2026 los salarios en efectivo de $3,000 o más a un empleado del hogar están sujetos a Seguro Social y Medicare. El desempleo federal aplica si paga $1,000 o más en un trimestre calendario, y Florida usa un umbral similar para su impuesto de reempleo. Los detalles de cada caso se revisan con un CPA."
+      },
+      {
+        "q": "¿Qué pasa con el seguro si mi casa está a nombre de un fideicomiso?",
+        "a": "La póliza debe reflejar al dueño legal. Si la vivienda pasa a un fideicomiso y la póliza sigue solo a nombre de las personas, puede haber discusiones en un reclamo o vacíos en la cobertura de responsabilidad. Muchas aseguradoras permiten agregar el fideicomiso o al fideicomisario como asegurado. Su abogado define la estructura y su agente revisa que la póliza la refleje."
+      }
+    ]
+  },
+  "en": {
+    "title": "Household employee insurance in Florida and family legacy",
+    "meta": "Household employee insurance in Florida: employer duties, workers comp for a nanny, employment claims, staff driving family cars and estate planning basics.",
+    "kicker": "Guide · Staff and legacy",
+    "h1": "Household staff and family legacy: insurance, obligations and an organized estate",
+    "dek": "What changes when a family hires nannies, housekeepers, drivers or caregivers, and how insurance fits into the estate plan.",
+    "summary": [
+      "To the IRS, a household worker is your employee if you control what work is done and how it is done; in 2026, paying $3,000 or more in cash wages triggers Social Security and Medicare [1].",
+      "Florida's workers' compensation law excludes domestic servants in private homes, but an employer can elect coverage voluntarily [2][3].",
+      "Employment claims, background checks and staff driving family cars are risks worth reviewing one by one.",
+      "A family inventory of policies, deeds, accounts and advisors makes any transition easier.",
+      "When a trust or LLC owns an asset, the policy should reflect it; your attorney and CPA decide the structure."
+    ],
+    "sections": [
+      {
+        "id": "household-employer",
+        "h2": "Household employee insurance: when the family becomes an employer",
+        "blocks": [
+          {
+            "p": "Many Florida families rely on a housekeeper, a nanny, a driver or a caregiver. At that point the family usually becomes an employer, with tax duties and risks that a homeowners policy does not always address. IRS Publication 926 explains that a worker is your employee if you can control not only what work is done but how it is done, and its examples include nannies, housekeepers, cooks, drivers, caretakers and private nurses [1]. If an agency provides the worker and controls what work is done and how, the worker is not your employee [1]."
+          },
+          {
+            "ul": [
+              "<b>Social Security and Medicare:</b> in 2026, if you pay a household employee $3,000 or more in cash wages, those wages are subject to these taxes [1]. There are exceptions, such as your spouse, your children under 21, your parents and, generally, workers under 18 whose principal occupation is not household work.",
+              "<b>Federal unemployment (FUTA):</b> applies if you pay $1,000 or more in cash wages to household employees in any calendar quarter of the current or prior year [1].",
+              "<b>Florida reemployment tax:</b> the Florida Department of Revenue states that an employer of domestic workers becomes liable after paying at least $1,000 in wages in a calendar quarter of the current or prior year [4].",
+              "<b>Forms:</b> Schedule H with your federal return, Form W-2 for the employee and Form I-9 employment eligibility verification when you hire someone to work on a regular basis [1].",
+              "<b>Income tax withholding:</b> not required; you withhold only if the employee asks and you agree [1]."
+            ]
+          },
+          {
+            "callout": "These are general federal and Florida rules. Worker classification, payroll and taxes for your situation belong in a conversation with a CPA."
+          }
+        ]
+      },
+      {
+        "id": "workers-comp",
+        "h2": "Workers comp for a nanny or housekeeper in Florida",
+        "blocks": [
+          {
+            "p": "Florida's workers' compensation law excludes domestic servants in private homes from the definition of employment [2]. As a result, a family generally is not required to carry this coverage for its nanny or housekeeper. The same law lets an employer waive that exclusion and accept the system voluntarily, with the protections the law gives covered employers [3]."
+          },
+          {
+            "p": "Not being required does not make the risk go away. A caregiver lifting an older adult, a housekeeper slipping on a staircase or a driver hurt in a crash can all lead to medical bills and lost wages. Many homeowners policies define a residence employee and may offer some medical payments or liability coverage, but conditions and exclusions vary widely from policy to policy. Before deciding, it helps to review:"
+          },
+          {
+            "ul": [
+              "What each person does and how physically risky it is, such as elder care, yard work or driving.",
+              "How your homeowners policy and your umbrella policy treat injuries to residence employees.",
+              "Who the formal employer is: the family, a trust, an LLC or a family office. If staff are paid through a company with other employees, the analysis may be different.",
+              "Whether staff also work at another property or in another state, where the rules can change."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "employment-claims",
+        "h2": "Employment claims, background checks and confidentiality",
+        "blocks": [
+          {
+            "p": "A household employer can face the same kinds of claims as a business: wrongful termination, discrimination, harassment or retaliation. Many homeowners and umbrella policies exclude or limit employment-related claims. Employment practices liability insurance (EPLI) is also available for households, as an endorsement or a separate policy, although wage and hour disputes are usually excluded or tightly limited. It is worth asking whether your current program includes this coverage and at what limits."
+          },
+          {
+            "p": "Background checks have rules too. The FTC and the EEOC explain that if you use a consumer reporting company, you must tell the applicant in writing, in a stand-alone document, that you might use the information for employment decisions, and get the applicant's written permission. Before taking adverse action based on the report, you must provide a copy of the report and A Summary of Your Rights Under the Fair Credit Reporting Act (FCRA) [5]."
+          },
+          {
+            "ul": [
+              "A confidentiality agreement, drafted by an attorney, covering financial information, travel schedules, security codes, photos and social media.",
+              "Access protocols: keys, cards and alarm codes that change when someone stops working in the home.",
+              "An employment agreement or letter describing duties, schedule, pay and use of family property.",
+              "Organized records of payments, time off and reviews, which help with any claim."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "staff-driving",
+        "h2": "When staff drive the family's cars",
+        "blocks": [
+          {
+            "p": "In Florida, a vehicle owner can be held liable for damage caused by someone driving the car with permission, under the dangerous instrumentality doctrine. The state's auto minimums are also low: $10,000 in personal injury protection (PIP) and $10,000 in property damage liability, with no bodily injury liability requirement for private passenger cars. When a driver or nanny takes the children to school in a family car, that car's policy and the family umbrella are the ones that respond first."
+          },
+          {
+            "ul": [
+              "Tell the insurer who drives the vehicles regularly; many policies ask you to list regular drivers in the household.",
+              "Review the candidate's motor vehicle record (MVR) with their permission, and repeat the review periodically.",
+              "Put in writing which vehicles staff may use and for what: school runs, errands or personal use.",
+              "If an employee uses their own car for family errands, their personal policy usually responds first, and its limits may be low.",
+              "Confirm that your auto limits meet the minimums your family umbrella policy requires."
+            ]
+          },
+          {
+            "p": "Imagine a hypothetical family whose driver causes a crash with several people injured while picking up the children. The question is not only whether there is insurance, but whether the auto and umbrella limits are enough, whether the driver was listed on the policy and who the driver's formal employer was."
+          }
+        ]
+      },
+      {
+        "id": "family-inventory",
+        "h2": "Estate planning and insurance: the family inventory",
+        "blocks": [
+          {
+            "p": "The second half of this guide is about legacy. In estate planning, insurance is one piece among many, and often the most scattered: policies with different insurers, deeds with a closing attorney, accounts at several banks and advisors who do not always know each other. An organized family inventory reduces confusion at the moment clarity matters most."
+          },
+          {
+            "ul": [
+              "<b>Policies:</b> type, number, named insured, limits, deductibles, renewal dates and the agent's contact.",
+              "<b>Assets:</b> home deeds, titles for cars and boats, collections and their appraisals.",
+              "<b>Accounts:</b> institutions, account types and who has signing authority or access, without writing passwords in the document.",
+              "<b>Entities:</b> trusts, LLCs and partnerships, with their formation documents and who manages them.",
+              "<b>Advisors:</b> attorney, CPA, insurance agent, financial advisor and banker, with contact details.",
+              "<b>Household staff:</b> agreements, pay, benefits, confidentiality agreements and who supervises them."
+            ]
+          },
+          {
+            "callout": "Keep the inventory somewhere safe, with a copy outside the home, and update it with each purchase, sale, change of advisor or new policy. The FDIC notes that the rules for opening a safe deposit box after a death depend on state law [6]."
+          }
+        ]
+      },
+      {
+        "id": "trusts-llcs",
+        "h2": "Trusts, LLCs and life insurance: ownership must match the policy",
+        "blocks": [
+          {
+            "p": "Many families use trusts and LLCs to own homes, cars, boats or collections. That decision is made with an attorney and a CPA; this guide does not offer legal or tax advice. What is worth knowing is that when the legal owner of an asset changes, the policy should reflect the change. If a home moves into a trust but the policy stays in the individuals' names, or an LLC owns a boat insured under a personal policy, a claim can turn into a dispute or leave gaps in liability coverage."
+          },
+          {
+            "ul": [
+              "When a home moves into a trust, ask whether the trust or the trustee should appear as a named or additional insured.",
+              "When an LLC owns a vehicle, a boat or a rental property, confirm that the policy covers the entity and not only the individuals.",
+              "Check that the family umbrella policy recognizes the entities that own the assets.",
+              "Coordinate the owner and beneficiaries of life insurance policies with the estate plan."
+            ]
+          },
+          {
+            "p": "Life insurance plays a liquidity role in many plans: it can provide cash for expenses, debts or taxes, or to even out inheritances when one child receives the family business and another does not. Who should own the policy, often a trust, is a decision for the attorney and the CPA. According to LIMRA, life insurance coverage among Hispanics fell from 51% in 2021 to 40% in 2025, lower than any other ethnic group [7]."
+          },
+          {
+            "p": "As a next step, gather your inventory and review the questions below with your own licensed agent, your estate planning attorney and your CPA, ideally in the same conversation."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      "Are my household workers my employees under IRS rules, or are they provided by an agency that controls their work?",
+      "Am I meeting federal household employment taxes and Florida reemployment tax, and who prepares Schedule H and the W-2s?",
+      "Should I voluntarily elect workers' compensation for my staff, and how does my homeowners policy treat residence employees?",
+      "Does my insurance program include household employment practices liability, and with what limits and exclusions?",
+      "Are staff who drive listed on my auto policies, and are my auto and umbrella limits enough?",
+      "Do the legal owners of my assets (trusts, LLCs, individuals) match the named insureds on each policy?",
+      "How does life insurance fit into my estate plan, and who should own the policy?"
+    ],
+    "faq": [
+      {
+        "q": "Is workers comp required for a nanny in Florida?",
+        "a": "Generally, no. Florida's workers' compensation law excludes domestic servants in private homes from the definition of employment. The law does allow an employer to elect coverage voluntarily. The decision depends on the duties involved, what your homeowners policy covers and who the formal employer is. It is worth reviewing with your own licensed agent and your attorney."
+      },
+      {
+        "q": "When do I owe taxes for a nanny or housekeeper?",
+        "a": "According to IRS Publication 926, in 2026 cash wages of $3,000 or more paid to a household employee are subject to Social Security and Medicare taxes. Federal unemployment tax applies if you pay $1,000 or more in a calendar quarter, and Florida uses a similar threshold for its reemployment tax. The details of your situation belong with a CPA."
+      },
+      {
+        "q": "What happens to my insurance if my home is owned by a trust?",
+        "a": "The policy should reflect the legal owner. If the home moves into a trust and the policy stays only in the individuals' names, a claim can turn into a dispute or leave gaps in liability coverage. Many insurers allow the trust or trustee to be added as an insured. Your attorney sets the structure, and your agent checks that the policy reflects it."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "n": 1,
+      "label": "IRS, Publication 926 (2026), Household Employer's Tax Guide",
+      "url": "https://www.irs.gov/publications/p926"
+    },
+    {
+      "n": 2,
+      "label": "Florida Statutes, s. 440.02, Definitions (domestic servants in private homes excluded from employment)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/440.02"
+    },
+    {
+      "n": 3,
+      "label": "Florida Statutes, s. 440.04, Waiver of exclusion of certain employments",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/440.04"
+    },
+    {
+      "n": 4,
+      "label": "Florida Department of Revenue, Employer Guide to Reemployment Tax, RT-800002 (2025)",
+      "url": "https://floridarevenue.com/Forms_library/current/guides/rt800002.pdf"
+    },
+    {
+      "n": 5,
+      "label": "FTC and EEOC, Background Checks: What Employers Need to Know",
+      "url": "https://www.ftc.gov/business-guidance/resources/background-checks-what-employers-need-know"
+    },
+    {
+      "n": 6,
+      "label": "FDIC Consumer News, Safe Deposit Boxes, Home Safes and Your Valuables (2018)",
+      "url": "https://www.fdic.gov/consumer-resource-center/2018-safe-deposit-boxes-home-safes-and-your-valuables"
+    },
+    {
+      "n": 7,
+      "label": "LIMRA, Hispanic Americans and Life Insurance: Bring Family to the Conversation (2025 Insurance Barometer Study)",
+      "url": "https://www.limra.com/en/newsroom/industry-trends/2025/hispanic-americans-and-life-insurance-bring-family-to-the-conversation/"
+    }
+  ]
+}

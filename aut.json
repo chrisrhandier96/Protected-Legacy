@@ -1,0 +1,234 @@
+{
+  "key": "aut",
+  "slug_es": "autos",
+  "slug_en": "auto",
+  "updated": "2026-09-24",
+  "es": {
+    "title": "Seguro de auto en Florida para familias con patrimonio",
+    "meta": "Seguro de auto en Florida: mínimos legales, responsabilidad por lesiones, cobertura UM, conductores jóvenes, responsabilidad del dueño y autos de colección.",
+    "kicker": "Guía · Autos",
+    "h1": "Seguro de auto en Florida: lo que la ley exige y lo que su patrimonio necesita revisar",
+    "dek": "Los mínimos de Florida protegen poco a una familia con patrimonio; entender la cobertura UM, la responsabilidad del dueño y los conductores del hogar ayuda a encontrar las brechas.",
+    "summary": [
+      "Florida exige $10,000 de PIP y $10,000 de responsabilidad por daños a la propiedad, pero no exige responsabilidad por lesiones corporales (BI) para autos particulares.",
+      "Sin BI, las lesiones que usted cause a otros pueden recaer sobre su patrimonio, y la mayoría de las umbrellas exige un límite mínimo de responsabilidad en auto.",
+      "La cobertura UM protege a su familia frente a conductores sin seguro o con seguro insuficiente; en Florida solo se rechaza o se reduce por escrito, y la opción sin acumulación (non-stacking) requiere aceptación escrita.",
+      "Quien firma la licencia de un menor responde solidariamente por su conducción negligente, y el dueño de un vehículo puede responder por quien lo maneja.",
+      "Autos de colección, empleados domésticos al volante y el uso en plataformas de viajes compartidos tienen reglas propias que conviene revisar."
+    ],
+    "sections": [
+      {
+        "id": "minimos-florida",
+        "h2": "Seguro de auto en Florida: lo que exige la ley",
+        "blocks": [
+          {"p": "El seguro de auto en Florida funciona distinto al de la mayoría de los estados. Todo vehículo de cuatro ruedas o más registrado en Florida debe tener, al momento del registro, un mínimo de $10,000 de protección contra lesiones personales (PIP) y $10,000 de responsabilidad por daños a la propiedad (PDL) [1]. Para autos particulares, la ley no exige responsabilidad por lesiones corporales (BI), la cobertura que paga lesiones o muerte de otras personas [1]."},
+          {"p": "Como referencia, los vehículos registrados como taxis sí deben llevar responsabilidad por lesiones de $125,000 por persona y $250,000 por evento [1]. La distancia entre esos números y el mínimo de un auto familiar muestra cuánto depende la protección real de las decisiones de cada hogar."},
+          {"table": {"head": ["Cobertura", "Qué paga", "¿Obligatoria para autos particulares?"], "rows": [
+            ["PIP", "Ciertos gastos por sus propias lesiones, sin importar la culpa, hasta el límite", "Sí, mínimo $10,000"],
+            ["Daños a la propiedad (PDL)", "Daños que usted causa a bienes de otros", "Sí, mínimo $10,000"],
+            ["Lesiones corporales (BI)", "Lesiones o muerte que usted causa a otros", "No, pero es clave para proteger el patrimonio"],
+            ["Conductor sin seguro (UM)", "Lesiones suyas causadas por un conductor sin seguro suficiente", "No, pero se incluye con BI salvo rechazo por escrito"]
+          ]}}
+        ]
+      },
+      {
+        "id": "responsabilidad-bi",
+        "h2": "Por qué importa la responsabilidad por lesiones aunque no sea obligatoria",
+        "blocks": [
+          {"p": "Si un miembro de la familia causa un accidente con lesiones graves y no hay cobertura BI, el reclamo se dirige a la persona responsable y, con ella, a su patrimonio. Además de pagar hasta el límite, la póliza de auto con BI normalmente incluye la defensa legal del asegurado, algo que en un litigio puede costar tanto como la indemnización."},
+          {"p": "La cobertura BI también es la base de otras protecciones. La mayoría de las pólizas umbrella exige un límite mínimo de responsabilidad en auto; el III señala que muchas aseguradoras piden al menos $250,000 antes de emitir una umbrella de $1 millón [9]. Y en Florida, las reglas de cobertura UM no se aplican a pólizas que no incluyen responsabilidad primaria [3], por lo que una póliza con solo PIP y PDL deja a la familia sin esa protección. La ley de responsabilidad financiera de Florida también puede exigir prueba de cobertura BI después de ciertos accidentes o condenas."},
+          {"callout": "Para una familia con patrimonio, el mínimo legal de Florida responde a una pregunta distinta a la suya: la ley busca que exista algún seguro; usted busca que un accidente no alcance su patrimonio."}
+        ]
+      },
+      {
+        "id": "cobertura-um",
+        "h2": "Cobertura UM: conductores sin seguro o con seguro insuficiente",
+        "blocks": [
+          {"p": "Alrededor de 1 de cada 5 conductores en Florida (20.6%) no tenía seguro en 2023, el séptimo porcentaje más alto del país según datos del Insurance Research Council [2]. La cobertura UM paga las lesiones de usted y su familia cuando el conductor culpable no tiene seguro o su límite no alcanza. Como en Florida la BI no es obligatoria, muchos conductores asegurados tampoco tienen límites para responder por lesiones graves."},
+          {"p": "La sección 627.727 exige que toda póliza de auto con BI incluya cobertura UM con límites no menores a los de BI, salvo que un asegurado nombrado la rechace o elija límites menores por escrito en un formulario aprobado por el regulador [3]. Si el asegurado nombrado firma ese formulario, la ley presume de manera concluyente que el rechazo fue informado y aplica a todos los asegurados de la póliza [3]."},
+          {"p": "La ley también permite a las aseguradoras ofrecer una versión sin acumulación (non-stacking): con ella, los límites de UM de dos o más vehículos no se suman para una misma persona lesionada. Requiere aceptación informada por escrito, debe reducir la prima de UM al menos un 20%, y esa elección continúa en las renovaciones hasta que el asegurado nombrado pida eliminarla y pague la prima correspondiente [3]. Por ejemplo, en una familia hipotética con tres autos y $250,000 de UM en cada uno, la versión con acumulación podría permitir sumar límites, mientras que la versión sin acumulación normalmente limita el reclamo al límite de un solo vehículo."}
+        ]
+      },
+      {
+        "id": "conductores-jovenes",
+        "h2": "Conductores jóvenes y la firma de la licencia (322.09)",
+        "blocks": [
+          {"p": "En Florida, la persona que firma la solicitud de permiso o licencia de un menor de 18 años asume una responsabilidad directa: la negligencia o conducta intencional del menor al volante se le imputa, y responde de forma conjunta y solidaria con el menor por los daños que cause (sección 322.09) [4]. Esa responsabilidad existe aunque el auto no esté a nombre de quien firmó."},
+          {"p": "A esto se suma la responsabilidad como dueño del vehículo, que se explica en la siguiente sección. En la práctica, la llegada de un conductor joven es uno de los momentos en que más conviene revisar límites de BI, UM y umbrella al mismo tiempo."},
+          {"ul": [
+            "Incluya al conductor joven en la póliza y confirme qué vehículos maneja.",
+            "Revise si el auto que usa cumple el límite subyacente que exige su umbrella.",
+            "Informe a la aseguradora de la umbrella sobre el nuevo conductor, si el contrato lo exige.",
+            "Consulte con su abogado a nombre de quién conviene titular el vehículo."
+          ]}
+        ]
+      },
+      {
+        "id": "responsabilidad-dueno",
+        "h2": "El dueño responde: la doctrina del instrumento peligroso",
+        "blocks": [
+          {"p": "Los tribunales de Florida aplican la doctrina del instrumento peligroso (dangerous instrumentality): el dueño de un vehículo que se lo confía a otra persona puede responder por la negligencia de quien lo maneja, aunque el dueño no estuviera presente. La ley pone topes a esa responsabilidad en ciertos casos. Según la sección 324.021(9)(b)3, el dueño que es persona natural y presta su vehículo a un usuario autorizado responde solo hasta $100,000 por persona y $300,000 por incidente por lesiones, y hasta $50,000 por daños a la propiedad [5]."},
+          {"p": "Hay un matiz importante: si el usuario autorizado no tiene seguro o tiene límites menores a $500,000 combinados, el dueño puede responder por hasta $500,000 adicionales en daños económicos, reducidos por lo que se recupere del conductor o de su seguro [5]. El tope tampoco limita la responsabilidad del dueño por su propia negligencia, por ejemplo al prestar el auto a alguien que sabía que no debía manejarlo [5]."},
+          {"table": {"head": ["Situación (dueño persona natural)", "Tope por lesiones", "Tope por daños a la propiedad"], "rows": [
+            ["Presta el auto a un usuario autorizado", "$100,000 por persona / $300,000 por incidente", "$50,000"],
+            ["El usuario no tiene seguro o tiene menos de $500,000 combinados", "Hasta $500,000 adicionales en daños económicos", "Incluido en el mismo adicional"],
+            ["Negligencia propia del dueño", "Sin el tope de este párrafo", "Sin el tope de este párrafo"]
+          ]}},
+          {"p": "Ese párrafo se refiere al dueño que es persona natural. Si el vehículo está a nombre de una empresa o un fideicomiso, el análisis puede ser distinto y conviene revisarlo con su abogado."}
+        ]
+      },
+      {
+        "id": "empleados-plataformas",
+        "h2": "Empleados domésticos al volante y viajes compartidos",
+        "blocks": [
+          {"p": "Cuando un chofer, una niñera o un asistente maneja los autos de la familia, surgen preguntas propias: si está incluido como conductor en la póliza, si la póliza cubre su uso habitual del vehículo y si sus propios límites importan cuando usa su auto para mandados de la familia. Si maneja como parte de su trabajo, pueden aplicarse además reglas de responsabilidad del empleador. En Florida, los empleados domésticos en casas particulares están excluidos de la definición de empleo de la ley de compensación laboral (sección 440.02), aunque el empleador puede elegir voluntariamente esa cobertura (sección 440.04) [8][10]."},
+          {"p": "El uso en plataformas de transporte o entregas es otra brecha frecuente. La sección 627.748 permite que la aseguradora de una póliza personal excluya toda cobertura, incluidas responsabilidad, UM, PIP, colisión y comprensiva, mientras el conductor está conectado a la plataforma o realiza un viaje contratado [7]. La ley exige cobertura de la plataforma o del conductor: $50,000 por persona, $100,000 por incidente y $25,000 por daños a la propiedad mientras está conectado sin pasajero, y $1 millón durante un viaje contratado [7]."},
+          {"callout": "Si un hijo universitario usa el auto familiar para hacer entregas o viajes por aplicación, revise la póliza personal y la umbrella: ambas pueden excluir ese uso."}
+        ]
+      },
+      {
+        "id": "autos-coleccion",
+        "h2": "Autos de colección y valor acordado",
+        "blocks": [
+          {"p": "Una póliza de auto estándar suele pagar el valor real en efectivo, que descuenta depreciación. Las pólizas para autos de colección o clásicos normalmente usan un valor acordado: el III explica que el auto queda cubierto hasta ese valor sin depreciación, y que ese valor debe actualizarse si el vehículo se aprecia [6]."},
+          {"p": "A cambio, estas pólizas suelen imponer condiciones: el auto no puede usarse para ir al trabajo o hacer mandados, puede haber límites de millaje, debe guardarse en una estructura privada, cerrada y con llave, y la aseguradora puede pedir que usted tenga otro vehículo de uso diario y un historial de manejo limpio [6]. En Florida, también conviene preguntar cómo responde la póliza si un huracán o una inundación afecta el garaje donde se guarda la colección."},
+          {"p": "Como siguiente paso, reúna las pólizas de auto, umbrella y los títulos de los vehículos, y revise con su agente licenciado y su abogado las preguntas de abajo."}
+        ]
+      }
+    ],
+    "questions": [
+      "¿Qué límites de BI tiene cada vehículo del hogar y cumplen con el mínimo que exige mi umbrella?",
+      "¿Tengo cobertura UM igual a mi BI, o firmé un rechazo o una selección de límites menores?",
+      "¿Mi cobertura UM es con acumulación (stacking) o sin acumulación, y qué significa eso para mi familia?",
+      "¿Quién firmó la licencia de cada conductor menor de edad y está ese conductor incluido en la póliza?",
+      "¿A nombre de quién están titulados los vehículos y cómo afecta eso la responsabilidad del dueño?",
+      "¿Están incluidos en la póliza los empleados domésticos que manejan autos de la familia?",
+      "¿Mis autos de colección tienen valor acordado actualizado y cumplo las condiciones de uso y guardado?"
+    ],
+    "faq": [
+      {"q": "¿Cuál es el seguro de auto mínimo en Florida?", "a": "Florida exige $10,000 de protección contra lesiones personales (PIP) y $10,000 de responsabilidad por daños a la propiedad para todo vehículo de cuatro ruedas o más registrado en el estado. La ley no exige responsabilidad por lesiones corporales para autos particulares, por lo que el mínimo legal no protege el patrimonio de la familia si usted causa lesiones a otras personas."},
+      {"q": "¿Qué es la cobertura UM en Florida y se puede rechazar?", "a": "La cobertura UM paga sus lesiones cuando el conductor culpable no tiene seguro o su límite no alcanza. En Florida, las pólizas con responsabilidad por lesiones deben incluirla con límites iguales a los de BI, salvo que un asegurado nombrado la rechace o elija límites menores por escrito en un formulario aprobado. Esa firma aplica a todos los asegurados de la póliza."},
+      {"q": "¿Soy responsable si presto mi auto en Florida?", "a": "Puede serlo. Por la doctrina del instrumento peligroso, el dueño puede responder por la negligencia de quien maneja su auto. Para el dueño persona natural, la ley fija topes de $100,000 por persona, $300,000 por incidente y $50,000 por daños a la propiedad, con hasta $500,000 adicionales en daños económicos si el conductor no tiene seguro suficiente."}
+    ]
+  },
+  "en": {
+    "title": "Florida Auto Insurance for High-Net-Worth Families",
+    "meta": "Florida auto insurance explained: legal minimums, bodily injury liability, uninsured motorist coverage, teen drivers, owner liability and collector cars.",
+    "kicker": "Guide · Auto",
+    "h1": "Florida auto insurance: what the law requires and what your assets need you to review",
+    "dek": "Florida's minimums do little for a family with significant assets; understanding UM coverage, owner liability and household drivers helps reveal the gaps.",
+    "summary": [
+      "Florida requires $10,000 of PIP and $10,000 of property damage liability, but no bodily injury (BI) liability for private passenger cars.",
+      "Without BI, injuries you cause to others can reach your assets, and most umbrellas require a minimum auto liability limit.",
+      "Uninsured motorist (UM) coverage protects your family against drivers with no or too little insurance; in Florida it can only be rejected or reduced in writing, and the non-stacking option requires written acceptance.",
+      "Whoever signs a minor's license application is jointly and severally liable for the minor's negligent driving, and a vehicle owner can be liable for whoever drives it.",
+      "Collector cars, household employees behind the wheel and rideshare use each have their own rules worth reviewing."
+    ],
+    "sections": [
+      {
+        "id": "florida-minimums",
+        "h2": "Florida auto insurance: what the law requires",
+        "blocks": [
+          {"p": "Florida auto insurance works differently from most states. Every vehicle with at least four wheels registered in Florida must carry, at registration, a minimum of $10,000 in personal injury protection (PIP) and $10,000 in property damage liability (PDL) [1]. For private passenger cars, the law does not require bodily injury liability (BI), the coverage that pays for injury or death to others [1]."},
+          {"p": "For comparison, vehicles registered as taxis must carry bodily injury liability of $125,000 per person and $250,000 per occurrence [1]. The distance between those numbers and a family car's minimum shows how much real protection depends on each household's choices."},
+          {"table": {"head": ["Coverage", "What it pays", "Required for private cars?"], "rows": [
+            ["PIP", "Certain costs of your own injuries regardless of fault, up to the limit", "Yes, $10,000 minimum"],
+            ["Property damage liability (PDL)", "Damage you cause to other people's property", "Yes, $10,000 minimum"],
+            ["Bodily injury liability (BI)", "Injury or death you cause to others", "No, but key to protecting assets"],
+            ["Uninsured motorist (UM)", "Your injuries caused by a driver without enough insurance", "No, but included with BI unless rejected in writing"]
+          ]}}
+        ]
+      },
+      {
+        "id": "bodily-injury",
+        "h2": "Why bodily injury liability matters even though it is not required",
+        "blocks": [
+          {"p": "If a family member causes a crash with serious injuries and there is no BI coverage, the claim goes to the responsible person and, with them, to their assets. Besides paying up to the limit, an auto policy with BI typically includes the insured's legal defense, which in a lawsuit can cost as much as the award itself."},
+          {"p": "BI is also the foundation for other protections. Most umbrella policies require a minimum auto liability limit; the III notes that many insurers want at least $250,000 before selling a $1 million umbrella [9]. And in Florida, the UM coverage rules do not apply to policies without primary liability coverage [3], so a PIP and PDL only policy leaves the family without that protection. Florida's financial responsibility law can also require proof of BI coverage after certain crashes or convictions."},
+          {"callout": "For a family with significant assets, Florida's legal minimum answers a different question than yours: the law wants some insurance to exist; you want a crash not to reach your balance sheet."}
+        ]
+      },
+      {
+        "id": "um-coverage",
+        "h2": "Uninsured motorist coverage in Florida",
+        "blocks": [
+          {"p": "About 1 in 5 Florida drivers (20.6%) was uninsured in 2023, the seventh highest rate in the country according to Insurance Research Council data [2]. Uninsured motorist coverage pays for injuries to you and your family when the at-fault driver has no insurance or too little. Because BI is not required in Florida, many insured drivers also lack limits that could respond to serious injuries."},
+          {"p": "Section 627.727 requires every auto policy with BI to include UM coverage at limits no lower than the BI limits, unless a named insured rejects it or selects lower limits in writing on a regulator-approved form [3]. If the named insured signs that form, the law conclusively presumes an informed rejection on behalf of all insureds under the policy [3]."},
+          {"p": "The law also lets insurers offer a non-stacking version: with it, the UM limits on two or more vehicles are not added together for one injured person. It requires informed written acceptance, must cut the UM premium by at least 20 percent, and the election carries over at renewal until the named insured asks to remove it and pays the corresponding premium [3]. For example, in a hypothetical family with three cars and $250,000 of UM on each, stacked coverage could allow limits to be combined, while non-stacked coverage typically caps the claim at a single vehicle's limit."}
+        ]
+      },
+      {
+        "id": "teen-drivers",
+        "h2": "Teen drivers and signing the license application (322.09)",
+        "blocks": [
+          {"p": "In Florida, the person who signs the permit or license application of a minor under 18 takes on direct liability: the minor's negligence or willful misconduct behind the wheel is imputed to that person, who is jointly and severally liable with the minor for the resulting damages (section 322.09) [4]. That liability exists even if the car is not titled to the person who signed."},
+          {"p": "Owner liability, explained in the next section, comes on top of that. In practice, a new teen driver is one of the moments when it most pays to review BI, UM and umbrella limits together."},
+          {"ul": [
+            "Add the teen driver to the policy and confirm which vehicles they drive.",
+            "Check whether the car they use meets your umbrella's underlying limit.",
+            "Tell your umbrella insurer about the new driver if the contract requires it.",
+            "Ask your attorney how the vehicle should be titled."
+          ]}
+        ]
+      },
+      {
+        "id": "owner-liability",
+        "h2": "The owner is liable: Florida's dangerous instrumentality doctrine",
+        "blocks": [
+          {"p": "Florida courts apply the dangerous instrumentality doctrine: an owner who entrusts a vehicle to someone else can be liable for the driver's negligence, even if the owner was not there. The law caps that liability in certain cases. Under section 324.021(9)(b)3, an owner who is a natural person and lends a vehicle to a permissive user is liable only up to $100,000 per person and $300,000 per incident for bodily injury, and up to $50,000 for property damage [5]."},
+          {"p": "There is an important wrinkle: if the permissive user is uninsured or has less than $500,000 of combined limits, the owner can be liable for up to an additional $500,000 in economic damages, reduced by amounts recovered from the driver or the driver's insurance [5]. The cap also does not limit the owner's liability for the owner's own negligence, for example lending the car to someone the owner knew should not drive [5]."},
+          {"table": {"head": ["Situation (owner is a natural person)", "Bodily injury cap", "Property damage cap"], "rows": [
+            ["Lends the car to a permissive user", "$100,000 per person / $300,000 per incident", "$50,000"],
+            ["User is uninsured or has under $500,000 combined", "Up to $500,000 more in economic damages", "Included in the same additional amount"],
+            ["Owner's own negligence", "Not subject to this cap", "Not subject to this cap"]
+          ]}},
+          {"p": "That paragraph addresses owners who are natural persons. If a vehicle is titled to a company or a trust, the analysis can differ and is worth reviewing with your attorney."}
+        ]
+      },
+      {
+        "id": "employees-rideshare",
+        "h2": "Household employees behind the wheel and rideshare use",
+        "blocks": [
+          {"p": "When a driver, nanny or assistant drives the family's cars, specific questions come up: whether that person is listed as a driver, whether the policy covers regular use of the vehicle, and whether their own limits matter when they use their own car for family errands. If they drive as part of the job, employer liability rules may also apply. In Florida, domestic servants in private homes are excluded from the definition of employment under the workers' compensation law (section 440.02), although an employer may voluntarily elect that coverage (section 440.04) [8][10]."},
+          {"p": "Rideshare and delivery use is another common gap. Section 627.748 lets the insurer of a personal auto policy exclude all coverage, including liability, UM, PIP, collision and comprehensive, while the driver is logged on to the platform or providing a prearranged ride [7]. The law requires platform or driver coverage of $50,000 per person, $100,000 per incident and $25,000 for property damage while logged on without a passenger, and $1 million during a prearranged ride [7]."},
+          {"callout": "If a college-age child uses a family car to make deliveries or give app-based rides, review both the personal auto policy and the umbrella: either may exclude that use."}
+        ]
+      },
+      {
+        "id": "collector-cars",
+        "h2": "Collector car insurance and agreed value",
+        "blocks": [
+          {"p": "A standard auto policy usually pays actual cash value, which subtracts depreciation. Collector car insurance and classic car policies typically use agreed value instead: the III explains that the car is covered up to that value without depreciation, and that the value should be updated if the car appreciates [6]."},
+          {"p": "In exchange, these policies usually set conditions: the car cannot be used for commuting or errands, there may be mileage limits, it must be stored in a locked, enclosed private structure, and the insurer may require you to own another everyday vehicle and have a clean driving record [6]. In Florida, it is also worth asking how the policy responds if a hurricane or flood affects the garage where the collection is stored."},
+          {"p": "As a next step, gather your auto and umbrella policies and your vehicle titles, and review the questions below with your licensed agent and your attorney."}
+        ]
+      }
+    ],
+    "questions": [
+      "What BI limits does each household vehicle carry, and do they meet my umbrella's minimum?",
+      "Do I have UM coverage equal to my BI, or did I sign a rejection or a selection of lower limits?",
+      "Is my UM coverage stacked or non-stacked, and what does that mean for my family?",
+      "Who signed each minor driver's license application, and is that driver listed on the policy?",
+      "Whose name are the vehicles titled in, and how does that affect owner liability?",
+      "Are household employees who drive family cars listed on the policy?",
+      "Do my collector cars have an up-to-date agreed value, and do I meet the use and storage conditions?"
+    ],
+    "faq": [
+      {"q": "What is the minimum auto insurance required in Florida?", "a": "Florida requires $10,000 of personal injury protection (PIP) and $10,000 of property damage liability for every vehicle with at least four wheels registered in the state. The law does not require bodily injury liability for private passenger cars, so the legal minimum does not protect a family's assets if you injure other people."},
+      {"q": "What is uninsured motorist coverage in Florida, and can I reject it?", "a": "Uninsured motorist coverage pays for your injuries when the at-fault driver has no insurance or too little. In Florida, policies with bodily injury liability must include it at limits equal to BI unless a named insured rejects it or selects lower limits in writing on an approved form. That signature applies to everyone insured under the policy."},
+      {"q": "Am I liable if I lend my car to someone in Florida?", "a": "You can be. Under the dangerous instrumentality doctrine, an owner can be liable for the negligence of whoever drives the car. For an owner who is a natural person, the law sets caps of $100,000 per person, $300,000 per incident and $50,000 for property damage, plus up to $500,000 more in economic damages if the driver is underinsured."}
+    ]
+  },
+  "sources": [
+    {"n": 1, "label": "Florida Department of Highway Safety and Motor Vehicles (FLHSMV), Florida Insurance Requirements", "url": "https://www.flhsmv.gov/insurance/"},
+    {"n": 2, "label": "Insurance Information Institute (Triple-I), Facts + Statistics: Uninsured motorists (Insurance Research Council data, 2023)", "url": "https://www.iii.org/fact-statistic/facts-statistics-uninsured-motorists"},
+    {"n": 3, "label": "Florida Statutes, section 627.727 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/627.727"},
+    {"n": 4, "label": "Florida Statutes, section 322.09 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/322.09"},
+    {"n": 5, "label": "Florida Statutes, section 324.021 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/324.021"},
+    {"n": 6, "label": "Insurance Information Institute (Triple-I), Insuring your classic car", "url": "https://www.iii.org/article/insuring-your-classic-car"},
+    {"n": 7, "label": "Florida Statutes, section 627.748 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/627.748"},
+    {"n": 8, "label": "Florida Statutes, section 440.02 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/440.02"},
+    {"n": 9, "label": "Insurance Information Institute (Triple-I), Should I purchase an umbrella liability policy?", "url": "https://www.iii.org/article/should-i-purchase-an-umbrella-liability-policy"},
+    {"n": 10, "label": "Florida Statutes, section 440.04 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/440.04"}
+  ]
+}

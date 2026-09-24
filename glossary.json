@@ -1,0 +1,635 @@
+{
+ "updated": "2026-09-24",
+ "terms": [
+  {
+   "id": "deducible",
+   "es": "Deducible",
+   "en": "Deductible",
+   "cat": "general",
+   "def_es": "Parte de una pérdida cubierta que usted paga antes de que la aseguradora pague el resto. Puede ser una cantidad fija en dólares o un porcentaje del límite asegurado. Un deducible más alto suele reducir la prima, pero aumenta lo que usted asume en cada reclamo.",
+   "def_en": "The portion of a covered loss you pay before the insurer pays the rest. It can be a fixed dollar amount or a percentage of the insured limit. A higher deductible typically lowers the premium but increases what you absorb on each claim.",
+   "guide": null
+  },
+  {
+   "id": "franquicia",
+   "es": "Franquicia (y su diferencia con el deducible)",
+   "en": "Franchise (vs. deductible)",
+   "cat": "general",
+   "def_es": "En muchos países de habla hispana, franquicia se usa como sinónimo de deducible. En sentido técnico, una franquicia es un umbral: si la pérdida lo supera, la aseguradora paga la pérdida completa. Las pólizas personales en Estados Unidos generalmente usan deducibles, no franquicias, por lo que la palabra puede causar confusión.",
+   "def_en": "In many Spanish-speaking countries, franquicia simply means deductible. Technically, a franchise is a threshold: once a loss exceeds it, the insurer pays the entire loss. U.S. personal policies generally use deductibles, not franchises, so the Spanish word can cause confusion.",
+   "guide": null
+  },
+  {
+   "id": "prima",
+   "es": "Prima",
+   "en": "Premium",
+   "cat": "general",
+   "def_es": "El precio que se paga por una póliza durante su período de vigencia. Depende de factores como el valor asegurado, la ubicación, la construcción, el historial de reclamos, los deducibles elegidos y los descuentos disponibles, como los de mitigación de viento en Florida.",
+   "def_en": "The price paid for a policy for its policy period. It depends on factors such as the insured value, location, construction, claims history, chosen deductibles and available credits, such as wind mitigation discounts in Florida.",
+   "guide": null
+  },
+  {
+   "id": "declaraciones",
+   "es": "Página de declaraciones",
+   "en": "Declarations page",
+   "cat": "general",
+   "def_es": "El resumen al inicio de la póliza que indica quién está asegurado, qué propiedad se cubre, el período de vigencia, los límites, los deducibles y los endosos. Es el primer documento que conviene revisar cada año y guardar en un lugar accesible.",
+   "def_en": "The summary at the front of a policy showing who is insured, what property is covered, the policy period, limits, deductibles and endorsements. It is the first document worth reviewing every year and keeping somewhere easy to find.",
+   "guide": null
+  },
+  {
+   "id": "limite-de-cobertura",
+   "es": "Límite de cobertura",
+   "en": "Coverage limit",
+   "cat": "general",
+   "def_es": "La cantidad máxima que la aseguradora pagará por una pérdida cubierta. Puede aplicarse por ocurrencia, por persona o como total anual (agregado). Si una pérdida supera el límite, la diferencia normalmente queda a cargo del asegurado.",
+   "def_en": "The maximum amount the insurer will pay for a covered loss. It can apply per occurrence, per person or as an annual total (aggregate). If a loss exceeds the limit, the difference is normally the policyholder's responsibility.",
+   "guide": null
+  },
+  {
+   "id": "sublimite",
+   "es": "Sublímite",
+   "en": "Sublimit",
+   "cat": "general",
+   "def_es": "Un límite menor dentro de la póliza para cierto tipo de bien o causa de pérdida. Por ejemplo, el límite por robo de joyas en una póliza de hogar estándar suele ser de unos $1,500 (generalmente entre $1,000 y $2,000), según el Insurance Information Institute.",
+   "def_en": "A smaller limit inside a policy for a certain type of property or cause of loss. For example, the jewelry theft limit on a standard homeowners policy is often about $1,500 (generally $1,000 to $2,000), according to the Insurance Information Institute.",
+   "guide": "col"
+  },
+  {
+   "id": "endoso",
+   "es": "Endoso",
+   "en": "Endorsement",
+   "cat": "general",
+   "def_es": "Un documento que modifica la póliza original: agrega, amplía, limita o elimina coberturas. Los endosos forman parte del contrato y aparecen listados en la página de declaraciones. Leerlos es esencial, porque pueden cambiar de forma importante lo que la póliza base dice.",
+   "def_en": "A document that changes the base policy by adding, broadening, limiting or removing coverage. Endorsements are part of the contract and are listed on the declarations page. Reading them matters because they can significantly change what the base policy says.",
+   "guide": null
+  },
+  {
+   "id": "exclusion",
+   "es": "Exclusión",
+   "en": "Exclusion",
+   "cat": "general",
+   "def_es": "Una cláusula que elimina la cobertura para ciertas causas, bienes o situaciones. Por ejemplo, las pólizas de hogar estándar excluyen la inundación, incluida la marejada ciclónica. Algunas exclusiones pueden cubrirse con un endoso o una póliza separada.",
+   "def_en": "A clause that removes coverage for certain causes, property or situations. For example, standard homeowners policies exclude flood, including storm surge. Some exclusions can be addressed with an endorsement or a separate policy.",
+   "guide": null
+  },
+  {
+   "id": "reclamo",
+   "es": "Reclamo",
+   "en": "Claim",
+   "cat": "general",
+   "def_es": "La solicitud formal de pago a la aseguradora después de una pérdida. En Florida, la ley exige notificar un reclamo de propiedad dentro de un año desde la fecha de la pérdida (18 meses para un reclamo suplementario), aunque la póliza suele pedir aviso inmediato.",
+   "def_en": "A formal request for payment made to the insurer after a loss. In Florida, the law requires notice of a property claim within one year of the date of loss (18 months for a supplemental claim), although policies typically ask for prompt notice.",
+   "guide": null
+  },
+  {
+   "id": "ajustador",
+   "es": "Ajustador",
+   "en": "Adjuster",
+   "cat": "general",
+   "def_es": "La persona que investiga un reclamo, inspecciona el daño y estima el pago en nombre de la aseguradora. Puede ser empleado de la aseguradora o un ajustador independiente contratado por ella. Su función es evaluar el reclamo según los términos de la póliza.",
+   "def_en": "The person who investigates a claim, inspects the damage and estimates the payment on behalf of the insurer. They may be an insurer employee or an independent adjuster hired by the insurer. Their role is to evaluate the claim under the policy terms.",
+   "guide": null
+  },
+  {
+   "id": "ajustador-publico",
+   "es": "Ajustador público",
+   "en": "Public adjuster",
+   "cat": "general",
+   "def_es": "Un profesional con licencia del Departamento de Servicios Financieros de Florida (DFS) que representa al asegurado, no a la aseguradora, y cobra un porcentaje del pago. La ley de Florida limita sus honorarios: por ejemplo, 10% en reclamos por un evento con declaración de emergencia presentados durante el año siguiente a esa declaración, y 20% en general.",
+   "def_en": "A professional licensed by the Florida Department of Financial Services (DFS) who represents the policyholder, not the insurer, and is paid a percentage of the claim payment. Florida law caps fees: for example, 10% on claims from a declared-emergency event made during the year after the declaration, and 20% in general.",
+   "guide": null
+  },
+  {
+   "id": "tasacion",
+   "es": "Tasación (cláusula de tasación)",
+   "en": "Appraisal clause",
+   "cat": "general",
+   "def_es": "Un procedimiento de la póliza para resolver desacuerdos sobre el monto de una pérdida. Cada parte elige un tasador y ambos seleccionan un árbitro (umpire); la decisión de dos de los tres suele ser vinculante sobre el monto, pero normalmente no sobre si existe cobertura.",
+   "def_en": "A policy procedure for resolving disagreements about the amount of a loss. Each side picks an appraiser and the two select an umpire; a decision by any two is typically binding on the amount, but usually not on whether coverage exists.",
+   "guide": null
+  },
+  {
+   "id": "subrogacion",
+   "es": "Subrogación",
+   "en": "Subrogation",
+   "cat": "general",
+   "def_es": "El derecho de la aseguradora, después de pagarle a usted, de reclamar ese dinero al tercero que causó la pérdida. Algunos contratos incluyen una renuncia a la subrogación, y firmarla sin avisar a la aseguradora puede afectar la cobertura.",
+   "def_en": "The insurer's right, after paying you, to recover that money from the third party who caused the loss. Some contracts include a waiver of subrogation, and signing one without telling your insurer can affect coverage.",
+   "guide": null
+  },
+  {
+   "id": "reaseguro",
+   "es": "Reaseguro",
+   "en": "Reinsurance",
+   "cat": "general",
+   "def_es": "El seguro que compran las propias aseguradoras para transferir parte de su riesgo, sobre todo el de catástrofes como huracanes. Su costo y disponibilidad influyen en la capacidad de las aseguradoras de Florida para suscribir pólizas y en las primas que cobran.",
+   "def_en": "Insurance that insurers themselves buy to transfer part of their risk, especially catastrophe risk such as hurricanes. Its cost and availability influence how much business Florida insurers can write and the premiums they charge.",
+   "guide": null
+  },
+  {
+   "id": "asegurado-nombrado",
+   "es": "Asegurado nombrado",
+   "en": "Named insured",
+   "cat": "general",
+   "def_es": "La persona o entidad que aparece por nombre en la página de declaraciones. Generalmente tiene la mayor cantidad de derechos y obligaciones bajo la póliza. Si una propiedad pertenece a una LLC o a un fideicomiso, conviene confirmar que el titular correcto esté nombrado.",
+   "def_en": "The person or entity listed by name on the declarations page. They generally hold the most rights and duties under the policy. If a property is owned by an LLC or a trust, it is worth confirming that the correct owner is named.",
+   "guide": null
+  },
+  {
+   "id": "asegurado-adicional",
+   "es": "Asegurado adicional",
+   "en": "Additional insured",
+   "cat": "general",
+   "def_es": "Una persona o entidad agregada a la póliza, normalmente por endoso, para que tenga cierta protección. Ejemplos comunes: un fideicomiso o LLC relacionada con la familia, o una marina que lo exige en su contrato. Su cobertura suele ser más limitada que la del asegurado nombrado.",
+   "def_en": "A person or entity added to a policy, usually by endorsement, so it receives certain protection. Common examples are a family trust or LLC, or a marina that requires it in its contract. Their coverage is usually narrower than the named insured's.",
+   "guide": null
+  },
+  {
+   "id": "citizens",
+   "es": "Citizens Property Insurance Corporation",
+   "en": "Citizens Property Insurance Corporation",
+   "cat": "general",
+   "def_es": "Entidad gubernamental de Florida, sin fines de lucro y exenta de impuestos, creada por la Legislatura en 2002. Ofrece seguro de propiedad a propietarios elegibles que no encuentran cobertura en el mercado privado y se describe como la aseguradora de último recurso del estado.",
+   "def_en": "A not-for-profit, tax-exempt Florida government entity created by the Legislature in 2002. It provides property insurance to eligible owners who cannot find coverage in the private market and describes itself as the state's insurer of last resort.",
+   "guide": "res"
+  },
+  {
+   "id": "deber-de-mitigar",
+   "es": "Deber de mitigar daños",
+   "en": "Duty to mitigate",
+   "cat": "general",
+   "def_es": "La obligación, presente en muchas pólizas, de tomar medidas razonables después de una pérdida para evitar más daño, como colocar lonas en un techo o extraer agua. Guarde recibos y fotos: esos costos suelen formar parte del reclamo si la pérdida está cubierta.",
+   "def_en": "The obligation, found in many policies, to take reasonable steps after a loss to prevent further damage, such as tarping a roof or extracting water. Keep receipts and photos: those costs are often part of the claim if the loss is covered.",
+   "guide": "res"
+  },
+  {
+   "id": "costo-de-reemplazo",
+   "es": "Costo de reemplazo",
+   "en": "Replacement cost",
+   "cat": "hogar",
+   "def_es": "Una forma de pago que cubre reparar o reemplazar un bien con materiales de clase y calidad similares, sin descontar depreciación. Muchas pólizas pagan primero el valor real en efectivo y el resto cuando usted completa la reparación o el reemplazo.",
+   "def_en": "A settlement method that pays to repair or replace property with materials of like kind and quality, without deducting depreciation. Many policies first pay actual cash value and pay the rest once you complete the repair or replacement.",
+   "guide": "res"
+  },
+  {
+   "id": "costo-de-reemplazo-extendido",
+   "es": "Costo de reemplazo extendido o garantizado",
+   "en": "Extended or guaranteed replacement cost",
+   "cat": "hogar",
+   "def_es": "El costo extendido agrega un margen por encima del límite de la vivienda, de 20 por ciento o más según la aseguradora (III). El costo garantizado, menos común, paga la reconstrucción aunque supere el límite. Ambos protegen contra alzas inesperadas de costos después de una catástrofe.",
+   "def_en": "Extended replacement cost adds a cushion above the dwelling limit, 20 percent or more depending on the insurer (III). Guaranteed replacement cost, less common, pays to rebuild even above the limit. Both help protect against unexpected cost spikes after a catastrophe.",
+   "guide": "res"
+  },
+  {
+   "id": "valor-real-en-efectivo",
+   "es": "Valor real en efectivo (ACV)",
+   "en": "Actual cash value (ACV)",
+   "cat": "hogar",
+   "def_es": "El costo de reemplazo de un bien menos su depreciación por edad y desgaste. Un techo de muchos años o muebles antiguos pueden valer mucho menos en ACV que lo que cuesta reemplazarlos, lo que deja una diferencia a cargo del asegurado.",
+   "def_en": "The replacement cost of an item minus depreciation for age and wear. An older roof or older furniture can be worth much less on an ACV basis than it costs to replace, leaving a gap for the policyholder to cover.",
+   "guide": "res"
+  },
+  {
+   "id": "ordenanza-o-ley",
+   "es": "Cobertura de ordenanza o ley",
+   "en": "Ordinance or law coverage",
+   "cat": "hogar",
+   "def_es": "Paga el costo adicional de reconstruir según los códigos de construcción vigentes. En Florida, las aseguradoras deben ofrecerla al 25% o al 50% del límite de la vivienda, y la póliza incluye el 25% salvo que el asegurado la rechace por escrito.",
+   "def_en": "Pays the extra cost of rebuilding to current building codes. In Florida, insurers must offer it at 25% or 50% of the dwelling limit, and the policy includes the 25% option unless the policyholder rejects it in writing.",
+   "guide": "res"
+  },
+  {
+   "id": "deducible-por-huracan",
+   "es": "Deducible por huracán",
+   "en": "Hurricane deductible",
+   "cat": "hogar",
+   "def_es": "Un deducible separado para daños por huracán, normalmente un porcentaje del límite de la vivienda (Cobertura A). En Florida deben ofrecerse opciones de $500, 2%, 5% y 10%, con variaciones para casas de mayor valor, y se aplica una vez por año calendario.",
+   "def_en": "A separate deductible for hurricane damage, usually a percentage of the dwelling (Coverage A) limit. In Florida, insurers must offer $500, 2%, 5% and 10% options, with variations for higher-value homes, and it applies once per calendar year.",
+   "guide": "res"
+  },
+  {
+   "id": "cobertura-a",
+   "es": "Cobertura A (vivienda)",
+   "en": "Coverage A (dwelling)",
+   "cat": "hogar",
+   "def_es": "La parte de la póliza de hogar que cubre la estructura de la casa y lo que está unido a ella. Su límite debería reflejar el costo de reconstrucción, no el precio de mercado, y sirve de base para calcular el deducible por huracán en porcentaje.",
+   "def_en": "The part of a homeowners policy covering the house structure and what is attached to it. Its limit should reflect rebuilding cost, not market price, and it is the base used to calculate a percentage hurricane deductible.",
+   "guide": "res"
+  },
+  {
+   "id": "bienes-personales",
+   "es": "Bienes personales (Cobertura C)",
+   "en": "Personal property (Coverage C)",
+   "cat": "hogar",
+   "def_es": "Cubre el contenido de la casa: muebles, ropa, electrónicos y otros bienes. Suele incluir sublímites para joyas, arte, plata o dinero en efectivo, y puede pagar a valor real en efectivo o costo de reemplazo según la póliza.",
+   "def_en": "Covers the contents of the home: furniture, clothing, electronics and other belongings. It often includes sublimits for jewelry, art, silver or cash, and may pay on an actual cash value or replacement cost basis depending on the policy.",
+   "guide": "res"
+  },
+  {
+   "id": "perdida-de-uso",
+   "es": "Pérdida de uso (gastos adicionales de vivienda)",
+   "en": "Loss of use (additional living expenses)",
+   "cat": "hogar",
+   "def_es": "Paga gastos adicionales razonables, como hotel o alquiler temporal, cuando una pérdida cubierta impide vivir en la casa. Suele tener un límite en dólares o en tiempo. Después de un huracán, las reparaciones pueden tardar meses, así que conviene revisarlo.",
+   "def_en": "Pays reasonable extra costs, such as a hotel or temporary rental, when a covered loss makes the home unlivable. It usually has a dollar or time limit. After a hurricane, repairs can take months, so this limit is worth reviewing.",
+   "guide": "res"
+  },
+  {
+   "id": "mitigacion-de-viento",
+   "es": "Inspección de mitigación de viento",
+   "en": "Wind mitigation inspection",
+   "cat": "hogar",
+   "def_es": "Una inspección que documenta características resistentes al viento, como la sujeción del techo, las conexiones techo-pared y la protección de aberturas. La ley de Florida exige que las tarifas reconozcan estas medidas con descuentos o créditos. El formulario oficial (OIR-B1-1802) es válido hasta cinco años si no hay cambios materiales.",
+   "def_en": "An inspection documenting wind-resistant features, such as roof deck attachment, roof-to-wall connections and opening protection. Florida law requires rates to reflect these features through discounts or credits. The official form (OIR-B1-1802) is valid up to five years if no material changes are made.",
+   "guide": "res"
+  },
+  {
+   "id": "cuatro-puntos",
+   "es": "Inspección de cuatro puntos",
+   "en": "Four-point inspection",
+   "cat": "hogar",
+   "def_es": "Una inspección que revisa cuatro sistemas de la casa: techo, electricidad, plomería y aire acondicionado o calefacción. En Florida, muchas aseguradoras suelen pedirla para viviendas de mayor antigüedad antes de emitir o renovar una póliza.",
+   "def_en": "An inspection reviewing four home systems: roof, electrical, plumbing, and heating and air conditioning. In Florida, many insurers typically request it for older homes before issuing or renewing a policy.",
+   "guide": "res"
+  },
+  {
+   "id": "colapso-catastrofico",
+   "es": "Colapso catastrófico del suelo",
+   "en": "Catastrophic ground cover collapse",
+   "cat": "hogar",
+   "def_es": "Cobertura obligatoria en Florida para un hundimiento abrupto del suelo con depresión visible, daño estructural y orden gubernamental de desalojo. El simple asentamiento o grietas no califican. La cobertura más amplia por sumidero (sinkhole) debe ofrecerse, pero es opcional y con prima adicional.",
+   "def_en": "Required coverage in Florida for an abrupt ground collapse with a visible depression, structural damage and a government order to vacate. Mere settling or cracking does not qualify. Broader sinkhole coverage must be offered but is optional, for an additional premium.",
+   "guide": "res"
+  },
+  {
+   "id": "infraseguro",
+   "es": "Infraseguro",
+   "en": "Underinsurance",
+   "cat": "hogar",
+   "def_es": "Cuando el límite asegurado es menor que el costo real de reconstruir o reemplazar. Cotality (antes CoreLogic) estimó que cerca del 64% de las viviendas en Estados Unidos están infraseguradas, y los costos de reconstrucción subieron 25.9% entre marzo de 2020 y mayo de 2023.",
+   "def_en": "When the insured limit is lower than the real cost to rebuild or replace. Cotality (formerly CoreLogic) estimated about 64% of U.S. homes are underinsured, and residential reconstruction costs rose 25.9% from March 2020 to May 2023.",
+   "guide": "res"
+  },
+  {
+   "id": "nfip",
+   "es": "NFIP (Programa Nacional de Seguro contra Inundaciones)",
+   "en": "NFIP (National Flood Insurance Program)",
+   "cat": "inundacion",
+   "def_es": "El programa federal administrado por FEMA que ofrece seguro contra inundaciones. Para viviendas residenciales, cubre hasta $250,000 en el edificio y hasta $100,000 en el contenido. Para casas de mayor valor, esos límites pueden quedar cortos.",
+   "def_en": "The federal program managed by FEMA that provides flood insurance. For residential homes, it covers up to $250,000 for the building and up to $100,000 for contents. For higher-value homes, those limits can fall short.",
+   "guide": "flo"
+  },
+  {
+   "id": "inundacion-en-exceso",
+   "es": "Póliza de inundación en exceso",
+   "en": "Excess flood policy",
+   "cat": "inundacion",
+   "def_es": "Una póliza privada que cubre por encima de los límites de una póliza primaria, a menudo del NFIP. Puede ayudar a cerrar la brecha en casas de alto valor. Sus condiciones, períodos de espera y coberturas varían según la aseguradora.",
+   "def_en": "A private policy that pays above the limits of a primary flood policy, often an NFIP policy. It can help close the gap on high-value homes. Its terms, waiting periods and coverages vary by insurer.",
+   "guide": "flo"
+  },
+  {
+   "id": "marejada-ciclonica",
+   "es": "Marejada ciclónica",
+   "en": "Storm surge",
+   "cat": "inundacion",
+   "def_es": "El aumento anormal del nivel del mar empujado hacia la costa por una tormenta. Para fines de seguro, se considera inundación: las pólizas de hogar estándar la excluyen, y se cubre con una póliza de inundación.",
+   "def_en": "The abnormal rise of seawater pushed ashore by a storm. For insurance purposes it counts as flood: standard homeowners policies exclude it, and it is covered under a flood policy.",
+   "guide": "flo"
+  },
+  {
+   "id": "periodo-de-espera",
+   "es": "Período de espera",
+   "en": "Waiting period",
+   "cat": "inundacion",
+   "def_es": "El tiempo entre la compra de una póliza y el inicio de la cobertura. Las pólizas del NFIP generalmente tienen 30 días, con excepciones, como la compra ligada a un préstamo hipotecario. En las pólizas privadas varía, a menudo alrededor de dos semanas.",
+   "def_en": "The time between buying a policy and the start of coverage. NFIP policies generally have a 30-day wait, with exceptions such as a purchase tied to a mortgage loan. Private flood waits vary, often about two weeks.",
+   "guide": "flo"
+  },
+  {
+   "id": "zona-de-inundacion",
+   "es": "Zona de inundación",
+   "en": "Flood zone",
+   "cat": "inundacion",
+   "def_es": "La clasificación de riesgo que asignan los mapas de FEMA. Las zonas de alto riesgo (que comienzan con A o V) forman el Área Especial de Riesgo de Inundación. Aun así, casi un tercio de los reclamos del NFIP entre 2014 y 2024 vino de fuera de esas zonas.",
+   "def_en": "The risk designation assigned on FEMA flood maps. High-risk zones (beginning with A or V) make up the Special Flood Hazard Area. Even so, almost one-third of NFIP claims from 2014 to 2024 came from outside those areas.",
+   "guide": "flo"
+  },
+  {
+   "id": "certificado-de-elevacion",
+   "es": "Certificado de elevación",
+   "en": "Elevation certificate",
+   "cat": "inundacion",
+   "def_es": "Un documento preparado por un agrimensor, ingeniero o arquitecto con licencia que registra la elevación del edificio y sus características en relación con el riesgo de inundación. Puede usarse para calcular la prima de inundación y para cumplir normas locales.",
+   "def_en": "A document prepared by a licensed surveyor, engineer or architect recording a building's elevation and features relative to flood risk. It can be used in pricing a flood policy and for complying with local floodplain rules.",
+   "guide": "flo"
+  },
+  {
+   "id": "icc",
+   "es": "Costo Mayor de Cumplimiento (ICC)",
+   "en": "Increased Cost of Compliance (ICC)",
+   "cat": "inundacion",
+   "def_es": "Una cobertura del NFIP que puede pagar hasta $30,000 para adaptar una vivienda a normas de inundación nuevas o actualizadas, como elevarla. Suele aplicar en zonas de alto riesgo cuando la propiedad se declara dañada sustancial o repetidamente por inundación.",
+   "def_en": "An NFIP coverage that can pay up to $30,000 to bring a home into compliance with new or updated floodplain standards, such as elevating it. It generally applies in high-risk areas when the property is declared substantially or repeatedly damaged by flood.",
+   "guide": "flo"
+  },
+  {
+   "id": "pip",
+   "es": "PIP (Protección contra Lesiones Personales)",
+   "en": "PIP (Personal Injury Protection)",
+   "cat": "autos",
+   "def_es": "Cobertura obligatoria en Florida con un mínimo de $10,000. Sin importar quién causó el accidente, paga el 80% de gastos médicos razonables y el 60% del ingreso perdido, más un beneficio por muerte de $5,000. Sin una condición médica de emergencia, lo médico se limita a $2,500.",
+   "def_en": "Required Florida coverage with a $10,000 minimum. Regardless of who caused the crash, it pays 80% of reasonable medical expenses and 60% of lost income, plus a $5,000 death benefit. Without an emergency medical condition, medical reimbursement is limited to $2,500.",
+   "guide": "aut"
+  },
+  {
+   "id": "pdl",
+   "es": "Daños a la propiedad (PDL)",
+   "en": "Property damage liability (PDL)",
+   "cat": "autos",
+   "def_es": "Paga los daños que su vehículo causa a la propiedad de otros, como otro auto, una cerca o un poste. Florida exige un mínimo de $10,000, una cifra que puede quedar corta frente al costo de reparar vehículos modernos.",
+   "def_en": "Pays for damage your vehicle causes to other people's property, such as another car, a fence or a pole. Florida requires a $10,000 minimum, an amount that can fall short of the cost to repair modern vehicles.",
+   "guide": "aut"
+  },
+  {
+   "id": "lesiones-corporales",
+   "es": "Responsabilidad por lesiones corporales (BI)",
+   "en": "Bodily injury liability (BI)",
+   "cat": "autos",
+   "def_es": "Paga las lesiones que usted causa a otras personas en un accidente y su defensa legal. Florida no la exige para autos particulares, pero sin ella el patrimonio del conductor y del dueño queda expuesto, y muchas pólizas umbrella la requieren como límite subyacente.",
+   "def_en": "Pays for injuries you cause to other people in a crash, plus your legal defense. Florida does not require it for private passenger cars, but without it the driver's and owner's assets are exposed, and many umbrella policies require it as an underlying limit.",
+   "guide": "aut"
+  },
+  {
+   "id": "um-uim",
+   "es": "Motorista sin seguro o con seguro insuficiente (UM/UIM)",
+   "en": "Uninsured/underinsured motorist (UM/UIM)",
+   "cat": "autos",
+   "def_es": "Paga sus lesiones cuando el conductor responsable no tiene seguro o no tiene suficiente. Cerca de 1 de cada 5 conductores en Florida no tenía seguro en 2023. La ley de Florida permite rechazarla por escrito o elegir una versión acumulada (stacked) o no acumulada.",
+   "def_en": "Pays for your injuries when the at-fault driver has no insurance or not enough. About 1 in 5 Florida drivers was uninsured in 2023. Florida law allows rejecting it in writing or choosing stacked or non-stacked versions.",
+   "guide": "aut"
+  },
+  {
+   "id": "sin-culpa",
+   "es": "Sistema sin culpa (no-fault)",
+   "en": "No-fault system",
+   "cat": "autos",
+   "def_es": "El sistema de Florida en el que su propio PIP paga los primeros gastos por lesiones sin importar quién causó el accidente. Demandar al conductor responsable por dolor y sufrimiento solo se permite si se cumple un umbral legal: lesión permanente, cicatriz o desfiguración significativa y permanente, pérdida significativa y permanente de una función corporal importante, o muerte.",
+   "def_en": "Florida's system in which your own PIP pays initial injury costs regardless of who caused the crash. Suing the at-fault driver for pain and suffering is allowed only when a legal threshold is met: permanent injury, significant and permanent scarring or disfigurement, significant and permanent loss of an important bodily function, or death.",
+   "guide": "aut"
+  },
+  {
+   "id": "instrumentalidad-peligrosa",
+   "es": "Doctrina de instrumentalidad peligrosa",
+   "en": "Dangerous instrumentality doctrine",
+   "cat": "autos",
+   "def_es": "Una doctrina legal de Florida por la cual el dueño de un vehículo puede ser responsable por la negligencia de cualquier persona que lo maneje con su permiso. Por eso, a quién se prestan los autos y a nombre de quién están importa mucho.",
+   "def_en": "A Florida legal doctrine under which a vehicle owner can be held liable for the negligence of anyone driving it with permission. That is why who borrows the cars, and whose name they are titled in, matters a great deal.",
+   "guide": "aut"
+  },
+  {
+   "id": "colision-integral",
+   "es": "Colisión y cobertura integral (comprensiva)",
+   "en": "Collision and comprehensive",
+   "cat": "autos",
+   "def_es": "Colisión paga el daño a su vehículo por un choque. La cobertura integral, llamada comprensiva en muchos mercados, cubre daños que no son choques, como robo, incendio, caída de árboles o inundación. Los daños de un huracán al auto suelen reclamarse aquí, no en la póliza de hogar.",
+   "def_en": "Collision pays for damage to your vehicle from a crash. Comprehensive covers non-crash damage, such as theft, fire, falling trees or flood. Hurricane damage to a car is typically claimed here, not under the homeowners policy.",
+   "guide": "aut"
+  },
+  {
+   "id": "casco-nautico",
+   "es": "Casco (embarcaciones)",
+   "en": "Hull (marine)",
+   "cat": "nautica",
+   "def_es": "La cobertura por daño físico a la embarcación, sus motores y su equipo. Puede pagar a valor acordado o a valor real en efectivo. Los daños por tormenta con nombre suelen tener un deducible especial y condiciones ligadas al plan de huracanes.",
+   "def_en": "Coverage for physical damage to the boat, its engines and equipment. It can pay on an agreed value or actual cash value basis. Named storm damage often carries a special deductible and conditions tied to the hurricane plan.",
+   "guide": "mar"
+  },
+  {
+   "id": "limites-de-navegacion",
+   "es": "Límites de navegación",
+   "en": "Navigation limits",
+   "cat": "nautica",
+   "def_es": "El área geográfica donde la póliza cubre la embarcación, por ejemplo aguas costeras de Florida y las Bahamas. Navegar fuera de esos límites sin un endoso puede dejar la embarcación sin cobertura. Algunas pólizas también fijan fechas para ciertas zonas en temporada de huracanes.",
+   "def_en": "The geographic area where the policy covers the boat, for example Florida coastal waters and the Bahamas. Operating outside those limits without an endorsement can leave the boat uncovered. Some policies also set dates for certain areas during hurricane season.",
+   "guide": "mar"
+  },
+  {
+   "id": "remocion-de-restos",
+   "es": "Remoción de restos",
+   "en": "Wreck removal",
+   "cat": "nautica",
+   "def_es": "Cubre el costo de retirar una embarcación hundida o destruida cuando la autoridad lo exige. Puede ser muy costoso después de una tormenta. Según la póliza, se paga dentro del límite de casco, dentro de la responsabilidad civil o como límite separado.",
+   "def_en": "Covers the cost of removing a sunken or wrecked boat when authorities require it. It can be very expensive after a storm. Depending on the policy, it is paid within the hull limit, within liability or as a separate limit.",
+   "guide": "mar"
+  },
+  {
+   "id": "proteccion-e-indemnizacion",
+   "es": "Protección e indemnización (P&I)",
+   "en": "Protection and indemnity (P&I)",
+   "cat": "nautica",
+   "def_es": "La cobertura de responsabilidad civil de una póliza marina. Responde por lesiones a otras personas, incluidos invitados a bordo, y por daños a otras embarcaciones, muelles o propiedad. Algunas pólizas cubren la contaminación o la tripulación por separado.",
+   "def_en": "The liability coverage in a marine policy. It responds to injuries to other people, including guests aboard, and damage to other boats, docks or property. Some policies cover pollution or crew separately.",
+   "guide": "mar"
+  },
+  {
+   "id": "plan-de-huracanes",
+   "es": "Plan de huracanes (embarcación)",
+   "en": "Hurricane plan (boat)",
+   "cat": "nautica",
+   "def_es": "Un plan escrito que muchas pólizas marinas exigen: dónde y cómo se asegura la embarcación ante una tormenta, quién la mueve y cuándo. Algunas pólizas comparten el costo de sacarla del agua. No seguir el plan puede afectar un reclamo.",
+   "def_en": "A written plan many marine policies require: where and how the boat is secured before a storm, who moves it and when. Some policies share the cost of hauling it out. Not following the plan can affect a claim.",
+   "guide": "mar"
+  },
+  {
+   "id": "casco-aereo",
+   "es": "Casco (aviación)",
+   "en": "Hull (aviation)",
+   "cat": "aviacion",
+   "def_es": "La cobertura por daño físico a la aeronave. Suele ofrecerse en distintas modalidades, por ejemplo solo en tierra sin movimiento, o también en rodaje y en vuelo. A menudo se asegura a valor acordado, que conviene actualizar según el mercado.",
+   "def_en": "Coverage for physical damage to the aircraft. It is often offered in different forms, for example only on the ground not in motion, or also while taxiing and in flight. It is often written on an agreed value basis, which is worth updating to the market.",
+   "guide": "avi"
+  },
+  {
+   "id": "garantia-de-piloto",
+   "es": "Garantía de piloto (cláusula de piloto)",
+   "en": "Pilot warranty (pilot clause)",
+   "cat": "aviacion",
+   "def_es": "La condición de la póliza que define quién puede volar la aeronave: certificados, habilitaciones, horas de vuelo y entrenamiento requeridos. Si vuela alguien que no cumple la cláusula, la cobertura puede no aplicar, incluso para un piloto contratado.",
+   "def_en": "The policy condition defining who may fly the aircraft: required certificates, ratings, flight hours and training. If someone who does not meet the clause is flying, coverage may not apply, even for a hired pilot.",
+   "guide": "avi"
+  },
+  {
+   "id": "sublimite-por-asiento",
+   "es": "Sublímite por asiento",
+   "en": "Per-seat sublimit",
+   "cat": "aviacion",
+   "def_es": "Un límite por pasajero dentro de la responsabilidad de aviación. Como ejemplo hipotético, una póliza de $1,000,000 con sublímite de $100,000 por asiento pagaría como máximo esa cifra por cada pasajero lesionado. Las pólizas sin sublímite por pasajero se conocen como de límite uniforme (smooth).",
+   "def_en": "A per-passenger limit inside aviation liability coverage. As a hypothetical example, a $1,000,000 policy with a $100,000 per-seat sublimit would pay at most that amount for each injured passenger. Policies without a per-passenger sublimit are known as smooth limit policies.",
+   "guide": "avi"
+  },
+  {
+   "id": "objetos-de-valor-programados",
+   "es": "Póliza de objetos de valor (programados)",
+   "en": "Scheduled valuables policy",
+   "cat": "colecciones",
+   "def_es": "Una póliza o endoso donde cada pieza (joya, obra de arte, reloj, instrumento) se lista con su descripción y valor, normalmente respaldado por un avalúo. Suele ofrecer condiciones más amplias que la póliza de hogar, como cobertura por pérdida o desaparición.",
+   "def_en": "A policy or endorsement in which each piece (jewelry, artwork, watch, instrument) is listed with a description and value, usually supported by an appraisal. It often offers broader terms than the homeowners policy, such as coverage for loss or disappearance.",
+   "guide": "col"
+  },
+  {
+   "id": "cobertura-global",
+   "es": "Cobertura global (blanket)",
+   "en": "Blanket coverage",
+   "cat": "colecciones",
+   "def_es": "Un límite único que cubre una categoría de bienes sin listar cada pieza, a menudo con un máximo por artículo. Es útil para colecciones con muchas piezas de valor moderado; las piezas de alto valor suelen programarse individualmente.",
+   "def_en": "A single limit covering a category of items without listing each piece, often with a per-item maximum. It is useful for collections with many moderately valued pieces; high-value pieces are usually scheduled individually.",
+   "guide": "col"
+  },
+  {
+   "id": "desaparicion-misteriosa",
+   "es": "Desaparición misteriosa",
+   "en": "Mysterious disappearance",
+   "cat": "colecciones",
+   "def_es": "La pérdida de un bien sin explicación conocida, como un anillo que simplemente no aparece. Las pólizas de hogar estándar suelen cubrir el robo, pero a menudo no la desaparición sin evidencia de robo. Muchas pólizas de objetos programados sí la incluyen.",
+   "def_en": "The loss of an item with no known explanation, such as a ring that simply cannot be found. Standard homeowners policies typically cover theft but often not a disappearance without evidence of theft. Many scheduled valuables policies do include it.",
+   "guide": "col"
+  },
+  {
+   "id": "avaluo",
+   "es": "Avalúo",
+   "en": "Appraisal (valuation of an item)",
+   "cat": "colecciones",
+   "def_es": "La valoración escrita de una pieza por un tasador calificado, con descripción, fotos y valor para fines de seguro. Las aseguradoras lo usan para fijar el valor programado. Como los precios cambian, conviene actualizarlo periódicamente. No debe confundirse con la cláusula de tasación.",
+   "def_en": "A written valuation of an item by a qualified appraiser, with a description, photos and a value for insurance purposes. Insurers use it to set the scheduled value. Because prices change, it is worth updating periodically. It differs from the appraisal clause.",
+   "guide": "col"
+  },
+  {
+   "id": "valor-acordado",
+   "es": "Valor acordado",
+   "en": "Agreed value",
+   "cat": "colecciones",
+   "def_es": "Un valor que la aseguradora y el asegurado fijan por adelantado. En una pérdida total cubierta, la póliza paga esa cantidad sin descontar depreciación. Es común en arte, joyas programadas, autos clásicos, embarcaciones y aeronaves.",
+   "def_en": "A value the insurer and policyholder set in advance. In a covered total loss, the policy pays that amount without deducting depreciation. It is common for art, scheduled jewelry, classic cars, boats and aircraft.",
+   "guide": "col"
+  },
+  {
+   "id": "par-y-conjunto",
+   "es": "Cláusula de par y conjunto",
+   "en": "Pair and set clause",
+   "cat": "colecciones",
+   "def_es": "Define cómo se paga cuando se pierde o daña una pieza de un par o conjunto, como un arete o una silla de un juego. Muchas pólizas pagan la pérdida de valor del conjunto; algunas permiten pagar el conjunto completo y quedarse con lo restante.",
+   "def_en": "Defines how a loss is paid when one piece of a pair or set is lost or damaged, such as one earring or one chair from a set. Many policies pay the loss in value of the set; some allow paying for the full set and taking the rest.",
+   "guide": "col"
+  },
+  {
+   "id": "rotura",
+   "es": "Cobertura por rotura",
+   "en": "Breakage coverage",
+   "cat": "colecciones",
+   "def_es": "Cubre el daño accidental a piezas frágiles, como cristal, cerámica, porcelana o esculturas. Muchas pólizas lo excluyen o lo limitan salvo que se agregue expresamente. Es especialmente relevante para arte que se mueve, se presta o se exhibe.",
+   "def_en": "Covers accidental damage to fragile pieces, such as glass, ceramics, porcelain or sculpture. Many policies exclude or limit it unless it is specifically added. It is especially relevant for art that is moved, loaned or exhibited.",
+   "guide": "col"
+  },
+  {
+   "id": "responsabilidad-civil",
+   "es": "Responsabilidad civil",
+   "en": "Liability",
+   "cat": "responsabilidad",
+   "def_es": "La obligación legal de pagar por lesiones o daños que usted causa a otros por negligencia. La cobertura de responsabilidad civil suele pagar la defensa legal y las indemnizaciones hasta el límite de la póliza. Está presente en las pólizas de hogar, auto y embarcación.",
+   "def_en": "The legal obligation to pay for injuries or damage you cause to others through negligence. Liability coverage typically pays legal defense and damages up to the policy limit. It is part of homeowners, auto and boat policies.",
+   "guide": "lia"
+  },
+  {
+   "id": "poliza-umbrella",
+   "es": "Póliza umbrella (sombrilla)",
+   "en": "Umbrella policy",
+   "cat": "responsabilidad",
+   "def_es": "Una póliza de responsabilidad civil adicional que paga por encima de los límites de hogar, auto y embarcación, y puede cubrir riesgos que esas pólizas no incluyen, como difamación. Exige límites subyacentes mínimos, y la mayoría excluye la responsabilidad de aviación.",
+   "def_en": "An additional liability policy that pays above homeowners, auto and boat limits, and can cover risks those policies leave out, such as libel or slander. It requires minimum underlying limits, and most exclude aviation liability.",
+   "guide": "lia"
+  },
+  {
+   "id": "limites-subyacentes",
+   "es": "Límites subyacentes",
+   "en": "Underlying limits",
+   "cat": "responsabilidad",
+   "def_es": "Los límites mínimos de responsabilidad que la aseguradora umbrella exige en las pólizas primarias de hogar, auto o embarcación. Si una póliza primaria tiene un límite menor, la diferencia normalmente queda a cargo del asegurado antes de que la umbrella responda.",
+   "def_en": "The minimum liability limits the umbrella insurer requires on primary home, auto or boat policies. If a primary policy carries a lower limit, the difference is normally the policyholder's responsibility before the umbrella responds.",
+   "guide": "lia"
+  },
+  {
+   "id": "responsabilidad-del-anfitrion",
+   "es": "Responsabilidad del anfitrión",
+   "en": "Host liability",
+   "cat": "responsabilidad",
+   "def_es": "La responsabilidad de quien recibe invitados. En Florida, servir alcohol a un adulto de edad legal generalmente no crea responsabilidad por lo que haga después, salvo si se sirve ilegalmente a un menor de 21 años o a sabiendas a una persona con adicción habitual al alcohol.",
+   "def_en": "The liability of someone who hosts guests. In Florida, serving alcohol to an adult of lawful drinking age generally creates no liability for what they do afterward, except when willfully and unlawfully serving someone under 21 or knowingly serving someone habitually addicted to alcohol.",
+   "guide": "lia"
+  },
+  {
+   "id": "encomienda-negligente",
+   "es": "Entrega negligente (encomienda negligente)",
+   "en": "Negligent entrustment",
+   "cat": "responsabilidad",
+   "def_es": "Un reclamo contra quien presta un auto, una embarcación u otro bien peligroso a alguien que sabía o debía saber que no era apto para usarlo, por ejemplo por inexperiencia o por haber consumido alcohol. Puede aplicar aunque el dueño no esté presente.",
+   "def_en": "A claim against someone who lends a car, boat or other dangerous item to a person they knew or should have known was unfit to use it, for example due to inexperience or drinking. It can apply even when the owner is not present.",
+   "guide": "lia"
+  },
+  {
+   "id": "d-and-o",
+   "es": "D&O (responsabilidad de directores y funcionarios)",
+   "en": "D&O (directors and officers liability)",
+   "cat": "responsabilidad",
+   "def_es": "Protege a miembros de juntas directivas y funcionarios frente a reclamos por decisiones de gestión. Es relevante para quienes sirven en fundaciones familiares, organizaciones sin fines de lucro o entidades de una oficina familiar. Muchas pólizas personales lo excluyen o lo limitan.",
+   "def_en": "Protects board members and officers against claims over management decisions. It is relevant for people who serve on family foundations, nonprofits or family office entities. Many personal policies exclude or limit it.",
+   "guide": "lia"
+  },
+  {
+   "id": "compensacion-laboral",
+   "es": "Compensación laboral (workers' comp)",
+   "en": "Workers' compensation",
+   "cat": "personal",
+   "def_es": "Paga gastos médicos y salario perdido por lesiones de trabajo. En Florida, los empleados domésticos en casas privadas están excluidos de la definición de empleo, pero el empleador puede elegir voluntariamente la cobertura. Sin ella, una lesión puede terminar en un reclamo contra la familia.",
+   "def_en": "Pays medical costs and lost wages for work injuries. In Florida, domestic servants in private homes are excluded from the definition of employment, but the employer may voluntarily elect coverage. Without it, an injury can become a claim against the family.",
+   "guide": "emp"
+  },
+  {
+   "id": "epli",
+   "es": "EPLI (responsabilidad por prácticas laborales)",
+   "en": "EPLI (employment practices liability)",
+   "cat": "personal",
+   "def_es": "Cubre reclamos de empleados por discriminación, acoso, despido injustificado o represalias. Las familias con personal del hogar, como niñeras, choferes o administradores de la casa, pueden enfrentar estos reclamos; algunas pólizas personales permiten agregar esta cobertura.",
+   "def_en": "Covers employee claims of discrimination, harassment, wrongful termination or retaliation. Families with household staff, such as nannies, drivers or house managers, can face these claims; some personal policies allow adding this coverage.",
+   "guide": "emp"
+  },
+  {
+   "id": "empleado-residente",
+   "es": "Empleado del hogar (empleado residente)",
+   "en": "Residence employee",
+   "cat": "personal",
+   "def_es": "El término que muchas pólizas de hogar usan para el personal que trabaja en la propiedad, como niñeras o jardineros. Algunas pólizas les extienden ciertas coberturas, con condiciones y límites. Conviene leer cómo la póliza define este término y qué incluye.",
+   "def_en": "The term many homeowners policies use for staff who work on the property, such as nannies or gardeners. Some policies extend certain coverages to them, with conditions and limits. It is worth reading how the policy defines the term and what it includes.",
+   "guide": "emp"
+  },
+  {
+   "id": "vida-a-termino",
+   "es": "Seguro de vida a término",
+   "en": "Term life insurance",
+   "cat": "general",
+   "def_es": "Un seguro de vida que paga a los beneficiarios si el asegurado fallece durante un período fijo, como 10, 20 o 30 años. Según LIMRA (2024), el 72% de los hispanos sobreestima su costo. No acumula valor en efectivo, a diferencia del seguro permanente.",
+   "def_en": "Life insurance that pays beneficiaries if the insured dies during a fixed period, such as 10, 20 or 30 years. According to LIMRA (2024), 72% of Hispanics overestimate its cost. Unlike permanent insurance, it builds no cash value.",
+   "guide": null
+  },
+  {
+   "id": "beneficiario",
+   "es": "Beneficiario",
+   "en": "Beneficiary",
+   "cat": "general",
+   "def_es": "La persona o entidad que recibe el pago de una póliza de vida o de ciertas cuentas al fallecer el titular. Conviene revisarlo después de matrimonios, divorcios, nacimientos o cambios en la planificación patrimonial, y coordinarlo con su abogado.",
+   "def_en": "The person or entity that receives the payout of a life policy or certain accounts when the owner dies. It is worth reviewing after marriages, divorces, births or changes in estate planning, and coordinating with your attorney.",
+   "guide": null
+  }
+ ]
+}
