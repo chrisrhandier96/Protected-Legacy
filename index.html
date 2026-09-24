@@ -48,7 +48,7 @@ window.PP = {
     meta('property','og:image',u+'/og.png');
     meta('name','twitter:image',u+'/og.png');
     var ld=document.createElement('script');ld.type='application/ld+json';
-    ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"Patrimonio Protegido","url":u+"/","inLanguage":["es","en"],"author":{"@type":"Person","name":"Christian R. González","address":{"@type":"PostalAddress","addressRegion":"FL","addressCountry":"US"}},"description":"Educación de riesgo, en español e inglés, para familias hispanas de alto patrimonio en la Florida."});
+    ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"Patrimonio Protegido","url":u+"/","inLanguage":["es","en"],"author":{"@type":"Person","name":"Christian R. González","telephone":"+1-786-671-2171","sameAs":["https://www.linkedin.com/in/christiangonzalez22/"],"address":{"@type":"PostalAddress","addressRegion":"FL","addressCountry":"US"}},"description":"Educación de riesgo, en español e inglés, para familias hispanas de alto patrimonio en la Florida."});
     h.appendChild(ld);
   }
   var id=P.GA4_ID||P.ADS_ID;
@@ -303,6 +303,8 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 .retrato .foto-note{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(217,188,114,.7)}
 .about h2{font-size:clamp(27px,4vw,40px);color:var(--blanco)}
 .about p{color:#C9D6CC;margin-bottom:16px}
+.li-link{display:inline-block;margin-top:14px;padding:9px 16px;border:1px solid rgba(194,155,64,.55);border-radius:2px;font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--oro-claro);text-decoration:none;transition:background .25s,color .25s}
+.li-link:hover{background:var(--oro);color:var(--verde-oscuro)}
 .about .firma{font-family:var(--accent);font-style:italic;font-weight:600;font-size:29px;color:var(--oro-claro);margin-top:10px}
 .cred-row{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 6px}
 .cred{border:1px solid rgba(194,155,64,.4);border-radius:99px;padding:7px 16px;font-size:12.5px;color:var(--oro-claro);letter-spacing:.04em}
@@ -313,6 +315,16 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 .contacto-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px}
 .contacto h2{font-size:clamp(28px,4vw,44px)}
 .contacto p{color:#3B4237;margin-bottom:16px}
+.direct{margin-top:26px;padding:20px 22px;border-left:2px solid var(--oro);background:rgba(194,155,64,.07)}
+.direct .d-t{display:block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--oro)}
+.direct .d-phone{display:inline-block;margin:6px 0 4px;font-family:var(--display);font-size:clamp(26px,3.2vw,32px);color:var(--verde);text-decoration:none;letter-spacing:.01em}
+.direct .d-phone:hover{color:var(--oro)}
+.direct .d-links{display:flex;gap:10px;font-size:14px;color:var(--humo)}
+.direct .d-links a{color:var(--verde);text-underline-offset:3px}
+.call-fab{display:none}
+@media(max-width:760px){.call-fab{display:flex;align-items:center;gap:8px;position:fixed;left:16px;bottom:16px;z-index:60;padding:12px 18px 12px 14px;border-radius:99px;background:var(--verde);color:var(--blanco);font-size:14px;font-weight:600;letter-spacing:.04em;text-decoration:none;border:1px solid rgba(194,155,64,.6);box-shadow:0 10px 26px rgba(13,36,28,.35)}
+.call-fab svg{width:18px;height:18px;fill:var(--oro-claro)}}
+
 .form-card{background:var(--blanco);border:1px solid var(--arena-oscura);border-radius:4px;padding:38px;box-shadow:0 18px 44px rgba(20,53,42,.08)}
 .field{margin-bottom:18px}
 .field label{display:block;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--verde);margin-bottom:7px}
@@ -368,6 +380,34 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;p
 .gap-list li,.answers button{will-change:transform}
 .result.pop{animation:resPop .6s cubic-bezier(.34,1.56,.64,1)}
 @keyframes resPop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+/* quiz v2 */
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:18px;min-height:26px}
+.q-back{background:none;border:none;color:var(--humo);font-size:14px;padding:4px 0}
+.q-back:hover{color:var(--verde)}
+.q-back.off{visibility:hidden}
+.q-hint{font-size:12px;color:var(--humo);letter-spacing:.04em}
+@media(hover:none){.q-hint{display:none}}
+.answers button.picked{border-color:var(--oro);background:var(--oro);color:var(--verde-oscuro);transform:translateX(4px)}
+.answers.locked button{pointer-events:none}
+.answers .k{display:inline-block;min-width:22px;margin-right:10px;font-size:12px;font-weight:700;color:var(--oro);opacity:.85}
+@media(hover:none){.answers .k{display:none}}
+@media(hover:none){.answers button:hover{border-color:var(--arena-oscura);background:var(--arena);transform:none}}
+.gap-list li b{color:var(--verde);font-weight:700}
+.gap-list li small{display:block;font-size:13.5px;color:var(--humo);margin-top:3px;line-height:1.5}
+.res-capture{background:var(--verde);border-radius:4px;padding:28px 26px;margin:26px auto 14px;max-width:560px;text-align:left}
+.rc-t{font-family:var(--display);font-size:23px;line-height:1.25;color:var(--blanco);margin-bottom:6px}
+.result .res-capture .rc-s{color:#C9D6CC;font-size:14.5px;margin:0 0 18px;max-width:none}
+.rc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+@media(max-width:560px){.rc-row{grid-template-columns:1fr}}
+.rc-f label{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-claro);margin-bottom:6px}
+.rc-f input{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:var(--blanco);border-radius:2px;font-family:var(--body);font-size:16px}
+.rc-f input:focus{outline:2px solid var(--oro);border-color:var(--oro)}
+.rc-consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:#C9D6CC;margin:4px 0 16px;line-height:1.5;cursor:pointer}
+.rc-consent input{margin-top:3px;accent-color:var(--oro);flex:none}
+.result .res-capture .rc-note{font-size:12px;color:#9FB2A6;margin:12px 0 0;max-width:none}
+.result .res-capture .rc-err{display:none;font-size:13px;color:#F2B8B8;margin:10px 0 0;max-width:none}
+.res-alt{display:inline-block;margin-top:4px;font-size:14px;color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+
 .eyebrow::before{transition:width .4s ease}
 section:hover .eyebrow::before{width:52px}
 .skyline .water-anim{animation:waterDrift 6s ease-in-out infinite}
@@ -686,6 +726,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <button onclick="answer(0)" id="a-no"></button>
           <button onclick="answer(-1)" id="a-na" style="font-size:14px;color:var(--humo)"></button>
         </div>
+        <div class="q-nav">
+          <button class="q-back" id="qBack" type="button" onclick="quizBack()" data-es="&larr; Pregunta anterior" data-en="&larr; Previous question">&larr; Pregunta anterior</button>
+          <span class="q-hint" data-es="Atajo: teclas 1 a 4" data-en="Shortcut: keys 1 to 4">Atajo: teclas 1 a 4</span>
+        </div>
       </div>
       <div class="result" id="resultado">
         <div class="gauge">
@@ -701,12 +745,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="gl-t" data-es="Sus zonas en blanco" data-en="Your blank zones">Sus zonas en blanco</div>
           <ul id="gapItems"></ul>
         </div>
-        <a class="btn btn-oro" href="#contacto" data-es="Iniciar la conversación" data-en="Start the conversation">Iniciar la conversación</a><br>
+        <div class="res-capture" id="resCapture">
+          <div class="rc-t" data-es="Reciba su mapa con un comentario personal" data-en="Get your map with a personal note">Reciba su mapa con un comentario personal</div>
+          <p class="rc-s" data-es="Le envío su resultado junto con lo que yo revisaría primero en sus zonas en blanco. Sin costo y sin compromiso." data-en="I will send you your result along with what I would review first in your blank zones. No cost and no obligation.">Le envío su resultado junto con lo que yo revisaría primero en sus zonas en blanco. Sin costo y sin compromiso.</p>
+          <form id="rcForm" novalidate>
+            <div class="rc-row">
+              <div class="rc-f"><label for="rc-nombre" data-es="Nombre" data-en="Name">Nombre</label><input id="rc-nombre" type="text" autocomplete="name"></div>
+              <div class="rc-f"><label for="rc-email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label><input id="rc-email" type="email" autocomplete="email"></div>
+            </div>
+            <label class="rc-consent"><input type="checkbox" id="rc-consent"><span data-es="Autorizo a Christian R. González a enviarme mi resultado y responderme por correo electrónico. Entiendo que este sitio es educativo y no ofrece asesoría de seguros." data-en="I authorize Christian R. González to send me my result and reply by email. I understand this site is educational and does not offer insurance advice.">Autorizo a Christian R. González a enviarme mi resultado y responderme por correo electrónico. Entiendo que este sitio es educativo y no ofrece asesoría de seguros.</span></label>
+            <button class="btn btn-oro" type="submit" id="rcSend" style="width:100%" data-es="Enviar mi mapa" data-en="Send me my map">Enviar mi mapa</button>
+            <p class="rc-err" id="rcErr" data-es="No pudimos enviarlo desde el sitio. Use el formulario de contacto más abajo o escríbame directamente." data-en="We could not send it from the site. Use the contact form below or write to me directly.">No pudimos enviarlo desde el sitio. Use el formulario de contacto más abajo o escríbame directamente.</p>
+          </form>
+          <p class="rc-note" data-es="Al enviarlo, su puntaje y sus 12 respuestas llegan con su nombre y correo. Si no lo envía, nada sale de su navegador." data-en="When you send it, your score and your 12 answers arrive with your name and email. If you do not send it, nothing leaves your browser.">Al enviarlo, su puntaje y sus 12 respuestas llegan con su nombre y correo. Si no lo envía, nada sale de su navegador.</p>
+        </div>
+        <a class="res-alt" href="#contacto" onclick="prefillTema()" data-es="Prefiero escribir un mensaje más detallado &rarr;" data-en="I would rather write a more detailed message &rarr;">Prefiero escribir un mensaje más detallado &rarr;</a><br>
         <button class="restart" onclick="restartQuiz()" data-es="Volver a empezar" data-en="Start over">Volver a empezar</button>
-        <p style="font-size:12px;color:var(--humo);max-width:44ch;margin:14px auto 0" data-es="Si continúa al formulario de contacto, su puntaje y sus 12 respuestas se incluyen con su mensaje para que la conversación llegue preparada." data-en="If you continue to the contact form, your score and your 12 answers are included with your message so the conversation arrives prepared.">Si continúa al formulario de contacto, su puntaje y sus 12 respuestas se incluyen con su mensaje para que la conversación llegue preparada.</p>
       </div>
     </div>
-    <p class="mapa-note" data-es="Esta autoevaluación es una herramienta educativa de reflexión. No constituye asesoría de seguros ni un análisis de sus pólizas, y no reemplaza la revisión de un profesional con licencia. Sus respuestas quedan solo en su navegador y no se envían a ningún lugar, a menos que usted decida incluirlas al enviar el formulario de contacto." data-en="This self-assessment is an educational reflection tool. It does not constitute insurance advice or an analysis of your policies, and it does not replace a review by a licensed professional. Your answers stay only in your browser and are not sent anywhere, unless you choose to include them when you submit the contact form.">Esta autoevaluación es una herramienta educativa de reflexión. No constituye asesoría de seguros ni un análisis de sus pólizas, y no reemplaza la revisión de un profesional con licencia. Sus respuestas quedan solo en su navegador y no se envían a ningún lugar, a menos que usted decida incluirlas al enviar el formulario de contacto.</p>
+    <p class="mapa-note" data-es="Esta autoevaluación es una herramienta educativa de reflexión. No constituye asesoría de seguros ni un análisis de sus pólizas, y no reemplaza la revisión de un profesional con licencia. Sus respuestas se guardan solo en su navegador, para que pueda retomar donde lo dejó, y no se envían a ningún lugar a menos que usted decida enviarlas con su nombre y correo." data-en="This self-assessment is an educational reflection tool. It does not constitute insurance advice or an analysis of your policies, and it does not replace a review by a licensed professional. Your answers are saved only in your browser, so you can pick up where you left off, and are not sent anywhere unless you choose to send them with your name and email.">Esta autoevaluación es una herramienta educativa de reflexión. No constituye asesoría de seguros ni un análisis de sus pólizas, y no reemplaza la revisión de un profesional con licencia. Sus respuestas se guardan solo en su navegador, para que pueda retomar donde lo dejó, y no se envían a ningún lugar a menos que usted decida enviarlas con su nombre y correo.</p>
   </div>
 </section>
 
@@ -723,7 +780,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="rule"></div>
       <h2 data-es="Claridad en su idioma. Rigor en el oficio." data-en="Clarity in your language. Rigor in the craft.">Claridad en su idioma. Rigor en el oficio.</h2>
       <p data-es="Soy Christian R. González, de Miami, bilingüe de nacimiento y graduado de Florida International University. Mi carrera empezó en la industria de seguros: durante casi dos años acompañé a más de cien familias en la protección de sus seres queridos, y entrené a agentes nuevos en cómo explicar estos temas con claridad. Ahí entendí algo que no he olvidado: <span class='hl'>a nuestra comunidad casi nunca le explican estas herramientas en su idioma, y esa falta de claridad cuesta Patrimonio.</span>" data-en="I am Christian R. González, from Miami, bilingual from birth and a graduate of Florida International University. My career began in the insurance industry: for nearly two years I helped more than one hundred families protect their loved ones, and I trained new agents on how to explain these subjects clearly. That is where I understood something I have never forgotten: <span class='hl'>our community is almost never taught these tools in its own language, and that lack of clarity costs Wealth.</span>">Soy Christian R. González, de Miami, bilingüe de nacimiento y graduado de Florida International University. Mi carrera empezó en la industria de seguros: durante casi dos años acompañé a más de cien familias en la protección de sus seres queridos, y entrené a agentes nuevos en cómo explicar estos temas con claridad. Ahí entendí algo que no he olvidado: <span class="hl">a nuestra comunidad casi nunca le explican estas herramientas en su idioma, y esa falta de claridad cuesta Patrimonio.</span></p>
-      <p data-es="Después pasé años en el mundo de los eventos en vivo y las operaciones de estadio, trabajando desde adentro en la ejecución de más de mil eventos, desde celebraciones privadas hasta jornadas de temporada en un estadio de Grandes Ligas. Esa etapa me dejó la disciplina que hoy aplico al riesgo patrimonial: los eventos que salen bien no dependen de la suerte; dependen de haber pensado, con anticipación, en todo lo que podía salir mal. Hoy me formo dentro de la industria de administración de riesgos para clientes privados, y este espacio es mi manera de devolverle a la comunidad la claridad que merece." data-en="I then spent years in live events and stadium operations, working from the inside on the execution of more than a thousand events, from private celebrations to full season operations at a Major League ballpark. That chapter gave me the discipline I now apply to wealth risk: events that go well do not depend on luck; they depend on having thought, in advance, about everything that could go wrong. Today I am training within the private-client risk management industry, and this space is my way of giving the community the clarity it deserves.">Después pasé años en el mundo de los eventos en vivo y las operaciones de estadio, trabajando desde adentro en la ejecución de más de mil eventos, desde celebraciones privadas hasta jornadas de temporada en un estadio de Grandes Ligas. Esa etapa me dejó la disciplina que hoy aplico al riesgo patrimonial: los eventos que salen bien no dependen de la suerte; dependen de haber pensado, con anticipación, en todo lo que podía salir mal. Hoy me formo dentro de la industria de administración de riesgos para clientes privados, y este espacio es mi manera de devolverle a la comunidad la claridad que merece.</p>
+      <p data-es="Después pasé años en el mundo de los eventos en vivo y las operaciones de estadio, trabajando desde adentro en la ejecución de más de mil eventos, desde celebraciones privadas hasta jornadas de temporada en un estadio de Grandes Ligas. Esa etapa me dejó la disciplina que hoy aplico al riesgo patrimonial: los eventos que salen bien no dependen de la suerte; dependen de haber pensado, con anticipación, en todo lo que podía salir mal. Hoy ejerzo como agente licenciado en la Florida, dedicado a la gestión de riesgo de clientes privados y familias de alto patrimonio. Este espacio es mi manera de devolverle a la comunidad la claridad que merece." data-en="I then spent years in live events and stadium operations, working from the inside on the execution of more than a thousand events, from private celebrations to full season operations at a Major League ballpark. That chapter gave me the discipline I now apply to wealth risk: events that go well do not depend on luck; they depend on having thought, in advance, about everything that could go wrong. Today I practice as a licensed Florida agent dedicated to private-client risk for high-net-worth families. This space is my way of giving the community the clarity it deserves.">Después pasé años en el mundo de los eventos en vivo y las operaciones de estadio, trabajando desde adentro en la ejecución de más de mil eventos, desde celebraciones privadas hasta jornadas de temporada en un estadio de Grandes Ligas. Esa etapa me dejó la disciplina que hoy aplico al riesgo patrimonial: los eventos que salen bien no dependen de la suerte; dependen de haber pensado, con anticipación, en todo lo que podía salir mal. Hoy ejerzo como agente licenciado en la Florida, dedicado a la gestión de riesgo de clientes privados y familias de alto patrimonio. Este espacio es mi manera de devolverle a la comunidad la claridad que merece.</p>
       <div class="cred-row">
         <span class="cred" data-es="B.A., Florida International University" data-en="B.A., Florida International University">B.A., Florida International University</span>
         <span class="cred" data-es="Bilingüe nativo ES / EN" data-en="Native bilingual ES / EN">Bilingüe nativo ES / EN</span>
@@ -731,6 +788,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <p class="firma">Christian R. González</p>
       <p style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-claro)" data-es="Agente licenciado · Florida Lic. #W606240" data-en="Licensed agent · Florida Lic. #W606240">Agente licenciado · Florida Lic. #W606240</p>
+      <a class="li-link" href="https://www.linkedin.com/in/christiangonzalez22/" target="_blank" rel="noopener me" data-es="Ver mi perfil en LinkedIn &#8599;" data-en="View my LinkedIn profile &#8599;">Ver mi perfil en LinkedIn &#8599;</a>
     </div>
   </div>
 </section>
@@ -744,6 +802,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 data-es='La mejor protección empieza con <span class="accent-i">una Conversación.</span>' data-en='The best protection starts with <span class="accent-i">a Conversation.</span>'>La mejor protección empieza con <span class="accent-i">una Conversación.</span></h2>
       <p data-es="Si la autoevaluación le dejó preguntas, si alguna historia le resultó familiar o si quiere que desarrolle un tema en particular, escríbame. Conversamos en persona en el sur de la Florida o por videollamada desde cualquier punto del estado, en el idioma que usted prefiera." data-en="If the self-assessment left you with questions, if one of the stories felt familiar, or if you would like me to cover a particular topic, write to me. We can meet in person in South Florida or by video call from anywhere in the state, in whichever language you prefer.">Si la autoevaluación le dejó preguntas, si alguna historia le resultó familiar o si quiere que desarrolle un tema en particular, escríbame. Conversamos en persona en el sur de la Florida o por videollamada desde cualquier punto del estado, en el idioma que usted prefiera.</p>
       <p style="font-size:14px;color:var(--humo)" data-es="Respondo personalmente, normalmente dentro de 48 horas. Solo le escribiré si usted me escribe primero. Los campos de perfil son opcionales; ayudan a que nuestra primera conversación llegue preparada." data-en="I reply personally, usually within 48 hours. I will only write to you if you write to me first. The profile fields are optional; they help our first conversation arrive prepared.">Respondo personalmente, normalmente dentro de 48 horas. Solo le escribiré si usted me escribe primero. Los campos de perfil son opcionales; ayudan a que nuestra primera conversación llegue preparada.</p>
+      <div class="direct">
+        <span class="d-t" data-es="¿Prefiere hablar?" data-en="Prefer to talk?">¿Prefiere hablar?</span>
+        <a class="d-phone" href="tel:+17866712171" data-track="llamada">(786) 671-2171</a>
+        <div class="d-links"><a href="tel:+17866712171" data-track="llamada" data-es="Llamar" data-en="Call">Llamar</a><span aria-hidden="true">·</span><a href="sms:+17866712171" data-track="texto" data-es="Enviar un texto" data-en="Send a text">Enviar un texto</a></div>
+      </div>
     </div>
     <div class="form-card reveal">
       <form id="ppForm" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
@@ -754,7 +817,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <input type="hidden" name="termino" id="f-term" value="">
         <input type="hidden" name="gclid" id="f-gclid" value="">
         <input type="hidden" name="autoevaluacion_puntaje" id="f-quiz-score" value="">
-        <input type="hidden" name="autoevaluacion_respuestas" id="f-quiz-answers" value="">
+        <textarea name="autoevaluacion_respuestas" id="f-quiz-answers" style="display:none" aria-hidden="true" tabindex="-1"></textarea>
         <input type="hidden" name="autoevaluacion_zonas_en_blanco" id="f-quiz-gaps" value="">
         <p class="hp" style="position:absolute;left:-9999px" aria-hidden="true"><label>No llenar <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div id="formFields">
@@ -801,6 +864,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <option data-es="Responsabilidad y umbrella" data-en="Liability and umbrella">Responsabilidad y umbrella</option>
               <option data-es="Personal del hogar y legado" data-en="Household staff and legacy">Personal del hogar y legado</option>
               <option data-es="Estilo de vida internacional" data-en="International lifestyle">Estilo de vida internacional</option>
+              <option data-es="Revisión de mi autoevaluación" data-en="Review of my self-assessment">Revisión de mi autoevaluación</option>
               <option data-es="Otro tema" data-en="Another topic">Otro tema</option>
             </select>
           </div>
@@ -823,6 +887,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- FOOTER -->
+<a class="call-fab" href="tel:+17866712171" data-track="llamada" aria-label="(786) 671-2171"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span data-es="Llamar" data-en="Call">Llamar</span></a>
 <footer id="fuentes">
   <div class="wrap">
     <div class="logo-lockup" style="margin-bottom:6px">
@@ -847,7 +912,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <b>Fuentes de los datos citados:</b> [1] The Zebra, análisis nacional de subaseguramiento. [2] Universidad de Colorado Boulder, estudio “Coverage Neglect in Homeowners Insurance” sobre el incendio de Boulder County, Colorado, en 2021. [3] FEMA / National Flood Insurance Program y análisis de U.S. News de datos NFIP 2020–2024. [4] Florida Fish and Wildlife Conservation Commission, Reportes Estadísticos de Accidentes Náuticos 2024 y 2025 (1,027,742 embarcaciones registradas; 694 accidentes y 51 fatalidades en 2025). [5] Reserva Federal, Encuesta de Finanzas del Consumidor (riqueza mediana hispana, 2013 a 2022) y LIMRA, 2025 Insurance Barometer Study. [6] LIMRA y Life Happens, Insurance Barometer Studies 2024 y 2025, y estudio “Empowering Hispanic Consumers in the Life Insurance Market”, 2025. [7] Insurance Information Institute, sublímites típicos de pólizas de hogar. Datos verificados a julio de 2026.
     </div>
     <div class="fin">
-      <span data-es="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='privacidad.html' style='color:inherit'>Privacidad</a>" data-en="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='privacidad.html' style='color:inherit'>Privacy</a>">© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href="privacidad.html" style="color:inherit">Privacidad</a></span>
+      <span data-es="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='privacidad.html' style='color:inherit'>Privacidad</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a>" data-en="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='privacidad.html' style='color:inherit'>Privacy</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a>">© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href="tel:+17866712171" data-track="llamada" style="color:inherit">(786) 671-2171</a> · <a href="privacidad.html" style="color:inherit">Privacidad</a> · <a href="https://www.linkedin.com/in/christiangonzalez22/" target="_blank" rel="noopener me" style="color:inherit">LinkedIn</a></span>
       <span data-es="Hecho con orgullo para la comunidad hispana de la Florida" data-en="Made with pride for Florida's Hispanic community">Hecho con orgullo para la comunidad hispana de la Florida</span>
     </div>
   </div>
@@ -970,42 +1035,64 @@ const questions=[
  {d:'leg',es:"¿Sabe su familia dónde están las pólizas, escrituras y contactos de asesores si algo le pasara a usted mañana?",en:"Would your family know where the policies, deeds, and advisor contacts are if something happened to you tomorrow?"}
 ];
 const ANS={si:{es:"Sí, con certeza",en:"Yes, with certainty"},ns:{es:"No estoy seguro/a",en:"I'm not sure"},no:{es:"No / Nunca lo he pensado",en:"No / I've never thought about it"},na:{es:"No aplica a mi familia",en:"Doesn't apply to my family"}};
-let qi=0,score=0,maxScore=0,finished=false,weak=[],userAnswers=[];
+const DOM_TIPS={
+ res:{es:"Reconstruir hoy puede costar bastante más que el valor asegurado de hace unos años; el costo de reemplazo extendido o garantizado cubre esa diferencia.",en:"Rebuilding today can cost well above an insured value set a few years ago; extended or guaranteed replacement cost covers that difference."},
+ flo:{es:"La póliza de hogar estándar no cubre inundación, y el NFIP tiene un tope de $250,000 para la estructura.",en:"A standard home policy does not cover flood, and the NFIP caps the structure at $250,000."},
+ aut:{es:"Una demanda por un accidente apunta al patrimonio completo; los límites básicos no fueron pensados para familias de siete cifras.",en:"A lawsuit after an accident targets the whole estate; basic limits were not designed for seven-figure families."},
+ mar:{es:"La póliza de hogar cubre muy poco o nada de una embarcación, y si se la presta a un invitado la responsabilidad sigue siendo suya.",en:"A home policy covers little or nothing of a vessel, and if you lend it to a guest the liability stays yours."},
+ avi:{es:"Un límite total alto puede esconder sublímites por pasajero muy bajos, y muchas umbrellas excluyen la aviación.",en:"A high total limit can hide very low per-passenger sublimits, and many umbrellas exclude aviation."},
+ col:{es:"La póliza de hogar típica limita el robo de joyas a unos $1,500 a $2,500 en total, no por pieza.",en:"A typical home policy caps jewelry theft at roughly $1,500 to $2,500 in total, not per piece."},
+ vid:{es:"Rentas de corto plazo, residencias en el extranjero y ciertas actividades pueden quedar excluidas sin que nadie se lo haya advertido.",en:"Short-term rentals, homes abroad, and certain activities can be excluded without anyone having warned you."},
+ lia:{es:"La umbrella entra cuando se agotan los límites de hogar y auto; es la última línea antes de su patrimonio.",en:"The umbrella steps in once home and auto limits run out; it is the last line before your estate."},
+ emp:{es:"Una lesión de su personal del hogar puede convertirse en una reclamación directa contra usted como empleador.",en:"An injury to your household staff can become a claim made directly against you as the employer."},
+ leg:{es:"Sin un inventario accesible, la familia pierde tiempo y liquidez justo cuando más los necesita.",en:"Without an accessible inventory, the family loses time and liquidity exactly when it needs them most."}
+};
+const P2K={'2':'si','1':'ns','0':'no','-1':'na'};
+let picks=[],finished=false,busy=false;
+function qSave(){try{localStorage.setItem('pp.quiz',JSON.stringify(picks));}catch(e){}}
+function qLoad(){try{const v=JSON.parse(localStorage.getItem('pp.quiz')||'[]');picks=Array.isArray(v)?v.filter(x=>x===2||x===1||x===0||x===-1).slice(0,12):[];}catch(e){picks=[];}}
+function qStats(){let sc=0,mx=0;const weak=[];picks.forEach((p,i)=>{const d=questions[i].d;if(p>=0){sc+=p;mx+=2;if(p<2&&!weak.includes(d))weak.push(d);}});return{pct:mx>0?Math.round(sc/mx*100):100,weak:weak};}
+function dl(o){try{window.dataLayer=window.dataLayer||[];window.dataLayer.push(o);}catch(e){}}
 function renderQuestion(){
   if(finished){renderResult();return;}
-  const q=questions[qi];
+  const qi=picks.length,q=questions[qi];
   const qt=document.getElementById('qtext');
   qt.classList.remove('q-fade');void qt.offsetWidth;qt.classList.add('q-fade');
   document.getElementById('qcount').textContent=(lang==='es'?'Pregunta ':'Question ')+(qi+1)+(lang==='es'?' de 12':' of 12');
   document.getElementById('qdomain').textContent=DOM_NAMES[q.d][lang];
   qt.textContent=q[lang];
-  document.getElementById('a-si').textContent=ANS.si[lang];
-  document.getElementById('a-ns').textContent=ANS.ns[lang];
-  document.getElementById('a-no').textContent=ANS.no[lang];
-  document.getElementById('a-na').textContent=ANS.na[lang];
+  document.getElementById('a-si').innerHTML='<span class="k">1</span>'+ANS.si[lang];
+  document.getElementById('a-ns').innerHTML='<span class="k">2</span>'+ANS.ns[lang];
+  document.getElementById('a-no').innerHTML='<span class="k">3</span>'+ANS.no[lang];
+  document.getElementById('a-na').innerHTML='<span class="k">4</span>'+ANS.na[lang];
   document.getElementById('prog').style.width=(qi/12*100)+'%';
+  document.getElementById('qBack').classList.toggle('off',qi===0);
 }
 function answer(p){
-  const q=questions[qi];
-  const ansKey=p===2?'si':p===1?'ns':p===0?'no':'na';
-  userAnswers.push({n:qi+1,domain:DOM_NAMES[q.d].es,question:q.es,answer:ANS[ansKey].es});
-  if(p>=0){score+=p;maxScore+=2;if(p<2&&!weak.includes(q.d))weak.push(q.d);}
-  qi++;
-  if(qi>=questions.length){finished=true;showResult();}else renderQuestion();
+  if(busy||finished)return;
+  const btn=document.getElementById('a-'+P2K[p]),box=btn.parentNode;
+  busy=true;box.classList.add('locked');btn.classList.add('picked');
+  if(picks.length===0)dl({event:'quiz_start'});
+  setTimeout(function(){
+    btn.classList.remove('picked');box.classList.remove('locked');busy=false;
+    picks.push(p);qSave();
+    if(picks.length>=questions.length){finished=true;showResult(false);}else renderQuestion();
+  },240);
 }
-function showResult(){
+function quizBack(){if(busy||finished||!picks.length)return;picks.pop();qSave();renderQuestion();}
+function showResult(fromLoad){
   document.getElementById('quiz').style.display='none';
   const res=document.getElementById('resultado');
-  res.style.display='block';res.classList.add('pop');
+  res.style.display='block';if(!fromLoad)res.classList.add('pop');
   renderResult();
-  const pct=maxScore>0?Math.round(score/maxScore*100):100;const circ=534;
+  const st=qStats(),pct=st.pct,circ=534;
   requestAnimationFrame(()=>{document.getElementById('gaugeVal').style.strokeDashoffset=circ-(circ*pct/100);});
   let c=0;const t=setInterval(()=>{c+=2;if(c>=pct){c=pct;clearInterval(t);}document.getElementById('gaugePct').textContent=c+'%';},22);
-  /* gtag('event','quiz_complete',{score_pct:pct}); // activar con Analytics */
+  if(!fromLoad)dl({event:'quiz_complete',quiz_score:pct,quiz_gaps:st.weak.length});
 }
 function renderResult(){
   if(!finished)return;
-  const pct=maxScore>0?Math.round(score/maxScore*100):100;
+  const st=qStats(),pct=st.pct;
   let title,body;
   if(pct>=75){title={es:"Guardián del patrimonio",en:"Guardian of the estate"};body={es:"Su conciencia de riesgo es alta, algo poco común. El siguiente paso de las familias organizadas es la revisión periódica: los patrimonios cambian, y la protección debe cambiar con ellos.",en:"Your risk awareness is high, which is rare. The next step for organized families is periodic review: wealth changes, and protection must change with it."};}
   else if(pct>=45){title={es:"Constructor consciente",en:"Aware builder"};body={es:"Conoce varios conceptos clave, pero hay zonas de su mapa en blanco. Esas son precisamente las brechas que los eventos inesperados encuentran primero.",en:"You know several key concepts, but parts of your map are blank. Those are exactly the gaps unexpected events find first."};}
@@ -1013,53 +1100,105 @@ function renderResult(){
   document.getElementById('resTitle').textContent=title[lang];
   document.getElementById('resBody').textContent=body[lang];
   const gl=document.getElementById('gapList'),gi=document.getElementById('gapItems');
-  if(weak.length){gl.style.display='block';gi.innerHTML=weak.map(d=>'<li>'+DOM_NAMES[d][lang]+'</li>').join('');}
+  if(st.weak.length){gl.style.display='block';gi.innerHTML=st.weak.map(d=>'<li><b>'+DOM_NAMES[d][lang]+'</b><small>'+DOM_TIPS[d][lang]+'</small></li>').join('');}
   else gl.style.display='none';
 }
-function restartQuiz(){qi=0;score=0;maxScore=0;finished=false;weak=[];userAnswers=[];document.getElementById('resultado').style.display='none';document.getElementById('quiz').style.display='block';document.getElementById('gaugeVal').style.strokeDashoffset=534;document.getElementById('gaugePct').textContent='0%';renderQuestion();}
-renderQuestion();
+function restartQuiz(){
+  picks=[];finished=false;busy=false;qSave();
+  document.getElementById('resultado').style.display='none';document.getElementById('resultado').classList.remove('pop');
+  document.getElementById('quiz').style.display='block';
+  document.getElementById('gaugeVal').style.strokeDashoffset=534;document.getElementById('gaugePct').textContent='0%';
+  renderQuestion();
+}
+function prefillTema(){
+  const s=document.getElementById('f-tema');if(!s||!picks.length)return;
+  const i=[...s.options].findIndex(o=>o.getAttribute('data-es')==='Revisión de mi autoevaluación');
+  if(i>=0)s.selectedIndex=i;
+}
+function quizPayload(){
+  if(!picks.length)return null;
+  const st=qStats(),done=picks.length>=12;
+  return{
+    score:st.pct+'% '+(done?'(completa, 12/12)':'(parcial, '+picks.length+'/12)'),
+    answers:picks.map((p,i)=>{const q=questions[i];return 'P'+(i+1)+' · '+DOM_NAMES[q.d].es+'\n'+q.es+'\n→ '+ANS[P2K[p]].es;}).join('\n\n'),
+    gaps:st.weak.map(d=>DOM_NAMES[d].es).join(', ')||'Ninguna'
+  };
+}
+document.addEventListener('keydown',function(e){
+  if(finished||e.metaKey||e.ctrlKey||e.altKey)return;
+  const t=e.target;if(t&&(/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)||t.isContentEditable))return;
+  const m={'1':2,'2':1,'3':0,'4':-1}[e.key];if(m===undefined)return;
+  const r=document.getElementById('quiz').getBoundingClientRect();
+  if(r.height===0||r.bottom<0||r.top>window.innerHeight)return;
+  e.preventDefault();answer(m);
+});
+qLoad();
+if(picks.length>=12){finished=true;showResult(true);}else renderQuestion();
 
-/* ===== FORM =====
-   Envia el formulario de verdad. En Netlify no hace falta configurar nada:
-   data-netlify="true" en el <form> basta. En otro host, ponga PP.FORM_ENDPOINT. */
+/* ===== ENVIO DE LEADS =====
+   Ambos formularios (contacto y resultado de la autoevaluacion) llegan al mismo
+   formulario "contacto" de Netlify. El evento generate_lead va al dataLayer para GTM. */
+function sendLead(params,source,onFail){
+  const P=window.PP||{};
+  const url=P.FORM_ENDPOINT||'/';
+  fetch(url,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:params.toString()})
+    .then(function(r){
+      if(!r||!r.ok)throw new Error('send');
+      let gone=false;const go=function(){if(gone)return;gone=true;window.location.href='gracias.html?lang='+lang;};
+      dl({event:'generate_lead',lead_source:source,language:lang,quiz_score:params.get('autoevaluacion_puntaje')||'',eventCallback:go,eventTimeout:1500});
+      try{if(window.gtag&&P.ADS_ID&&P.ADS_LABEL)gtag('event','conversion',{send_to:P.ADS_ID+'/'+P.ADS_LABEL});}catch(x){}
+      setTimeout(go,1700);
+    }).catch(onFail);
+}
+function validLead(n,e,c){
+  if(!n||!e){alert(lang==='es'?'Por favor complete su nombre y correo.':'Please fill in your name and email.');return false;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e)){alert(lang==='es'?'Por favor verifique su correo electrónico.':'Please check your email address.');return false;}
+  if(!c){alert(lang==='es'?'Por favor marque la casilla de autorización.':'Please check the authorization box.');return false;}
+  return true;
+}
 function ppSubmit(ev){
   if(ev&&ev.preventDefault)ev.preventDefault();
   const P=window.PP||{};
   const n=document.getElementById('f-nombre').value.trim();
   const e=document.getElementById('f-email').value.trim();
-  const c=document.getElementById('f-consent').checked;
-  if(!n||!e){alert(lang==='es'?'Por favor complete su nombre y correo.':'Please fill in your name and email.');return false;}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e)){alert(lang==='es'?'Por favor verifique su correo electrónico.':'Please check your email address.');return false;}
-  if(!c){alert(lang==='es'?'Por favor marque la casilla de autorización.':'Please check the authorization box.');return false;}
-  const form=document.getElementById('ppForm');
-  const btn=document.getElementById('ppSend');
+  if(!validLead(n,e,document.getElementById('f-consent').checked))return false;
+  const form=document.getElementById('ppForm'),btn=document.getElementById('ppSend');
   document.getElementById('f-lang-site').value=lang;
-  if(finished&&userAnswers.length){
-    const pct=maxScore>0?Math.round(score/maxScore*100):100;
-    document.getElementById('f-quiz-score').value=pct+'%';
-    document.getElementById('f-quiz-answers').value=userAnswers.map(a=>'P'+a.n+' ('+a.domain+'): '+a.question+' -> '+a.answer).join(' | ');
-    document.getElementById('f-quiz-gaps').value=weak.map(d=>DOM_NAMES[d].es).join(', ');
-  }
+  const qp=quizPayload();
+  document.getElementById('f-quiz-score').value=qp?qp.score:'';
+  document.getElementById('f-quiz-answers').value=qp?qp.answers:'';
+  document.getElementById('f-quiz-gaps').value=qp?qp.gaps:'';
   btn.disabled=true;
   const perfil=[...document.querySelectorAll('input[name="perfil"]:checked')].map(x=>x.value).join(', ');
-  const fd=new FormData(form); fd.set('perfil',perfil);
-  const body=new URLSearchParams(fd).toString();
-  const url=P.FORM_ENDPOINT||form.getAttribute('action')||'/';
+  const fd=new FormData(form);fd.set('perfil',perfil);
   const fail=()=>{btn.disabled=false;const err=document.getElementById('formErr');err.style.display='block';
-    if(P.CONTACT_EMAIL&&P.CONTACT_EMAIL.indexOf('REEMPLAZAR')<0){
+    if(P.CONTACT_EMAIL&&P.CONTACT_EMAIL.indexOf('REEMPLAZAR')<0&&err.innerHTML.indexOf('mailto:')<0){
       err.innerHTML=err.innerHTML+' <a href="mailto:'+P.CONTACT_EMAIL+'?subject='+encodeURIComponent('Patrimonio Protegido')+'" style="color:var(--oro)">'+P.CONTACT_EMAIL+'</a>';}};
-  const ok=()=>{
-    try{ if(window.gtag){
-      gtag('event','generate_lead',{form:'contacto',language:lang,tema:document.getElementById('f-tema').value});
-      if(P.ADS_ID&&P.ADS_LABEL) gtag('event','conversion',{send_to:P.ADS_ID+'/'+P.ADS_LABEL});
-    } }catch(x){}
-    window.location.href='gracias.html?lang='+lang;
-  };
-  fetch(url,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
-    .then(r=>{ r&&r.ok ? ok() : fail(); }).catch(fail);
+  sendLead(new URLSearchParams(fd),'formulario',fail);
   return false;
 }
 document.getElementById('ppForm').addEventListener('submit',ppSubmit);
+document.addEventListener('click',function(e){const a=e.target.closest&&e.target.closest('[data-track]');if(a)dl({event:'phone_click',contact_method:a.getAttribute('data-track'),link_location:a.classList.contains('call-fab')?'boton_movil':(a.closest('footer')?'pie':'contacto')});});
+document.getElementById('rcForm').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  const n=document.getElementById('rc-nombre').value.trim();
+  const e=document.getElementById('rc-email').value.trim();
+  if(!validLead(n,e,document.getElementById('rc-consent').checked))return;
+  const v=id=>{const el=document.getElementById(id);return el?el.value:'';};
+  const qp=quizPayload()||{score:'',answers:'',gaps:''};
+  const es=lang==='es';
+  const prm=new URLSearchParams({
+    'form-name':'contacto','bot-field':'',
+    idioma_sitio:lang,origen:v('f-src'),campana:v('f-camp'),termino:v('f-term'),gclid:v('f-gclid'),
+    autoevaluacion_puntaje:qp.score,autoevaluacion_respuestas:qp.answers,autoevaluacion_zonas_en_blanco:qp.gaps,
+    nombre:n,email:e,ciudad:'',idioma:es?'Español':'English',perfil:'',
+    rango:es?'Prefiero no indicarlo':'Prefer not to say',
+    tema:es?'Revisión de mi autoevaluación':'Review of my self-assessment',
+    mensaje:es?'Solicitud enviada desde el resultado de la autoevaluación.':'Request sent from the self-assessment result.'
+  });
+  const b=document.getElementById('rcSend');b.disabled=true;
+  sendLead(prm,'autoevaluacion',function(){b.disabled=false;document.getElementById('rcErr').style.display='block';});
+});
 
 /* ===== AVISO DE LICENCIA (se arma desde PP.LICENSED) ===== */
 (function(){
