@@ -123,6 +123,19 @@ button{font-family:var(--body);cursor:pointer}
 .retrato:hover img.foto{transform:scale(1.04)}
 @media (prefers-reduced-motion: reduce){.plate-art svg,.plate-art img,.retrato img.foto{transition:none}}
 
+
+/* ===== BIBLIOTECA ===== */
+.biblio{background:var(--blanco);border-top:1px solid var(--arena-oscura);border-bottom:1px solid var(--arena-oscura)}
+.biblio h2{font-size:clamp(28px,4vw,44px)}.bib-lede{color:#3B4237;max-width:62ch;margin:14px 0 34px}
+.bib-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:1000px){.bib-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.bib-grid{grid-template-columns:1fr}}
+.bib-card{display:flex;flex-direction:column;gap:10px;background:var(--arena);border:1px solid var(--arena-oscura);border-top:3px solid var(--oro);border-radius:3px;padding:24px;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.bib-card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(20,53,42,.12)}
+.bib-card svg{width:40px;height:40px;padding:8px;border:1px solid var(--oro);border-radius:50%;stroke:var(--oro);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.bib-card h3{font-size:21px;color:var(--verde)}.bib-card p{font-size:15px;color:#3B4237}
+.dom-guide{display:table;margin-top:16px;font-size:13.5px;font-weight:600;letter-spacing:.04em;color:var(--oro-claro);text-decoration:none;border-bottom:1px solid rgba(217,188,114,.5);padding-bottom:2px}
+.dom-guide:hover{color:var(--blanco);border-bottom-color:var(--blanco)}
+
 /* NAV */
 nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(194,155,64,.25)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:13px 28px;max-width:1260px;margin:0 auto}
@@ -453,6 +466,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#datos" data-en="The Facts" data-es="Los datos">The Facts</a>
       <a href="#mitos" data-en="Myths & Realities" data-es="Mitos y realidades">Myths & Realities</a>
       <a href="#dominios" data-en="The 8 Domains" data-es="Los 8 dominios">The 8 Domains</a>
+      <a href="/en/guides/" data-href-es="/guias/" data-href-en="/en/guides/" data-en="Guides" data-es="Guías">Guides</a>
       <a href="#mapa" data-en="Self-Assessment" data-es="Autoevaluación">Self-Assessment</a>
       <a href="#contacto" data-en="Contact" data-es="Contacto">Contact</a>
       <div class="lang-toggle" role="group" aria-label="Idioma / Language">
@@ -465,6 +479,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="#datos" onclick="toggleMenu()" data-en="The Facts" data-es="Los datos">The Facts</a>
     <a href="#mitos" onclick="toggleMenu()" data-en="Myths & Realities" data-es="Mitos y realidades">Myths & Realities</a>
     <a href="#dominios" onclick="toggleMenu()" data-en="The 8 Domains" data-es="Los 8 dominios">The 8 Domains</a>
+    <a href="/en/guides/" data-href-es="/guias/" data-href-en="/en/guides/" data-en="Guides" data-es="Guías">Guides</a>
     <a href="#mapa" onclick="toggleMenu()" data-en="Self-Assessment" data-es="Autoevaluación">Self-Assessment</a>
     <a href="#contacto" onclick="toggleMenu()" data-en="Contact" data-es="Contacto">Contact</a>
   </div>
@@ -700,6 +715,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- LIBRARY -->
+<section class="biblio" id="biblioteca">
+  <div class="wrap">
+    <span class="eyebrow" data-es="Biblioteca" data-en="Library">Library</span>
+    <div class="rule"></div>
+    <h2 class="reveal" data-es='Aprenda a fondo, <span class="hl">a su ritmo.</span>' data-en='Go deeper, <span class="hl">at your own pace.</span>'>Go deeper, <span class="hl">at your own pace.</span></h2>
+    <p class="reveal bib-lede" data-es="Ocho guías completas, un glosario en los dos idiomas y herramientas para imprimir. Todo verificado con fuentes, todo gratis y sin registro." data-en="Eight full guides, a glossary in both languages, and printable tools. Everything checked against sources, free, with no sign-up.">Eight full guides, a glossary in both languages, and printable tools. Everything checked against sources, free, with no sign-up.</p>
+    <div class="bib-grid"><a class="bib-card" href="/en/guides/" data-href-es="/guias/" data-href-en="/en/guides/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M8 8h6 M8 12h6"/></svg><h3 data-es="8 guías a fondo" data-en="8 in-depth guides">8 in-depth guides</h3><p data-es="Casa y huracanes, inundación, autos, embarcaciones, aviación, colecciones, umbrella y personal del hogar." data-en="Homes and hurricanes, flood, auto, boats, aviation, collections, umbrella, and household staff.">Homes and hurricanes, flood, auto, boats, aviation, collections, umbrella, and household staff.</p></a><a class="bib-card" href="/en/glossary/" data-href-es="/glosario/" data-href-en="/en/glossary/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l4-12 4 12 M5.5 14h5"/><path d="M14 6h4a2.5 2.5 0 0 1 0 5h-4zM14 11h4.5a2.5 2.5 0 0 1 0 5H14z"/></svg><h3 data-es="Glosario bilingüe" data-en="Bilingual glossary">Bilingual glossary</h3><p data-es="Los términos de sus pólizas, en español y con su equivalente en inglés." data-en="The terms in your policies, in English with their Spanish equivalent.">The terms in your policies, in English with their Spanish equivalent.</p></a><a class="bib-card" href="/en/faq/" data-href-es="/preguntas-frecuentes/" data-href-en="/en/faq/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7v.5"/><path d="M12 17h.01"/></svg><h3 data-es="Preguntas frecuentes" data-en="Frequently asked questions">Frequently asked questions</h3><p data-es="Respuestas cortas a lo que más preguntan las familias en la Florida." data-en="Short answers to what Florida families ask most.">Short answers to what Florida families ask most.</p></a><a class="bib-card" href="/en/tools/hurricane-season/" data-href-es="/herramientas/temporada-de-huracanes/" data-href-en="/en/tools/hurricane-season/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 11h7 M9 15h7 M9 19h4"/></svg><h3 data-es="Lista de huracanes e inventario" data-en="Hurricane checklist and inventory">Hurricane checklist and inventory</h3><p data-es="Para imprimir: la preparación de temporada y el mapa de dónde está todo." data-en="Printable: season preparation and the map of where everything is.">Printable: season preparation and the map of where everything is.</p></a></div>
+  </div>
+</section>
+
 <!-- PROCESS -->
 <section class="proceso">
   <div class="wrap">
@@ -910,7 +936,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       data-es="<b>Fuentes de los datos citados:</b> [1] CoreLogic (hoy Cotality), estimación de viviendas subaseguradas en EE. UU. [2] Cookson, Gallagher y Mulder, “Coverage Neglect in Homeowners Insurance” (Universidad de Colorado Boulder y Banco de la Reserva Federal de Filadelfia, 2025), sobre el incendio Marshall de 2021 en Boulder County, Colorado. [3] FEMA / National Flood Insurance Program, NFIP Media Toolkit, julio de 2025 (reclamos 2020 a 2024 y 2014 a 2024). [4] Florida Fish and Wildlife Conservation Commission, Reporte Estadístico de Accidentes Náuticos 2025 (1,027,742 embarcaciones registradas; 694 accidentes reportables y 51 fatalidades), y U.S. Coast Guard, Recreational Boating Statistics. [5] Reserva Federal, Encuesta de Finanzas del Consumidor (riqueza mediana hispana ajustada por inflación, 2013 y 2022) y LIMRA y Life Happens, 2025 Insurance Barometer Study. [6] LIMRA y Life Happens, 2024 Insurance Barometer Study (consumidores hispanos). [7] Insurance Information Institute, límites típicos por robo de joyas en pólizas de hogar. Otros datos: Estatutos de la Florida (627.701, 627.715, 327.32, 768.125, 322.09, 440.02) e Insurance Research Council (conductores sin seguro, 2023). Datos verificados a septiembre de 2026."
       data-en="<b>Sources for cited data:</b> [1] CoreLogic (now Cotality), estimate of underinsured U.S. homes. [2] Cookson, Gallagher, and Mulder, “Coverage Neglect in Homeowners Insurance” (University of Colorado Boulder and Federal Reserve Bank of Philadelphia, 2025), on the 2021 Marshall Fire in Boulder County, Colorado. [3] FEMA / National Flood Insurance Program, NFIP Media Toolkit, July 2025 (claims 2020 to 2024 and 2014 to 2024). [4] Florida Fish and Wildlife Conservation Commission, 2025 Boating Accident Statistical Report (1,027,742 registered vessels; 694 reportable accidents and 51 fatalities), and U.S. Coast Guard, Recreational Boating Statistics. [5] Federal Reserve, Survey of Consumer Finances (inflation-adjusted Hispanic median wealth, 2013 and 2022) and LIMRA and Life Happens, 2025 Insurance Barometer Study. [6] LIMRA and Life Happens, 2024 Insurance Barometer Study (Hispanic consumers). [7] Insurance Information Institute, typical jewelry theft limits in homeowners policies. Other data: Florida Statutes (627.701, 627.715, 327.32, 768.125, 322.09, 440.02) and Insurance Research Council (uninsured drivers, 2023). Data verified as of September 2026."><b>Sources for cited data:</b> [1] CoreLogic (now Cotality), estimate of underinsured U.S. homes. [2] Cookson, Gallagher, and Mulder, “Coverage Neglect in Homeowners Insurance” (University of Colorado Boulder and Federal Reserve Bank of Philadelphia, 2025), on the 2021 Marshall Fire in Boulder County, Colorado. [3] FEMA / National Flood Insurance Program, NFIP Media Toolkit, July 2025 (claims 2020 to 2024 and 2014 to 2024). [4] Florida Fish and Wildlife Conservation Commission, 2025 Boating Accident Statistical Report (1,027,742 registered vessels; 694 reportable accidents and 51 fatalities), and U.S. Coast Guard, Recreational Boating Statistics. [5] Federal Reserve, Survey of Consumer Finances (inflation-adjusted Hispanic median wealth, 2013 and 2022) and LIMRA and Life Happens, 2025 Insurance Barometer Study. [6] LIMRA and Life Happens, 2024 Insurance Barometer Study (Hispanic consumers). [7] Insurance Information Institute, typical jewelry theft limits in homeowners policies. Other data: Florida Statutes (627.701, 627.715, 327.32, 768.125, 322.09, 440.02) and Insurance Research Council (uninsured drivers, 2023). Data verified as of September 2026.</div>
     <div class="fin">
-      <span data-es="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='/privacidad.html' style='color:inherit'>Privacidad</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a>" data-en="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='/privacidad.html' style='color:inherit'>Privacy</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a>">© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='/privacidad.html' style='color:inherit'>Privacy</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a></span>
+      <span data-es="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='/privacidad.html' style='color:inherit'>Privacidad</a> · <a href='/guias/' style='color:inherit'>Guías</a> · <a href='/glosario/' style='color:inherit'>Glosario</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a>" data-en="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='/privacidad.html' style='color:inherit'>Privacy</a> · <a href='/en/guides/' style='color:inherit'>Guides</a> · <a href='/en/glossary/' style='color:inherit'>Glossary</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a>">© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='/privacidad.html' style='color:inherit'>Privacy</a> · <a href='/en/guides/' style='color:inherit'>Guides</a> · <a href='/en/glossary/' style='color:inherit'>Glossary</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a></span>
       <span data-es="Hecho con orgullo para la comunidad hispana de la Florida" data-en="Made with pride for Florida's Hispanic community">Made with pride for Florida's Hispanic community</span>
     </div>
   </div>
@@ -980,12 +1006,13 @@ const DOMS=[
 ];
 
 let lang=document.documentElement.lang==='en'?'en':'es';
+const GUIDE_URL={"res": {"es": "/guias/residencias-huracanes/", "en": "/en/guides/homes-hurricanes/"}, "flo": {"es": "/guias/inundacion/", "en": "/en/guides/flood/"}, "aut": {"es": "/guias/autos/", "en": "/en/guides/auto/"}, "mar": {"es": "/guias/embarcaciones/", "en": "/en/guides/boats/"}, "avi": {"es": "/guias/aviacion-privada/", "en": "/en/guides/private-aviation/"}, "col": {"es": "/guias/colecciones-arte-joyas/", "en": "/en/guides/collections-art-jewelry/"}, "lia": {"es": "/guias/umbrella-responsabilidad/", "en": "/en/guides/umbrella-liability/"}, "emp": {"es": "/guias/personal-del-hogar-legado/", "en": "/en/guides/household-staff-legacy/"}};
 function buildDomains(){
   const g=document.getElementById('domGrid');
   g.innerHTML=DOMS.map(d=>{
     const lis=d.li[lang].map(x=>'<li>'+x+'</li>').join('');
     const chips=d.chips[lang].map(c=>'<span class="stat-chip">'+c+'</span>').join('');
-    return '<div class="dom"><button class="dom-head" onclick="toggleDom(this)" aria-expanded="false"><div class="lft"><div class="dom-ico"><svg viewBox="0 0 24 24">'+ICONS[d.k]+'</svg></div><div><span class="dom-tag">'+d.tag[lang]+'</span><h3>'+d.t[lang]+'</h3></div></div><span class="icon">+</span></button><div class="dom-body"><p>'+d.p[lang]+'</p><ul>'+lis+'</ul><div class="gap-box"><span class="gb-t">'+(lang==='es'?'Brecha común':'Common gap')+'</span><p>'+d.gap[lang]+'</p></div>'+chips+'</div></div>';
+    return '<div class="dom"><button class="dom-head" onclick="toggleDom(this)" aria-expanded="false"><div class="lft"><div class="dom-ico"><svg viewBox="0 0 24 24">'+ICONS[d.k]+'</svg></div><div><span class="dom-tag">'+d.tag[lang]+'</span><h3>'+d.t[lang]+'</h3></div></div><span class="icon">+</span></button><div class="dom-body"><p>'+d.p[lang]+'</p><ul>'+lis+'</ul><div class="gap-box"><span class="gb-t">'+(lang==='es'?'Brecha común':'Common gap')+'</span><p>'+d.gap[lang]+'</p></div>'+chips+'<a class="dom-guide" href="'+GUIDE_URL[d.k][lang]+'">'+(lang==='es'?'Leer la guía completa':'Read the full guide')+' &rarr;</a></div></div>';
   }).join('');
 }
 function toggleDom(btn){const c=btn.closest('.dom');const o=c.classList.toggle('open');btn.setAttribute('aria-expanded',o);}
@@ -1008,6 +1035,7 @@ function setLang(l){
   document.getElementById('btn-es').classList.toggle('active',l==='es');
   document.getElementById('btn-en').classList.toggle('active',l==='en');
   document.querySelectorAll('[data-es]').forEach(el=>{const v=el.getAttribute('data-'+l);if(v!==null)el.innerHTML=v;});
+  document.querySelectorAll('[data-href-en]').forEach(a=>{a.setAttribute('href',a.getAttribute('data-href-'+l));});
   buildTicker();buildDomains();renderQuestion();
 }
 
@@ -1186,6 +1214,13 @@ document.getElementById('rcGo').addEventListener('click',function(ev){
   window.scrollTo({top:y,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
   setTimeout(function(){try{document.getElementById('f-nombre').focus({preventScroll:true});}catch(x){}},700);
 });
+
+
+/* ===== TEMA DESDE LAS GUIAS (?tema=flo) ===== */
+(function(){var T={res:'Residencias y huracanes',flo:'Inundación y marejada',aut:'Autos de uso y colección',mar:'Embarcaciones y PWC',avi:'Aviación privada',col:'Colecciones, arte y joyas',lia:'Responsabilidad y umbrella',emp:'Personal del hogar y legado'};
+ var k=null;try{k=new URLSearchParams(location.search).get('tema');}catch(e){}
+ if(!k||!T[k])return;var s=document.getElementById('f-tema');if(!s)return;
+ var i=[].slice.call(s.options).findIndex(function(o){return o.getAttribute('data-es')===T[k];});if(i>=0)s.selectedIndex=i;})();
 
 /* ===== AVISO DE LICENCIA (se arma desde PP.LICENSED) ===== */
 (function(){

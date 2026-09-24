@@ -1,6 +1,231 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://www.protectedlegacyfl.com/</loc><lastmod>2026-09-24</lastmod><priority>1.0</priority><xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/"/></url>
-  <url><loc>https://www.protectedlegacyfl.com/en/</loc><lastmod>2026-09-24</lastmod><priority>1.0</priority><xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/"/></url>
-  <url><loc>https://www.protectedlegacyfl.com/privacidad.html</loc><lastmod>2026-09-23</lastmod><priority>0.3</priority></url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/guias/residencias-huracanes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/residencias-huracanes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/homes-hurricanes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/residencias-huracanes/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/guides/homes-hurricanes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/residencias-huracanes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/homes-hurricanes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/residencias-huracanes/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/guias/inundacion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/inundacion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/flood/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/inundacion/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/guides/flood/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/inundacion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/flood/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/inundacion/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/guias/autos/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/autos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/auto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/autos/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/guides/auto/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/autos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/auto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/autos/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/guias/embarcaciones/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/embarcaciones/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/boats/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/embarcaciones/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/guides/boats/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/embarcaciones/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/boats/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/embarcaciones/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/guias/aviacion-privada/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/aviacion-privada/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/private-aviation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/aviacion-privada/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/guides/private-aviation/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/aviacion-privada/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/private-aviation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/aviacion-privada/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/guias/colecciones-arte-joyas/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/colecciones-arte-joyas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/collections-art-jewelry/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/colecciones-arte-joyas/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/guides/collections-art-jewelry/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/colecciones-arte-joyas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/collections-art-jewelry/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/colecciones-arte-joyas/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/guias/umbrella-responsabilidad/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/umbrella-responsabilidad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/umbrella-liability/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/umbrella-responsabilidad/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/guides/umbrella-liability/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/umbrella-responsabilidad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/umbrella-liability/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/umbrella-responsabilidad/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/guias/personal-del-hogar-legado/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/personal-del-hogar-legado/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/household-staff-legacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/personal-del-hogar-legado/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/guides/household-staff-legacy/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/personal-del-hogar-legado/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/household-staff-legacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/personal-del-hogar-legado/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/guias/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/guides/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/guias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/guias/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/glosario/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/glosario/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/glosario/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/glossary/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/glosario/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/glosario/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/preguntas-frecuentes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/preguntas-frecuentes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/preguntas-frecuentes/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/preguntas-frecuentes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/preguntas-frecuentes/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/herramientas/temporada-de-huracanes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/herramientas/temporada-de-huracanes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/tools/hurricane-season/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/herramientas/temporada-de-huracanes/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/tools/hurricane-season/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/herramientas/temporada-de-huracanes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/tools/hurricane-season/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/herramientas/temporada-de-huracanes/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/herramientas/inventario-familiar/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/herramientas/inventario-familiar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/tools/family-inventory/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/herramientas/inventario-familiar/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/tools/family-inventory/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/herramientas/inventario-familiar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/tools/family-inventory/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/herramientas/inventario-familiar/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/privacidad.html</loc>
+    <priority>0.3</priority>
+  </url>
 </urlset>

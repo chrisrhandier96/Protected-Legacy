@@ -30,3 +30,16 @@
   to = "/en.html"
   status = 200
   force = true
+
+# Source files for the library (not pages): keep them off the public site
+[[redirects]]
+  from = "/content/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/tools/*"
+  to = "/404.html"
+  status = 404
+  force = true
