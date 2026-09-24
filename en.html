@@ -513,21 +513,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="fact reveal"><div class="num" data-count="1">0<sup>M+</sup></div>
         <p class="txt" data-es='de embarcaciones registradas hacen de la Florida el líder nacional, y también el estado con más fatalidades náuticas por año.<a class="fn" href="#fuentes">4</a>' data-en='registered vessels make Florida the national leader, and also the state with the most boating fatalities each year.<a class="fn" href="#fuentes">4</a>'>registered vessels make Florida the national leader, and also the state with the most boating fatalities each year.<a class="fn" href="#fuentes">4</a></p></div>
     </div>
-    <div class="teaser reveal" id="teaser">
-      <div class="t-left">
-        <span class="t-eye" id="tEye" data-es="Empiece aquí · Pregunta 1 de 12" data-en="Start here · Question 1 of 12">Start here · Question 1 of 12</span>
-        <p class="t-q" id="tQ"></p>
-        <div class="t-ans" id="tAns">
-          <button type="button" data-p="2"></button><button type="button" data-p="1"></button><button type="button" data-p="0"></button><button type="button" data-p="-1"></button>
-        </div>
-        <div class="t-cont" id="tCont"><p class="t-q" id="tContT"></p><a class="btn btn-oro" href="#mapa" id="tContB"></a></div>
-      </div>
-      <div class="t-right" aria-hidden="true">
-        <div class="t-dw"><svg viewBox="0 0 120 120" class="t-dial"><circle cx="60" cy="60" r="50" class="t-trk"/><circle cx="60" cy="60" r="50" class="t-val" id="tDial"/></svg>
-        <div class="t-meta"><b id="tNum">12</b><span id="tLbl" data-es="zonas de riesgo" data-en="risk zones">risk zones</span></div></div>
-        <p class="t-note" data-es="3 minutos. Anónima. Sin cifras ni datos personales." data-en="3 minutes. Anonymous. No figures or personal data.">3 minutes. Anonymous. No figures or personal data.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1247,7 +1232,9 @@ document.getElementById('rcGo').addEventListener('click',function(ev){
   var p=null; try{p=new URLSearchParams(window.location.search).get('lang');}catch(e){}
   var s=null; try{s=window.localStorage.getItem('pp.lang');}catch(e){}
   var onEn=location.pathname.indexOf('/en')===0;
-  var l=onEn?'en':((p==='en'||p==='es')?p:((s==='en'||s==='es')?s:null));
+  /* visitas desde anuncios: el idioma lo decide la pagina de destino (/ = espanol, /en/ = ingles) */
+  var fromAd=/[?&](gclid|gbraid|wbraid|utm_source|utm_campaign)=/.test(location.search);
+  var l=onEn?'en':((p==='en'||p==='es')?p:(fromAd?'es':((s==='en'||s==='es')?s:null)));
   if(l&&l!==lang) setLang(l); else if(l) { try{window.localStorage.setItem('pp.lang',l);}catch(e){} }
 })();
 
@@ -1625,9 +1612,6 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
 .t-ans button:hover,.t-ans button:focus-visible{border-color:var(--oro);background:rgba(194,155,64,.12);transform:translateY(-2px);outline:none}
 .t-ans button.on{background:var(--oro);border-color:var(--oro);color:var(--verde-oscuro)}
 .t-ans button:last-child{color:#B9C7BC}
-.t-cont{display:none}
-.teaser.has .t-ans,.teaser.has #tQ{display:none}
-.teaser.has .t-cont{display:block}
 .t-cont .btn{margin-top:4px}
 .t-right{background:var(--verde-oscuro);border-left:1px solid rgba(194,155,64,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:36px 28px;text-align:center}
 .t-dw{position:relative;width:132px;height:132px}
@@ -1692,12 +1676,12 @@ details.more .more-in{padding:4px 16px 8px}
   document.documentElement.classList.add('pp-js');
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var T={
-    es:{prog:'Su progreso',cont:function(n){return 'Su mapa va en '+n+' de 12. Retome donde lo dejó.';},contB:'Continuar mi mapa',
+    es:{prog:'Su progreso',eye0:'Empiece aquí · 3 minutos · Anónima',hook:'¿Cuántas de las 12 zonas de riesgo de su familia están en blanco? Descúbralo en tres minutos.',start:'Empezar mi mapa',cont:function(n){return 'Su mapa va en '+n+' de 12. Retome donde lo dejó.';},contB:'Continuar mi mapa',
         done:function(g){return g?('Su mapa está listo. Quedaron '+g+(g===1?' zona':' zonas')+' en blanco.'):'Su mapa está listo. Ninguna zona quedó en blanco.';},doneB:'Ver mi resultado',
         answered:'respondidas',zones:'zonas de riesgo',
         d0:'Haga su mapa · 3 min',d1:function(n){return 'Continúe su mapa · '+n+'/12';},d2:'Vea su resultado',
         chip:function(n){return 'Su autoevaluación ('+n+'/12) se adjuntará a este mensaje.';},chipOff:'Su autoevaluación no se adjuntará.',off:'No adjuntar',on:'Adjuntar'},
-    en:{prog:'Your progress',cont:function(n){return 'Your map is at '+n+' of 12. Pick up where you left off.';},contB:'Continue my map',
+    en:{prog:'Your progress',eye0:'Start here · 3 minutes · Anonymous',hook:"How many of your family's 12 risk zones are blank? Find out in three minutes.",start:'Start my map',cont:function(n){return 'Your map is at '+n+' of 12. Pick up where you left off.';},contB:'Continue my map',
         done:function(g){return g?('Your map is ready. '+g+(g===1?' zone':' zones')+' came up blank.'):'Your map is ready. No zone came up blank.';},doneB:'See my result',
         answered:'answered',zones:'risk zones',
         d0:'Take the map · 3 min',d1:function(n){return 'Continue your map · '+n+'/12';},d2:'See your result',
@@ -1714,11 +1698,8 @@ details.more .more-in{padding:4px 16px 8px}
       teaser.classList.toggle('has',n>0);teaser.classList.toggle('idle',n===0);
       $('tDial').style.strokeDashoffset=(C*(1-n/12)).toFixed(2);
       if(n===0){
-        $('tQ').textContent=questions[0][lang];
-        var bs=$('tAns').querySelectorAll('button'),k=['si','ns','no','na'];
-        bs.forEach(function(b,i){b.textContent=ANS[k[i]][lang];});
-        $('tNum').textContent='12';$('tLbl').textContent=t.zones;
-        $('tEye').textContent=$('tEye').getAttribute('data-'+lang);
+        $('tNum').textContent='12';$('tLbl').textContent=t.zones;$('tEye').textContent=t.eye0;
+        $('tContT').textContent=t.hook;$('tContB').textContent=t.start;
       }else{
         $('tNum').textContent=n+'/12';$('tLbl').textContent=t.answered;$('tEye').textContent=t.prog;
         $('tContT').textContent=finished?t.done(qStats().weak.length):t.cont(n);
@@ -1747,20 +1728,8 @@ details.more .more-in{padding:4px 16px 8px}
     var y=sh.getBoundingClientRect().top+scrollY-90;
     window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
   }
-  /* teaser answers: records Q1 and carries the visitor into the map */
   if(teaser){
-    $('tAns').addEventListener('click',function(e){
-      var b=e.target.closest('button');if(!b||finished)return;
-      var p=parseInt(b.getAttribute('data-p'),10);
-      b.classList.add('on');
-      dl({event:'cta_click',cta:'teaser_q1'});
-      setTimeout(function(){
-        b.classList.remove('on');
-        if(picks.length===0){dl({event:'quiz_start'});picks.push(p);qSave();renderQuestion();}
-        toQuiz();
-      },260);
-    });
-    $('tContB').addEventListener('click',function(e){e.preventDefault();dl({event:'cta_click',cta:'teaser_continue'});toQuiz();});
+    $('tContB').addEventListener('click',function(e){e.preventDefault();dl({event:'cta_click',cta:picks.length?'teaser_continue':'teaser_start'});toQuiz();});
   }
   $('dockMap').addEventListener('click',function(e){
     e.preventDefault();
