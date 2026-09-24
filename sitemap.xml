@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.protectedlegacyfl.com/</loc><lastmod>2026-09-23</lastmod><priority>1.0</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://www.protectedlegacyfl.com/</loc><lastmod>2026-09-24</lastmod><priority>1.0</priority><xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/"/></url>
+  <url><loc>https://www.protectedlegacyfl.com/en/</loc><lastmod>2026-09-24</lastmod><priority>1.0</priority><xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/"/></url>
   <url><loc>https://www.protectedlegacyfl.com/privacidad.html</loc><lastmod>2026-09-23</lastmod><priority>0.3</priority></url>
 </urlset>

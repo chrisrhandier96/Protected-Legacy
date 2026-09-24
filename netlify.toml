@@ -8,3 +8,25 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Old English links (/?lang=en) go to the real English page
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 301
+  force = true
+  query = {lang = "en"}
+
+# /en without the slash goes to /en/
+[[redirects]]
+  from = "/en"
+  to = "/en/"
+  status = 301
+  force = true
+
+# The English page lives in en.html and is served at /en/
+[[redirects]]
+  from = "/en/"
+  to = "/en.html"
+  status = 200
+  force = true
