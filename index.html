@@ -1753,6 +1753,9 @@ details.more .more-in{padding:4px 16px 8px}
       $('qcText').textContent=window.ppNoQuiz?t.chipOff:t.chip(n);
       $('qcOff').textContent=window.ppNoQuiz?t.on:t.off;
     }
+    /* hidden form fields: always hold what will be attached (ppSubmit sets them again on send) */
+    var qp=window.ppNoQuiz?null:quizPayload();
+    $('f-quiz-score').value=qp?qp.score:'';$('f-quiz-answers').value=qp?qp.answers:'';$('f-quiz-gaps').value=qp?qp.gaps:'';
   }
   window.ppSync=sync;
 
