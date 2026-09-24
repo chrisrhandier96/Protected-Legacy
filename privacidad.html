@@ -47,7 +47,7 @@ ul{padding-left:20px}
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="top">
-  <a href="index.html"><span class="logo">Patrimonio <em>Protegido</em></span></a>
+  <a href="/" data-home><span class="logo">Patrimonio <em>Protegido</em></span></a>
   <div class="lang"><button id="b-es" class="active" onclick="setLang('es')">ES</button><button id="b-en" onclick="setLang('en')">EN</button></div>
 </div>
 <div class="wrap">
@@ -75,7 +75,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
   <p><span data-es="Christian R. González, Florida. Correo de contacto: " data-en="Christian R. González, Florida. Contact email: ">Christian R. González, Florida. Correo de contacto: </span><a id="pmail" href="#">...</a></p>
-  <a class="btn" href="index.html" data-es="Volver al inicio" data-en="Back to the site">Volver al inicio</a>
+  <a class="btn" href="/" data-home data-es="Volver al inicio" data-en="Back to the site">Volver al inicio</a>
   <div class="fin"><span data-es="Actualizada el 24 de septiembre de 2026." data-en="Updated September 24, 2026.">Actualizada el 24 de septiembre de 2026.</span></div>
 </div>
 <script>
@@ -85,6 +85,7 @@ function setLang(l){
   document.getElementById('b-es').classList.toggle('active',l==='es');
   document.getElementById('b-en').classList.toggle('active',l==='en');
   document.querySelectorAll('[data-es]').forEach(function(el){var v=el.getAttribute('data-'+l);if(v!==null)el.innerHTML=v;});
+  document.querySelectorAll('a[data-home]').forEach(function(a){a.setAttribute('href',l==='en'?'/en/':'/');});
   try{localStorage.setItem('pp.lang',l);}catch(e){}
 }
 (function(){var p=null;try{p=new URLSearchParams(location.search).get('lang');}catch(e){}

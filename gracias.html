@@ -55,7 +55,7 @@ if(P.ADS_ID&&P.ADS_LABEL)gtag('event','conversion',{send_to:P.ADS_ID+'/'+P.ADS_L
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="top">
-  <a href="index.html"><span class="logo">Patrimonio <em>Protegido</em></span></a>
+  <a href="/" data-home><span class="logo">Patrimonio <em>Protegido</em></span></a>
   <div class="lang"><button id="b-es" class="active" onclick="setLang('es')">ES</button><button id="b-en" onclick="setLang('en')">EN</button></div>
 </div>
 <div class="wrap">
@@ -66,11 +66,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="card">
     <h2 style="margin-top:0" data-es="Mientras tanto" data-en="In the meantime">Mientras tanto</h2>
     <ul>
-      <li data-es="Si aún no hizo la autoevaluación, toma tres minutos y le muestra dónde están sus brechas: <a href='index.html#mapa'>El Mapa de Protección Familiar</a>." data-en="If you have not taken the self-assessment yet, it takes three minutes and shows where your gaps are: <a href='index.html#mapa'>The Family Protection Map</a>.">Si aún no hizo la autoevaluación, toma tres minutos y le muestra dónde están sus brechas: <a href="index.html#mapa">El Mapa de Protección Familiar</a>.</li>
-      <li data-es="Los <a href='index.html#mitos'>mitos más costosos</a> son la lectura más útil antes de nuestra conversación." data-en="The <a href='index.html#mitos'>costliest myths</a> are the most useful reading before our conversation.">Los <a href="index.html#mitos">mitos más costosos</a> son la lectura más útil antes de nuestra conversación.</li>
+      <li data-es="Si aún no hizo la autoevaluación, toma tres minutos y le muestra dónde están sus brechas: <a href='/#mapa'>El Mapa de Protección Familiar</a>." data-en="If you have not taken the self-assessment yet, it takes three minutes and shows where your gaps are: <a href='/en/#mapa'>The Family Protection Map</a>.">Si aún no hizo la autoevaluación, toma tres minutos y le muestra dónde están sus brechas: <a href="/#mapa">El Mapa de Protección Familiar</a>.</li>
+      <li data-es="Los <a href='/#mitos'>mitos más costosos</a> son la lectura más útil antes de nuestra conversación." data-en="The <a href='/en/#mitos'>costliest myths</a> are the most useful reading before our conversation.">Los <a href="/#mitos">mitos más costosos</a> son la lectura más útil antes de nuestra conversación.</li>
     </ul>
   </div>
-  <a class="btn" href="index.html" data-es="Volver al inicio" data-en="Back to the site">Volver al inicio</a>
+  <a class="btn" href="/" data-home data-es="Volver al inicio" data-en="Back to the site">Volver al inicio</a>
   <div class="fin" data-es="Este sitio es educativo. No constituye asesoría de seguros, legal, fiscal ni financiera." data-en="This site is educational. It does not constitute insurance, legal, tax, or financial advice.">Este sitio es educativo. No constituye asesoría de seguros, legal, fiscal ni financiera.</div>
 </div>
 <script>
@@ -80,6 +80,7 @@ function setLang(l){
   document.getElementById('b-es').classList.toggle('active',l==='es');
   document.getElementById('b-en').classList.toggle('active',l==='en');
   document.querySelectorAll('[data-es]').forEach(function(el){var v=el.getAttribute('data-'+l);if(v!==null)el.innerHTML=v;});
+  document.querySelectorAll('a[data-home]').forEach(function(a){a.setAttribute('href',l==='en'?'/en/':'/');});
   try{localStorage.setItem('pp.lang',l);}catch(e){}
 }
 (function(){var p=null;try{p=new URLSearchParams(location.search).get('lang');}catch(e){}

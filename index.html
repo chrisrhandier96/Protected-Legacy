@@ -13,10 +13,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>Patrimonio Protegido | Christian R. González · Educación de riesgo para familias hispanas de alto patrimonio</title>
 <meta name="description" content="Educación en español e inglés sobre protección de patrimonio para familias de alto patrimonio en la Florida: residencias, colecciones, embarcaciones, aviación, responsabilidad civil y legado.">
 <meta property="og:title" content="Patrimonio Protegido | Christian R. González">
-<meta property="og:description" content="La riqueza hispana en EE. UU. se triplicó en una década. La protección no la siguió. Educación de riesgo con datos verificables, sin ventas.">
+<meta property="og:description" content="La riqueza hispana en EE. UU. se triplicó en una década. La protección no la siguió. Educación de riesgo, en su idioma, con datos verificables.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_US">
 <meta name="author" content="Christian R. González">
+<link rel="canonical" href="https://www.protectedlegacyfl.com/">
+<link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/">
+<link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/">
 <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%2314352A"/><g fill="none" stroke="%23C29B40" stroke-width="2"><circle cx="32" cy="32" r="22"/><path fill="%23C29B40" stroke="none" d="M32 12l4 16-4 4-4-4z M32 52l4-16-4-4-4 4z M12 32l16-4 4 4-4 4z M52 32l-16-4-4 4 4 4z"/><path d="M18 18l9 9 M46 18l-9 9 M18 46l9-9 M46 46l-9-9"/><circle cx="32" cy="32" r="3.5" fill="%23C29B40" stroke="none"/></g></svg>'>
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#14352A">
@@ -33,9 +37,9 @@ window.PP = {
   SITE_URL:      'https://www.protectedlegacyfl.com',
   CONTACT_EMAIL: 'chrisrhandier96@gmail.com',
   FORM_ENDPOINT: '',        // Netlify: dejar vacio. Otro host: pegar la URL de Formspree
-  GA4_ID:        '',        // G-XXXXXXXXXX (Google Analytics 4) — leave blank; GA4 is configured inside Tag Manager (GTM-P88VGFHR) instead, see note below
-  ADS_ID:        '',        // AW-XXXXXXXXX  (Google Ads) — pendiente
-  ADS_LABEL:     '',        // etiqueta de conversion de Google Ads — pendiente
+  GA4_ID:        '',        // G-XXXXXXXXXX (Google Analytics 4) : leave blank; GA4 is configured inside Tag Manager (GTM-P88VGFHR) instead, see note below
+  ADS_ID:        '',        // AW-XXXXXXXXX  (Google Ads) : pendiente
+  ADS_LABEL:     '',        // etiqueta de conversion de Google Ads : pendiente
   LICENSED:      true,
   LICENSE_NUMBER:'W606240'
 };
@@ -43,8 +47,8 @@ window.PP = {
   var P=window.PP, h=document.head, u=P.SITE_URL&&P.SITE_URL.indexOf('REEMPLAZAR')<0?P.SITE_URL:'';
   function meta(attr,key,val){var m=document.createElement('meta');m.setAttribute(attr,key);m.content=val;h.appendChild(m);}
   if(u){
-    var c=document.createElement('link');c.rel='canonical';c.href=u+'/';h.appendChild(c);
-    meta('property','og:url',u+'/');
+    var pg=document.documentElement.lang==='en'?'/en/':'/';
+    meta('property','og:url',u+pg);
     meta('property','og:image',u+'/og.png');
     meta('name','twitter:image',u+'/og.png');
     var ld=document.createElement('script');ld.type='application/ld+json';
@@ -406,6 +410,7 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;p
 .rc-consent input{margin-top:3px;accent-color:var(--oro);flex:none}
 .result .res-capture .rc-note{font-size:12px;color:#9FB2A6;margin:12px 0 0;max-width:none}
 .result .res-capture .rc-err{display:none;font-size:13px;color:#F2B8B8;margin:10px 0 0;max-width:none}
+.rc-go{display:block;width:100%}
 .res-alt{display:inline-block;margin-top:4px;font-size:14px;color:var(--verde);text-decoration:underline;text-underline-offset:3px}
 
 .eyebrow::before{transition:width .4s ease}
@@ -468,8 +473,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <span class="eyebrow" data-es="Educación de riesgo · Florida" data-en="Risk education · Florida">Educación de riesgo · Florida</span>
     <h1 data-es='Su familia construyó algo <em>Extraordinario.</em> Aprenda a protegerlo, todo.' data-en='Your family built something <em>Extraordinary.</em> Learn how to protect it, all of it.'>Su familia construyó algo <em>Extraordinario.</em> Aprenda a protegerlo, todo.</h1>
-    <p class="lead" data-es="La residencia frente al agua, las propiedades de renta, la embarcación, las colecciones, la reputación y el legado. Educación clara, en español y en inglés, respaldada por datos verificables. Sin ventas y sin compromiso." data-en="The waterfront residence, the rental properties, the boat, the collections, the reputation, and the legacy. Clear education, in Spanish and English, backed by verifiable data. No sales pitch, no obligation.">La residencia frente al agua, las propiedades de renta, la embarcación, las colecciones, la reputación y el legado. Educación clara, en español y en inglés, respaldada por datos verificables. Sin ventas y sin compromiso.</p>
-    <p class="qualifier" data-es="Diseñado para familias con patrimonios de siete cifras o más" data-en="Designed for families with seven-figure estates and above">Diseñado para familias con patrimonios de siete cifras o más</p>
+    <p class="lead" data-es="Residencias frente al agua, propiedades de renta, embarcaciones, aviación privada, colecciones, reputación y legado. Educación clara, en español y en inglés, respaldada por datos verificables." data-en="Waterfront residences, rental properties, vessels, private aviation, collections, reputation, and legacy. Clear education, in Spanish and English, backed by verifiable data.">Residencias frente al agua, propiedades de renta, embarcaciones, aviación privada, colecciones, reputación y legado. Educación clara, en español y en inglés, respaldada por datos verificables.</p>
+    <p class="qualifier" data-es="Para familias, family offices y los asesores que los acompañan" data-en="For families, family offices, and the advisors who serve them">Para familias, family offices y los asesores que los acompañan</p>
     <div class="cta-row">
       <a class="btn btn-oro" href="#mapa" data-es="Hacer mi autoevaluación (3 min)" data-en="Take my self-assessment (3 min)">Hacer mi autoevaluación (3 min)</a>
       <a class="btn btn-ghost" href="#mitos" data-es="Ver los mitos más costosos" data-en="See the costliest myths">Ver los mitos más costosos</a>
@@ -506,6 +511,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="fact reveal"><div class="num" data-count="1">0<sup>M+</sup></div>
         <p class="txt" data-es='de embarcaciones registradas hacen de la Florida el líder nacional, y también el estado con más fatalidades náuticas por año.<a class="fn" href="#fuentes">4</a>' data-en='registered vessels make Florida the national leader, and also the state with the most boating fatalities each year.<a class="fn" href="#fuentes">4</a>'>de embarcaciones registradas hacen de la Florida el líder nacional, y también el estado con más fatalidades náuticas por año.<a class="fn" href="#fuentes">4</a></p></div>
     </div>
+    <div class="teaser reveal" id="teaser">
+      <div class="t-left">
+        <span class="t-eye" id="tEye" data-es="Empiece aquí · Pregunta 1 de 12" data-en="Start here · Question 1 of 12">Empiece aquí · Pregunta 1 de 12</span>
+        <p class="t-q" id="tQ"></p>
+        <div class="t-ans" id="tAns">
+          <button type="button" data-p="2"></button><button type="button" data-p="1"></button><button type="button" data-p="0"></button><button type="button" data-p="-1"></button>
+        </div>
+        <div class="t-cont" id="tCont"><p class="t-q" id="tContT"></p><a class="btn btn-oro" href="#mapa" id="tContB"></a></div>
+      </div>
+      <div class="t-right" aria-hidden="true">
+        <div class="t-dw"><svg viewBox="0 0 120 120" class="t-dial"><circle cx="60" cy="60" r="50" class="t-trk"/><circle cx="60" cy="60" r="50" class="t-val" id="tDial"/></svg>
+        <div class="t-meta"><b id="tNum">12</b><span id="tLbl" data-es="zonas de riesgo" data-en="risk zones">zonas de riesgo</span></div></div>
+        <p class="t-note" data-es="3 minutos. Anónima. Sin cifras ni datos personales." data-en="3 minutes. Anonymous. No figures or personal data.">3 minutos. Anónima. Sin cifras ni datos personales.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -514,7 +534,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <span class="eyebrow" data-es="Mitos y realidades" data-en="Myths and realities">Mitos y realidades</span>
     <div class="rule"></div>
-    <h2 class="reveal" data-es="La riqueza hispana creció. La protección se quedó atrás." data-en="Hispanic wealth grew. Protection fell behind.">La riqueza hispana creció. La protección se quedó atrás.</h2>
+    <h2 class="reveal" data-es='La riqueza hispana creció. <span class="hl-dark">La protección se quedó atrás.</span>' data-en='Hispanic wealth grew. <span class="hl-dark">Protection fell behind.</span>'>La riqueza hispana creció. <span class="hl-dark">La protección se quedó atrás.</span></h2>
     <p class="intro reveal" data-es="No es falta de capacidad ni de visión. Es que a nuestra comunidad nadie le explicó estas herramientas en su idioma, y las ideas heredadas sobre seguros y protección se quedaron pequeñas frente a los patrimonios que hoy existen. Toque cada mito para ver la realidad." data-en="It is not a lack of capacity or vision. It is that no one explained these tools to our community in its own language, and inherited ideas about insurance and protection stayed small while today's estates grew large. Tap each myth to see the reality.">No es falta de capacidad ni de visión. Es que a nuestra comunidad nadie le explicó estas herramientas en su idioma, y las ideas heredadas sobre seguros y protección se quedaron pequeñas frente a los patrimonios que hoy existen. Toque cada mito para ver la realidad.</p>
 
     <div class="mito-anchor reveal">
@@ -559,7 +579,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <span class="eyebrow" data-es="Aprender en profundidad" data-en="Learn in depth">Aprender en profundidad</span>
     <div class="rule"></div>
-    <h2 class="reveal" data-es="Los 8 dominios de un patrimonio de siete cifras" data-en="The 8 domains of a seven-figure estate">Los 8 dominios de un patrimonio de siete cifras</h2>
+    <h2 class="reveal" data-es='Los 8 dominios de un patrimonio de <span class="hl-dark">siete cifras</span>' data-en='The 8 domains of a <span class="hl-dark">seven-figure estate</span>'>Los 8 dominios de un patrimonio de <span class="hl-dark">siete cifras</span></h2>
     <p class="intro reveal" data-es="Cuando el patrimonio supera el millón de dólares, la protección deja de ser una póliza y se convierte en una <span class='accent-i'>arquitectura</span>. Cada dominio tiene sus propias reglas, sus propios límites ocultos y sus propias brechas típicas. Abra cada uno y encuentre las suyas." data-en="Once wealth passes the million-dollar mark, protection stops being a policy and becomes an <span class='accent-i'>Architecture</span>. Each domain has its own rules, its own hidden limits, and its own typical gaps. Open each one and find yours.">Cuando el patrimonio supera el millón de dólares, la protección deja de ser una póliza y se convierte en una <span class="accent-i">Arquitectura</span>. Cada dominio tiene sus propias reglas, sus propios límites ocultos y sus propias brechas típicas. Abra cada uno y encuentre las suyas.</p>
 
     <div class="dom-grid" id="domGrid"></div>
@@ -583,7 +603,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M252 96c0 26-18 40-18 40s-18-14-18-40c0-11 8-20 18-20s18 9 18 20z M234 136v32"/>
             <path d="M48 84c8 3 16 3 24 0 M40 96c6 2 12 2 18 0"/>
           </svg><img src="https://images.pexels.com/photos/38661696/pexels-photo-38661696.jpeg?w=800" alt="" loading="lazy"></div>
-          <figcaption data-es="La residencia frente al agua" data-en="The waterfront residence">La residencia frente al agua</figcaption>
+          <figcaption data-es="Residencias frente al agua" data-en="Waterfront residences">Residencias frente al agua</figcaption>
         </figure>
         <figure class="plate reveal">
           <div class="plate-art"><svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -593,7 +613,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M28 300c24-10 48-10 72 0s48 10 72 0 48-10 72 0 M74 326c20-8 40-8 60 0 M186 322c18-7 36-7 54 0"/>
             <circle cx="242" cy="72" r="20"/><path d="M242 44v-10 M242 110v-10 M270 72h10 M204 72h10"/>
           </svg><img src="https://images.pexels.com/photos/5368730/pexels-photo-5368730.jpeg?w=800" alt="" loading="lazy"></div>
-          <figcaption data-es="La embarcación" data-en="The vessel">La embarcación</figcaption>
+          <figcaption data-es="Embarcaciones" data-en="Vessels">Embarcaciones</figcaption>
         </figure>
         <figure class="plate reveal">
           <div class="plate-art"><svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -603,7 +623,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M128 104l-10-46h64l-10 46 M128 248l-10 46h64l-10-46"/>
             <path d="M62 320h176 M84 338h132"/>
           </svg><img src="https://images.pexels.com/photos/380782/pexels-photo-380782.jpeg?w=800" alt="" loading="lazy"></div>
-          <figcaption data-es="La colección" data-en="The collection">La colección</figcaption>
+          <figcaption data-es="Colecciones" data-en="Collections">Colecciones</figcaption>
         </figure>
         <figure class="plate reveal">
           <div class="plate-art"><svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -613,7 +633,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <circle cx="150" cy="168" r="6"/>
             <path d="M46 300c26-10 52-10 78 0s52 10 78 0 52-10 78 0 M92 326c19-8 38-8 58 0 M188 322c17-7 34-7 52 0"/>
           </svg><img src="https://images.pexels.com/photos/9385084/pexels-photo-9385084.jpeg?w=800" alt="" loading="lazy"></div>
-          <figcaption data-es="El legado" data-en="The legacy">El legado</figcaption>
+          <figcaption data-es="Legado familiar" data-en="Family legacy">Legado familiar</figcaption>
         </figure>
         <figure class="plate reveal">
           <div class="plate-art"><svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -622,7 +642,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M130 180l14-46h18l14 46 M118 224v20 M182 224v20"/>
             <path d="M20 300c24-10 48-10 72 0s48 10 72 0 48-10 72 0 M66 326c19-8 38-8 58 0"/>
           </svg><img src="https://images.pexels.com/photos/20562279/pexels-photo-20562279.jpeg?w=800" alt="" loading="lazy"></div>
-          <figcaption data-es="La aviación privada" data-en="Private aviation">La aviación privada</figcaption>
+          <figcaption data-es="Aviación privada" data-en="Private aviation">Aviación privada</figcaption>
         </figure>
       </div>
 
@@ -711,7 +731,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div style="text-align:center">
       <span class="eyebrow" style="justify-content:center" data-es="Autoevaluación · 3 minutos · Anónima" data-en="Self-assessment · 3 minutes · Anonymous">Autoevaluación · 3 minutos · Anónima</span>
       <div class="rule" style="margin:18px auto 26px"></div>
-      <h2 class="reveal" data-es="El Mapa de Protección Familiar" data-en="The Family Protection Map">El Mapa de Protección Familiar</h2>
+      <h2 class="reveal" data-es='El Mapa de <span class="hl-dark">Protección Familiar</span>' data-en='The Family <span class="hl-dark">Protection Map</span>'>El Mapa de <span class="hl-dark">Protección Familiar</span></h2>
       <p class="reveal" style="max-width:58ch;margin:16px auto 0;color:#3B4237" data-es="Doce preguntas, una por zona de riesgo. Al final verá su nivel de conciencia y los dominios donde su mapa quedó en blanco. No pedimos cifras ni datos personales." data-en="Twelve questions, one per risk zone. At the end you will see your awareness level and the domains where your map went blank. We ask for no figures or personal data.">Doce preguntas, una por zona de riesgo. Al final verá su nivel de conciencia y los dominios donde su mapa quedó en blanco. No pedimos cifras ni datos personales.</p>
     </div>
     <div class="mapa-shell reveal">
@@ -747,19 +767,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="res-capture" id="resCapture">
           <div class="rc-t" data-es="Reciba su mapa con un comentario personal" data-en="Get your map with a personal note">Reciba su mapa con un comentario personal</div>
-          <p class="rc-s" data-es="Le envío su resultado junto con lo que yo revisaría primero en sus zonas en blanco. Sin costo y sin compromiso." data-en="I will send you your result along with what I would review first in your blank zones. No cost and no obligation.">Le envío su resultado junto con lo que yo revisaría primero en sus zonas en blanco. Sin costo y sin compromiso.</p>
-          <form id="rcForm" novalidate>
-            <div class="rc-row">
-              <div class="rc-f"><label for="rc-nombre" data-es="Nombre" data-en="Name">Nombre</label><input id="rc-nombre" type="text" autocomplete="name"></div>
-              <div class="rc-f"><label for="rc-email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label><input id="rc-email" type="email" autocomplete="email"></div>
-            </div>
-            <label class="rc-consent"><input type="checkbox" id="rc-consent"><span data-es="Autorizo a Christian R. González a enviarme mi resultado y responderme por correo electrónico. Entiendo que este sitio es educativo y no ofrece asesoría de seguros." data-en="I authorize Christian R. González to send me my result and reply by email. I understand this site is educational and does not offer insurance advice.">Autorizo a Christian R. González a enviarme mi resultado y responderme por correo electrónico. Entiendo que este sitio es educativo y no ofrece asesoría de seguros.</span></label>
-            <button class="btn btn-oro" type="submit" id="rcSend" style="width:100%" data-es="Enviar mi mapa" data-en="Send me my map">Enviar mi mapa</button>
-            <p class="rc-err" id="rcErr" data-es="No pudimos enviarlo desde el sitio. Use el formulario de contacto más abajo o escríbame directamente." data-en="We could not send it from the site. Use the contact form below or write to me directly.">No pudimos enviarlo desde el sitio. Use el formulario de contacto más abajo o escríbame directamente.</p>
-          </form>
-          <p class="rc-note" data-es="Al enviarlo, su puntaje y sus 12 respuestas llegan con su nombre y correo. Si no lo envía, nada sale de su navegador." data-en="When you send it, your score and your 12 answers arrive with your name and email. If you do not send it, nothing leaves your browser.">Al enviarlo, su puntaje y sus 12 respuestas llegan con su nombre y correo. Si no lo envía, nada sale de su navegador.</p>
+          <p class="rc-s" data-es="Sus respuestas ya quedaron guardadas. Escríbame en el formulario de abajo y llegarán adjuntas a su mensaje, junto con lo que yo revisaría primero en sus zonas en blanco." data-en="Your answers are already saved. Write to me in the form below and they will arrive attached to your message, along with what I would review first in your blank zones.">Sus respuestas ya quedaron guardadas. Escríbame en el formulario de abajo y llegarán adjuntas a su mensaje, junto con lo que yo revisaría primero en sus zonas en blanco.</p>
+          <a class="btn btn-oro rc-go" href="#contacto" id="rcGo" data-es="Continuar al formulario &darr;" data-en="Continue to the form &darr;">Continuar al formulario &darr;</a>
+          <p class="rc-note" data-es="Nada sale de su navegador hasta que usted envíe el formulario." data-en="Nothing leaves your browser until you send the form.">Nada sale de su navegador hasta que usted envíe el formulario.</p>
         </div>
-        <a class="res-alt" href="#contacto" onclick="prefillTema()" data-es="Prefiero escribir un mensaje más detallado &rarr;" data-en="I would rather write a more detailed message &rarr;">Prefiero escribir un mensaje más detallado &rarr;</a><br>
         <button class="restart" onclick="restartQuiz()" data-es="Volver a empezar" data-en="Start over">Volver a empezar</button>
       </div>
     </div>
@@ -772,7 +783,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap about-grid">
     <div class="retrato reveal">
       <div class="marco">
-      <img class="foto" src="img/christian-retrato.jpg" alt="Christian R. González, Doral, Florida">
+      <img class="foto" src="/img/christian-retrato.jpg" alt="Christian R. González, Doral, Florida">
       </div>
     </div>
     <div class="reveal">
@@ -831,6 +842,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <select id="f-idioma" name="idioma"><option data-es="Español" data-en="Spanish">Español</option><option data-es="English" data-en="English">English</option><option data-es="Ambos" data-en="Both">Ambos</option></select>
           </div>
         </div>
+        <div class="field"><label for="f-tema" data-es="Tema de interés" data-en="Topic of interest">Tema de interés</label>
+          <select id="f-tema" name="tema">
+            <option data-es="Residencias y huracanes" data-en="Residences and hurricanes">Residencias y huracanes</option>
+            <option data-es="Inundación y marejada" data-en="Flood and storm surge">Inundación y marejada</option>
+            <option data-es="Autos de uso y colección" data-en="Daily and collector autos">Autos de uso y colección</option>
+            <option data-es="Embarcaciones y PWC" data-en="Watercraft and PWCs">Embarcaciones y PWC</option>
+            <option data-es="Aviación privada" data-en="Private aviation">Aviación privada</option>
+            <option data-es="Colecciones, arte y joyas" data-en="Collections, art and jewelry">Colecciones, arte y joyas</option>
+            <option data-es="Responsabilidad y umbrella" data-en="Liability and umbrella">Responsabilidad y umbrella</option>
+            <option data-es="Personal del hogar y legado" data-en="Household staff and legacy">Personal del hogar y legado</option>
+            <option data-es="Estilo de vida internacional" data-en="International lifestyle">Estilo de vida internacional</option>
+            <option data-es="Revisión de mi autoevaluación" data-en="Review of my self-assessment">Revisión de mi autoevaluación</option>
+            <option data-es="Otro tema" data-en="Another topic">Otro tema</option>
+          </select>
+        </div>
+        <details class="more" id="moreBox">
+          <summary data-es="Añadir detalles sobre su patrimonio (opcional)" data-en="Add details about your estate (optional)">Añadir detalles sobre su patrimonio (opcional)</summary>
+          <div class="more-in">
         <div class="field">
           <label data-es="Perfil patrimonial <span class='opt'>(opcional, marque lo que aplique)</span>" data-en="Estate profile <span class='opt'>(optional, check what applies)</span>">Perfil patrimonial <span class="opt">(opcional, marque lo que aplique)</span></label>
           <div class="chkgrid">
@@ -844,8 +873,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <label class="chk"><input type="checkbox" name="perfil" value="ecuestre"><span data-es="Caballos / vida ecuestre" data-en="Horses / equestrian life">Caballos / vida ecuestre</span></label>
           </div>
         </div>
-        <div class="two-col">
-          <div class="field"><label for="f-rango" data-es="Rango de patrimonio <span class='opt'>(opcional)</span>" data-en="Estate range <span class='opt'>(optional)</span>">Rango de patrimonio <span class="opt">(opcional)</span></label>
+        <div class="field"><label for="f-rango" data-es="Rango de patrimonio <span class='opt'>(opcional)</span>" data-en="Estate range <span class='opt'>(optional)</span>">Rango de patrimonio <span class="opt">(opcional)</span></label>
             <select id="f-rango" name="rango">
               <option data-es="Prefiero no indicarlo" data-en="Prefer not to say">Prefiero no indicarlo</option>
               <option data-es="$1M a $3M" data-en="$1M to $3M">$1M a $3M</option>
@@ -853,23 +881,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <option data-es="Más de $10M" data-en="Over $10M">Más de $10M</option>
             </select>
           </div>
-          <div class="field"><label for="f-tema" data-es="Tema de interés" data-en="Topic of interest">Tema de interés</label>
-            <select id="f-tema" name="tema">
-              <option data-es="Residencias y huracanes" data-en="Residences and hurricanes">Residencias y huracanes</option>
-              <option data-es="Inundación y marejada" data-en="Flood and storm surge">Inundación y marejada</option>
-              <option data-es="Autos de uso y colección" data-en="Daily and collector autos">Autos de uso y colección</option>
-              <option data-es="Embarcaciones y PWC" data-en="Watercraft and PWCs">Embarcaciones y PWC</option>
-              <option data-es="Aviación privada" data-en="Private aviation">Aviación privada</option>
-              <option data-es="Colecciones, arte y joyas" data-en="Collections, art and jewelry">Colecciones, arte y joyas</option>
-              <option data-es="Responsabilidad y umbrella" data-en="Liability and umbrella">Responsabilidad y umbrella</option>
-              <option data-es="Personal del hogar y legado" data-en="Household staff and legacy">Personal del hogar y legado</option>
-              <option data-es="Estilo de vida internacional" data-en="International lifestyle">Estilo de vida internacional</option>
-              <option data-es="Revisión de mi autoevaluación" data-en="Review of my self-assessment">Revisión de mi autoevaluación</option>
-              <option data-es="Otro tema" data-en="Another topic">Otro tema</option>
-            </select>
           </div>
-        </div>
+        </details>
         <div class="field"><label for="f-msg" data-es="Mensaje" data-en="Message">Mensaje</label><textarea id="f-msg" name="mensaje" rows="3"></textarea></div>
+        <div class="quiz-chip" id="quizChip" hidden><span class="qc-ok" aria-hidden="true">&#10003;</span><span id="qcText"></span><button type="button" id="qcOff"></button></div>
         <div class="consent">
           <input type="checkbox" id="f-consent">
           <label for="f-consent" style="text-transform:none;letter-spacing:0;font-weight:400;font-size:13px;color:var(--humo)" data-es="Autorizo a Christian R. González a responderme por correo electrónico sobre mi consulta. Entiendo que este sitio es educativo y no ofrece asesoría de seguros." data-en="I authorize Christian R. González to reply to my inquiry by email. I understand this site is educational and does not offer insurance advice.">Autorizo a Christian R. González a responderme por correo electrónico sobre mi consulta. Entiendo que este sitio es educativo y no ofrece asesoría de seguros.</label>
@@ -887,7 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- FOOTER -->
-<a class="call-fab" href="tel:+17866712171" data-track="llamada" aria-label="(786) 671-2171"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span data-es="Llamar" data-en="Call">Llamar</span></a>
+<div class="pp-dock" id="ppDock"><a class="dock-map" href="#mapa" id="dockMap"><span class="dm-ring" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" class="t-trk"/><circle cx="18" cy="18" r="15" class="t-val" id="dockDial"/></svg></span><span id="dockTxt"></span></a><a class="dock-call" href="tel:+17866712171" data-track="llamada" aria-label="(786) 671-2171"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span data-es="Llamar" data-en="Call">Llamar</span></a></div>
 <footer id="fuentes">
   <div class="wrap">
     <div class="logo-lockup" style="margin-bottom:6px">
@@ -912,7 +927,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <b>Fuentes de los datos citados:</b> [1] The Zebra, análisis nacional de subaseguramiento. [2] Universidad de Colorado Boulder, estudio “Coverage Neglect in Homeowners Insurance” sobre el incendio de Boulder County, Colorado, en 2021. [3] FEMA / National Flood Insurance Program y análisis de U.S. News de datos NFIP 2020–2024. [4] Florida Fish and Wildlife Conservation Commission, Reportes Estadísticos de Accidentes Náuticos 2024 y 2025 (1,027,742 embarcaciones registradas; 694 accidentes y 51 fatalidades en 2025). [5] Reserva Federal, Encuesta de Finanzas del Consumidor (riqueza mediana hispana, 2013 a 2022) y LIMRA, 2025 Insurance Barometer Study. [6] LIMRA y Life Happens, Insurance Barometer Studies 2024 y 2025, y estudio “Empowering Hispanic Consumers in the Life Insurance Market”, 2025. [7] Insurance Information Institute, sublímites típicos de pólizas de hogar. Datos verificados a julio de 2026.
     </div>
     <div class="fin">
-      <span data-es="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='privacidad.html' style='color:inherit'>Privacidad</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a>" data-en="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='privacidad.html' style='color:inherit'>Privacy</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a>">© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href="tel:+17866712171" data-track="llamada" style="color:inherit">(786) 671-2171</a> · <a href="privacidad.html" style="color:inherit">Privacidad</a> · <a href="https://www.linkedin.com/in/christiangonzalez22/" target="_blank" rel="noopener me" style="color:inherit">LinkedIn</a></span>
+      <span data-es="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='/privacidad.html' style='color:inherit'>Privacidad</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a>" data-en="© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href='tel:+17866712171' data-track='llamada' style='color:inherit'>(786) 671-2171</a> · <a href='/privacidad.html' style='color:inherit'>Privacy</a> · <a href='https://www.linkedin.com/in/christiangonzalez22/' target='_blank' rel='noopener me' style='color:inherit'>LinkedIn</a>">© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href="tel:+17866712171" data-track="llamada" style="color:inherit">(786) 671-2171</a> · <a href="/privacidad.html" style="color:inherit">Privacidad</a> · <a href="https://www.linkedin.com/in/christiangonzalez22/" target="_blank" rel="noopener me" style="color:inherit">LinkedIn</a></span>
       <span data-es="Hecho con orgullo para la comunidad hispana de la Florida" data-en="Made with pride for Florida's Hispanic community">Hecho con orgullo para la comunidad hispana de la Florida</span>
     </div>
   </div>
@@ -981,7 +996,7 @@ const DOMS=[
   chips:{es:[],en:[]}}
 ];
 
-let lang='es';
+let lang=document.documentElement.lang==='en'?'en':'es';
 function buildDomains(){
   const g=document.getElementById('domGrid');
   g.innerHTML=DOMS.map(d=>{
@@ -1003,6 +1018,9 @@ function toggleMenu(){
 /* ===== LANGUAGE ===== */
 function setLang(l){
   lang=l;document.documentElement.lang=l;
+  /* la direccion sigue al idioma: / en espanol, /en/ en ingles */
+  try{var want=l==='en'?'/en/':'/';if(location.pathname!==want&&(location.pathname==='/'||location.pathname==='/index.html'||location.pathname.indexOf('/en')===0)){
+    var q=location.search.replace(/([?&])lang=(en|es)(&|$)/,'$1').replace(/[?&]$/,'');history.replaceState(null,'',want+q+location.hash);}}catch(e){}
   try{window.localStorage.setItem('pp.lang',l);}catch(e){}
   document.getElementById('btn-es').classList.toggle('active',l==='es');
   document.getElementById('btn-en').classList.toggle('active',l==='en');
@@ -1144,7 +1162,7 @@ function sendLead(params,source,onFail){
   fetch(url,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:params.toString()})
     .then(function(r){
       if(!r||!r.ok)throw new Error('send');
-      let gone=false;const go=function(){if(gone)return;gone=true;window.location.href='gracias.html?lang='+lang;};
+      let gone=false;const go=function(){if(gone)return;gone=true;window.location.href='/gracias.html?lang='+lang;};
       dl({event:'generate_lead',lead_source:source,language:lang,quiz_score:params.get('autoevaluacion_puntaje')||'',eventCallback:go,eventTimeout:1500});
       try{if(window.gtag&&P.ADS_ID&&P.ADS_LABEL)gtag('event','conversion',{send_to:P.ADS_ID+'/'+P.ADS_LABEL});}catch(x){}
       setTimeout(go,1700);
@@ -1164,7 +1182,7 @@ function ppSubmit(ev){
   if(!validLead(n,e,document.getElementById('f-consent').checked))return false;
   const form=document.getElementById('ppForm'),btn=document.getElementById('ppSend');
   document.getElementById('f-lang-site').value=lang;
-  const qp=quizPayload();
+  const qp=window.ppNoQuiz?null:quizPayload();
   document.getElementById('f-quiz-score').value=qp?qp.score:'';
   document.getElementById('f-quiz-answers').value=qp?qp.answers:'';
   document.getElementById('f-quiz-gaps').value=qp?qp.gaps:'';
@@ -1174,30 +1192,16 @@ function ppSubmit(ev){
   const fail=()=>{btn.disabled=false;const err=document.getElementById('formErr');err.style.display='block';
     if(P.CONTACT_EMAIL&&P.CONTACT_EMAIL.indexOf('REEMPLAZAR')<0&&err.innerHTML.indexOf('mailto:')<0){
       err.innerHTML=err.innerHTML+' <a href="mailto:'+P.CONTACT_EMAIL+'?subject='+encodeURIComponent('Patrimonio Protegido')+'" style="color:var(--oro)">'+P.CONTACT_EMAIL+'</a>';}};
-  sendLead(new URLSearchParams(fd),'formulario',fail);
+  sendLead(new URLSearchParams(fd),qp?'formulario_con_mapa':'formulario',fail);
   return false;
 }
 document.getElementById('ppForm').addEventListener('submit',ppSubmit);
-document.addEventListener('click',function(e){const a=e.target.closest&&e.target.closest('[data-track]');if(a)dl({event:'phone_click',contact_method:a.getAttribute('data-track'),link_location:a.classList.contains('call-fab')?'boton_movil':(a.closest('footer')?'pie':'contacto')});});
-document.getElementById('rcForm').addEventListener('submit',function(ev){
-  ev.preventDefault();
-  const n=document.getElementById('rc-nombre').value.trim();
-  const e=document.getElementById('rc-email').value.trim();
-  if(!validLead(n,e,document.getElementById('rc-consent').checked))return;
-  const v=id=>{const el=document.getElementById(id);return el?el.value:'';};
-  const qp=quizPayload()||{score:'',answers:'',gaps:''};
-  const es=lang==='es';
-  const prm=new URLSearchParams({
-    'form-name':'contacto','bot-field':'',
-    idioma_sitio:lang,origen:v('f-src'),campana:v('f-camp'),termino:v('f-term'),gclid:v('f-gclid'),
-    autoevaluacion_puntaje:qp.score,autoevaluacion_respuestas:qp.answers,autoevaluacion_zonas_en_blanco:qp.gaps,
-    nombre:n,email:e,ciudad:'',idioma:es?'Español':'English',perfil:'',
-    rango:es?'Prefiero no indicarlo':'Prefer not to say',
-    tema:es?'Revisión de mi autoevaluación':'Review of my self-assessment',
-    mensaje:es?'Solicitud enviada desde el resultado de la autoevaluación.':'Request sent from the self-assessment result.'
-  });
-  const b=document.getElementById('rcSend');b.disabled=true;
-  sendLead(prm,'autoevaluacion',function(){b.disabled=false;document.getElementById('rcErr').style.display='block';});
+document.addEventListener('click',function(e){const a=e.target.closest&&e.target.closest('[data-track]');if(a)dl({event:'phone_click',contact_method:a.getAttribute('data-track'),link_location:a.classList.contains('dock-call')?'boton_movil':(a.closest('footer')?'pie':'contacto')});});
+document.getElementById('rcGo').addEventListener('click',function(ev){
+  ev.preventDefault();prefillTema();dl({event:'cta_click',cta:'resultado_a_formulario'});
+  const f=document.getElementById('ppForm'),y=f.getBoundingClientRect().top+scrollY-110;
+  window.scrollTo({top:y,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  setTimeout(function(){try{document.getElementById('f-nombre').focus({preventScroll:true});}catch(x){}},700);
 });
 
 /* ===== AVISO DE LICENCIA (se arma desde PP.LICENSED) ===== */
@@ -1244,8 +1248,9 @@ document.getElementById('rcForm').addEventListener('submit',function(ev){
 (function(){
   var p=null; try{p=new URLSearchParams(window.location.search).get('lang');}catch(e){}
   var s=null; try{s=window.localStorage.getItem('pp.lang');}catch(e){}
-  var l=(p==='en'||p==='es')?p:((s==='en'||s==='es')?s:null);
-  if(l&&l!==lang) setLang(l);
+  var onEn=location.pathname.indexOf('/en')===0;
+  var l=onEn?'en':((p==='en'||p==='es')?p:((s==='en'||s==='es')?s:null));
+  if(l&&l!==lang) setLang(l); else if(l) { try{window.localStorage.setItem('pp.lang',l);}catch(e){} }
 })();
 
 /* ===== REVEAL + COUNTERS (staggered) ===== */
@@ -1608,6 +1613,189 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
 })();
 </script>
 <!-- ============ FIN CAPA CINEMATOGRAFICA V2 ============ -->
+
+<!-- ============ CAPA DE CONVERSION / CONVERSION LAYER ============ -->
+<style id="pp-convert">
+/* Teaser: first question right after the data */
+.teaser{display:none;margin-top:56px;grid-template-columns:1.55fr 1fr;background:var(--verde);color:var(--arena);border:1px solid rgba(194,155,64,.35);border-radius:4px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(13,36,28,.55)}
+.pp-js .teaser{display:grid}
+.t-left{padding:44px 46px 42px}
+.t-eye{display:block;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--oro-claro)}
+.t-q{font-family:var(--display);font-size:clamp(20px,2.3vw,25px);line-height:1.32;color:var(--blanco);margin:14px 0 24px}
+.t-ans{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.t-ans button{background:rgba(255,255,255,.04);border:1px solid rgba(245,239,227,.22);color:var(--arena);border-radius:3px;padding:14px 16px;text-align:left;font:500 15px/1.35 var(--body);cursor:pointer;transition:transform .2s cubic-bezier(.22,.8,.24,1),border-color .2s,background .2s}
+.t-ans button:hover,.t-ans button:focus-visible{border-color:var(--oro);background:rgba(194,155,64,.12);transform:translateY(-2px);outline:none}
+.t-ans button.on{background:var(--oro);border-color:var(--oro);color:var(--verde-oscuro)}
+.t-ans button:last-child{color:#B9C7BC}
+.t-cont{display:none}
+.teaser.has .t-ans,.teaser.has #tQ{display:none}
+.teaser.has .t-cont{display:block}
+.t-cont .btn{margin-top:4px}
+.t-right{background:var(--verde-oscuro);border-left:1px solid rgba(194,155,64,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:36px 28px;text-align:center}
+.t-dw{position:relative;width:132px;height:132px}
+.t-dial{width:100%;height:100%;transform:rotate(-90deg)}
+.t-trk{fill:none;stroke:rgba(245,239,227,.16);stroke-width:5;stroke-dasharray:22.18 4}
+.t-val{fill:none;stroke:var(--oro);stroke-width:5;stroke-linecap:round;stroke-dasharray:314.16;stroke-dashoffset:314.16;transition:stroke-dashoffset .9s cubic-bezier(.22,.8,.24,1)}
+.t-meta{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.t-meta b{font-family:var(--display);font-weight:400;font-size:38px;line-height:1;color:var(--oro-claro)}
+.t-meta span{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#B9C7BC;margin-top:6px;max-width:88px;line-height:1.35;text-align:center}
+.t-note{font-size:13.5px;color:#C9D6CC;max-width:24ch;margin:0}
+.teaser.idle .t-val{animation:tPulse 3.2s ease-in-out infinite}
+@keyframes tPulse{0%,100%{stroke-dashoffset:314.16}50%{stroke-dashoffset:287.98}}
+@media(max-width:860px){.teaser{grid-template-columns:1fr}.t-right{border-left:0;border-top:1px solid rgba(194,155,64,.22);flex-direction:row;padding:22px 24px;text-align:left}.t-dw{width:92px;height:92px;flex:none}.t-meta b{font-size:24px}.t-meta span{font-size:8px;max-width:64px;letter-spacing:.06em}.t-left{padding:32px 24px 30px}}
+@media(max-width:520px){.t-ans{grid-template-columns:1fr}}
+
+/* Smart dock: follows the visitor's progress */
+.pp-dock{position:fixed;z-index:85;right:94px;bottom:30px;display:flex;gap:8px;opacity:0;translate:0 16px;pointer-events:none;transition:opacity .35s ease,translate .35s ease}
+.pp-dock.show{opacity:1;translate:0 0;pointer-events:auto}
+.dock-map,.dock-call{display:flex;align-items:center;gap:10px;height:50px;padding:0 20px 0 8px;border-radius:99px;text-decoration:none;font:600 14px/1 var(--body);letter-spacing:.03em;box-shadow:0 12px 30px -10px rgba(13,36,28,.55)}
+.dock-map{background:var(--oro);color:var(--verde-oscuro)}
+.dock-map:hover{background:var(--oro-claro)}
+.dm-ring{width:34px;height:34px;border-radius:50%;background:var(--verde-oscuro);display:grid;place-items:center}
+.dm-ring svg{width:30px;height:30px;transform:rotate(-90deg)}
+.dm-ring .t-trk{stroke-width:3;stroke-dasharray:none;stroke:rgba(245,239,227,.2)}
+.dm-ring .t-val{stroke-width:3;stroke-dasharray:94.25;stroke-dashoffset:94.25;stroke:var(--oro-claro)}
+.dock-call{display:none;background:var(--verde);color:var(--blanco);border:1px solid rgba(194,155,64,.6);padding:0 18px 0 14px}
+.dock-call svg{width:18px;height:18px;fill:var(--oro-claro)}
+@media(max-width:760px){
+  .pp-dock{left:12px;right:12px;bottom:12px;display:grid;grid-template-columns:1fr auto}
+  .dock-call{display:flex}
+  .dock-map{justify-content:flex-start}
+  #ppTop{bottom:76px!important}
+  footer::after{content:"";display:block;height:72px}
+}
+
+/* Lighter contact form */
+details.more{border:1px dashed var(--arena-oscura);border-radius:3px;margin:4px 0 18px;background:rgba(255,255,255,.35)}
+details.more>summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:14px;font-weight:600;color:var(--verde);display:flex;align-items:center;gap:10px}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::before{content:"+";flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--oro);color:var(--oro);font-weight:400;transition:transform .25s}
+details.more[open]>summary::before{content:"\2212"}
+details.more .more-in{padding:4px 16px 8px}
+.quiz-chip{display:grid;grid-template-columns:22px 1fr;align-items:center;column-gap:10px;row-gap:4px;margin:0 0 16px;padding:12px 14px;border-radius:3px;background:rgba(20,53,42,.07);border-left:3px solid var(--verde);font-size:14px;color:var(--verde)}
+.quiz-chip[hidden]{display:none}
+.qc-ok{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--verde);color:var(--oro-claro);font-size:12px;flex:none}
+.quiz-chip.off{background:transparent;border-left-color:var(--arena-oscura);color:var(--humo)}
+.quiz-chip.off .qc-ok{background:var(--arena-oscura);color:var(--humo)}
+#qcOff{grid-column:2;justify-self:start;background:none;border:0;padding:0;font:inherit;font-size:13px;color:var(--humo);text-decoration:underline;cursor:pointer}
+
+/* Highlight sweep on key phrases */
+.pp-js .hl-dark,.pp-js .hl{background:linear-gradient(rgba(194,155,64,.3),rgba(194,155,64,.3)) no-repeat 0 100%/0% 38%;transition:background-size 1.3s cubic-bezier(.22,.8,.24,1) .3s}
+.pp-js .mitos .hl-dark{background-image:linear-gradient(rgba(194,155,64,.42),rgba(194,155,64,.42))}
+.pp-js .hl-dark.lit,.pp-js .hl.lit{background-size:100% 38%}
+@media (prefers-reduced-motion: reduce){
+  .teaser.idle .t-val{animation:none}
+  .pp-js .hl-dark,.pp-js .hl{transition:none;background-size:100% 38%}
+  .pp-dock,.t-val,.t-ans button{transition:none}
+}
+</style>
+<script id="pp-convert-js">
+(function(){
+  document.documentElement.classList.add('pp-js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var T={
+    es:{prog:'Su progreso',cont:function(n){return 'Su mapa va en '+n+' de 12. Retome donde lo dejó.';},contB:'Continuar mi mapa',
+        done:function(g){return g?('Su mapa está listo. Quedaron '+g+(g===1?' zona':' zonas')+' en blanco.'):'Su mapa está listo. Ninguna zona quedó en blanco.';},doneB:'Ver mi resultado',
+        answered:'respondidas',zones:'zonas de riesgo',
+        d0:'Haga su mapa · 3 min',d1:function(n){return 'Continúe su mapa · '+n+'/12';},d2:'Vea su resultado',
+        chip:function(n){return 'Su autoevaluación ('+n+'/12) se adjuntará a este mensaje.';},chipOff:'Su autoevaluación no se adjuntará.',off:'No adjuntar',on:'Adjuntar'},
+    en:{prog:'Your progress',cont:function(n){return 'Your map is at '+n+' of 12. Pick up where you left off.';},contB:'Continue my map',
+        done:function(g){return g?('Your map is ready. '+g+(g===1?' zone':' zones')+' came up blank.'):'Your map is ready. No zone came up blank.';},doneB:'See my result',
+        answered:'answered',zones:'risk zones',
+        d0:'Take the map · 3 min',d1:function(n){return 'Continue your map · '+n+'/12';},d2:'See your result',
+        chip:function(n){return 'Your self-assessment ('+n+'/12) will be attached to this message.';},chipOff:'Your self-assessment will not be attached.',off:"Don't attach",on:'Attach'}
+  };
+  var $=function(id){return document.getElementById(id);};
+  var teaser=$('teaser'),dock=$('ppDock');
+  window.ppNoQuiz=false;
+
+  function sync(){
+    var t=T[lang]||T.es,n=picks.length,C=314.16;
+    /* teaser */
+    if(teaser){
+      teaser.classList.toggle('has',n>0);teaser.classList.toggle('idle',n===0);
+      $('tDial').style.strokeDashoffset=(C*(1-n/12)).toFixed(2);
+      if(n===0){
+        $('tQ').textContent=questions[0][lang];
+        var bs=$('tAns').querySelectorAll('button'),k=['si','ns','no','na'];
+        bs.forEach(function(b,i){b.textContent=ANS[k[i]][lang];});
+        $('tNum').textContent='12';$('tLbl').textContent=t.zones;
+        $('tEye').textContent=$('tEye').getAttribute('data-'+lang);
+      }else{
+        $('tNum').textContent=n+'/12';$('tLbl').textContent=t.answered;$('tEye').textContent=t.prog;
+        $('tContT').textContent=finished?t.done(qStats().weak.length):t.cont(n);
+        $('tContB').textContent=finished?t.doneB:t.contB;
+      }
+    }
+    /* dock */
+    $('dockTxt').textContent=finished?t.d2:(n?t.d1(n):t.d0);
+    $('dockDial').style.strokeDashoffset=(94.25*(1-n/12)).toFixed(2);
+    /* chip */
+    var chip=$('quizChip');
+    if(chip){
+      chip.hidden=n===0;chip.classList.toggle('off',window.ppNoQuiz);
+      $('qcText').textContent=window.ppNoQuiz?t.chipOff:t.chip(n);
+      $('qcOff').textContent=window.ppNoQuiz?t.on:t.off;
+    }
+  }
+  window.ppSync=sync;
+
+  /* keep everything in step with the quiz and the language */
+  var _save=qSave;qSave=function(){_save();sync();};
+  var _setLang=setLang;setLang=function(l){_setLang(l);sync();lightAll();};
+
+  function toQuiz(){
+    var sh=document.querySelector('.mapa-shell')||$('mapa');
+    var y=sh.getBoundingClientRect().top+scrollY-90;
+    window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
+  }
+  /* teaser answers: records Q1 and carries the visitor into the map */
+  if(teaser){
+    $('tAns').addEventListener('click',function(e){
+      var b=e.target.closest('button');if(!b||finished)return;
+      var p=parseInt(b.getAttribute('data-p'),10);
+      b.classList.add('on');
+      dl({event:'cta_click',cta:'teaser_q1'});
+      setTimeout(function(){
+        b.classList.remove('on');
+        if(picks.length===0){dl({event:'quiz_start'});picks.push(p);qSave();renderQuestion();}
+        toQuiz();
+      },260);
+    });
+    $('tContB').addEventListener('click',function(e){e.preventDefault();dl({event:'cta_click',cta:'teaser_continue'});toQuiz();});
+  }
+  $('dockMap').addEventListener('click',function(e){
+    e.preventDefault();
+    dl({event:'cta_click',cta:'dock',cta_state:finished?'resultado':(picks.length?'en_progreso':'nuevo')});
+    toQuiz();
+  });
+  $('qcOff').addEventListener('click',function(){window.ppNoQuiz=!window.ppNoQuiz;sync();});
+
+  /* dock visibility: after the hero, hidden while the map, the teaser or the contact form are on screen */
+  var onScreen={};
+  function vis(){
+    var busy=onScreen.mapa||onScreen.contacto||onScreen.teaser;
+    dock.classList.toggle('show',scrollY>560&&!busy);
+  }
+  if('IntersectionObserver' in window){
+    var vo=new IntersectionObserver(function(es){es.forEach(function(en){onScreen[en.target.id]=en.isIntersecting;});vis();},{threshold:.08});
+    ['mapa','contacto','teaser'].forEach(function(id){var el=$(id);if(el)vo.observe(el);});
+  }
+  addEventListener('scroll',vis,{passive:true});
+
+  /* highlight sweep */
+  var ho=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('lit');ho.unobserve(en.target);}});},{threshold:.6,rootMargin:'0px 0px -12% 0px'}):null;
+  var seen=false;
+  function lightAll(){
+    document.querySelectorAll('.hl-dark,.hl').forEach(function(el){
+      if(reduce||!ho||seen)el.classList.add('lit');else ho.observe(el);
+    });
+  }
+  lightAll();seen=true;   /* after a language switch, rebuilt phrases show lit right away */
+  sync();vis();
+})();
+</script>
+<!-- ============ FIN CAPA DE CONVERSION ============ -->
 
 </body>
 </html>

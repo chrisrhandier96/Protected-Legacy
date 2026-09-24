@@ -12,9 +12,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Patrimonio Protegido | Christian R. González · Risk education for high-net-worth Hispanic families in Florida</title>
-<meta name="description" content="Bilingual education on protecting what your family built in Florida: homes, collections, boats, aviation, liability and legacy. Verifiable data, no sales pitch. Licensed Florida agent.">
+<meta name="description" content="Bilingual education on protecting what your family built in Florida: homes, collections, boats, aviation, liability and legacy. Verifiable data, in your language. Licensed Florida agent.">
 <meta property="og:title" content="Patrimonio Protegido | Christian R. González">
-<meta property="og:description" content="Hispanic wealth in the U.S. tripled in a decade. Protection did not keep up. Risk education with verifiable data, no sales pitch.">
+<meta property="og:description" content="Hispanic wealth in the U.S. tripled in a decade. Protection did not keep up. Risk education in your language, backed by verifiable data.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="es_US">
@@ -39,9 +39,9 @@ window.PP = {
   SITE_URL:      'https://www.protectedlegacyfl.com',
   CONTACT_EMAIL: 'chrisrhandier96@gmail.com',
   FORM_ENDPOINT: '',        // Netlify: dejar vacio. Otro host: pegar la URL de Formspree
-  GA4_ID:        '',        // G-XXXXXXXXXX (Google Analytics 4) — leave blank; GA4 is configured inside Tag Manager (GTM-P88VGFHR) instead, see note below
-  ADS_ID:        '',        // AW-XXXXXXXXX  (Google Ads) — pendiente
-  ADS_LABEL:     '',        // etiqueta de conversion de Google Ads — pendiente
+  GA4_ID:        '',        // G-XXXXXXXXXX (Google Analytics 4) : leave blank; GA4 is configured inside Tag Manager (GTM-P88VGFHR) instead, see note below
+  ADS_ID:        '',        // AW-XXXXXXXXX  (Google Ads) : pendiente
+  ADS_LABEL:     '',        // etiqueta de conversion de Google Ads : pendiente
   LICENSED:      true,
   LICENSE_NUMBER:'W606240'
 };
@@ -412,6 +412,7 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;p
 .rc-consent input{margin-top:3px;accent-color:var(--oro);flex:none}
 .result .res-capture .rc-note{font-size:12px;color:#9FB2A6;margin:12px 0 0;max-width:none}
 .result .res-capture .rc-err{display:none;font-size:13px;color:#F2B8B8;margin:10px 0 0;max-width:none}
+.rc-go{display:block;width:100%}
 .res-alt{display:inline-block;margin-top:4px;font-size:14px;color:var(--verde);text-decoration:underline;text-underline-offset:3px}
 
 .eyebrow::before{transition:width .4s ease}
@@ -474,8 +475,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <span class="eyebrow" data-es="Educación de riesgo · Florida" data-en="Risk education · Florida">Risk education · Florida</span>
     <h1 data-es='Su familia construyó algo <em>Extraordinario.</em> Aprenda a protegerlo, todo.' data-en='Your family built something <em>Extraordinary.</em> Learn how to protect it, all of it.'>Your family built something <em>Extraordinary.</em> Learn how to protect it, all of it.</h1>
-    <p class="lead" data-es="La residencia frente al agua, las propiedades de renta, la embarcación, las colecciones, la reputación y el legado. Educación clara, en español y en inglés, respaldada por datos verificables. Sin ventas y sin compromiso." data-en="The waterfront residence, the rental properties, the boat, the collections, the reputation, and the legacy. Clear education, in Spanish and English, backed by verifiable data. No sales pitch, no obligation.">The waterfront residence, the rental properties, the boat, the collections, the reputation, and the legacy. Clear education, in Spanish and English, backed by verifiable data. No sales pitch, no obligation.</p>
-    <p class="qualifier" data-es="Diseñado para familias con patrimonios de siete cifras o más" data-en="Designed for families with seven-figure estates and above">Designed for families with seven-figure estates and above</p>
+    <p class="lead" data-es="Residencias frente al agua, propiedades de renta, embarcaciones, aviación privada, colecciones, reputación y legado. Educación clara, en español y en inglés, respaldada por datos verificables." data-en="Waterfront residences, rental properties, vessels, private aviation, collections, reputation, and legacy. Clear education, in Spanish and English, backed by verifiable data.">Waterfront residences, rental properties, vessels, private aviation, collections, reputation, and legacy. Clear education, in Spanish and English, backed by verifiable data.</p>
+    <p class="qualifier" data-es="Para familias, family offices y los asesores que los acompañan" data-en="For families, family offices, and the advisors who serve them">For families, family offices, and the advisors who serve them</p>
     <div class="cta-row">
       <a class="btn btn-oro" href="#mapa" data-es="Hacer mi autoevaluación (3 min)" data-en="Take my self-assessment (3 min)">Take my self-assessment (3 min)</a>
       <a class="btn btn-ghost" href="#mitos" data-es="Ver los mitos más costosos" data-en="See the costliest myths">See the costliest myths</a>
@@ -512,6 +513,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="fact reveal"><div class="num" data-count="1">0<sup>M+</sup></div>
         <p class="txt" data-es='de embarcaciones registradas hacen de la Florida el líder nacional, y también el estado con más fatalidades náuticas por año.<a class="fn" href="#fuentes">4</a>' data-en='registered vessels make Florida the national leader, and also the state with the most boating fatalities each year.<a class="fn" href="#fuentes">4</a>'>registered vessels make Florida the national leader, and also the state with the most boating fatalities each year.<a class="fn" href="#fuentes">4</a></p></div>
     </div>
+    <div class="teaser reveal" id="teaser">
+      <div class="t-left">
+        <span class="t-eye" id="tEye" data-es="Empiece aquí · Pregunta 1 de 12" data-en="Start here · Question 1 of 12">Start here · Question 1 of 12</span>
+        <p class="t-q" id="tQ"></p>
+        <div class="t-ans" id="tAns">
+          <button type="button" data-p="2"></button><button type="button" data-p="1"></button><button type="button" data-p="0"></button><button type="button" data-p="-1"></button>
+        </div>
+        <div class="t-cont" id="tCont"><p class="t-q" id="tContT"></p><a class="btn btn-oro" href="#mapa" id="tContB"></a></div>
+      </div>
+      <div class="t-right" aria-hidden="true">
+        <div class="t-dw"><svg viewBox="0 0 120 120" class="t-dial"><circle cx="60" cy="60" r="50" class="t-trk"/><circle cx="60" cy="60" r="50" class="t-val" id="tDial"/></svg>
+        <div class="t-meta"><b id="tNum">12</b><span id="tLbl" data-es="zonas de riesgo" data-en="risk zones">risk zones</span></div></div>
+        <p class="t-note" data-es="3 minutos. Anónima. Sin cifras ni datos personales." data-en="3 minutes. Anonymous. No figures or personal data.">3 minutes. Anonymous. No figures or personal data.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -520,7 +536,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <span class="eyebrow" data-es="Mitos y realidades" data-en="Myths and realities">Myths and realities</span>
     <div class="rule"></div>
-    <h2 class="reveal" data-es="La riqueza hispana creció. La protección se quedó atrás." data-en="Hispanic wealth grew. Protection fell behind.">Hispanic wealth grew. Protection fell behind.</h2>
+    <h2 class="reveal" data-es='La riqueza hispana creció. <span class="hl-dark">La protección se quedó atrás.</span>' data-en='Hispanic wealth grew. <span class="hl-dark">Protection fell behind.</span>'>Hispanic wealth grew. <span class="hl-dark">Protection fell behind.</span></h2>
     <p class="intro reveal" data-es="No es falta de capacidad ni de visión. Es que a nuestra comunidad nadie le explicó estas herramientas en su idioma, y las ideas heredadas sobre seguros y protección se quedaron pequeñas frente a los patrimonios que hoy existen. Toque cada mito para ver la realidad." data-en="It is not a lack of capacity or vision. It is that no one explained these tools to our community in its own language, and inherited ideas about insurance and protection stayed small while today's estates grew large. Tap each myth to see the reality.">It is not a lack of capacity or vision. It is that no one explained these tools to our community in its own language, and inherited ideas about insurance and protection stayed small while today's estates grew large. Tap each myth to see the reality.</p>
 
     <div class="mito-anchor reveal">
@@ -565,7 +581,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <span class="eyebrow" data-es="Aprender en profundidad" data-en="Learn in depth">Learn in depth</span>
     <div class="rule"></div>
-    <h2 class="reveal" data-es="Los 8 dominios de un patrimonio de siete cifras" data-en="The 8 domains of a seven-figure estate">The 8 domains of a seven-figure estate</h2>
+    <h2 class="reveal" data-es='Los 8 dominios de un patrimonio de <span class="hl-dark">siete cifras</span>' data-en='The 8 domains of a <span class="hl-dark">seven-figure estate</span>'>The 8 domains of a <span class="hl-dark">seven-figure estate</span></h2>
     <p class="intro reveal" data-es="Cuando el patrimonio supera el millón de dólares, la protección deja de ser una póliza y se convierte en una <span class='accent-i'>arquitectura</span>. Cada dominio tiene sus propias reglas, sus propios límites ocultos y sus propias brechas típicas. Abra cada uno y encuentre las suyas." data-en="Once wealth passes the million-dollar mark, protection stops being a policy and becomes an <span class='accent-i'>Architecture</span>. Each domain has its own rules, its own hidden limits, and its own typical gaps. Open each one and find yours.">Once wealth passes the million-dollar mark, protection stops being a policy and becomes an <span class='accent-i'>Architecture</span>. Each domain has its own rules, its own hidden limits, and its own typical gaps. Open each one and find yours.</p>
 
     <div class="dom-grid" id="domGrid"></div>
@@ -717,7 +733,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div style="text-align:center">
       <span class="eyebrow" style="justify-content:center" data-es="Autoevaluación · 3 minutos · Anónima" data-en="Self-assessment · 3 minutes · Anonymous">Self-assessment · 3 minutes · Anonymous</span>
       <div class="rule" style="margin:18px auto 26px"></div>
-      <h2 class="reveal" data-es="El Mapa de Protección Familiar" data-en="The Family Protection Map">The Family Protection Map</h2>
+      <h2 class="reveal" data-es='El Mapa de <span class="hl-dark">Protección Familiar</span>' data-en='The Family <span class="hl-dark">Protection Map</span>'>The Family <span class="hl-dark">Protection Map</span></h2>
       <p class="reveal" style="max-width:58ch;margin:16px auto 0;color:#3B4237" data-es="Doce preguntas, una por zona de riesgo. Al final verá su nivel de conciencia y los dominios donde su mapa quedó en blanco. No pedimos cifras ni datos personales." data-en="Twelve questions, one per risk zone. At the end you will see your awareness level and the domains where your map went blank. We ask for no figures or personal data.">Twelve questions, one per risk zone. At the end you will see your awareness level and the domains where your map went blank. We ask for no figures or personal data.</p>
     </div>
     <div class="mapa-shell reveal">
@@ -753,19 +769,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="res-capture" id="resCapture">
           <div class="rc-t" data-es="Reciba su mapa con un comentario personal" data-en="Get your map with a personal note">Get your map with a personal note</div>
-          <p class="rc-s" data-es="Le envío su resultado junto con lo que yo revisaría primero en sus zonas en blanco. Sin costo y sin compromiso." data-en="I will send you your result along with what I would review first in your blank zones. No cost and no obligation.">I will send you your result along with what I would review first in your blank zones. No cost and no obligation.</p>
-          <form id="rcForm" novalidate>
-            <div class="rc-row">
-              <div class="rc-f"><label for="rc-nombre" data-es="Nombre" data-en="Name">Name</label><input id="rc-nombre" type="text" autocomplete="name"></div>
-              <div class="rc-f"><label for="rc-email" data-es="Correo electrónico" data-en="Email">Email</label><input id="rc-email" type="email" autocomplete="email"></div>
-            </div>
-            <label class="rc-consent"><input type="checkbox" id="rc-consent"><span data-es="Autorizo a Christian R. González a enviarme mi resultado y responderme por correo electrónico. Entiendo que este sitio es educativo y no ofrece asesoría de seguros." data-en="I authorize Christian R. González to send me my result and reply by email. I understand this site is educational and does not offer insurance advice.">I authorize Christian R. González to send me my result and reply by email. I understand this site is educational and does not offer insurance advice.</span></label>
-            <button class="btn btn-oro" type="submit" id="rcSend" style="width:100%" data-es="Enviar mi mapa" data-en="Send me my map">Send me my map</button>
-            <p class="rc-err" id="rcErr" data-es="No pudimos enviarlo desde el sitio. Use el formulario de contacto más abajo o escríbame directamente." data-en="We could not send it from the site. Use the contact form below or write to me directly.">We could not send it from the site. Use the contact form below or write to me directly.</p>
-          </form>
-          <p class="rc-note" data-es="Al enviarlo, su puntaje y sus 12 respuestas llegan con su nombre y correo. Si no lo envía, nada sale de su navegador." data-en="When you send it, your score and your 12 answers arrive with your name and email. If you do not send it, nothing leaves your browser.">When you send it, your score and your 12 answers arrive with your name and email. If you do not send it, nothing leaves your browser.</p>
+          <p class="rc-s" data-es="Sus respuestas ya quedaron guardadas. Escríbame en el formulario de abajo y llegarán adjuntas a su mensaje, junto con lo que yo revisaría primero en sus zonas en blanco." data-en="Your answers are already saved. Write to me in the form below and they will arrive attached to your message, along with what I would review first in your blank zones.">Your answers are already saved. Write to me in the form below and they will arrive attached to your message, along with what I would review first in your blank zones.</p>
+          <a class="btn btn-oro rc-go" href="#contacto" id="rcGo" data-es="Continuar al formulario &darr;" data-en="Continue to the form &darr;">Continue to the form ↓</a>
+          <p class="rc-note" data-es="Nada sale de su navegador hasta que usted envíe el formulario." data-en="Nothing leaves your browser until you send the form.">Nothing leaves your browser until you send the form.</p>
         </div>
-        <a class="res-alt" href="#contacto" onclick="prefillTema()" data-es="Prefiero escribir un mensaje más detallado &rarr;" data-en="I would rather write a more detailed message &rarr;">I would rather write a more detailed message →</a><br>
         <button class="restart" onclick="restartQuiz()" data-es="Volver a empezar" data-en="Start over">Start over</button>
       </div>
     </div>
@@ -837,6 +844,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <select id="f-idioma" name="idioma"><option data-es="Español" data-en="Spanish">Spanish</option><option data-es="English" data-en="English">English</option><option data-es="Ambos" data-en="Both">Both</option></select>
           </div>
         </div>
+        <div class="field"><label for="f-tema" data-es="Tema de interés" data-en="Topic of interest">Topic of interest</label>
+          <select id="f-tema" name="tema">
+            <option data-es="Residencias y huracanes" data-en="Residences and hurricanes">Residences and hurricanes</option>
+            <option data-es="Inundación y marejada" data-en="Flood and storm surge">Flood and storm surge</option>
+            <option data-es="Autos de uso y colección" data-en="Daily and collector autos">Daily and collector autos</option>
+            <option data-es="Embarcaciones y PWC" data-en="Watercraft and PWCs">Watercraft and PWCs</option>
+            <option data-es="Aviación privada" data-en="Private aviation">Private aviation</option>
+            <option data-es="Colecciones, arte y joyas" data-en="Collections, art and jewelry">Collections, art and jewelry</option>
+            <option data-es="Responsabilidad y umbrella" data-en="Liability and umbrella">Liability and umbrella</option>
+            <option data-es="Personal del hogar y legado" data-en="Household staff and legacy">Household staff and legacy</option>
+            <option data-es="Estilo de vida internacional" data-en="International lifestyle">International lifestyle</option>
+            <option data-es="Revisión de mi autoevaluación" data-en="Review of my self-assessment">Review of my self-assessment</option>
+            <option data-es="Otro tema" data-en="Another topic">Another topic</option>
+          </select>
+        </div>
+        <details class="more" id="moreBox">
+          <summary data-es="Añadir detalles sobre su patrimonio (opcional)" data-en="Add details about your estate (optional)">Add details about your estate (optional)</summary>
+          <div class="more-in">
         <div class="field">
           <label data-es="Perfil patrimonial <span class='opt'>(opcional, marque lo que aplique)</span>" data-en="Estate profile <span class='opt'>(optional, check what applies)</span>">Estate profile <span class='opt'>(optional, check what applies)</span></label>
           <div class="chkgrid">
@@ -850,8 +875,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <label class="chk"><input type="checkbox" name="perfil" value="ecuestre"><span data-es="Caballos / vida ecuestre" data-en="Horses / equestrian life">Horses / equestrian life</span></label>
           </div>
         </div>
-        <div class="two-col">
-          <div class="field"><label for="f-rango" data-es="Rango de patrimonio <span class='opt'>(opcional)</span>" data-en="Estate range <span class='opt'>(optional)</span>">Estate range <span class='opt'>(optional)</span></label>
+        <div class="field"><label for="f-rango" data-es="Rango de patrimonio <span class='opt'>(opcional)</span>" data-en="Estate range <span class='opt'>(optional)</span>">Estate range <span class='opt'>(optional)</span></label>
             <select id="f-rango" name="rango">
               <option data-es="Prefiero no indicarlo" data-en="Prefer not to say">Prefer not to say</option>
               <option data-es="$1M a $3M" data-en="$1M to $3M">$1M to $3M</option>
@@ -859,23 +883,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <option data-es="Más de $10M" data-en="Over $10M">Over $10M</option>
             </select>
           </div>
-          <div class="field"><label for="f-tema" data-es="Tema de interés" data-en="Topic of interest">Topic of interest</label>
-            <select id="f-tema" name="tema">
-              <option data-es="Residencias y huracanes" data-en="Residences and hurricanes">Residences and hurricanes</option>
-              <option data-es="Inundación y marejada" data-en="Flood and storm surge">Flood and storm surge</option>
-              <option data-es="Autos de uso y colección" data-en="Daily and collector autos">Daily and collector autos</option>
-              <option data-es="Embarcaciones y PWC" data-en="Watercraft and PWCs">Watercraft and PWCs</option>
-              <option data-es="Aviación privada" data-en="Private aviation">Private aviation</option>
-              <option data-es="Colecciones, arte y joyas" data-en="Collections, art and jewelry">Collections, art and jewelry</option>
-              <option data-es="Responsabilidad y umbrella" data-en="Liability and umbrella">Liability and umbrella</option>
-              <option data-es="Personal del hogar y legado" data-en="Household staff and legacy">Household staff and legacy</option>
-              <option data-es="Estilo de vida internacional" data-en="International lifestyle">International lifestyle</option>
-              <option data-es="Revisión de mi autoevaluación" data-en="Review of my self-assessment">Review of my self-assessment</option>
-              <option data-es="Otro tema" data-en="Another topic">Another topic</option>
-            </select>
           </div>
-        </div>
+        </details>
         <div class="field"><label for="f-msg" data-es="Mensaje" data-en="Message">Message</label><textarea id="f-msg" name="mensaje" rows="3"></textarea></div>
+        <div class="quiz-chip" id="quizChip" hidden><span class="qc-ok" aria-hidden="true">&#10003;</span><span id="qcText"></span><button type="button" id="qcOff"></button></div>
         <div class="consent">
           <input type="checkbox" id="f-consent">
           <label for="f-consent" style="text-transform:none;letter-spacing:0;font-weight:400;font-size:13px;color:var(--humo)" data-es="Autorizo a Christian R. González a responderme por correo electrónico sobre mi consulta. Entiendo que este sitio es educativo y no ofrece asesoría de seguros." data-en="I authorize Christian R. González to reply to my inquiry by email. I understand this site is educational and does not offer insurance advice.">I authorize Christian R. González to reply to my inquiry by email. I understand this site is educational and does not offer insurance advice.</label>
@@ -893,7 +904,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- FOOTER -->
-<a class="call-fab" href="tel:+17866712171" data-track="llamada" aria-label="(786) 671-2171"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span data-es="Llamar" data-en="Call">Call</span></a>
+<div class="pp-dock" id="ppDock"><a class="dock-map" href="#mapa" id="dockMap"><span class="dm-ring" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" class="t-trk"/><circle cx="18" cy="18" r="15" class="t-val" id="dockDial"/></svg></span><span id="dockTxt"></span></a><a class="dock-call" href="tel:+17866712171" data-track="llamada" aria-label="(786) 671-2171"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span data-es="Llamar" data-en="Call">Call</span></a></div>
 <footer id="fuentes">
   <div class="wrap">
     <div class="logo-lockup" style="margin-bottom:6px">
@@ -1169,7 +1180,7 @@ function ppSubmit(ev){
   if(!validLead(n,e,document.getElementById('f-consent').checked))return false;
   const form=document.getElementById('ppForm'),btn=document.getElementById('ppSend');
   document.getElementById('f-lang-site').value=lang;
-  const qp=quizPayload();
+  const qp=window.ppNoQuiz?null:quizPayload();
   document.getElementById('f-quiz-score').value=qp?qp.score:'';
   document.getElementById('f-quiz-answers').value=qp?qp.answers:'';
   document.getElementById('f-quiz-gaps').value=qp?qp.gaps:'';
@@ -1179,30 +1190,16 @@ function ppSubmit(ev){
   const fail=()=>{btn.disabled=false;const err=document.getElementById('formErr');err.style.display='block';
     if(P.CONTACT_EMAIL&&P.CONTACT_EMAIL.indexOf('REEMPLAZAR')<0&&err.innerHTML.indexOf('mailto:')<0){
       err.innerHTML=err.innerHTML+' <a href="mailto:'+P.CONTACT_EMAIL+'?subject='+encodeURIComponent('Patrimonio Protegido')+'" style="color:var(--oro)">'+P.CONTACT_EMAIL+'</a>';}};
-  sendLead(new URLSearchParams(fd),'formulario',fail);
+  sendLead(new URLSearchParams(fd),qp?'formulario_con_mapa':'formulario',fail);
   return false;
 }
 document.getElementById('ppForm').addEventListener('submit',ppSubmit);
-document.addEventListener('click',function(e){const a=e.target.closest&&e.target.closest('[data-track]');if(a)dl({event:'phone_click',contact_method:a.getAttribute('data-track'),link_location:a.classList.contains('call-fab')?'boton_movil':(a.closest('footer')?'pie':'contacto')});});
-document.getElementById('rcForm').addEventListener('submit',function(ev){
-  ev.preventDefault();
-  const n=document.getElementById('rc-nombre').value.trim();
-  const e=document.getElementById('rc-email').value.trim();
-  if(!validLead(n,e,document.getElementById('rc-consent').checked))return;
-  const v=id=>{const el=document.getElementById(id);return el?el.value:'';};
-  const qp=quizPayload()||{score:'',answers:'',gaps:''};
-  const es=lang==='es';
-  const prm=new URLSearchParams({
-    'form-name':'contacto','bot-field':'',
-    idioma_sitio:lang,origen:v('f-src'),campana:v('f-camp'),termino:v('f-term'),gclid:v('f-gclid'),
-    autoevaluacion_puntaje:qp.score,autoevaluacion_respuestas:qp.answers,autoevaluacion_zonas_en_blanco:qp.gaps,
-    nombre:n,email:e,ciudad:'',idioma:es?'Español':'English',perfil:'',
-    rango:es?'Prefiero no indicarlo':'Prefer not to say',
-    tema:es?'Revisión de mi autoevaluación':'Review of my self-assessment',
-    mensaje:es?'Solicitud enviada desde el resultado de la autoevaluación.':'Request sent from the self-assessment result.'
-  });
-  const b=document.getElementById('rcSend');b.disabled=true;
-  sendLead(prm,'autoevaluacion',function(){b.disabled=false;document.getElementById('rcErr').style.display='block';});
+document.addEventListener('click',function(e){const a=e.target.closest&&e.target.closest('[data-track]');if(a)dl({event:'phone_click',contact_method:a.getAttribute('data-track'),link_location:a.classList.contains('dock-call')?'boton_movil':(a.closest('footer')?'pie':'contacto')});});
+document.getElementById('rcGo').addEventListener('click',function(ev){
+  ev.preventDefault();prefillTema();dl({event:'cta_click',cta:'resultado_a_formulario'});
+  const f=document.getElementById('ppForm'),y=f.getBoundingClientRect().top+scrollY-110;
+  window.scrollTo({top:y,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  setTimeout(function(){try{document.getElementById('f-nombre').focus({preventScroll:true});}catch(x){}},700);
 });
 
 /* ===== AVISO DE LICENCIA (se arma desde PP.LICENSED) ===== */
@@ -1614,6 +1611,189 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
 })();
 </script>
 <!-- ============ FIN CAPA CINEMATOGRAFICA V2 ============ -->
+
+<!-- ============ CAPA DE CONVERSION / CONVERSION LAYER ============ -->
+<style id="pp-convert">
+/* Teaser: first question right after the data */
+.teaser{display:none;margin-top:56px;grid-template-columns:1.55fr 1fr;background:var(--verde);color:var(--arena);border:1px solid rgba(194,155,64,.35);border-radius:4px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(13,36,28,.55)}
+.pp-js .teaser{display:grid}
+.t-left{padding:44px 46px 42px}
+.t-eye{display:block;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--oro-claro)}
+.t-q{font-family:var(--display);font-size:clamp(20px,2.3vw,25px);line-height:1.32;color:var(--blanco);margin:14px 0 24px}
+.t-ans{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.t-ans button{background:rgba(255,255,255,.04);border:1px solid rgba(245,239,227,.22);color:var(--arena);border-radius:3px;padding:14px 16px;text-align:left;font:500 15px/1.35 var(--body);cursor:pointer;transition:transform .2s cubic-bezier(.22,.8,.24,1),border-color .2s,background .2s}
+.t-ans button:hover,.t-ans button:focus-visible{border-color:var(--oro);background:rgba(194,155,64,.12);transform:translateY(-2px);outline:none}
+.t-ans button.on{background:var(--oro);border-color:var(--oro);color:var(--verde-oscuro)}
+.t-ans button:last-child{color:#B9C7BC}
+.t-cont{display:none}
+.teaser.has .t-ans,.teaser.has #tQ{display:none}
+.teaser.has .t-cont{display:block}
+.t-cont .btn{margin-top:4px}
+.t-right{background:var(--verde-oscuro);border-left:1px solid rgba(194,155,64,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:36px 28px;text-align:center}
+.t-dw{position:relative;width:132px;height:132px}
+.t-dial{width:100%;height:100%;transform:rotate(-90deg)}
+.t-trk{fill:none;stroke:rgba(245,239,227,.16);stroke-width:5;stroke-dasharray:22.18 4}
+.t-val{fill:none;stroke:var(--oro);stroke-width:5;stroke-linecap:round;stroke-dasharray:314.16;stroke-dashoffset:314.16;transition:stroke-dashoffset .9s cubic-bezier(.22,.8,.24,1)}
+.t-meta{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.t-meta b{font-family:var(--display);font-weight:400;font-size:38px;line-height:1;color:var(--oro-claro)}
+.t-meta span{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#B9C7BC;margin-top:6px;max-width:88px;line-height:1.35;text-align:center}
+.t-note{font-size:13.5px;color:#C9D6CC;max-width:24ch;margin:0}
+.teaser.idle .t-val{animation:tPulse 3.2s ease-in-out infinite}
+@keyframes tPulse{0%,100%{stroke-dashoffset:314.16}50%{stroke-dashoffset:287.98}}
+@media(max-width:860px){.teaser{grid-template-columns:1fr}.t-right{border-left:0;border-top:1px solid rgba(194,155,64,.22);flex-direction:row;padding:22px 24px;text-align:left}.t-dw{width:92px;height:92px;flex:none}.t-meta b{font-size:24px}.t-meta span{font-size:8px;max-width:64px;letter-spacing:.06em}.t-left{padding:32px 24px 30px}}
+@media(max-width:520px){.t-ans{grid-template-columns:1fr}}
+
+/* Smart dock: follows the visitor's progress */
+.pp-dock{position:fixed;z-index:85;right:94px;bottom:30px;display:flex;gap:8px;opacity:0;translate:0 16px;pointer-events:none;transition:opacity .35s ease,translate .35s ease}
+.pp-dock.show{opacity:1;translate:0 0;pointer-events:auto}
+.dock-map,.dock-call{display:flex;align-items:center;gap:10px;height:50px;padding:0 20px 0 8px;border-radius:99px;text-decoration:none;font:600 14px/1 var(--body);letter-spacing:.03em;box-shadow:0 12px 30px -10px rgba(13,36,28,.55)}
+.dock-map{background:var(--oro);color:var(--verde-oscuro)}
+.dock-map:hover{background:var(--oro-claro)}
+.dm-ring{width:34px;height:34px;border-radius:50%;background:var(--verde-oscuro);display:grid;place-items:center}
+.dm-ring svg{width:30px;height:30px;transform:rotate(-90deg)}
+.dm-ring .t-trk{stroke-width:3;stroke-dasharray:none;stroke:rgba(245,239,227,.2)}
+.dm-ring .t-val{stroke-width:3;stroke-dasharray:94.25;stroke-dashoffset:94.25;stroke:var(--oro-claro)}
+.dock-call{display:none;background:var(--verde);color:var(--blanco);border:1px solid rgba(194,155,64,.6);padding:0 18px 0 14px}
+.dock-call svg{width:18px;height:18px;fill:var(--oro-claro)}
+@media(max-width:760px){
+  .pp-dock{left:12px;right:12px;bottom:12px;display:grid;grid-template-columns:1fr auto}
+  .dock-call{display:flex}
+  .dock-map{justify-content:flex-start}
+  #ppTop{bottom:76px!important}
+  footer::after{content:"";display:block;height:72px}
+}
+
+/* Lighter contact form */
+details.more{border:1px dashed var(--arena-oscura);border-radius:3px;margin:4px 0 18px;background:rgba(255,255,255,.35)}
+details.more>summary{cursor:pointer;list-style:none;padding:14px 16px;font-size:14px;font-weight:600;color:var(--verde);display:flex;align-items:center;gap:10px}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::before{content:"+";flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--oro);color:var(--oro);font-weight:400;transition:transform .25s}
+details.more[open]>summary::before{content:"\2212"}
+details.more .more-in{padding:4px 16px 8px}
+.quiz-chip{display:grid;grid-template-columns:22px 1fr;align-items:center;column-gap:10px;row-gap:4px;margin:0 0 16px;padding:12px 14px;border-radius:3px;background:rgba(20,53,42,.07);border-left:3px solid var(--verde);font-size:14px;color:var(--verde)}
+.quiz-chip[hidden]{display:none}
+.qc-ok{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--verde);color:var(--oro-claro);font-size:12px;flex:none}
+.quiz-chip.off{background:transparent;border-left-color:var(--arena-oscura);color:var(--humo)}
+.quiz-chip.off .qc-ok{background:var(--arena-oscura);color:var(--humo)}
+#qcOff{grid-column:2;justify-self:start;background:none;border:0;padding:0;font:inherit;font-size:13px;color:var(--humo);text-decoration:underline;cursor:pointer}
+
+/* Highlight sweep on key phrases */
+.pp-js .hl-dark,.pp-js .hl{background:linear-gradient(rgba(194,155,64,.3),rgba(194,155,64,.3)) no-repeat 0 100%/0% 38%;transition:background-size 1.3s cubic-bezier(.22,.8,.24,1) .3s}
+.pp-js .mitos .hl-dark{background-image:linear-gradient(rgba(194,155,64,.42),rgba(194,155,64,.42))}
+.pp-js .hl-dark.lit,.pp-js .hl.lit{background-size:100% 38%}
+@media (prefers-reduced-motion: reduce){
+  .teaser.idle .t-val{animation:none}
+  .pp-js .hl-dark,.pp-js .hl{transition:none;background-size:100% 38%}
+  .pp-dock,.t-val,.t-ans button{transition:none}
+}
+</style>
+<script id="pp-convert-js">
+(function(){
+  document.documentElement.classList.add('pp-js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var T={
+    es:{prog:'Su progreso',cont:function(n){return 'Su mapa va en '+n+' de 12. Retome donde lo dejó.';},contB:'Continuar mi mapa',
+        done:function(g){return g?('Su mapa está listo. Quedaron '+g+(g===1?' zona':' zonas')+' en blanco.'):'Su mapa está listo. Ninguna zona quedó en blanco.';},doneB:'Ver mi resultado',
+        answered:'respondidas',zones:'zonas de riesgo',
+        d0:'Haga su mapa · 3 min',d1:function(n){return 'Continúe su mapa · '+n+'/12';},d2:'Vea su resultado',
+        chip:function(n){return 'Su autoevaluación ('+n+'/12) se adjuntará a este mensaje.';},chipOff:'Su autoevaluación no se adjuntará.',off:'No adjuntar',on:'Adjuntar'},
+    en:{prog:'Your progress',cont:function(n){return 'Your map is at '+n+' of 12. Pick up where you left off.';},contB:'Continue my map',
+        done:function(g){return g?('Your map is ready. '+g+(g===1?' zone':' zones')+' came up blank.'):'Your map is ready. No zone came up blank.';},doneB:'See my result',
+        answered:'answered',zones:'risk zones',
+        d0:'Take the map · 3 min',d1:function(n){return 'Continue your map · '+n+'/12';},d2:'See your result',
+        chip:function(n){return 'Your self-assessment ('+n+'/12) will be attached to this message.';},chipOff:'Your self-assessment will not be attached.',off:"Don't attach",on:'Attach'}
+  };
+  var $=function(id){return document.getElementById(id);};
+  var teaser=$('teaser'),dock=$('ppDock');
+  window.ppNoQuiz=false;
+
+  function sync(){
+    var t=T[lang]||T.es,n=picks.length,C=314.16;
+    /* teaser */
+    if(teaser){
+      teaser.classList.toggle('has',n>0);teaser.classList.toggle('idle',n===0);
+      $('tDial').style.strokeDashoffset=(C*(1-n/12)).toFixed(2);
+      if(n===0){
+        $('tQ').textContent=questions[0][lang];
+        var bs=$('tAns').querySelectorAll('button'),k=['si','ns','no','na'];
+        bs.forEach(function(b,i){b.textContent=ANS[k[i]][lang];});
+        $('tNum').textContent='12';$('tLbl').textContent=t.zones;
+        $('tEye').textContent=$('tEye').getAttribute('data-'+lang);
+      }else{
+        $('tNum').textContent=n+'/12';$('tLbl').textContent=t.answered;$('tEye').textContent=t.prog;
+        $('tContT').textContent=finished?t.done(qStats().weak.length):t.cont(n);
+        $('tContB').textContent=finished?t.doneB:t.contB;
+      }
+    }
+    /* dock */
+    $('dockTxt').textContent=finished?t.d2:(n?t.d1(n):t.d0);
+    $('dockDial').style.strokeDashoffset=(94.25*(1-n/12)).toFixed(2);
+    /* chip */
+    var chip=$('quizChip');
+    if(chip){
+      chip.hidden=n===0;chip.classList.toggle('off',window.ppNoQuiz);
+      $('qcText').textContent=window.ppNoQuiz?t.chipOff:t.chip(n);
+      $('qcOff').textContent=window.ppNoQuiz?t.on:t.off;
+    }
+  }
+  window.ppSync=sync;
+
+  /* keep everything in step with the quiz and the language */
+  var _save=qSave;qSave=function(){_save();sync();};
+  var _setLang=setLang;setLang=function(l){_setLang(l);sync();lightAll();};
+
+  function toQuiz(){
+    var sh=document.querySelector('.mapa-shell')||$('mapa');
+    var y=sh.getBoundingClientRect().top+scrollY-90;
+    window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
+  }
+  /* teaser answers: records Q1 and carries the visitor into the map */
+  if(teaser){
+    $('tAns').addEventListener('click',function(e){
+      var b=e.target.closest('button');if(!b||finished)return;
+      var p=parseInt(b.getAttribute('data-p'),10);
+      b.classList.add('on');
+      dl({event:'cta_click',cta:'teaser_q1'});
+      setTimeout(function(){
+        b.classList.remove('on');
+        if(picks.length===0){dl({event:'quiz_start'});picks.push(p);qSave();renderQuestion();}
+        toQuiz();
+      },260);
+    });
+    $('tContB').addEventListener('click',function(e){e.preventDefault();dl({event:'cta_click',cta:'teaser_continue'});toQuiz();});
+  }
+  $('dockMap').addEventListener('click',function(e){
+    e.preventDefault();
+    dl({event:'cta_click',cta:'dock',cta_state:finished?'resultado':(picks.length?'en_progreso':'nuevo')});
+    toQuiz();
+  });
+  $('qcOff').addEventListener('click',function(){window.ppNoQuiz=!window.ppNoQuiz;sync();});
+
+  /* dock visibility: after the hero, hidden while the map, the teaser or the contact form are on screen */
+  var onScreen={};
+  function vis(){
+    var busy=onScreen.mapa||onScreen.contacto||onScreen.teaser;
+    dock.classList.toggle('show',scrollY>560&&!busy);
+  }
+  if('IntersectionObserver' in window){
+    var vo=new IntersectionObserver(function(es){es.forEach(function(en){onScreen[en.target.id]=en.isIntersecting;});vis();},{threshold:.08});
+    ['mapa','contacto','teaser'].forEach(function(id){var el=$(id);if(el)vo.observe(el);});
+  }
+  addEventListener('scroll',vis,{passive:true});
+
+  /* highlight sweep */
+  var ho=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('lit');ho.unobserve(en.target);}});},{threshold:.6,rootMargin:'0px 0px -12% 0px'}):null;
+  var seen=false;
+  function lightAll(){
+    document.querySelectorAll('.hl-dark,.hl').forEach(function(el){
+      if(reduce||!ho||seen)el.classList.add('lit');else ho.observe(el);
+    });
+  }
+  lightAll();seen=true;   /* after a language switch, rebuilt phrases show lit right away */
+  sync();vis();
+})();
+</script>
+<!-- ============ FIN CAPA DE CONVERSION ============ -->
 
 </body>
 </html>
