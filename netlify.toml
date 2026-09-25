@@ -63,6 +63,12 @@
   force = true
 
 [[redirects]]
+  from = "/en/guides/"
+  to = "/en-guides.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/en/guides/auto/"
   to = "/en-guides-auto.html"
   status = 200
@@ -99,12 +105,6 @@
   force = true
 
 [[redirects]]
-  from = "/en/guides/"
-  to = "/en-guides.html"
-  status = 200
-  force = true
-
-[[redirects]]
   from = "/en/guides/private-aviation/"
   to = "/en-guides-private-aviation.html"
   status = 200
@@ -135,6 +135,12 @@
   force = true
 
 [[redirects]]
+  from = "/guias/"
+  to = "/guias.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/guias/autos/"
   to = "/guias-autos.html"
   status = 200
@@ -155,12 +161,6 @@
 [[redirects]]
   from = "/guias/embarcaciones/"
   to = "/guias-embarcaciones.html"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/guias/"
-  to = "/guias.html"
   status = 200
   force = true
 

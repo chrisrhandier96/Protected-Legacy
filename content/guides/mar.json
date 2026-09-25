@@ -1,0 +1,419 @@
+{
+  "key": "mar",
+  "slug_es": "embarcaciones",
+  "slug_en": "boats",
+  "updated": "2026-09-24",
+  "es": {
+    "title": "Seguro de embarcación en Florida: yates, botes y motos",
+    "meta": "Seguro de embarcación en Florida: valor acordado, responsabilidad civil, motos de agua, tripulación, huracanes y límites de navegación, explicados con calma.",
+    "kicker": "Guía · Embarcaciones",
+    "h1": "Seguro de embarcación en Florida: lo que su póliza de hogar no cubre en el agua",
+    "dek": "Cómo funciona el seguro de yate, bote y moto de agua, y qué conviene revisar antes de zarpar, prestar la embarcación o emplear a un capitán.",
+    "summary": [
+      "Florida no exige seguro a los dueños privados de embarcaciones recreativas, pero marinas y prestamistas suelen pedirlo, y la póliza de hogar cubre poco o nada en el agua.",
+      "El valor acordado y el valor real en efectivo pagan de forma muy distinta después de una pérdida total o parcial.",
+      "Prestar un bote o una moto de agua puede generar reclamos por entrega negligente, y en Florida un menor de 14 años no puede operar una moto de agua.",
+      "Emplear a un capitán o a tripulación puede convertir a la familia en empleador marítimo, con exposición bajo la Ley Jones.",
+      "El plan de huracán, los límites de navegación y la remoción de restos son condiciones que conviene leer antes de cada temporada."
+    ],
+    "sections": [
+      {
+        "id": "contexto",
+        "h2": "Por qué el seguro de embarcación en Florida merece su propia revisión",
+        "blocks": [
+          {
+            "p": "Florida se presenta como la capital mundial de la navegación. Según la Comisión de Conservación de Pesca y Vida Silvestre (FWC), en 2025 había 1,027,742 embarcaciones registradas en el estado, con 694 accidentes reportables y 51 muertes [1]. Las motos de agua (PWC) eran el 17% de las embarcaciones registradas, pero el 23% de los accidentes reportables [1]. En los informes recientes de la Guardia Costera de los Estados Unidos (USCG), Florida registró más muertes en navegación recreativa que cualquier otro estado: 75 en 2024 [2]."
+          },
+          {
+            "p": "Aun así, la ley de Florida no obliga a los dueños privados de embarcaciones recreativas a tener un seguro de embarcación. Sí lo exige a las empresas de alquiler, y con frecuencia lo piden las marinas y los prestamistas. Muchas familias suponen que su póliza de hogar o su póliza paraguas las protege en el agua. En la práctica, muchas pólizas de hogar solo dan una cobertura limitada de daños a botes pequeños, como canoas, veleros pequeños o lanchas de poca potencia, y normalmente no incluyen responsabilidad civil por embarcaciones [3]. Las motos de agua, en general, no están cubiertas por el seguro de hogar, y cuando lo están los límites son bajos [4]."
+          },
+          {
+            "callout": "Un seguro de yate o de embarcación es un contrato separado. Su hogar, su auto y su paraguas no fueron diseñados para cubrir un casco de varios millones de dólares ni a un capitán empleado."
+          }
+        ]
+      },
+      {
+        "id": "casco-y-navegacion",
+        "h2": "Seguro de yate: valor acordado, valor real y límites de navegación",
+        "blocks": [
+          {
+            "p": "La parte del seguro de yate que protege la embarcación se llama casco (hull). Hay dos formas principales de valorarlo. Con valor real en efectivo (ACV), la aseguradora paga el costo de reposición menos la depreciación al momento de la pérdida. Con valor acordado, usted y la aseguradora fijan el valor al emitir la póliza y, en una pérdida total, se paga esa cantidad; en pérdidas parciales, muchas de estas pólizas reemplazan piezas sin descontar depreciación [3], aunque algunas sí la aplican a ciertos componentes, como velas, lonas o motores."
+          },
+          {
+            "table": {
+              "head": [
+                "Aspecto",
+                "Valor acordado",
+                "Valor real en efectivo (ACV)"
+              ],
+              "rows": [
+                [
+                  "Pérdida total",
+                  "Paga el valor fijado en la póliza",
+                  "Paga la reposición menos la depreciación"
+                ],
+                [
+                  "Pérdida parcial",
+                  "Con frecuencia sin descontar depreciación",
+                  "Descuenta depreciación"
+                ],
+                [
+                  "Qué revisar",
+                  "Que el valor siga al día con el mercado",
+                  "Cuánto baja el pago con los años"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "Las pólizas de casco suelen excluir el desgaste, la corrosión y las fallas mecánicas graduales, y se enfocan en el daño físico repentino y accidental. Conviene preguntar también por los efectos personales a bordo, los botes auxiliares (tenders) y la electrónica, que a veces tienen sublímites propios."
+          },
+          {
+            "p": "Toda póliza de embarcación define un área de navegación. Una póliza pensada para la costa de Florida puede no cubrir un cruce a las Bahamas, y el Caribe suele requerir una extensión expresa. Si la embarcación sale de esos límites sin autorización, la aseguradora puede negar el reclamo. La ley de Florida (627.409) dice que el incumplimiento de una garantía en una póliza marítima no anula la cobertura salvo que haya aumentado el riesgo por medios bajo el control del asegurado [15], pero muchas pólizas de yate eligen el derecho marítimo federal o las leyes de otro estado, donde las garantías pueden interpretarse de forma más estricta. Lo prudente es tratar los límites de navegación como obligatorios."
+          }
+        ]
+      },
+      {
+        "id": "responsabilidad",
+        "h2": "Responsabilidad civil, préstamos y la conexión con la póliza paraguas",
+        "blocks": [
+          {
+            "p": "La ley de Florida considera toda embarcación un instrumento peligroso y exige a quien la opera el más alto grado de cuidado para evitar lesiones a otros [5]. La misma ley limita la responsabilidad por operación imprudente o descuidada al operador, salvo que el dueño sea quien opera o esté a bordo cuando ocurre el daño [5]. Eso no deja al dueño fuera de riesgo: si presta la embarcación a alguien sin experiencia, bajo los efectos del alcohol o sin la educación náutica exigida, puede enfrentar un reclamo por entrega negligente (negligent entrustment)."
+          },
+          {
+            "p": "La responsabilidad civil de un seguro de embarcación responde, según sus términos, por lesiones a pasajeros, esquiadores remolcados y terceros, y por daños a muelles u otras embarcaciones. Las preguntas clave son quién está cubierto como operador (familiares, invitados, capitanes) y si la póliza excluye operadores por edad o falta de experiencia. Al conectar esta póliza con la paraguas, conviene revisar:"
+          },
+          {
+            "ul": [
+              "Si los límites de la póliza de la embarcación cumplen el mínimo subyacente que exige su paraguas.",
+              "Si la paraguas cubre embarcaciones por encima de cierta eslora o potencia, o si deben estar declaradas.",
+              "Si alquilar la embarcación a terceros, incluso a través de plataformas en línea, está excluido."
+            ]
+          },
+          {
+            "p": "El alquiler cambia el riesgo por completo. En Florida, las empresas de alquiler deben tener cobertura de al menos $500,000 por persona y $1 millón por evento [8], y una póliza personal de yate normalmente no está diseñada para ese uso comercial."
+          }
+        ]
+      },
+      {
+        "id": "motos-de-agua",
+        "h2": "Motos de agua (jet ski insurance), menores y educación náutica",
+        "blocks": [
+          {
+            "p": "En Florida, ninguna persona menor de 14 años puede operar una moto de agua, y es ilegal que el dueño autorice o permita a sabiendas que lo haga [6]. La ley también exige que todos los que van a bordo o remolcados usen un chaleco salvavidas no inflable aprobado por la USCG, que el operador lleve conectado el cordón de apagado del motor y que no se opere entre media hora después del atardecer y media hora antes del amanecer [6]. Las empresas de alquiler no pueden alquilar embarcaciones a menores de 18 años, salvo las de propulsión humana [8]."
+          },
+          {
+            "p": "Además, toda persona nacida el 1 de enero de 1988 o después debe llevar a bordo su tarjeta de educación náutica (o el documento equivalente) para operar una embarcación con motor de 10 caballos de fuerza o más, con algunas excepciones, como ir acompañado de un adulto de 18 años o más que tenga la certificación y sea responsable de la operación [7]. La USCG reporta que, donde se conocía el dato, el 69% de las muertes ocurrieron en embarcaciones cuyo operador no había recibido instrucción de seguridad, y que el alcohol fue el principal factor contribuyente conocido en el 20% de las muertes [2]."
+          },
+          {
+            "callout": "Imagine un caso hipotético: un invitado de 15 años toma la moto de agua de la familia sin tarjeta de educación náutica. Aunque el dueño no esté a bordo, haber dejado las llaves a su alcance puede ser el centro de un reclamo por entrega negligente."
+          },
+          {
+            "p": "Una moto de agua suele necesitar su propia póliza o un endoso en la póliza de la embarcación principal. Conviene confirmar si la cobertura aplica cuando la opera un invitado, qué restricciones de edad tiene y si la paraguas reconoce esa póliza como cobertura subyacente."
+          }
+        ]
+      },
+      {
+        "id": "tripulacion",
+        "h2": "Capitán y tripulación: la Ley Jones y la exposición del empleador marítimo",
+        "blocks": [
+          {
+            "p": "Cuando una familia emplea a un capitán o a tripulación, puede convertirse en empleador marítimo. La Ley Jones permite que un marino (seaman) lesionado en el curso de su empleo demande a su empleador en un juicio con jurado [9]. Además, el derecho marítimo general reconoce la manutención y cura (maintenance and cure): gastos de vida diarios y gastos médicos hasta que el marino pueda volver a trabajar o hasta que más tratamiento ya no lo ayude [11]. Esta obligación, por lo general, no depende de probar la negligencia del empleador."
+          },
+          {
+            "p": "La ley federal de compensación para trabajadores portuarios (Longshore Act) excluye expresamente al capitán y a los miembros de la tripulación de una embarcación [10]. Tampoco conviene suponer que una póliza de hogar o un acuerdo para empleados domésticos responda por ellos. Muchas pólizas de yate pueden incluir o añadir responsabilidad hacia la tripulación, a menudo dentro de la cobertura de protección e indemnización (P&I). Preguntas útiles:"
+          },
+          {
+            "ul": [
+              "¿Quién es el empleador formal: la familia, una sociedad, un family office o una empresa de gestión de yates?",
+              "¿La póliza cubre a capitanes ocasionales (day captains) además de la tripulación fija?",
+              "¿Hay cobertura para manutención y cura, y con qué límite?"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "huracanes-y-restos",
+        "h2": "Planes de huracán, remoción de restos y derrames de combustible",
+        "blocks": [
+          {
+            "p": "En Florida, muchas pólizas de embarcaciones tienen disposiciones específicas para tormentas con nombre. Es común que la aseguradora pida un plan de huracán por escrito (dónde se asegurará la embarcación, quién la moverá y con cuánta anticipación), que aplique un deducible distinto para tormentas con nombre y que algunas pólizas contribuyan a los costos de sacar la embarcación del agua o trasladarla. Ciertas pólizas también exigen que la embarcación esté fuera de determinadas zonas durante la temporada. Si el plan presentado no se cumple, el reclamo puede complicarse."
+          },
+          {
+            "p": "Un siniestro no termina con el daño al casco. La ley federal obliga al dueño de una embarcación hundida en un canal navegable a marcarla y a iniciar su remoción inmediata [12]. En Florida, el dueño no puede dejar una embarcación abandonada o en ruinas en aguas del estado, y los costos de remoción que asuman las autoridades pueden cobrarse al dueño [13]. Si hay un derrame de combustible o aceite, la Ley de Contaminación por Petróleo establece que la parte responsable de la embarcación responde por los costos de limpieza y los daños [14]."
+          },
+          {
+            "callout": "Pregunte si la remoción de restos y la contaminación tienen límites propios o si consumen el límite de responsabilidad general. Después de un huracán, ambos gastos pueden llegar al mismo tiempo."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      "¿Mi embarcación está asegurada a valor acordado o a valor real en efectivo, y ese valor refleja el mercado actual?",
+      "¿Qué área de navegación cubre la póliza y qué se necesita para ir a las Bahamas o al Caribe?",
+      "¿Quién está cubierto como operador, y qué pasa si presto la embarcación o la moto de agua a un invitado?",
+      "¿Mi póliza paraguas reconoce esta embarcación, y los límites subyacentes cumplen su mínimo?",
+      "Si empleo a un capitán o a tripulación, ¿quién es el empleador y qué cobertura existe para reclamos bajo la Ley Jones?",
+      "¿Qué exige mi plan de huracán, cuál es el deducible por tormenta con nombre y cómo se tratan la remoción de restos y los derrames?"
+    ],
+    "faq": [
+      {
+        "q": "¿Es obligatorio el seguro de embarcación en Florida?",
+        "a": "No para los dueños privados de embarcaciones recreativas. La ley de Florida sí lo exige a las empresas de alquiler, con al menos $500,000 por persona y $1 millón por evento. Aun sin obligación legal, marinas y prestamistas suelen pedirlo, y el dueño sigue expuesto a reclamos, por ejemplo por entrega negligente si presta la embarcación. Cada póliza tiene sus propios términos."
+      },
+      {
+        "q": "¿Mi seguro de hogar cubre mi moto de agua?",
+        "a": "En general, no. Según el Insurance Information Institute, las motos de agua normalmente no están cubiertas por el seguro de hogar, y cuando lo están los límites son bajos. Muchas pólizas de hogar solo dan cobertura limitada a botes pequeños y no incluyen responsabilidad civil. Una moto de agua suele necesitar su propia póliza o un endoso en la póliza de la embarcación."
+      },
+      {
+        "q": "¿Qué es el valor acordado en un seguro de yate?",
+        "a": "Es un valor que usted y la aseguradora fijan al emitir la póliza. En una pérdida total se paga esa cantidad, sin descontar depreciación. Con valor real en efectivo, en cambio, se paga la reposición menos la depreciación. Conviene revisar el valor acordado cada año para que siga reflejando el mercado, y preguntar si algunos componentes se deprecian en pérdidas parciales."
+      }
+    ]
+  },
+  "en": {
+    "title": "Boat Insurance in Florida: Yachts, Boats and Jet Skis",
+    "meta": "Boat insurance in Florida explained: agreed value hulls, liability, jet ski insurance, crew and the Jones Act, hurricane plans and navigation limits.",
+    "kicker": "Guide · Boats",
+    "h1": "Boat insurance in Florida: what your homeowners policy leaves on the dock",
+    "dek": "How yacht, boat and personal watercraft insurance works, and what to review before you head out, lend the boat or hire a captain.",
+    "summary": [
+      "Florida does not require private recreational boat owners to carry insurance, but marinas and lenders often do, and a homeowners policy covers little or nothing on the water.",
+      "Agreed value and actual cash value pay very differently after a total or partial loss.",
+      "Lending a boat or PWC can lead to negligent entrustment claims, and in Florida no one under 14 may operate a personal watercraft.",
+      "Hiring a captain or crew can make the family a maritime employer, with exposure under the Jones Act.",
+      "Hurricane plans, navigation limits and wreck removal are policy conditions worth reading before every season."
+    ],
+    "sections": [
+      {
+        "id": "context",
+        "h2": "Why boat insurance in Florida deserves its own review",
+        "blocks": [
+          {
+            "p": "Florida calls itself the Boating Capital of the World. According to the Florida Fish and Wildlife Conservation Commission (FWC), the state had 1,027,742 registered vessels in 2025, with 694 reportable accidents and 51 fatalities [1]. Personal watercraft (PWCs) were 17% of registered vessels but 23% of reportable accidents [1]. In recent U.S. Coast Guard (USCG) reports, Florida recorded the most recreational boating deaths of any state: 75 in 2024 [2]."
+          },
+          {
+            "p": "Even so, Florida law does not require private recreational owners to carry boat insurance. Rental businesses (liveries) must carry it, and marinas and lenders often require it. Many families assume their homeowners or umbrella policy protects them on the water. In practice, many homeowners policies give only limited property coverage for small boats such as canoes, small sailboats or low-powered boats, and they typically do not include boat liability [3]. Personal watercraft are generally not covered by homeowners insurance, and when they are, the limits are low [4]."
+          },
+          {
+            "callout": "Yacht or boat insurance is a separate contract. Your home, auto and umbrella policies were not designed to cover a multimillion-dollar hull or a captain on your payroll."
+          }
+        ]
+      },
+      {
+        "id": "hull-and-navigation",
+        "h2": "Yacht insurance: agreed value, actual cash value and navigation limits",
+        "blocks": [
+          {
+            "p": "The part of a yacht insurance policy that protects the vessel itself is the hull coverage. There are two main ways to value it. With actual cash value (ACV), the insurer pays replacement cost minus depreciation at the time of the loss. With agreed value, you and the insurer set the value when the policy is issued, and that amount is paid after a total loss; on partial losses, many of these policies replace parts without deducting depreciation [3], although some do depreciate certain components such as sails, canvas or engines."
+          },
+          {
+            "table": {
+              "head": [
+                "Feature",
+                "Agreed value",
+                "Actual cash value (ACV)"
+              ],
+              "rows": [
+                [
+                  "Total loss",
+                  "Pays the value stated in the policy",
+                  "Pays replacement minus depreciation"
+                ],
+                [
+                  "Partial loss",
+                  "Often no deduction for depreciation",
+                  "Deducts depreciation"
+                ],
+                [
+                  "What to review",
+                  "Whether the value still tracks the market",
+                  "How much the payout drops over time"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "Hull policies typically exclude wear and tear, corrosion and gradual mechanical failure, and focus on sudden, accidental physical damage. It is also worth asking about personal effects on board, tenders and electronics, which sometimes carry their own sublimits."
+          },
+          {
+            "p": "Every boat policy defines a navigation area. A policy written for Florida's coast may not cover a crossing to the Bahamas, and the Caribbean usually requires a specific extension. If the vessel leaves those limits without approval, the insurer may deny the claim. Florida law (627.409) says a breach of warranty in a marine policy does not void coverage unless it increased the hazard by means within the insured's control [15], but many yacht policies choose federal maritime law or another state's law, where warranties can be read more strictly. The prudent approach is to treat navigation limits as binding."
+          }
+        ]
+      },
+      {
+        "id": "liability",
+        "h2": "Liability, lending the boat and the umbrella connection",
+        "blocks": [
+          {
+            "p": "Florida law treats every vessel as a dangerous instrumentality and requires operators to use the highest degree of care to prevent injuries to others [5]. The same statute confines liability for reckless or careless operation to the operator, unless the owner is the operator or is present in the vessel when the injury occurs [5]. That does not take the owner out of the picture: lending the boat to someone inexperienced, impaired or without the required boater education can still lead to a negligent entrustment claim."
+          },
+          {
+            "p": "Boat liability coverage responds, under its terms, to injuries to passengers, towed skiers and third parties, and to damage to docks or other vessels. The key questions are who counts as a covered operator (family members, guests, captains) and whether the policy excludes operators by age or experience. When you connect this policy to your umbrella, it helps to review:"
+          },
+          {
+            "ul": [
+              "Whether the boat policy's limits meet the underlying minimum your umbrella requires.",
+              "Whether the umbrella covers vessels above a certain length or horsepower, or requires them to be scheduled.",
+              "Whether renting the boat to others, including through online platforms, is excluded."
+            ]
+          },
+          {
+            "p": "Renting changes the risk entirely. In Florida, rental liveries must carry coverage of at least $500,000 per person and $1 million per event [8], and a personal yacht policy is typically not designed for that commercial use."
+          }
+        ]
+      },
+      {
+        "id": "personal-watercraft",
+        "h2": "Jet ski insurance, minors and boater education",
+        "blocks": [
+          {
+            "p": "In Florida, no one under 14 may operate a personal watercraft, and it is unlawful for an owner to authorize or knowingly permit it [6]. The law also requires everyone riding or being towed to wear a non-inflatable USCG-approved life jacket, requires the operator to attach the engine cutoff lanyard, and bars operation from one-half hour after sunset to one-half hour before sunrise [6]. Liveries may not rent any vessel other than a human-powered one to anyone under 18 [8]."
+          },
+          {
+            "p": "In addition, anyone born on or after January 1, 1988, must carry a boating safety education ID card (or an equivalent document) to operate a vessel powered by a motor of 10 horsepower or more, with some exceptions, such as being accompanied by a certified adult 18 or older who is responsible for the operation [7]. The USCG reports that, where instruction was known, 69% of deaths occurred on boats whose operator had not received boating safety instruction, and that alcohol was the leading known contributing factor in 20% of deaths [2]."
+          },
+          {
+            "callout": "Consider a hypothetical: a 15-year-old guest takes the family's PWC without a boater education card. Even if the owner is not on board, leaving the keys within reach can become the center of a negligent entrustment claim."
+          },
+          {
+            "p": "A PWC usually needs its own policy or an endorsement on the main boat policy. It is worth confirming whether coverage applies when a guest operates it, what operator age limits apply and whether your umbrella accepts that policy as underlying coverage."
+          }
+        ]
+      },
+      {
+        "id": "crew",
+        "h2": "Captain and crew: the Jones Act and maritime employer exposure",
+        "blocks": [
+          {
+            "p": "When a family employs a captain or crew, it can become a maritime employer. The Jones Act allows a seaman injured in the course of employment to sue the employer, with the right to a jury trial [9]. General maritime law also recognizes maintenance and cure: daily living expenses and medical costs until the seaman is fit for duty or further treatment will no longer help [11]. This obligation generally does not depend on proving the employer was negligent."
+          },
+          {
+            "p": "The federal Longshore Act expressly excludes a master or member of a crew of any vessel [10]. Nor should a family assume that a homeowners policy or a household employee arrangement will respond. Many yacht policies can include or add crew liability, often as part of protection and indemnity (P&I) coverage. Useful questions:"
+          },
+          {
+            "ul": [
+              "Who is the formal employer: the family, an entity, a family office or a yacht management company?",
+              "Does the policy cover occasional day captains as well as permanent crew?",
+              "Is there coverage for maintenance and cure, and at what limit?"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hurricanes-and-wreck-removal",
+        "h2": "Hurricane plans, wreck removal and fuel spills",
+        "blocks": [
+          {
+            "p": "In Florida, many boat policies carry specific named-storm provisions. Insurers commonly ask for a written hurricane plan (where the vessel will be secured, who will move it and how far in advance), may apply a separate named-storm deductible, and some policies contribute toward haul-out or relocation costs. Certain policies also require the vessel to be outside designated zones during the season. If the plan on file is not followed, the claim can become complicated."
+          },
+          {
+            "p": "A loss does not end with hull damage. Federal law requires the owner of a vessel sunk in a navigable channel to mark it and begin removal immediately [12]. In Florida, an owner may not leave a derelict vessel on state waters, and removal costs incurred by authorities are recoverable against the owner [13]. If fuel or oil is spilled, the Oil Pollution Act makes the responsible party for the vessel liable for removal costs and damages [14]."
+          },
+          {
+            "callout": "Ask whether wreck removal and pollution have their own limits or erode the general liability limit. After a hurricane, both costs can arrive at the same time."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      "Is my boat insured on an agreed value or actual cash value basis, and does that value reflect today's market?",
+      "What navigation area does the policy cover, and what is needed to cruise to the Bahamas or the Caribbean?",
+      "Who is covered as an operator, and what happens if I lend the boat or PWC to a guest?",
+      "Does my umbrella policy recognize this vessel, and do the underlying limits meet its minimum?",
+      "If I employ a captain or crew, who is the employer and what coverage exists for Jones Act claims?",
+      "What does my hurricane plan require, what is the named-storm deductible, and how are wreck removal and spills handled?"
+    ],
+    "faq": [
+      {
+        "q": "Is boat insurance required in Florida?",
+        "a": "Not for private recreational boat owners. Florida law does require it for rental liveries, at no less than $500,000 per person and $1 million per event. Even without a legal requirement, marinas and lenders often ask for it, and owners remain exposed to claims, such as negligent entrustment when they lend the boat. Every policy has its own terms."
+      },
+      {
+        "q": "Does homeowners insurance cover my jet ski?",
+        "a": "Generally not. According to the Insurance Information Institute, personal watercraft are generally not covered by homeowners insurance, and when they are, limits are low. Many homeowners policies give only limited coverage for small boats and do not include liability. A PWC usually needs its own policy or an endorsement on your boat policy."
+      },
+      {
+        "q": "What is agreed value in yacht insurance?",
+        "a": "It is a value you and the insurer set when the policy is issued. After a total loss, that amount is paid without deducting depreciation. With actual cash value, by contrast, the payout is replacement cost minus depreciation. It is worth reviewing the agreed value every year so it tracks the market, and asking whether any components depreciate on partial losses."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "n": 1,
+      "label": "Florida Fish and Wildlife Conservation Commission (FWC), 2025 Boating Accident Statistics report",
+      "url": "https://myfwc.com/media/1cobinby/2025-basr.pdf"
+    },
+    {
+      "n": 2,
+      "label": "U.S. Coast Guard, 2024 Recreational Boating Statistics, COMDTPUB P16754.38 (2025)",
+      "url": "https://www.uscgboating.org/library/accident-statistics/Recreational-Boating-Statistics-2024.pdf"
+    },
+    {
+      "n": 3,
+      "label": "Insurance Information Institute (Triple-I), Boat insurance and safety",
+      "url": "https://www.iii.org/article/boat-insurance-and-safety"
+    },
+    {
+      "n": 4,
+      "label": "Insurance Information Institute (Triple-I), Personal watercraft insurance and safety",
+      "url": "https://www.iii.org/article/personal-watercraft-insurance-and-safety"
+    },
+    {
+      "n": 5,
+      "label": "Florida Statutes, s. 327.32, Vessel declared dangerous instrumentality; civil liability (2025)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/327.32"
+    },
+    {
+      "n": 6,
+      "label": "Florida Statutes, s. 327.39, Personal watercraft regulated (2025)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/327.39"
+    },
+    {
+      "n": 7,
+      "label": "Florida Statutes, s. 327.395, Boating safety education (2025)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/327.395"
+    },
+    {
+      "n": 8,
+      "label": "Florida Statutes, s. 327.54, Liveries; safety regulations; penalty (2025)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/327.54"
+    },
+    {
+      "n": 9,
+      "label": "46 U.S.C. 30104, Personal injury to or death of seamen (Jones Act), Cornell LII",
+      "url": "https://www.law.cornell.edu/uscode/text/46/30104"
+    },
+    {
+      "n": 10,
+      "label": "33 U.S.C. 902(3)(G), Longshore and Harbor Workers' Compensation Act definitions, Cornell LII",
+      "url": "https://www.law.cornell.edu/uscode/text/33/902"
+    },
+    {
+      "n": 11,
+      "label": "Cornell Legal Information Institute (Wex), Maintenance and cure",
+      "url": "https://www.law.cornell.edu/wex/maintenance_and_cure"
+    },
+    {
+      "n": 12,
+      "label": "33 U.S.C. 409, Obstruction of navigable waters; sunken craft, Cornell LII",
+      "url": "https://www.law.cornell.edu/uscode/text/33/409"
+    },
+    {
+      "n": 13,
+      "label": "Florida Statutes, s. 823.11, Derelict vessels (2025)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/823.11"
+    },
+    {
+      "n": 14,
+      "label": "33 U.S.C. 2702, Oil Pollution Act of 1990, elements of liability, Cornell LII",
+      "url": "https://www.law.cornell.edu/uscode/text/33/2702"
+    },
+    {
+      "n": 15,
+      "label": "Florida Statutes, s. 627.409, Representations in applications; warranties (2025)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/627.409"
+    }
+  ]
+}
