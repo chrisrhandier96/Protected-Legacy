@@ -1,0 +1,7 @@
+Fonts self-hosted for protectedlegacyfl.com (latin subsets, WOFF2, from Google Fonts).
+All are licensed under the SIL Open Font License, Version 1.1:
+https://openfontlicense.org/open-font-license-official-text/
+
+- Marcellus: Copyright 2012 The Marcellus Project Authors.
+- Figtree: Copyright 2022 The Figtree Project Authors.
+- Cormorant Garamond: Copyright 2015 The Cormorant Project Authors.

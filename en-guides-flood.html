@@ -37,8 +37,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/marcellus-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+<style id="pp-fonts">@font-face{font-family:'Marcellus';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/marcellus-400.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:normal;font-weight:300 700;font-display:swap;src:url(/fonts/figtree-var.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/figtree-italic-400.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500 600;font-display:swap;src:url(/fonts/cormorant-garamond-italic.woff2) format('woff2')}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
 <style>
 :root{--verde:#14352A;--verde-oscuro:#0D241C;--verde-suave:#1E4A3A;--arena:#F5EFE3;--arena-oscura:#E7DDC7;--oro:#C29B40;--oro-claro:#D9BC72;--oro-palido:#EBD9A8;--tinta:#22271F;--humo:#6E7568;--blanco:#FDFBF6;--display:'Marcellus',serif;--accent:'Cormorant Garamond',serif;--body:'Figtree',sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -134,6 +135,17 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;p
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.protectedlegacyfl.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.protectedlegacyfl.com/en/guides/"}, {"@type": "ListItem", "position": 3, "name": "Flood and storm surge: how flood insurance works in Florida", "item": "https://www.protectedlegacyfl.com/en/guides/flood/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Does homeowners insurance cover flood or storm surge in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Generally no. Standard homeowners policies exclude flood, and storm surge from a hurricane is treated as flood. Wind damage is handled by the homeowners policy, while rising water is handled by a separate flood policy through the NFIP or a private insurer. Florida law allows private insurers to offer flood coverage by policy or endorsement."}}, {"@type": "Question", "name": "What is the flood insurance waiting period?", "acceptedAnswer": {"@type": "Answer", "text": "Most NFIP policies take effect 30 days after purchase. Exceptions include coverage bought in connection with a new, increased, extended or renewed loan, which has no waiting period, and coverage bought within 13 months of a flood map revision, which has a 1-day wait. Private flood waiting periods vary, often about two weeks."}}, {"@type": "Question", "name": "What is excess flood insurance?", "acceptedAnswer": {"@type": "Answer", "text": "Excess flood insurance pays covered flood losses above the limit of a primary flood policy, usually the NFIP, whose building limit for a home is $250,000 and contents limit is $100,000. It is often considered for homes whose rebuilding cost or contents value is well above those limits. Terms vary, so compare how it follows the primary policy."}}]}</script>
 <style id="cg-logo">.logo-mark.cg-mark{width:auto;height:44px;transform:none!important}.logo-mark.cg-crest{width:auto;height:64px;transform:none!important}</style>
+<style id="pp-a11y">
+/* WCAG AA: gold and grey text on the light sand backgrounds (gold stays bright on dark green) */
+:root{--oro-tx:#7E5F17;--oro-tx-lg:#9A7424;--humo-tx:#5F665A}
+.term .alt,.term>a,.band label.kicker,details p>a[style*="--oro"],main .card .go,sup.fn a,.sumbox h2,.srcs h2,.toc h2,
+#datos .eyebrow,#biblioteca .eyebrow,#mapa .eyebrow,#contacto .eyebrow,#datos a.fn,#mapa .answers .k,#qdomain,.direct .d-t,
+body>.wrap>.eyebrow,#pmail{color:var(--oro-tx)!important}
+#contacto .accent-i{color:var(--oro-tx-lg)!important}
+.toc a,.srcs li,.tip,#pgt,#a-na,.mapa-note,#contacto p[style*="--humo"],body>.wrap .fin,body>.wrap .fin span{color:var(--humo-tx)!important}
+.m-cue{color:#AFC1B4!important}
+#mapa .answers .k{opacity:1!important}
+</style>
 </head>
 <body data-type="guide">
 <!-- Google Tag Manager (noscript) -->
@@ -143,7 +155,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="bar" aria-hidden="true"></div>
 <nav>
   <div class="nav-inner">
-    <a class="logo-lockup" href="/en/" aria-label="Patrimonio Protegido"><img class="logo-mark cg-mark" src="/img/cg-escudo-44.png" srcset="/img/cg-escudo-88.png 2x, /img/cg-escudo-132.png 3x" width="33" height="44" alt=""><span class="logo-txt"><span class="logo">Patrimonio <em>Protegido</em></span><span class="logo-sub">Christian R. González</span></span></a>
+    <a class="logo-lockup" href="/en/"><img class="logo-mark cg-mark" src="/img/cg-escudo-44.png" srcset="/img/cg-escudo-88.png 2x, /img/cg-escudo-132.png 3x" width="33" height="44" alt=""><span class="logo-txt"><span class="logo">Patrimonio <em>Protegido</em></span><span class="logo-sub">Christian R. González</span></span></a>
     <div class="nav-links"><a href="/en/guides/" aria-current="page">Guides</a><a href="/en/glossary/">Glossary</a><a href="/en/faq/">FAQ</a><a href="/en/guides/#herramientas">Tools</a><a href="/en/#mapa">Self-Assessment</a><a href="/en/#contacto">Contact</a><a class="lang-link" href="/guias/inundacion/" hreflang="es" lang="es">ES</a></div>
     <button class="hamb" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16 M4 12h16 M4 17h16"/></svg></button>
   </div>
@@ -203,6 +215,23 @@ function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.que
 var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-20% 0px -70% 0px'});
 document.querySelectorAll('article section[id]').forEach(function(s){io.observe(s);});})();</script>
+<style id="pp-v2-lib">
+/* ===== DESIGN LAYER v2 (library, tools, utility pages) ===== */
+:root{--r-lg:22px;--r:16px;--r-sm:12px;--ease:cubic-bezier(.22,.8,.24,1)}
+nav{background:rgba(13,36,28,.93);-webkit-backdrop-filter:blur(16px) saturate(1.25);backdrop-filter:blur(16px) saturate(1.25)}
+@media(min-width:981px){.nav-links{gap:24px;padding:6px 6px 6px 24px;border-radius:999px;background:rgba(245,239,227,.045);border:1px solid rgba(245,239,227,.10);box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}}
+.btn{border-radius:999px}
+.btn-oro{background:linear-gradient(180deg,#D4AF5A 0%,var(--oro) 100%);box-shadow:0 12px 30px -12px rgba(194,155,64,.6),inset 0 1px 0 rgba(255,255,255,.28)}
+.btn-oro:hover{background:linear-gradient(180deg,#DDBB68 0%,#C9A34A 100%)}
+.card,.sumbox,.qbox,.cta,.disclaimer,.term{border-radius:var(--r)}
+.card{transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -24px rgba(20,53,42,.28);border-color:rgba(194,155,64,.55)}
+.search{border-radius:999px;padding-left:20px}
+.head{background:radial-gradient(45% 90% at 88% 10%,rgba(194,155,64,.12),rgba(194,155,64,0) 62%),linear-gradient(180deg,var(--verde),var(--verde-oscuro))}
+.head::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(217,188,114,.18) 1px,transparent 1.3px);background-size:24px 24px;-webkit-mask-image:radial-gradient(55% 90% at 85% 30%,#000 10%,transparent 72%);mask-image:radial-gradient(55% 90% at 85% 30%,#000 10%,transparent 72%)}
+.head>.wrap{position:relative;z-index:1}
+@media (prefers-reduced-motion: reduce){.card{transition:none}}
+</style>
 <!-- PP LIBRARY PANEL -->
 <style>
 .ppl{--ppl-g:var(--verde-oscuro,#0D241C);--ppl-g2:var(--verde,#14352A);--ppl-s:var(--arena,#F5EFE3);--ppl-o:var(--oro,#C29B40);--ppl-fd:var(--display,'Marcellus',Georgia,serif);--ppl-fb:var(--body,'Figtree',system-ui,sans-serif)}
