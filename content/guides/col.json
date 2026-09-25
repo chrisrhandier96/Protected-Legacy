@@ -2,7 +2,7 @@
   "key": "col",
   "slug_es": "colecciones-arte-joyas",
   "slug_en": "collections-art-jewelry",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "es": {
     "title": "Seguro de joyas y obras de arte: guía para Florida",
     "meta": "Seguro de joyas, relojes, arte y vino en Florida: límites especiales de la póliza de hogar, cobertura programada, valor convenido, tasaciones y traslados.",
@@ -192,6 +192,30 @@
           },
           {
             "p": "Como siguiente paso, reúna el inventario, las tasaciones y las pólizas vigentes, y repase con su agente licenciado las preguntas de abajo. Si la colección pertenece a un fideicomiso o a una sociedad, incluya también a su abogado."
+          }
+        ]
+      },
+      {
+        "id": "mitigacion",
+        "h2": "Cómo reducir el riesgo",
+        "blocks": [
+          {
+            "p": "Estas medidas protegen las piezas y hacen que un reclamo sea más sencillo:"
+          },
+          {
+            "ul": [
+              "Actualice las tasaciones cada pocos años, y antes si el mercado cambia o si una pieza se modifica [5].",
+              "Mantenga estables la temperatura y la humedad para arte, vino y textiles, y aleje las piezas del sol directo y de las tuberías.",
+              "Instale una alarma monitoreada por una central, con sensores de incendio, agua y temperatura.",
+              "Guarde joyas y relojes en una caja fuerte certificada y anclada a la estructura.",
+              "Cuando viaje, considere guardar las piezas importantes en una caja de seguridad bancaria; recuerde que su contenido no está asegurado por la FDIC [6].",
+              "Fotografíe cada pieza y guarde recibos, certificados y procedencia fuera de la casa [4].",
+              "Use embaladores profesionales y transportistas especializados para mudanzas y préstamos, y confirme la cobertura en tránsito antes del envío.",
+              "Avise pronto a su agente sobre las piezas nuevas que adquiera."
+            ]
+          },
+          {
+            "p": "Si quiere una segunda mirada a cómo está organizada su familia en este tema, escríbame."
           }
         ]
       }
@@ -409,6 +433,30 @@
           },
           {
             "p": "As a next step, gather your inventory, appraisals and current policies, and go over the questions below with your own licensed agent. If the collection belongs to a trust or a company, bring your attorney into the conversation as well."
+          }
+        ]
+      },
+      {
+        "id": "mitigation",
+        "h2": "How to reduce the risk",
+        "blocks": [
+          {
+            "p": "These steps protect the pieces and make a claim simpler:"
+          },
+          {
+            "ul": [
+              "Update appraisals every few years, and sooner if markets move or a piece is altered [5].",
+              "Keep temperature and humidity stable for art, wine and textiles, and keep pieces away from direct sun and water pipes.",
+              "Install a central-station monitored alarm, with fire, water and temperature sensors.",
+              "Keep jewelry and watches in a rated safe anchored to the structure.",
+              "When you travel, consider storing important pieces in a bank safe deposit box; remember that its contents are not insured by the FDIC [6].",
+              "Photograph every piece and keep receipts, certificates and provenance off site [4].",
+              "Use professional packers and specialized shippers for moves and loans, and confirm transit coverage before shipping.",
+              "Tell your agent promptly about new pieces you acquire."
+            ]
+          },
+          {
+            "p": "If you want a second look at how your family is set up on this, write to me."
           }
         ]
       }

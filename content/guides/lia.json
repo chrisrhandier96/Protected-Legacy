@@ -2,7 +2,7 @@
   "key": "lia",
   "slug_es": "umbrella-responsabilidad",
   "slug_en": "umbrella-liability",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "es": {
     "title": "Póliza umbrella en Florida: responsabilidad civil",
     "meta": "Cómo funciona una póliza umbrella en Florida: límites subyacentes, exclusiones, defensa legal, cobertura UM, riesgos digitales y juntas directivas.",
@@ -104,6 +104,30 @@
           {"p": "Muchas personas con patrimonio sirven en juntas de fundaciones, escuelas o asociaciones de condominio. En Florida, la sección 617.0834 establece que los directores y funcionarios de corporaciones sin fines de lucro, por lo general, no responden personalmente por daños monetarios derivados de sus decisiones en el cargo, salvo que el incumplimiento de sus deberes constituya, entre otros supuestos, una violación penal, una transacción con beneficio personal indebido, o una conducta imprudente, de mala fe o con desprecio deliberado y temerario [7]. Esta sección se reformó en 2026, así que conviene confirmar con su abogado el texto que aplica a su organización. Para asociaciones de condominio, la sección 718.111 remite a esos estándares para la responsabilidad personal de directores y exige a la asociación mantener seguro o fianza de fidelidad para quienes controlan o desembolsan fondos [8]. Esa fianza protege el dinero de la asociación, no al director."},
           {"p": "Estas protecciones no impiden que lo demanden, y defenderse cuesta. Muchas umbrellas personales excluyen o limitan la responsabilidad por servicio en juntas; algunas la cubren para juntas sin fines de lucro no remuneradas mediante endoso. Por eso conviene pedir a la organización copia de su póliza de directores y funcionarios (D&O) y revisar límites, quiénes están asegurados y sus exclusiones."},
           {"p": "Como siguiente paso, reúna sus pólizas de hogar, auto, embarcación y umbrella, y revise con su agente licenciado, su abogado y su contador las preguntas de abajo."}
+        ]
+      },
+      {
+        "id": "mitigacion",
+        "h2": "Cómo reducir el riesgo",
+        "blocks": [
+          {
+            "p": "La responsabilidad civil se previene en la vida diaria de la familia:"
+          },
+          {
+            "ul": [
+              "Revise cada año el límite de su umbrella frente a su patrimonio, sus ingresos futuros y exposiciones como piscina, embarcaciones, conductores jóvenes o personal del hogar [1].",
+              "Confirme que cada auto, embarcación y propiedad cumpla los requisitos subyacentes de su umbrella [1].",
+              "En fiestas en casa, no sirva alcohol a menores de 21 años ni a quien sepa que tiene una adicción habitual al alcohol; esas son las excepciones a la regla general de Florida [5].",
+              "Contrate proveedores con licencia y seguro para los eventos, y pida sus certificados.",
+              "Acuerde reglas familiares para redes sociales: nada que pueda difamar a otros, y cuidado con fotos de invitados y de menores.",
+              "Cerque la piscina y supervise el uso de trampolines, muelles y equipos recreativos [3].",
+              "Informe a su agente sobre negocios en casa, alquileres y cargos en juntas [4].",
+              "Deje por escrito sus decisiones sobre la cobertura UM/UIM y revíselas periódicamente [6]."
+            ]
+          },
+          {
+            "p": "Si quiere una segunda mirada a cómo está organizada su familia en este tema, escríbame."
+          }
         ]
       }
     ],
@@ -223,6 +247,30 @@
           {"p": "Many people with significant assets serve on the boards of foundations, schools or condominium associations. In Florida, section 617.0834 provides that directors and officers of not-for-profit corporations generally are not personally liable for monetary damages arising from their decisions in office, unless the breach of their duties amounts to, among other things, a criminal violation, a transaction with an improper personal benefit, or reckless, bad-faith or wanton and willful conduct [7]. The section was revised in 2026, so confirm the text that applies to your organization with your attorney. For condominium associations, section 718.111 refers to those standards for directors' personal liability and requires the association to maintain insurance or fidelity bonding for everyone who controls or disburses association funds [8]. That bond protects the association's money, not the director."},
           {"p": "These protections do not stop someone from suing you, and a defense costs money. Many personal umbrellas exclude or limit liability for board service; some cover uncompensated nonprofit board service by endorsement. That is why it is worth asking each organization for a copy of its directors and officers (D&O) policy and reviewing the limits, who is insured and the exclusions."},
           {"p": "As a next step, gather your home, auto, boat and umbrella policies and review the questions below with your licensed agent, your attorney and your CPA."}
+        ]
+      },
+      {
+        "id": "mitigation",
+        "h2": "How to reduce the risk",
+        "blocks": [
+          {
+            "p": "Liability is prevented in the family's everyday life:"
+          },
+          {
+            "ul": [
+              "Review your umbrella limit every year against your net worth, future income and exposures such as a pool, boats, young drivers or household staff [1].",
+              "Confirm that every car, boat and property meets your umbrella's underlying requirements [1].",
+              "At parties at home, do not serve alcohol to anyone under 21 or to anyone you know is habitually addicted to alcohol; those are the exceptions to Florida's general rule [5].",
+              "Hire licensed, insured vendors for events and ask for their certificates.",
+              "Agree on family rules for social media: nothing that could defame others, and care with photos of guests and minors.",
+              "Fence the pool and supervise trampolines, docks and recreational equipment [3].",
+              "Tell your agent about home businesses, rentals and board seats [4].",
+              "Keep your UM/UIM decisions in writing and revisit them periodically [6]."
+            ]
+          },
+          {
+            "p": "If you want a second look at how your family is set up on this, write to me."
+          }
         ]
       }
     ],

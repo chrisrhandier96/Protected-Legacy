@@ -38,6 +38,7 @@ ICON_EXTRA = {
  "faq": '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7v.5"/><path d="M12 17h.01"/>',
  "hurricane": '<path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0-6 0"/><path d="M12 3c-5 0-8 3-8 6 3-2 6-2 8 0"/><path d="M12 21c5 0 8-3 8-6-3 2-6 2-8 0"/>',
  "inventory": '<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 11h7 M9 15h7 M9 19h4"/>',
+ "mitigation": '<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M8 13l3-3 2 2 3-3"/>',
 }
 TOPIC = {"res": "Residencias y huracanes", "flo": "Inundación y marejada", "aut": "Autos de uso y colección",
          "mar": "Embarcaciones y PWC", "avi": "Aviación privada", "col": "Colecciones, arte y joyas",
@@ -92,10 +93,11 @@ def p_inv(l): return "/herramientas/inventario-familiar/" if l == "es" else "/en
 def load(p): return json.load(open(os.path.join(ROOT, p), encoding="utf-8"))
 def esc(s): return html.escape(s, quote=True)
 def rich(s):
-    """allow only <b>/<strong>/<em> and internal <a href="/...">; turn [n] into footnote links"""
+    """allow only <b>/<strong>/<em> and <a href="/..."> or <a href="https://...">; turn [n] into footnote links"""
     s = html.escape(s, quote=False)
     s = re.sub(r"&lt;(/?)(b|strong|em)&gt;", r"<\1\2>", s)
     s = re.sub(r'&lt;a href="(/[\w/#.-]*)"&gt;(.*?)&lt;/a&gt;', r'<a href="\1">\2</a>', s)
+    s = re.sub(r'&lt;a href="(https://[\w/#.:-]*)"&gt;(.*?)&lt;/a&gt;', r'<a href="\1" rel="noopener" target="_blank">\2</a>', s)
     def _fn(m):
         nums = re.findall(r"\d+", m.group(0))
         return '<sup class="fn">' + ",".join(f'<a href="#fuente-{n}" aria-label="fuente {n}">{n}</a>' for n in nums) + "</sup>"
@@ -175,7 +177,11 @@ th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;ver
 .card{display:flex;flex-direction:column;gap:10px;background:var(--blanco);border:1px solid var(--arena-oscura);border-radius:3px;padding:24px;text-decoration:none;transition:transform .25s,box-shadow .25s,border-color .25s}
 .card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(20,53,42,.12);border-color:var(--oro)}
 .card .ico{width:40px;height:40px;padding:8px;border:1px solid var(--oro);border-radius:50%;stroke:var(--oro);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.card h3{font-size:21px;color:var(--verde)}.card p{font-size:15px;color:#3B4237}.card .go{margin-top:auto;font-size:13px;font-weight:600;color:var(--oro);letter-spacing:.04em}
+.card h3{font-size:21px;color:var(--verde)}.card p{font-size:15px;color:#3B4237}.mit-card{gap:8px}.mit-card:hover{transform:none}
+.mit-links{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px 22px}
+.mit-links a{display:block;padding:8px 0;border-bottom:1px solid var(--arena-oscura);color:var(--verde);text-decoration:none;font-size:15px}
+.mit-links a:hover{color:#7E5F17}
+.card .go{margin-top:auto;font-size:13px;font-weight:600;color:var(--oro);letter-spacing:.04em}
 .band{padding:64px 0}.band h2.sec{font-size:clamp(28px,4vw,40px);color:var(--verde);margin-bottom:10px}.band .lede{color:#3B4237;max-width:62ch;margin-bottom:30px}
 .band.alt{background:var(--blanco);border-top:1px solid var(--arena-oscura);border-bottom:1px solid var(--arena-oscura)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 26px}.chip{border:1px solid var(--arena-oscura);background:var(--blanco);border-radius:99px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--verde);cursor:pointer;font-family:var(--body)}
@@ -439,6 +445,11 @@ for l in ("es", "en"):
     t = T[l]
     path, alt = p_hub(l), p_hub("en" if l == "es" else "es")
     cards = "".join(guide_card(guides[k], l) for k in ORDER)
+    mid = "mitigacion" if l == "es" else "mitigation"
+    mlinks = "".join(f'<li><a href="{p_guide(guides[k], l)}#{mid}">{esc(guides[k][l]["kicker"].split("·")[-1].strip())}</a></li>' for k in ORDER)
+    mh, mp = (("Mitigación: cómo reducir el riesgo", "Cada guía termina con medidas concretas para prevenir pérdidas y documentar lo que hizo. Vaya directo a la sección que le interesa.") if l == "es"
+              else ("Mitigation: how to reduce the risk", "Every guide ends with concrete steps to prevent losses and document what you did. Go straight to the section you need."))
+    mcard = f'<div class="card mit-card" id="{mid}">{ico(ICON_EXTRA["mitigation"])}<h2 class="sec">{mh}</h2><p>{mp}</p><ul class="mit-links">{mlinks}</ul></div>'
     tcards = "".join(f'<a class="card" href="{h}">{ico(ICON_EXTRA[ic])}<h3>{esc(n)}</h3><p>{esc(d)}</p><span class="go">→</span></a>' for h, ic, n, d in tools_meta[l])
     if l == "es":
         h1, dek, title = "Biblioteca de protección patrimonial", f"{NUM['es'].get(len(ORDER), len(ORDER))} guías a fondo, un glosario bilingüe y herramientas prácticas para familias que construyeron algo en la Florida. Educación, no ventas.", "Guías de seguros en español para familias en la Florida"
@@ -452,8 +463,9 @@ for l in ("es", "en"):
 <header class="head"><div class="wrap">{crumbs(l, [(None, t['guides'])])}<span class="kicker">{t['library']}</span><h1>{h1}</h1><p class="dek">{dek}</p>
 <div class="meta"><span>{t['by']}</span></div></div></header>
 <section class="band"><div class="wrap"><div class="cards">{cards}</div></div></section>
-<section class="band alt" id="herramientas"><div class="wrap"><h2 class="sec">{th}</h2><p class="lede">{tl}</p><div class="cards">{tcards}</div></div></section>
-<section class="band"><div class="wrap"><div class="cta" style="margin:0"><h2>{t['cta_t']}</h2><p>{t['cta_p']}</p><div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="hub_quiz">{t['cta_quiz']}</a></div></div></div></section>
+<section class="band alt"><div class="wrap">{mcard}</div></section>
+<section class="band" id="herramientas"><div class="wrap"><h2 class="sec">{th}</h2><p class="lede">{tl}</p><div class="cards">{tcards}</div></div></section>
+<section class="band alt"><div class="wrap"><div class="cta" style="margin:0"><h2>{t['cta_t']}</h2><p>{t['cta_p']}</p><div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="hub_quiz">{t['cta_quiz']}</a></div></div></div></section>
 """
     ld = [bc_ld(l, [(path, t["guides"])]),
           {"@context": "https://schema.org", "@type": "CollectionPage", "name": h1, "inLanguage": l, "url": BASE + path,

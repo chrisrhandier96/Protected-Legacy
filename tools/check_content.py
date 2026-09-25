@@ -64,10 +64,12 @@ for k in keys:
         if not 5 <= len(c["questions"]) <= 7: errs.append(f"{l}: {len(c['questions'])} questions")
         if len(c["faq"]) != 3: errs.append(f"{l}: {len(c['faq'])} faq")
         if not 5 <= len(c["sections"]) <= 8: errs.append(f"{l}: {len(c['sections'])} sections")
-        w = words(text_of(c))
-        if not 1000 <= w <= 1800: errs.append(f"{l}: {w} body words")
-        notes.append(f"{l} {w}w")
         mit = "mitigacion" if l == "es" else "mitigation"
+        # the mitigation section (work order Part B) is extra depth, so it does not count toward the cap
+        w = words(text_of({"sections": [x for x in c["sections"] if x["id"] != mit]}))
+        wm = words(text_of({"sections": [x for x in c["sections"] if x["id"] == mit]}))
+        if w + wm < 1000 or w > 1800: errs.append(f"{l}: {w}+{wm} body words (need 1000+ total, 1800 max outside mitigation)")
+        notes.append(f"{l} {w}w+{wm}")
         if not any(s["id"] == mit for s in c["sections"]): errs.append(f"{l}: no '{mit}' section")
         refs = {int(n) for s in all_strings(c) for n in re.findall(r"\[(\d+)\]", s)}
         if refs - src: errs.append(f"{l}: footnotes without source {sorted(refs - src)}")

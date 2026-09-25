@@ -32,6 +32,7 @@
       ]},
       {"id": "contratistas", "h2": "Contratistas, subcontratistas y trabajadores en la obra", "blocks": [
         {"p": "El III recomienda pedir prueba de la póliza de compensación laboral del contratista, porque los trabajadores lesionados pueden demandarlo a usted si el contratista no tiene el seguro adecuado [1]. Añade que los constructores independientes, electricistas y plomeros pueden no estar cubiertos por la póliza de compensación laboral del contratista, así que conviene verificar la cobertura de cada uno [1]."},
+        {"p": "Pida también que lo incluyan como asegurado adicional en la póliza de responsabilidad civil del contratista, de modo que esa póliza pueda responder por usted si un tercero lo demanda por algo relacionado con la obra. El certificado de seguro por sí solo no le da ese derecho; debe quedar indicado en la póliza."},
         {"table": {"head": ["Documento", "Por qué importa"], "rows": [
           ["Licencia del contratista", "Confirma que puede hacer el tipo de obra contratada"],
           ["Certificado de responsabilidad civil", "Responde por daños que la obra cause a terceros o a su casa"],
@@ -46,7 +47,7 @@
         {"p": "La advertencia que la ley exige es directa: los pagos que el dueño haga después del vencimiento del aviso se consideran pagos indebidos y pueden hacer que pague dos veces por las mejoras [4]. En la práctica, conviene pedir liberaciones de gravamen de los subcontratistas y proveedores antes de cada pago, y consultar a su abogado antes de firmar el contrato o el aviso."}
       ]},
       {"id": "despues-de-la-obra", "h2": "Después de la obra: actualizar la póliza", "blocks": [
-        {"p": "Al terminar, el III recomienda asegurarse de que la póliza refleje el mayor valor de la estructura y aumentar la cobertura de bienes personales si compró artículos nuevos, conservando los recibos [1]. Es un buen momento para pedir un nuevo estimado del costo de reconstrucción y para revisar la cobertura de ley u ordenanza, que paga ciertos costos de cumplir con el código vigente."},
+        {"p": "Al terminar, el III recomienda asegurarse de que la póliza refleje el mayor valor de la estructura y aumentar la cobertura de bienes personales si compró artículos nuevos, conservando los recibos [1]. Guarde los permisos cerrados y las inspecciones finales: demuestran que la obra cumple el Código de Construcción de Florida vigente, y un trabajo sin permiso puede complicar un reclamo o una venta. Es un buen momento para pedir un nuevo estimado del costo de reconstrucción y para revisar la cobertura de ley u ordenanza, que paga ciertos costos de cumplir con el código vigente."},
         {"p": "Si la obra incluyó un techo nuevo, ventanas o puertas resistentes a impactos, o mejoras en la conexión entre techo y paredes, pida una nueva inspección de mitigación de viento. Esas características pueden influir en la tarifa de la póliza de hogar, y el formulario anterior ya no describe la casa actual."}
       ]},
       {"id": "mitigacion", "h2": "Cómo reducir el riesgo", "blocks": [
@@ -107,6 +108,7 @@
       ]},
       {"id": "contractors", "h2": "Contractors, subcontractors and workers on site", "blocks": [
         {"p": "The III recommends asking for proof of the contractor's workers' compensation policy, because injured workers may sue you if the contractor does not have proper insurance [1]. It adds that independent builders, electricians and plumbers may not be covered under the contractor's workers' compensation policy, so verify each one's coverage [1]."},
+        {"p": "Also ask to be named as an additional insured on the contractor's liability policy, so that policy can respond for you if a third party sues you over something related to the work. A certificate of insurance alone does not give you that right; it must be stated in the policy."},
         {"table": {"head": ["Document", "Why it matters"], "rows": [
           ["Contractor's license", "Confirms they can perform the type of work contracted"],
           ["Liability certificate", "Responds to damage the work causes to others or to your home"],
@@ -121,7 +123,7 @@
         {"p": "The warning the law requires is blunt: payments the owner makes after the notice expires are considered improper and can result in paying twice for the improvements [4]. In practice, ask for lien releases from subcontractors and suppliers before each payment, and consult your attorney before signing the contract or the notice."}
       ]},
       {"id": "after-the-work", "h2": "After the work: update the policy", "blocks": [
-        {"p": "When the work is finished, the III recommends making sure the policy reflects the structure's higher value and increasing personal property coverage if you bought new items, keeping the receipts [1]. It is a good moment to request a new rebuilding cost estimate and to review ordinance or law coverage, which pays certain costs of meeting the current building code."},
+        {"p": "When the work is finished, the III recommends making sure the policy reflects the structure's higher value and increasing personal property coverage if you bought new items, keeping the receipts [1]. Keep the closed permits and final inspections: they show the work meets the current Florida Building Code, and unpermitted work can complicate a claim or a sale. It is a good moment to request a new rebuilding cost estimate and to review ordinance or law coverage, which pays certain costs of meeting the current building code."},
         {"p": "If the work included a new roof, impact-rated windows or doors, or better roof-to-wall connections, request a new wind mitigation inspection. Those features can affect the homeowners policy rate, and the old form no longer describes the home as it is today."}
       ]},
       {"id": "mitigation", "h2": "How to reduce the risk", "blocks": [

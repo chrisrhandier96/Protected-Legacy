@@ -2,7 +2,7 @@
   "key": "avi",
   "slug_es": "aviacion-privada",
   "slug_en": "private-aviation",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "es": {
     "title": "Seguro de avión privado y drones: guía para familias",
     "meta": "Seguro de avión privado: casco, responsabilidad por pasajero, garantías de piloto, propiedad fraccionada, jet cards, chárter y drones con las reglas de la FAA.",
@@ -156,6 +156,29 @@
           },
           {
             "p": "En seguros, la distinción importa. Algunas pólizas de hogar pueden responder por un dron de uso recreativo, pero el uso para un negocio suele estar excluido. Si un familiar usa drones para bienes raíces, eventos o una empresa familiar, un seguro de responsabilidad para drones separado suele ser la forma de cubrir lesiones, daños a la propiedad y reclamos de privacidad, según los términos de cada póliza."
+          }
+        ]
+      },
+      {
+        "id": "mitigacion",
+        "h2": "Cómo reducir el riesgo",
+        "blocks": [
+          {
+            "p": "En aviación, la prevención y la documentación van de la mano:"
+          },
+          {
+            "ul": [
+              "Mantenga al día la revisión de vuelo y la experiencia reciente que exige la FAA, y documéntelas [1][2].",
+              "Antes de cada vuelo, confirme que el piloto cumple todas las garantías de piloto de la póliza, incluidas horas y habilitaciones.",
+              "Mantenga completos los registros de mantenimiento y la aeronave dentro de su calendario de inspecciones.",
+              "Guarde la aeronave en hangar cuando sea posible y tenga un plan escrito para trasladarla o asegurarla antes de un huracán.",
+              "En vuelos fraccionales, con tarjeta de horas o chárter, pregunte quién tiene el control operacional de cada vuelo [4][5].",
+              "Registre los drones que deben registrarse y mantenga al día el Remote ID [10].",
+              "Haga bajo las reglas de la Parte 107 los vuelos de drones para fotografiar una propiedad o inspeccionar un techo [12][13]."
+            ]
+          },
+          {
+            "p": "Si quiere una segunda mirada a cómo está organizada su familia en este tema, escríbame."
           }
         ]
       }
@@ -336,6 +359,29 @@
           },
           {
             "p": "For insurance, the distinction matters. Some homeowners policies may respond for a drone used for recreation, but business use is commonly excluded. If a family member uses drones for real estate, events or a family business, a separate drone liability insurance policy is often how injury, property damage and privacy claims are addressed, subject to each policy's terms."
+          }
+        ]
+      },
+      {
+        "id": "mitigation",
+        "h2": "How to reduce the risk",
+        "blocks": [
+          {
+            "p": "In aviation, prevention and documentation go together:"
+          },
+          {
+            "ul": [
+              "Keep the FAA flight review and recent flight experience current, and document them [1][2].",
+              "Before each flight, confirm the pilot meets every pilot warranty in the policy, including hours and ratings.",
+              "Keep maintenance records complete and the aircraft within its inspection schedule.",
+              "Hangar the aircraft when possible and keep a written plan to fly it out or secure it before a hurricane.",
+              "For fractional, jet card or charter flights, ask who holds operational control of each flight [4][5].",
+              "Register drones that must be registered and keep Remote ID current [10].",
+              "Fly drones for property photos or roof inspections under Part 107 rules [12][13]."
+            ]
+          },
+          {
+            "p": "If you want a second look at how your family is set up on this, write to me."
           }
         ]
       }

@@ -2,7 +2,7 @@
   "key": "res",
   "slug_es": "residencias-huracanes",
   "slug_en": "homes-hurricanes",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "es": {
     "title": "Seguro de casa en Florida de alto valor y huracanes",
     "meta": "Seguro de casa en Florida de alto valor: costo de reemplazo, cómo se calcula el deducible de huracán, ley u ordenanza, edad del techo y plazos de reclamo.",
@@ -176,6 +176,82 @@
           },
           {
             "callout": "El plazo legal de 1 año es un límite máximo, no una meta. Reportar a tiempo facilita separar el daño del huracán del desgaste posterior."
+          }
+        ]
+      },
+      {
+        "id": "mitigacion",
+        "h2": "Cómo reducir el riesgo",
+        "blocks": [
+          {
+            "p": "La mitigación de viento es la parte de la protección contra huracanes que usted puede documentar. El Formulario Uniforme de Verificación de Mitigación (OIR-B1-1802) registra las características que ayudan a una casa a resistir el viento; la revisión vigente entró en vigor el 1 de abril de 2026, y el formulario es válido hasta cinco años si no hay cambios importantes en la estructura ni errores en el formulario [9]. Debe firmarlo un inspector autorizado por la ley de Florida [15]. Estos son los elementos que revisa [9]:"
+          },
+          {
+            "table": {
+              "head": [
+                "Elemento del formulario",
+                "Qué registra el inspector"
+              ],
+              "rows": [
+                [
+                  "Código de construcción",
+                  "Bajo qué código se construyó la casa, según el año de construcción y las fechas de los permisos"
+                ],
+                [
+                  "Cubierta del techo",
+                  "Los tipos de cubierta y si cumplen el código, según permisos o aprobaciones de producto"
+                ],
+                [
+                  "Fijación del entablado del techo",
+                  "Cómo se sujetan las láminas del techo a las vigas, con qué clavos y a qué distancia"
+                ],
+                [
+                  "Conexión entre techo y paredes",
+                  "La conexión más débil, desde clavos inclinados hasta grapas, amarres simples y amarres dobles"
+                ],
+                [
+                  "Geometría del techo",
+                  "La forma del techo: a cuatro aguas (hip), plano u otras formas, como a dos aguas"
+                ],
+                [
+                  "Resistencia secundaria al agua",
+                  "Si una capa sellada bajo la cubierta ayuda a frenar el agua si la cubierta se pierde"
+                ],
+                [
+                  "Protección de aberturas",
+                  "Si ventanas, puertas, tragaluces y puertas de garaje tienen productos resistentes a impactos o protectores aprobados"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "La sección 627.0629 exige que las solicitudes de tarifas residenciales incluyan descuentos, créditos u otras diferencias de tarifa actuarialmente razonables para las técnicas que reducen las pérdidas por viento, entre ellas la prevención del levantamiento, la resistencia del techo y de su cubierta, la conexión entre techo y paredes, la conexión entre paredes, piso y cimientos, la protección de aberturas y la resistencia de ventanas, puertas y tragaluces [8]. El monto depende de la tarifa de cada aseguradora y de la casa, así que no existe una cifra única. Desde el 1 de octubre de 2023, las aseguradoras residenciales deben describir en su sitio web los descuentos de mitigación que ofrecen [9]."
+          },
+          {
+            "p": "En casas con más años hay otras dos revisiones frecuentes. La inspección de cuatro puntos revisa el techo, la electricidad, la plomería y el aire acondicionado y la calefacción; la inspección de techo estima su estado y su vida útil restante. Ninguna reemplaza el formulario de mitigación, pero ambas ayudan a planificar reparaciones antes de que se conviertan en reclamos. Recuerde que la regla de Florida sobre la edad del techo, explicada más arriba, depende de su edad y de su vida útil restante [3]."
+          },
+          {
+            "p": "El programa estatal My Safe Florida Home, del Departamento de Servicios Financieros de Florida, ofrece inspecciones de mitigación de viento gratuitas y subvenciones para propietarios que cumplan los requisitos; consulte en su sitio los requisitos y si hay fondos disponibles [16]."
+          },
+          {
+            "p": "Una lista de 10 puntos antes de cada temporada, que puede completar paso a paso con nuestra <a href=\"/herramientas/temporada-de-huracanes/\">lista de la temporada de huracanes</a>:"
+          },
+          {
+            "ul": [
+              "Busque su formulario OIR-B1-1802 vigente y pida una nueva inspección si tiene más de cinco años o si la casa cambió [9].",
+              "Pregunte a su agente qué créditos de mitigación aparecen en su póliza y si falta alguna característica en el formulario [8].",
+              "Confirme que todas las aberturas, incluida la puerta del garaje, tengan protección contra impactos o protectores que pueda instalar a tiempo.",
+              "Pruebe los protectores y sus herrajes, y marque cada panel con la abertura que le corresponde.",
+              "Haga revisar el techo, sobre todo después de una tormenta o si ya tiene varios años.",
+              "Pode los árboles y guarde o asegure muebles de exterior, macetas y todo lo que pueda volar.",
+              "Dé mantenimiento al generador y revise que el combustible se guarde de forma segura.",
+              "Actualice el inventario en fotos y video de la casa y su contenido, y guárdelo fuera de la casa.",
+              "Convierta su deducible de huracán en dólares y planifique la liquidez para cubrirlo.",
+              "Guarde los números de póliza, el contacto de su agente y la línea de reclamos donde pueda consultarlos sin electricidad."
+            ]
+          },
+          {
+            "p": "Si quiere una segunda mirada a cómo está preparada su casa para la temporada, escríbame."
           }
         ]
       }
@@ -379,6 +455,82 @@
             "callout": "The 1-year statutory deadline is an outer limit, not a target. Reporting promptly makes it easier to separate hurricane damage from later wear or deterioration."
           }
         ]
+      },
+      {
+        "id": "mitigation",
+        "h2": "How to reduce the risk",
+        "blocks": [
+          {
+            "p": "Wind mitigation is the part of hurricane protection you can document. Florida's Uniform Mitigation Verification Inspection Form (OIR-B1-1802) records the features that help a home resist wind; the current revision took effect April 1, 2026, and the form is valid for up to five years if no material changes are made to the structure and no inaccuracies are found on the form [9]. It must be signed by an inspector authorized under Florida law [15]. These are the items it covers [9]:"
+          },
+          {
+            "table": {
+              "head": [
+                "Form item",
+                "What the inspector records"
+              ],
+              "rows": [
+                [
+                  "Building code",
+                  "Which code the home was built under, based on the year built and permit dates"
+                ],
+                [
+                  "Roof covering",
+                  "The roof covering types and whether they meet code, based on permits or product approvals"
+                ],
+                [
+                  "Roof deck attachment",
+                  "How the roof sheathing is fastened to the trusses or rafters, with what nails and at what spacing"
+                ],
+                [
+                  "Roof-to-wall attachment",
+                  "The weakest roof-to-wall connection, from toe nails to clips, single wraps and double wraps"
+                ],
+                [
+                  "Roof geometry",
+                  "The roof shape: hip, flat or other shapes, such as gable"
+                ],
+                [
+                  "Secondary water resistance",
+                  "Whether a sealed layer under the roof covering helps keep water out if the covering is lost"
+                ],
+                [
+                  "Opening protection",
+                  "Whether windows, doors, skylights and garage doors have impact-rated products or approved shutters"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "Section 627.0629 requires residential rate filings to include actuarially reasonable discounts, credits or other rate differentials for construction techniques shown to reduce windstorm loss, including wind uplift prevention, roof strength, roof covering performance, roof-to-wall strength, wall-to-floor-to-foundation strength, opening protection, and window, door and skylight strength [8]. The amount depends on each insurer's rates and on the home, so there is no single figure. Since October 1, 2023, residential property insurers must describe their hurricane mitigation discounts on their websites [9]."
+          },
+          {
+            "p": "Older homes often get two other reviews. A four-point inspection looks at the roof, electrical, plumbing, and heating and air conditioning systems; a roof inspection estimates the roof's condition and remaining useful life. Neither replaces the mitigation form, but both help plan repairs before they turn into claims. Remember that Florida's roof-age rule, explained above, depends on the roof's age and remaining useful life [3]."
+          },
+          {
+            "p": "The state's My Safe Florida Home program, run by the Florida Department of Financial Services, offers free wind mitigation inspections and grants for eligible homeowners; check its site for eligibility and whether funding is available [16]."
+          },
+          {
+            "p": "A 10-point checklist before each season, which you can work through step by step with our <a href=\"/en/tools/hurricane-season/\">hurricane season checklist</a>:"
+          },
+          {
+            "ul": [
+              "Find your current OIR-B1-1802 form and schedule a new inspection if it is more than five years old or the home has changed [9].",
+              "Ask your agent which mitigation credits appear on your policy and whether any feature is missing from the form [8].",
+              "Confirm that every opening, including the garage door, has impact protection or shutters you can install in time.",
+              "Test the shutters and their hardware, and label each panel with the opening it belongs to.",
+              "Have the roof inspected, especially after a storm or once it has some years on it.",
+              "Trim trees and store or secure outdoor furniture, planters and anything that can become airborne.",
+              "Service the generator and make sure fuel is stored safely.",
+              "Update the photo and video inventory of the home and its contents, and keep it off site.",
+              "Convert your hurricane deductible into dollars and plan the liquidity to cover it.",
+              "Keep policy numbers, your agent's contact and the claims line where you can reach them without power."
+            ]
+          },
+          {
+            "p": "If you want a second look at how your home is prepared for the season, write to me."
+          }
+        ]
       }
     ],
     "questions": [
@@ -475,6 +627,16 @@
       "n": 14,
       "label": "NOAA Climate Prediction Center, Background Information: North Atlantic Hurricane Season",
       "url": "https://www.cpc.ncep.noaa.gov/products/outlooks/Background.html"
+    },
+    {
+      "n": 15,
+      "label": "Florida Statutes, section 627.711 (2026), Notice of premium discounts for hurricane loss mitigation; uniform mitigation verification inspection form",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2026/627.711"
+    },
+    {
+      "n": 16,
+      "label": "Florida Department of Financial Services, My Safe Florida Home program",
+      "url": "https://mysafeflhome.com/"
     }
   ]
 }
