@@ -105,7 +105,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p data-es="Si cambio algo de esta política, cambio también la fecha de abajo. Las versiones anteriores no se aplican retroactivamente a información ya borrada." data-en="If I change anything in this policy, I change the date below as well. Earlier versions do not apply retroactively to information already deleted.">Si cambio algo de esta política, cambio también la fecha de abajo. Las versiones anteriores no se aplican retroactivamente a información ya borrada.</p>
 
   <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
-  <p><span data-es="Christian R. González, Florida. Correo de contacto: " data-en="Christian R. González, Florida. Contact email: ">Christian R. González, Florida. Correo de contacto: </span><a id="pmail" href="#">...</a></p>
+  <p><span data-es="Christian R. González, Florida. Correo de contacto: " data-en="Christian R. González, Florida. Contact email: ">Christian R. González, Florida. Correo de contacto: </span><a id="pmail" data-track="email" href="#">...</a></p>
   <a class="btn" href="/" data-home data-es="Volver al inicio" data-en="Back to the site">Volver al inicio</a>
   <div class="fin"><span data-es="Actualizada el 24 de septiembre de 2026." data-en="Updated September 24, 2026.">Actualizada el 24 de septiembre de 2026.</span></div>
 </div>
@@ -239,4 +239,5 @@ var l=(p==='en'||p==='es')?p:((s==='en'||s==='es')?s:'es');if(l!=='es')setLang(l
 })();
 </script>
 <!-- /PP LIBRARY PANEL -->
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track');try{window.dataLayer=window.dataLayer||[];dataLayer.push(m==='linkedin'||m==='email'?{event:'contact_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname}:{event:'phone_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname});}catch(x){}});</script>
 </body></html>

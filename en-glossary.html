@@ -37,6 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
 <link rel="preload" href="/fonts/marcellus-400.woff2" as="font" type="font/woff2" crossorigin>
 <style id="pp-fonts">@font-face{font-family:'Marcellus';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/marcellus-400.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:normal;font-weight:300 700;font-display:swap;src:url(/fonts/figtree-var.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/figtree-italic-400.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500 600;font-display:swap;src:url(/fonts/cormorant-garamond-italic.woff2) format('woff2')}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
 <style>
@@ -194,7 +195,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="logo-lockup"><img class="logo-mark cg-crest" src="/img/cg-crest-64.png" srcset="/img/cg-crest-128.png 2x, /img/cg-crest-192.png 3x" width="84" height="64" alt=""><span class="logo-txt"><span class="logo">Patrimonio <em>Protegido</em></span><span class="logo-sub">Christian R. González</span></span></div>
     <nav class="flinks" aria-label="Library" style="position:static;background:none;border:0"><a href="/en/">Home</a><a href="/en/guides/">Guides</a><a href="/en/glossary/">Glossary</a><a href="/en/faq/">FAQ</a><a href="/en/tools/hurricane-season/">Hurricane season</a><a href="/en/tools/family-inventory/">Family inventory</a><a href="/privacidad.html">Privacy</a></nav>
     <div class="disclaimer"><strong>Important notice:</strong> This site is for educational and informational purposes only. It does not constitute insurance, legal, tax, or financial advice, nor an offer or solicitation for the sale of insurance products. Christian R. González is a licensed insurance agent in the State of Florida (Lic. W606240). This site is educational: it does not sell, quote, or negotiate policies through this page. Concepts described here are general; every policy has its own terms, conditions, and exclusions that prevail over any general description. For coverage decisions, consult a licensed agent; for legal or tax matters, consult a qualified attorney or CPA. The opinions expressed on this site are personal and do not represent those of any employer.</div>
-    <div class="fin"><span>© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href="tel:+17866712171" style="color:inherit">(786) 671-2171</a></span><span>Made with pride for Florida's Hispanic community</span></div>
+    <div class="fin"><span>© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href="tel:+17866712171" data-track="llamada" style="color:inherit">(786) 671-2171</a></span><span>Made with pride for Florida's Hispanic community</span></div>
   </div>
 </footer>
 <script>
@@ -202,6 +203,8 @@ function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.que
 (function(){var bar=document.getElementById('bar');if(bar){addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});}
  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a)return;try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'cta_click',cta:a.getAttribute('data-cta'),page_type:document.body.getAttribute('data-type')||''});}catch(x){}});
  try{localStorage.setItem('pp.lang',document.documentElement.lang);}catch(e){}
+ /* contact links: same dataLayer format as the homepage (phone_click for calls/texts, contact_click for LinkedIn/email) */
+ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track'),o={event:(m==='linkedin'||m==='email')?'contact_click':'phone_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname};try{window.dataLayer=window.dataLayer||[];dataLayer.push(o);}catch(x){}});
 })();
 (function(){var q=document.getElementById('q'),cat='',cards=[].slice.call(document.querySelectorAll('.term')),empty=document.getElementById('empty');
 function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}

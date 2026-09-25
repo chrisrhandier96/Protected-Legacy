@@ -37,6 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
 <link rel="preload" href="/fonts/marcellus-400.woff2" as="font" type="font/woff2" crossorigin>
 <style id="pp-fonts">@font-face{font-family:'Marcellus';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/marcellus-400.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:normal;font-weight:300 700;font-display:swap;src:url(/fonts/figtree-var.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/figtree-italic-400.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500 600;font-display:swap;src:url(/fonts/cormorant-garamond-italic.woff2) format('woff2')}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
 <style>
@@ -190,7 +191,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="logo-lockup"><img class="logo-mark cg-crest" src="/img/cg-crest-64.png" srcset="/img/cg-crest-128.png 2x, /img/cg-crest-192.png 3x" width="84" height="64" alt=""><span class="logo-txt"><span class="logo">Patrimonio <em>Protegido</em></span><span class="logo-sub">Christian R. González</span></span></div>
     <nav class="flinks" aria-label="Biblioteca" style="position:static;background:none;border:0"><a href="/">Inicio</a><a href="/guias/">Guías</a><a href="/glosario/">Glosario</a><a href="/preguntas-frecuentes/">Preguntas</a><a href="/herramientas/temporada-de-huracanes/">Temporada de huracanes</a><a href="/herramientas/inventario-familiar/">Inventario familiar</a><a href="/privacidad.html">Privacidad</a></nav>
     <div class="disclaimer"><strong>Aviso importante:</strong> Este sitio tiene fines exclusivamente educativos e informativos. No constituye asesoría de seguros, legal, fiscal ni financiera, ni una oferta o solicitud para la venta de productos de seguros. Christian R. González es agente de seguros con licencia en el estado de la Florida (Lic. W606240). Este sitio es educativo: no vende, cotiza ni negocia pólizas a través de esta página. Los conceptos descritos son generales; cada póliza tiene sus propios términos, condiciones y exclusiones que prevalecen sobre cualquier descripción general. Para decisiones sobre coberturas, consulte a un agente con licencia; para temas legales o fiscales, consulte a un abogado o contador calificado. Las opiniones expresadas en este sitio son personales y no representan las de ningún empleador.</div>
-    <div class="fin"><span>© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href="tel:+17866712171" style="color:inherit">(786) 671-2171</a></span><span>Hecho con orgullo para la comunidad hispana de la Florida</span></div>
+    <div class="fin"><span>© 2026 Patrimonio Protegido · Christian R. González · Florida · <a href="tel:+17866712171" data-track="llamada" style="color:inherit">(786) 671-2171</a></span><span>Hecho con orgullo para la comunidad hispana de la Florida</span></div>
   </div>
 </footer>
 <script>
@@ -198,6 +199,8 @@ function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.que
 (function(){var bar=document.getElementById('bar');if(bar){addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});}
  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a)return;try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'cta_click',cta:a.getAttribute('data-cta'),page_type:document.body.getAttribute('data-type')||''});}catch(x){}});
  try{localStorage.setItem('pp.lang',document.documentElement.lang);}catch(e){}
+ /* contact links: same dataLayer format as the homepage (phone_click for calls/texts, contact_click for LinkedIn/email) */
+ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track'),o={event:(m==='linkedin'||m==='email')?'contact_click':'phone_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname};try{window.dataLayer=window.dataLayer||[];dataLayer.push(o);}catch(x){}});
 })();
 </script>
 <!-- PP LIBRARY PANEL -->
