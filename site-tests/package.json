@@ -1,0 +1,12 @@
+{
+  "name": "site-tests",
+  "private": true,
+  "description": "Playwright checks for protectedlegacyfl.com (see handoff/HANDOFF.md)",
+  "scripts": {
+    "serve": "node local-netlify.js .. 8787",
+    "verify": "node verify.js"
+  },
+  "dependencies": {
+    "playwright": "^1.63.0"
+  }
+}

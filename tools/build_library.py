@@ -453,11 +453,11 @@ for l in ("es", "en"):
     tcards = "".join(f'<a class="card" href="{h}">{ico(ICON_EXTRA[ic])}<h3>{esc(n)}</h3><p>{esc(d)}</p><span class="go">→</span></a>' for h, ic, n, d in tools_meta[l])
     if l == "es":
         h1, dek, title = "Biblioteca de protección patrimonial", f"{NUM['es'].get(len(ORDER), len(ORDER))} guías a fondo, un glosario bilingüe y herramientas prácticas para familias que construyeron algo en la Florida. Educación, no ventas.", "Guías de seguros en español para familias en la Florida"
-        meta = "Guías en español sobre seguros de casa, inundación, autos, embarcaciones, aviación, colecciones, umbrella y personal del hogar en la Florida. Educación sin ventas."
+        meta = "Guías en español sobre casa, inundación, autos, embarcaciones, aviación, colecciones, umbrella, personal del hogar, ciberseguridad, condominios y más en la Florida."
         th, tl = "Herramientas y referencias", "Para consultar, imprimir y compartir con su familia o sus asesores."
     else:
         h1, dek, title = "The protection library", f"{NUM['en'].get(len(ORDER), len(ORDER))} in-depth guides, a bilingual glossary and practical tools for families who built something in Florida. Education, not sales.", "Insurance guides for Florida families | Patrimonio Protegido"
-        meta = "In-depth guides on home, flood, auto, boat, aviation, collections, umbrella and household staff insurance for Florida families. Education, not sales."
+        meta = "Guides on home, flood, auto, boat, aviation, collections, umbrella, household staff, cyber, condo and board insurance for Florida families. Education, not sales."
         th, tl = "Tools and references", "To look up, print and share with your family or your advisors."
     body = f"""
 <header class="head"><div class="wrap">{crumbs(l, [(None, t['guides'])])}<span class="kicker">{t['library']}</span><h1>{h1}</h1><p class="dek">{dek}</p>
@@ -618,10 +618,12 @@ for l in ("es", "en"):
     if l == "es": sitemap.append((path, alt))
 
 # ---------- sitemap ----------
+import datetime
+LASTMOD = datetime.date.today().isoformat()  # build date
 def url_block(loc, es, en, pri):
     return (f"  <url>\n    <loc>{BASE}{loc}</loc>\n    <xhtml:link rel=\"alternate\" hreflang=\"es\" href=\"{BASE}{es}\"/>\n"
             f"    <xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"{BASE}{en}\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"{BASE}{es}\"/>\n"
-            f"    <lastmod>2026-09-24</lastmod>\n    <priority>{pri}</priority>\n  </url>\n")
+            f"    <lastmod>{LASTMOD}</lastmod>\n    <priority>{pri}</priority>\n  </url>\n")
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
 sm += url_block("/", "/", "/en/", "1.0") + url_block("/en/", "/", "/en/", "1.0")
 for es, en in sitemap:

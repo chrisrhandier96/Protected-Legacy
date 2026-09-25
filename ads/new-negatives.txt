@@ -1,0 +1,57 @@
+New campaign-level negative keywords for "PP Search | Protección Patrimonial" (work order 2026-09, Part F)
+Paste into Google Ads: Campaign > Audiences, keywords and content > Search keywords > Negative search keywords > + > Add to: campaign.
+Quotes = phrase match. These only cover conflicts created by the six new topics; the 26 existing negatives stay as they are.
+Not included on purpose: "quote", "quotes", "cotizar", "cotización". Christian wants those searches.
+
+Why: each line below blocks searches that share words with the new keywords but come from people the guides
+cannot help (businesses, job seekers, renters looking for a place, news and entertainment, unrelated "foundation" and "board").
+
+Cyber (EN 10, ES 11)
+"antivirus"
+"vpn"
+"cyber security jobs"
+"cybersecurity degree"
+"cyber insurance for small business"
+"business cyber insurance"
+"cyber liability insurance for business"
+
+Kidnap and ransom (EN 12, ES 13)
+"movie"
+"film"
+"netflix"
+"song"
+"lyrics"
+"película"
+"noticias"
+"news"
+
+Short-term rentals (EN 14, ES 15)
+"car rental"
+"rent a car"
+"renta de autos"
+"apartments for rent"
+"for rent near me"
+"host login"
+
+Renovations (EN 16)
+"for contractors"
+"contractor license"
+"general liability for contractors"
+"builders risk policy for commercial"
+
+Condos and HOAs (EN 17, ES 18)
+"condos for sale"
+"condo for sale"
+"condos for rent"
+"condominios en venta"
+"hoa management company"
+"hoa jobs"
+
+Boards and foundations (EN 19)
+"board games"
+"board exam"
+"nursing board"
+"foundation makeup"
+"foundation repair"
+"foundation crack"
+"base de maquillaje"

@@ -1,0 +1,68 @@
+New sitelinks for "PP Search | Protección Patrimonial" (work order 2026-09, Part F)
+Add in Google Ads: Campaign > Assets > + > Sitelink. Add them at the ad group level if you want each one to show only
+with its own ad group (for example, the K&R sitelinks only in EN 12 and ES 13). The 16 existing sitelinks stay as they are.
+Limits: sitelink text 25 characters, each description line 35 characters. Every line below is within limits.
+
+ENGLISH
+-------
+Sitelink text:  Personal Cyber
+Description 1:  Wire fraud, extortion, ID theft
+Description 2:  A 10-step family checklist
+Final URL:      https://www.protectedlegacyfl.com/en/guides/personal-cyber/
+
+Sitelink text:  Kidnap & Ransom
+Description 1:  How K&R coverage works
+Description 2:  Response teams, confidentiality
+Final URL:      https://www.protectedlegacyfl.com/en/guides/kidnap-ransom/
+
+Sitelink text:  Short-Term Rentals
+Description 1:  DBPR licenses and rental taxes
+Description 2:  When a home policy falls short
+Final URL:      https://www.protectedlegacyfl.com/en/guides/short-term-rentals/
+
+Sitelink text:  Renovations
+Description 1:  Builder's risk and vacancy
+Description 2:  Avoid paying twice for the work
+Final URL:      https://www.protectedlegacyfl.com/en/guides/renovations-builders-risk/
+
+Sitelink text:  Condos & HOAs
+Description 1:  Master policy vs. HO-6
+Description 2:  Milestone inspections and SIRS
+Final URL:      https://www.protectedlegacyfl.com/en/guides/condos-hoa/
+
+Sitelink text:  Boards & Foundations
+Description 1:  D&O basics for board members
+Description 2:  Family foundation rules
+Final URL:      https://www.protectedlegacyfl.com/en/guides/board-service-family-foundations/
+
+ESPAÑOL
+-------
+Sitelink text:  Ciberprotección
+Description 1:  Fraude, extorsión e identidad
+Description 2:  Lista familiar de 10 pasos
+Final URL:      https://www.protectedlegacyfl.com/guias/ciber-proteccion-familiar/
+
+Sitelink text:  Secuestro y Extorsión
+Description 1:  Cómo funciona el seguro K&R
+Description 2:  Respuesta y confidencialidad
+Final URL:      https://www.protectedlegacyfl.com/guias/secuestro-y-extorsion/
+
+Sitelink text:  Alquiler Vacacional
+Description 1:  Licencia del DBPR e impuestos
+Description 2:  Cuando la póliza no responde
+Final URL:      https://www.protectedlegacyfl.com/guias/alquiler-vacacional/
+
+Sitelink text:  Remodelaciones
+Description 1:  Seguro de riesgo de construcción
+Description 2:  Evite pagar dos veces la obra
+Final URL:      https://www.protectedlegacyfl.com/guias/remodelaciones/
+
+Sitelink text:  Condominios y HOA
+Description 1:  Póliza maestra y HO-6
+Description 2:  Inspección de hito y reservas
+Final URL:      https://www.protectedlegacyfl.com/guias/condominios-y-hoa/
+
+Sitelink text:  Juntas y Fundaciones
+Description 1:  Seguro D&O para directores
+Description 2:  Reglas de fundaciones familiares
+Final URL:      https://www.protectedlegacyfl.com/guias/juntas-y-fundaciones/
