@@ -690,8 +690,8 @@
    "es": "Secuestro exprés",
    "en": "Express kidnapping",
    "cat": "secuestro",
-   "def_es": "Retención breve de una persona para obligarla a retirar dinero de cajeros o cuentas. Muchas pólizas de K&R lo incluyen, pero conviene confirmar que esté nombrado expresamente.",
-   "def_en": "A short abduction to force a person to withdraw money from ATMs or accounts. Many K&R policies include it, but confirm that it is expressly named.",
+   "def_es": "Retención breve de una persona para obligarla a retirar dinero de cajeros o cuentas. Algunas pólizas de K&R lo incluyen; confirme que esté nombrado expresamente en la suya.",
+   "def_en": "A short abduction to force a person to withdraw money from ATMs or accounts. Some K&R policies include it; confirm that it is expressly named in yours.",
    "guide": "kr"
   },
   {
@@ -699,8 +699,8 @@
    "es": "Consultor de respuesta a crisis",
    "en": "Crisis response consultant",
    "cat": "secuestro",
-   "def_es": "Especialista que asesora a la familia durante un secuestro o una extorsión: comunicación, coordinación con las autoridades y protección de los demás miembros. En una póliza de K&R, su acceso suele ser el componente más valioso.",
-   "def_en": "A specialist who advises the family during a kidnapping or extortion: communication, coordination with the authorities and protection of other family members. In a K&R policy, access to this team is often the most valuable component.",
+   "def_es": "Especialista que asesora a la familia durante un secuestro o una extorsión: comunicación, coordinación con las autoridades y protección de los demás miembros. En una póliza de K&R, su acceso puede ser el componente más valioso.",
+   "def_en": "A specialist who advises the family during a kidnapping or extortion: communication, coordination with the authorities and protection of other family members. In a K&R policy, access to this team can be the most valuable component.",
    "guide": "kr"
   },
   {
@@ -744,8 +744,8 @@
    "es": "Pérdida de renta",
    "en": "Loss of rents",
    "cat": "alquiler",
-   "def_es": "Cobertura que reemplaza los ingresos de alquiler que se pierden mientras una propiedad dañada por un riesgo cubierto se repara. Una póliza de hogar común normalmente no la incluye.",
-   "def_en": "Coverage that replaces rental income lost while a property damaged by a covered peril is being repaired. A typical homeowners policy usually does not include it.",
+   "def_es": "Cobertura que reemplaza los ingresos de alquiler que se pierden mientras se repara una propiedad dañada por un riesgo cubierto. La NAIC incluye la renta perdida entre las coberturas que puede tener una póliza de arrendador; una póliza de hogar puede excluir o limitar una vivienda que se usa como negocio de alquiler.",
+   "def_en": "Coverage that replaces rental income lost while a property damaged by a covered peril is being repaired. The NAIC lists lost rental income among the coverages a landlord policy can include; a homeowners policy may exclude or limit a home used as a rental business.",
    "guide": "str"
   },
   {
@@ -798,8 +798,8 @@
    "es": "Aviso de inicio de obra",
    "en": "Notice of commencement",
    "cat": "construccion",
-   "def_es": "Documento que la ley de gravámenes de Florida exige registrar y colocar en el sitio antes de la primera inspección. Vence al año salvo que el contrato indique otro plazo, y pagar después de su vencimiento puede hacer que el dueño pague dos veces.",
-   "def_en": "A document Florida's lien law requires to be recorded and posted on the site before the first inspection. It expires after 1 year unless the contract sets another period, and paying after it expires can make the owner pay twice.",
+   "def_es": "Documento que la ley de gravámenes de Florida exige registrar y colocar en el sitio antes de la primera inspección. Vence al año de registrarse salvo que el propio aviso indique otra fecha, y pagar después de su vencimiento puede hacer que el dueño pague dos veces.",
+   "def_en": "A document Florida's lien law requires to be recorded and posted on the site before the first inspection. It expires 1 year after recording unless the notice states a different date, and paying after it expires can make the owner pay twice.",
    "guide": "ren"
   },
   {
@@ -915,8 +915,8 @@
    "es": "Estudio de reservas de integridad estructural (SIRS)",
    "en": "Structural integrity reserve study (SIRS)",
    "cat": "condominios",
-   "def_es": "Estudio que las asociaciones de condominio deben hacer al menos cada 10 años para edificios de tres pisos habitables o más. Evalúa elementos como techo, estructura, plomería, electricidad e impermeabilización, y fija las reservas que ya no pueden omitirse.",
-   "def_en": "A study condominium associations must complete at least every 10 years for buildings three habitable stories or higher. It covers items such as roof, structure, plumbing, electrical systems and waterproofing, and sets reserves that can no longer be waived.",
+   "def_es": "Estudio que las asociaciones de condominio deben hacer al menos cada 10 años para edificios de tres pisos habitables o más. Evalúa elementos como techo, estructura, plomería, electricidad e impermeabilización, y fija reservas que, salvo excepciones limitadas, ya no pueden omitirse.",
+   "def_en": "A study condominium associations must complete at least every 10 years for buildings three habitable stories or higher. It covers items such as roof, structure, plumbing, electrical systems and waterproofing, and sets reserves that, with limited exceptions, can no longer be waived.",
    "guide": "cnd"
   }
  ]

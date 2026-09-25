@@ -181,7 +181,7 @@
             "p": "Reducir el riesgo de inundación empieza por conocerlo. El <a href=\"https://msc.fema.gov/portal/home\">Centro de Servicios de Mapas de Inundación de FEMA</a> permite consultar la zona de inundación de una dirección y, cuando existe, su elevación de inundación base [17][18]. El administrador de planicies inundables de su municipio, normalmente en el departamento de construcción o de zonificación, también puede tener certificados de elevación archivados [18]."
           },
           {
-            "p": "La elevación de inundación base (BFE) es la altura que alcanzaría el agua en una inundación con un 1% de probabilidad de igualar o superar ese nivel en cualquier año [15]. El margen adicional (freeboard) es una altura extra sobre la BFE que se usa como factor de seguridad, y FEMA señala que se traduce en tarifas de seguro de inundación mucho más bajas por el menor riesgo [16]. FEMA define así las zonas de sus mapas [13][14]:"
+            "p": "La elevación de inundación base (BFE) es la altura que alcanzaría el agua en una inundación con un 1% de probabilidad de igualar o superar ese nivel en cualquier año [15]. El margen adicional (freeboard) es una altura extra sobre la BFE que se usa como factor de seguridad, y FEMA señala que se traduce en tarifas de seguro de inundación mucho más bajas por el menor riesgo [16]. FEMA define así las zonas de sus mapas [13][14][21][22][23]:"
           },
           {
             "table": {
@@ -245,7 +245,7 @@
               "<b>Impermeabilización húmeda:</b> dejar entrar el agua en áreas no habitadas construidas con materiales resistentes, para igualar las presiones; solo es práctica en espacios que no se usan como vivienda [20].",
               "<b>Impermeabilización seca:</b> sellar la casa por debajo de la elevación de protección con recubrimientos, membranas y protectores; requiere que alguien instale los protectores, no se recomienda para casas con sótano y no sirve para que una casa con daño o mejora sustancial cumpla la norma local [20].",
               "<b>Válvulas antirretorno:</b> dejan pasar el agua en un solo sentido y evitan que el agua de la inundación o de las cloacas regrese por los desagües; FEMA recomienda que las instale un plomero con licencia [18].",
-              "<b>Equipos elevados:</b> aire acondicionado, calentadores de agua y paneles eléctricos al menos 1 pie por encima de la posible elevación de inundación, o a la elevación que exija su municipio en zonas de alto riesgo [18].",
+              "<b>Equipos elevados:</b> condensadores de aire acondicionado, bombas de calor y paneles eléctricos al menos 1 pie por encima de la posible elevación de inundación, o a la elevación reglamentaria de su municipio o por encima de ella en zonas de alto riesgo; calentadores de agua y otros electrodomésticos grandes por encima de la planta baja [18].",
               "<b>Barreras:</b> muros de contención permanentes, o protectores, compuertas y barreras inflables temporales que se colocan antes de una inundación [18][20]."
             ]
           },
@@ -459,7 +459,7 @@
             "p": "Reducing flood risk starts with knowing it. <a href=\"https://msc.fema.gov/portal/home\">FEMA's Flood Map Service Center</a> lets you look up the flood zone for an address and, where available, its base flood elevation [17][18]. Your community's floodplain administrator, usually in the building or zoning department, may also have elevation certificates on file [18]."
           },
           {
-            "p": "Base Flood Elevation (BFE) is the elevation of surface water from a flood that has a 1% chance of equaling or exceeding that level in any given year [15]. Freeboard is additional height above the BFE used as a factor of safety, and FEMA notes that it results in significantly lower flood insurance rates due to lower flood risk [16]. FEMA defines the zones on its maps as follows [13][14]:"
+            "p": "Base Flood Elevation (BFE) is the elevation of surface water from a flood that has a 1% chance of equaling or exceeding that level in any given year [15]. Freeboard is additional height above the BFE used as a factor of safety, and FEMA notes that it results in significantly lower flood insurance rates due to lower flood risk [16]. FEMA defines the zones on its maps as follows [13][14][21][22][23]:"
           },
           {
             "table": {
@@ -523,7 +523,7 @@
               "<b>Wet floodproofing:</b> letting water into uninhabited areas built with flood-resistant materials so pressures equalize; it is practical only for spaces not used as living space [20].",
               "<b>Dry floodproofing:</b> sealing the home below the protection elevation with coatings, membranes and shields; it needs someone to install the shields, is not recommended for homes with basements and cannot bring a substantially damaged or improved home into compliance with local rules [20].",
               "<b>Backflow valves:</b> they let water flow only one way and keep floodwater and sewage from backing up through drains; FEMA advises having a licensed plumber install them [18].",
-              "<b>Raised utilities:</b> air conditioning units, water heaters and electrical panels at least 1 foot above the potential flood elevation, or at your community's required elevation in high-risk zones [18].",
+              "<b>Raised utilities:</b> air conditioning condensers, heat pumps and electrical panels at least 1 foot above the potential flood elevation, or to or above your community's regulatory flood elevation in high-risk zones; water heaters and other major appliances above the ground floor [18].",
               "<b>Barriers:</b> permanent floodwalls, or temporary shields, flood gates and inflatable barriers deployed before a flood [18][20]."
             ]
           },
@@ -627,7 +627,7 @@
     },
     {
       "n": 14,
-      "label": "FEMA, Glossary: zone definitions (Zone A, AE, AH, AO, V, VE and D)",
+      "label": "FEMA, Glossary: zone definitions (Zone A, AE, AH and AO)",
       "url": "https://www.fema.gov/about/glossary/z"
     },
     {
@@ -659,6 +659,21 @@
       "n": 20,
       "label": "FEMA, Homeowner's Guide to Retrofitting (FEMA P-312), chapter 3: an overview of the retrofitting methods",
       "url": "https://www.fema.gov/pdf/rebuild/mat/sec3.pdf"
+    },
+    {
+      "n": 21,
+      "label": "FEMA, Glossary: Zone V",
+      "url": "https://www.fema.gov/about/glossary/zone-v"
+    },
+    {
+      "n": 22,
+      "label": "FEMA, Glossary: Zone VE and V1-30",
+      "url": "https://www.fema.gov/about/glossary/zone-ve-and-v1-30"
+    },
+    {
+      "n": 23,
+      "label": "FEMA, Glossary: Zone D",
+      "url": "https://www.fema.gov/about/glossary/zone-d"
     }
   ]
 }

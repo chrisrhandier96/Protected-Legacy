@@ -13,7 +13,7 @@
     "summary": [
       "El ciberseguro personal y la cobertura de robo de identidad no son lo mismo: la segunda suele pagar la restauración de su identidad, no el dinero robado.",
       "En 2025, el FBI recibió reportes de pérdidas por compromiso de correo electrónico por más de $3,000 millones, y la Florida fue el tercer estado con más pérdidas reportadas.",
-      "En un cierre inmobiliario, una regla simple de verificación por teléfono evita la mayoría de los fraudes de transferencia.",
+      "En un cierre inmobiliario, una regla simple de verificación por teléfono ayuda a prevenir el fraude de transferencias.",
       "Si una transferencia sale mal, el tiempo es decisivo: llame a su banco de inmediato y reporte el caso en ic3.gov."
     ],
     "sections": [
@@ -30,14 +30,14 @@
       ]},
       {"id": "fraude-transferencias", "h2": "Fraude de transferencias e ingeniería social: el riesgo de los cierres inmobiliarios", "blocks": [
         {"p": "El compromiso de correo electrónico, cuando un delincuente se hace pasar por alguien de confianza para desviar un pago, generó 24,768 denuncias y pérdidas reportadas por $3,046,598,558 ante el Centro de Denuncias de Delitos en Internet del FBI (IC3) en 2025. La categoría de fraude inmobiliario sumó otras 12,368 denuncias y $275,110,419 en pérdidas [1]. La Florida fue el tercer estado del país tanto en número de denuncias (71,843) como en pérdidas reportadas (más de $1,596 millones) [1]."},
-        {"p": "El patrón típico en un cierre es simple: días antes de firmar, llega un correo que parece de la compañía de títulos o del abogado, con instrucciones de transferencia actualizadas. El FBI describe un caso de 2025 en el que una familia que cerraba la compra de su casa recibió un correo que imitaba a sus abogados y envió más de $449,000 a una cuenta fraudulenta [1]."},
+        {"p": "El patrón típico en un cierre es simple: días antes de firmar, llega un correo que parece de la compañía de títulos o del abogado, con instrucciones de transferencia actualizadas. El FBI describe un caso de agosto de 2025 en el que unos compradores que cerraban la compra de su casa recibieron un correo que imitaba a sus abogados y enviaron más de $449,000 a una cuenta fraudulenta; tras una denuncia rápida ante el IC3, los fondos quedaron congelados en el banco receptor [1]."},
         {"callout": "Regla del cierre: nunca envíe dinero siguiendo instrucciones que llegaron por correo. Llame a un número que usted ya tenía o que confirmó por su cuenta, no al que aparece en el mensaje, y confirme cuenta y monto antes de transferir."},
         {"p": "Si ya envió el dinero, cada hora cuenta. El proceso de recuperación del IC3 (Financial Fraud Kill Chain) intervino en 3,900 casos en 2025 y ayudó a congelar $679,013,183 de $1,163,919,846 que los delincuentes intentaron robar, una tasa de éxito del 58% [1]. El FBI recomienda llamar de inmediato a su banco para pedir que revierta la transferencia y presentar la denuncia en ic3.gov con todos los detalles de la transacción [1]."},
         {"p": "Del lado del seguro, muchas pólizas personales excluyen o limitan con sublímites las pérdidas en las que usted mismo autorizó la transferencia, aunque lo hayan engañado. Pregunte específicamente cómo trata su póliza la ingeniería social."}
       ]},
       {"id": "ciberextorsion", "h2": "Ciberextorsión, secuestro de datos y sextorsión en el hogar", "blocks": [
         {"p": "La extorsión fue la segunda categoría con más denuncias ante el IC3 en 2025: 89,129 casos [1]. El mismo informe registra 3,611 denuncias por secuestro de datos (ransomware) y más de 75,000 reportes de sextorsión, un tipo de chantaje que muchas veces apunta a adolescentes a través de redes sociales y videojuegos [1]."},
-        {"p": "En un hogar, la extorsión puede tomar varias formas: alguien toma control de las cuentas de la familia y exige un pago, cifra los archivos de una computadora, o amenaza con publicar fotos o información privada. Un ciberseguro personal con cobertura de extorsión suele pagar a especialistas que evalúan la amenaza y guían la respuesta, y en algunos casos reembolsa el pago. Casi siempre exige que usted avise a la aseguradora antes de pagar."},
+        {"p": "En un hogar, la extorsión puede tomar varias formas: alguien toma control de las cuentas de la familia y exige un pago, cifra los archivos de una computadora, o amenaza con publicar fotos o información privada. Un ciberseguro personal con cobertura de extorsión suele pagar a especialistas que evalúan la amenaza y guían la respuesta, y en algunos casos reembolsa el pago. Suele exigir que usted avise a la aseguradora antes de pagar."},
         {"ul": [
           "No pague ni negocie por su cuenta antes de hablar con su aseguradora y con las autoridades.",
           "Guarde capturas de pantalla, mensajes y datos de pago: son evidencia.",
@@ -87,7 +87,7 @@
       "¿Cuál es el procedimiento de mi banco para revertir una transferencia fraudulenta?"
     ],
     "faq": [
-      {"q": "¿El seguro de robo de identidad me devuelve el dinero que me robaron?", "a": "Por lo general, no. Según la NAIC, la cobertura de robo de identidad reembolsa costos de restauración como honorarios legales, salarios perdidos y gastos administrativos, pero generalmente no el dinero robado de sus cuentas [2]. Para eso existen coberturas de fraude en línea dentro de algunos ciberseguros personales, casi siempre con sublímites."},
+      {"q": "¿El seguro de robo de identidad me devuelve el dinero que me robaron?", "a": "Por lo general, no. Según la NAIC, la cobertura de robo de identidad reembolsa costos de restauración como honorarios legales, salarios perdidos y gastos administrativos, pero generalmente no el dinero robado de sus cuentas [2]. Para eso existen coberturas de fraude en línea dentro de algunos ciberseguros personales, por lo general con sublímites."},
       {"q": "¿Qué hago si envié una transferencia a una cuenta fraudulenta?", "a": "Actúe de inmediato. Llame a su banco y pida que revierta la transferencia, y presente una denuncia en ic3.gov con todos los detalles de la transacción, sin importar el monto. En 2025, el proceso de recuperación del IC3 ayudó a congelar el 58% de los fondos en los casos en que intervino [1]."},
       {"q": "¿Congelar el crédito cuesta dinero o afecta mi puntaje?", "a": "No. La FTC explica que colocar o levantar un congelamiento de crédito es gratis y no afecta su puntaje. Debe solicitarlo en las tres agencias de crédito (Equifax, Experian y TransUnion), y también puede pedirlo para un hijo menor de 16 años [3]."}
     ]
@@ -101,7 +101,7 @@
     "summary": [
       "Personal cyber insurance and identity theft coverage are not the same: the second usually pays to restore your identity, not the money that was stolen.",
       "In 2025, the FBI received reports of more than $3 billion in business email compromise losses, and Florida ranked third among states in reported losses.",
-      "In a real estate closing, a simple phone verification rule prevents most wire fraud.",
+      "In a real estate closing, a simple phone verification rule helps prevent wire fraud.",
       "If a wire goes wrong, time is everything: call your bank immediately and file a report at ic3.gov."
     ],
     "sections": [
@@ -118,14 +118,14 @@
       ]},
       {"id": "wire-fraud", "h2": "Wire fraud and social engineering: the real estate closing risk", "blocks": [
         {"p": "Business email compromise, where a criminal poses as someone you trust to redirect a payment, generated 24,768 complaints and $3,046,598,558 in reported losses to the FBI's Internet Crime Complaint Center (IC3) in 2025. The real estate fraud category added another 12,368 complaints and $275,110,419 in losses [1]. Florida ranked third in the nation in both the number of complaints (71,843) and reported losses (more than $1.596 billion) [1]."},
-        {"p": "The typical closing pattern is simple: days before signing, an email that seems to come from the title company or the attorney arrives with updated wiring instructions. The FBI describes a 2025 case in which a family closing on a home received an email impersonating their attorneys and wired more than $449,000 to a fraudulent account [1]."},
+        {"p": "The typical closing pattern is simple: days before signing, an email that seems to come from the title company or the attorney arrives with updated wiring instructions. The FBI describes an August 2025 case in which buyers closing on a home received an email impersonating their attorneys and wired more than $449,000 to a fraudulent account; after a prompt IC3 complaint, the funds were frozen at the receiving bank [1]."},
         {"callout": "The closing rule: never send money based on instructions that arrived by email. Call a number you already had or confirmed on your own, not the one in the message, and confirm the account and the amount before you wire."},
         {"p": "If the money is already gone, every hour counts. The IC3 recovery process (the Financial Fraud Kill Chain) acted on 3,900 incidents in 2025 and helped freeze $679,013,183 of the $1,163,919,846 criminals attempted to steal, a 58% success rate [1]. The FBI advises calling your bank immediately to request a recall of the funds and filing a complaint at ic3.gov with the full transaction details [1]."},
         {"p": "On the insurance side, many personal policies exclude, or cap with sublimits, losses where you authorized the transfer yourself, even though you were deceived. Ask specifically how your policy treats social engineering."}
       ]},
       {"id": "cyber-extortion", "h2": "Cyber extortion, ransomware and sextortion at home", "blocks": [
         {"p": "Extortion was the second most reported category at IC3 in 2025, with 89,129 complaints [1]. The same report records 3,611 ransomware complaints and more than 75,000 sextortion submissions, a type of blackmail that often targets teenagers through social media and gaming [1]."},
-        {"p": "In a household, extortion can take several forms: someone takes over the family's accounts and demands payment, encrypts the files on a computer, or threatens to publish private photos or information. Personal cyber insurance with extortion coverage usually pays specialists who assess the threat and guide the response, and in some cases reimburses the payment. It almost always requires you to notify the insurer before paying."},
+        {"p": "In a household, extortion can take several forms: someone takes over the family's accounts and demands payment, encrypts the files on a computer, or threatens to publish private photos or information. Personal cyber insurance with extortion coverage usually pays specialists who assess the threat and guide the response, and in some cases reimburses the payment. It usually requires you to notify the insurer before paying."},
         {"ul": [
           "Do not pay or negotiate on your own before speaking with your insurer and the authorities.",
           "Keep screenshots, messages and payment details: they are evidence.",
@@ -150,7 +150,7 @@
         {"p": "It is also unwise to assume your credit card or bank will make you whole. Card protections differ from those for a bank wire, and a wire you authorized is much harder to reverse. That is why prevention and a fast reaction matter as much as the insurance."}
       ]},
       {"id": "mitigation", "h2": "How to reduce the risk", "blocks": [
-        {"p": "These ten measures cost little and remove a good share of a family's cyber risk:"},
+        {"p": "These ten measures cost little and reduce a good share of a family's cyber risk:"},
         {"ul": [
           "Turn on multi-factor authentication (MFA) for email, banking, investments and social media, starting with your primary email.",
           "Use a password manager and a different password for every important account.",
@@ -175,7 +175,7 @@
       "What is my bank's procedure to recall a fraudulent wire?"
     ],
     "faq": [
-      {"q": "Does identity theft insurance pay back money that was stolen?", "a": "Generally, no. According to the NAIC, identity theft coverage reimburses restoration costs such as legal fees, lost wages and administrative expenses, but generally not money stolen from your accounts [2]. Some personal cyber policies add online fraud coverage for that, almost always with sublimits."},
+      {"q": "Does identity theft insurance pay back money that was stolen?", "a": "Generally, no. According to the NAIC, identity theft coverage reimburses restoration costs such as legal fees, lost wages and administrative expenses, but generally not money stolen from your accounts [2]. Some personal cyber policies add online fraud coverage for that, usually with sublimits."},
       {"q": "What should I do if I wired money to a fraudulent account?", "a": "Act immediately. Call your bank and ask it to recall the transfer, and file a complaint at ic3.gov with the full transaction details, whatever the amount. In 2025, the IC3 recovery process helped freeze 58% of the funds in the incidents it acted on [1]."},
       {"q": "Does freezing my credit cost money or hurt my score?", "a": "No. The FTC explains that placing or lifting a credit freeze is free and does not affect your credit score. You must request it at all three credit bureaus (Equifax, Experian and TransUnion), and you can also request one for a child under 16 [3]."}
     ]

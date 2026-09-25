@@ -184,7 +184,7 @@
         "h2": "Cómo reducir el riesgo",
         "blocks": [
           {
-            "p": "La mitigación de viento es la parte de la protección contra huracanes que usted puede documentar. El Formulario Uniforme de Verificación de Mitigación (OIR-B1-1802) registra las características que ayudan a una casa a resistir el viento; la revisión vigente entró en vigor el 1 de abril de 2026, y el formulario es válido hasta cinco años si no hay cambios importantes en la estructura ni errores en el formulario [9]. Debe firmarlo un inspector autorizado por la ley de Florida [15]. Estos son los elementos que revisa [9]:"
+            "p": "La mitigación de viento es la parte de la protección contra huracanes que usted puede documentar. El Formulario Uniforme de Verificación de Mitigación (OIR-B1-1802) registra las características que ayudan a una casa a resistir el viento; la revisión vigente entró en vigor el 1 de abril de 2026, y el formulario es válido hasta cinco años si no hay cambios importantes en la estructura ni errores en el formulario [9]. Debe firmarlo un inspector autorizado por la ley de Florida [15]. Estos son los elementos que revisa [9][17]:"
           },
           {
             "table": {
@@ -196,6 +196,14 @@
                 [
                   "Código de construcción",
                   "Bajo qué código se construyó la casa, según el año de construcción y las fechas de los permisos"
+                ],
+                [
+                  "Región",
+                  "La zona de viento de la casa según la velocidad de viento de diseño de su ubicación (HVHZ o regiones 1 a 3)"
+                ],
+                [
+                  "Pendiente del techo",
+                  "Si la pendiente principal del techo es de 6:12 o más, o menor de 6:12"
                 ],
                 [
                   "Cubierta del techo",
@@ -461,7 +469,7 @@
         "h2": "How to reduce the risk",
         "blocks": [
           {
-            "p": "Wind mitigation is the part of hurricane protection you can document. Florida's Uniform Mitigation Verification Inspection Form (OIR-B1-1802) records the features that help a home resist wind; the current revision took effect April 1, 2026, and the form is valid for up to five years if no material changes are made to the structure and no inaccuracies are found on the form [9]. It must be signed by an inspector authorized under Florida law [15]. These are the items it covers [9]:"
+            "p": "Wind mitigation is the part of hurricane protection you can document. Florida's Uniform Mitigation Verification Inspection Form (OIR-B1-1802) records the features that help a home resist wind; the current revision took effect April 1, 2026, and the form is valid for up to five years if no material changes are made to the structure and no inaccuracies are found on the form [9]. It must be signed by an inspector authorized under Florida law [15]. These are the items it covers [9][17]:"
           },
           {
             "table": {
@@ -473,6 +481,14 @@
                 [
                   "Building code",
                   "Which code the home was built under, based on the year built and permit dates"
+                ],
+                [
+                  "Region",
+                  "The home's wind zone, based on the design wind speed for its location (HVHZ or Regions 1 to 3)"
+                ],
+                [
+                  "Roof slope",
+                  "Whether the main roof slope is at least 6:12 or less than 6:12"
                 ],
                 [
                   "Roof covering",
@@ -637,6 +653,11 @@
       "n": 16,
       "label": "Florida Department of Financial Services, My Safe Florida Home program",
       "url": "https://mysafeflhome.com/"
+    },
+    {
+      "n": 17,
+      "label": "Florida Office of Insurance Regulation, Uniform Mitigation Verification Inspection Form, OIR-B1-1802 (Rev. 04/26), adopted by Rule 69O-170.0155",
+      "url": "https://www.floir.gov/docs-sf/property-casualty-libraries/product-review/all-forms/form-oir-1802-adopted-version-(no-watermark).pdf"
     }
   ]
 }

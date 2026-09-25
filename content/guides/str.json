@@ -12,20 +12,20 @@
     "dek": "Qué cambia cuando su casa o su apartamento recibe huéspedes que pagan, y cómo revisar la protección antes de publicar el anuncio.",
     "summary": [
       "En Florida, alquilar la unidad completa más de tres veces al año por menos de 30 días, o anunciarla como alquiler habitual, requiere una licencia estatal de alquiler vacacional [1].",
-      "Los alquileres de seis meses o menos pagan impuesto estatal sobre las ventas y, en la mayoría de los condados, un impuesto local de turismo [3].",
+      "Los alquileres de seis meses o menos pagan impuesto estatal sobre las ventas y, en la mayoría de los condados, un impuesto local de turismo [3][5].",
       "La NAIC advierte que la mayoría de las pólizas de hogar no están diseñadas para accidentes derivados de alquileres de corto plazo [4].",
       "Las reglas del condominio o de la asociación de propietarios pueden limitar o prohibir el alquiler, aunque la ley estatal proteja la actividad frente a los municipios."
     ],
     "sections": [
       {"id": "que-es", "h2": "Qué se considera alquiler vacacional en Florida", "blocks": [
         {"p": "Para el Estado, un alquiler vacacional es una unidad en un condominio o cooperativa, o una casa de hasta cuatro unidades, que funciona como alojamiento público transitorio y no es un tiempo compartido. La División de Hoteles y Restaurantes del Departamento de Regulación Comercial y Profesional (DBPR) exige una licencia si la unidad completa se alquila más de tres veces en un año calendario por períodos menores de 30 días o de un mes calendario, lo que sea menor, o si se anuncia o se presenta al público como un lugar que se alquila con regularidad [1]."},
-        {"p": "El DBPR emite licencias de alquiler vacacional para condominios y para viviendas, como casas unifamiliares y edificios de cuatro unidades o menos, y realiza inspecciones de seguridad contra incendios [1]. El propio DBPR aclara que, además de la licencia estatal, la actividad puede estar sujeta a la autoridad de la ciudad, del condado u otras autoridades locales [1]."},
+        {"p": "El DBPR emite licencias de alquiler vacacional para condominios y para viviendas, como casas unifamiliares y edificios de cuatro unidades o menos, y en sus inspecciones registra los elementos visibles de seguridad contra incendios y reporta las posibles infracciones al Jefe de Bomberos del Estado [1]. El DBPR señala que incluso los alquileres que no necesitan su licencia pueden estar sujetos a la autoridad de la ciudad, del condado u otras autoridades locales [1], y la ley estatal permite normas locales que no prohíban los alquileres vacacionales ni limiten su duración o frecuencia [2]."},
         {"callout": "Si la casa de temporada de su familia se alquila de vez en cuando, cuente cuántas veces al año ocurre y cómo se anuncia. Esos dos datos determinan si la actividad ya es, para el Estado, un alojamiento público."}
       ]},
       {"id": "reglas-locales", "h2": "Reglas locales, del condominio y de la asociación, y los impuestos", "blocks": [
         {"p": "La ley de Florida impide, en general, que las ciudades y los condados prohíban los alquileres vacacionales o regulen su duración o frecuencia, salvo las normas locales adoptadas el 1 de junio de 2011 o antes [2]. Sin embargo, los gobiernos locales pueden regular otros aspectos, como el registro, el estacionamiento, la basura o el ruido, según lo que permita la ley."},
         {"p": "Esa protección se refiere a los gobiernos locales, no a las reglas privadas. La declaración de un condominio o los documentos de una asociación de propietarios pueden limitar el alquiler de corto plazo, fijar plazos mínimos o exigir el registro de los huéspedes. Antes de comprar o de publicar un anuncio, conviene que su abogado revise esos documentos."},
-        {"p": "También hay impuestos. El Departamento de Ingresos de Florida explica que el alquiler de alojamiento por seis meses o menos paga el impuesto estatal sobre las ventas, más el recargo discrecional del condado cuando aplica, y que los condados pueden cobrar impuestos locales de alquiler transitorio, como el impuesto de desarrollo turístico [3]. Algunas plataformas cobran y remiten parte de estos impuestos; conviene confirmar con su contador cuáles quedan a su cargo."}
+        {"p": "También hay impuestos. El Departamento de Ingresos de Florida explica que el alquiler de alojamiento por seis meses o menos paga el impuesto estatal sobre las ventas, más el recargo discrecional del condado cuando aplica, y que los condados pueden cobrar impuestos locales de alquiler transitorio, como el impuesto de desarrollo turístico [3][5]. Algunas plataformas cobran y remiten parte de estos impuestos; conviene confirmar con su contador cuáles quedan a su cargo."}
       ]},
       {"id": "poliza-de-hogar", "h2": "Por qué la póliza de hogar puede no responder", "blocks": [
         {"p": "La Asociación Nacional de Comisionados de Seguros (NAIC) advierte que la mayoría de las pólizas de hogar o de vivienda no están diseñadas para cubrir accidentes derivados de alquileres de corto plazo [4]. Explica que una póliza de hogar suele cubrir la caída de un visitante, pero que, si esa persona es un huésped que paga, el caso podría quedar excluido [4]."},
@@ -90,20 +90,20 @@
     "dek": "What changes when your home or condo hosts paying guests, and how to review your protection before you publish the listing.",
     "summary": [
       "In Florida, renting the entire unit more than three times a year for less than 30 days, or advertising it as regularly rented, requires a state vacation rental license [1].",
-      "Rentals of six months or less owe state sales tax and, in most counties, a local tourist development tax [3].",
+      "Rentals of six months or less owe state sales tax and, in most counties, a local tourist development tax [3][5].",
       "The NAIC warns that most homeowners policies are not designed for accidents arising from short-term rentals [4].",
       "Condominium or homeowners association rules can limit or ban rentals, even though state law protects the activity from cities and counties."
     ],
     "sections": [
       {"id": "what-counts", "h2": "What counts as a vacation rental in Florida", "blocks": [
         {"p": "For the State, a vacation rental is a unit in a condominium or cooperative, or a home with up to four units, that operates as transient public lodging and is not a timeshare. The Division of Hotels and Restaurants of the Department of Business and Professional Regulation (DBPR) requires a license if the entire unit is rented more than three times in a calendar year for periods of less than 30 days or one calendar month, whichever is less, or if it is advertised or held out to the public as a place regularly rented to guests [1]."},
-        {"p": "DBPR issues vacation rental licenses for condominiums and for dwellings, such as single-family homes and buildings with four units or fewer, and it conducts fire safety inspections [1]. DBPR itself notes that, beyond the state license, the business may still be subject to city, county or other local authorities [1]."},
+        {"p": "DBPR issues vacation rental licenses for condominiums and for dwellings, such as single-family homes and buildings with four units or fewer, and during its inspections it records observable fire safety items and reports possible violations to the State Fire Marshal [1]. DBPR notes that even rentals that do not need its license may still be subject to city, county or other local authority jurisdiction [1], and state law leaves room for local rules that do not ban vacation rentals or limit their duration or frequency [2]."},
         {"callout": "If your family's seasonal home is rented from time to time, count how many times a year it happens and how it is advertised. Those two facts decide whether the State already treats it as public lodging."}
       ]},
       {"id": "local-rules", "h2": "Local, condominium and association rules, and taxes", "blocks": [
         {"p": "Florida law generally prevents cities and counties from banning vacation rentals or regulating their duration or frequency, except for local rules adopted on or before June 1, 2011 [2]. Local governments can still regulate other matters, such as registration, parking, trash or noise, within what the law allows."},
         {"p": "That protection applies to local governments, not to private rules. A condominium declaration or the documents of a homeowners association can limit short-term rentals, set minimum lease terms or require guest registration. Before you buy or publish a listing, have your attorney review those documents."},
-        {"p": "There are also taxes. The Florida Department of Revenue explains that renting accommodations for six months or less owes state sales tax, plus the county discretionary surtax where it applies, and that counties may levy local transient rental taxes such as the tourist development tax [3]. Some platforms collect and remit part of these taxes; confirm with your CPA which ones remain your responsibility."}
+        {"p": "There are also taxes. The Florida Department of Revenue explains that renting accommodations for six months or less owes state sales tax, plus the county discretionary surtax where it applies, and that counties may levy local transient rental taxes such as the tourist development tax [3][5]. Some platforms collect and remit part of these taxes; confirm with your CPA which ones remain your responsibility."}
       ]},
       {"id": "homeowners-gap", "h2": "Why a homeowners policy may not respond", "blocks": [
         {"p": "The National Association of Insurance Commissioners (NAIC) warns that most homeowners or dwelling policies are not designed to cover accidents arising from short-term rentals [4]. It explains that a homeowners policy usually covers a visitor's fall, but that if the person is a paying guest, the claim might be excluded [4]."},
@@ -162,8 +162,9 @@
   },
   "sources": [
     {"n": 1, "label": "Florida DBPR, Division of Hotels and Restaurants, Guide to Vacation Rentals and Timeshare Projects", "url": "https://www2.myfloridalicense.com/hotels-restaurants/licensing/vrtsp-guide/"},
-    {"n": 2, "label": "Florida Statutes, section 509.032 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/509.032"},
-    {"n": 3, "label": "Florida Department of Revenue, Sales and Use Tax on Rental of Living or Sleeping Accommodations (GT-800034), and Local Option Transient Rental Tax Rates (DR-15TDT)", "url": "https://floridarevenue.com/Forms_library/current/brochure/gt800034.pdf"},
-    {"n": 4, "label": "NAIC, Consumer Insight: Renting Out Your Home? You Need Insurance Coverage for Home-Sharing Rentals (March 19, 2020)", "url": "https://content.naic.org/article/consumer-insight-renting-out-your-home-you-need-insurance-coverage-home-sharing-rentals"}
+    {"n": 2, "label": "Florida Statutes, section 509.032 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/509.032"},
+    {"n": 3, "label": "Florida Department of Revenue, Sales and Use Tax on Rental of Living or Sleeping Accommodations (GT-800034)", "url": "https://floridarevenue.com/Forms_library/current/brochure/gt800034.pdf"},
+    {"n": 4, "label": "NAIC, Consumer Insight: Renting Out Your Home? You Need Insurance Coverage for Home-Sharing Rentals (March 19, 2020)", "url": "https://content.naic.org/article/consumer-insight-renting-out-your-home-you-need-insurance-coverage-home-sharing-rentals"},
+    {"n": 5, "label": "Florida Department of Revenue, Local Option Transient Rental Tax Rates (DR-15TDT)", "url": "https://floridarevenue.com/Forms_library/current/dr15tdt.pdf"}
   ]
 }

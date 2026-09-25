@@ -208,7 +208,7 @@
               "Mantenga estables la temperatura y la humedad para arte, vino y textiles, y aleje las piezas del sol directo y de las tuberías.",
               "Instale una alarma monitoreada por una central, con sensores de incendio, agua y temperatura.",
               "Guarde joyas y relojes en una caja fuerte certificada y anclada a la estructura.",
-              "Cuando viaje, considere guardar las piezas importantes en una caja de seguridad bancaria; recuerde que su contenido no está asegurado por la FDIC [6].",
+              "Cuando viaje, considere guardar las piezas importantes en una caja de seguridad bancaria; recuerde que su contenido no está asegurado por la FDIC [7].",
               "Fotografíe cada pieza y guarde recibos, certificados y procedencia fuera de la casa [4].",
               "Use embaladores profesionales y transportistas especializados para mudanzas y préstamos, y confirme la cobertura en tránsito antes del envío.",
               "Avise pronto a su agente sobre las piezas nuevas que adquiera."
@@ -449,7 +449,7 @@
               "Keep temperature and humidity stable for art, wine and textiles, and keep pieces away from direct sun and water pipes.",
               "Install a central-station monitored alarm, with fire, water and temperature sensors.",
               "Keep jewelry and watches in a rated safe anchored to the structure.",
-              "When you travel, consider storing important pieces in a bank safe deposit box; remember that its contents are not insured by the FDIC [6].",
+              "When you travel, consider storing important pieces in a bank safe deposit box; remember that its contents are not insured by the FDIC [7].",
               "Photograph every piece and keep receipts, certificates and provenance off site [4].",
               "Use professional packers and specialized shippers for moves and loans, and confirm transit coverage before shipping.",
               "Tell your agent promptly about new pieces you acquire."
@@ -515,6 +515,11 @@
       "n": 6,
       "label": "FDIC Consumer News, Safe Deposit Boxes, Home Safes and Your Valuables (2018)",
       "url": "https://www.fdic.gov/consumer-resource-center/2018-safe-deposit-boxes-home-safes-and-your-valuables"
+    },
+    {
+      "n": 7,
+      "label": "FDIC, Understanding Deposit Insurance",
+      "url": "https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance"
     }
   ]
 }
