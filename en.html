@@ -493,11 +493,10 @@ nav{background:rgba(13,36,28,.93);-webkit-backdrop-filter:blur(16px) saturate(1.
 .hero .eyebrow::before{width:7px;height:7px;border-radius:50%;background:var(--oro-claro);box-shadow:0 0 0 4px rgba(217,188,114,.16);animation:hvPulse 2.6s ease-in-out infinite}
 @keyframes hvPulse{0%,100%{box-shadow:0 0 0 3px rgba(217,188,114,.18)}50%{box-shadow:0 0 0 7px rgba(217,188,114,0)}}
 @media(min-width:1024px){
-  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);column-gap:60px;align-items:center}
   .hero .wrap>*:not(.hero-visual){grid-column:1}
   .hero-visual{grid-column:2;grid-row:1/span 5;align-self:center}
   .hero{padding-top:78px}
-  .hero h1{max-width:none;font-size:clamp(40px,4.3vw,60px);margin:20px 0 22px}
+  .hero h1{max-width:17ch;font-size:clamp(40px,4.6vw,64px);margin:20px 0 22px}
   .hero p.lead{font-size:17.5px}
   .hero .cta-row{margin-bottom:36px;gap:12px}
   .hero .cta-row .btn{padding:15px 24px;font-size:14.5px}
@@ -592,6 +591,28 @@ main section .eyebrow::before{content:counter(sec,decimal-leading-zero);width:au
   .hero .eyebrow::before,.hv-dial::before,.hv-float{animation:none}
   .hv-val,.hv-cta,.mito,.dom,.vcard,.bib-card{transition:none}
 }
+
+/* Hero Mapa card: small teaser only (the full 12 questions live further down) */
+.hv-card{max-width:330px;padding:22px 22px 18px}
+.hv-title{font-size:20px;margin:8px 0 10px}
+.hv-dial{width:128px;height:128px;margin-bottom:12px}
+.hv-num b{font-size:36px}
+.hv-num span{font-size:9.5px}
+.hv-hook{font-size:13.5px;margin-bottom:14px}
+.hv-chips{display:none}
+.hv-cta{padding:12px 18px;font-size:14px}
+@media(min-width:1024px){.hv-f1{right:-30px;top:-44px}.hv-f3{right:-40px;bottom:-34px}}
+.hv-f2{display:none!important}
+.hv-eye{letter-spacing:.12em;font-size:10px}
+.mapa+.contacto{border-top:1px solid var(--arena-oscura)}
+
+/* Key phrases in headings: capitals + gold emphasis (styling only, same words) */
+h1 em,h2 em,h2 .hl,h2 .hl-dark,h2 .accent-i{text-transform:uppercase;letter-spacing:.02em;font-size:1em}
+.hero h1 em{font-size:1em;letter-spacing:.02em}
+.mitos h2 .hl-dark,.domains h2 .hl-dark,.domains h2 em,.mitos h2 em{color:var(--oro-claro)}
+.facts h2 .hl-dark,.biblio h2 .hl,.mapa h2 .hl-dark{color:var(--verde);font-weight:400;background-image:linear-gradient(rgba(194,155,64,.38),rgba(194,155,64,.38))!important;background-position:0 88%!important;background-repeat:no-repeat!important;padding:0 .12em}
+.pp-js .facts h2 .hl-dark,.pp-js .biblio h2 .hl,.pp-js .mapa h2 .hl-dark{background-size:0% 42%!important}
+.pp-js .facts h2 .hl-dark.lit,.pp-js .biblio h2 .hl.lit,.pp-js .mapa h2 .hl-dark.lit{background-size:100% 42%!important}
 </style>
 </head>
 <body>
@@ -644,20 +665,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a class="btn btn-oro" href="#mapa" data-es="Hacer mi autoevaluación (3 min)" data-en="Take my self-assessment (3 min)">Take my self-assessment (3 min)</a>
       <a class="btn btn-ghost" href="#mitos" data-es="Ver los mitos más costosos" data-en="See the costliest myths">See the costliest myths</a>
     </div>
-    <div class="hero-visual">
-      <div class="hv-card" id="teaser">
-        <span class="hv-eye" id="tEye">Start here · 3 minutes · Anonymous</span>
-        <div class="hv-title" data-es="El Mapa de Protección Familiar" data-en="The Family Protection Map">The Family Protection Map</div>
-        <div class="hv-dial"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="hv-track" cx="60" cy="60" r="50"/><circle class="hv-val" id="tDial" cx="60" cy="60" r="50"/></svg>
-          <div class="hv-num"><b id="tNum">12</b><span id="tLbl">risk zones</span></div></div>
-        <p class="hv-hook" id="tContT">How many of your family's 12 risk zones are blank? Find out in three minutes.</p>
-        <div class="hv-chips"><span data-es="Residencias" data-en="Residences">Residences</span><span data-es="Inundación" data-en="Flood">Flood</span><span data-es="Autos" data-en="Autos">Autos</span><span data-es="Embarcaciones" data-en="Watercraft">Watercraft</span><span data-es="Aviación" data-en="Aviation">Aviation</span><span data-es="Colecciones" data-en="Collections">Collections</span><span data-es="Responsabilidad" data-en="Liability">Liability</span><span data-es="Personal del hogar" data-en="Household staff">Household staff</span><span data-es="Legado" data-en="Legacy">Legacy</span><span data-es="Estilo de vida" data-en="Lifestyle">Lifestyle</span></div>
-        <a class="hv-cta" id="tContB" href="#mapa">Start my map</a>
-      </div>
-      <div class="hv-float hv-f1" data-es="<b>64%</b> de los hogares en EE. UU. están subasegurados (CoreLogic)" data-en="<b>64%</b> of U.S. homes are underinsured (CoreLogic)"><b>64%</b> of U.S. homes are underinsured (CoreLogic)</div>
-      <div class="hv-float hv-f2" data-es="<b>$63,691</b>: pago promedio por reclamo del NFIP, 2020 a 2024 (FEMA)" data-en="<b>$63,691</b>: average NFIP claim payment, 2020 to 2024 (FEMA)"><b>$63,691</b>: average NFIP claim payment, 2020 to 2024 (FEMA)</div>
-      <div class="hv-float hv-f3" data-es="<b>1 pulgada</b> de agua puede causar <b>$25,000</b> en daños (FEMA)" data-en="<b>1 inch</b> of water can cause <b>$25,000</b> in damage (FEMA)"><b>1 inch</b> of water can cause <b>$25,000</b> in damage (FEMA)</div>
-    </div><!-- /hero-visual -->
   </div>
   <svg class="skyline" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
     <rect class="fill-soft" x="0" y="190" width="1440" height="70"/>
@@ -901,6 +908,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ABOUT -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="retrato reveal">
+      <div class="marco">
+      <img class="foto" src="/img/christian-retrato.jpg" alt="Christian R. González, Doral, Florida">
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow" data-es="Sobre mí" data-en="About me">About me</span>
+      <div class="rule"></div>
+      <h2 data-es="Claridad en su idioma. Rigor en el oficio." data-en="Clarity in your language. Rigor in the craft.">Clarity in your language. Rigor in the craft.</h2>
+      <p data-es="Soy Christian R. González, de Miami, bilingüe de nacimiento y graduado de Florida International University. Mi carrera empezó en la industria de seguros: durante casi dos años acompañé a más de cien familias en la protección de sus seres queridos, y entrené a agentes nuevos en cómo explicar estos temas con claridad. Ahí entendí algo que no he olvidado: <span class='hl'>a nuestra comunidad casi nunca le explican estas herramientas en su idioma, y esa falta de claridad cuesta Patrimonio.</span>" data-en="I am Christian R. González, from Miami, bilingual from birth and a graduate of Florida International University. My career began in the insurance industry: for nearly two years I helped more than one hundred families protect their loved ones, and I trained new agents on how to explain these subjects clearly. That is where I understood something I have never forgotten: <span class='hl'>our community is almost never taught these tools in its own language, and that lack of clarity costs Wealth.</span>">I am Christian R. González, from Miami, bilingual from birth and a graduate of Florida International University. My career began in the insurance industry: for nearly two years I helped more than one hundred families protect their loved ones, and I trained new agents on how to explain these subjects clearly. That is where I understood something I have never forgotten: <span class='hl'>our community is almost never taught these tools in its own language, and that lack of clarity costs Wealth.</span></p>
+      <p data-es="Después pasé años en el mundo de los eventos en vivo y las operaciones de estadio, trabajando desde adentro en la ejecución de más de mil eventos, desde celebraciones privadas hasta jornadas de temporada en un estadio de Grandes Ligas. Esa etapa me dejó la disciplina que hoy aplico al riesgo patrimonial: los eventos que salen bien no dependen de la suerte; dependen de haber pensado, con anticipación, en todo lo que podía salir mal. Hoy ejerzo como agente licenciado en la Florida, dedicado a la gestión de riesgo de clientes privados y familias de alto patrimonio. Este espacio es mi manera de devolverle a la comunidad la claridad que merece." data-en="I then spent years in live events and stadium operations, working from the inside on the execution of more than a thousand events, from private celebrations to full season operations at a Major League ballpark. That chapter gave me the discipline I now apply to wealth risk: events that go well do not depend on luck; they depend on having thought, in advance, about everything that could go wrong. Today I practice as a licensed Florida agent dedicated to private-client risk for high-net-worth families. This space is my way of giving the community the clarity it deserves.">I then spent years in live events and stadium operations, working from the inside on the execution of more than a thousand events, from private celebrations to full season operations at a Major League ballpark. That chapter gave me the discipline I now apply to wealth risk: events that go well do not depend on luck; they depend on having thought, in advance, about everything that could go wrong. Today I practice as a licensed Florida agent dedicated to private-client risk for high-net-worth families. This space is my way of giving the community the clarity it deserves.</p>
+      <div class="cred-row">
+        <span class="cred" data-es="B.A., Florida International University" data-en="B.A., Florida International University">B.A., Florida International University</span>
+        <span class="cred" data-es="Bilingüe nativo ES / EN" data-en="Native bilingual ES / EN">Native bilingual ES / EN</span>
+        <span class="cred" data-es="Experiencia previa sirviendo a 100+ familias" data-en="Prior experience serving 100+ families">Prior experience serving 100+ families</span>
+      </div>
+      <p class="firma">Christian R. González</p>
+      <p style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-claro)" data-es="Agente licenciado · Florida Lic. #W606240" data-en="Licensed agent · Florida Lic. #W606240">Licensed agent · Florida Lic. #W606240</p>
+      <a class="li-link" href="https://www.linkedin.com/in/christiangonzalez22/" target="_blank" rel="noopener me" data-es="Ver mi perfil en LinkedIn &#8599;" data-en="View my LinkedIn profile &#8599;">View my LinkedIn profile ↗</a>
+    </div>
+  </div>
+</section>
+
 <!-- QUIZ -->
 <section class="mapa grain" id="mapa">
   <div class="wrap">
@@ -951,32 +984,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <p class="mapa-note" data-es="Esta autoevaluación es una herramienta educativa de reflexión. No constituye asesoría de seguros ni un análisis de sus pólizas, y no reemplaza la revisión de un profesional con licencia. Sus respuestas se guardan solo en su navegador, para que pueda retomar donde lo dejó, y no se envían a ningún lugar a menos que usted decida enviarlas con su nombre y correo." data-en="This self-assessment is an educational reflection tool. It does not constitute insurance advice or an analysis of your policies, and it does not replace a review by a licensed professional. Your answers are saved only in your browser, so you can pick up where you left off, and are not sent anywhere unless you choose to send them with your name and email.">This self-assessment is an educational reflection tool. It does not constitute insurance advice or an analysis of your policies, and it does not replace a review by a licensed professional. Your answers are saved only in your browser, so you can pick up where you left off, and are not sent anywhere unless you choose to send them with your name and email.</p>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="sobre">
-  <div class="wrap about-grid">
-    <div class="retrato reveal">
-      <div class="marco">
-      <img class="foto" src="/img/christian-retrato.jpg" alt="Christian R. González, Doral, Florida">
-      </div>
-    </div>
-    <div class="reveal">
-      <span class="eyebrow" data-es="Sobre mí" data-en="About me">About me</span>
-      <div class="rule"></div>
-      <h2 data-es="Claridad en su idioma. Rigor en el oficio." data-en="Clarity in your language. Rigor in the craft.">Clarity in your language. Rigor in the craft.</h2>
-      <p data-es="Soy Christian R. González, de Miami, bilingüe de nacimiento y graduado de Florida International University. Mi carrera empezó en la industria de seguros: durante casi dos años acompañé a más de cien familias en la protección de sus seres queridos, y entrené a agentes nuevos en cómo explicar estos temas con claridad. Ahí entendí algo que no he olvidado: <span class='hl'>a nuestra comunidad casi nunca le explican estas herramientas en su idioma, y esa falta de claridad cuesta Patrimonio.</span>" data-en="I am Christian R. González, from Miami, bilingual from birth and a graduate of Florida International University. My career began in the insurance industry: for nearly two years I helped more than one hundred families protect their loved ones, and I trained new agents on how to explain these subjects clearly. That is where I understood something I have never forgotten: <span class='hl'>our community is almost never taught these tools in its own language, and that lack of clarity costs Wealth.</span>">I am Christian R. González, from Miami, bilingual from birth and a graduate of Florida International University. My career began in the insurance industry: for nearly two years I helped more than one hundred families protect their loved ones, and I trained new agents on how to explain these subjects clearly. That is where I understood something I have never forgotten: <span class='hl'>our community is almost never taught these tools in its own language, and that lack of clarity costs Wealth.</span></p>
-      <p data-es="Después pasé años en el mundo de los eventos en vivo y las operaciones de estadio, trabajando desde adentro en la ejecución de más de mil eventos, desde celebraciones privadas hasta jornadas de temporada en un estadio de Grandes Ligas. Esa etapa me dejó la disciplina que hoy aplico al riesgo patrimonial: los eventos que salen bien no dependen de la suerte; dependen de haber pensado, con anticipación, en todo lo que podía salir mal. Hoy ejerzo como agente licenciado en la Florida, dedicado a la gestión de riesgo de clientes privados y familias de alto patrimonio. Este espacio es mi manera de devolverle a la comunidad la claridad que merece." data-en="I then spent years in live events and stadium operations, working from the inside on the execution of more than a thousand events, from private celebrations to full season operations at a Major League ballpark. That chapter gave me the discipline I now apply to wealth risk: events that go well do not depend on luck; they depend on having thought, in advance, about everything that could go wrong. Today I practice as a licensed Florida agent dedicated to private-client risk for high-net-worth families. This space is my way of giving the community the clarity it deserves.">I then spent years in live events and stadium operations, working from the inside on the execution of more than a thousand events, from private celebrations to full season operations at a Major League ballpark. That chapter gave me the discipline I now apply to wealth risk: events that go well do not depend on luck; they depend on having thought, in advance, about everything that could go wrong. Today I practice as a licensed Florida agent dedicated to private-client risk for high-net-worth families. This space is my way of giving the community the clarity it deserves.</p>
-      <div class="cred-row">
-        <span class="cred" data-es="B.A., Florida International University" data-en="B.A., Florida International University">B.A., Florida International University</span>
-        <span class="cred" data-es="Bilingüe nativo ES / EN" data-en="Native bilingual ES / EN">Native bilingual ES / EN</span>
-        <span class="cred" data-es="Experiencia previa sirviendo a 100+ familias" data-en="Prior experience serving 100+ families">Prior experience serving 100+ families</span>
-      </div>
-      <p class="firma">Christian R. González</p>
-      <p style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-claro)" data-es="Agente licenciado · Florida Lic. #W606240" data-en="Licensed agent · Florida Lic. #W606240">Licensed agent · Florida Lic. #W606240</p>
-      <a class="li-link" href="https://www.linkedin.com/in/christiangonzalez22/" target="_blank" rel="noopener me" data-es="Ver mi perfil en LinkedIn &#8599;" data-en="View my LinkedIn profile &#8599;">View my LinkedIn profile ↗</a>
-    </div>
   </div>
 </section>
 
