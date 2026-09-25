@@ -90,7 +90,7 @@ python3 ads_check.py --base http://localhost:8787
 | A. Six new guides, ES + EN, 33 glossary terms, 12 FAQs | Done | commit `9158271` |
 | B. "How to reduce the risk" in all 14 guides + hub Mitigation card | Done | commit `d3365a4` |
 | C. Homepage wiring (14 domains, GUIDE_URL, form topics, `?tema=`), side panel, hub meta, sitemap lastmod = build date | Done, local tests pass | branch commit (see `git log`) |
-| D. Independent fact-check | **Half done**: report A is in `handoff/factcheck-A.md`, report B was never produced, **no corrections applied yet** | section 5 |
+| D. Independent fact-check | **Both reports done** (`handoff/factcheck-A.md`: 87 rows, 75 verified / 12 corrected / 0 dropped; `handoff/factcheck-B.md`: 158 rows, 146 verified / 12 corrected / 0 dropped). **No corrections applied yet** | section 5 |
 | E. Tests extended (`expansion`, `newshots` groups) | Built; one open failure (privacy page hreflang) | section 6 |
 | F. Ads file, validator, sitelinks, negatives | Done, validator PASS locally | `ads/` |
 | Deploy + live re-test + report | Not started | sections 7 and 8 |
@@ -126,9 +126,22 @@ Optional A7 (`eqn`, equine) and A8 (`ltv`, golf carts/LSVs) were **not built**. 
       - Keep the roof-to-wall categories (toe nails, clips, single wraps, double wraps) and the roof shapes (hip, flat, other); the report confirms they still match.
       - Also update the ES/EN intro sentence if it says "seven".
    - Where a change touches the same fact in the homepage `DOMS` entries (`index.html` + `en.html`), glossary or FAQ, change it there too.
-2. **Re-run fact-check half B** with a separate sub-agent that did not write the content. Use the prompt in `handoff/factcheck-B-prompt.md` and write the report to `handoff/factcheck-B.md`.
-   - It covers: `brd`, `cnd` (milestone/SIRS traps), the `flo` mitigation section (FEMA zones, Risk Rating 2.0, CRS, retrofitting), the mitigation sections of `aut mar avi col lia emp`, the 33 new glossary terms and 12 new FAQs, and the homepage `DOMS` entries IX to XIV.
-   - Then apply its corrections the same way.
+2. **Apply every correction in `handoff/factcheck-B.md`** (already done by an independent sub-agent; exact EN + ES wording is in the report). Summary of the 12:
+   1. `brd`, Volunteer Protection Act: add the two missing conditions from 42 U.S.C. 14503(a). The volunteer must be properly licensed or authorized where required, and the protection doesn't cover operating a vehicle, boat or aircraft that the state requires a license or insurance for.
+   2. `brd`, family foundations: "Many D&O policies exclude or limit fines, penalties and taxes" is unsourced; use the report's rewording.
+   3. `cnd` summary: "can no longer waive those reserves" needs "with limited exceptions".
+   4. `cnd` reserve study: add the 2025 exception (ch. 2025-175, effective July 1, 2025). An association that completed a milestone inspection in the previous 2 years can, by majority vote, pause or reduce reserve contributions for up to two budgets adopted on or before Dec 31, 2028.
+   5. `cnd` deductibles: replace "often a percentage of the building's value" with 718.111(11)(c) (the board sets deductibles consistent with industry standards and local practice, based on available funds). **Also fix the homepage `DOMS` cnd entry and the `condominio-evaluacion` FAQ if they repeat it.**
+   6. `flo` source [14]: the `/about/glossary/z` page only shows A, A99, AE, AH, AO. Point V, VE and D to FEMA's `zone-v`, `zone-ve-and-v1-30` and `zone-d` pages (add sources and renumber carefully, or add them to the same source entry).
+   7. `flo` raised utilities: FEMA's "at least 1 foot" covers AC condensers, heat pumps and electrical panels. For water heaters FEMA only says to consider raising them above the ground floor.
+   8. `avi` drones: FAA's Part 107 examples are "photos to help sell a property" and roof inspections, not property photos in general.
+   9. `col`, safe deposit boxes: add FDIC's "Understanding Deposit Insurance" page as a source ("Safe deposit boxes or their contents" are not covered).
+   10. `emp` source [3] label: the title of 440.04 is "Waiver of exemption."
+   11. Glossary `perdida-de-renta`: soften "a typical homeowners policy usually does not include it".
+   12. Glossary `aviso-de-inicio` **and** FAQ `aviso-de-inicio`: the notice expires after 1 year unless the notice itself states a different date (same fix as A-10).
+   - Report B also lists **14 unfootnoted market-practice statements** in their own section. Keep, hedge or drop each one, and record the decision in the FACTCHECK file.
+   - Its access notes: NAIC and State Department pages were read from 2026 Wayback Machine copies, so check the live travel-advisory URL in a browser.
+   - Note: `site-tests/verify.js` and `tools/check_content.py` must still pass after the edits.
 3. The golf cart/LSV trap in the work order doesn't apply (A8 was not built). Say so in the fact-check file.
 4. Write **`content/FACTCHECK-2026-09.md`**:
    - Every figure and statute → source URL → verified / corrected / dropped, merged from both reports.
@@ -148,6 +161,11 @@ Optional A7 (`eqn`, equine) and A8 (`ltv`, golf carts/LSVs) were **not built**. 
 4. Commit.
 
 ## 7. Deploy (only with Christian's yes)
+
+**About `[skip netlify]`:** the handoff commit that put this branch on GitHub has `[skip netlify]` in its message, so Netlify did not build it. Netlify skips any push whose newest commit carries that tag.
+- **Your own commits on this branch must NOT include it**, and neither may the final merge. Otherwise the production deploy will be skipped.
+- Make the final step a normal merge commit (for example `git merge --no-ff work-order-2026-09`), after at least one new commit of yours, so `main`'s newest commit has no skip tag.
+- While you work, pushing the branch is optional. If you push it before the final merge, put `[skip netlify]` in that push's newest commit message, so an enabled branch-deploy setting can't spend credits.
 
 1. Summarize for Christian what will go live: 6 new guides (12 pages), 14 mitigation sections, the content-rule cleanup, homepage/form wiring, and the fact-check corrections. Ask: "OK to merge to main and deploy?"
 2. On yes, do **one** merge of `work-order-2026-09` into `main` and push. Wait for Netlify to publish; check that the new URLs return 200.
