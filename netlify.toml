@@ -75,6 +75,12 @@
   force = true
 
 [[redirects]]
+  from = "/en/guides/board-service-family-foundations/"
+  to = "/en-guides-board-service-family-foundations.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/en/guides/boats/"
   to = "/en-guides-boats.html"
   status = 200
@@ -83,6 +89,12 @@
 [[redirects]]
   from = "/en/guides/collections-art-jewelry/"
   to = "/en-guides-collections-art-jewelry.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/en/guides/condos-hoa/"
+  to = "/en-guides-condos-hoa.html"
   status = 200
   force = true
 
@@ -105,8 +117,32 @@
   force = true
 
 [[redirects]]
+  from = "/en/guides/kidnap-ransom/"
+  to = "/en-guides-kidnap-ransom.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/en/guides/personal-cyber/"
+  to = "/en-guides-personal-cyber.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/en/guides/private-aviation/"
   to = "/en-guides-private-aviation.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/en/guides/renovations-builders-risk/"
+  to = "/en-guides-renovations-builders-risk.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/en/guides/short-term-rentals/"
+  to = "/en-guides-short-term-rentals.html"
   status = 200
   force = true
 
@@ -141,6 +177,12 @@
   force = true
 
 [[redirects]]
+  from = "/guias/alquiler-vacacional/"
+  to = "/guias-alquiler-vacacional.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/guias/autos/"
   to = "/guias-autos.html"
   status = 200
@@ -153,8 +195,20 @@
   force = true
 
 [[redirects]]
+  from = "/guias/ciber-proteccion-familiar/"
+  to = "/guias-ciber-proteccion-familiar.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/guias/colecciones-arte-joyas/"
   to = "/guias-colecciones-arte-joyas.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/guias/condominios-y-hoa/"
+  to = "/guias-condominios-y-hoa.html"
   status = 200
   force = true
 
@@ -171,14 +225,32 @@
   force = true
 
 [[redirects]]
+  from = "/guias/juntas-y-fundaciones/"
+  to = "/guias-juntas-y-fundaciones.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/guias/personal-del-hogar-legado/"
   to = "/guias-personal-del-hogar-legado.html"
   status = 200
   force = true
 
 [[redirects]]
+  from = "/guias/remodelaciones/"
+  to = "/guias-remodelaciones.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/guias/residencias-huracanes/"
   to = "/guias-residencias-huracanes.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/guias/secuestro-y-extorsion/"
+  to = "/guias-secuestro-y-extorsion.html"
   status = 200
   force = true
 

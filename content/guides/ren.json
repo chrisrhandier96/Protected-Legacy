@@ -1,0 +1,164 @@
+{
+  "key": "ren",
+  "slug_es": "remodelaciones",
+  "slug_en": "renovations-builders-risk",
+  "updated": "2026-09-25",
+  "related": ["res", "lia", "emp"],
+  "es": {
+    "title": "Seguro durante una remodelación en Florida",
+    "meta": "Remodelar o construir en Florida: seguro de riesgo de construcción, la cláusula de desocupación, contratistas asegurados y el aviso de inicio de obra.",
+    "kicker": "Guía · Remodelaciones",
+    "h1": "Remodelaciones y construcción: cómo proteger la casa mientras está en obra",
+    "dek": "Qué cambia en su seguro cuando la casa se remodela o queda vacía, qué pedir a los contratistas y qué documentos protegen a la familia de pagar dos veces.",
+    "summary": [
+      "El Instituto de Información de Seguros (III) recomienda avisar a su aseguradora antes de la obra, o poco después de iniciarla, y ajustar la cobertura al nuevo valor de la casa [1].",
+      "El seguro de riesgo de construcción (builder's risk) cubre riesgos nombrados; el Departamento de Servicios Financieros de Florida advierte que la lluvia no es uno de ellos [2].",
+      "Muchas pólizas de hogar limitan o excluyen la cobertura si la casa queda desocupada, por lo general, entre 30 y 60 días seguidos [3].",
+      "En Florida, el aviso de inicio de obra debe registrarse y colocarse en el sitio antes de la primera inspección [4]."
+    ],
+    "sections": [
+      {"id": "por-que-importa", "h2": "Por qué una remodelación cambia su seguro", "blocks": [
+        {"p": "Una remodelación importante cambia casi todo lo que la póliza de hogar da por supuesto: quién entra a la casa, qué materiales hay en el sitio, si la familia sigue viviendo allí y cuánto costaría reconstruirla. El III recomienda comunicarse con su agente o su aseguradora antes de la obra, o poco después de que empiece, para que la cobertura refleje el mayor valor de la casa [1]."},
+        {"p": "El error más común es pensar que la póliza actual responde igual durante la obra. Una ampliación, una cocina nueva o un techo reemplazado aumentan el costo de reconstrucción, y si el límite de la vivienda no se ajusta, la casa puede quedar subasegurada justo cuando vale más. Además, una casa en obra suele estar vacía por períodos largos, lo que puede activar condiciones especiales de la póliza."}
+      ]},
+      {"id": "riesgo-de-construccion", "h2": "Seguro de riesgo de construcción (builder's risk)", "blocks": [
+        {"p": "El seguro de riesgo de construcción protege la obra mientras se realiza: la estructura en proceso y los materiales en el sitio. Puede contratarlo el dueño o el contratista, así que el contrato de obra debe decir con claridad quién lo compra, a nombre de quién y hasta cuándo. Esta cobertura suele terminar cuando la obra se completa o la casa vuelve a ocuparse; para ese momento, la póliza de hogar ya debe estar ajustada para responder por la casa terminada, sin días sin cobertura entre una póliza y otra."},
+        {"p": "El Departamento de Servicios Financieros de Florida (DFS) explica que estas pólizas son de riesgos nombrados, es decir, cubren solo los eventos que la póliza enumera [2]. Señala que el daño por viento debería estar cubierto, sujeto a las demás condiciones del contrato, pero que algunas pólizas exigen que la obra haya alcanzado cierta etapa de avance antes de cubrir el viento [2]. También aclara que la lluvia no es un riesgo nombrado, aunque podría haber una cobertura limitada para materiales en el sitio si se incluye por endoso [2]."},
+        {"callout": "En Florida, pregunte en qué fecha empieza la cobertura de viento de su póliza de construcción y compárela con el calendario de la obra y con la temporada de huracanes."}
+      ]},
+      {"id": "desocupacion", "h2": "Cuando la casa queda vacía durante la obra", "blocks": [
+        {"p": "El III explica que la mayoría de las pólizas de hogar incluyen una cláusula de desocupación, que limita o excluye la cobertura si la propiedad queda sin ocupantes, por lo general, entre 30 y 60 días consecutivos [3]. Una familia que se muda a otra casa durante una remodelación larga puede caer en ese supuesto sin darse cuenta."},
+        {"p": "El III recomienda avisar siempre a la aseguradora si la casa estará desocupada por un período prolongado, y explica que existen pólizas para viviendas desocupadas y endosos de desocupación diseñados para esos casos [3]. Revise también si la póliza exige cerrar el agua, mantener la temperatura o hacer visitas regulares mientras nadie vive en la casa."}
+      ]},
+      {"id": "contratistas", "h2": "Contratistas, subcontratistas y trabajadores en la obra", "blocks": [
+        {"p": "El III recomienda pedir prueba de la póliza de compensación laboral del contratista, porque los trabajadores lesionados pueden demandarlo a usted si el contratista no tiene el seguro adecuado [1]. Añade que los constructores independientes, electricistas y plomeros pueden no estar cubiertos por la póliza de compensación laboral del contratista, así que conviene verificar la cobertura de cada uno [1]."},
+        {"table": {"head": ["Documento", "Por qué importa"], "rows": [
+          ["Licencia del contratista", "Confirma que puede hacer el tipo de obra contratada"],
+          ["Certificado de responsabilidad civil", "Responde por daños que la obra cause a terceros o a su casa"],
+          ["Certificado de compensación laboral", "Responde por lesiones de los trabajadores"],
+          ["Contrato de obra", "Define quién compra el seguro de construcción y quién responde por qué"],
+          ["Liberaciones de gravamen", "Prueban que se pagó a subcontratistas y proveedores"]
+        ]}},
+        {"p": "Actuar como su propio contratista tiene consecuencias. La declaración que la ley exige a quien obtiene un permiso como dueño constructor advierte que, si un contratista sin licencia o un empleado se lesiona en la propiedad, el dueño puede responder por los daños, y que su póliza de hogar puede no cubrir esas lesiones [5]. También advierte que, si la casa se vende o se alquila dentro del año siguiente a la obra, la ley presume que se construyó para venderla o alquilarla, lo que viola la exención [5]."}
+      ]},
+      {"id": "aviso-de-inicio", "h2": "El aviso de inicio de obra y el riesgo de pagar dos veces", "blocks": [
+        {"p": "La ley de gravámenes de construcción de Florida exige registrar el aviso de inicio de obra (notice of commencement) y colocarlo en el sitio antes de la primera inspección [4]. El aviso pierde validez si la obra no empieza dentro de los 90 días siguientes a su registro, y vence al año, salvo que el contrato indique un plazo mayor [4]."},
+        {"p": "La advertencia que la ley exige es directa: los pagos que el dueño haga después del vencimiento del aviso se consideran pagos indebidos y pueden hacer que pague dos veces por las mejoras [4]. En la práctica, conviene pedir liberaciones de gravamen de los subcontratistas y proveedores antes de cada pago, y consultar a su abogado antes de firmar el contrato o el aviso."}
+      ]},
+      {"id": "despues-de-la-obra", "h2": "Después de la obra: actualizar la póliza", "blocks": [
+        {"p": "Al terminar, el III recomienda asegurarse de que la póliza refleje el mayor valor de la estructura y aumentar la cobertura de bienes personales si compró artículos nuevos, conservando los recibos [1]. Es un buen momento para pedir un nuevo estimado del costo de reconstrucción y para revisar la cobertura de ley u ordenanza, que paga ciertos costos de cumplir con el código vigente."},
+        {"p": "Si la obra incluyó un techo nuevo, ventanas o puertas resistentes a impactos, o mejoras en la conexión entre techo y paredes, pida una nueva inspección de mitigación de viento. Esas características pueden influir en la tarifa de la póliza de hogar, y el formulario anterior ya no describe la casa actual."}
+      ]},
+      {"id": "mitigacion", "h2": "Cómo reducir el riesgo", "blocks": [
+        {"p": "Estas medidas protegen la obra, a los trabajadores y el patrimonio de la familia:"},
+        {"ul": [
+          "Avise a su aseguradora antes de empezar y confirme por escrito cómo responde su póliza durante la obra [1].",
+          "Defina en el contrato quién compra el seguro de construcción y desde qué fecha cubre el viento [2].",
+          "Pida certificados de responsabilidad civil y de compensación laboral al contratista y a cada subcontratista [1].",
+          "Registre el aviso de inicio de obra a tiempo y pida liberaciones de gravamen antes de cada pago [4].",
+          "Guarde los materiales costosos bajo llave y retire del sitio los electrodomésticos hasta instalarlos.",
+          "Mantenga la obra cerrada, con iluminación y, si es posible, cámaras o una alarma.",
+          "Prepare un plan de huracán para la obra: asegurar materiales, andamios y aberturas sin terminar.",
+          "Al terminar, actualice el límite de la vivienda y pida una nueva inspección de mitigación de viento."
+        ]},
+        {"p": "Si está por remodelar y quiere revisar cómo queda protegida la casa durante la obra, escríbame."}
+      ]}
+    ],
+    "questions": [
+      "¿Cómo responde mi póliza de hogar mientras la casa está en obra?",
+      "¿Quién compra el seguro de riesgo de construcción y desde cuándo cubre el viento?",
+      "¿La casa quedará desocupada más tiempo del que permite mi póliza?",
+      "¿Tengo los certificados de seguro del contratista y de cada subcontratista?",
+      "¿Se registró el aviso de inicio de obra y cuándo vence?",
+      "¿Qué límite de vivienda necesito cuando termine la obra?",
+      "¿Necesito una nueva inspección de mitigación de viento?"
+    ],
+    "faq": [
+      {"q": "¿Mi seguro de hogar cubre la casa durante una remodelación?", "a": "Depende de la póliza y de la obra. El III recomienda avisar a su aseguradora antes de empezar, o poco después, y ajustar la cobertura al nuevo valor [1]. Si la casa queda vacía, muchas pólizas limitan o excluyen la cobertura después de, por lo general, 30 a 60 días [3]."},
+      {"q": "¿Qué cubre el seguro de riesgo de construcción?", "a": "Protege la obra y los materiales mientras se construye, pero solo frente a los riesgos que la póliza nombra. El DFS de Florida explica que el viento debería estar cubierto, sujeto al contrato, que algunas pólizas exigen cierta etapa de avance para cubrirlo y que la lluvia no es un riesgo nombrado [2]."},
+      {"q": "¿Qué es el aviso de inicio de obra en Florida?", "a": "Es un documento que se registra y se coloca en el sitio antes de la primera inspección. Si la obra no empieza en 90 días, pierde validez, y vence al año salvo que el contrato indique otro plazo. Pagar después de su vencimiento puede hacer que pague dos veces por las mejoras [4]."}
+    ]
+  },
+  "en": {
+    "title": "Insurance During a Florida Renovation",
+    "meta": "Renovating or building in Florida: builder's risk insurance, the vacancy clause, insured contractors and the notice of commencement.",
+    "kicker": "Guide · Renovations",
+    "h1": "Renovations and construction: how to protect the home while work is underway",
+    "dek": "What changes in your insurance when the home is renovated or left empty, what to ask contractors for and which documents keep the family from paying twice.",
+    "summary": [
+      "The Insurance Information Institute (III) recommends contacting your insurer before work begins, or shortly after, and adjusting coverage to the home's new value [1].",
+      "Builder's risk insurance covers named perils; the Florida Department of Financial Services warns that rain is not one of them [2].",
+      "Many homeowners policies limit or exclude coverage if the home is unoccupied for typically 30 to 60 consecutive days [3].",
+      "In Florida, the notice of commencement must be recorded and posted on the site before the first inspection [4]."
+    ],
+    "sections": [
+      {"id": "why-it-matters", "h2": "Why a renovation changes your insurance", "blocks": [
+        {"p": "A major renovation changes almost everything a homeowners policy takes for granted: who comes into the home, what materials are on site, whether the family still lives there and what it would cost to rebuild. The III recommends contacting your agent or insurer before construction begins, or shortly after, so coverage reflects the home's higher value [1]."},
+        {"p": "The most common mistake is assuming the current policy responds the same way during construction. An addition, a new kitchen or a replaced roof raises the cost to rebuild, and if the dwelling limit is not adjusted, the home can be underinsured just when it is worth more. A home under renovation is also often empty for long stretches, which can trigger special policy conditions."}
+      ]},
+      {"id": "builders-risk", "h2": "Builder's risk insurance", "blocks": [
+        {"p": "Builder's risk insurance protects the project while it is being built: the structure in progress and the materials on site. Either the owner or the contractor can buy it, so the construction contract should state clearly who buys it, in whose name and until when. This coverage usually ends when the work is completed or the home is occupied again; by then, the homeowners policy should already be adjusted to respond for the finished home, with no days left uncovered between one policy and the other."},
+        {"p": "The Florida Department of Financial Services (DFS) explains that these are named peril policies, meaning they cover only the events the policy lists [2]. It notes that wind damage should be covered, subject to the other terms of the contract, but that some policies require construction to reach a certain stage of completion before wind coverage applies [2]. It also clarifies that rain is not a named peril, although there could be limited coverage for materials on the job site if included by endorsement [2]."},
+        {"callout": "In Florida, ask on what date your builder's risk wind coverage begins, and compare it with the construction schedule and with hurricane season."}
+      ]},
+      {"id": "vacancy", "h2": "When the home sits empty during construction", "blocks": [
+        {"p": "The III explains that most homeowners policies include a vacancy clause, which limits or excludes coverage if the property is unoccupied for typically 30 to 60 consecutive days [3]. A family that moves to another home during a long renovation can fall into that situation without noticing."},
+        {"p": "The III advises always notifying the insurer if the home will be unoccupied for an extended period, and explains that vacant home policies and vacancy endorsements exist for those cases [3]. Also check whether the policy requires shutting off the water, maintaining the temperature or making regular visits while no one lives in the home."}
+      ]},
+      {"id": "contractors", "h2": "Contractors, subcontractors and workers on site", "blocks": [
+        {"p": "The III recommends asking for proof of the contractor's workers' compensation policy, because injured workers may sue you if the contractor does not have proper insurance [1]. It adds that independent builders, electricians and plumbers may not be covered under the contractor's workers' compensation policy, so verify each one's coverage [1]."},
+        {"table": {"head": ["Document", "Why it matters"], "rows": [
+          ["Contractor's license", "Confirms they can perform the type of work contracted"],
+          ["Liability certificate", "Responds to damage the work causes to others or to your home"],
+          ["Workers' compensation certificate", "Responds to worker injuries"],
+          ["Construction contract", "Sets who buys builder's risk and who is responsible for what"],
+          ["Lien releases", "Show that subcontractors and suppliers were paid"]
+        ]}},
+        {"p": "Acting as your own contractor has consequences. The disclosure statement the law requires from anyone pulling a permit as an owner-builder warns that if an unlicensed contractor or an employee is injured on the property, the owner may be held liable for damages, and that the owner's homeowners insurance may not cover those injuries [5]. It also warns that if the home is sold or leased within 1 year after the work is complete, the law presumes it was built for sale or lease, which violates the exemption [5]."}
+      ]},
+      {"id": "notice-of-commencement", "h2": "The notice of commencement and the risk of paying twice", "blocks": [
+        {"p": "Florida's construction lien law requires the notice of commencement to be recorded and posted on the site before the first inspection [4]. The notice becomes void if work does not begin within 90 days of recording, and it expires after 1 year unless the contract specifies a longer period [4]."},
+        {"p": "The warning the law requires is blunt: payments the owner makes after the notice expires are considered improper and can result in paying twice for the improvements [4]. In practice, ask for lien releases from subcontractors and suppliers before each payment, and consult your attorney before signing the contract or the notice."}
+      ]},
+      {"id": "after-the-work", "h2": "After the work: update the policy", "blocks": [
+        {"p": "When the work is finished, the III recommends making sure the policy reflects the structure's higher value and increasing personal property coverage if you bought new items, keeping the receipts [1]. It is a good moment to request a new rebuilding cost estimate and to review ordinance or law coverage, which pays certain costs of meeting the current building code."},
+        {"p": "If the work included a new roof, impact-rated windows or doors, or better roof-to-wall connections, request a new wind mitigation inspection. Those features can affect the homeowners policy rate, and the old form no longer describes the home as it is today."}
+      ]},
+      {"id": "mitigation", "h2": "How to reduce the risk", "blocks": [
+        {"p": "These steps protect the project, the workers and the family's assets:"},
+        {"ul": [
+          "Notify your insurer before starting and confirm in writing how your policy responds during construction [1].",
+          "Set in the contract who buys builder's risk and from what date it covers wind [2].",
+          "Ask the contractor and each subcontractor for liability and workers' compensation certificates [1].",
+          "Record the notice of commencement on time and ask for lien releases before each payment [4].",
+          "Lock up expensive materials and keep appliances off site until they are installed.",
+          "Keep the site closed and lit and, if possible, protected by cameras or an alarm.",
+          "Prepare a hurricane plan for the project: secure materials, scaffolding and unfinished openings.",
+          "When the work is done, update the dwelling limit and request a new wind mitigation inspection."
+        ]},
+        {"p": "If you are about to renovate and want to review how the home is protected during the work, write to me."}
+      ]}
+    ],
+    "questions": [
+      "How does my homeowners policy respond while the home is under construction?",
+      "Who buys builder's risk insurance, and from when does it cover wind?",
+      "Will the home be unoccupied longer than my policy allows?",
+      "Do I have certificates of insurance from the contractor and each subcontractor?",
+      "Was the notice of commencement recorded, and when does it expire?",
+      "What dwelling limit will I need when the work is finished?",
+      "Do I need a new wind mitigation inspection?"
+    ],
+    "faq": [
+      {"q": "Does homeowners insurance cover the home during a renovation?", "a": "It depends on the policy and the project. The III recommends notifying your insurer before starting, or shortly after, and adjusting coverage to the new value [1]. If the home is left empty, many policies limit or exclude coverage after typically 30 to 60 days [3]."},
+      {"q": "What does builder's risk insurance cover?", "a": "It protects the project and materials during construction, but only against the perils the policy names. Florida DFS explains that wind should be covered, subject to the contract, that some policies require a certain stage of completion before covering it and that rain is not a named peril [2]."},
+      {"q": "What is a notice of commencement in Florida?", "a": "It is a document recorded and posted on the site before the first inspection. If work does not begin within 90 days, it becomes void, and it expires after 1 year unless the contract sets another period. Paying after it expires can result in paying twice for the improvements [4]."}
+    ]
+  },
+  "sources": [
+    {"n": 1, "label": "Insurance Information Institute (Triple-I), Remodeling your home", "url": "https://www.iii.org/article/remodeling-your-home"},
+    {"n": 2, "label": "Florida Department of Financial Services, Commercial Insurance Coverage FAQs (builder's risk)", "url": "https://myfloridacfo.com/division/consumers/storm/commercial-disaster-faqs"},
+    {"n": 3, "label": "Insurance Information Institute (Triple-I), When No One's Home: Understanding the Role of Vacancy Insurance (June 3, 2025)", "url": "https://www.iii.org/blog/when-no-ones-home-understanding-roleof-vacancy-insurance"},
+    {"n": 4, "label": "Florida Statutes, section 713.13 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/713.13"},
+    {"n": 5, "label": "Florida Statutes, section 489.103 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/489.103"}
+  ]
+}

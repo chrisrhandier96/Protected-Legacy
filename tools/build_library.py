@@ -92,9 +92,10 @@ def p_inv(l): return "/herramientas/inventario-familiar/" if l == "es" else "/en
 def load(p): return json.load(open(os.path.join(ROOT, p), encoding="utf-8"))
 def esc(s): return html.escape(s, quote=True)
 def rich(s):
-    """allow only <b>/<strong>/<em>; turn [n] into footnote links"""
+    """allow only <b>/<strong>/<em> and internal <a href="/...">; turn [n] into footnote links"""
     s = html.escape(s, quote=False)
     s = re.sub(r"&lt;(/?)(b|strong|em)&gt;", r"<\1\2>", s)
+    s = re.sub(r'&lt;a href="(/[\w/#.-]*)"&gt;(.*?)&lt;/a&gt;', r'<a href="\1">\2</a>', s)
     def _fn(m):
         nums = re.findall(r"\d+", m.group(0))
         return '<sup class="fn">' + ",".join(f'<a href="#fuente-{n}" aria-label="fuente {n}">{n}</a>' for n in nums) + "</sup>"

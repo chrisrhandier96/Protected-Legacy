@@ -1,0 +1,169 @@
+{
+  "key": "str",
+  "slug_es": "alquiler-vacacional",
+  "slug_en": "short-term-rentals",
+  "updated": "2026-09-25",
+  "related": ["res", "lia", "cnd"],
+  "es": {
+    "title": "Seguro para alquiler vacacional en Florida",
+    "meta": "Alquiler vacacional en Florida: licencia estatal, reglas locales y de condominio, impuestos, por qué la póliza de hogar puede no responder y qué revisar.",
+    "kicker": "Guía · Alquiler vacacional",
+    "h1": "Alquiler vacacional en Florida: licencia, impuestos y la póliza que realmente responde",
+    "dek": "Qué cambia cuando su casa o su apartamento recibe huéspedes que pagan, y cómo revisar la protección antes de publicar el anuncio.",
+    "summary": [
+      "En Florida, alquilar la unidad completa más de tres veces al año por menos de 30 días, o anunciarla como alquiler habitual, requiere una licencia estatal de alquiler vacacional [1].",
+      "Los alquileres de seis meses o menos pagan impuesto estatal sobre las ventas y, en la mayoría de los condados, un impuesto local de turismo [3].",
+      "La NAIC advierte que la mayoría de las pólizas de hogar no están diseñadas para accidentes derivados de alquileres de corto plazo [4].",
+      "Las reglas del condominio o de la asociación de propietarios pueden limitar o prohibir el alquiler, aunque la ley estatal proteja la actividad frente a los municipios."
+    ],
+    "sections": [
+      {"id": "que-es", "h2": "Qué se considera alquiler vacacional en Florida", "blocks": [
+        {"p": "Para el Estado, un alquiler vacacional es una unidad en un condominio o cooperativa, o una casa de hasta cuatro unidades, que funciona como alojamiento público transitorio y no es un tiempo compartido. La División de Hoteles y Restaurantes del Departamento de Regulación Comercial y Profesional (DBPR) exige una licencia si la unidad completa se alquila más de tres veces en un año calendario por períodos menores de 30 días o de un mes calendario, lo que sea menor, o si se anuncia o se presenta al público como un lugar que se alquila con regularidad [1]."},
+        {"p": "El DBPR emite licencias de alquiler vacacional para condominios y para viviendas, como casas unifamiliares y edificios de cuatro unidades o menos, y realiza inspecciones de seguridad contra incendios [1]. El propio DBPR aclara que, además de la licencia estatal, la actividad puede estar sujeta a la autoridad de la ciudad, del condado u otras autoridades locales [1]."},
+        {"callout": "Si la casa de temporada de su familia se alquila de vez en cuando, cuente cuántas veces al año ocurre y cómo se anuncia. Esos dos datos determinan si la actividad ya es, para el Estado, un alojamiento público."}
+      ]},
+      {"id": "reglas-locales", "h2": "Reglas locales, del condominio y de la asociación, y los impuestos", "blocks": [
+        {"p": "La ley de Florida impide, en general, que las ciudades y los condados prohíban los alquileres vacacionales o regulen su duración o frecuencia, salvo las normas locales adoptadas el 1 de junio de 2011 o antes [2]. Sin embargo, los gobiernos locales pueden regular otros aspectos, como el registro, el estacionamiento, la basura o el ruido, según lo que permita la ley."},
+        {"p": "Esa protección se refiere a los gobiernos locales, no a las reglas privadas. La declaración de un condominio o los documentos de una asociación de propietarios pueden limitar el alquiler de corto plazo, fijar plazos mínimos o exigir el registro de los huéspedes. Antes de comprar o de publicar un anuncio, conviene que su abogado revise esos documentos."},
+        {"p": "También hay impuestos. El Departamento de Ingresos de Florida explica que el alquiler de alojamiento por seis meses o menos paga el impuesto estatal sobre las ventas, más el recargo discrecional del condado cuando aplica, y que los condados pueden cobrar impuestos locales de alquiler transitorio, como el impuesto de desarrollo turístico [3]. Algunas plataformas cobran y remiten parte de estos impuestos; conviene confirmar con su contador cuáles quedan a su cargo."}
+      ]},
+      {"id": "poliza-de-hogar", "h2": "Por qué la póliza de hogar puede no responder", "blocks": [
+        {"p": "La Asociación Nacional de Comisionados de Seguros (NAIC) advierte que la mayoría de las pólizas de hogar o de vivienda no están diseñadas para cubrir accidentes derivados de alquileres de corto plazo [4]. Explica que una póliza de hogar suele cubrir la caída de un visitante, pero que, si esa persona es un huésped que paga, el caso podría quedar excluido [4]."},
+        {"p": "La NAIC agrega que, si la propiedad se anuncia con cierta frecuencia, es probable que la póliza considere la actividad como un negocio en el hogar, y que las pólizas de hogar suelen excluir o limitar esa cobertura [4]. También señala que algunas plataformas ofrecen seguros a los anfitriones, mientras que otras recomiendan consultar a su agente [4]. Lo que ofrece una plataforma tiene sus propios términos y no reemplaza la revisión de sus pólizas."},
+        {"table": {"head": ["Riesgo", "Qué puede pasar con una póliza de hogar común", "Qué revisar"], "rows": [
+          ["Lesión de un huésped", "Puede excluirse si el huésped paga", "Responsabilidad civil para alquiler de corto plazo"],
+          ["Daños causados por huéspedes", "Cobertura limitada o excluida", "Cómo se cubren robo, vandalismo y daños intencionales"],
+          ["Ingresos perdidos tras un huracán", "Normalmente no se cubren", "Cobertura de pérdida de renta"],
+          ["Actividad frecuente", "Puede considerarse negocio en el hogar", "Una póliza de arrendador o un endoso específico"]
+        ]}}
+      ]},
+      {"id": "opciones", "h2": "Opciones de cobertura para una propiedad que se alquila", "blocks": [
+        {"p": "La NAIC sugiere hablar con su agente sobre el alquiler compartido y considerar una póliza de arrendador, que puede cubrir la casa, otras estructuras, el contenido, la renta perdida por daños, los gastos legales y los reclamos de responsabilidad [4]. Según el uso, las alternativas incluyen un endoso para alquiler de corto plazo en la póliza actual o una póliza diseñada para propiedades de alquiler."},
+        {"ul": [
+          "Declare el uso real de la propiedad: cuántas noches se alquila, si la familia la usa y quién la administra.",
+          "Confirme si su póliza umbrella responde por una propiedad que se alquila y qué exige como cobertura subyacente.",
+          "Si la propiedad está en un condominio, coordine su póliza de unidad con la póliza maestra de la asociación.",
+          "Revise la cobertura de inundación por separado, porque la póliza de hogar no la incluye.",
+          "Guarde el contrato con el administrador y el certificado de seguro de ese administrador."
+        ]}
+      ]},
+      {"id": "huespedes", "h2": "Piscinas, muelles y otros riesgos de los huéspedes", "blocks": [
+        {"p": "Las casas de temporada en Florida suelen tener piscinas, muelles, embarcaciones, motos de agua o carritos de golf. Para un huésped que no conoce la propiedad, cada uno es un riesgo distinto. Prestar la embarcación o el carrito a un huésped puede quedar fuera tanto de la póliza de hogar como de la póliza de alquiler, por lo que conviene definir por escrito qué equipos no forman parte del alquiler."},
+        {"p": "El administrador de la propiedad también importa. Un contrato claro define quién responde por la limpieza, el mantenimiento, la preparación para huracanes y las emergencias, y si el administrador mantiene su propio seguro de responsabilidad. Durante una alerta de huracán, alguien debe decidir si se cancela una reserva, cómo se asegura la casa y quién la revisa después del paso de la tormenta."},
+        {"p": "Los huéspedes internacionales y los grupos grandes merecen atención adicional. Un contrato de alquiler bien redactado, con reglas de la casa aceptadas antes de la llegada, un depósito y la identificación de quien reserva, no reemplaza al seguro, pero facilita cualquier reclamo y ayuda a demostrar que la propiedad se administra con cuidado. Si la familia también usa la casa, conviene separar con claridad las temporadas de uso propio y las de alquiler."}
+      ]},
+      {"id": "mitigacion", "h2": "Cómo reducir el riesgo", "blocks": [
+        {"p": "Estas medidas ayudan a prevenir reclamos y a documentar que la propiedad se administra con cuidado:"},
+        {"ul": [
+          "Confirme si necesita la licencia del DBPR y regístrese antes de recibir huéspedes [1].",
+          "Instale barreras, alarmas o cubiertas de piscina, y deje instrucciones claras de seguridad para los huéspedes.",
+          "Guarde bajo llave las embarcaciones, las motos de agua, los carritos de golf y sus llaves.",
+          "Coloque detectores de humo y de monóxido de carbono, extintores y un plan de evacuación visible.",
+          "Use sensores de fugas de agua y válvulas de cierre automático, sobre todo entre estadías.",
+          "Defina reglas escritas sobre ocupación máxima, fiestas, mascotas y uso del muelle.",
+          "Tenga un plan de huracán por escrito para la casa y para las reservas durante la temporada.",
+          "Fotografíe la propiedad y su contenido antes de cada temporada y conserve los recibos de mejoras."
+        ]},
+        {"p": "Si quiere revisar cómo está protegida su propiedad de alquiler, escríbame."}
+      ]}
+    ],
+    "questions": [
+      "¿Mi forma de alquilar requiere la licencia de alquiler vacacional del DBPR?",
+      "¿Qué dicen la declaración del condominio o los documentos de la asociación sobre alquileres de corto plazo?",
+      "¿Mi póliza actual responde si un huésped que paga se lesiona?",
+      "¿Necesito una póliza de arrendador o un endoso de alquiler de corto plazo?",
+      "¿Mi umbrella cubre una propiedad que se alquila?",
+      "¿Qué impuestos cobra la plataforma y cuáles debo declarar yo?",
+      "¿Quién decide qué hacer con las reservas cuando se acerca un huracán?"
+    ],
+    "faq": [
+      {"q": "¿Necesito licencia para alquilar mi casa por temporadas cortas en Florida?", "a": "Si alquila la unidad completa más de tres veces en un año calendario por períodos menores de 30 días o de un mes calendario, o si la anuncia como un lugar que se alquila con regularidad, el DBPR exige una licencia de alquiler vacacional. También pueden aplicar reglas locales y las del condominio o la asociación [1]."},
+      {"q": "¿Mi seguro de hogar cubre a los huéspedes de un alquiler de corto plazo?", "a": "No necesariamente. La NAIC advierte que la mayoría de las pólizas de hogar no están diseñadas para accidentes derivados de alquileres de corto plazo, que un huésped que paga podría quedar excluido y que la actividad frecuente puede tratarse como un negocio en el hogar [4]. Revise su póliza con su agente antes de alquilar."},
+      {"q": "¿Qué impuestos se pagan por un alquiler vacacional en Florida?", "a": "El Departamento de Ingresos de Florida explica que los alquileres de seis meses o menos pagan el impuesto estatal sobre las ventas, más el recargo del condado cuando aplica, y que los condados pueden cobrar impuestos de alquiler transitorio, como el de desarrollo turístico [3]. Su contador puede confirmar cuáles le corresponden."}
+    ]
+  },
+  "en": {
+    "title": "Short-Term Rental Insurance in Florida",
+    "meta": "Short-term rentals in Florida: when you need a state license, local and condo rules, taxes, why a homeowners policy may not respond and what to review.",
+    "kicker": "Guide · Short-term rentals",
+    "h1": "Short-term rentals in Florida: licensing, taxes and the policy that actually responds",
+    "dek": "What changes when your home or condo hosts paying guests, and how to review your protection before you publish the listing.",
+    "summary": [
+      "In Florida, renting the entire unit more than three times a year for less than 30 days, or advertising it as regularly rented, requires a state vacation rental license [1].",
+      "Rentals of six months or less owe state sales tax and, in most counties, a local tourist development tax [3].",
+      "The NAIC warns that most homeowners policies are not designed for accidents arising from short-term rentals [4].",
+      "Condominium or homeowners association rules can limit or ban rentals, even though state law protects the activity from cities and counties."
+    ],
+    "sections": [
+      {"id": "what-counts", "h2": "What counts as a vacation rental in Florida", "blocks": [
+        {"p": "For the State, a vacation rental is a unit in a condominium or cooperative, or a home with up to four units, that operates as transient public lodging and is not a timeshare. The Division of Hotels and Restaurants of the Department of Business and Professional Regulation (DBPR) requires a license if the entire unit is rented more than three times in a calendar year for periods of less than 30 days or one calendar month, whichever is less, or if it is advertised or held out to the public as a place regularly rented to guests [1]."},
+        {"p": "DBPR issues vacation rental licenses for condominiums and for dwellings, such as single-family homes and buildings with four units or fewer, and it conducts fire safety inspections [1]. DBPR itself notes that, beyond the state license, the business may still be subject to city, county or other local authorities [1]."},
+        {"callout": "If your family's seasonal home is rented from time to time, count how many times a year it happens and how it is advertised. Those two facts decide whether the State already treats it as public lodging."}
+      ]},
+      {"id": "local-rules", "h2": "Local, condominium and association rules, and taxes", "blocks": [
+        {"p": "Florida law generally prevents cities and counties from banning vacation rentals or regulating their duration or frequency, except for local rules adopted on or before June 1, 2011 [2]. Local governments can still regulate other matters, such as registration, parking, trash or noise, within what the law allows."},
+        {"p": "That protection applies to local governments, not to private rules. A condominium declaration or the documents of a homeowners association can limit short-term rentals, set minimum lease terms or require guest registration. Before you buy or publish a listing, have your attorney review those documents."},
+        {"p": "There are also taxes. The Florida Department of Revenue explains that renting accommodations for six months or less owes state sales tax, plus the county discretionary surtax where it applies, and that counties may levy local transient rental taxes such as the tourist development tax [3]. Some platforms collect and remit part of these taxes; confirm with your CPA which ones remain your responsibility."}
+      ]},
+      {"id": "homeowners-gap", "h2": "Why a homeowners policy may not respond", "blocks": [
+        {"p": "The National Association of Insurance Commissioners (NAIC) warns that most homeowners or dwelling policies are not designed to cover accidents arising from short-term rentals [4]. It explains that a homeowners policy usually covers a visitor's fall, but that if the person is a paying guest, the claim might be excluded [4]."},
+        {"p": "The NAIC adds that if the property is listed with any frequency, the policy will likely treat the activity as a home-based business, and homeowners policies usually exclude or limit that coverage [4]. It also notes that some platforms offer insurance to hosts, while others recommend contacting your agent [4]. Whatever a platform provides comes with its own terms and does not replace a review of your own policies."},
+        {"table": {"head": ["Risk", "What can happen with a typical homeowners policy", "What to check"], "rows": [
+          ["Guest injury", "May be excluded when the guest pays", "Liability that applies to short-term rentals"],
+          ["Damage caused by guests", "Limited or excluded coverage", "How theft, vandalism and intentional damage are handled"],
+          ["Lost income after a hurricane", "Usually not covered", "Loss of rents coverage"],
+          ["Frequent rentals", "May be treated as a home-based business", "A landlord policy or a specific endorsement"]
+        ]}}
+      ]},
+      {"id": "coverage-options", "h2": "Coverage options for a property you rent out", "blocks": [
+        {"p": "The NAIC suggests talking with your agent about home-sharing and considering a landlord policy, which can cover the home, other structures, contents, lost rental income from damage, legal fees and liability claims [4]. Depending on the use, the alternatives include a short-term rental endorsement on your current policy or a policy designed for rental properties."},
+        {"ul": [
+          "Disclose the real use of the property: how many nights it is rented, whether the family uses it and who manages it.",
+          "Confirm whether your umbrella responds for a property you rent out and what it requires as underlying coverage.",
+          "If the property is a condominium unit, coordinate your unit policy with the association's master policy.",
+          "Review flood coverage separately, because a homeowners policy does not include it.",
+          "Keep the property manager's contract and the manager's certificate of insurance."
+        ]}
+      ]},
+      {"id": "guest-risks", "h2": "Pools, docks and other guest risks", "blocks": [
+        {"p": "Seasonal homes in Florida often come with pools, docks, boats, personal watercraft or golf carts. For a guest who does not know the property, each one is a separate risk. Lending the boat or the golf cart to a guest can fall outside both the homeowners policy and the rental policy, so put in writing which equipment is not part of the rental."},
+        {"p": "The property manager matters too. A clear contract defines who is responsible for cleaning, maintenance, hurricane preparation and emergencies, and whether the manager carries its own liability insurance. During a hurricane warning, someone must decide whether to cancel a booking, how the home is secured and who inspects it after the storm passes."},
+        {"p": "International guests and large groups deserve extra attention. A well-drafted rental agreement, with house rules accepted before arrival, a deposit and the identity of the person who books, does not replace insurance, but it makes any claim easier and helps show that the property is managed with care. If the family also uses the home, keep a clear record of the periods of personal use and the periods it is rented."}
+      ]},
+      {"id": "mitigation", "h2": "How to reduce the risk", "blocks": [
+        {"p": "These steps help prevent claims and document that the property is managed with care:"},
+        {"ul": [
+          "Confirm whether you need the DBPR license and obtain it before hosting guests [1].",
+          "Install pool barriers, alarms or covers, and leave clear safety instructions for guests.",
+          "Lock away boats, personal watercraft, golf carts and their keys.",
+          "Install smoke and carbon monoxide detectors, fire extinguishers and a posted evacuation plan.",
+          "Use water leak sensors and automatic shutoff valves, especially between stays.",
+          "Set written rules on maximum occupancy, parties, pets and dock use.",
+          "Keep a written hurricane plan for the home and for bookings during the season.",
+          "Photograph the property and its contents before each season and keep receipts for improvements."
+        ]},
+        {"p": "If you want to review how your rental property is protected, write to me."}
+      ]}
+    ],
+    "questions": [
+      "Does the way I rent require a DBPR vacation rental license?",
+      "What do the condominium declaration or the association documents say about short-term rentals?",
+      "Does my current policy respond if a paying guest is injured?",
+      "Do I need a landlord policy or a short-term rental endorsement?",
+      "Does my umbrella cover a property I rent out?",
+      "Which taxes does the platform collect, and which must I report myself?",
+      "Who decides what happens to bookings when a hurricane approaches?"
+    ],
+    "faq": [
+      {"q": "Do I need a license to rent my home short term in Florida?", "a": "If you rent the entire unit more than three times in a calendar year for periods of less than 30 days or one calendar month, or advertise it as a place regularly rented to guests, DBPR requires a vacation rental license. Local rules and condominium or association rules may also apply [1]."},
+      {"q": "Does my homeowners insurance cover short-term rental guests?", "a": "Not necessarily. The NAIC warns that most homeowners policies are not designed for accidents arising from short-term rentals, that a paying guest might be excluded and that frequent rentals can be treated as a home-based business [4]. Review your policy with your agent before renting."},
+      {"q": "What taxes apply to a vacation rental in Florida?", "a": "The Florida Department of Revenue explains that rentals of six months or less owe state sales tax, plus the county surtax where it applies, and that counties may levy transient rental taxes such as the tourist development tax [3]. Your CPA can confirm which ones apply to you."}
+    ]
+  },
+  "sources": [
+    {"n": 1, "label": "Florida DBPR, Division of Hotels and Restaurants, Guide to Vacation Rentals and Timeshare Projects", "url": "https://www2.myfloridalicense.com/hotels-restaurants/licensing/vrtsp-guide/"},
+    {"n": 2, "label": "Florida Statutes, section 509.032 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/509.032"},
+    {"n": 3, "label": "Florida Department of Revenue, Sales and Use Tax on Rental of Living or Sleeping Accommodations (GT-800034), and Local Option Transient Rental Tax Rates (DR-15TDT)", "url": "https://floridarevenue.com/Forms_library/current/brochure/gt800034.pdf"},
+    {"n": 4, "label": "NAIC, Consumer Insight: Renting Out Your Home? You Need Insurance Coverage for Home-Sharing Rentals (March 19, 2020)", "url": "https://content.naic.org/article/consumer-insight-renting-out-your-home-you-need-insurance-coverage-home-sharing-rentals"}
+  ]
+}
