@@ -1,0 +1,176 @@
+{
+  "key": "kr",
+  "slug_es": "secuestro-y-extorsion",
+  "slug_en": "kidnap-ransom",
+  "updated": "2026-09-25",
+  "related": ["cyb", "lia", "emp"],
+  "es": {
+    "title": "Seguro de secuestro y extorsión (K&R) para familias",
+    "meta": "Qué es el seguro de secuestro y extorsión (K&R), a quién le conviene, qué eventos cubre y por qué importan los consultores de respuesta y la confidencialidad.",
+    "kicker": "Guía · Secuestro y extorsión",
+    "h1": "Seguro de secuestro y extorsión: qué es, a quién le conviene y cómo funciona",
+    "dek": "Una explicación serena de una cobertura discreta: qué eventos incluye, por qué el equipo de respuesta vale más que el pago y cómo se relaciona con sus otras pólizas.",
+    "summary": [
+      "El seguro de secuestro y extorsión (K&R) está pensado para familias con perfil público, dueños de empresas familiares y personas que viajan a zonas de mayor riesgo.",
+      "Las pólizas para personas suelen pagar el costo de manejar un incidente; según el Instituto de Información de Seguros (III), a diferencia de las corporativas, en general no reembolsan el rescate.",
+      "El componente más valioso suele ser el acceso a consultores especializados en respuesta a crisis.",
+      "Muchas pólizas exigen mantener en reserva la existencia misma de la cobertura."
+    ],
+    "sections": [
+      {"id": "que-es", "h2": "Qué es el seguro de secuestro y extorsión y para quién es", "blocks": [
+        {"p": "El seguro de secuestro, rescate y extorsión (conocido en inglés como K&R, kidnap and ransom) cubre los costos de responder a un secuestro, una extorsión u otros eventos de coacción. El Instituto de Información de Seguros (III) explica que existe como parte de paquetes empresariales, como póliza independiente para personas y, en algunos casos, dentro de la póliza de hogar [1]."},
+        {"p": "No es una cobertura para todos. Suele tener sentido para familias con un perfil público o mediático, dueños de empresas familiares conocidas en su comunidad, y personas que viajan con frecuencia por negocios o por familia a países donde el riesgo de secuestro es más alto, incluidos varios de América Latina. Para muchas otras familias, la prioridad está en la prevención y en las coberturas cibernéticas, que responden a las extorsiones más comunes."}
+      ]},
+      {"id": "eventos-cubiertos", "h2": "Eventos cubiertos: secuestro, secuestro exprés, extorsión, detención y amenazas", "blocks": [
+        {"p": "Según el III, las pólizas de K&R pueden cubrir el secuestro y la retención de una persona hasta el pago de un rescate, la extorsión (exigencias ilegales de pago para evitar daños a personas o bienes), la detención ilegal por autoridades o funcionarios que actúan fuera de la ley, y el secuestro de aviones, barcos u otros vehículos [2]. Algunas pólizas también incluyen el secuestro exprés (una retención breve para obligar a retirar dinero) y las amenazas; confirme si la suya los incluye."},
+        {"p": "Un evento que merece atención especial es el secuestro virtual: nadie fue secuestrado, pero alguien llama o escribe asegurando que tiene a un ser querido y exige un pago inmediato. El FBI advirtió en diciembre de 2025 que estos delincuentes alteran fotos tomadas de redes sociales para fabricar pruebas de vida falsas [3]. Si una póliza cubre la extorsión, conviene confirmar si incluye la asesoría en estos casos, aunque no haya secuestro real."},
+        {"table": {"head": ["Evento", "Qué suele cubrir la póliza", "Qué revisar"], "rows": [
+          ["Secuestro", "Consultores, costos de manejo del incidente y, en pólizas corporativas, el rescate", "Si su póliza personal reembolsa el rescate"],
+          ["Secuestro exprés", "Respuesta y ciertos gastos", "Si está incluido expresamente"],
+          ["Extorsión y amenazas", "Evaluación de la amenaza y asesoría", "Si incluye amenazas en línea"],
+          ["Detención ilegal", "Apoyo legal y de respuesta", "Países o situaciones excluidas"],
+          ["Secuestro de vehículo, barco o avión", "Gastos de respuesta y recuperación", "Límites por persona"]
+        ]}}
+      ]},
+      {"id": "consultores", "h2": "Por qué los consultores de respuesta importan más que el pago", "blocks": [
+        {"p": "El III enumera entre los gastos cubiertos los honorarios de consultores de seguridad (investigadores, negociadores) y de manejo de crisis, además de servicios legales, de relaciones públicas, viajes, gastos médicos y de rehabilitación, entre otros [2]. En la práctica, lo que más valor aporta es que un equipo con experiencia entre en acción desde la primera llamada."},
+        {"p": "Un consultor de respuesta ayuda a la familia a comunicarse, a coordinar con las autoridades, a evitar errores bajo presión y a proteger a los demás miembros de la familia. También ayuda a distinguir un secuestro real de un secuestro virtual. El III señala además que las aseguradoras de K&R suelen incluir servicios de consultoría y capacitación para reducir el riesgo [2]."},
+        {"callout": "Antes de contratar, pregunte quién es el equipo de respuesta, cómo se activa (un número disponible las 24 horas) y si su servicio empieza antes de que se confirme un pago."}
+      ]},
+      {"id": "confidencialidad", "h2": "La condición de confidencialidad", "blocks": [
+        {"p": "Muchas pólizas de K&R incluyen una condición que exige mantener en reserva la existencia de la cobertura, sus términos y sus límites. La razón es práctica: saber que alguien tiene un seguro de rescate puede convertirlo en un blanco más atractivo. Revelar la póliza puede afectar la cobertura, según lo que diga cada contrato."},
+        {"p": "Esto tiene consecuencias concretas para una familia. Conviene limitar quién sabe de la póliza, no mencionarla en conversaciones con personal del hogar ni en redes, y guardar la documentación con la misma discreción que los documentos financieros más sensibles. Si su póliza tiene esta condición, confirme con su agente exactamente qué exige."}
+      ]},
+      {"id": "viajes", "h2": "Viajes y niveles de alerta del Departamento de Estado", "blocks": [
+        {"p": "El Departamento de Estado de EE. UU. clasifica cada destino en cuatro niveles: 1, tomar precauciones normales; 2, mayor precaución; 3, reconsiderar el viaje; y 4, no viajar [4]. Además, usa indicadores de riesgo específicos, entre ellos uno de secuestro o toma de rehenes, marcado con la letra K [4]."},
+        {"p": "Estos avisos son un buen punto de partida para conversar con su agente: algunas pólizas excluyen o limitan países con ciertos niveles de alerta, y otras piden avisar antes de viajar a ellos. Para la familia, también son una guía para decidir qué viajes requieren preparación adicional."},
+        {"ul": [
+          "Revise el aviso del Departamento de Estado de cada destino antes de reservar.",
+          "Pregunte si su póliza excluye países según su nivel de alerta.",
+          "Confirme si la cobertura aplica a todos los miembros de la familia y al personal que viaja con ustedes."
+        ]}
+      ]},
+      {"id": "otras-polizas", "h2": "Cómo se relaciona con la umbrella, el ciberseguro y el seguro de viaje", "blocks": [
+        {"p": "Cada póliza cumple un papel distinto. La umbrella responde por su responsabilidad civil frente a terceros; no está diseñada para pagar rescates ni consultores de crisis. El ciberseguro personal responde a extorsiones digitales, como el secuestro de datos o la amenaza de publicar información privada. El seguro de viaje suele cubrir gastos médicos, evacuaciones y cancelaciones, pero en general no un secuestro."},
+        {"p": "En cuanto a la política pública, el gobierno de EE. UU. reafirmó en 2015 su política de larga data de no hacer concesiones a los secuestradores, pero aclaró que esa política no significa no comunicarse, y que puede apoyar los esfuerzos privados para recuperar a una persona [5][6]. Al anunciar esa política, el presidente también señaló que ninguna familia de un rehén estadounidense había sido procesada por pagar un rescate [7]. Cualquier decisión en ese terreno exige asesoría legal y coordinación con las autoridades."}
+      ]},
+      {"id": "mitigacion", "h2": "Cómo reducir el riesgo", "blocks": [
+        {"p": "La planificación se hace en términos generales y con calma, mucho antes de cualquier viaje:"},
+        {"ul": [
+          "Acuerde una palabra clave familiar para emergencias, como recomienda el FBI [3].",
+          "Ante una llamada de secuestro, intente siempre comunicarse con su ser querido antes de considerar cualquier pago [3].",
+          "Limite lo que la familia publica sobre viajes, rutinas, vehículos y ubicación en tiempo real.",
+          "Revise el aviso de viaje del Departamento de Estado de cada destino antes de reservar [4].",
+          "Defina por escrito a quién llama la familia primero y quién decide en una emergencia.",
+          "Pida al personal del hogar discreción sobre la agenda y los viajes de la familia.",
+          "Guarde en un lugar seguro los datos de contacto del equipo de respuesta de su póliza y el número de su agente.",
+          "Hable con sus asesores legales sobre las implicaciones de cualquier pago antes de que sea necesario."
+        ]},
+        {"p": "Si quiere una segunda mirada a cómo está organizada su familia en este tema, escríbame."}
+      ]}
+    ],
+    "questions": [
+      "¿Mi familia tiene el perfil o los patrones de viaje que justifican una póliza de K&R?",
+      "¿La póliza que me ofrecen reembolsa el rescate o solo los costos de respuesta?",
+      "¿Qué equipo de respuesta incluye y cómo se activa a cualquier hora?",
+      "¿Cubre el secuestro exprés, las amenazas y la asesoría en un secuestro virtual?",
+      "¿Qué exige exactamente la condición de confidencialidad?",
+      "¿Hay países excluidos según los niveles de alerta del Departamento de Estado?",
+      "¿Quién de la familia y del personal queda incluido?"
+    ],
+    "faq": [
+      {"q": "¿El seguro de secuestro paga el rescate?", "a": "Depende del tipo de póliza. Según el III, las pólizas corporativas en general cubren la mayoría de los gastos de un secuestro, incluido el rescate, mientras que las pólizas para personas ayudan a pagar el costo de manejar el incidente, pero no reembolsan el rescate [1]. Lea con cuidado qué incluye la suya."},
+      {"q": "¿Qué es un secuestro virtual y qué debo hacer?", "a": "Es una extorsión en la que nadie fue secuestrado: alguien asegura tener a un ser querido y exige un pago rápido. El FBI recomienda intentar comunicarse con esa persona antes de pagar, tener una palabra clave familiar y reportar el caso en ic3.gov [3]."},
+      {"q": "¿Qué significan los niveles de alerta de viaje?", "a": "El Departamento de Estado usa cuatro niveles: 1, precauciones normales; 2, mayor precaución; 3, reconsiderar el viaje; 4, no viajar. Además marca con la letra K los destinos con riesgo de secuestro o toma de rehenes [4]."}
+    ]
+  },
+  "en": {
+    "title": "Kidnap and Ransom (K&R) Insurance for Families",
+    "meta": "What kidnap, ransom and extortion (K&R) insurance is, who it is for, which events it covers, why response consultants and policy confidentiality matter.",
+    "kicker": "Guide · Kidnap and ransom",
+    "h1": "Kidnap and ransom insurance: what it is, who it is for and how it works",
+    "dek": "A calm explanation of a discreet coverage: which events it includes, why the response team matters more than the payment and how it fits with your other policies.",
+    "summary": [
+      "Kidnap and ransom (K&R) insurance is designed for families with a public profile, family business owners and people who travel to higher-risk areas.",
+      "Policies for individuals usually pay the cost of handling an incident; according to the Insurance Information Institute (III), unlike corporate policies, they generally do not reimburse the ransom.",
+      "The most valuable component is usually access to specialized crisis response consultants.",
+      "Many policies require the existence of the coverage itself to stay confidential."
+    ],
+    "sections": [
+      {"id": "what-it-is", "h2": "What kidnap and ransom insurance is and who it is for", "blocks": [
+        {"p": "Kidnap, ransom and extortion insurance (K&R) covers the costs of responding to a kidnapping, an extortion or other coercive events. The Insurance Information Institute (III) explains that it is available as part of business packages, as a stand-alone policy for individuals and, in some cases, as part of a homeowners policy [1]."},
+        {"p": "It is not a coverage for everyone. It usually makes sense for families with a public or media profile, owners of family businesses well known in their communities, and people who travel often for business or family to countries where kidnapping risk is higher, including several in Latin America. For many other families, the priority is prevention and cyber coverage, which responds to the most common extortion attempts."}
+      ]},
+      {"id": "covered-events", "h2": "Covered events: kidnapping, express kidnapping, extortion, detention and threats", "blocks": [
+        {"p": "According to III, K&R policies can cover kidnapping and holding a person until a ransom is paid, extortion (illegal demands for payment to prevent harm to people or property), illegal detention by rogue law enforcement or government officials, and hijacking of planes, ships or other vehicles [2]. Some policies also list express kidnapping (a short abduction to force cash withdrawals) and threats; check whether yours does."},
+        {"p": "One event deserves special attention: virtual kidnapping. No one was taken, but someone calls or texts claiming to hold a loved one and demands an immediate payment. In December 2025 the FBI warned that these criminals alter photos taken from social media to fabricate fake proof of life [3]. If a policy covers extortion, confirm whether it includes advice in these cases, even when there is no real abduction."},
+        {"table": {"head": ["Event", "What the policy usually covers", "What to check"], "rows": [
+          ["Kidnapping", "Consultants, incident handling costs and, on corporate policies, the ransom", "Whether your personal policy reimburses ransom"],
+          ["Express kidnapping", "Response and certain expenses", "Whether it is expressly included"],
+          ["Extortion and threats", "Threat assessment and advice", "Whether online threats are included"],
+          ["Illegal detention", "Legal and response support", "Excluded countries or situations"],
+          ["Vehicle, vessel or aircraft hijack", "Response and recovery expenses", "Per-person limits"]
+        ]}}
+      ]},
+      {"id": "consultants", "h2": "Why response consultants matter more than the payment", "blocks": [
+        {"p": "III lists among the covered expenses the fees of security consultants (investigators, ransom negotiators) and crisis management, along with legal services, public relations, travel, medical and rehabilitation costs, among others [2]. In practice, the greatest value comes from an experienced team taking action from the first call."},
+        {"p": "A response consultant helps the family communicate, coordinate with the authorities, avoid mistakes under pressure and protect other family members. They also help tell a real kidnapping from a virtual one. III also notes that K&R insurers usually include consulting services and training to reduce the risk [2]."},
+        {"callout": "Before buying, ask who the response team is, how it is activated (a number available 24 hours a day) and whether its service starts before any payment is confirmed."}
+      ]},
+      {"id": "confidentiality", "h2": "The confidentiality condition", "blocks": [
+        {"p": "Many K&R policies include a condition that requires keeping the existence of the coverage, its terms and its limits confidential. The reason is practical: knowing that someone carries ransom insurance can make them a more attractive target. Disclosing the policy can affect coverage, depending on the wording of each contract."},
+        {"p": "This has concrete consequences for a family. Limit who knows about the policy, do not mention it around household staff or on social media, and store the documents with the same discretion as your most sensitive financial records. If your policy has this condition, confirm with your agent exactly what it requires."}
+      ]},
+      {"id": "travel", "h2": "Travel and State Department advisory levels", "blocks": [
+        {"p": "The U.S. State Department rates each destination on four levels: 1, exercise normal precautions; 2, exercise increased caution; 3, reconsider travel; and 4, do not travel [4]. It also uses specific risk indicators, including one for kidnapping or hostage taking, marked with the letter K [4]."},
+        {"p": "These advisories are a good starting point for a conversation with your agent: some policies exclude or limit countries at certain advisory levels, and others ask you to give notice before traveling there. For the family, they are also a guide to which trips need extra preparation."},
+        {"ul": [
+          "Check the State Department advisory for each destination before booking.",
+          "Ask whether your policy excludes countries based on their advisory level.",
+          "Confirm whether coverage applies to every family member and to staff who travel with you."
+        ]}
+      ]},
+      {"id": "other-policies", "h2": "How it relates to umbrella, cyber and travel insurance", "blocks": [
+        {"p": "Each policy plays a different role. The umbrella responds to your liability to third parties; it is not designed to pay ransoms or crisis consultants. Personal cyber insurance responds to digital extortion, such as ransomware or threats to publish private information. Travel insurance usually covers medical costs, evacuations and cancellations, but generally not a kidnapping."},
+        {"p": "On public policy, the U.S. government reaffirmed in 2015 its longstanding policy of making no concessions to hostage takers, but it clarified that this does not mean no communication, and that it may support private efforts to recover a person [5][6]. When announcing the policy, the President also noted that no family of an American hostage had ever been prosecuted for paying a ransom [7]. Any decision in that area requires legal advice and coordination with the authorities."}
+      ]},
+      {"id": "mitigation", "h2": "How to reduce the risk", "blocks": [
+        {"p": "Planning is done in general terms and calmly, long before any trip:"},
+        {"ul": [
+          "Agree on a family code word for emergencies, as the FBI recommends [3].",
+          "When you receive a kidnapping call, always try to reach your loved one before considering any payment [3].",
+          "Limit what the family posts about trips, routines, vehicles and real-time location.",
+          "Check the State Department travel advisory for each destination before booking [4].",
+          "Put in writing whom the family calls first and who decides in an emergency.",
+          "Ask household staff to keep the family's schedule and travel plans confidential.",
+          "Keep the contact details of your policy's response team and your agent's number in a safe place.",
+          "Talk with your legal advisors about the implications of any payment before it is ever needed."
+        ]},
+        {"p": "If you want a second look at how your family is set up on this, write to me."}
+      ]}
+    ],
+    "questions": [
+      "Does my family have the profile or travel patterns that justify a K&R policy?",
+      "Does the policy I am offered reimburse the ransom or only the response costs?",
+      "Which response team does it include and how is it activated at any hour?",
+      "Does it cover express kidnapping, threats and advice during a virtual kidnapping?",
+      "What exactly does the confidentiality condition require?",
+      "Are countries excluded based on State Department advisory levels?",
+      "Which family members and staff are included?"
+    ],
+    "faq": [
+      {"q": "Does kidnap insurance pay the ransom?", "a": "It depends on the type of policy. According to III, corporate policies generally cover most kidnapping-related expenses, including the ransom, while policies for individuals help pay for the cost of dealing with a kidnapping but do not reimburse ransom payments [1]. Read carefully what yours includes."},
+      {"q": "What is a virtual kidnapping and what should I do?", "a": "It is an extortion in which no one was actually taken: someone claims to hold a loved one and demands a quick payment. The FBI recommends trying to reach that person before paying, having a family code word and reporting the incident at ic3.gov [3]."},
+      {"q": "What do the travel advisory levels mean?", "a": "The State Department uses four levels: 1, exercise normal precautions; 2, exercise increased caution; 3, reconsider travel; 4, do not travel. It also marks with the letter K destinations with a risk of kidnapping or hostage taking [4]."}
+    ]
+  },
+  "sources": [
+    {"n": 1, "label": "Insurance Information Institute (Triple-I), What does kidnap and ransom insurance cover?", "url": "https://www.iii.org/article/what-does-kidnap-and-ransom-insurance-cover"},
+    {"n": 2, "label": "Insurance Information Institute (Triple-I), Insuring against employee kidnapping and ransom", "url": "https://www.iii.org/article/insuring-against-employee-kidnapping-and-ransom"},
+    {"n": 3, "label": "FBI IC3, PSA I-120525-PSA: Criminals Using Altered Proof-of-Life Media to Extort Victims in Virtual Kidnapping for Ransom Scams (December 5, 2025)", "url": "https://www.ic3.gov/PSA/2025/PSA251205"},
+    {"n": 4, "label": "U.S. Department of State, Travel Advisories", "url": "https://travel.state.gov/en/international-travel/travel-advisories.html"},
+    {"n": 5, "label": "The White House, Fact Sheet: U.S. Government Hostage Policy (June 24, 2015)", "url": "https://obamawhitehouse.archives.gov/the-press-office/2015/06/24/fact-sheet-us-government-hostage-policy"},
+    {"n": 6, "label": "The White House, Presidential Policy Directive 30: Hostage Recovery Activities (June 24, 2015)", "url": "https://obamawhitehouse.archives.gov/the-press-office/2015/06/24/presidential-policy-directive-hostage-recovery-activities"},
+    {"n": 7, "label": "The White House, Statement by the President on the U.S. Government's Hostage Policy Review (June 24, 2015)", "url": "https://obamawhitehouse.archives.gov/the-press-office/2015/06/24/statement-president-us-governments-hostage-policy-review"}
+  ]
+}

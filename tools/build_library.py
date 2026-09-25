@@ -12,7 +12,11 @@ import html, json, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://www.protectedlegacyfl.com"
 GTM = "GTM-P88VGFHR"
-ORDER = ["res", "flo", "aut", "mar", "avi", "col", "lia", "emp"]
+ORDER = ["res", "flo", "aut", "mar", "avi", "col", "lia", "emp", "cyb", "kr", "str", "ren", "brd", "cnd"]
+# only guides whose JSON exists are built (new guides can be added one at a time)
+ORDER = [k for k in ORDER if os.path.exists(os.path.join(ROOT, "content", "guides", k + ".json"))]
+NUM = {"es": {8: "Ocho", 9: "Nueve", 10: "Diez", 11: "Once", 12: "Doce", 13: "Trece", 14: "Catorce", 15: "Quince", 16: "Dieciséis"},
+       "en": {8: "Eight", 9: "Nine", 10: "Ten", 11: "Eleven", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen"}}
 ICONS = {
  "res": '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
  "flo": '<path d="M2 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M12 3v7"/><path d="M9 7l3 3 3-3"/>',
@@ -22,16 +26,25 @@ ICONS = {
  "col": '<path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18"/><path d="M12 21L8 9l2-6"/><path d="M12 21l4-12-2-6"/>',
  "lia": '<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/>',
  "emp": '<path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>',
+ "cyb": '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><path d="M12 15v2"/>',
+ "kr": '<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M12 8v5"/><path d="M12 16h.01"/>',
+ "str": '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><rect x="9" y="13" width="6" height="4" rx="1"/><path d="M9 9h6"/>',
+ "ren": '<path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M14 4l6 6"/><path d="M9 21v-5h6v5"/>',
+ "brd": '<circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5"/><path d="M14 15c3 0 8 1 8 5"/>',
+ "cnd": '<path d="M4 21V5l8-3v19"/><path d="M12 21V9l8 3v9"/><path d="M7 7h2M7 11h2M7 15h2M15 14h2M15 18h2"/><path d="M2 21h20"/>',
 }
 ICON_EXTRA = {
  "glossary": '<path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M18 20H7a3 3 0 0 1-3-3"/><path d="M8 8h6 M8 12h6"/>',
  "faq": '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7v.5"/><path d="M12 17h.01"/>',
  "hurricane": '<path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0-6 0"/><path d="M12 3c-5 0-8 3-8 6 3-2 6-2 8 0"/><path d="M12 21c5 0 8-3 8-6-3 2-6 2-8 0"/>',
  "inventory": '<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 11h7 M9 15h7 M9 19h4"/>',
+ "mitigation": '<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M8 13l3-3 2 2 3-3"/>',
 }
 TOPIC = {"res": "Residencias y huracanes", "flo": "Inundación y marejada", "aut": "Autos de uso y colección",
          "mar": "Embarcaciones y PWC", "avi": "Aviación privada", "col": "Colecciones, arte y joyas",
-         "lia": "Responsabilidad y umbrella", "emp": "Personal del hogar y legado"}
+         "lia": "Responsabilidad y umbrella", "emp": "Personal del hogar y legado",
+         "cyb": "Ciberprotección familiar", "kr": "Secuestro y extorsión", "str": "Alquiler vacacional",
+         "ren": "Remodelaciones y construcción", "brd": "Juntas y fundaciones", "cnd": "Condominios y HOA"}
 
 T = {  # interface strings
  "es": {"home": "Inicio", "guides": "Guías", "glossary": "Glosario", "faq": "Preguntas", "tools": "Herramientas",
@@ -60,9 +73,13 @@ T = {  # interface strings
         "privacy": "Privacy", "made": "Made with pride for Florida's Hispanic community"},
 }
 CATS = {"es": {"hogar": "Hogar", "inundacion": "Inundación", "autos": "Autos", "nautica": "Náutica", "aviacion": "Aviación",
-               "colecciones": "Colecciones", "responsabilidad": "Responsabilidad", "personal": "Personal del hogar", "general": "General"},
+               "colecciones": "Colecciones", "responsabilidad": "Responsabilidad", "personal": "Personal del hogar", "ciber": "Ciberseguridad",
+               "secuestro": "Secuestro y extorsión", "alquiler": "Alquiler vacacional", "construccion": "Remodelaciones", "juntas": "Juntas y fundaciones",
+               "condominios": "Condominios", "general": "General"},
         "en": {"hogar": "Home", "inundacion": "Flood", "autos": "Auto", "nautica": "Boats", "aviacion": "Aviation",
-               "colecciones": "Collections", "responsabilidad": "Liability", "personal": "Household staff", "general": "General"}}
+               "colecciones": "Collections", "responsabilidad": "Liability", "personal": "Household staff", "ciber": "Cyber",
+               "secuestro": "Kidnap and ransom", "alquiler": "Short-term rentals", "construccion": "Renovations", "juntas": "Boards and foundations",
+               "condominios": "Condos and HOAs", "general": "General"}}
 
 # ---------- paths ----------
 def p_home(l): return "/" if l == "es" else "/en/"
@@ -76,9 +93,11 @@ def p_inv(l): return "/herramientas/inventario-familiar/" if l == "es" else "/en
 def load(p): return json.load(open(os.path.join(ROOT, p), encoding="utf-8"))
 def esc(s): return html.escape(s, quote=True)
 def rich(s):
-    """allow only <b>/<strong>/<em>; turn [n] into footnote links"""
+    """allow only <b>/<strong>/<em> and <a href="/..."> or <a href="https://...">; turn [n] into footnote links"""
     s = html.escape(s, quote=False)
     s = re.sub(r"&lt;(/?)(b|strong|em)&gt;", r"<\1\2>", s)
+    s = re.sub(r'&lt;a href="(/[\w/#.-]*)"&gt;(.*?)&lt;/a&gt;', r'<a href="\1">\2</a>', s)
+    s = re.sub(r'&lt;a href="(https://[\w/#.:-]*)"&gt;(.*?)&lt;/a&gt;', r'<a href="\1" rel="noopener" target="_blank">\2</a>', s)
     def _fn(m):
         nums = re.findall(r"\d+", m.group(0))
         return '<sup class="fn">' + ",".join(f'<a href="#fuente-{n}" aria-label="fuente {n}">{n}</a>' for n in nums) + "</sup>"
@@ -158,7 +177,11 @@ th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;ver
 .card{display:flex;flex-direction:column;gap:10px;background:var(--blanco);border:1px solid var(--arena-oscura);border-radius:3px;padding:24px;text-decoration:none;transition:transform .25s,box-shadow .25s,border-color .25s}
 .card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(20,53,42,.12);border-color:var(--oro)}
 .card .ico{width:40px;height:40px;padding:8px;border:1px solid var(--oro);border-radius:50%;stroke:var(--oro);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.card h3{font-size:21px;color:var(--verde)}.card p{font-size:15px;color:#3B4237}.card .go{margin-top:auto;font-size:13px;font-weight:600;color:var(--oro);letter-spacing:.04em}
+.card h3{font-size:21px;color:var(--verde)}.card p{font-size:15px;color:#3B4237}.mit-card{gap:8px}.mit-card:hover{transform:none}
+.mit-links{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px 22px}
+.mit-links a{display:block;padding:8px 0;border-bottom:1px solid var(--arena-oscura);color:var(--verde);text-decoration:none;font-size:15px}
+.mit-links a:hover{color:#7E5F17}
+.card .go{margin-top:auto;font-size:13px;font-weight:600;color:var(--oro);letter-spacing:.04em}
 .band{padding:64px 0}.band h2.sec{font-size:clamp(28px,4vw,40px);color:var(--verde);margin-bottom:10px}.band .lede{color:#3B4237;max-width:62ch;margin-bottom:30px}
 .band.alt{background:var(--blanco);border-top:1px solid var(--arena-oscura);border-bottom:1px solid var(--arena-oscura)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 26px}.chip{border:1px solid var(--arena-oscura);background:var(--blanco);border-radius:99px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--verde);cursor:pointer;font-family:var(--body)}
@@ -361,7 +384,12 @@ for k in ORDER:
         fq = "".join(f"<details><summary>{esc(plain(f['q']))}</summary><p>{rich(f['a'])}</p></details>" for f in c["faq"])
         src = "".join(f'<li id="fuente-{s["n"]}">{esc(s["label"])}. <a href="{esc(s["url"])}" rel="noopener" target="_blank">{esc(s["url"])}</a></li>' for s in sorted(g["sources"], key=lambda s: s["n"]))
         idx = ORDER.index(k)
-        rel = [guides[ORDER[(idx + i) % 8]] for i in (1, 2, 3)]
+        rel_keys = [r for r in g.get("related", []) if r in guides and r != k][:3]
+        for i in range(1, len(ORDER)):
+            if len(rel_keys) >= 3: break
+            c2 = ORDER[(idx + i) % len(ORDER)]
+            if c2 not in rel_keys: rel_keys.append(c2)
+        rel = [guides[r] for r in rel_keys]
         rel_cards = "".join(guide_card(r, l) for r in rel)
         tema = f'{p_home(l)}?tema={k}#contacto'
         body = f"""
@@ -417,21 +445,27 @@ for l in ("es", "en"):
     t = T[l]
     path, alt = p_hub(l), p_hub("en" if l == "es" else "es")
     cards = "".join(guide_card(guides[k], l) for k in ORDER)
+    mid = "mitigacion" if l == "es" else "mitigation"
+    mlinks = "".join(f'<li><a href="{p_guide(guides[k], l)}#{mid}">{esc(guides[k][l]["kicker"].split("·")[-1].strip())}</a></li>' for k in ORDER)
+    mh, mp = (("Mitigación: cómo reducir el riesgo", "Cada guía termina con medidas concretas para prevenir pérdidas y documentar lo que hizo. Vaya directo a la sección que le interesa.") if l == "es"
+              else ("Mitigation: how to reduce the risk", "Every guide ends with concrete steps to prevent losses and document what you did. Go straight to the section you need."))
+    mcard = f'<div class="card mit-card" id="{mid}">{ico(ICON_EXTRA["mitigation"])}<h2 class="sec">{mh}</h2><p>{mp}</p><ul class="mit-links">{mlinks}</ul></div>'
     tcards = "".join(f'<a class="card" href="{h}">{ico(ICON_EXTRA[ic])}<h3>{esc(n)}</h3><p>{esc(d)}</p><span class="go">→</span></a>' for h, ic, n, d in tools_meta[l])
     if l == "es":
-        h1, dek, title = "Biblioteca de protección patrimonial", "Ocho guías a fondo, un glosario bilingüe y herramientas prácticas para familias que construyeron algo en la Florida. Educación, no ventas.", "Guías de seguros en español para familias en la Florida"
-        meta = "Guías en español sobre seguros de casa, inundación, autos, embarcaciones, aviación, colecciones, umbrella y personal del hogar en la Florida. Educación sin ventas."
+        h1, dek, title = "Biblioteca de protección patrimonial", f"{NUM['es'].get(len(ORDER), len(ORDER))} guías a fondo, un glosario bilingüe y herramientas prácticas para familias que construyeron algo en la Florida. Educación, no ventas.", "Guías de seguros en español para familias en la Florida"
+        meta = "Guías en español sobre casa, inundación, autos, embarcaciones, aviación, colecciones, umbrella, personal del hogar, ciberseguridad, condominios y más en la Florida."
         th, tl = "Herramientas y referencias", "Para consultar, imprimir y compartir con su familia o sus asesores."
     else:
-        h1, dek, title = "The protection library", "Eight in-depth guides, a bilingual glossary and practical tools for families who built something in Florida. Education, not sales.", "Insurance guides for Florida families | Patrimonio Protegido"
-        meta = "In-depth guides on home, flood, auto, boat, aviation, collections, umbrella and household staff insurance for Florida families. Education, not sales."
+        h1, dek, title = "The protection library", f"{NUM['en'].get(len(ORDER), len(ORDER))} in-depth guides, a bilingual glossary and practical tools for families who built something in Florida. Education, not sales.", "Insurance guides for Florida families | Patrimonio Protegido"
+        meta = "Guides on home, flood, auto, boat, aviation, collections, umbrella, household staff, cyber, condo and board insurance for Florida families. Education, not sales."
         th, tl = "Tools and references", "To look up, print and share with your family or your advisors."
     body = f"""
 <header class="head"><div class="wrap">{crumbs(l, [(None, t['guides'])])}<span class="kicker">{t['library']}</span><h1>{h1}</h1><p class="dek">{dek}</p>
 <div class="meta"><span>{t['by']}</span></div></div></header>
 <section class="band"><div class="wrap"><div class="cards">{cards}</div></div></section>
-<section class="band alt" id="herramientas"><div class="wrap"><h2 class="sec">{th}</h2><p class="lede">{tl}</p><div class="cards">{tcards}</div></div></section>
-<section class="band"><div class="wrap"><div class="cta" style="margin:0"><h2>{t['cta_t']}</h2><p>{t['cta_p']}</p><div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="hub_quiz">{t['cta_quiz']}</a></div></div></div></section>
+<section class="band alt"><div class="wrap">{mcard}</div></section>
+<section class="band" id="herramientas"><div class="wrap"><h2 class="sec">{th}</h2><p class="lede">{tl}</p><div class="cards">{tcards}</div></div></section>
+<section class="band alt"><div class="wrap"><div class="cta" style="margin:0"><h2>{t['cta_t']}</h2><p>{t['cta_p']}</p><div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="hub_quiz">{t['cta_quiz']}</a></div></div></div></section>
 """
     ld = [bc_ld(l, [(path, t["guides"])]),
           {"@context": "https://schema.org", "@type": "CollectionPage", "name": h1, "inLanguage": l, "url": BASE + path,
@@ -584,10 +618,12 @@ for l in ("es", "en"):
     if l == "es": sitemap.append((path, alt))
 
 # ---------- sitemap ----------
+import datetime
+LASTMOD = datetime.date.today().isoformat()  # build date
 def url_block(loc, es, en, pri):
     return (f"  <url>\n    <loc>{BASE}{loc}</loc>\n    <xhtml:link rel=\"alternate\" hreflang=\"es\" href=\"{BASE}{es}\"/>\n"
             f"    <xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"{BASE}{en}\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"{BASE}{es}\"/>\n"
-            f"    <lastmod>2026-09-24</lastmod>\n    <priority>{pri}</priority>\n  </url>\n")
+            f"    <lastmod>{LASTMOD}</lastmod>\n    <priority>{pri}</priority>\n  </url>\n")
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
 sm += url_block("/", "/", "/en/", "1.0") + url_block("/en/", "/", "/en/", "1.0")
 for es, en in sitemap:

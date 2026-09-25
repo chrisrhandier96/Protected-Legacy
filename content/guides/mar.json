@@ -2,7 +2,7 @@
   "key": "mar",
   "slug_es": "embarcaciones",
   "slug_en": "boats",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "es": {
     "title": "Seguro de embarcación en Florida: yates, botes y motos",
     "meta": "Seguro de embarcación en Florida: valor acordado, responsabilidad civil, motos de agua, tripulación, huracanes y límites de navegación, explicados con calma.",
@@ -109,7 +109,7 @@
             "callout": "Imagine un caso hipotético: un invitado de 15 años toma la moto de agua de la familia sin tarjeta de educación náutica. Aunque el dueño no esté a bordo, haber dejado las llaves a su alcance puede ser el centro de un reclamo por entrega negligente."
           },
           {
-            "p": "Una moto de agua suele necesitar su propia póliza o un endoso en la póliza de la embarcación principal. Conviene confirmar si la cobertura aplica cuando la opera un invitado, qué restricciones de edad tiene y si la paraguas reconoce esa póliza como cobertura subyacente."
+            "p": "Una moto de agua suele necesitar su propia póliza o un endoso en la póliza de la embarcación principal. Conviene confirmar si la cobertura aplica cuando la opera un invitado, qué restricciones de edad tiene y si esa póliza cumple los requisitos subyacentes de la paraguas."
           }
         ]
       },
@@ -144,6 +144,30 @@
           },
           {
             "callout": "Pregunte si la remoción de restos y la contaminación tienen límites propios o si consumen el límite de responsabilidad general. Después de un huracán, ambos gastos pueden llegar al mismo tiempo."
+          }
+        ]
+      },
+      {
+        "id": "mitigacion",
+        "h2": "Cómo reducir el riesgo",
+        "blocks": [
+          {
+            "p": "Estas medidas protegen la embarcación, a quienes la usan y el patrimonio de la familia:"
+          },
+          {
+            "ul": [
+              "Tenga un plan de huracán por escrito: dónde irá la embarcación, quién la moverá y con cuánta anticipación, y manténgalo al día con las condiciones de tormenta nombrada de su póliza.",
+              "Reserve temprano el sacado a tierra o un amarre protegido, y confirme qué aporta la póliza a esos costos.",
+              "Confirme que cada operador haya completado la educación náutica cuando la ley de Florida la exige [7].",
+              "No permita que nadie menor de 14 años opere una moto de agua, y guarde bajo llave las llaves y los cordones de corte [6].",
+              "Contrate capitanes y tripulación con las licencias que exige cada viaje, y confirme cómo responde la póliza ante lesiones de la tripulación, que siguen reglas marítimas federales [9].",
+              "Respete los límites de navegación de su póliza y consulte antes de cualquier viaje fuera de ellos [15].",
+              "Antes de prestar la embarcación, confirme la experiencia de quien la usará y que no esté bajo efectos del alcohol; el dueño puede enfrentar reclamos por encomienda negligente.",
+              "Mantenga un inventario con fotos de la embarcación y su equipo, guardado fuera de ella."
+            ]
+          },
+          {
+            "p": "Si quiere una segunda mirada a cómo está organizada su familia en este tema, escríbame."
           }
         ]
       }
@@ -277,7 +301,7 @@
             "callout": "Consider a hypothetical: a 15-year-old guest takes the family's PWC without a boater education card. Even if the owner is not on board, leaving the keys within reach can become the center of a negligent entrustment claim."
           },
           {
-            "p": "A PWC usually needs its own policy or an endorsement on the main boat policy. It is worth confirming whether coverage applies when a guest operates it, what operator age limits apply and whether your umbrella accepts that policy as underlying coverage."
+            "p": "A PWC usually needs its own policy or an endorsement on the main boat policy. It is worth confirming whether coverage applies when a guest operates it, what operator age limits apply and whether that policy meets your umbrella's underlying requirements."
           }
         ]
       },
@@ -312,6 +336,30 @@
           },
           {
             "callout": "Ask whether wreck removal and pollution have their own limits or erode the general liability limit. After a hurricane, both costs can arrive at the same time."
+          }
+        ]
+      },
+      {
+        "id": "mitigation",
+        "h2": "How to reduce the risk",
+        "blocks": [
+          {
+            "p": "These steps protect the vessel, the people who use it and the family's assets:"
+          },
+          {
+            "ul": [
+              "Keep a written hurricane plan: where the boat goes, who moves it and how far in advance, and keep it current with your policy's named-storm provisions.",
+              "Book a haul-out or a protected slip early, and confirm what the policy contributes toward those costs.",
+              "Confirm that every operator has completed boating safety education where Florida law requires it [7].",
+              "Never let anyone under 14 operate a personal watercraft, and lock away keys and engine cutoff lanyards [6].",
+              "Hire captains and crew with the licenses each trip requires, and confirm how the policy responds to crew injuries, which follow federal maritime rules [9].",
+              "Respect your policy's navigation limits and ask before any trip outside them [15].",
+              "Before lending the boat, confirm the person's experience and that they are not impaired; the owner can face negligent entrustment claims.",
+              "Keep a photo inventory of the vessel and its equipment, stored off the boat."
+            ]
+          },
+          {
+            "p": "If you want a second look at how your family is set up on this, write to me."
           }
         ]
       }

@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-24",
+ "updated": "2026-09-25",
  "terms": [
   {
    "id": "deducible",
@@ -51,8 +51,8 @@
    "es": "Sublímite",
    "en": "Sublimit",
    "cat": "general",
-   "def_es": "Un límite menor dentro de la póliza para cierto tipo de bien o causa de pérdida. Por ejemplo, el límite por robo de joyas en una póliza de hogar estándar suele ser de unos $1,500 (generalmente entre $1,000 y $2,000), según el Insurance Information Institute.",
-   "def_en": "A smaller limit inside a policy for a certain type of property or cause of loss. For example, the jewelry theft limit on a standard homeowners policy is often about $1,500 (generally $1,000 to $2,000), according to the Insurance Information Institute.",
+   "def_es": "Un límite menor dentro de la póliza para cierto tipo de bien o causa de pérdida. Por ejemplo, la póliza de hogar estándar suele tener un límite bajo para el robo de joyas, según el Insurance Information Institute.",
+   "def_en": "A smaller limit inside a policy for a certain type of property or cause of loss. For example, a standard homeowners policy often has a low limit for jewelry theft, according to the Insurance Information Institute.",
    "guide": "col"
   },
   {
@@ -146,15 +146,6 @@
    "guide": null
   },
   {
-   "id": "citizens",
-   "es": "Citizens Property Insurance Corporation",
-   "en": "Citizens Property Insurance Corporation",
-   "cat": "general",
-   "def_es": "Entidad gubernamental de Florida, sin fines de lucro y exenta de impuestos, creada por la Legislatura en 2002. Ofrece seguro de propiedad a propietarios elegibles que no encuentran cobertura en el mercado privado y se describe como la aseguradora de último recurso del estado.",
-   "def_en": "A not-for-profit, tax-exempt Florida government entity created by the Legislature in 2002. It provides property insurance to eligible owners who cannot find coverage in the private market and describes itself as the state's insurer of last resort.",
-   "guide": "res"
-  },
-  {
    "id": "deber-de-mitigar",
    "es": "Deber de mitigar daños",
    "en": "Duty to mitigate",
@@ -177,8 +168,8 @@
    "es": "Costo de reemplazo extendido o garantizado",
    "en": "Extended or guaranteed replacement cost",
    "cat": "hogar",
-   "def_es": "El costo extendido agrega un margen por encima del límite de la vivienda, de 20 por ciento o más según la aseguradora (III). El costo garantizado, menos común, paga la reconstrucción aunque supere el límite. Ambos protegen contra alzas inesperadas de costos después de una catástrofe.",
-   "def_en": "Extended replacement cost adds a cushion above the dwelling limit, 20 percent or more depending on the insurer (III). Guaranteed replacement cost, less common, pays to rebuild even above the limit. Both help protect against unexpected cost spikes after a catastrophe.",
+   "def_es": "El costo extendido agrega un margen por encima del límite de la vivienda, que varía según la póliza (III). El costo garantizado paga la reconstrucción aunque supere el límite. Ambos protegen contra alzas inesperadas de costos después de una catástrofe.",
+   "def_en": "Extended replacement cost adds a cushion above the dwelling limit that varies by policy (III). Guaranteed replacement cost pays to rebuild even above the limit. Both help protect against unexpected cost spikes after a catastrophe.",
    "guide": "res"
   },
   {
@@ -465,8 +456,8 @@
    "es": "Sublímite por asiento",
    "en": "Per-seat sublimit",
    "cat": "aviacion",
-   "def_es": "Un límite por pasajero dentro de la responsabilidad de aviación. Como ejemplo hipotético, una póliza de $1,000,000 con sublímite de $100,000 por asiento pagaría como máximo esa cifra por cada pasajero lesionado. Las pólizas sin sublímite por pasajero se conocen como de límite uniforme (smooth).",
-   "def_en": "A per-passenger limit inside aviation liability coverage. As a hypothetical example, a $1,000,000 policy with a $100,000 per-seat sublimit would pay at most that amount for each injured passenger. Policies without a per-passenger sublimit are known as smooth limit policies.",
+   "def_es": "Un límite por pasajero dentro de la responsabilidad de aviación. Con un sublímite por asiento, la póliza paga como máximo esa cifra por cada pasajero lesionado, aunque el límite total sea mayor. Las pólizas sin sublímite por pasajero se conocen como de límite uniforme (smooth).",
+   "def_en": "A per-passenger limit inside aviation liability coverage. With a per-seat sublimit, the policy pays at most that amount for each injured passenger, even when the overall limit is higher. Policies without a per-passenger sublimit are known as smooth limit policies.",
    "guide": "avi"
   },
   {
@@ -630,6 +621,303 @@
    "def_es": "La persona o entidad que recibe el pago de una póliza de vida o de ciertas cuentas al fallecer el titular. Conviene revisarlo después de matrimonios, divorcios, nacimientos o cambios en la planificación patrimonial, y coordinarlo con su abogado.",
    "def_en": "The person or entity that receives the payout of a life policy or certain accounts when the owner dies. It is worth reviewing after marriages, divorces, births or changes in estate planning, and coordinating with your attorney.",
    "guide": null
+  },
+  {
+   "id": "ciberseguro-personal",
+   "es": "Ciberseguro personal",
+   "en": "Personal cyber insurance",
+   "cat": "ciber",
+   "def_es": "Cobertura para una familia frente a riesgos digitales, como la extorsión en línea, el fraude, el robo de identidad o la restauración de datos. Puede venderse como póliza aparte o como endoso, y sus coberturas y exclusiones varían mucho entre pólizas.",
+   "def_en": "Coverage for a household against digital risks such as online extortion, fraud, identity theft or data restoration. It can be sold as a separate policy or as an endorsement, and its coverages and exclusions vary widely between policies.",
+   "guide": "cyb"
+  },
+  {
+   "id": "compromiso-de-correo",
+   "es": "Compromiso de correo electrónico (BEC)",
+   "en": "Business email compromise (BEC)",
+   "cat": "ciber",
+   "def_es": "Fraude en el que un delincuente se hace pasar por alguien de confianza, como un abogado, una compañía de títulos o un familiar, para desviar un pago. Es común en cierres de compraventa de propiedades, con instrucciones de transferencia falsas.",
+   "def_en": "Fraud in which a criminal poses as someone trusted, such as an attorney, a title company or a relative, to redirect a payment. It is common at real estate closings, through fake wiring instructions.",
+   "guide": "cyb"
+  },
+  {
+   "id": "congelamiento-de-credito",
+   "es": "Congelamiento de crédito",
+   "en": "Credit freeze",
+   "cat": "ciber",
+   "def_es": "Restricción que usted pide a las agencias de crédito para que nadie abra crédito nuevo a su nombre. Según la FTC, es gratuito, no afecta su puntaje y puede levantarse temporalmente cuando usted necesite solicitar crédito.",
+   "def_en": "A restriction you request from the credit bureaus so no one can open new credit in your name. According to the FTC, it is free, does not affect your score and can be lifted temporarily when you need to apply for credit.",
+   "guide": "cyb"
+  },
+  {
+   "id": "ciberextorsion",
+   "es": "Ciberextorsión",
+   "en": "Cyber extortion",
+   "cat": "ciber",
+   "def_es": "Amenaza de dañar, bloquear o publicar datos o cuentas de una persona si no paga. Incluye el secuestro de datos (ransomware) y la amenaza de divulgar información o imágenes privadas. Muchas pólizas exigen avisar a la aseguradora antes de pagar.",
+   "def_en": "A threat to damage, lock or publish a person's data or accounts unless they pay. It includes ransomware and threats to release private information or images. Many policies require notifying the insurer before paying.",
+   "guide": "cyb"
+  },
+  {
+   "id": "ingenieria-social",
+   "es": "Ingeniería social",
+   "en": "Social engineering",
+   "cat": "ciber",
+   "def_es": "Engaño que manipula a una persona para que entregue dinero, contraseñas o información, en lugar de atacar un sistema. Suele usar urgencia, autoridad o confianza, por correo, mensaje de texto o llamada.",
+   "def_en": "Deception that manipulates a person into handing over money, passwords or information, instead of attacking a system. It often relies on urgency, authority or trust, by email, text message or phone call.",
+   "guide": "cyb"
+  },
+  {
+   "id": "seguro-kr",
+   "es": "Seguro de secuestro y extorsión (K&R)",
+   "en": "Kidnap and ransom insurance (K&R)",
+   "cat": "secuestro",
+   "def_es": "Cobertura para los costos de responder a un secuestro, una extorsión, una detención ilegal u otros eventos de coacción. Según el III, las pólizas para personas suelen pagar el costo de manejar el incidente, pero no reembolsan el rescate, a diferencia de las corporativas.",
+   "def_en": "Coverage for the costs of responding to a kidnapping, extortion, illegal detention or other coercive events. According to III, policies for individuals usually pay the cost of handling the incident but do not reimburse the ransom, unlike corporate policies.",
+   "guide": "kr"
+  },
+  {
+   "id": "secuestro-virtual",
+   "es": "Secuestro virtual",
+   "en": "Virtual kidnapping",
+   "cat": "secuestro",
+   "def_es": "Extorsión en la que nadie fue secuestrado: alguien asegura tener a un ser querido y exige un pago inmediato, a veces con fotos alteradas. El FBI recomienda intentar comunicarse con esa persona antes de pagar y tener una palabra clave familiar.",
+   "def_en": "Extortion in which no one was taken: someone claims to hold a loved one and demands immediate payment, sometimes with altered photos. The FBI recommends trying to reach that person before paying and having a family code word.",
+   "guide": "kr"
+  },
+  {
+   "id": "secuestro-expres",
+   "es": "Secuestro exprés",
+   "en": "Express kidnapping",
+   "cat": "secuestro",
+   "def_es": "Retención breve de una persona para obligarla a retirar dinero de cajeros o cuentas. Algunas pólizas de K&R lo incluyen; confirme que esté nombrado expresamente en la suya.",
+   "def_en": "A short abduction to force a person to withdraw money from ATMs or accounts. Some K&R policies include it; confirm that it is expressly named in yours.",
+   "guide": "kr"
+  },
+  {
+   "id": "consultor-de-respuesta",
+   "es": "Consultor de respuesta a crisis",
+   "en": "Crisis response consultant",
+   "cat": "secuestro",
+   "def_es": "Especialista que asesora a la familia durante un secuestro o una extorsión: comunicación, coordinación con las autoridades y protección de los demás miembros. En una póliza de K&R, su acceso puede ser el componente más valioso.",
+   "def_en": "A specialist who advises the family during a kidnapping or extortion: communication, coordination with the authorities and protection of other family members. In a K&R policy, access to this team can be the most valuable component.",
+   "guide": "kr"
+  },
+  {
+   "id": "condicion-de-confidencialidad",
+   "es": "Condición de confidencialidad",
+   "en": "Confidentiality condition",
+   "cat": "secuestro",
+   "def_es": "Cláusula frecuente en pólizas de K&R que exige mantener en reserva la existencia de la cobertura, sus términos y sus límites. Revelarla puede afectar la cobertura, según lo que diga cada contrato.",
+   "def_en": "A clause common in K&R policies that requires keeping the existence of the coverage, its terms and its limits confidential. Disclosing it can affect coverage, depending on each contract.",
+   "guide": "kr"
+  },
+  {
+   "id": "alerta-de-viaje",
+   "es": "Alerta de viaje del Departamento de Estado",
+   "en": "State Department travel advisory",
+   "cat": "secuestro",
+   "def_es": "Clasificación de cada destino en cuatro niveles: 1, precauciones normales; 2, mayor precaución; 3, reconsiderar el viaje; 4, no viajar. La letra K señala riesgo de secuestro o toma de rehenes.",
+   "def_en": "A rating of each destination on four levels: 1, exercise normal precautions; 2, exercise increased caution; 3, reconsider travel; 4, do not travel. The letter K flags a risk of kidnapping or hostage taking.",
+   "guide": "kr"
+  },
+  {
+   "id": "alquiler-vacacional",
+   "es": "Alquiler vacacional",
+   "en": "Vacation rental",
+   "cat": "alquiler",
+   "def_es": "En Florida, una unidad de condominio o una casa de hasta cuatro unidades que funciona como alojamiento público transitorio. El DBPR exige licencia si se alquila completa más de tres veces al año por menos de 30 días o un mes, o si se anuncia como alquiler habitual.",
+   "def_en": "In Florida, a condominium unit or a home with up to four units that operates as transient public lodging. DBPR requires a license if it is rented in full more than three times a year for less than 30 days or one month, or advertised as regularly rented.",
+   "guide": "str"
+  },
+  {
+   "id": "poliza-de-arrendador",
+   "es": "Póliza de arrendador",
+   "en": "Landlord policy",
+   "cat": "alquiler",
+   "def_es": "Póliza para una vivienda que se alquila. Según la NAIC, puede cubrir la casa, otras estructuras, el contenido, la renta perdida por daños, los gastos legales y los reclamos de responsabilidad.",
+   "def_en": "A policy for a home that is rented out. According to the NAIC, it can cover the home, other structures, contents, lost rental income from damage, legal fees and liability claims.",
+   "guide": "str"
+  },
+  {
+   "id": "perdida-de-renta",
+   "es": "Pérdida de renta",
+   "en": "Loss of rents",
+   "cat": "alquiler",
+   "def_es": "Cobertura que reemplaza los ingresos de alquiler que se pierden mientras se repara una propiedad dañada por un riesgo cubierto. La NAIC incluye la renta perdida entre las coberturas que puede tener una póliza de arrendador; una póliza de hogar puede excluir o limitar una vivienda que se usa como negocio de alquiler.",
+   "def_en": "Coverage that replaces rental income lost while a property damaged by a covered peril is being repaired. The NAIC lists lost rental income among the coverages a landlord policy can include; a homeowners policy may exclude or limit a home used as a rental business.",
+   "guide": "str"
+  },
+  {
+   "id": "impuesto-de-desarrollo-turistico",
+   "es": "Impuesto de desarrollo turístico",
+   "en": "Tourist development tax",
+   "cat": "alquiler",
+   "def_es": "Impuesto local sobre alquileres de alojamiento de seis meses o menos que cobran muchos condados de Florida, además del impuesto estatal sobre las ventas. La tasa y la forma de pago dependen del condado.",
+   "def_en": "A local tax on rentals of accommodations for six months or less, levied by many Florida counties in addition to state sales tax. The rate and how it is paid depend on the county.",
+   "guide": "str"
+  },
+  {
+   "id": "negocio-en-el-hogar",
+   "es": "Actividad de negocio en el hogar",
+   "en": "Home-based business activity",
+   "cat": "alquiler",
+   "def_es": "Uso comercial de una vivienda. La NAIC advierte que una propiedad que se alquila con frecuencia puede considerarse un negocio en el hogar, y que las pólizas de hogar suelen excluir o limitar esa cobertura.",
+   "def_en": "Commercial use of a home. The NAIC warns that a property rented out frequently may be treated as a home-based business, and that homeowners policies usually exclude or limit that coverage.",
+   "guide": "str"
+  },
+  {
+   "id": "riesgo-de-construccion",
+   "es": "Seguro de riesgo de construcción",
+   "en": "Builder's risk insurance",
+   "cat": "construccion",
+   "def_es": "Póliza que protege una obra en proceso y sus materiales. El DFS de Florida explica que es de riesgos nombrados, que el viento debería estar cubierto sujeto al contrato y que la lluvia no es un riesgo nombrado.",
+   "def_en": "A policy that protects a project in progress and its materials. Florida DFS explains that it is a named peril policy, that wind should be covered subject to the contract and that rain is not a named peril.",
+   "guide": "ren"
+  },
+  {
+   "id": "riesgos-nombrados",
+   "es": "Riesgos nombrados",
+   "en": "Named perils",
+   "cat": "construccion",
+   "def_es": "Forma de cobertura que solo responde a los eventos que la póliza enumera. Lo que no aparece en la lista no está cubierto, a diferencia de una cobertura de riesgos abiertos, que cubre todo salvo lo excluido.",
+   "def_en": "A form of coverage that responds only to the events the policy lists. Anything not on the list is not covered, unlike open perils coverage, which covers everything except what is excluded.",
+   "guide": "ren"
+  },
+  {
+   "id": "clausula-de-desocupacion",
+   "es": "Cláusula de desocupación",
+   "en": "Vacancy clause",
+   "cat": "construccion",
+   "def_es": "Condición de muchas pólizas de hogar que limita o excluye la cobertura si la propiedad queda sin ocupantes, por lo general, entre 30 y 60 días seguidos, según el III. Es clave durante remodelaciones largas o en casas de temporada.",
+   "def_en": "A condition in many homeowners policies that limits or excludes coverage if the property is unoccupied for typically 30 to 60 consecutive days, according to III. It matters during long renovations and in seasonal homes.",
+   "guide": "ren"
+  },
+  {
+   "id": "aviso-de-inicio",
+   "es": "Aviso de inicio de obra",
+   "en": "Notice of commencement",
+   "cat": "construccion",
+   "def_es": "Documento que la ley de gravámenes de Florida exige registrar y colocar en el sitio antes de la primera inspección. Vence al año de registrarse salvo que el propio aviso indique otra fecha, y pagar después de su vencimiento puede hacer que el dueño pague dos veces.",
+   "def_en": "A document Florida's lien law requires to be recorded and posted on the site before the first inspection. It expires 1 year after recording unless the notice states a different date, and paying after it expires can make the owner pay twice.",
+   "guide": "ren"
+  },
+  {
+   "id": "liberacion-de-gravamen",
+   "es": "Liberación de gravamen",
+   "en": "Lien release",
+   "cat": "construccion",
+   "def_es": "Documento en el que un contratista, subcontratista o proveedor confirma que recibió el pago y renuncia a reclamar un gravamen sobre la propiedad por ese monto. Pedirlo antes de cada pago ayuda a no pagar dos veces.",
+   "def_en": "A document in which a contractor, subcontractor or supplier confirms payment and waives a lien claim on the property for that amount. Asking for one before each payment helps avoid paying twice.",
+   "guide": "ren"
+  },
+  {
+   "id": "dueno-constructor",
+   "es": "Dueño constructor",
+   "en": "Owner-builder",
+   "cat": "construccion",
+   "def_es": "Propietario que obtiene el permiso y actúa como su propio contratista. La declaración que exige la ley en Florida advierte que puede responder por lesiones de trabajadores sin licencia y que su póliza de hogar puede no cubrirlas.",
+   "def_en": "An owner who pulls the permit and acts as their own contractor. The disclosure Florida law requires warns that the owner may be liable for injuries to unlicensed workers and that the homeowners policy may not cover them.",
+   "guide": "ren"
+  },
+  {
+   "id": "lados-a-b-c",
+   "es": "Lados A, B y C del D&O",
+   "en": "D&O Sides A, B and C",
+   "cat": "juntas",
+   "def_es": "Partes de una póliza de directores y funcionarios. Según el III, el Lado A protege a las personas cuando la organización no puede indemnizarlas, el Lado B reembolsa a la organización cuando las indemniza y el Lado C cubre a la entidad en ciertos reclamos de valores.",
+   "def_en": "Parts of a directors and officers policy. According to III, Side A protects individuals when the organization cannot indemnify them, Side B reimburses the organization when it does, and Side C covers the entity in certain securities claims.",
+   "guide": "brd"
+  },
+  {
+   "id": "indemnizacion-de-directores",
+   "es": "Indemnización de directores",
+   "en": "Director indemnification",
+   "cat": "juntas",
+   "def_es": "Compromiso de una organización, normalmente en sus estatutos, de cubrir los gastos y pérdidas de sus directores por reclamos derivados del cargo. Depende de que la organización pueda pagar, por eso se complementa con el seguro D&O.",
+   "def_en": "An organization's commitment, usually in its bylaws, to cover its directors' expenses and losses from claims arising from their service. It depends on the organization's ability to pay, which is why D&O insurance complements it.",
+   "guide": "brd"
+  },
+  {
+   "id": "autonegociacion",
+   "es": "Autonegociación (self-dealing)",
+   "en": "Self-dealing",
+   "cat": "juntas",
+   "def_es": "Según el IRS, ciertas operaciones entre una fundación privada y personas descalificadas, como ventas, arrendamientos, préstamos o pagos. Puede generar impuestos especiales para la persona descalificada y para el administrador que participe a sabiendas.",
+   "def_en": "According to the IRS, certain transactions between a private foundation and disqualified persons, such as sales, leases, loans or payments. It can trigger excise taxes on the disqualified person and on a manager who knowingly participates.",
+   "guide": "brd"
+  },
+  {
+   "id": "persona-descalificada",
+   "es": "Persona descalificada",
+   "en": "Disqualified person",
+   "cat": "juntas",
+   "def_es": "Término fiscal para las personas vinculadas a una fundación privada, como donantes importantes, administradores y ciertos familiares, cuyas operaciones con la fundación están restringidas. Su asesor fiscal puede confirmar quién lo es en su caso.",
+   "def_en": "A tax term for people connected to a private foundation, such as substantial contributors, managers and certain family members, whose transactions with the foundation are restricted. Your tax advisor can confirm who qualifies in your case.",
+   "guide": "brd"
+  },
+  {
+   "id": "reclamos-presentados",
+   "es": "Póliza de reclamos presentados",
+   "en": "Claims-made policy",
+   "cat": "juntas",
+   "def_es": "Póliza que responde a los reclamos presentados mientras está vigente, no a los hechos ocurridos en ese período. Es común en D&O, por lo que conviene revisar la cobertura de actos anteriores y los períodos extendidos para reportar.",
+   "def_en": "A policy that responds to claims made while it is in force, not to events that happened during that period. It is common in D&O, so review prior acts coverage and extended reporting periods.",
+   "guide": "brd"
+  },
+  {
+   "id": "poliza-maestra",
+   "es": "Póliza maestra",
+   "en": "Master policy",
+   "cat": "condominios",
+   "def_es": "Póliza de propiedad de una asociación de condominio. En Florida debe cubrir la propiedad del condominio tal como se instaló originalmente, y excluye los bienes personales y los acabados dentro de cada unidad.",
+   "def_en": "A condominium association's property policy. In Florida it must cover the condominium property as originally installed, and it excludes personal property and the finishes inside each unit.",
+   "guide": "cnd"
+  },
+  {
+   "id": "poliza-ho6",
+   "es": "Póliza de unidad (HO-6)",
+   "en": "Unit owner policy (HO-6)",
+   "cat": "condominios",
+   "def_es": "Póliza del propietario de una unidad de condominio. Cubre lo que la ley deja a su cargo, como pisos, gabinetes, electrodomésticos y bienes personales, además de la responsabilidad civil y, según la póliza, los gastos adicionales de vivienda.",
+   "def_en": "The policy of a condominium unit owner. It covers what the law leaves to the owner, such as floors, cabinets, appliances and personal property, plus liability and, depending on the policy, additional living expenses.",
+   "guide": "cnd"
+  },
+  {
+   "id": "evaluacion-por-perdida",
+   "es": "Cobertura de evaluación por pérdida",
+   "en": "Loss assessment coverage",
+   "cat": "condominios",
+   "def_es": "Cobertura que paga la parte del propietario de una evaluación que la asociación cobra por una pérdida cubierta. En Florida, la ley exige al menos $2,000 en las pólizas de unidad, con un deducible de no más de $250.",
+   "def_en": "Coverage that pays the owner's share of an assessment the association charges for a covered loss. In Florida, the law requires at least $2,000 on unit owner policies, with a deductible of no more than $250.",
+   "guide": "cnd"
+  },
+  {
+   "id": "evaluacion-especial",
+   "es": "Evaluación especial",
+   "en": "Special assessment",
+   "cat": "condominios",
+   "def_es": "Cobro extraordinario que la asociación hace a los propietarios, además de las cuotas, para cubrir una reparación, un deducible del seguro o un déficit de reservas.",
+   "def_en": "An extraordinary charge the association levies on owners, on top of regular dues, to pay for a repair, an insurance deductible or a reserve shortfall.",
+   "guide": "cnd"
+  },
+  {
+   "id": "inspeccion-de-hito",
+   "es": "Inspección de hito",
+   "en": "Milestone inspection",
+   "cat": "condominios",
+   "def_es": "Inspección estructural que la ley de Florida exige a los edificios de condominio o cooperativa de tres pisos habitables o más, a partir de los 30 años y luego cada 10 años. La autoridad local puede exigirla desde los 25 años en ciertos casos.",
+   "def_en": "A structural inspection Florida law requires for condominium or cooperative buildings three habitable stories or higher, starting at 30 years of age and every 10 years after that. The local authority may require it at 25 years in some cases.",
+   "guide": "cnd"
+  },
+  {
+   "id": "sirs",
+   "es": "Estudio de reservas de integridad estructural (SIRS)",
+   "en": "Structural integrity reserve study (SIRS)",
+   "cat": "condominios",
+   "def_es": "Estudio que las asociaciones de condominio deben hacer al menos cada 10 años para edificios de tres pisos habitables o más. Evalúa elementos como techo, estructura, plomería, electricidad e impermeabilización, y fija reservas que, salvo excepciones limitadas, ya no pueden omitirse.",
+   "def_en": "A study condominium associations must complete at least every 10 years for buildings three habitable stories or higher. It covers items such as roof, structure, plumbing, electrical systems and waterproofing, and sets reserves that, with limited exceptions, can no longer be waived.",
+   "guide": "cnd"
   }
  ]
 }

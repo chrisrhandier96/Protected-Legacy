@@ -1,0 +1,160 @@
+{
+  "key": "brd",
+  "slug_es": "juntas-y-fundaciones",
+  "slug_en": "board-service-family-foundations",
+  "updated": "2026-09-25",
+  "related": ["lia", "cnd", "emp"],
+  "es": {
+    "title": "Juntas directivas y fundaciones familiares: seguro D&O",
+    "meta": "Servir en juntas de fundaciones, escuelas o condominios en Florida: protecciones legales, seguro de directores y funcionarios (D&O) y reglas de fundaciones privadas.",
+    "kicker": "Guía · Juntas y fundaciones",
+    "h1": "Juntas directivas y fundaciones familiares: la responsabilidad personal de servir",
+    "dek": "Qué protege la ley a quien sirve en una junta, qué cubre el seguro de directores y funcionarios, y qué reglas especiales aplican a una fundación familiar.",
+    "summary": [
+      "En Florida, los directores de organizaciones sin fines de lucro, por lo general, no responden personalmente por daños monetarios derivados de sus decisiones, salvo excepciones como una violación penal o la mala fe [2].",
+      "Esas protecciones no impiden que lo demanden, y defenderse cuesta dinero aunque al final no haya responsabilidad.",
+      "El seguro de directores y funcionarios (D&O) puede cubrir a quienes sirven en organizaciones sin fines de lucro, empresas privadas e instituciones educativas [1].",
+      "En una fundación privada, las operaciones con personas descalificadas pueden generar impuestos especiales para esas personas y para los administradores que participen a sabiendas [6]."
+    ],
+    "sections": [
+      {"id": "por-que-importa", "h2": "Por qué servir en una junta crea responsabilidad personal", "blocks": [
+        {"p": "Muchas familias con patrimonio sirven en juntas de fundaciones, escuelas, museos, iglesias, asociaciones de condominio o empresas familiares. Es una forma valiosa de retribuir, pero cada decisión de la junta puede ser cuestionada por donantes, empleados, reguladores, acreedores u otros miembros. Cuando una demanda nombra a los directores, puede alcanzar su patrimonio personal. Los reclamos pueden llegar años después de la decisión, cuando el director ya dejó el cargo, por lo que conviene pensar en esta protección desde el primer día y también al salir."},
+        {"p": "El seguro de directores y funcionarios (D&O) está diseñado para ese riesgo. El Instituto de Información de Seguros (III) explica que cubre a las personas por reclamos presentados en su contra mientras sirven en una junta o como funcionarios, y que puede emitirse para empresas con fines de lucro, empresas privadas, organizaciones sin fines de lucro e instituciones educativas [1]."}
+      ]},
+      {"id": "protecciones-legales", "h2": "Qué protege la ley a quien sirve en una junta", "blocks": [
+        {"p": "En Florida, la sección 617.0834 establece que los directores y funcionarios de corporaciones sin fines de lucro, por lo general, no responden personalmente por daños monetarios derivados de sus decisiones en el cargo, salvo que el incumplimiento de sus deberes constituya, entre otros supuestos, una violación penal, una transacción con beneficio personal indebido, o una conducta imprudente, de mala fe o con desprecio deliberado y temerario [2]. Esta sección se reformó en 2026, así que conviene confirmar con su abogado el texto que aplica a su organización."},
+        {"p": "A nivel federal, la Ley de Protección al Voluntario limita la responsabilidad de los voluntarios de organizaciones sin fines de lucro que actúan dentro de sus funciones y cuentan con la licencia o autorización necesaria, siempre que el daño no se deba a mala conducta intencional o criminal, negligencia grave, conducta temeraria o indiferencia consciente y flagrante, ni a la operación de un vehículo, embarcación o aeronave para la que el estado exige licencia o seguro [3]. La misma ley aclara que no cambia la responsabilidad de la organización [3]."},
+        {"p": "Para las asociaciones de condominio, la sección 718.111 remite a esos estándares para la responsabilidad personal de los directores y exige a la asociación mantener seguro o fianza de fidelidad para quienes controlan o desembolsan fondos [4]. Esa fianza protege el dinero de la asociación, no al director."},
+        {"callout": "Una protección legal ayuda a ganar un caso, pero no evita que se presente. Los costos de defensa pueden ser altos aunque la junta haya actuado bien."}
+      ]},
+      {"id": "que-cubre-do", "h2": "Qué cubre el seguro de directores y funcionarios (D&O)", "blocks": [
+        {"p": "Según el III, el D&O responde ante reclamos como demandas de accionistas, reclamos de acreedores o inversionistas por mala administración, incumplimiento de leyes o regulaciones, temas laborales y de recursos humanos, y riesgos cibernéticos [1]. El III señala que, aunque los directores sean exonerados, responder a una demanda puede generar honorarios legales importantes, y que un D&O probablemente cubriría esos gastos [1]."},
+        {"table": {"head": ["Parte de la póliza", "Qué hace, según el III"], "rows": [
+          ["Lado A", "Protege a los directores y funcionarios cuando la organización no puede indemnizarlos"],
+          ["Lado B", "Reembolsa a la organización cuando indemniza a esas personas"],
+          ["Lado C", "Da cobertura a la entidad en ciertos reclamos de valores"]
+        ]}},
+        {"p": "El III menciona exclusiones habituales como el fraude, el lucro personal, las lesiones corporales o los daños a la propiedad, los reclamos entre asegurados y ciertos reclamos relacionados con planes de beneficios (ERISA) [1]. Cada póliza tiene sus propios términos, así que conviene leer las exclusiones antes de aceptar un cargo."}
+      ]},
+      {"id": "fundaciones", "h2": "Fundaciones familiares: reglas especiales", "blocks": [
+        {"p": "Una fundación privada controlada por la familia tiene reglas federales propias. El Servicio de Impuestos Internos (IRS) describe como autonegociación (self-dealing) ciertas operaciones entre la fundación y personas descalificadas, como vender, intercambiar o arrendar bienes, prestar dinero, proporcionar bienes o servicios, o pagar compensaciones o gastos [5]. También prohíbe la autonegociación indirecta, incluidas ciertas operaciones con organizaciones que la fundación controla [5]."},
+        {"p": "Las consecuencias recaen en las personas. El IRS aplica un impuesto especial inicial del 10 por ciento del monto involucrado a la persona descalificada, y del 5 por ciento al administrador de la fundación que participe a sabiendas, salvo que su participación no sea intencional y se deba a una causa razonable [6]. No dé por hecho que una póliza D&O pagará estos impuestos; pregunte cómo trata su póliza las multas, sanciones e impuestos. La prevención depende sobre todo de buenos procesos y de asesoría fiscal."},
+        {"p": "Si la fundación tiene empleados, el III explica que el seguro de responsabilidad por prácticas laborales (EPLI) cubre reclamos de empleados, exempleados y candidatos por temas como discriminación, acoso o despido injustificado, y que protege también a la entidad y a sus directores y funcionarios [7]. En casa ocurre algo parecido: una familia que emplea personal del hogar puede enfrentar los mismos tipos de reclamos, y el EPLI existe también para hogares, como endoso o póliza separada. Nuestra <a href=\"/guias/personal-del-hogar-legado/\">guía de personal del hogar</a> lo explica."}
+      ]},
+      {"id": "encaje-personal", "h2": "Cómo encaja con su umbrella y su protección personal", "blocks": [
+        {"p": "Muchas pólizas umbrella personales excluyen o limitan la responsabilidad derivada de servir en juntas, sobre todo en empresas con fines de lucro. Algunas incluyen cierta protección para juntas sin fines de lucro, con condiciones propias. Antes de aceptar un cargo, pregunte a la organización qué D&O mantiene, quién está asegurado y si sus estatutos prevén indemnizar a los directores, y pregunte a su agente cómo responde su propia umbrella."},
+        {"p": "Para las juntas de empresas familiares, las reglas y las pólizas son distintas a las de una organización sin fines de lucro. Conviene revisar esos cargos por separado con su abogado y con su agente."},
+        {"p": "Tenga en cuenta además que las pólizas D&O suelen emitirse sobre la base de reclamos presentados (claims-made): responde la póliza vigente cuando se presenta el reclamo, no la que existía cuando se tomó la decisión. Si deja una junta, o si la organización cambia de póliza, pregunte cómo quedan cubiertos los actos anteriores y si existe un período extendido para reportar reclamos."}
+      ]},
+      {"id": "mitigacion", "h2": "Cómo reducir el riesgo", "blocks": [
+        {"p": "Una buena gobernanza es la mejor protección para la junta y para cada director:"},
+        {"ul": [
+          "Antes de aceptar un cargo, pida copia de la póliza D&O de la organización y de sus estatutos sobre indemnización.",
+          "Declare por escrito cualquier conflicto de interés y absténgase de votar en esos temas.",
+          "Exija actas claras que reflejen la información revisada y la base de cada decisión.",
+          "Apóyese en asesores independientes (abogados, contadores, auditores) para las decisiones importantes.",
+          "En la fundación familiar, revise con su asesor fiscal toda operación con familiares o con empresas de la familia [5].",
+          "Separe con claridad las cuentas, los bienes y los gastos de la fundación de los de la familia.",
+          "Revise cada año la cobertura D&O, la de prácticas laborales y la de su umbrella personal.",
+          "Mantenga una lista de todos los cargos que ocupa y compártala con su agente."
+        ]},
+        {"p": "Si sirve en una o varias juntas y quiere revisar cómo está protegido, escríbame."}
+      ]}
+    ],
+    "questions": [
+      "¿Qué póliza D&O mantiene cada organización en la que sirvo, y quién está asegurado?",
+      "¿Los estatutos prevén indemnizar a los directores, y la organización puede hacerlo?",
+      "¿Mi umbrella personal cubre o excluye el servicio en juntas?",
+      "¿Qué exclusiones de la póliza D&O me afectan más?",
+      "En la fundación familiar, ¿alguna operación involucra a personas descalificadas?",
+      "¿La fundación tiene empleados y cobertura de prácticas laborales?",
+      "¿Las juntas de empresas familiares tienen su propia protección?"
+    ],
+    "faq": [
+      {"q": "¿Puedo ser responsable personalmente por servir en una junta sin fines de lucro?", "a": "En Florida, la sección 617.0834 establece que, por lo general, los directores de corporaciones sin fines de lucro no responden personalmente por daños monetarios, salvo excepciones como una violación penal, un beneficio personal indebido o una conducta de mala fe [2]. Aun así, pueden ser demandados, y la defensa tiene costos."},
+      {"q": "¿Qué cubre un seguro de directores y funcionarios (D&O)?", "a": "Según el III, cubre a las personas por reclamos presentados en su contra mientras sirven en una junta o como funcionarios, incluidos los honorarios legales, y puede emitirse para organizaciones sin fines de lucro. Tiene exclusiones habituales, como el fraude y el lucro personal [1]."},
+      {"q": "¿Qué es la autonegociación en una fundación privada?", "a": "El IRS la describe como ciertas operaciones entre la fundación y personas descalificadas, como ventas, préstamos o pagos. Puede generar un impuesto especial inicial del 10 por ciento para la persona descalificada y del 5 por ciento para el administrador que participe a sabiendas [5][6]."}
+    ]
+  },
+  "en": {
+    "title": "Board Service and Family Foundations: D&O Insurance",
+    "meta": "Serving on foundation, school or condo boards in Florida: legal protections, directors and officers (D&O) insurance and private foundation rules.",
+    "kicker": "Guide · Boards and foundations",
+    "h1": "Board service and family foundations: the personal liability of serving",
+    "dek": "What the law protects when you serve on a board, what directors and officers insurance covers and which special rules apply to a family foundation.",
+    "summary": [
+      "In Florida, directors of not-for-profit organizations generally are not personally liable for monetary damages arising from their decisions, with exceptions such as a criminal violation or bad faith [2].",
+      "Those protections do not stop a lawsuit from being filed, and defending one costs money even when there is no liability in the end.",
+      "Directors and officers (D&O) insurance can cover people serving not-for-profit organizations, privately held firms and educational institutions [1].",
+      "In a private foundation, transactions with disqualified persons can trigger excise taxes on those persons and on managers who knowingly participate [6]."
+    ],
+    "sections": [
+      {"id": "why-it-matters", "h2": "Why serving on a board creates personal liability", "blocks": [
+        {"p": "Many affluent families serve on the boards of foundations, schools, museums, churches, condominium associations or family businesses. It is a valuable way to give back, but every board decision can be challenged by donors, employees, regulators, creditors or other members. When a lawsuit names the directors, it can reach their personal assets. Claims can arrive years after the decision, when the director has already left the seat, so it helps to think about this protection from the first day and also when leaving."},
+        {"p": "Directors and officers (D&O) insurance is designed for that risk. The Insurance Information Institute (III) explains that it covers individuals for claims made against them while serving on a board of directors or as an officer, and that it can be written for for-profit businesses, privately held firms, not-for-profit organizations and educational institutions [1]."}
+      ]},
+      {"id": "legal-protections", "h2": "What the law protects when you serve on a board", "blocks": [
+        {"p": "In Florida, section 617.0834 provides that directors and officers of not-for-profit corporations generally are not personally liable for monetary damages arising from their decisions in office, unless the breach of their duties amounts to, among other things, a criminal violation, a transaction with an improper personal benefit, or reckless, bad-faith or wanton and willful conduct [2]. The section was revised in 2026, so confirm the text that applies to your organization with your attorney."},
+        {"p": "At the federal level, the Volunteer Protection Act limits the liability of volunteers of nonprofit organizations who act within the scope of their responsibilities and are properly licensed or authorized where required, as long as the harm was not caused by willful or criminal misconduct, gross negligence, reckless misconduct or a conscious, flagrant indifference, and did not arise from operating a vehicle, boat or aircraft for which the state requires a license or insurance [3]. The same law states that it does not change the organization's own liability [3]."},
+        {"p": "For condominium associations, section 718.111 refers to those standards for directors' personal liability and requires the association to maintain insurance or fidelity bonding for everyone who controls or disburses association funds [4]. That bond protects the association's money, not the director."},
+        {"callout": "A legal protection helps win a case, but it does not stop one from being filed. Defense costs can be high even when the board acted properly."}
+      ]},
+      {"id": "what-do-covers", "h2": "What directors and officers (D&O) insurance covers", "blocks": [
+        {"p": "According to III, D&O responds to claims such as shareholder suits, creditor or investor suits over mismanagement, failure to comply with laws or regulations, employment practices and HR issues, and cyber liability [1]. III notes that even if directors are exonerated, responding to a lawsuit can generate substantial legal fees, and that a D&O policy would likely cover those costs [1]."},
+        {"table": {"head": ["Part of the policy", "What it does, according to III"], "rows": [
+          ["Side A", "Protects directors and officers when the organization cannot indemnify them"],
+          ["Side B", "Reimburses the organization when it indemnifies those individuals"],
+          ["Side C", "Provides entity coverage in certain securities claims"]
+        ]}},
+        {"p": "III lists common exclusions such as fraud, personal profiting, bodily injury or property damage, insured versus insured claims and certain benefit plan (ERISA) claims [1]. Every policy has its own terms, so read the exclusions before accepting a board seat."}
+      ]},
+      {"id": "family-foundations", "h2": "Family foundations: special rules", "blocks": [
+        {"p": "A private foundation controlled by the family has its own federal rules. The Internal Revenue Service (IRS) describes as self-dealing certain transactions between the foundation and disqualified persons, such as selling, exchanging or leasing property, lending money, providing goods or services, or paying compensation or expenses [5]. It also prohibits indirect self-dealing, including certain transactions with organizations the foundation controls [5]."},
+        {"p": "The consequences fall on individuals. The IRS imposes an initial excise tax of 10 percent of the amount involved on the disqualified person, and 5 percent on a foundation manager who knowingly participates, unless the participation is not willful and is due to reasonable cause [6]. Do not assume a D&O policy will pay these taxes; ask how your policy treats fines, penalties and taxes. Prevention depends mostly on good processes and tax advice."},
+        {"p": "If the foundation has employees, III explains that employment practices liability insurance (EPLI) covers claims by employees, former employees and job candidates over issues such as discrimination, harassment or wrongful termination, and that it also protects the entity and its directors and officers [7]. Something similar happens at home: a family that employs household staff can face the same kinds of claims, and EPLI is also available for households, as an endorsement or a separate policy. Our <a href=\"/en/guides/household-staff-legacy/\">household staff guide</a> explains it."}
+      ]},
+      {"id": "personal-fit", "h2": "How it fits with your umbrella and personal protection", "blocks": [
+        {"p": "Many personal umbrella policies exclude or limit liability arising from board service, especially on for-profit boards. Some include certain protection for not-for-profit boards, with their own conditions. Before accepting a seat, ask the organization what D&O it carries, who is insured and whether its bylaws provide for indemnifying directors, and ask your agent how your own umbrella responds."},
+        {"p": "For family business boards, the rules and the policies are different from those of a not-for-profit organization. Review those seats separately with your attorney and your agent."},
+        {"p": "Keep in mind too that D&O policies are usually written on a claims-made basis: the policy in force when the claim is made responds, not the one in force when the decision was made. If you leave a board, or the organization changes policies, ask how prior acts remain covered and whether there is an extended period to report claims."}
+      ]},
+      {"id": "mitigation", "h2": "How to reduce the risk", "blocks": [
+        {"p": "Good governance is the best protection for the board and for each director:"},
+        {"ul": [
+          "Before accepting a seat, ask for a copy of the organization's D&O policy and its bylaws on indemnification.",
+          "Disclose any conflict of interest in writing and abstain from voting on those matters.",
+          "Insist on clear minutes that reflect the information reviewed and the basis for each decision.",
+          "Rely on independent advisors (attorneys, accountants, auditors) for major decisions.",
+          "In the family foundation, review every transaction with relatives or family businesses with your tax advisor [5].",
+          "Keep the foundation's accounts, assets and expenses clearly separate from the family's.",
+          "Review D&O, employment practices and personal umbrella coverage every year.",
+          "Keep a list of every board seat you hold and share it with your agent."
+        ]},
+        {"p": "If you serve on one or more boards and want to review how you are protected, write to me."}
+      ]}
+    ],
+    "questions": [
+      "What D&O policy does each organization I serve carry, and who is insured?",
+      "Do the bylaws provide for indemnifying directors, and can the organization afford it?",
+      "Does my personal umbrella cover or exclude board service?",
+      "Which D&O exclusions affect me most?",
+      "In the family foundation, does any transaction involve disqualified persons?",
+      "Does the foundation have employees and employment practices coverage?",
+      "Do family business boards have their own protection?"
+    ],
+    "faq": [
+      {"q": "Can I be personally liable for serving on a nonprofit board?", "a": "In Florida, section 617.0834 provides that directors of not-for-profit corporations generally are not personally liable for monetary damages, with exceptions such as a criminal violation, an improper personal benefit or bad-faith conduct [2]. They can still be sued, and a defense costs money."},
+      {"q": "What does directors and officers (D&O) insurance cover?", "a": "According to III, it covers individuals for claims made against them while serving on a board or as officers, including legal fees, and it can be written for not-for-profit organizations. It has common exclusions, such as fraud and personal profiting [1]."},
+      {"q": "What is self-dealing in a private foundation?", "a": "The IRS describes it as certain transactions between the foundation and disqualified persons, such as sales, loans or payments. It can trigger an initial excise tax of 10 percent for the disqualified person and 5 percent for a manager who knowingly participates [5][6]."}
+    ]
+  },
+  "sources": [
+    {"n": 1, "label": "Insurance Information Institute (Triple-I), Directors and Officers insurance", "url": "https://www.iii.org/article/directors-and-officers-insurance"},
+    {"n": 2, "label": "Florida Statutes, section 617.0834 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/617.0834"},
+    {"n": 3, "label": "Volunteer Protection Act, 42 U.S.C. 14503 (Cornell Legal Information Institute)", "url": "https://www.law.cornell.edu/uscode/text/42/14503"},
+    {"n": 4, "label": "Florida Statutes, section 718.111 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/718.111"},
+    {"n": 5, "label": "IRS, Acts of self-dealing by private foundation", "url": "https://www.irs.gov/charities-non-profits/private-foundations/acts-of-self-dealing-by-private-foundation"},
+    {"n": 6, "label": "IRS, Taxes on self-dealing: private foundations", "url": "https://www.irs.gov/charities-non-profits/private-foundations/taxes-on-self-dealing-private-foundations"},
+    {"n": 7, "label": "Insurance Information Institute (Triple-I), Employment practices liability insurance", "url": "https://www.iii.org/article/employment-practices-liability-insurance"}
+  ]
+}

@@ -2,7 +2,7 @@
   "key": "emp",
   "slug_es": "personal-del-hogar-legado",
   "slug_en": "household-staff-legacy",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "es": {
     "title": "Empleada doméstica y seguro: personal del hogar y legado",
     "meta": "Empleada doméstica, niñera o chofer en Florida: obligaciones del empleador, compensación laboral, reclamos laborales y planificación patrimonial y seguros.",
@@ -141,6 +141,30 @@
           },
           {
             "p": "Como siguiente paso, reúna su inventario y revise las preguntas de abajo con su agente licenciado, su abogado de planificación patrimonial y su CPA, idealmente en una misma conversación."
+          }
+        ]
+      },
+      {
+        "id": "mitigacion",
+        "h2": "Cómo reducir el riesgo",
+        "blocks": [
+          {
+            "p": "Estas medidas protegen a su personal y a la familia empleadora:"
+          },
+          {
+            "ul": [
+              "Entregue a cada trabajador un acuerdo por escrito: tareas, horario, pago, días libres y uso de los autos de la familia.",
+              "Siga las reglas de la FTC y la EEOC para verificaciones de antecedentes, incluidos el consentimiento por escrito y los avisos [5].",
+              "Decida por escrito si elegirá voluntariamente la cobertura de compensación laboral [3].",
+              "Pague mediante un proceso de nómina que maneje los impuestos del empleador del hogar ante el IRS [1].",
+              "Confirme su registro del impuesto de reempleo ante el Departamento de Ingresos de Florida [4].",
+              "Incluya a los choferes y a quienes llevan a los niños en la revisión de su póliza de auto, con reglas claras de manejo.",
+              "Limite el acceso del personal a documentos financieros y contraseñas, y guarde los objetos de valor en una caja fuerte [6].",
+              "Explique al personal el plan de emergencias y de huracanes de la familia."
+            ]
+          },
+          {
+            "p": "Si quiere una segunda mirada a cómo está organizada su familia en este tema, escríbame."
           }
         ]
       }
@@ -309,6 +333,30 @@
             "p": "As a next step, gather your inventory and review the questions below with your own licensed agent, your estate planning attorney and your CPA, ideally in the same conversation."
           }
         ]
+      },
+      {
+        "id": "mitigation",
+        "h2": "How to reduce the risk",
+        "blocks": [
+          {
+            "p": "These steps protect your staff and the employing family:"
+          },
+          {
+            "ul": [
+              "Give each worker a written agreement: duties, schedule, pay, time off and use of family cars.",
+              "Follow FTC and EEOC rules for background checks, including written consent and notices [5].",
+              "Decide in writing whether to elect workers' compensation coverage voluntarily [3].",
+              "Pay through a payroll process that handles household employer taxes with the IRS [1].",
+              "Confirm your reemployment tax registration with the Florida Department of Revenue [4].",
+              "Include drivers and anyone who drives the children in your auto policy review, with clear driving rules.",
+              "Limit staff access to financial documents and passwords, and keep valuables in a safe [6].",
+              "Walk your staff through the family's emergency and hurricane plan."
+            ]
+          },
+          {
+            "p": "If you want a second look at how your family is set up on this, write to me."
+          }
+        ]
       }
     ],
     "questions": [
@@ -348,7 +396,7 @@
     },
     {
       "n": 3,
-      "label": "Florida Statutes, s. 440.04, Waiver of exclusion of certain employments",
+      "label": "Florida Statutes, s. 440.04, Waiver of exemption",
       "url": "https://www.flsenate.gov/Laws/Statutes/2025/440.04"
     },
     {

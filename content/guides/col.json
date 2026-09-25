@@ -2,7 +2,7 @@
   "key": "col",
   "slug_es": "colecciones-arte-joyas",
   "slug_en": "collections-art-jewelry",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "es": {
     "title": "Seguro de joyas y obras de arte: guía para Florida",
     "meta": "Seguro de joyas, relojes, arte y vino en Florida: límites especiales de la póliza de hogar, cobertura programada, valor convenido, tasaciones y traslados.",
@@ -10,7 +10,7 @@
     "h1": "Seguro de joyas, arte y colecciones: lo que la póliza de hogar no alcanza a cubrir",
     "dek": "Cómo funcionan los límites especiales, la cobertura programada y la documentación que sostiene un reclamo de alto valor.",
     "summary": [
-      "La póliza de hogar estándar suele limitar el robo de joyas a unos $1,500 en total, sin importar el valor real de las piezas [1].",
+      "La póliza de hogar estándar suele tener un límite total bajo para el robo de joyas, sin importar el valor real de las piezas [1].",
       "La cobertura programada lista cada pieza con su valor; la cobertura general (blanket) asegura una categoría con un tope por artículo.",
       "Valor convenido, desaparición misteriosa, daño accidental y pares o juegos son cláusulas que conviene confirmar por escrito.",
       "Una tasación vigente, fotos, recibos y procedencia son la base de cualquier reclamo; Florida DFS recomienda actualizar el inventario al menos una vez al año [4].",
@@ -22,43 +22,13 @@
         "h2": "Seguro de joyas y arte: por qué la póliza de hogar se queda corta",
         "blocks": [
           {
-            "p": "Quien busca un seguro de joyas o se pregunta cómo asegurar obras de arte suele partir de la póliza de hogar. Esa póliza sí cubre joyas, relojes, arte y objetos de colección, pero con reglas distintas a las del resto del contenido. Según el Insurance Information Institute (III), la póliza estándar tiene un límite de robo para joyas relativamente bajo, generalmente de unos $1,500 [1]. El III añade que joyas, pieles, arte, objetos de colección y platería están cubiertos, pero normalmente con topes en dólares cuando son robados [2]."
+            "p": "Quien busca un seguro de joyas o se pregunta cómo asegurar obras de arte suele partir de la póliza de hogar. Esa póliza sí cubre joyas, relojes, arte y objetos de colección, pero con reglas distintas a las del resto del contenido. Según el Insurance Information Institute (III), la póliza estándar tiene un límite de robo para joyas relativamente bajo [1]. El III añade que joyas, pieles, arte, objetos de colección y platería están cubiertos, pero normalmente con topes en dólares cuando son robados [2]."
           },
           {
-            "p": "Estos topes se llaman límites especiales (special limits of liability) y, en los formularios estándar más usados, aplican a toda la categoría en cada pérdida, no a cada pieza. Una familia con un reloj de alto valor y varias joyas heredadas puede descubrir, después de un robo, que todo el grupo comparte un solo tope. Como ilustración, estos son los montos que el Departamento de Servicios Financieros de Nueva York describe como típicos; no son cifras fijadas por la ley de Florida:"
+            "p": "Estos topes se llaman límites especiales (special limits of liability) y, en los formularios estándar más usados, aplican a toda la categoría en cada pérdida, no a cada pieza. Una familia con un reloj de alto valor y varias joyas heredadas puede descubrir, después de un robo, que todo el grupo comparte un solo tope. El regulador de Nueva York enumera las categorías que suelen tener estos topes: dinero y lingotes, valores y documentos, joyas y relojes, platería y armas de fuego [3]."
           },
           {
-            "table": {
-              "head": [
-                "Categoría (ejemplo ilustrativo)",
-                "Límite típico (ilustración)"
-              ],
-              "rows": [
-                [
-                  "Dinero, billetes, lingotes, oro y plata",
-                  "$200"
-                ],
-                [
-                  "Valores, escrituras, cuentas y documentos",
-                  "$1,500"
-                ],
-                [
-                  "Robo de joyas, relojes, pieles y piedras preciosas",
-                  "$1,500"
-                ],
-                [
-                  "Robo de platería, artículos de oro y peltre",
-                  "$2,500"
-                ],
-                [
-                  "Robo de armas de fuego",
-                  "$2,500"
-                ]
-              ]
-            }
-          },
-          {
-            "p": "Estas cifras provienen de una guía del regulador de Nueva York [3] y sirven solo como referencia: los límites varían según la aseguradora y el formulario, y muchas pólizas para viviendas de alto valor los modifican. Los montos que aplican a su caso son los de su propia póliza. El Departamento de Servicios Financieros de Florida (DFS) confirma el principio general: la mayoría de las pólizas limitan la cobertura de ciertos bienes personales, como efectivo, antigüedades, armas de fuego, joyas, pieles y equipos electrónicos [4]."
+            "p": "Los límites varían según el formulario, y muchas pólizas para viviendas de alto valor los modifican. Los montos que aplican a su caso son los de su propia póliza. El Departamento de Servicios Financieros de Florida (DFS) confirma el principio general: la mayoría de las pólizas limitan la cobertura de ciertos bienes personales, como efectivo, antigüedades, armas de fuego, joyas, pieles y equipos electrónicos [4]."
           },
           {
             "callout": "Un límite especial suele ser un tope total para la categoría. Si la pérdida lo supera, la diferencia queda a cargo de la familia, aunque el límite de contenido de la póliza sea mucho mayor."
@@ -76,7 +46,7 @@
             "ul": [
               "<b>Cobertura programada (scheduled):</b> cada pieza aparece en la póliza con su descripción y su valor asegurado. Es habitual para piezas únicas, como un anillo de compromiso, un reloj de colección o una pintura firmada.",
               "<b>Cobertura general (blanket):</b> un monto total para una categoría, sin listar cada pieza, con un tope por artículo. Suele usarse para muchas piezas de valor medio, como una colección de bolsos o una cava de vinos.",
-              "<b>Aumento del límite especial:</b> un endoso que eleva el tope de la póliza de hogar. El III menciona, como ejemplo, un tope por pieza de $2,000 con un total de $5,000 [1]."
+              "<b>Aumento del límite especial:</b> un endoso que eleva el tope de la póliza de hogar, por pieza o para toda la categoría [1]."
             ]
           },
           {
@@ -141,7 +111,7 @@
         "h2": "Tasaciones y documentación: la base de cualquier reclamo",
         "blocks": [
           {
-            "p": "La Asociación Nacional de Comisionados de Seguros (NAIC) recuerda que es necesario conocer el valor de las piezas para tener la cobertura adecuada, que en muchos casos las aseguradoras exigen una tasación y que algunas pólizas piden tasaciones periódicas [5]. El III indica que, antes de programar piezas en un flotante, deben tasarse profesionalmente [1]."
+            "p": "La Asociación Nacional de Comisionados de Seguros (NAIC) recuerda que es necesario conocer el valor de las piezas para tener la cobertura adecuada, y una tasación profesional, actualizada con el tiempo, es la forma de documentarlo [5]."
           },
           {
             "p": "No existe una frecuencia única para actualizar una tasación. En la práctica, muchas familias revisan los valores cada pocos años, y antes cuando el mercado se mueve, como ocurre con el oro, ciertos relojes o un artista cuya obra sube en subastas. Una pieza subvaluada queda con cobertura insuficiente; una sobrevaluada puede costar más de lo necesario sin que la póliza pague más que lo que sus términos permiten."
@@ -224,6 +194,30 @@
             "p": "Como siguiente paso, reúna el inventario, las tasaciones y las pólizas vigentes, y repase con su agente licenciado las preguntas de abajo. Si la colección pertenece a un fideicomiso o a una sociedad, incluya también a su abogado."
           }
         ]
+      },
+      {
+        "id": "mitigacion",
+        "h2": "Cómo reducir el riesgo",
+        "blocks": [
+          {
+            "p": "Estas medidas protegen las piezas y hacen que un reclamo sea más sencillo:"
+          },
+          {
+            "ul": [
+              "Actualice las tasaciones cada pocos años, y antes si el mercado cambia o si una pieza se modifica [5].",
+              "Mantenga estables la temperatura y la humedad para arte, vino y textiles, y aleje las piezas del sol directo y de las tuberías.",
+              "Instale una alarma monitoreada por una central, con sensores de incendio, agua y temperatura.",
+              "Guarde joyas y relojes en una caja fuerte certificada y anclada a la estructura.",
+              "Cuando viaje, considere guardar las piezas importantes en una caja de seguridad bancaria; recuerde que su contenido no está asegurado por la FDIC [7].",
+              "Fotografíe cada pieza y guarde recibos, certificados y procedencia fuera de la casa [4].",
+              "Use embaladores profesionales y transportistas especializados para mudanzas y préstamos, y confirme la cobertura en tránsito antes del envío.",
+              "Avise pronto a su agente sobre las piezas nuevas que adquiera."
+            ]
+          },
+          {
+            "p": "Si quiere una segunda mirada a cómo está organizada su familia en este tema, escríbame."
+          }
+        ]
       }
     ],
     "questions": [
@@ -238,7 +232,7 @@
     "faq": [
       {
         "q": "¿Cuánto cubre el seguro de hogar por robo de joyas?",
-        "a": "Según el Insurance Information Institute, la póliza de hogar estándar tiene un límite relativamente bajo para el robo de joyas, generalmente de unos $1,500. En los formularios estándar más usados, ese tope aplica a toda la categoría, no a cada pieza. Para piezas de mayor valor, muchas familias usan un endoso que eleva el límite o programan las piezas en una cobertura de artículos valiosos. Los montos exactos dependen de cada póliza."
+        "a": "Según el Insurance Information Institute, la póliza de hogar estándar tiene un límite relativamente bajo para el robo de joyas. En los formularios estándar más usados, ese tope aplica a toda la categoría, no a cada pieza. Para piezas de mayor valor, muchas familias usan un endoso que eleva el límite o programan las piezas en una cobertura de artículos valiosos. Los montos exactos dependen de cada póliza."
       },
       {
         "q": "¿Qué es el valor convenido en un seguro de arte?",
@@ -246,7 +240,7 @@
       },
       {
         "q": "¿Cada cuánto se debe actualizar la tasación de las joyas?",
-        "a": "No hay una regla única. La NAIC señala que muchas aseguradoras exigen una tasación y que algunas pólizas piden tasaciones periódicas. En la práctica, muchas familias revisan los valores cada pocos años, y antes si el mercado del oro, de los relojes o del arte cambia de forma importante. Lo que exige cada póliza es lo que conviene confirmar con su agente."
+        "a": "No hay una regla única. La NAIC señala que una tasación al día ayuda a documentar el valor de sus piezas. En la práctica, muchas familias revisan los valores cada pocos años, y antes si el mercado del oro, de los relojes o del arte cambia de forma importante. Lo que dice su propia póliza es lo que conviene confirmar con su agente."
       }
     ]
   },
@@ -257,7 +251,7 @@
     "h1": "Jewelry, art and collection insurance: what a homeowners policy leaves uncovered",
     "dek": "How special limits, scheduled coverage and good documentation work, and why they decide the outcome of a high-value claim.",
     "summary": [
-      "A standard homeowners policy often limits jewelry theft to about $1,500 in total, no matter what the pieces are worth [1].",
+      "A standard homeowners policy often sets a low total limit for jewelry theft, no matter what the pieces are worth [1].",
       "Scheduled coverage lists each piece and its value; blanket coverage insures a category with a per-item cap.",
       "Agreed value, mysterious disappearance, accidental damage and pairs and sets are clauses worth confirming in writing.",
       "A current appraisal, photos, receipts and provenance support any claim; Florida DFS recommends updating your home inventory at least once a year [4].",
@@ -269,43 +263,13 @@
         "h2": "Jewelry insurance and art: why a homeowners policy falls short",
         "blocks": [
           {
-            "p": "Anyone looking into jewelry insurance or art collection insurance usually starts with the homeowners policy. That policy does cover jewelry, watches, art and collectibles, but under different rules than the rest of your belongings. According to the Insurance Information Institute (III), the standard policy has a relatively low theft limit for jewelry, generally about $1,500 [1]. The III adds that jewelry, furs, art, collectibles and silverware are covered, but there are usually dollar limits if they are stolen [2]."
+            "p": "Anyone looking into jewelry insurance or art collection insurance usually starts with the homeowners policy. That policy does cover jewelry, watches, art and collectibles, but under different rules than the rest of your belongings. According to the Insurance Information Institute (III), the standard policy has a relatively low theft limit for jewelry [1]. The III adds that jewelry, furs, art, collectibles and silverware are covered, but there are usually dollar limits if they are stolen [2]."
           },
           {
-            "p": "These caps are called special limits of liability. On the most widely used standard forms, they apply to the whole category in each loss, not to each piece. A family with a valuable watch and several inherited pieces of jewelry can learn after a burglary that the entire group shares one cap. As an illustration, these are the amounts the New York Department of Financial Services describes as typical; they are not figures set by Florida law:"
+            "p": "These caps are called special limits of liability. On the most widely used standard forms, they apply to the whole category in each loss, not to each piece. A family with a valuable watch and several inherited pieces of jewelry can learn after a burglary that the entire group shares one cap. The New York regulator lists the categories these caps usually apply to: money and bullion, securities and documents, jewelry and watches, silverware and firearms [3]."
           },
           {
-            "table": {
-              "head": [
-                "Category (illustrative example)",
-                "Typical limit (illustration)"
-              ],
-              "rows": [
-                [
-                  "Money, bank notes, bullion, gold and silver",
-                  "$200"
-                ],
-                [
-                  "Securities, deeds, accounts and documents",
-                  "$1,500"
-                ],
-                [
-                  "Theft of jewelry, watches, furs and precious stones",
-                  "$1,500"
-                ],
-                [
-                  "Theft of silverware, goldware and pewterware",
-                  "$2,500"
-                ],
-                [
-                  "Theft of firearms",
-                  "$2,500"
-                ]
-              ]
-            }
-          },
-          {
-            "p": "These figures come from a New York regulator's guide [3] and serve only as a reference: limits vary by insurer and policy form, and many policies written for high-value homes change them. The amounts that apply to you are the ones in your own policy. The Florida Department of Financial Services (DFS) confirms the general principle: most policies limit coverage for some types of personal property, such as cash, antiques, firearms, jewelry, furs and electronics [4]."
+            "p": "Limits vary by policy form, and many policies written for high-value homes change them. The amounts that apply to you are the ones in your own policy. The Florida Department of Financial Services (DFS) confirms the general principle: most policies limit coverage for some types of personal property, such as cash, antiques, firearms, jewelry, furs and electronics [4]."
           },
           {
             "callout": "A special limit is usually a total cap for the category. If the loss goes above it, the family absorbs the difference, even when the policy's overall contents limit is much higher."
@@ -323,7 +287,7 @@
             "ul": [
               "<b>Scheduled coverage:</b> each piece appears on the policy with its description and insured value. It is common for one-of-a-kind items such as an engagement ring, a collectible watch or a signed painting.",
               "<b>Blanket coverage:</b> a total amount for a category, without listing each piece, subject to a per-item cap. It is often used for many mid-value pieces, such as a handbag collection or a wine cellar.",
-              "<b>Higher special limit:</b> an endorsement that raises the homeowners cap. As an example, the III mentions a $2,000 per-piece limit with a $5,000 overall limit [1]."
+              "<b>Higher special limit:</b> an endorsement that raises the homeowners cap, per piece or for the whole category [1]."
             ]
           },
           {
@@ -388,7 +352,7 @@
         "h2": "Appraisals and documentation: the foundation of any claim",
         "blocks": [
           {
-            "p": "The National Association of Insurance Commissioners (NAIC) notes that you need to know what your items are worth to carry the right coverage, that in many cases insurers will require an appraisal, and that some policies may require periodic appraisals [5]. The III says that before pieces are scheduled on a floater, they must be professionally appraised [1]."
+            "p": "The National Association of Insurance Commissioners (NAIC) notes that you need to know what your items are worth to carry the right coverage, and a professional appraisal, updated over time, is how that value is documented [5]."
           },
           {
             "p": "There is no single rule for how often to update an appraisal. In practice, many families review values every few years, and sooner when markets move, as happens with gold, certain watches or an artist whose work climbs at auction. An undervalued piece is underinsured; an overvalued one can cost more than necessary without the policy paying more than its terms allow."
@@ -471,6 +435,30 @@
             "p": "As a next step, gather your inventory, appraisals and current policies, and go over the questions below with your own licensed agent. If the collection belongs to a trust or a company, bring your attorney into the conversation as well."
           }
         ]
+      },
+      {
+        "id": "mitigation",
+        "h2": "How to reduce the risk",
+        "blocks": [
+          {
+            "p": "These steps protect the pieces and make a claim simpler:"
+          },
+          {
+            "ul": [
+              "Update appraisals every few years, and sooner if markets move or a piece is altered [5].",
+              "Keep temperature and humidity stable for art, wine and textiles, and keep pieces away from direct sun and water pipes.",
+              "Install a central-station monitored alarm, with fire, water and temperature sensors.",
+              "Keep jewelry and watches in a rated safe anchored to the structure.",
+              "When you travel, consider storing important pieces in a bank safe deposit box; remember that its contents are not insured by the FDIC [7].",
+              "Photograph every piece and keep receipts, certificates and provenance off site [4].",
+              "Use professional packers and specialized shippers for moves and loans, and confirm transit coverage before shipping.",
+              "Tell your agent promptly about new pieces you acquire."
+            ]
+          },
+          {
+            "p": "If you want a second look at how your family is set up on this, write to me."
+          }
+        ]
       }
     ],
     "questions": [
@@ -485,7 +473,7 @@
     "faq": [
       {
         "q": "How much does homeowners insurance cover for jewelry theft?",
-        "a": "According to the Insurance Information Institute, a standard homeowners policy has a relatively low limit for jewelry theft, generally about $1,500. On the most widely used standard forms, that cap applies to the whole category, not to each piece. For higher-value items, many families add an endorsement that raises the limit or schedule the pieces under valuable articles coverage. The exact amounts depend on each policy."
+        "a": "According to the Insurance Information Institute, a standard homeowners policy has a relatively low limit for jewelry theft. On the most widely used standard forms, that cap applies to the whole category, not to each piece. For higher-value items, many families add an endorsement that raises the limit or schedule the pieces under valuable articles coverage. The exact amounts depend on each policy."
       },
       {
         "q": "What is agreed value in art collection insurance?",
@@ -493,7 +481,7 @@
       },
       {
         "q": "How often should jewelry be reappraised?",
-        "a": "There is no single rule. The NAIC notes that many insurers require an appraisal and that some policies call for periodic appraisals. In practice, many families review values every few years, and sooner if the markets for gold, watches or art shift significantly. What your own policy requires is the point to confirm with your licensed agent."
+        "a": "There is no single rule. The NAIC notes that an up-to-date appraisal helps document what your pieces are worth. In practice, many families review values every few years, and sooner if the markets for gold, watches or art shift significantly. What your own policy says is the point to confirm with your licensed agent."
       }
     ]
   },
@@ -527,6 +515,11 @@
       "n": 6,
       "label": "FDIC Consumer News, Safe Deposit Boxes, Home Safes and Your Valuables (2018)",
       "url": "https://www.fdic.gov/consumer-resource-center/2018-safe-deposit-boxes-home-safes-and-your-valuables"
+    },
+    {
+      "n": 7,
+      "label": "FDIC, Understanding Deposit Insurance",
+      "url": "https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance"
     }
   ]
 }

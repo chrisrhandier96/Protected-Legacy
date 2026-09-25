@@ -1,0 +1,163 @@
+{
+  "key": "cnd",
+  "slug_es": "condominios-y-hoa",
+  "slug_en": "condos-hoa",
+  "updated": "2026-09-25",
+  "related": ["res", "brd", "str"],
+  "es": {
+    "title": "Seguro de condominio en Florida: póliza maestra y HO-6",
+    "meta": "Condominios y asociaciones en Florida: qué cubre la póliza maestra, qué le toca al propietario, evaluaciones, inspecciones de hito y estudios de reservas.",
+    "kicker": "Guía · Condominios y HOA",
+    "h1": "Condominios y asociaciones en Florida: qué cubre la asociación y qué le toca a usted",
+    "dek": "Cómo se reparten la póliza maestra y la póliza de unidad, por qué importan las evaluaciones especiales y qué cambió con las inspecciones de hito y los estudios de reservas.",
+    "summary": [
+      "La ley de Florida exige que la póliza de la asociación de condominio cubra la propiedad tal como se instaló originalmente, y excluye los acabados y bienes dentro de cada unidad, que son responsabilidad del propietario [1].",
+      "Las pólizas de unidad (HO-6) en Florida deben incluir al menos $2,000 de cobertura de evaluación por pérdida, con un deducible de no más de $250 [2].",
+      "Los edificios de condominio de tres pisos habitables o más requieren inspecciones de hito a partir de los 30 años [3].",
+      "Esos mismos edificios requieren un estudio de reservas de integridad estructural cada 10 años, y, salvo excepciones limitadas, la asociación ya no puede renunciar a esas reservas ni reducirlas [4]."
+    ],
+    "sections": [
+      {"id": "quien-cubre-que", "h2": "Póliza maestra y póliza de unidad: quién cubre qué", "blocks": [
+        {"p": "En un condominio, la protección se reparte entre dos pólizas. La sección 718.111 exige que el seguro de propiedad de la asociación cubra toda la propiedad del condominio tal como se instaló originalmente, o su reemplazo de igual tipo y calidad, según los planos y especificaciones originales [1]."},
+        {"p": "La misma ley excluye de la póliza de la asociación los bienes personales dentro de la unidad y una lista de elementos que están dentro de sus límites y sirven solo a esa unidad: revestimientos de pisos, paredes y techos, instalaciones eléctricas, electrodomésticos, calentadores y filtros de agua, gabinetes y encimeras empotrados, y cortinas y persianas. La ley dice expresamente que esos bienes y su seguro son responsabilidad del propietario [1]."},
+        {"table": {"head": ["Elemento", "Quién suele asegurarlo en Florida", "Qué revisar"], "rows": [
+          ["Estructura, techo y áreas comunes", "La asociación", "La póliza maestra y su deducible"],
+          ["Pisos, gabinetes, encimeras y electrodomésticos de su unidad", "El propietario", "Que su póliza HO-6 los incluya a costo de reemplazo"],
+          ["Muebles, ropa, arte y joyas", "El propietario", "Límites especiales y cobertura programada"],
+          ["Mejoras que usted hizo", "El propietario", "Que el límite refleje el costo actual"],
+          ["Su parte de una evaluación especial", "El propietario, en parte por la cobertura de evaluación", "El límite de esa cobertura"]
+        ]}}
+      ]},
+      {"id": "poliza-ho6", "h2": "La póliza de unidad (HO-6) y la cobertura de evaluación por pérdida", "blocks": [
+        {"p": "La póliza de unidad, conocida como HO-6, cubre lo que la ley deja a cargo del propietario: los acabados y bienes dentro de la unidad, las mejoras, la responsabilidad civil personal y, según la póliza, los gastos adicionales de vivienda si la unidad queda inhabitable."},
+        {"p": "La sección 627.714 exige que las pólizas de unidad de condominio en Florida incluyan al menos $2,000 de cobertura de evaluación por pérdida para todas las evaluaciones derivadas de la misma pérdida directa a la propiedad, con un deducible de no más de $250 por pérdida directa [2]. Si ya se aplicó un deducible a otra pérdida de la unidad en el mismo evento, no se aplica otro a esta cobertura [2]. La ley también exige que la póliza del propietario funcione como exceso sobre otras pólizas que cubran la misma propiedad [2]."},
+        {"callout": "El mínimo de $2,000 lo fija la ley. En un edificio con un deducible alto de huracán, su parte de una evaluación puede ser mucho mayor, así que pregunte a su agente qué límite de evaluación tiene su póliza."}
+      ]},
+      {"id": "evaluaciones", "h2": "Deducibles y evaluaciones especiales", "blocks": [
+        {"p": "Según la sección 718.111, los deducibles de la póliza de la asociación y los daños que superen la cobertura son un gasto común [1]. En la práctica, después de un huracán, la asociación puede cobrar a los propietarios una evaluación especial para cubrir el deducible de la póliza maestra. La junta fija esos deducibles, que deben ser coherentes con las normas de la industria y la práctica habitual de comunidades similares de la zona, y puede basarlos en los fondos disponibles, incluidas las reservas [1]."},
+        {"p": "La cobertura de evaluación de su póliza responde a evaluaciones derivadas de una pérdida cubierta. No está pensada para pagar las reservas o las reparaciones que exigen las inspecciones y los estudios que se explican más abajo. Por eso, antes de comprar una unidad, conviene revisar el presupuesto de la asociación, sus reservas y cualquier evaluación aprobada o en discusión."}
+      ]},
+      {"id": "inspecciones-de-hito", "h2": "Inspecciones de hito", "blocks": [
+        {"p": "La sección 553.899 exige una inspección de hito para los edificios de tres pisos habitables o más sujetos, total o parcialmente, al régimen de condominio o cooperativa [3]. La inspección debe hacerse antes del 31 de diciembre del año en que el edificio cumple 30 años, y luego cada 10 años [3]. La ley permite que la autoridad local la exija desde los 25 años si las condiciones locales lo justifican, como la cercanía al agua salada [3]."},
+        {"p": "La primera fase es una revisión visual a cargo de un arquitecto o ingeniero con licencia; la segunda fase, que puede incluir pruebas, solo es necesaria si se encuentran señales de deterioro importante [3]. La asociación debe distribuir el resumen del inspector a los propietarios dentro de los 45 días siguientes y publicarlo en el edificio [3]."}
+      ]},
+      {"id": "estudio-de-reservas", "h2": "El estudio de reservas de integridad estructural (SIRS)", "blocks": [
+        {"p": "La sección 718.112 exige que las asociaciones de condominio residencial tengan un estudio de reservas de integridad estructural al menos cada 10 años para cada edificio de tres pisos habitables o más [4]. El estudio debe cubrir, entre otros, el techo, la estructura, la protección contra incendios, la plomería, la electricidad, la impermeabilización y pintura exterior, y las ventanas y puertas exteriores [4]."},
+        {"p": "Las asociaciones existentes al 1 de julio de 2022 y controladas por los propietarios debían completar el estudio antes del 31 de diciembre de 2025, o antes del 31 de diciembre de 2026 si lo hacen junto con la inspección de hito [4]. Para los presupuestos adoptados desde el 31 de diciembre de 2024, los propietarios ya no pueden votar para no financiar, o financiar menos, las reservas de esos elementos [4]. Hay excepciones limitadas: desde el 1 de julio de 2025, una asociación que completó una inspección de hito en los 2 años calendario anteriores puede, con la aprobación de la mayoría del total de los votos, pausar o reducir temporalmente los aportes a reservas por hasta dos presupuestos anuales consecutivos, en presupuestos adoptados hasta el 31 de diciembre de 2028, para financiar las reparaciones que recomienda la inspección [4]. Para muchas familias, eso significa cuotas más altas o evaluaciones especiales."}
+      ]},
+      {"id": "hoa", "h2": "Asociaciones de propietarios (HOA) de casas", "blocks": [
+        {"p": "En una comunidad de casas con asociación de propietarios, el reparto suele ser distinto: cada propietario asegura su casa completa con una póliza de hogar, y la asociación asegura las áreas comunes, como la casa club, las piscinas o las entradas. Las reglas exactas dependen de la declaración y los documentos de cada comunidad, así que conviene leerlos con su abogado."},
+        {"p": "Si usted sirve en la junta de una asociación, su responsabilidad como director es otro tema. Nuestra <a href=\"/guias/juntas-y-fundaciones/\">guía de juntas y fundaciones</a> explica las protecciones legales y el seguro de directores y funcionarios."}
+      ]},
+      {"id": "mitigacion", "h2": "Cómo reducir el riesgo", "blocks": [
+        {"p": "Estas medidas ayudan a evitar sorpresas, tanto en su unidad como en el edificio:"},
+        {"ul": [
+          "Pida a la asociación el certificado de la póliza maestra y confirme su deducible de huracán [1].",
+          "Revise que su póliza HO-6 cubra los acabados y electrodomésticos que la ley deja a su cargo [1].",
+          "Pregunte qué límite de evaluación por pérdida tiene su póliza, más allá del mínimo legal [2].",
+          "Antes de comprar, pida el resumen de la inspección de hito y el estudio de reservas [3][4].",
+          "Instale sensores de fugas y válvulas de cierre automático, sobre todo si la unidad queda vacía.",
+          "Cierre el agua de la unidad cuando viaje por períodos largos.",
+          "Documente con fotos las mejoras y el contenido de la unidad, y guarde los recibos.",
+          "Participe en las reuniones de presupuesto de la asociación para conocer las reservas y evaluaciones previstas."
+        ]},
+        {"p": "Si quiere revisar cómo encajan su póliza de unidad y la de su asociación, escríbame."}
+      ]}
+    ],
+    "questions": [
+      "¿Qué cubre exactamente la póliza maestra de mi asociación y cuál es su deducible de huracán?",
+      "¿Mi póliza HO-6 cubre los acabados y electrodomésticos que la ley deja a mi cargo?",
+      "¿Qué límite de evaluación por pérdida tengo, y es suficiente para mi edificio?",
+      "¿El edificio ya tiene la inspección de hito y el estudio de reservas al día?",
+      "¿Hay evaluaciones especiales aprobadas o en discusión?",
+      "¿Mis mejoras están incluidas en el límite de mi póliza?",
+      "Si sirvo en la junta, ¿qué seguro de directores mantiene la asociación?"
+    ],
+    "faq": [
+      {"q": "¿Qué cubre el seguro de la asociación de condominio en Florida?", "a": "La sección 718.111 exige que cubra la propiedad del condominio tal como se instaló originalmente. Excluye los bienes personales y los acabados dentro de cada unidad, como pisos, gabinetes, encimeras y electrodomésticos, que son responsabilidad del propietario [1]."},
+      {"q": "¿Qué es la cobertura de evaluación por pérdida en una póliza HO-6?", "a": "Paga su parte de una evaluación que la asociación cobra por una pérdida cubierta. En Florida, la ley exige al menos $2,000 para las evaluaciones derivadas de la misma pérdida directa, con un deducible de no más de $250 [2]."},
+      {"q": "¿Qué es una inspección de hito en Florida?", "a": "Es una inspección estructural obligatoria para edificios de condominio o cooperativa de tres pisos habitables o más, antes del 31 de diciembre del año en que cumplen 30 años y luego cada 10 años. La autoridad local puede exigirla desde los 25 años en ciertos casos [3]."}
+    ]
+  },
+  "en": {
+    "title": "Condo Insurance in Florida: Master Policy and HO-6",
+    "meta": "Condos and associations in Florida: what the master policy covers, what the owner insures, loss assessment coverage, milestone inspections and reserve studies.",
+    "kicker": "Guide · Condos and HOAs",
+    "h1": "Condos and associations in Florida: what the association covers and what falls to you",
+    "dek": "How the master policy and the unit policy split the risk, why special assessments matter and what changed with milestone inspections and reserve studies.",
+    "summary": [
+      "Florida law requires a condominium association's policy to cover the property as originally installed, and excludes the finishes and belongings inside each unit, which are the owner's responsibility [1].",
+      "Florida unit owner (HO-6) policies must include at least $2,000 of loss assessment coverage, with a deductible of no more than $250 [2].",
+      "Condominium buildings three habitable stories or higher require milestone inspections starting at 30 years of age [3].",
+      "Those same buildings require a structural integrity reserve study every 10 years, and, with limited exceptions, the association can no longer waive or reduce those reserves [4]."
+    ],
+    "sections": [
+      {"id": "who-covers-what", "h2": "Master policy and unit policy: who covers what", "blocks": [
+        {"p": "In a condominium, protection is split between two policies. Section 718.111 requires the association's property insurance to cover all portions of the condominium property as originally installed, or replacement of like kind and quality, in accordance with the original plans and specifications [1]."},
+        {"p": "The same law excludes from the association's policy the personal property within the unit and a list of items located within the unit's boundaries that serve only that unit: floor, wall and ceiling coverings, electrical fixtures, appliances, water heaters and water filters, built-in cabinets and countertops, and window treatments. The law states expressly that such property and any insurance on it are the unit owner's responsibility [1]."},
+        {"table": {"head": ["Item", "Who usually insures it in Florida", "What to check"], "rows": [
+          ["Structure, roof and common areas", "The association", "The master policy and its deductible"],
+          ["Your unit's floors, cabinets, countertops and appliances", "The owner", "That your HO-6 includes them at replacement cost"],
+          ["Furniture, clothing, art and jewelry", "The owner", "Special limits and scheduled coverage"],
+          ["Improvements you made", "The owner", "That the limit reflects today's cost"],
+          ["Your share of a special assessment", "The owner, partly through loss assessment coverage", "The limit of that coverage"]
+        ]}}
+      ]},
+      {"id": "unit-owner-policy", "h2": "The unit owner policy (HO-6) and loss assessment coverage", "blocks": [
+        {"p": "The unit owner policy, known as HO-6, covers what the law leaves to the owner: the finishes and belongings inside the unit, improvements, personal liability and, depending on the policy, additional living expenses if the unit becomes uninhabitable."},
+        {"p": "Section 627.714 requires Florida condominium unit owner policies to include at least $2,000 of loss assessment coverage for all assessments made as a result of the same direct loss to the property, with a deductible of no more than $250 per direct property loss [2]. If a deductible was already applied to another loss to the unit from the same event, no separate deductible applies to this coverage [2]. The law also requires the owner's policy to apply as excess over other policies covering the same property [2]."},
+        {"callout": "The $2,000 minimum is set by law. In a building with a large hurricane deductible, your share of an assessment can be much larger, so ask your agent what loss assessment limit your policy carries."}
+      ]},
+      {"id": "assessments", "h2": "Deductibles and special assessments", "blocks": [
+        {"p": "Under section 718.111, the association policy's deductibles and damages above its coverage are a common expense [1]. In practice, after a hurricane, the association can charge owners a special assessment to cover the master policy deductible. The board sets those deductibles, which must be consistent with industry standards and prevailing practice for similar communities in the area, and may base them on available funds, including reserves [1]."},
+        {"p": "Your policy's loss assessment coverage responds to assessments arising from a covered loss. It is not designed to pay for the reserves or repairs required by the inspections and studies explained below. That is why, before buying a unit, you should review the association's budget, its reserves and any assessment already approved or under discussion."}
+      ]},
+      {"id": "milestone-inspections", "h2": "Milestone inspections", "blocks": [
+        {"p": "Section 553.899 requires a milestone inspection for buildings three habitable stories or more in height that are subject, in whole or in part, to the condominium or cooperative form of ownership [3]. The inspection must be performed by December 31 of the year the building reaches 30 years of age, and every 10 years after that [3]. The law lets the local authority require it at 25 years if local circumstances justify it, such as proximity to salt water [3]."},
+        {"p": "Phase one is a visual examination by a licensed architect or engineer; phase two, which may include testing, is required only if signs of substantial deterioration are found [3]. The association must distribute the inspector's summary to unit owners within 45 days and post it in the building [3]."}
+      ]},
+      {"id": "reserve-study", "h2": "The structural integrity reserve study (SIRS)", "blocks": [
+        {"p": "Section 718.112 requires residential condominium associations to have a structural integrity reserve study at least every 10 years for each building three habitable stories or higher [4]. The study must cover, among other items, the roof, the structure, fireproofing and fire protection systems, plumbing, electrical systems, waterproofing and exterior painting, and windows and exterior doors [4]."},
+        {"p": "Associations existing on or before July 1, 2022 and controlled by unit owners had to complete the study by December 31, 2025, or by December 31, 2026 if done together with the milestone inspection [4]. For budgets adopted on or after December 31, 2024, owners can no longer vote to provide no reserves, or less reserves than required, for those items [4]. There are limited exceptions: since July 1, 2025, an association that completed a milestone inspection in the previous 2 calendar years may, with approval of a majority of the total voting interests, temporarily pause or reduce reserve contributions for up to two consecutive annual budgets, for budgets adopted on or before December 31, 2028, to fund the repairs the inspection recommends [4]. For many families, that means higher dues or special assessments."}
+      ]},
+      {"id": "hoa", "h2": "Homeowners associations (HOAs) for single-family homes", "blocks": [
+        {"p": "In a community of single-family homes with a homeowners association, the split is usually different: each owner insures the entire house with a homeowners policy, and the association insures the common areas, such as the clubhouse, pools or entrances. The exact rules depend on each community's declaration and governing documents, so read them with your attorney."},
+        {"p": "If you serve on an association's board, your liability as a director is a separate topic. Our <a href=\"/en/guides/board-service-family-foundations/\">guide on board service and family foundations</a> explains the legal protections and directors and officers insurance."}
+      ]},
+      {"id": "mitigation", "h2": "How to reduce the risk", "blocks": [
+        {"p": "These steps help avoid surprises, both in your unit and in the building:"},
+        {"ul": [
+          "Ask the association for the master policy certificate and confirm its hurricane deductible [1].",
+          "Check that your HO-6 covers the finishes and appliances the law leaves to you [1].",
+          "Ask what loss assessment limit your policy carries, beyond the legal minimum [2].",
+          "Before buying, ask for the milestone inspection summary and the reserve study [3][4].",
+          "Install leak sensors and automatic shutoff valves, especially if the unit sits empty.",
+          "Shut off the unit's water when you travel for long periods.",
+          "Photograph the unit's improvements and contents, and keep the receipts.",
+          "Attend the association's budget meetings to learn about planned reserves and assessments."
+        ]},
+        {"p": "If you want to review how your unit policy and your association's policy fit together, write to me."}
+      ]}
+    ],
+    "questions": [
+      "What exactly does my association's master policy cover, and what is its hurricane deductible?",
+      "Does my HO-6 cover the finishes and appliances the law leaves to me?",
+      "What loss assessment limit do I have, and is it enough for my building?",
+      "Is the building up to date on its milestone inspection and reserve study?",
+      "Are any special assessments approved or under discussion?",
+      "Are my improvements included in my policy limit?",
+      "If I serve on the board, what directors and officers insurance does the association carry?"
+    ],
+    "faq": [
+      {"q": "What does a condo association's insurance cover in Florida?", "a": "Section 718.111 requires it to cover the condominium property as originally installed. It excludes personal property and the finishes inside each unit, such as floors, cabinets, countertops and appliances, which are the owner's responsibility [1]."},
+      {"q": "What is loss assessment coverage on an HO-6 policy?", "a": "It pays your share of an assessment the association charges for a covered loss. In Florida, the law requires at least $2,000 for assessments arising from the same direct loss, with a deductible of no more than $250 [2]."},
+      {"q": "What is a milestone inspection in Florida?", "a": "It is a required structural inspection for condominium or cooperative buildings three habitable stories or higher, due by December 31 of the year they reach 30 years of age and every 10 years after that. The local authority may require it at 25 years in some cases [3]."}
+    ]
+  },
+  "sources": [
+    {"n": 1, "label": "Florida Statutes, section 718.111 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/718.111"},
+    {"n": 2, "label": "Florida Statutes, section 627.714 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/627.714"},
+    {"n": 3, "label": "Florida Statutes, section 553.899 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/553.899"},
+    {"n": 4, "label": "Florida Statutes, section 718.112 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/718.112"}
+  ]
+}

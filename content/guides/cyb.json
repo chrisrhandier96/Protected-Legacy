@@ -1,0 +1,190 @@
+{
+  "key": "cyb",
+  "slug_es": "ciber-proteccion-familiar",
+  "slug_en": "personal-cyber",
+  "updated": "2026-09-25",
+  "related": ["lia", "kr", "emp"],
+  "es": {
+    "title": "Ciberseguro personal en Florida: fraude y extorsión",
+    "meta": "Cómo funciona el ciberseguro personal para familias en Florida: fraude de transferencias en cierres, ciberextorsión, robo de identidad y una lista de prevención.",
+    "kicker": "Guía · Ciberprotección",
+    "h1": "Ciberprotección familiar: fraude, extorsión e identidad en un hogar conectado",
+    "dek": "Qué cubre un ciberseguro personal, qué no cubre una póliza de hogar y cómo proteger a la familia, al personal y a los dispositivos de la casa.",
+    "summary": [
+      "El ciberseguro personal y la cobertura de robo de identidad no son lo mismo: la segunda suele pagar la restauración de su identidad, no el dinero robado.",
+      "En 2025, el FBI recibió reportes de pérdidas por compromiso de correo electrónico por más de $3,000 millones, y la Florida fue el tercer estado con más pérdidas reportadas.",
+      "En un cierre inmobiliario, una regla simple de verificación por teléfono ayuda a prevenir el fraude de transferencias.",
+      "Si una transferencia sale mal, el tiempo es decisivo: llame a su banco de inmediato y reporte el caso en ic3.gov."
+    ],
+    "sections": [
+      {"id": "que-cubre", "h2": "Ciberseguro personal y cobertura de robo de identidad: no son lo mismo", "blocks": [
+        {"p": "Durante años, la protección cibernética de una familia se limitaba a la cobertura de robo de identidad. Esa cobertura, según la Asociación Nacional de Comisionados de Seguros (NAIC), reembolsa ciertos costos de restaurar su identidad, como honorarios legales, salarios perdidos y gastos administrativos, y por lo general no reembolsa el dinero robado de sus cuentas [2]. Puede venderse sola o incluida en una póliza de hogar o de inquilino [2]."},
+        {"p": "El ciberseguro personal es más amplio. Según la póliza, puede incluir la respuesta a una ciberextorsión, la restauración de datos y equipos, ciertos fraudes en línea y el apoyo en casos de acoso digital. Cada aseguradora define estas coberturas a su manera, con límites y sublímites propios, así que el nombre del producto dice poco: lo que importa es el texto de la póliza."},
+        {"table": {"head": ["Componente", "Qué suele hacer", "Qué conviene revisar"], "rows": [
+          ["Restauración de identidad", "Paga gastos para recuperar su identidad y su crédito", "Si reembolsa dinero robado (casi nunca)"],
+          ["Ciberextorsión", "Cubre la respuesta ante una amenaza o un secuestro de datos", "Si exige aviso previo antes de cualquier pago"],
+          ["Fraude en línea o de transferencias", "Puede reembolsar pérdidas por engaños o transferencias fraudulentas", "Sublímites bajos y exclusiones por ingeniería social"],
+          ["Restauración de datos y equipos", "Recupera archivos y sistemas dañados por un ataque", "Qué dispositivos del hogar están incluidos"],
+          ["Acoso y reputación en línea", "Puede pagar asesoría, retiro de contenido o reubicación", "Si incluye a todos los miembros del hogar"]
+        ]}}
+      ]},
+      {"id": "fraude-transferencias", "h2": "Fraude de transferencias e ingeniería social: el riesgo de los cierres inmobiliarios", "blocks": [
+        {"p": "El compromiso de correo electrónico, cuando un delincuente se hace pasar por alguien de confianza para desviar un pago, generó 24,768 denuncias y pérdidas reportadas por $3,046,598,558 ante el Centro de Denuncias de Delitos en Internet del FBI (IC3) en 2025. La categoría de fraude inmobiliario sumó otras 12,368 denuncias y $275,110,419 en pérdidas [1]. La Florida fue el tercer estado del país tanto en número de denuncias (71,843) como en pérdidas reportadas (más de $1,596 millones) [1]."},
+        {"p": "El patrón típico en un cierre es simple: días antes de firmar, llega un correo que parece de la compañía de títulos o del abogado, con instrucciones de transferencia actualizadas. El FBI describe un caso de agosto de 2025 en el que unos compradores que cerraban la compra de su casa recibieron un correo que imitaba a sus abogados y enviaron más de $449,000 a una cuenta fraudulenta; tras una denuncia rápida ante el IC3, los fondos quedaron congelados en el banco receptor [1]."},
+        {"callout": "Regla del cierre: nunca envíe dinero siguiendo instrucciones que llegaron por correo. Llame a un número que usted ya tenía o que confirmó por su cuenta, no al que aparece en el mensaje, y confirme cuenta y monto antes de transferir."},
+        {"p": "Si ya envió el dinero, cada hora cuenta. El proceso de recuperación del IC3 (Financial Fraud Kill Chain) intervino en 3,900 casos en 2025 y ayudó a congelar $679,013,183 de $1,163,919,846 que los delincuentes intentaron robar, una tasa de éxito del 58% [1]. El FBI recomienda llamar de inmediato a su banco para pedir que revierta la transferencia y presentar la denuncia en ic3.gov con todos los detalles de la transacción [1]."},
+        {"p": "Del lado del seguro, muchas pólizas personales excluyen o limitan con sublímites las pérdidas en las que usted mismo autorizó la transferencia, aunque lo hayan engañado. Pregunte específicamente cómo trata su póliza la ingeniería social."}
+      ]},
+      {"id": "ciberextorsion", "h2": "Ciberextorsión, secuestro de datos y sextorsión en el hogar", "blocks": [
+        {"p": "La extorsión fue la segunda categoría con más denuncias ante el IC3 en 2025: 89,129 casos [1]. El mismo informe registra 3,611 denuncias por secuestro de datos (ransomware) y más de 75,000 reportes de sextorsión, un tipo de chantaje que muchas veces apunta a adolescentes a través de redes sociales y videojuegos [1]."},
+        {"p": "En un hogar, la extorsión puede tomar varias formas: alguien toma control de las cuentas de la familia y exige un pago, cifra los archivos de una computadora, o amenaza con publicar fotos o información privada. Un ciberseguro personal con cobertura de extorsión suele pagar a especialistas que evalúan la amenaza y guían la respuesta, y en algunos casos reembolsa el pago. Suele exigir que usted avise a la aseguradora antes de pagar."},
+        {"ul": [
+          "No pague ni negocie por su cuenta antes de hablar con su aseguradora y con las autoridades.",
+          "Guarde capturas de pantalla, mensajes y datos de pago: son evidencia.",
+          "Si la víctima es un menor, conserve la calma y reporte el caso; el IC3 recibe estos reportes [1]."
+        ]}
+      ]},
+      {"id": "reputacion", "h2": "Reputación en línea, acoso y fraudes de suplantación", "blocks": [
+        {"p": "Las familias con un perfil público o con negocios propios enfrentan otro riesgo: la publicación de información falsa o privada, el acoso en línea y la suplantación de identidad para engañar a terceros. La Comisión Federal de Comercio (FTC) recibió en 2025 más de 1 millón de reportes de fraudes de suplantación, con pérdidas reportadas por más de $3,500 millones, dentro de un total de 3 millones de reportes de fraude y $15,900 millones en pérdidas [4]."},
+        {"p": "Aquí intervienen dos pólizas distintas. Algunas pólizas de ciberseguro personal pagan asesoría para retirar contenido o gestionar una crisis de reputación. Por otro lado, una demanda por difamación que alguien presente contra un miembro de su familia por algo que publicó en redes suele corresponder a la cobertura de responsabilidad civil personal, a menudo en la póliza umbrella. Confirme cuál de las dos responde en cada escenario."}
+      ]},
+      {"id": "hogar-conectado", "h2": "Casa inteligente, family office, personal del hogar y adolescentes", "blocks": [
+        {"p": "Cada dispositivo conectado de la casa (cámaras, cerraduras, termostatos, sistemas de audio, cargadores) es una puerta de entrada posible. En hogares con family office o con asistentes que manejan pagos, la computadora de esa persona suele ser el punto más expuesto, porque desde ella se aprueban transferencias."},
+        {"p": "El personal del hogar y los adolescentes merecen atención especial. Quien trabaja en la casa conoce rutinas, contraseñas del wifi y a veces datos financieros. Los jóvenes comparten mucho en redes, y los delincuentes usan fotos públicas para engaños como el secuestro virtual; el FBI advirtió en diciembre de 2025 que alteran fotos tomadas de redes sociales para fabricar supuestas pruebas de vida [5]."},
+        {"ul": [
+          "Revise qué dispositivos y qué personas del hogar incluye la póliza cibernética.",
+          "Pregunte si cubre equipos del personal que trabaja desde su casa o con información de la familia.",
+          "Separe los dispositivos de la casa inteligente en una red distinta de la que usan las computadoras con información financiera."
+        ]}
+      ]},
+      {"id": "exclusiones", "h2": "Lo que una póliza de hogar normalmente no cubre", "blocks": [
+        {"p": "La póliza de hogar estándar fue diseñada para daños físicos. Por lo general no cubre el dinero que usted transfirió a un estafador, los datos perdidos, el costo de recuperar cuentas ni la respuesta a una extorsión. La cobertura de robo de identidad, cuando existe, suele limitarse a gastos de restauración y no a fondos robados [2]."},
+        {"p": "Tampoco conviene suponer que la tarjeta de crédito o el banco cubrirán todo. Las protecciones de las tarjetas son distintas de las de una transferencia bancaria, y una transferencia que usted autorizó es mucho más difícil de revertir. Por eso la prevención y la reacción rápida pesan tanto como el seguro."}
+      ]},
+      {"id": "mitigacion", "h2": "Cómo reducir el riesgo", "blocks": [
+        {"p": "Estas diez medidas cuestan poco y reducen buena parte del riesgo cibernético de una familia:"},
+        {"ul": [
+          "Active la verificación en dos pasos (MFA) en el correo, el banco, las inversiones y las redes, empezando por el correo principal.",
+          "Use un administrador de contraseñas y una contraseña distinta para cada cuenta importante.",
+          "Ponga los dispositivos de la casa inteligente en una red separada de las computadoras con información financiera.",
+          "Adopte la regla del cierre: ninguna transferencia sale sin una llamada de confirmación a un número verificado por su cuenta.",
+          "Congele su crédito en las tres agencias (Equifax, Experian y TransUnion): es gratis y no afecta su puntaje; para hijos menores de 16 años también puede solicitarse [3].",
+          "Acuerde una palabra clave familiar para emergencias, como recomienda el FBI ante los secuestros virtuales [5].",
+          "Mantenga actualizados los sistemas y las aplicaciones, y haga copias de seguridad que no estén siempre conectadas.",
+          "Limite lo que la familia publica sobre viajes, rutinas y ubicación en tiempo real.",
+          "Defina por escrito qué acceso tiene el personal del hogar a cuentas, correos y dispositivos, y retírelo cuando termine la relación laboral.",
+          "Tenga a mano el plan de reacción: llamar al banco, denunciar en ic3.gov y en identitytheft.gov, y avisar a la aseguradora."
+        ]},
+        {"p": "Si quiere una segunda mirada a cómo está organizada su familia en este tema, escríbame."}
+      ]}
+    ],
+    "questions": [
+      "¿Mi póliza de hogar incluye alguna cobertura de robo de identidad o ciberseguro? ¿Con qué límites?",
+      "¿Qué cubre la póliza si autorizo una transferencia porque me engañaron (ingeniería social)?",
+      "¿La cobertura de ciberextorsión exige aviso previo antes de pagar? ¿A quién llamo?",
+      "¿Qué miembros del hogar, qué dispositivos y qué personal quedan incluidos?",
+      "Ante una demanda por algo publicado en redes, ¿responde mi umbrella, mi ciberseguro o ninguno?",
+      "¿Cuál es el procedimiento de mi banco para revertir una transferencia fraudulenta?"
+    ],
+    "faq": [
+      {"q": "¿El seguro de robo de identidad me devuelve el dinero que me robaron?", "a": "Por lo general, no. Según la NAIC, la cobertura de robo de identidad reembolsa costos de restauración como honorarios legales, salarios perdidos y gastos administrativos, pero generalmente no el dinero robado de sus cuentas [2]. Para eso existen coberturas de fraude en línea dentro de algunos ciberseguros personales, por lo general con sublímites."},
+      {"q": "¿Qué hago si envié una transferencia a una cuenta fraudulenta?", "a": "Actúe de inmediato. Llame a su banco y pida que revierta la transferencia, y presente una denuncia en ic3.gov con todos los detalles de la transacción, sin importar el monto. En 2025, el proceso de recuperación del IC3 ayudó a congelar el 58% de los fondos en los casos en que intervino [1]."},
+      {"q": "¿Congelar el crédito cuesta dinero o afecta mi puntaje?", "a": "No. La FTC explica que colocar o levantar un congelamiento de crédito es gratis y no afecta su puntaje. Debe solicitarlo en las tres agencias de crédito (Equifax, Experian y TransUnion), y también puede pedirlo para un hijo menor de 16 años [3]."}
+    ]
+  },
+  "en": {
+    "title": "Personal Cyber Insurance in Florida: Fraud and Extortion",
+    "meta": "How personal cyber insurance works for Florida families: closing wire fraud, cyber extortion, identity theft, what a home policy excludes and a prevention checklist.",
+    "kicker": "Guide · Personal cyber",
+    "h1": "Family cyber protection: fraud, extortion and identity in a connected home",
+    "dek": "What personal cyber insurance covers, what a homeowners policy does not, and how to protect your family, your staff and the devices in your home.",
+    "summary": [
+      "Personal cyber insurance and identity theft coverage are not the same: the second usually pays to restore your identity, not the money that was stolen.",
+      "In 2025, the FBI received reports of more than $3 billion in business email compromise losses, and Florida ranked third among states in reported losses.",
+      "In a real estate closing, a simple phone verification rule helps prevent wire fraud.",
+      "If a wire goes wrong, time is everything: call your bank immediately and file a report at ic3.gov."
+    ],
+    "sections": [
+      {"id": "what-it-covers", "h2": "Personal cyber insurance and identity theft coverage are not the same", "blocks": [
+        {"p": "For years, a family's cyber protection meant identity theft coverage. According to the National Association of Insurance Commissioners (NAIC), that coverage reimburses certain costs of restoring your identity, such as legal fees, lost wages and administrative expenses, and generally does not reimburse money stolen from your accounts [2]. It may be sold on its own or included in a homeowners or renters policy [2]."},
+        {"p": "Personal cyber insurance is broader. Depending on the policy, it can include the response to cyber extortion, restoration of data and devices, certain online fraud losses and support after online harassment. Each insurer defines these coverages its own way, with its own limits and sublimits, so the product name tells you little: what matters is the policy wording."},
+        {"table": {"head": ["Component", "What it usually does", "What to check"], "rows": [
+          ["Identity restoration", "Pays expenses to recover your identity and credit", "Whether it reimburses stolen money (rarely)"],
+          ["Cyber extortion", "Covers the response to a threat or a ransomware attack", "Whether it requires notice before any payment"],
+          ["Online or funds transfer fraud", "May reimburse losses from scams or fraudulent transfers", "Low sublimits and social engineering exclusions"],
+          ["Data and device restoration", "Recovers files and systems damaged by an attack", "Which home devices are included"],
+          ["Online harassment and reputation", "May pay for advice, content removal or relocation", "Whether every household member is included"]
+        ]}}
+      ]},
+      {"id": "wire-fraud", "h2": "Wire fraud and social engineering: the real estate closing risk", "blocks": [
+        {"p": "Business email compromise, where a criminal poses as someone you trust to redirect a payment, generated 24,768 complaints and $3,046,598,558 in reported losses to the FBI's Internet Crime Complaint Center (IC3) in 2025. The real estate fraud category added another 12,368 complaints and $275,110,419 in losses [1]. Florida ranked third in the nation in both the number of complaints (71,843) and reported losses (more than $1.596 billion) [1]."},
+        {"p": "The typical closing pattern is simple: days before signing, an email that seems to come from the title company or the attorney arrives with updated wiring instructions. The FBI describes an August 2025 case in which buyers closing on a home received an email impersonating their attorneys and wired more than $449,000 to a fraudulent account; after a prompt IC3 complaint, the funds were frozen at the receiving bank [1]."},
+        {"callout": "The closing rule: never send money based on instructions that arrived by email. Call a number you already had or confirmed on your own, not the one in the message, and confirm the account and the amount before you wire."},
+        {"p": "If the money is already gone, every hour counts. The IC3 recovery process (the Financial Fraud Kill Chain) acted on 3,900 incidents in 2025 and helped freeze $679,013,183 of the $1,163,919,846 criminals attempted to steal, a 58% success rate [1]. The FBI advises calling your bank immediately to request a recall of the funds and filing a complaint at ic3.gov with the full transaction details [1]."},
+        {"p": "On the insurance side, many personal policies exclude, or cap with sublimits, losses where you authorized the transfer yourself, even though you were deceived. Ask specifically how your policy treats social engineering."}
+      ]},
+      {"id": "cyber-extortion", "h2": "Cyber extortion, ransomware and sextortion at home", "blocks": [
+        {"p": "Extortion was the second most reported category at IC3 in 2025, with 89,129 complaints [1]. The same report records 3,611 ransomware complaints and more than 75,000 sextortion submissions, a type of blackmail that often targets teenagers through social media and gaming [1]."},
+        {"p": "In a household, extortion can take several forms: someone takes over the family's accounts and demands payment, encrypts the files on a computer, or threatens to publish private photos or information. Personal cyber insurance with extortion coverage usually pays specialists who assess the threat and guide the response, and in some cases reimburses the payment. It usually requires you to notify the insurer before paying."},
+        {"ul": [
+          "Do not pay or negotiate on your own before speaking with your insurer and the authorities.",
+          "Keep screenshots, messages and payment details: they are evidence.",
+          "If the victim is a minor, stay calm and report it; IC3 accepts these reports [1]."
+        ]}
+      ]},
+      {"id": "reputation", "h2": "Online reputation, harassment and impersonation scams", "blocks": [
+        {"p": "Families with a public profile or their own businesses face another risk: the publication of false or private information, online harassment and impersonation used to deceive others. The Federal Trade Commission (FTC) received more than 1 million impostor scam reports in 2025, with more than $3.5 billion in reported losses, out of 3 million fraud reports and $15.9 billion in total reported losses [4]."},
+        {"p": "Two different policies come into play here. Some personal cyber policies pay for advice on removing content or managing a reputation crisis. Separately, a defamation suit filed against a family member over something they posted usually falls under personal liability coverage, often on the umbrella policy. Confirm which of the two responds in each scenario."}
+      ]},
+      {"id": "connected-home", "h2": "Smart homes, family offices, household staff and teenagers", "blocks": [
+        {"p": "Every connected device in the house (cameras, locks, thermostats, audio systems, chargers) is a possible way in. In homes with a family office or assistants who handle payments, that person's computer is often the most exposed point, because transfers are approved from it."},
+        {"p": "Household staff and teenagers deserve special attention. People who work in the home know routines, the Wi-Fi password and sometimes financial details. Young people share a lot online, and criminals use public photos for scams such as virtual kidnapping; in December 2025 the FBI warned that criminals alter photos taken from social media to fabricate so-called proof of life [5]."},
+        {"ul": [
+          "Review which devices and which household members the cyber policy includes.",
+          "Ask whether it covers devices used by staff who work in your home or handle family information.",
+          "Put smart-home devices on a separate network from the computers that hold financial information."
+        ]}
+      ]},
+      {"id": "home-policy-gaps", "h2": "What a homeowners policy usually does not cover", "blocks": [
+        {"p": "A standard homeowners policy was designed for physical damage. It generally does not cover money you wired to a scammer, lost data, the cost of recovering accounts or the response to an extortion. Identity theft coverage, where it exists, is usually limited to restoration expenses rather than stolen funds [2]."},
+        {"p": "It is also unwise to assume your credit card or bank will make you whole. Card protections differ from those for a bank wire, and a wire you authorized is much harder to reverse. That is why prevention and a fast reaction matter as much as the insurance."}
+      ]},
+      {"id": "mitigation", "h2": "How to reduce the risk", "blocks": [
+        {"p": "These ten measures cost little and reduce a good share of a family's cyber risk:"},
+        {"ul": [
+          "Turn on multi-factor authentication (MFA) for email, banking, investments and social media, starting with your primary email.",
+          "Use a password manager and a different password for every important account.",
+          "Put smart-home devices on a network separate from computers that hold financial information.",
+          "Adopt the closing rule: no wire goes out without a confirmation call to a number you verified on your own.",
+          "Freeze your credit at all three bureaus (Equifax, Experian and TransUnion): it is free and does not affect your score; you can also request one for children under 16 [3].",
+          "Agree on a family code word for emergencies, as the FBI recommends against virtual kidnapping scams [5].",
+          "Keep systems and apps updated, and keep backups that are not always connected.",
+          "Limit what the family posts about trips, routines and real-time location.",
+          "Put in writing what access household staff have to accounts, email and devices, and remove it when the job ends.",
+          "Keep a response plan at hand: call the bank, report at ic3.gov and identitytheft.gov, and notify the insurer."
+        ]},
+        {"p": "If you want a second look at how your family is set up on this, write to me."}
+      ]}
+    ],
+    "questions": [
+      "Does my homeowners policy include any identity theft or cyber coverage? With what limits?",
+      "What does the policy cover if I authorize a transfer because I was deceived (social engineering)?",
+      "Does the cyber extortion coverage require notice before paying? Whom do I call?",
+      "Which household members, devices and staff are included?",
+      "If someone sues over something posted on social media, does my umbrella, my cyber policy or neither respond?",
+      "What is my bank's procedure to recall a fraudulent wire?"
+    ],
+    "faq": [
+      {"q": "Does identity theft insurance pay back money that was stolen?", "a": "Generally, no. According to the NAIC, identity theft coverage reimburses restoration costs such as legal fees, lost wages and administrative expenses, but generally not money stolen from your accounts [2]. Some personal cyber policies add online fraud coverage for that, usually with sublimits."},
+      {"q": "What should I do if I wired money to a fraudulent account?", "a": "Act immediately. Call your bank and ask it to recall the transfer, and file a complaint at ic3.gov with the full transaction details, whatever the amount. In 2025, the IC3 recovery process helped freeze 58% of the funds in the incidents it acted on [1]."},
+      {"q": "Does freezing my credit cost money or hurt my score?", "a": "No. The FTC explains that placing or lifting a credit freeze is free and does not affect your credit score. You must request it at all three credit bureaus (Equifax, Experian and TransUnion), and you can also request one for a child under 16 [3]."}
+    ]
+  },
+  "sources": [
+    {"n": 1, "label": "Federal Bureau of Investigation, Internet Crime Complaint Center (IC3), 2025 IC3 Annual Report (2026)", "url": "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf"},
+    {"n": 2, "label": "NAIC, Consumer Insight: Can Insurance Safeguard Your Identity and Support Recovery After Theft? (2025)", "url": "https://content.naic.org/article/consumer-insight-can-insurance-safeguard-your-identity-and-support-recovery-after-theft"},
+    {"n": 3, "label": "Federal Trade Commission, What To Know About Credit Freezes and Fraud Alerts", "url": "https://consumer.ftc.gov/articles/what-know-about-credit-freezes-and-fraud-alerts"},
+    {"n": 4, "label": "Federal Trade Commission, FTC Testifies before the Joint Economic Committee on Agency's Efforts to Combat Fraud (March 25, 2026)", "url": "https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-testifies-joint-economic-committee-agencys-efforts-combat-fraud"},
+    {"n": 5, "label": "FBI IC3, PSA I-120525-PSA: Criminals Using Altered Proof-of-Life Media to Extort Victims in Virtual Kidnapping for Ransom Scams (December 5, 2025)", "url": "https://www.ic3.gov/PSA/2025/PSA251205"}
+  ]
+}

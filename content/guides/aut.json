@@ -2,7 +2,7 @@
   "key": "aut",
   "slug_es": "autos",
   "slug_en": "auto",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "es": {
     "title": "Seguro de auto en Florida para familias con patrimonio",
     "meta": "Seguro de auto en Florida: mínimos legales, responsabilidad por lesiones, cobertura UM, conductores jóvenes, responsabilidad del dueño y autos de colección.",
@@ -36,7 +36,7 @@
         "h2": "Por qué importa la responsabilidad por lesiones aunque no sea obligatoria",
         "blocks": [
           {"p": "Si un miembro de la familia causa un accidente con lesiones graves y no hay cobertura BI, el reclamo se dirige a la persona responsable y, con ella, a su patrimonio. Además de pagar hasta el límite, la póliza de auto con BI normalmente incluye la defensa legal del asegurado, algo que en un litigio puede costar tanto como la indemnización."},
-          {"p": "La cobertura BI también es la base de otras protecciones. La mayoría de las pólizas umbrella exige un límite mínimo de responsabilidad en auto; el III señala que muchas aseguradoras piden al menos $250,000 antes de emitir una umbrella de $1 millón [9]. Y en Florida, las reglas de cobertura UM no se aplican a pólizas que no incluyen responsabilidad primaria [3], por lo que una póliza con solo PIP y PDL deja a la familia sin esa protección. La ley de responsabilidad financiera de Florida también puede exigir prueba de cobertura BI después de ciertos accidentes o condenas."},
+          {"p": "La cobertura BI también es la base de otras protecciones. La mayoría de las pólizas umbrella exige un límite mínimo de responsabilidad en auto, y cada aseguradora fija su propio monto [9]. Y en Florida, las reglas de cobertura UM no se aplican a pólizas que no incluyen responsabilidad primaria [3], por lo que una póliza con solo PIP y PDL deja a la familia sin esa protección. La ley de responsabilidad financiera de Florida también puede exigir prueba de cobertura BI después de ciertos accidentes o condenas."},
           {"callout": "Para una familia con patrimonio, el mínimo legal de Florida responde a una pregunta distinta a la suya: la ley busca que exista algún seguro; usted busca que un accidente no alcance su patrimonio."}
         ]
       },
@@ -91,8 +91,32 @@
         "h2": "Autos de colección y valor acordado",
         "blocks": [
           {"p": "Una póliza de auto estándar suele pagar el valor real en efectivo, que descuenta depreciación. Las pólizas para autos de colección o clásicos normalmente usan un valor acordado: el III explica que el auto queda cubierto hasta ese valor sin depreciación, y que ese valor debe actualizarse si el vehículo se aprecia [6]."},
-          {"p": "A cambio, estas pólizas suelen imponer condiciones: el auto no puede usarse para ir al trabajo o hacer mandados, puede haber límites de millaje, debe guardarse en una estructura privada, cerrada y con llave, y la aseguradora puede pedir que usted tenga otro vehículo de uso diario y un historial de manejo limpio [6]. En Florida, también conviene preguntar cómo responde la póliza si un huracán o una inundación afecta el garaje donde se guarda la colección."},
+          {"p": "A cambio, estas pólizas suelen imponer condiciones: el auto no puede usarse para ir al trabajo o hacer mandados, puede haber límites de millaje, y debe guardarse en una estructura privada, cerrada y con llave [6]. En Florida, también conviene preguntar cómo responde la póliza si un huracán o una inundación afecta el garaje donde se guarda la colección."},
           {"p": "Como siguiente paso, reúna las pólizas de auto, umbrella y los títulos de los vehículos, y revise con su agente licenciado y su abogado las preguntas de abajo."}
+        ]
+      },
+      {
+        "id": "mitigacion",
+        "h2": "Cómo reducir el riesgo",
+        "blocks": [
+          {
+            "p": "Estas medidas reducen la probabilidad de un accidente y ordenan la responsabilidad de la familia:"
+          },
+          {
+            "ul": [
+              "Acuerde reglas escritas con cada conductor nuevo antes de entregarle las llaves: pasajeros, manejo de noche, uso del teléfono y qué autos puede usar. El adulto que firma la solicitud de licencia de un menor comparte la responsabilidad por su manejo negligente [4].",
+              "Pregunte a su agente si existe un programa de manejo seguro o telemática, que registra hábitos como la velocidad, el frenado y el uso del teléfono, y cómo se usan esos datos.",
+              "Asigne a cada conductor el auto que realmente usa con más frecuencia, y avise a su agente cuando eso cambie.",
+              "Guarde los autos en garaje y con llave, con las llaves y los controles lejos de puertas y ventanas.",
+              "Antes de prestar un auto, recuerde que, por la doctrina del instrumento peligroso, el dueño puede responder por la negligencia de quien maneja [5].",
+              "No permita que el personal ni los familiares usen un auto de la familia para trabajar con plataformas de transporte o entregas; la póliza personal puede excluir ese uso [7].",
+              "Guarde los autos de colección como pide la póliza y planifique cómo moverlos o protegerlos antes de un huracán [6].",
+              "Revise cada año los límites de lesiones corporales y de UM frente a su patrimonio y a lo que exige su umbrella [3][9]."
+            ]
+          },
+          {
+            "p": "Si quiere una segunda mirada a cómo está organizada su familia en este tema, escríbame."
+          }
         ]
       }
     ],
@@ -144,7 +168,7 @@
         "h2": "Why bodily injury liability matters even though it is not required",
         "blocks": [
           {"p": "If a family member causes a crash with serious injuries and there is no BI coverage, the claim goes to the responsible person and, with them, to their assets. Besides paying up to the limit, an auto policy with BI typically includes the insured's legal defense, which in a lawsuit can cost as much as the award itself."},
-          {"p": "BI is also the foundation for other protections. Most umbrella policies require a minimum auto liability limit; the III notes that many insurers want at least $250,000 before selling a $1 million umbrella [9]. And in Florida, the UM coverage rules do not apply to policies without primary liability coverage [3], so a PIP and PDL only policy leaves the family without that protection. Florida's financial responsibility law can also require proof of BI coverage after certain crashes or convictions."},
+          {"p": "BI is also the foundation for other protections. Most umbrella policies require a minimum auto liability limit, and each insurer sets its own amount [9]. And in Florida, the UM coverage rules do not apply to policies without primary liability coverage [3], so a PIP and PDL only policy leaves the family without that protection. Florida's financial responsibility law can also require proof of BI coverage after certain crashes or convictions."},
           {"callout": "For a family with significant assets, Florida's legal minimum answers a different question than yours: the law wants some insurance to exist; you want a crash not to reach your balance sheet."}
         ]
       },
@@ -199,8 +223,32 @@
         "h2": "Collector car insurance and agreed value",
         "blocks": [
           {"p": "A standard auto policy usually pays actual cash value, which subtracts depreciation. Collector car insurance and classic car policies typically use agreed value instead: the III explains that the car is covered up to that value without depreciation, and that the value should be updated if the car appreciates [6]."},
-          {"p": "In exchange, these policies usually set conditions: the car cannot be used for commuting or errands, there may be mileage limits, it must be stored in a locked, enclosed private structure, and the insurer may require you to own another everyday vehicle and have a clean driving record [6]. In Florida, it is also worth asking how the policy responds if a hurricane or flood affects the garage where the collection is stored."},
+          {"p": "In exchange, these policies usually set conditions: the car cannot be used for commuting or errands, there may be mileage limits, and it must be stored in a locked, enclosed private structure [6]. In Florida, it is also worth asking how the policy responds if a hurricane or flood affects the garage where the collection is stored."},
           {"p": "As a next step, gather your auto and umbrella policies and your vehicle titles, and review the questions below with your licensed agent and your attorney."}
+        ]
+      },
+      {
+        "id": "mitigation",
+        "h2": "How to reduce the risk",
+        "blocks": [
+          {
+            "p": "These steps lower the chance of a crash and keep the family's liability in order:"
+          },
+          {
+            "ul": [
+              "Agree on written rules with each new driver before handing over the keys: passengers, night driving, phone use and which cars they may drive. The adult who signs a minor's license application shares liability for the minor's negligent driving [4].",
+              "Ask your agent whether a safe-driving or telematics program, which records habits such as speed, braking and phone use, is available and how the data is used.",
+              "Assign each driver to the car they actually use most, and tell your agent when that changes.",
+              "Keep cars garaged and locked, with keys and fobs away from doors and windows.",
+              "Before lending a car, remember that under the dangerous instrumentality doctrine the owner can be liable for the driver's negligence [5].",
+              "Do not let staff or relatives use a family car for rideshare or delivery work; a personal policy can exclude that use [7].",
+              "Store collector cars the way the policy requires and plan how to move or protect them before a hurricane [6].",
+              "Review bodily injury and UM limits every year against your assets and what your umbrella requires [3][9]."
+            ]
+          },
+          {
+            "p": "If you want a second look at how your family is set up on this, write to me."
+          }
         ]
       }
     ],
