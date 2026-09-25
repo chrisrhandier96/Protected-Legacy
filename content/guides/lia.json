@@ -34,8 +34,8 @@
         "id": "limites-subyacentes",
         "h2": "Límites subyacentes obligatorios y la brecha cuando no se cumplen",
         "blocks": [
-          {"p": "Toda umbrella exige que usted mantenga ciertos límites mínimos en las pólizas que están debajo. El III señala que las aseguradoras suelen pedir al menos $250,000 de responsabilidad en la póliza de auto y $300,000 en la de hogar antes de emitir una umbrella de $1 millón [1]. Cada aseguradora fija sus propios requisitos, y en programas para familias con patrimonio elevado los mínimos suelen ser más altos, con requisitos separados para embarcaciones y propiedades de alquiler."},
-          {"p": "La brecha aparece cuando el límite subyacente real es menor al exigido, cuando una póliza subyacente se cancela o cuando se agrega un vehículo sin ajustar sus límites. En muchos contratos, la umbrella responde como si el límite requerido existiera, y la diferencia la paga el asegurado. Por ejemplo, una familia hipotética cuya umbrella exige $500,000 de responsabilidad en auto, pero que tiene $250,000 en el auto del hijo, podría quedar con una brecha de $250,000 en un accidente con ese vehículo."},
+          {"p": "Toda umbrella exige que usted mantenga ciertos límites mínimos en las pólizas que están debajo [1]. Cada aseguradora fija sus propios montos, y puede haber requisitos separados para embarcaciones y propiedades de alquiler."},
+          {"p": "La brecha aparece cuando el límite subyacente real es menor al exigido, cuando una póliza subyacente se cancela o cuando se agrega un vehículo sin ajustar sus límites. En muchos contratos, la umbrella responde como si el límite requerido existiera, y la diferencia la paga el asegurado. Por ejemplo, una familia hipotética cuya umbrella exige un límite de auto mayor que el que tiene en el auto del hijo pagaría la diferencia de su bolsillo en un accidente con ese vehículo."},
           {"callout": "Por lo general, una umbrella no asume el tramo de un límite subyacente que falta. Revise cada vehículo, embarcación y propiedad, no solo la residencia principal."},
           {"ul": [
             "Todos los vehículos del hogar, incluido el de un conductor joven.",
@@ -153,8 +153,8 @@
         "id": "underlying-limits",
         "h2": "Required underlying limits and the gap when they are not met",
         "blocks": [
-          {"p": "Every umbrella requires you to keep certain minimum limits on the policies underneath it. The III notes that insurers typically require at least $250,000 of liability on your auto policy and $300,000 on your homeowners policy before selling a $1 million umbrella [1]. Each insurer sets its own requirements, and programs for high-net-worth families often ask for higher minimums, with separate requirements for boats and rental properties."},
-          {"p": "The gap appears when the actual underlying limit is lower than required, when an underlying policy lapses, or when a vehicle is added without matching limits. Under many contracts, the umbrella responds as if the required limit existed, and the insured pays the difference. For example, a hypothetical family whose umbrella requires $500,000 of auto liability, but who carries $250,000 on a son's car, could face a $250,000 gap after a crash in that car."},
+          {"p": "Every umbrella requires you to keep certain minimum limits on the policies underneath it [1]. Each insurer sets its own amounts, and there can be separate requirements for boats and rental properties."},
+          {"p": "The gap appears when the actual underlying limit is lower than required, when an underlying policy lapses, or when a vehicle is added without matching limits. Under many contracts, the umbrella responds as if the required limit existed, and the insured pays the difference. For example, a hypothetical family whose umbrella requires a higher auto limit than the one they carry on a son's car would pay the difference themselves after a crash in that car."},
           {"callout": "An umbrella usually does not drop down to fill a missing underlying limit. Check every vehicle, boat and property, not just the primary home."},
           {"ul": [
             "Every household vehicle, including a young driver's car.",

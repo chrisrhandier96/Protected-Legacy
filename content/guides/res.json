@@ -13,7 +13,7 @@
       "Asegure la casa por lo que cuesta reconstruirla, no por su precio de mercado: el terreno no se reconstruye, pero los acabados a la medida y la mano de obra después de una tormenta pueden costar más de lo previsto.",
       "El deducible de huracán en Florida es un porcentaje del límite de la vivienda. Con un límite hipotético de $3,000,000, un deducible de 5% equivale a $150,000 de su bolsillo por año calendario.",
       "La cobertura de ley u ordenanza paga el costo adicional de reconstruir según el código vigente. En Florida se incluye al 25% del límite de la vivienda salvo que usted la rechace por escrito, y puede elegirse el 50%.",
-      "La edad del techo y las mejoras de mitigación de viento influyen en la elegibilidad y la tarifa. El formulario de inspección de mitigación es válido hasta cinco años si no hay cambios importantes.",
+      "La edad del techo y las mejoras de mitigación de viento influyen en la tarifa. El formulario de inspección de mitigación es válido hasta cinco años si no hay cambios importantes.",
       "Según la ley vigente en Florida, el aviso de un reclamo nuevo o reabierto debe darse dentro de 1 año desde la fecha de la pérdida, y el de un reclamo suplementario dentro de 18 meses."
     ],
     "sections": [
@@ -60,7 +60,7 @@
         "h2": "Costo de reemplazo extendido y garantizado",
         "blocks": [
           {
-            "p": "Como cualquier estimado puede fallar, muchas pólizas para residencias de alto valor agregan un margen por encima del límite de la vivienda. El costo de reemplazo extendido paga un porcentaje fijo sobre el límite, de 20 por ciento o más según la aseguradora [4]. El costo de reemplazo garantizado, que hoy ofrecen pocas aseguradoras, paga lo que cueste reconstruir la casa tal como estaba antes de la pérdida, aun por encima del límite [4]. Las condiciones varían: algunas versiones exigen asegurar según la valuación de la aseguradora, reportar remodelaciones importantes o reconstruir en el mismo lugar."
+            "p": "Como cualquier estimado puede fallar, muchas pólizas para residencias de alto valor agregan un margen por encima del límite de la vivienda. El costo de reemplazo extendido paga un porcentaje fijo sobre el límite, que varía según la póliza [4]. El costo de reemplazo garantizado paga lo que cueste reconstruir la casa tal como estaba antes de la pérdida, aun por encima del límite [4]. Las condiciones varían: algunas versiones exigen asegurar según la valuación de la aseguradora, reportar remodelaciones importantes o reconstruir en el mismo lugar."
           },
           {
             "p": "La ley de Florida también define cómo se paga el costo de reemplazo. Las aseguradoras deben ofrecer cobertura de costo de reemplazo para la vivienda. En una pérdida total, deben pagar el costo de reemplazo sin retener depreciación. En una pérdida parcial, deben pagar inicialmente al menos el valor real en efectivo de la pérdida, menos el deducible, y pagar el resto a medida que se hacen las reparaciones [3]."
@@ -214,7 +214,7 @@
       "Insure the house for what it costs to rebuild, not for its market price: the land does not need rebuilding, but custom finishes and post-storm labor can cost more than expected.",
       "The Florida hurricane deductible is a percentage of the dwelling limit. On a hypothetical $3,000,000 dwelling limit, a 5% deductible means $150,000 out of pocket per calendar year.",
       "Ordinance or law coverage pays the extra cost of rebuilding to current code. Florida policies include 25% of the dwelling limit unless you reject it in writing, and 50% can be selected.",
-      "Roof age and wind mitigation features affect eligibility and rating. A wind mitigation inspection form is valid for up to five years if nothing material changes.",
+      "Roof age and wind mitigation features affect how a home is rated. A wind mitigation inspection form is valid for up to five years if nothing material changes.",
       "Under current Florida law, notice of a new or reopened claim must be given within 1 year of the date of loss, and a supplemental claim within 18 months."
     ],
     "sections": [
@@ -261,7 +261,7 @@
         "h2": "Extended and guaranteed replacement cost",
         "blocks": [
           {
-            "p": "Because any estimate can miss, many high-value policies add a cushion above the dwelling limit. Extended replacement cost pays a set percentage over the limit, 20 percent or more depending on the insurer [4]. Guaranteed replacement cost, which fewer insurers still offer, pays what it costs to rebuild the home as it was before the loss, even above the limit [4]. Conditions vary: some versions require insuring to the insurer's valuation, reporting major renovations or rebuilding at the same location."
+            "p": "Because any estimate can miss, many high-value policies add a cushion above the dwelling limit. Extended replacement cost pays a set percentage over the limit, which varies by policy [4]. Guaranteed replacement cost pays what it costs to rebuild the home as it was before the loss, even above the limit [4]. Conditions vary: some versions require insuring to the insurer's valuation, reporting major renovations or rebuilding at the same location."
           },
           {
             "p": "Florida law also shapes how replacement cost is paid. Insurers must offer replacement cost coverage on the dwelling. On a total loss, they must pay replacement cost without holding back depreciation. On a partial loss, they must initially pay at least the actual cash value of the loss, less the deductible, and pay the remaining amounts as repairs are performed [3]."

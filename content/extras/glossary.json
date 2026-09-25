@@ -51,8 +51,8 @@
    "es": "Sublímite",
    "en": "Sublimit",
    "cat": "general",
-   "def_es": "Un límite menor dentro de la póliza para cierto tipo de bien o causa de pérdida. Por ejemplo, el límite por robo de joyas en una póliza de hogar estándar suele ser de unos $1,500 (generalmente entre $1,000 y $2,000), según el Insurance Information Institute.",
-   "def_en": "A smaller limit inside a policy for a certain type of property or cause of loss. For example, the jewelry theft limit on a standard homeowners policy is often about $1,500 (generally $1,000 to $2,000), according to the Insurance Information Institute.",
+   "def_es": "Un límite menor dentro de la póliza para cierto tipo de bien o causa de pérdida. Por ejemplo, la póliza de hogar estándar suele tener un límite bajo para el robo de joyas, según el Insurance Information Institute.",
+   "def_en": "A smaller limit inside a policy for a certain type of property or cause of loss. For example, a standard homeowners policy often has a low limit for jewelry theft, according to the Insurance Information Institute.",
    "guide": "col"
   },
   {
@@ -146,15 +146,6 @@
    "guide": null
   },
   {
-   "id": "citizens",
-   "es": "Citizens Property Insurance Corporation",
-   "en": "Citizens Property Insurance Corporation",
-   "cat": "general",
-   "def_es": "Entidad gubernamental de Florida, sin fines de lucro y exenta de impuestos, creada por la Legislatura en 2002. Ofrece seguro de propiedad a propietarios elegibles que no encuentran cobertura en el mercado privado y se describe como la aseguradora de último recurso del estado.",
-   "def_en": "A not-for-profit, tax-exempt Florida government entity created by the Legislature in 2002. It provides property insurance to eligible owners who cannot find coverage in the private market and describes itself as the state's insurer of last resort.",
-   "guide": "res"
-  },
-  {
    "id": "deber-de-mitigar",
    "es": "Deber de mitigar daños",
    "en": "Duty to mitigate",
@@ -177,8 +168,8 @@
    "es": "Costo de reemplazo extendido o garantizado",
    "en": "Extended or guaranteed replacement cost",
    "cat": "hogar",
-   "def_es": "El costo extendido agrega un margen por encima del límite de la vivienda, de 20 por ciento o más según la aseguradora (III). El costo garantizado, menos común, paga la reconstrucción aunque supere el límite. Ambos protegen contra alzas inesperadas de costos después de una catástrofe.",
-   "def_en": "Extended replacement cost adds a cushion above the dwelling limit, 20 percent or more depending on the insurer (III). Guaranteed replacement cost, less common, pays to rebuild even above the limit. Both help protect against unexpected cost spikes after a catastrophe.",
+   "def_es": "El costo extendido agrega un margen por encima del límite de la vivienda, que varía según la póliza (III). El costo garantizado paga la reconstrucción aunque supere el límite. Ambos protegen contra alzas inesperadas de costos después de una catástrofe.",
+   "def_en": "Extended replacement cost adds a cushion above the dwelling limit that varies by policy (III). Guaranteed replacement cost pays to rebuild even above the limit. Both help protect against unexpected cost spikes after a catastrophe.",
    "guide": "res"
   },
   {
@@ -465,8 +456,8 @@
    "es": "Sublímite por asiento",
    "en": "Per-seat sublimit",
    "cat": "aviacion",
-   "def_es": "Un límite por pasajero dentro de la responsabilidad de aviación. Como ejemplo hipotético, una póliza de $1,000,000 con sublímite de $100,000 por asiento pagaría como máximo esa cifra por cada pasajero lesionado. Las pólizas sin sublímite por pasajero se conocen como de límite uniforme (smooth).",
-   "def_en": "A per-passenger limit inside aviation liability coverage. As a hypothetical example, a $1,000,000 policy with a $100,000 per-seat sublimit would pay at most that amount for each injured passenger. Policies without a per-passenger sublimit are known as smooth limit policies.",
+   "def_es": "Un límite por pasajero dentro de la responsabilidad de aviación. Con un sublímite por asiento, la póliza paga como máximo esa cifra por cada pasajero lesionado, aunque el límite total sea mayor. Las pólizas sin sublímite por pasajero se conocen como de límite uniforme (smooth).",
+   "def_en": "A per-passenger limit inside aviation liability coverage. With a per-seat sublimit, the policy pays at most that amount for each injured passenger, even when the overall limit is higher. Policies without a per-passenger sublimit are known as smooth limit policies.",
    "guide": "avi"
   },
   {

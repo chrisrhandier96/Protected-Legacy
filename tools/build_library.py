@@ -12,7 +12,11 @@ import html, json, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://www.protectedlegacyfl.com"
 GTM = "GTM-P88VGFHR"
-ORDER = ["res", "flo", "aut", "mar", "avi", "col", "lia", "emp"]
+ORDER = ["res", "flo", "aut", "mar", "avi", "col", "lia", "emp", "cyb", "kr", "str", "ren", "brd", "cnd"]
+# only guides whose JSON exists are built (new guides can be added one at a time)
+ORDER = [k for k in ORDER if os.path.exists(os.path.join(ROOT, "content", "guides", k + ".json"))]
+NUM = {"es": {8: "Ocho", 9: "Nueve", 10: "Diez", 11: "Once", 12: "Doce", 13: "Trece", 14: "Catorce", 15: "Quince", 16: "Dieciséis"},
+       "en": {8: "Eight", 9: "Nine", 10: "Ten", 11: "Eleven", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen"}}
 ICONS = {
  "res": '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
  "flo": '<path d="M2 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M12 3v7"/><path d="M9 7l3 3 3-3"/>',
@@ -22,6 +26,12 @@ ICONS = {
  "col": '<path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18"/><path d="M12 21L8 9l2-6"/><path d="M12 21l4-12-2-6"/>',
  "lia": '<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/>',
  "emp": '<path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>',
+ "cyb": '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><path d="M12 15v2"/>',
+ "kr": '<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M12 8v5"/><path d="M12 16h.01"/>',
+ "str": '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><rect x="9" y="13" width="6" height="4" rx="1"/><path d="M9 9h6"/>',
+ "ren": '<path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M14 4l6 6"/><path d="M9 21v-5h6v5"/>',
+ "brd": '<circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5"/><path d="M14 15c3 0 8 1 8 5"/>',
+ "cnd": '<path d="M4 21V5l8-3v19"/><path d="M12 21V9l8 3v9"/><path d="M7 7h2M7 11h2M7 15h2M15 14h2M15 18h2"/><path d="M2 21h20"/>',
 }
 ICON_EXTRA = {
  "glossary": '<path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M18 20H7a3 3 0 0 1-3-3"/><path d="M8 8h6 M8 12h6"/>',
@@ -31,7 +41,9 @@ ICON_EXTRA = {
 }
 TOPIC = {"res": "Residencias y huracanes", "flo": "Inundación y marejada", "aut": "Autos de uso y colección",
          "mar": "Embarcaciones y PWC", "avi": "Aviación privada", "col": "Colecciones, arte y joyas",
-         "lia": "Responsabilidad y umbrella", "emp": "Personal del hogar y legado"}
+         "lia": "Responsabilidad y umbrella", "emp": "Personal del hogar y legado",
+         "cyb": "Ciberprotección familiar", "kr": "Secuestro y extorsión", "str": "Alquiler vacacional",
+         "ren": "Remodelaciones y construcción", "brd": "Juntas y fundaciones", "cnd": "Condominios y HOA"}
 
 T = {  # interface strings
  "es": {"home": "Inicio", "guides": "Guías", "glossary": "Glosario", "faq": "Preguntas", "tools": "Herramientas",
@@ -60,9 +72,13 @@ T = {  # interface strings
         "privacy": "Privacy", "made": "Made with pride for Florida's Hispanic community"},
 }
 CATS = {"es": {"hogar": "Hogar", "inundacion": "Inundación", "autos": "Autos", "nautica": "Náutica", "aviacion": "Aviación",
-               "colecciones": "Colecciones", "responsabilidad": "Responsabilidad", "personal": "Personal del hogar", "general": "General"},
+               "colecciones": "Colecciones", "responsabilidad": "Responsabilidad", "personal": "Personal del hogar", "ciber": "Ciberseguridad",
+               "secuestro": "Secuestro y extorsión", "alquiler": "Alquiler vacacional", "construccion": "Remodelaciones", "juntas": "Juntas y fundaciones",
+               "condominios": "Condominios", "general": "General"},
         "en": {"hogar": "Home", "inundacion": "Flood", "autos": "Auto", "nautica": "Boats", "aviacion": "Aviation",
-               "colecciones": "Collections", "responsabilidad": "Liability", "personal": "Household staff", "general": "General"}}
+               "colecciones": "Collections", "responsabilidad": "Liability", "personal": "Household staff", "ciber": "Cyber",
+               "secuestro": "Kidnap and ransom", "alquiler": "Short-term rentals", "construccion": "Renovations", "juntas": "Boards and foundations",
+               "condominios": "Condos and HOAs", "general": "General"}}
 
 # ---------- paths ----------
 def p_home(l): return "/" if l == "es" else "/en/"
@@ -361,7 +377,12 @@ for k in ORDER:
         fq = "".join(f"<details><summary>{esc(plain(f['q']))}</summary><p>{rich(f['a'])}</p></details>" for f in c["faq"])
         src = "".join(f'<li id="fuente-{s["n"]}">{esc(s["label"])}. <a href="{esc(s["url"])}" rel="noopener" target="_blank">{esc(s["url"])}</a></li>' for s in sorted(g["sources"], key=lambda s: s["n"]))
         idx = ORDER.index(k)
-        rel = [guides[ORDER[(idx + i) % 8]] for i in (1, 2, 3)]
+        rel_keys = [r for r in g.get("related", []) if r in guides and r != k][:3]
+        for i in range(1, len(ORDER)):
+            if len(rel_keys) >= 3: break
+            c2 = ORDER[(idx + i) % len(ORDER)]
+            if c2 not in rel_keys: rel_keys.append(c2)
+        rel = [guides[r] for r in rel_keys]
         rel_cards = "".join(guide_card(r, l) for r in rel)
         tema = f'{p_home(l)}?tema={k}#contacto'
         body = f"""
@@ -419,11 +440,11 @@ for l in ("es", "en"):
     cards = "".join(guide_card(guides[k], l) for k in ORDER)
     tcards = "".join(f'<a class="card" href="{h}">{ico(ICON_EXTRA[ic])}<h3>{esc(n)}</h3><p>{esc(d)}</p><span class="go">→</span></a>' for h, ic, n, d in tools_meta[l])
     if l == "es":
-        h1, dek, title = "Biblioteca de protección patrimonial", "Ocho guías a fondo, un glosario bilingüe y herramientas prácticas para familias que construyeron algo en la Florida. Educación, no ventas.", "Guías de seguros en español para familias en la Florida"
+        h1, dek, title = "Biblioteca de protección patrimonial", f"{NUM['es'].get(len(ORDER), len(ORDER))} guías a fondo, un glosario bilingüe y herramientas prácticas para familias que construyeron algo en la Florida. Educación, no ventas.", "Guías de seguros en español para familias en la Florida"
         meta = "Guías en español sobre seguros de casa, inundación, autos, embarcaciones, aviación, colecciones, umbrella y personal del hogar en la Florida. Educación sin ventas."
         th, tl = "Herramientas y referencias", "Para consultar, imprimir y compartir con su familia o sus asesores."
     else:
-        h1, dek, title = "The protection library", "Eight in-depth guides, a bilingual glossary and practical tools for families who built something in Florida. Education, not sales.", "Insurance guides for Florida families | Patrimonio Protegido"
+        h1, dek, title = "The protection library", f"{NUM['en'].get(len(ORDER), len(ORDER))} in-depth guides, a bilingual glossary and practical tools for families who built something in Florida. Education, not sales.", "Insurance guides for Florida families | Patrimonio Protegido"
         meta = "In-depth guides on home, flood, auto, boat, aviation, collections, umbrella and household staff insurance for Florida families. Education, not sales."
         th, tl = "Tools and references", "To look up, print and share with your family or your advisors."
     body = f"""

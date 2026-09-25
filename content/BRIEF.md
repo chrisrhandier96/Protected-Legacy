@@ -8,8 +8,13 @@ family offices and their advisors (CPAs, attorneys) in Florida. The site is EDUC
 - Educational, calm, precise. Explain how things work, what the common gaps are, and which questions to ask.
 - NEVER sell or solicit: no "call now", "get a quote", "contact me to buy", "cotice", "contrate", "llame ya",
   no prices of premiums, no promises of savings or results, no "best coverage", no guarantees.
-- NEVER name insurance carriers or brands (no Chubb, PURE, AIG, Citizens as a recommendation, etc.). Government
-  programs and agencies (FEMA, NFIP, Florida DFS, OIR, FWC, FAA, USCG, Citizens only as a fact about the state insurer if essential) are fine.
+- NEVER name insurance carriers or brands, and give no carrier-specific information (who offers what, market availability).
+  This includes Citizens Property Insurance. Government programs and agencies (FEMA, NFIP, Florida DFS, OIR, FWC, FAA, USCG) are fine.
+- NEVER state coverage limits that insurers set, sell or typically require (jewelry theft caps, umbrella sizes, required
+  underlying limits, extended replacement percentages). Figures set by law or a government program are fine (NFIP maximums,
+  Florida minimums, statutes). Hypothetical deductible math on a stated dwelling limit is fine.
+- NEVER describe underwriting acceptance: who insurers accept, decline or find eligible, or requirements to qualify.
+  Legal consumer rights are fine (Fla. Stat. 627.7011 roof-age rule, written UM rejection).
 - NEVER name the author's employer.
 - No em dashes (—) anywhere. Use commas, colons, periods or parentheses. En dash only inside number ranges is also discouraged: write "2020 a 2024" / "2020 to 2024".
 - Spanish: neutral Latin American Spanish, formal "usted", natural (not a translation feel). Accents correct.
@@ -26,8 +31,8 @@ family offices and their advisors (CPAs, attorneys) in Florida. The site is EDUC
 - NFIP policies generally have a 30-day waiting period; exceptions: bought with a mortgage loan transaction (no wait), 1 day within 13 months of a flood map revision. Private flood waits vary, often about two weeks.
 - Standard homeowners policies exclude flood; storm surge counts as flood. Florida law (627.715) allows insurers to offer flood coverage by policy or endorsement.
 - Florida hurricane deductible (627.701): insurers must offer $500, 2%, 5% and 10% of the dwelling (Coverage A) limit, with variations for higher-value homes (e.g., $500 not required at $250,000+ dwelling; at $3M+ the 2% option is not required); applies once per calendar year (hurricane season).
-- Extended replacement cost: "20 percent or more" above the dwelling limit depending on insurer (III).
-- Jewelry theft limit on a standard homeowners policy: about $1,500 (generally $1,000 to $2,000) (III).
+- Extended replacement cost: pays a percentage above the dwelling limit that varies by policy (do not state the percentage).
+- Jewelry theft: a standard homeowners policy has a relatively low theft limit for jewelry (III). Do not state the amount.
 - Residential reconstruction costs rose 25.9% from March 2020 to May 2023 (Verisk via Carrier Management).
 - 2021 Marshall Fire (Colorado): 74% of policyholders who lost homes were underinsured, 36% severely (Cookson, Gallagher, Mulder, Philadelphia Fed WP 25-09, 2025).
 - CoreLogic (now Cotality) estimated about 64% of U.S. homes are underinsured.
