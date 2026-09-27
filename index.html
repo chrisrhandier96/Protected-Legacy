@@ -1008,6 +1008,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <input type="hidden" name="campana" id="f-camp" value="">
         <input type="hidden" name="termino" id="f-term" value="">
         <input type="hidden" name="gclid" id="f-gclid" value="">
+<input type="hidden" name="telefono" id="f-tel-reg" value="">
+<input type="hidden" name="pagina_entrada" id="f-landing" value="">
         <input type="hidden" name="autoevaluacion_puntaje" id="f-quiz-score" value="">
         <textarea name="autoevaluacion_respuestas" id="f-quiz-answers" style="display:none" aria-hidden="true" tabindex="-1"></textarea>
         <input type="hidden" name="autoevaluacion_zonas_en_blanco" id="f-quiz-gaps" value="">
@@ -1474,6 +1476,8 @@ document.getElementById('rcGo').addEventListener('click',function(ev){
       store.origen=host?('referencia: '+host):'';
     } else if(!ref){ store.origen='directo'; }
   }
+  try{ if(!window.sessionStorage.getItem('pp.landing')) window.sessionStorage.setItem('pp.landing',window.location.pathname); }catch(e){}
+  try{ var lp=document.getElementById('f-landing'); if(lp) lp.value=window.sessionStorage.getItem('pp.landing')||window.location.pathname; }catch(e){}
   var map={origen:'f-src',campana:'f-camp',termino:'f-term',gclid:'f-gclid'};
   Object.keys(map).forEach(function(k){var el=document.getElementById(map[k]); if(el) el.value=store[k]||'';});
 })();
