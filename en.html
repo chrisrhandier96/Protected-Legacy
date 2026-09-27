@@ -75,7 +75,9 @@ window.PP = {
 })();
 </script>
 <link rel="preload" href="/fonts/marcellus-400.woff2" as="font" type="font/woff2" crossorigin>
-<style id="pp-fonts">@font-face{font-family:'Marcellus';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/marcellus-400.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:normal;font-weight:300 700;font-display:swap;src:url(/fonts/figtree-var.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/figtree-italic-400.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500 600;font-display:swap;src:url(/fonts/cormorant-garamond-italic.woff2) format('woff2')}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+<style id="pp-fonts">@font-face{font-family:'Marcellus';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/marcellus-400.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:normal;font-weight:300 700;font-display:swap;src:url(/fonts/figtree-var.woff2) format('woff2')}@font-face{font-family:'Figtree';font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/figtree-italic-400.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500 600;font-display:swap;src:url(/fonts/cormorant-garamond-italic.woff2) format('woff2')}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}button.m-cue{display:inline;margin-top:0;background:none;border:0;padding:0;font-family:inherit;font-weight:inherit;line-height:1.15;vertical-align:top;cursor:pointer;text-align:left}
+button.m-cue:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+</style>
 <style>
 :root{
   --verde:#14352A; --verde-oscuro:#0D241C; --verde-suave:#1E4A3A;
@@ -715,32 +717,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="mitos-grid">
-      <div class="mito reveal" onclick="revealMito(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')revealMito(this)">
+      <div class="mito reveal" onclick="revealMito(this)">
         <span class="m-label" data-es="Mito 1" data-en="Myth 1">Myth 1</span>
         <p class="m-text" data-es="El seguro es un gasto. Prefiero invertir ese dinero." data-en="Insurance is an expense. I would rather invest that money.">Insurance is an expense. I would rather invest that money.</p>
         <div class="m-real"><p data-es='La realidad: el 72% de los hispanos sobreestima lo que cuesta una póliza de seguro de vida a término.<a class="fn" href="#fuentes">6</a> Y la matemática de un patrimonio alto es simple: una sola demanda o una sola tormenta sin cobertura adecuada puede borrar años de rendimiento de las inversiones. La protección no compite con la inversión; es lo que la hace duradera.' data-en='The reality: 72% of Hispanics overestimate what a term life insurance policy costs.<a class="fn" href="#fuentes">6</a> And the math of a large estate is simple: a single lawsuit or a single storm without adequate coverage can erase years of investment returns. Protection does not compete with investing; it is what makes it last.'>The reality: 72% of Hispanics overestimate what a term life insurance policy costs.<a class="fn" href="#fuentes">6</a> And the math of a large estate is simple: a single lawsuit or a single storm without adequate coverage can erase years of investment returns. Protection does not compete with investing; it is what makes it last.</p></div>
-        <span class="m-cue" data-es="Toque para ver la realidad ↓" data-en="Tap to see the reality ↓">Tap to see the reality ↓</span>
+        <button type="button" class="m-cue" data-es="Toque para ver la realidad ↓" data-en="Tap to see the reality ↓" aria-expanded="false">Tap to see the reality ↓</button>
       </div>
 
-      <div class="mito reveal" onclick="revealMito(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')revealMito(this)">
+      <div class="mito reveal" onclick="revealMito(this)">
         <span class="m-label" data-es="Mito 2" data-en="Myth 2">Myth 2</span>
         <p class="m-text" data-es="Esas cosas se resuelven en familia, como siempre se ha hecho." data-en="These things get handled within the family, the way they always have.">These things get handled within the family, the way they always have.</p>
         <div class="m-real"><p data-es="La realidad: la solidaridad familiar es una de las grandes fortalezas de nuestra cultura, y funciona para muchas cosas. Pero ninguna red familiar puede absorber una demanda de cinco millones, la reconstrucción de una casa frente al agua o una sucesión desordenada entre dos países. Los patrimonios grandes requieren estructuras a la altura, no solo buena voluntad." data-en="The reality: family solidarity is one of the great strengths of our culture, and it works for many things. But no family network can absorb a five-million-dollar lawsuit, the rebuild of a waterfront home, or a disorganized succession across two countries. Large estates require structures that match them, not just goodwill.">The reality: family solidarity is one of the great strengths of our culture, and it works for many things. But no family network can absorb a five-million-dollar lawsuit, the rebuild of a waterfront home, or a disorganized succession across two countries. Large estates require structures that match them, not just goodwill.</p></div>
-        <span class="m-cue" data-es="Toque para ver la realidad ↓" data-en="Tap to see the reality ↓">Tap to see the reality ↓</span>
+        <button type="button" class="m-cue" data-es="Toque para ver la realidad ↓" data-en="Tap to see the reality ↓" aria-expanded="false">Tap to see the reality ↓</button>
       </div>
 
-      <div class="mito reveal" onclick="revealMito(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')revealMito(this)">
+      <div class="mito reveal" onclick="revealMito(this)">
         <span class="m-label" data-es="Mito 3" data-en="Myth 3">Myth 3</span>
         <p class="m-text" data-es="Ya tengo contador y abogado. Estoy cubierto." data-en="I already have a CPA and an attorney. I am covered.">I already have a CPA and an attorney. I am covered.</p>
         <div class="m-real"><p data-es='La realidad: solo el 34% de los hispanos trabaja con un profesional financiero,<a class="fn" href="#fuentes">6</a> y aun quienes lo hacen suelen tener asesores que no se hablan entre sí. El contador optimiza impuestos, el abogado estructura, pero nadie revisa si los límites de las pólizas crecieron con el patrimonio. Las brechas viven exactamente en los espacios entre asesores.' data-en='The reality: only 34% of Hispanics work with a financial professional,<a class="fn" href="#fuentes">6</a> and even those who do often have advisors who never talk to each other. The CPA optimizes taxes, the attorney builds structures, but no one checks whether policy limits grew along with the estate. Gaps live precisely in the spaces between advisors.'>The reality: only 34% of Hispanics work with a financial professional,<a class="fn" href="#fuentes">6</a> and even those who do often have advisors who never talk to each other. The CPA optimizes taxes, the attorney builds structures, but no one checks whether policy limits grew along with the estate. Gaps live precisely in the spaces between advisors.</p></div>
-        <span class="m-cue" data-es="Toque para ver la realidad ↓" data-en="Tap to see the reality ↓">Tap to see the reality ↓</span>
+        <button type="button" class="m-cue" data-es="Toque para ver la realidad ↓" data-en="Tap to see the reality ↓" aria-expanded="false">Tap to see the reality ↓</button>
       </div>
 
-      <div class="mito reveal" onclick="revealMito(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')revealMito(this)">
+      <div class="mito reveal" onclick="revealMito(this)">
         <span class="m-label" data-es="Mito 4" data-en="Myth 4">Myth 4</span>
         <p class="m-text" data-es="El seguro de vida es para los gastos del funeral." data-en="Life insurance is for funeral expenses.">Life insurance is for funeral expenses.</p>
         <div class="m-real"><p data-es='La realidad: el 26% de los hispanos cree que el seguro de vida solo sirve para cubrir los gastos finales.<a class="fn" href="#fuentes">6</a> En patrimonios altos, el seguro de vida cumple funciones muy distintas: dar liquidez inmediata para que la familia no tenga que malvender propiedades o negocios, igualar herencias entre hijos y financiar la continuidad de la empresa familiar. Es una herramienta de Arquitectura patrimonial, no un gasto funerario.' data-en='The reality: 26% of Hispanics feel life insurance is only for covering final expenses.<a class="fn" href="#fuentes">6</a> In large estates, life insurance serves very different purposes: providing immediate liquidity so the family never has to fire-sell properties or businesses, equalizing inheritances among children, and funding the continuity of the family enterprise. It is a tool of estate Architecture, not a funeral expense.'>The reality: 26% of Hispanics feel life insurance is only for covering final expenses.<a class="fn" href="#fuentes">6</a> In large estates, life insurance serves very different purposes: providing immediate liquidity so the family never has to fire-sell properties or businesses, equalizing inheritances among children, and funding the continuity of the family enterprise. It is a tool of estate Architecture, not a funeral expense.</p></div>
-        <span class="m-cue" data-es="Toque para ver la realidad ↓" data-en="Tap to see the reality ↓">Tap to see the reality ↓</span>
+        <button type="button" class="m-cue" data-es="Toque para ver la realidad ↓" data-en="Tap to see the reality ↓" aria-expanded="false">Tap to see the reality ↓</button>
       </div>
     </div>
   </div>
@@ -1231,7 +1233,7 @@ function buildDomains(){
 }
 function toggleDom(btn){const c=btn.closest('.dom');const o=c.classList.toggle('open');btn.setAttribute('aria-expanded',o);}
 function toggleVida(btn){const c=btn.closest('.vcard');const o=c.classList.toggle('open');btn.setAttribute('aria-expanded',o);}
-function revealMito(el){el.classList.add('revealed');}
+function revealMito(el){el.classList.add('revealed');var c=el.querySelector('.m-cue');if(c)c.setAttribute('aria-expanded','true');}
 function toggleMenu(){
   const m=document.getElementById('mobileMenu');
   const b=document.querySelector('.hamb');
@@ -1535,8 +1537,8 @@ if(!reduceMotion){
 /* Gold light sweep across the hero */
 .hero::before{content:"";position:absolute;top:-20%;left:-40%;width:36%;height:150%;z-index:1;pointer-events:none;
   background:linear-gradient(105deg,transparent 0%,rgba(217,188,114,.10) 42%,rgba(235,217,168,.22) 50%,rgba(217,188,114,.10) 58%,transparent 100%);
-  transform:skewX(-14deg);animation:ppSweep 13s ease-in-out infinite;animation-delay:1.1s}
-@keyframes ppSweep{0%{left:-45%}12%{left:130%}100%{left:130%}}
+  transform:translateX(-14%) skewX(-14deg);will-change:transform;animation:ppSweep 13s ease-in-out infinite;animation-delay:1.1s}
+@keyframes ppSweep{0%{transform:translateX(-14%) skewX(-14deg)}12%,100%{transform:translateX(472%) skewX(-14deg)}}
 
 /* Floating gold dust canvas */
 #ppDust{position:absolute;inset:0;z-index:1;pointer-events:none}
@@ -1666,10 +1668,10 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
 #ppLoader .crest{display:block;width:auto;height:96px;opacity:0;transform:scale(.86);animation:ldCrest .9s cubic-bezier(.22,.8,.24,1) forwards .15s}
 #ppLoader .wm{font-family:var(--display);color:var(--blanco);font-size:15px;letter-spacing:.34em;text-transform:uppercase;opacity:0;animation:ldFade .8s ease forwards .9s}
 #ppLoader .wm em{font-style:normal;color:var(--oro-claro)}
-#ppLoader .ln{width:0;height:1px;background:var(--oro);animation:ldLine 1s cubic-bezier(.22,.8,.24,1) forwards 1s}
+#ppLoader .ln{width:150px;height:1px;background:var(--oro);transform:scaleX(0);animation:ldLine 1s cubic-bezier(.22,.8,.24,1) forwards 1s}
 @keyframes ldCrest{to{opacity:1;transform:scale(1)}}
 @keyframes ldFade{to{opacity:1}}
-@keyframes ldLine{to{width:150px}}
+@keyframes ldLine{to{transform:scaleX(1)}}
 
 /* Cursor aura in hero */
 .pp-aura{position:absolute;width:560px;height:560px;left:0;top:0;z-index:1;pointer-events:none;

@@ -9,9 +9,15 @@ const rules = fs.readFileSync(path.join(ROOT, 'netlify.toml'), 'utf8').split('[[
 const norm = p => (p.length > 1 ? p.replace(/\/$/, '') : p);
 const types = { '.html': 'text/html; charset=utf-8', '.jpg': 'image/jpeg', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain', '.json': 'application/json', '.md': 'text/markdown', '.py': 'text/plain', '.toml': 'text/plain' };
 const zlib = require('zlib'); let curReq = null;
+function notFound(res) {
+  const f = path.join(ROOT, '404.html');
+  res.writeHead(404, { 'content-type': 'text/html; charset=utf-8' });
+  return res.end(fs.existsSync(f) ? fs.readFileSync(f) : '<h1>Not found</h1>');
+}
+// Like Netlify: a missing page gets /404.html with status 404
 function send(res, file, status = 200) {
   const f = path.join(ROOT, file);
-  if (!fs.existsSync(f) || !fs.statSync(f).isFile()) { res.writeHead(404, { 'content-type': 'text/html' }); return res.end('<h1>Not found</h1>'); }
+  if (!fs.existsSync(f) || !fs.statSync(f).isFile()) { return notFound(res); }
   const type = types[path.extname(f)] || 'application/octet-stream';
   if (/text|xml|json/.test(type) && /gzip/.test((curReq && curReq.headers['accept-encoding']) || '')) {
     res.writeHead(status, { 'content-type': type, 'content-encoding': 'gzip' }); return res.end(zlib.gzipSync(fs.readFileSync(f)));
@@ -27,11 +33,11 @@ http.createServer((req, res) => {
     if (!hit) continue;
     if (r.query.length && u.searchParams.get(r.query[0]) !== r.query[1]) continue;
     if (r.status === 301 || r.status === 302) { res.writeHead(r.status, { location: r.to }); return res.end(); }
-    if (r.status === 404) { res.writeHead(404, { 'content-type': 'text/html' }); return res.end('<h1>Not found</h1>'); }
+    if (r.status === 404) { return notFound(res); }
     return send(res, r.to.slice(1), r.status);
   }
   if (p === '/') return send(res, 'index.html');
   if (fs.existsSync(path.join(ROOT, p)) && fs.statSync(path.join(ROOT, p)).isFile()) return send(res, p.slice(1));
   if (fs.existsSync(path.join(ROOT, p + '.html'))) return send(res, p.slice(1) + '.html');
-  res.writeHead(404, { 'content-type': 'text/html' }); res.end('<h1>Not found</h1>');
+  notFound(res);
 }).listen(PORT, () => console.log('listening', PORT));
