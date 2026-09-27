@@ -70,6 +70,10 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 .meta{margin-top:24px;font-size:13.5px;color:#B9C7BC;display:flex;flex-wrap:wrap;gap:6px 18px}.meta b{color:var(--oro-claro);font-weight:600}
 .layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;padding:56px 0 40px}
 @media(max-width:980px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
+/* guides on phones: a contact bar pinned to the bottom once the reader starts scrolling */
+.gbar{display:none}
+@media(max-width:980px){.gbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:900;display:flex;gap:10px;transform:translateY(140%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s}.gbar.on{transform:none;visibility:visible;transition:transform .3s ease}.gbar a{flex:1;display:flex;align-items:center;justify-content:center;height:50px;border-radius:99px;font:600 15px/1 var(--body);letter-spacing:.03em;text-decoration:none;box-shadow:0 12px 30px -10px rgba(13,36,28,.55)}.gbar .gb-w{background:var(--oro);color:var(--verde-oscuro)}.gbar .gb-c{background:var(--verde);color:var(--blanco);border:1px solid rgba(194,155,64,.6)}body[data-type="guide"] footer{padding-bottom:84px}}
+@media(prefers-reduced-motion:reduce){.gbar,.gbar.on{transition:none}}
 .toc{position:sticky;top:88px;align-self:start;font-size:14px}
 .toc h2{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:12px}
 .toc ol{list-style:none;border-left:1px solid var(--arena-oscura)}.toc a{display:block;padding:7px 0 7px 14px;margin-left:-1px;border-left:2px solid transparent;text-decoration:none;color:var(--humo);line-height:1.35}

@@ -55,6 +55,7 @@ T = {  # interface strings
         "cta_p": "El Mapa de Protección Familiar toma tres minutos, es anónimo y le muestra qué zonas de su plan quedaron en blanco.",
         "cta_quiz": "Hacer la autoevaluación", "cta_write": "¿Le quedaron preguntas? Escríbame",
         "mid_pre": "Si quiere revisar cómo aplica esto a su familia,", "mid_link": "escríbame",
+        "bar_write": "Escríbame", "bar_call": "Llamar", "bar_label": "Contacto",
         "print": "Imprimir", "search": "Buscar un término", "all": "Todos", "seeguide": "Ver la guía", "clear": "Borrar marcas",
         "months": ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
         "switch": "EN", "lic": "Christian R. González es agente de seguros con licencia en el estado de la Florida (Lic. W606240). Este sitio es educativo: no vende, cotiza ni negocia pólizas a través de esta página.",
@@ -68,6 +69,7 @@ T = {  # interface strings
         "cta_p": "The Family Protection Map takes three minutes, is anonymous, and shows which parts of your plan are still blank.",
         "cta_quiz": "Take the self-assessment", "cta_write": "Still have questions? Write to me",
         "mid_pre": "If you want to look at how this applies to your family,", "mid_link": "write to me",
+        "bar_write": "Write to me", "bar_call": "Call", "bar_label": "Contact",
         "print": "Print", "search": "Search a term", "all": "All", "seeguide": "See the guide", "clear": "Clear checks",
         "months": ["January","February","March","April","May","June","July","August","September","October","November","December"],
         "switch": "ES", "lic": "Christian R. González is a licensed insurance agent in the State of Florida (Lic. W606240). This site is educational: it does not sell, quote, or negotiate policies through this page.",
@@ -148,6 +150,10 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 .meta{margin-top:24px;font-size:13.5px;color:#B9C7BC;display:flex;flex-wrap:wrap;gap:6px 18px}.meta b{color:var(--oro-claro);font-weight:600}
 .layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;padding:56px 0 40px}
 @media(max-width:980px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
+/* guides on phones: a contact bar pinned to the bottom once the reader starts scrolling */
+.gbar{display:none}
+@media(max-width:980px){.gbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:900;display:flex;gap:10px;transform:translateY(140%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s}.gbar.on{transform:none;visibility:visible;transition:transform .3s ease}.gbar a{flex:1;display:flex;align-items:center;justify-content:center;height:50px;border-radius:99px;font:600 15px/1 var(--body);letter-spacing:.03em;text-decoration:none;box-shadow:0 12px 30px -10px rgba(13,36,28,.55)}.gbar .gb-w{background:var(--oro);color:var(--verde-oscuro)}.gbar .gb-c{background:var(--verde);color:var(--blanco);border:1px solid rgba(194,155,64,.6)}body[data-type="guide"] footer{padding-bottom:84px}}
+@media(prefers-reduced-motion:reduce){.gbar,.gbar.on{transition:none}}
 .toc{position:sticky;top:88px;align-self:start;font-size:14px}
 .toc h2{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:12px}
 .toc ol{list-style:none;border-left:1px solid var(--arena-oscura)}.toc a{display:block;padding:7px 0 7px 14px;margin-left:-1px;border-left:2px solid transparent;text-decoration:none;color:var(--humo);line-height:1.35}
@@ -419,6 +425,7 @@ for k in ORDER:
   </article>
 </div>
 <section class="band alt"><div class="wrap"><h2 class="sec">{t['related']}</h2><div class="cards">{rel_cards}</div></div></section>
+<div class="gbar no-print" id="gbar" role="region" aria-label="{t['bar_label']}"><a class="gb-w" href="{tema}" data-cta="guide_bar_write_{k}">{t['bar_write']}</a><a class="gb-c" href="tel:+17866712171" data-track="llamada">{t['bar_call']}</a></div>
 """
         ld = [
             {"@context": "https://schema.org", "@type": "Article", "headline": plain(c["h1"])[:110], "description": c["meta"],
@@ -432,7 +439,8 @@ for k in ORDER:
         js = r"""(function(){var links=[].slice.call(document.querySelectorAll('.toc a'));if(!('IntersectionObserver' in window)||!links.length)return;
 var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-20% 0px -70% 0px'});
-document.querySelectorAll('article section[id]').forEach(function(s){io.observe(s);});})();"""
+document.querySelectorAll('article section[id]').forEach(function(s){io.observe(s);});})();
+(function(){var b=document.getElementById('gbar');if(!b)return;var f=function(){b.classList.toggle('on',window.scrollY>window.innerHeight*0.6);};window.addEventListener('scroll',f,{passive:true});f();})();"""
         written.append(write(path, page(l, path, alt, c["title"], c["meta"], body, "guide", ld, js)))
         if l == "es": sitemap.append((path, alt))
 

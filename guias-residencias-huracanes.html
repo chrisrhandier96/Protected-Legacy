@@ -70,6 +70,10 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 .meta{margin-top:24px;font-size:13.5px;color:#B9C7BC;display:flex;flex-wrap:wrap;gap:6px 18px}.meta b{color:var(--oro-claro);font-weight:600}
 .layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;padding:56px 0 40px}
 @media(max-width:980px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
+/* guides on phones: a contact bar pinned to the bottom once the reader starts scrolling */
+.gbar{display:none}
+@media(max-width:980px){.gbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:900;display:flex;gap:10px;transform:translateY(140%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s}.gbar.on{transform:none;visibility:visible;transition:transform .3s ease}.gbar a{flex:1;display:flex;align-items:center;justify-content:center;height:50px;border-radius:99px;font:600 15px/1 var(--body);letter-spacing:.03em;text-decoration:none;box-shadow:0 12px 30px -10px rgba(13,36,28,.55)}.gbar .gb-w{background:var(--oro);color:var(--verde-oscuro)}.gbar .gb-c{background:var(--verde);color:var(--blanco);border:1px solid rgba(194,155,64,.6)}body[data-type="guide"] footer{padding-bottom:84px}}
+@media(prefers-reduced-motion:reduce){.gbar,.gbar.on{transition:none}}
 .toc{position:sticky;top:88px;align-self:start;font-size:14px}
 .toc h2{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:12px}
 .toc ol{list-style:none;border-left:1px solid var(--arena-oscura)}.toc a{display:block;padding:7px 0 7px 14px;margin-left:-1px;border-left:2px solid transparent;text-decoration:none;color:var(--humo);line-height:1.35}
@@ -226,6 +230,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </article>
 </div>
 <section class="band alt"><div class="wrap"><h2 class="sec">Siga leyendo</h2><div class="cards"><a class="card" href="/guias/inundacion/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M12 3v7"/><path d="M9 7l3 3 3-3"/></svg><h3>Inundación y marejada ciclónica: cómo funciona el seguro de inundación en Florida</h3><p>Por qué la póliza de propietario no paga el agua que sube, qué cubre el NFIP y cómo las pólizas de exceso y privadas cubren la diferencia en una residencia de alto valor.</p><span class="go">Leer la guía · 14 min de lectura →</span></a><a class="card" href="/guias/autos/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a2 2 0 0 1-4 0H9a2 2 0 0 1-4 0H4a1 1 0 0 1-1-1z"/></svg><h3>Seguro de auto en Florida: lo que la ley exige y lo que su patrimonio necesita revisar</h3><p>Los mínimos de Florida protegen poco a una familia con patrimonio; entender la cobertura UM, la responsabilidad del dueño y los conductores del hogar ayuda a encontrar las brechas.</p><span class="go">Leer la guía · 11 min de lectura →</span></a><a class="card" href="/guias/embarcaciones/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l-1-5 9-2 9 2-1 5"/><path d="M12 11V4"/><path d="M12 4l6 6"/><path d="M2 21c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/></svg><h3>Seguro de embarcación en Florida: lo que su póliza de hogar no cubre en el agua</h3><p>Cómo funciona el seguro de yate, bote y moto de agua, y qué conviene revisar antes de zarpar, prestar la embarcación o emplear a un capitán.</p><span class="go">Leer la guía · 11 min de lectura →</span></a></div></div></section>
+<div class="gbar no-print" id="gbar" role="region" aria-label="Contacto"><a class="gb-w" href="/?tema=res#contacto" data-cta="guide_bar_write_res">Escríbame</a><a class="gb-c" href="tel:+17866712171" data-track="llamada">Llamar</a></div>
 
 </main>
 <footer>
@@ -247,7 +252,8 @@ function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.que
 (function(){var links=[].slice.call(document.querySelectorAll('.toc a'));if(!('IntersectionObserver' in window)||!links.length)return;
 var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-20% 0px -70% 0px'});
-document.querySelectorAll('article section[id]').forEach(function(s){io.observe(s);});})();</script>
+document.querySelectorAll('article section[id]').forEach(function(s){io.observe(s);});})();
+(function(){var b=document.getElementById('gbar');if(!b)return;var f=function(){b.classList.toggle('on',window.scrollY>window.innerHeight*0.6);};window.addEventListener('scroll',f,{passive:true});f();})();</script>
 <!-- PP LIBRARY PANEL -->
 <style>
 .ppl{--ppl-g:var(--verde-oscuro,#0D241C);--ppl-g2:var(--verde,#14352A);--ppl-s:var(--arena,#F5EFE3);--ppl-o:var(--oro,#C29B40);--ppl-fd:var(--display,'Marcellus',Georgia,serif);--ppl-fb:var(--body,'Figtree',system-ui,sans-serif)}
