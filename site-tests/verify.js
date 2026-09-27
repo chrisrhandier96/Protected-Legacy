@@ -80,7 +80,7 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
       rec('Pages', 'Homepage title starts "Patrimonio Protegido | Christian R. González"', t.startsWith('Patrimonio Protegido | Christian R. González') && !/preguntas/i.test(t), `title="${t}" h1="${h1}"`); await p.ctx.close(); }
     { const p = await freshPage(); await p.goto(BASE + '/en/'); await settle(p);
       const r = await p.evaluate(() => ({ lang: document.documentElement.lang, path: location.pathname, t: document.title, h1: document.querySelector('h1').textContent.trim().slice(0, 60) }));
-      rec('Pages', '/en/ is the English homepage', r.lang === 'en' && r.path === '/en/' && /Risk education/.test(r.t), `lang=${r.lang} path=${r.path} h1="${r.h1}"`); await p.ctx.close(); }
+      rec('Pages', '/en/ is the English homepage', r.lang === 'en' && r.path === '/en/' && /Insurance in Florida/.test(r.t), `lang=${r.lang} path=${r.path} h1="${r.h1}"`); await p.ctx.close(); }
     for (const [u, re] of [['/guias/inundacion/', /inundaci/i], ['/en/guides/flood/', /flood/i]]) {
       const p = await freshPage(); const resp = await p.goto(BASE + u); const h1 = (await p.textContent('h1')).trim();
       rec('Pages', `${u} shows the flood guide`, resp.status() === 200 && re.test(h1) && new URL(p.url()).pathname === u, `status=${resp.status()} h1="${h1}"`); await p.ctx.close();
