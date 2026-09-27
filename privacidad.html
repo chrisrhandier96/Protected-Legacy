@@ -213,7 +213,7 @@ var l=(p==='en'||p==='es')?p:((s==='en'||s==='es')?s:'es');if(l!=='es')setLang(l
     render();last=document.activeElement;W.classList.add('ppl-on');
     tab.setAttribute('aria-expanded','true');panel.removeAttribute('aria-hidden');document.documentElement.style.overflow='hidden';
     setTimeout(function(){try{x.focus({preventScroll:true});}catch(e){}},60);
-    try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'cta_click',cta:'biblioteca',cta_state:src||'tab'});}catch(e){}
+    try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'cta_click',cta:'biblioteca',cta_state:src||'tab',page_type:document.body.getAttribute('data-type')||(/^\/(en\/?)?$/.test(location.pathname)?'home':''),language:document.documentElement.lang});}catch(e){}
   }
   function close(){
     if(!W.classList.contains('ppl-on'))return;W.classList.remove('ppl-on');
@@ -249,5 +249,5 @@ var l=(p==='en'||p==='es')?p:((s==='en'||s==='es')?s:'es');if(l!=='es')setLang(l
 })();
 </script>
 <!-- /PP LIBRARY PANEL -->
-<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track');try{window.dataLayer=window.dataLayer||[];dataLayer.push(m==='linkedin'||m==='email'?{event:'contact_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname}:{event:'phone_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname});}catch(x){}});</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track');try{window.dataLayer=window.dataLayer||[];dataLayer.push(m==='linkedin'||m==='email'?{event:'contact_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname,page_type:'privacidad',language:document.documentElement.lang}:{event:'phone_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname,page_type:'privacidad',language:document.documentElement.lang});}catch(x){}});</script>
 </body></html>
