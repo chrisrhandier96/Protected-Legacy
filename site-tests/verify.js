@@ -80,7 +80,7 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
       rec('Pages', 'Homepage title starts "Patrimonio Protegido | Christian R. González"', t.startsWith('Patrimonio Protegido | Christian R. González') && !/preguntas/i.test(t), `title="${t}" h1="${h1}"`); await p.ctx.close(); }
     { const p = await freshPage(); await p.goto(BASE + '/en/'); await settle(p);
       const r = await p.evaluate(() => ({ lang: document.documentElement.lang, path: location.pathname, t: document.title, h1: document.querySelector('h1').textContent.trim().slice(0, 60) }));
-      rec('Pages', '/en/ is the English homepage', r.lang === 'en' && r.path === '/en/' && /Risk education/.test(r.t), `lang=${r.lang} path=${r.path} h1="${r.h1}"`); await p.ctx.close(); }
+      rec('Pages', '/en/ is the English homepage', r.lang === 'en' && r.path === '/en/' && /Insurance in Florida/.test(r.t), `lang=${r.lang} path=${r.path} h1="${r.h1}"`); await p.ctx.close(); }
     for (const [u, re] of [['/guias/inundacion/', /inundaci/i], ['/en/guides/flood/', /flood/i]]) {
       const p = await freshPage(); const resp = await p.goto(BASE + u); const h1 = (await p.textContent('h1')).trim();
       rec('Pages', `${u} shows the flood guide`, resp.status() === 200 && re.test(h1) && new URL(p.url()).pathname === u, `status=${resp.status()} h1="${h1}"`); await p.ctx.close();
@@ -97,6 +97,13 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
       const extra = out.filter(([, s]) => s === 200);
       rec('Pages', '(extra) all 16 stray files + deploy.md + netlify.toml not 200', extra.length === 0, extra.length ? 'served: ' + extra.map(([u]) => u).join(', ') : `${out.length} paths all non-200`);
       await api.dispose(); }
+    { // unknown URLs get the site's own bilingual 404 page (status 404), in the visitor's language
+      const r = []; for (const [path, lang, h] of [['/no-existe-pp-404', 'es', 'Esta página no existe'], ['/en/not-a-page-pp-404', 'en', 'This page does not exist']]) {
+        const p = await freshPage(); const res = await p.goto(BASE + path); await p.waitForTimeout(300);
+        const st = res ? res.status() : 0; const h1 = ((await p.textContent('h1').catch(() => '')) || '').trim(); const l = await p.evaluate(() => document.documentElement.lang);
+        if (st !== 404 || !h1.includes(h) || l !== lang || p.errors.length) r.push(`${path}: status ${st}, lang ${l}, h1 "${h1.slice(0, 40)}"${p.errors.length ? ', JS errors' : ''}`);
+        await p.ctx.close(); }
+      rec('Pages', 'Unknown URL shows the bilingual 404 page (status 404, right language)', r.length === 0, r.length ? r.join(' | ') : 'ES and EN OK'); }
   }
 
   /* ================= CRAWL: links, anchors, GTM, JS errors ================= */
@@ -106,7 +113,9 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     while (queue.length) {
       const pth = queue.shift(); const p = await freshPage();
       let status = 0, html = '';
-      try { const resp = await p.goto(BASE + pth, { waitUntil: 'load' }); status = resp.status(); html = await resp.text(); await settle(p); await sweep(p); await p.waitForTimeout(800); } catch (e) { p.errors.push('nav: ' + e.message); }
+      try { const resp = await p.goto(BASE + pth, { waitUntil: 'load' }); status = resp.status(); html = await resp.text(); await settle(p); await sweep(p); await p.waitForTimeout(800);
+        // lazy images below the fold only load when scrolled to: load them now so 'not loaded yet' is not reported as broken
+        await p.evaluate(() => Promise.all([...document.images].filter(i => !i.complete).map(i => { i.loading = 'eager'; return new Promise(r => { i.addEventListener('load', r); i.addEventListener('error', r); setTimeout(r, 10000); }); }))); } catch (e) { p.errors.push('nav: ' + e.message); }
       const info = await p.evaluate(() => ({
         ids: [...document.querySelectorAll('[id]')].map(e => e.id),
         hrefs: [...document.querySelectorAll('a[href]')].map(a => a.href),

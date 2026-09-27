@@ -54,6 +54,7 @@ T = {  # interface strings
         "sources": "Fuentes", "related": "Siga leyendo", "read": "Leer la guía", "cta_t": "¿Dónde está su familia en este tema?",
         "cta_p": "El Mapa de Protección Familiar toma tres minutos, es anónimo y le muestra qué zonas de su plan quedaron en blanco.",
         "cta_quiz": "Hacer la autoevaluación", "cta_write": "¿Le quedaron preguntas? Escríbame",
+        "mid_pre": "Si quiere revisar cómo aplica esto a su familia,", "mid_link": "escríbame",
         "print": "Imprimir", "search": "Buscar un término", "all": "Todos", "seeguide": "Ver la guía", "clear": "Borrar marcas",
         "months": ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
         "switch": "EN", "lic": "Christian R. González es agente de seguros con licencia en el estado de la Florida (Lic. W606240). Este sitio es educativo: no vende, cotiza ni negocia pólizas a través de esta página.",
@@ -66,6 +67,7 @@ T = {  # interface strings
         "sources": "Sources", "related": "Keep reading", "read": "Read the guide", "cta_t": "Where does your family stand on this?",
         "cta_p": "The Family Protection Map takes three minutes, is anonymous, and shows which parts of your plan are still blank.",
         "cta_quiz": "Take the self-assessment", "cta_write": "Still have questions? Write to me",
+        "mid_pre": "If you want to look at how this applies to your family,", "mid_link": "write to me",
         "print": "Print", "search": "Search a term", "all": "All", "seeguide": "See the guide", "clear": "Clear checks",
         "months": ["January","February","March","April","May","June","July","August","September","October","November","December"],
         "switch": "ES", "lic": "Christian R. González is a licensed insurance agent in the State of Florida (Lic. W606240). This site is educational: it does not sell, quote, or negotiate policies through this page.",
@@ -161,6 +163,7 @@ article p{margin-bottom:16px}article ul{padding-left:22px;margin:0 0 18px}articl
 .tbl{overflow-x:auto;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:15px;background:var(--blanco)}
 th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--verde);color:var(--blanco);font-weight:600}
 .fn{font-size:.62em;vertical-align:super;line-height:0}.fn a{color:var(--oro);text-decoration:none;font-weight:700;padding:0 2px}
+.midnote{margin:36px 0;padding:14px 20px;border-left:3px solid var(--oro);background:var(--blanco);font-size:16px}.midnote a{font-weight:600}
 .qbox{background:var(--verde);color:var(--arena);border-radius:3px;padding:28px 30px;margin:48px 0}.qbox h2{color:var(--oro-claro)}
 .faq details{border-bottom:1px solid var(--arena-oscura);padding:16px 0}.faq summary{cursor:pointer;font-weight:600;color:var(--verde);list-style:none;display:flex;justify-content:space-between;gap:16px}
 .faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--oro);font-size:22px;line-height:1}.faq details[open] summary::after{content:"\2212"}
@@ -378,7 +381,11 @@ for k in ORDER:
         path, alt = p_guide(g, l), p_guide(g, "en" if l == "es" else "es")
         secs = c["sections"]
         toc = "".join(f'<li><a href="#{s["id"]}">{esc(plain(s["h2"]))}</a></li>' for s in secs)
-        body_secs = "".join(f'<section id="{s["id"]}"><h2>{esc(plain(s["h2"]))}</h2>{render_blocks(s["blocks"])}</section>' for s in secs)
+        tema = f'{p_home(l)}?tema={k}#contacto'
+        # one quiet contact line halfway through, for readers who arrive from a search or an ad
+        mid = f'<p class="midnote no-print">{t["mid_pre"]} <a href="{tema}" data-cta="guide_mid_{k}">{t["mid_link"]}</a>.</p>'
+        half = (len(secs) + 1) // 2
+        body_secs = "".join(f'<section id="{s["id"]}"><h2>{esc(plain(s["h2"]))}</h2>{render_blocks(s["blocks"])}</section>' + (mid if i == half - 1 else '') for i, s in enumerate(secs))
         summ = "".join(f"<li>{rich(x)}</li>" for x in c["summary"])
         qs = "".join(f"<li>{rich(x)}</li>" for x in c["questions"])
         fq = "".join(f"<details><summary>{esc(plain(f['q']))}</summary><p>{rich(f['a'])}</p></details>" for f in c["faq"])
@@ -391,7 +398,6 @@ for k in ORDER:
             if c2 not in rel_keys: rel_keys.append(c2)
         rel = [guides[r] for r in rel_keys]
         rel_cards = "".join(guide_card(r, l) for r in rel)
-        tema = f'{p_home(l)}?tema={k}#contacto'
         body = f"""
 <header class="head"><div class="wrap">
   {crumbs(l, [(p_hub(l), t['guides']), (None, plain(c['kicker']).split('·')[-1].strip())])}
