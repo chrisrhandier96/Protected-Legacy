@@ -217,10 +217,10 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;p
 JS_COMMON = r"""
 function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.querySelector('.hamb');var s=m.classList.toggle('show');b.setAttribute('aria-expanded',s);}
 (function(){var bar=document.getElementById('bar');if(bar){addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});}
- document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a)return;try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'cta_click',cta:a.getAttribute('data-cta'),page_type:document.body.getAttribute('data-type')||''});}catch(x){}});
+ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a)return;try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'cta_click',cta:a.getAttribute('data-cta'),page_type:document.body.getAttribute('data-type')||'',language:document.documentElement.lang});}catch(x){}});
  try{localStorage.setItem('pp.lang',document.documentElement.lang);}catch(e){}
  /* contact links: same dataLayer format as the homepage (phone_click for calls/texts, contact_click for LinkedIn/email) */
- document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track'),o={event:(m==='linkedin'||m==='email')?'contact_click':'phone_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname};try{window.dataLayer=window.dataLayer||[];dataLayer.push(o);}catch(x){}});
+ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track'),o={event:(m==='linkedin'||m==='email')?'contact_click':'phone_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname,page_type:document.body.getAttribute('data-type')||'',language:document.documentElement.lang};try{window.dataLayer=window.dataLayer||[];dataLayer.push(o);}catch(x){}});
 })();
 """
 
