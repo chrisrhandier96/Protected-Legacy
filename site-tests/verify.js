@@ -271,7 +271,7 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
       const r = [];
       for (const [g, lang] of [['/guias/inundacion/', 'es'], ['/en/guides/umbrella-liability/', 'en']]) {
         const p = await freshPage(); let body = '';
-        await p.route('**/*', rt => { const q = rt.request(); if (q.method() === 'POST') { body = q.postData() || ''; return rt.fulfill({ status: 200, body: 'ok' }); }
+        await p.route('**/*', rt => { const q = rt.request(); if (q.method() === 'POST') { if (new URL(q.url()).pathname === '/') body = q.postData() || ''; return rt.fulfill({ status: 200, body: 'ok' }); }
           if (/google|doubleclick|googleadservices/.test(new URL(q.url()).host)) return rt.abort(); return rt.continue(); });
         await p.goto(BASE + g + '?gclid=TESTGCLID&utm_source=google'); await settle(p);
         await p.fill('#gf-name', 'Test Automatizado'); await p.fill('#gf-email', 'test@example.com'); await p.fill('#gf-tel', '3055550000'); await p.check('#gf-consent');
