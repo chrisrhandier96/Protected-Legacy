@@ -261,13 +261,27 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     for (const g of guides) {
       const p = await freshPage(); await p.goto(BASE + g); await settle(p);
       const cta = p.locator('a[data-cta^="guide_contact_"]').first(); const key = (await cta.getAttribute('data-cta')).replace('guide_contact_', ''); const href = await cta.getAttribute('href');
-      await Promise.all([p.waitForNavigation(), cta.click()]); await p.waitForTimeout(1800);
-      const t = await selectedTema(p); const land = new URL(p.url()); const vis = await inView(p, '#contacto');
-      const homeOk = g.startsWith('/en/') ? land.pathname === '/en/' : land.pathname === '/';
-      (t === TEMA[key] && homeOk && vis ? ok : bad).push(`${g} [${href}] -> ${land.pathname}${land.search}${land.hash} tema="${t}" formInView=${vis}`);
+      await cta.click(); await p.waitForTimeout(1200);
+      const t = await p.getAttribute('#gForm input[name="tema"]', 'value').catch(() => null); const land = new URL(p.url()); const vis = await inView(p, '#contacto');
+      (t === TEMA[key] && land.pathname === g && vis ? ok : bad).push(`${g} [${href}] -> ${land.pathname}${land.hash} tema="${t}" formInView=${vis}`);
       await p.ctx.close();
     }
-    rec('Quiz', 'Each guide CTA -> homepage form with its topic preselected', bad.length === 0 && ok.length === guides.length, `${ok.length}/${guides.length} OK` + (bad.length ? '; ' + bad.join(' | ') : ''));
+    rec('Quiz', 'Each guide CTA -> the form on the same page, with its topic set', bad.length === 0 && ok.length === guides.length, `${ok.length}/${guides.length} OK` + (bad.length ? '; ' + bad.join(' | ') : ''));
+    { // the guide form sends every field Netlify expects; the POST is answered inside the browser (nothing is sent) and Google tags are blocked (no conversion)
+      const r = [];
+      for (const [g, lang] of [['/guias/inundacion/', 'es'], ['/en/guides/umbrella-liability/', 'en']]) {
+        const p = await freshPage(); let body = '';
+        await p.route('**/*', rt => { const q = rt.request(); if (q.method() === 'POST') { body = q.postData() || ''; return rt.fulfill({ status: 200, body: 'ok' }); }
+          if (/google|doubleclick|googleadservices/.test(new URL(q.url()).host)) return rt.abort(); return rt.continue(); });
+        await p.goto(BASE + g + '?gclid=TESTGCLID&utm_source=google'); await settle(p);
+        await p.fill('#gf-name', 'Test Automatizado'); await p.fill('#gf-email', 'test@example.com'); await p.fill('#gf-tel', '3055550000'); await p.check('#gf-consent');
+        await p.click('#gf-send'); await p.waitForTimeout(2500);
+        const f = new URLSearchParams(body), need = ['form-name', 'tema', 'nombre', 'email', 'telefono', 'gclid', 'origen', 'pagina_entrada', 'idioma_sitio'];
+        const miss = need.filter(n => !f.get(n)); const end = new URL(p.url()).pathname;
+        if (miss.length || f.get('form-name') !== 'contacto' || f.get('gclid') !== 'TESTGCLID' || f.get('idioma_sitio') !== lang || end !== '/gracias.html') r.push(`${g}: missing [${miss}] landed ${end}`);
+        await p.ctx.close();
+      }
+      rec('Quiz', 'Guide form sends all lead fields and goes to the thank-you page (simulated, nothing sent)', r.length === 0, r.length ? r.join(' | ') : 'ES and EN OK'); }
   }
 
   /* ================= TOOLS ================= */

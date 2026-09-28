@@ -55,6 +55,13 @@ T = {  # interface strings
         "cta_p": "El Mapa de Protección Familiar toma tres minutos, es anónimo y le muestra qué zonas de su plan quedaron en blanco.",
         "cta_quiz": "Hacer la autoevaluación", "cta_write": "¿Le quedaron preguntas? Escríbame",
         "mid_pre": "Si quiere revisar cómo aplica esto a su familia,", "mid_link": "escríbame",
+        "bar_write": "Escríbame", "bar_call": "Llamar", "bar_label": "Contacto",
+        "f_h": "Escríbame sobre su caso", "f_p": "Le respondo personalmente, normalmente dentro de 48 horas.",
+        "f_name": "Nombre", "f_email": "Correo electrónico", "f_tel": "Teléfono (opcional)", "f_msg": "¿Qué le gustaría revisar? (opcional)",
+        "f_consent": "Autorizo a Christian R. González a responderme por correo electrónico o por teléfono sobre mi consulta. Entiendo que este sitio es educativo y no ofrece asesoría de seguros.",
+        "f_send": "Enviar mensaje", "f_sending": "Enviando…", "f_priv": "Cómo cuido sus datos", "f_lang": "Español",
+        "f_err_req": "Por favor complete su nombre y correo.", "f_err_mail": "Por favor verifique su correo electrónico.", "f_err_consent": "Por favor marque la casilla de autorización.",
+        "f_err_send": "No pudimos enviar el mensaje desde el sitio. Escríbame directamente:", "toc_write": "Escríbame",
         "print": "Imprimir", "search": "Buscar un término", "all": "Todos", "seeguide": "Ver la guía", "clear": "Borrar marcas",
         "months": ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
         "switch": "EN", "lic": "Christian R. González es agente de seguros con licencia en el estado de la Florida (Lic. W606240). Este sitio es educativo: no vende, cotiza ni negocia pólizas a través de esta página.",
@@ -68,6 +75,13 @@ T = {  # interface strings
         "cta_p": "The Family Protection Map takes three minutes, is anonymous, and shows which parts of your plan are still blank.",
         "cta_quiz": "Take the self-assessment", "cta_write": "Still have questions? Write to me",
         "mid_pre": "If you want to look at how this applies to your family,", "mid_link": "write to me",
+        "bar_write": "Write to me", "bar_call": "Call", "bar_label": "Contact",
+        "f_h": "Write to me about your situation", "f_p": "I reply personally, usually within 48 hours.",
+        "f_name": "Name", "f_email": "Email", "f_tel": "Phone (optional)", "f_msg": "What would you like to review? (optional)",
+        "f_consent": "I authorize Christian R. González to reply to my inquiry by email or phone. I understand this site is educational and does not offer insurance advice.",
+        "f_send": "Send message", "f_sending": "Sending…", "f_priv": "How I handle your data", "f_lang": "English",
+        "f_err_req": "Please fill in your name and email.", "f_err_mail": "Please check your email address.", "f_err_consent": "Please check the authorization box.",
+        "f_err_send": "We could not send the message from the site. Write to me directly:", "toc_write": "Write to me",
         "print": "Print", "search": "Search a term", "all": "All", "seeguide": "See the guide", "clear": "Clear checks",
         "months": ["January","February","March","April","May","June","July","August","September","October","November","December"],
         "switch": "ES", "lic": "Christian R. González is a licensed insurance agent in the State of Florida (Lic. W606240). This site is educational: it does not sell, quote, or negotiate policies through this page.",
@@ -148,7 +162,24 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 .meta{margin-top:24px;font-size:13.5px;color:#B9C7BC;display:flex;flex-wrap:wrap;gap:6px 18px}.meta b{color:var(--oro-claro);font-weight:600}
 .layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;padding:56px 0 40px}
 @media(max-width:980px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
+/* guides on phones: a contact bar pinned to the bottom once the reader starts scrolling */
+.gbar{display:none}
+@media(max-width:980px){.gbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:900;display:flex;gap:10px;transform:translateY(140%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s}.gbar.on{transform:none;visibility:visible;transition:transform .3s ease}.gbar a{flex:1;display:flex;align-items:center;justify-content:center;height:50px;border-radius:99px;font:600 15px/1 var(--body);letter-spacing:.03em;text-decoration:none;box-shadow:0 12px 30px -10px rgba(13,36,28,.55)}.gbar .gb-w{background:var(--oro);color:var(--verde-oscuro)}.gbar .gb-c{background:var(--verde);color:var(--blanco);border:1px solid rgba(194,155,64,.6)}body[data-type="guide"] footer{padding-bottom:84px}}
+@media(prefers-reduced-motion:reduce){.gbar,.gbar.on{transition:none}}
 .toc{position:sticky;top:88px;align-self:start;font-size:14px}
+.toc a.toc-cta,.toc a.toc-cta:hover{color:var(--verde-oscuro)!important;border:0}
+.toc .toc-cta{display:inline-block;margin-top:18px;padding:10px 18px;border-radius:99px;background:var(--oro);color:var(--verde-oscuro);font-weight:600;text-decoration:none}
+.gform{background:var(--verde);color:var(--arena);border-radius:3px;padding:30px 30px 26px;margin:48px 0;scroll-margin-top:96px}.gform h2{color:var(--oro-claro);margin-top:0}
+.gform>p{color:#C9D5CC;margin:6px 0 20px}.gform .gf-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}.gform .gf-full{grid-column:1/-1}
+.gform label{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;color:#DCE5DD;margin-bottom:6px}
+.gform input[type=text],.gform input[type=email],.gform input[type=tel],.gform textarea{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid rgba(194,155,64,.45);border-radius:3px;background:var(--blanco);color:var(--tinta);font:400 16px/1.4 var(--body)}
+.gform input:focus,.gform textarea:focus{outline:2px solid var(--oro-claro);outline-offset:1px}
+.gform .gf-consent{display:flex;gap:10px;align-items:flex-start;margin:16px 0 18px;font-size:13px;line-height:1.5;color:#C9D5CC}.gform .gf-consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--oro)}
+.gform .gf-consent label{font-weight:400;letter-spacing:0;font-size:13px;color:#C9D5CC;margin:0}
+.gform button{width:100%;border:0;cursor:pointer}.gform button[disabled]{opacity:.6;cursor:wait}
+.gform .gf-err{display:none;margin:12px 0 0;font-size:14px;color:#F2C4B8}.gform .gf-err a{color:var(--oro-claro)}
+.gform .gf-priv{margin:12px 0 0;font-size:13px}.gform .gf-priv a{color:#C9D5CC}.gform .gf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media(max-width:620px){.gform{padding:24px 20px}.gform .gf-grid{grid-template-columns:1fr}}
 .toc h2{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:12px}
 .toc ol{list-style:none;border-left:1px solid var(--arena-oscura)}.toc a{display:block;padding:7px 0 7px 14px;margin-left:-1px;border-left:2px solid transparent;text-decoration:none;color:var(--humo);line-height:1.35}
 .toc a:hover,.toc a.on{color:var(--verde);border-left-color:var(--oro)}
@@ -215,6 +246,11 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;p
 """
 
 JS_COMMON = r"""
+/* ad and referral source for the visit (same keys as the homepage form): first touch wins, kept for the session */
+(function(){try{var S=sessionStorage,q=new URLSearchParams(location.search),K={origen:['utm_source','source'],campana:['utm_campaign'],termino:['utm_term','keyword'],gclid:['gclid','wbraid','gbraid']};
+Object.keys(K).forEach(function(k){for(var i=0;i<K[k].length;i++){var v=q.get(K[k][i]);if(v){S.setItem('pp.'+k,String(v).slice(0,120));break;}}});
+if(!S.getItem('pp.origen')){var r=document.referrer||'';if(r&&r.indexOf(location.host)<0){try{S.setItem('pp.origen','referencia: '+new URL(r).hostname.replace(/^www\./,''));}catch(x){}}else if(!r){S.setItem('pp.origen','directo');}}
+if(!S.getItem('pp.landing'))S.setItem('pp.landing',location.pathname);}catch(x){}})();
 function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.querySelector('.hamb');var s=m.classList.toggle('show');b.setAttribute('aria-expanded',s);}
 (function(){var bar=document.getElementById('bar');if(bar){addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});}
  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a)return;try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'cta_click',cta:a.getAttribute('data-cta'),page_type:document.body.getAttribute('data-type')||'',language:document.documentElement.lang});}catch(x){}});
@@ -381,7 +417,7 @@ for k in ORDER:
         path, alt = p_guide(g, l), p_guide(g, "en" if l == "es" else "es")
         secs = c["sections"]
         toc = "".join(f'<li><a href="#{s["id"]}">{esc(plain(s["h2"]))}</a></li>' for s in secs)
-        tema = f'{p_home(l)}?tema={k}#contacto'
+        tema = '#contacto'
         # one quiet contact line halfway through, for readers who arrive from a search or an ad
         mid = f'<p class="midnote no-print">{t["mid_pre"]} <a href="{tema}" data-cta="guide_mid_{k}">{t["mid_link"]}</a>.</p>'
         half = (len(secs) + 1) // 2
@@ -398,6 +434,20 @@ for k in ORDER:
             if c2 not in rel_keys: rel_keys.append(c2)
         rel = [guides[r] for r in rel_keys]
         rel_cards = "".join(guide_card(r, l) for r in rel)
+        gform = f"""<section class="gform no-print" id="contacto" aria-labelledby="gf-h"><h2 id="gf-h">{t['f_h']}</h2><p>{t['f_p']}</p>
+<form id="gForm" name="contacto" method="POST" action="/" novalidate data-key="{k}">
+<input type="hidden" name="form-name" value="contacto"><input type="hidden" name="tema" value="{esc(TOPIC[k])}"><input type="hidden" name="idioma" value="{t['f_lang']}"><input type="hidden" name="idioma_sitio" value="{l}">
+<input type="hidden" name="origen" data-pp="origen"><input type="hidden" name="campana" data-pp="campana"><input type="hidden" name="termino" data-pp="termino"><input type="hidden" name="gclid" data-pp="gclid"><input type="hidden" name="pagina_entrada" data-pp="landing">
+<p class="gf-hp" aria-hidden="true"><label>No llenar <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<div class="gf-grid"><div><label for="gf-name">{t['f_name']}</label><input id="gf-name" name="nombre" type="text" autocomplete="name" required></div>
+<div><label for="gf-email">{t['f_email']}</label><input id="gf-email" name="email" type="email" autocomplete="email" required></div>
+<div class="gf-full"><label for="gf-tel">{t['f_tel']}</label><input id="gf-tel" name="telefono" type="tel" autocomplete="tel"></div>
+<div class="gf-full"><label for="gf-msg">{t['f_msg']}</label><textarea id="gf-msg" name="mensaje" rows="3"></textarea></div></div>
+<div class="gf-consent"><input type="checkbox" id="gf-consent"><label for="gf-consent">{t['f_consent']}</label></div>
+<button class="btn btn-oro" type="submit" id="gf-send" data-sending="{t['f_sending']}">{t['f_send']}</button>
+<p class="gf-err" id="gf-err" role="alert" data-req="{t['f_err_req']}" data-mail="{t['f_err_mail']}" data-consent="{t['f_err_consent']}" data-send="{t['f_err_send']}"></p>
+<p class="gf-priv"><a href="/privacidad.html">{t['f_priv']}</a></p>
+</form></section>"""
         body = f"""
 <header class="head"><div class="wrap">
   {crumbs(l, [(p_hub(l), t['guides']), (None, plain(c['kicker']).split('·')[-1].strip())])}
@@ -407,7 +457,7 @@ for k in ORDER:
   <div class="meta"><span>{t['by']}</span><span><b>{t['updated']}:</b> {fmt_date(g['updated'], l)}</span><span>{minutes(g, l)} {t['min']}</span></div>
 </div></header>
 <div class="wrap layout">
-  <aside class="toc" aria-label="{t['toc']}"><h2>{t['toc']}</h2><ol>{toc}</ol></aside>
+  <aside class="toc" aria-label="{t['toc']}"><h2>{t['toc']}</h2><ol>{toc}</ol><a class="toc-cta" href="#contacto" data-cta="guide_toc_write_{k}">{t['toc_write']}</a></aside>
   <article>
     <div class="sumbox"><h2>{t['summary']}</h2><ul>{summ}</ul></div>
     {body_secs}
@@ -415,10 +465,12 @@ for k in ORDER:
     <section class="faq" id="preguntas"><h2>{t['faqh']}</h2>{fq}</section>
     <div class="cta"><h2>{t['cta_t']}</h2><p>{t['cta_p']}</p>
       <div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="guide_quiz_{k}">{t['cta_quiz']}</a><a class="btn btn-line" href="{tema}" data-cta="guide_contact_{k}">{t['cta_write']}</a></div></div>
+    {gform}
     <div class="srcs"><h2>{t['sources']}</h2><ol>{src}</ol></div>
   </article>
 </div>
 <section class="band alt"><div class="wrap"><h2 class="sec">{t['related']}</h2><div class="cards">{rel_cards}</div></div></section>
+<div class="gbar no-print" id="gbar" role="region" aria-label="{t['bar_label']}"><a class="gb-w" href="{tema}" data-cta="guide_bar_write_{k}">{t['bar_write']}</a><a class="gb-c" href="tel:+17866712171" data-track="llamada">{t['bar_call']}</a></div>
 """
         ld = [
             {"@context": "https://schema.org", "@type": "Article", "headline": plain(c["h1"])[:110], "description": c["meta"],
@@ -432,7 +484,24 @@ for k in ORDER:
         js = r"""(function(){var links=[].slice.call(document.querySelectorAll('.toc a'));if(!('IntersectionObserver' in window)||!links.length)return;
 var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-20% 0px -70% 0px'});
-document.querySelectorAll('article section[id]').forEach(function(s){io.observe(s);});})();"""
+document.querySelectorAll('article section[id]').forEach(function(s){io.observe(s);});})();
+(function(){var b=document.getElementById('gbar'),s=document.getElementById('contacto');if(!b)return;var near=false,typing=false;
+var f=function(){b.classList.toggle('on',window.scrollY>window.innerHeight*0.6&&!near&&!typing);};
+if(s&&'IntersectionObserver' in window)new IntersectionObserver(function(es){near=es[0].isIntersecting;f();}).observe(s);
+document.addEventListener('focusin',function(e){if(e.target.closest&&e.target.closest('#gForm')){typing=true;f();}});document.addEventListener('focusout',function(){typing=false;setTimeout(f,50);});
+window.addEventListener('scroll',f,{passive:true});f();})();
+(function(){var F=document.getElementById('gForm');if(!F)return;var L=document.documentElement.lang,K=F.getAttribute('data-key'),E=document.getElementById('gf-err'),B=document.getElementById('gf-send'),T=B.textContent;
+[].forEach.call(F.querySelectorAll('[data-pp]'),function(i){var v='';try{v=sessionStorage.getItem('pp.'+i.getAttribute('data-pp'))||'';}catch(x){}i.value=v||(i.getAttribute('data-pp')==='landing'?location.pathname:'');});
+function err(m,withMail){E.textContent=m;if(withMail){var a=document.createElement('a');a.href='mailto:chrisrhandier96@gmail.com';a.setAttribute('data-track','email');a.textContent=' chrisrhandier96@gmail.com';E.appendChild(a);}E.style.display='block';}
+F.addEventListener('submit',function(ev){ev.preventDefault();E.style.display='none';
+var n=F.nombre.value.trim(),m=F.email.value.trim();
+if(!n||!m){err(E.getAttribute('data-req'));return;}if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m)){err(E.getAttribute('data-mail'));return;}
+if(!document.getElementById('gf-consent').checked){err(E.getAttribute('data-consent'));return;}
+B.disabled=true;B.textContent=B.getAttribute('data-sending');
+fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(F)).toString()}).then(function(r){if(!r||!r.ok)throw new Error('send');
+var gone=false,go=function(){if(gone)return;gone=true;location.href='/gracias.html?lang='+L;};
+try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'generate_lead',lead_source:'guia_'+K,language:L,page_type:'guide',quiz_score:'',eventCallback:go,eventTimeout:1500});}catch(x){}
+setTimeout(go,1700);}).catch(function(){B.disabled=false;B.textContent=T;err(E.getAttribute('data-send'),true);});});})();"""
         written.append(write(path, page(l, path, alt, c["title"], c["meta"], body, "guide", ld, js)))
         if l == "es": sitemap.append((path, alt))
 
