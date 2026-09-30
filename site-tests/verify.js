@@ -495,6 +495,77 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     rec('Visual', 'Screenshots of the 6 new guides (ES + EN, desktop 1440 + mobile 390), no JS errors', errs.length === 0, errs.length ? errs.join(' | ') : path.join(OUT, 'shots', 'new-*.png'));
   }
 
+  /* ================= GUIDE CTAs (work order 2026-10): self-check card, phone bar, midnote, scroll depth ================= */
+  if (want('guidecta')) {
+    const guides = locs.map(u => new URL(u).pathname).filter(x => /^\/(guias|en\/guides)\/[^/]+\/$/.test(x));
+    const bad = [], counts = {};
+    for (const g of guides) {
+      const p = await freshPage(); await p.goto(BASE + g); await settle(p);
+      const r = await p.evaluate(() => {
+        const q = s => document.querySelector(s), en = document.documentElement.lang === 'en', home = en ? '/en/#mapa' : '/#mapa';
+        const k = (q('a[data-cta^="guide_quiz_"]') || { getAttribute: () => 'guide_quiz_?' }).getAttribute('data-cta').replace('guide_quiz_', '');
+        const alt = (q('link[rel="alternate"][hreflang="' + (en ? 'es' : 'en') + '"]') || {}).href || '';
+        const sum = q('article .sumbox'), card = q('article .topcta'), bar = q('#gbar'), mid = q('.midnote');
+        const path = a => a ? new URL(a.getAttribute('href'), location.href).pathname + new URL(a.getAttribute('href'), location.href).hash : '';
+        const e = [];
+        if (!card) e.push('no .topcta'); else {
+          if (!sum || sum.nextElementSibling !== card) e.push('.topcta not directly after .sumbox');
+          const tq = card.querySelector(`a[data-cta="guide_top_quiz_${k}"]`);
+          if (!tq || path(tq) !== home) e.push(`top quiz link ${tq ? path(tq) : 'missing'} (want ${home})`);
+          if (!card.querySelector(`a[data-cta="guide_top_write_${k}"]`)) e.push('top write link missing');
+          if (!card.classList.contains('no-print')) e.push('.topcta without no-print');
+        }
+        if (!bar) e.push('no #gbar'); else {
+          const bq = bar.querySelector(`a[data-cta="guide_bar_quiz_${k}"]`);
+          if (!bq || path(bq) !== home) e.push('bar quiz link wrong or missing');
+          if (!bar.querySelector(`a[data-cta="guide_bar_write_${k}"]`)) e.push('bar write link missing');
+          const tel = bar.querySelectorAll('a[href="tel:+17866712171"][data-track="llamada"]');
+          if (tel.length !== 1 || !tel[0].getAttribute('aria-label')) e.push(`bar call links: ${tel.length}, aria-label ${tel[0] ? tel[0].getAttribute('aria-label') : '-'}`);
+        }
+        if (!mid || !mid.querySelector(`a[data-cta="guide_mid_quiz_${k}"]`) || !mid.querySelector(`a[data-cta="guide_mid_${k}"]`)) e.push('midnote links missing');
+        if (document.documentElement.outerHTML.includes('—')) e.push('em dash in page');
+        return { k, e, n: document.querySelectorAll('[data-cta]').length, alt: alt ? new URL(alt).pathname : '' };
+      });
+      counts[g] = r; if (r.e.length) bad.push(`${g}: ${r.e.join('; ')}`); await p.ctx.close();
+    }
+    rec('GuideCTA', 'Every guide: card after the summary, 3-action phone bar, two-link midnote, no em dash', bad.length === 0 && guides.length === 28, `${guides.length - bad.length}/${guides.length} OK` + (bad.length ? '; ' + bad.join(' | ') : ''));
+    const par = guides.filter(g => g.startsWith('/guias/')).map(g => { const en = counts[g].alt, a = counts[g].n, b = counts[en] ? counts[en].n : -1; return a === b ? null : `${g} ${a} vs ${en} ${b}`; }).filter(Boolean);
+    rec('GuideCTA', 'ES/EN parity: same number of [data-cta] on each guide pair', par.length === 0, par.length ? par.join(' | ') : '14 pairs match');
+
+    // phones: card near the first screen, bar after the card, hidden over the form, nothing overflows (Google tags blocked, no navigation)
+    const mob = [];
+    for (const [w, h] of [[360, 740], [390, 844]]) for (const u of ['/guias/umbrella-responsabilidad/', '/en/guides/umbrella-liability/', '/guias/inundacion/', '/en/guides/flood/']) {
+      const p = await freshPage({ viewport: { width: w, height: h }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 }); await p.goto(BASE + u); await settle(p);
+      const on = () => p.evaluate(() => document.getElementById('gbar').classList.contains('on'));
+      const go = y => p.evaluate(y => window.scrollTo({ top: y, behavior: 'instant' }), y).then(() => p.waitForTimeout(350));
+      await go(0); const s = await p.evaluate(() => { const r = document.querySelector('.topcta').getBoundingClientRect(); return { top: r.top + scrollY, bottom: r.bottom + scrollY, ov: document.documentElement.scrollWidth > innerWidth, labels: [...document.querySelectorAll('#gbar a')].some(a => a.scrollWidth > a.clientWidth + 1) }; });
+      const atTop = await on(); await go(s.bottom + 10); const past = await on();
+      await p.evaluate(() => document.getElementById('contacto').scrollIntoView({ behavior: 'instant' })); await p.waitForTimeout(350); const form = await on();
+      const ok = s.top < h * 1.35 && !atTop && past && !form && !s.ov && !s.labels;
+      if (!ok) mob.push(`${w}x${h} ${u}: cardTop ${Math.round(s.top)}, bar top/past/form ${atTop}/${past}/${form}, overflow ${s.ov}, label overflow ${s.labels}`);
+      if (p.errors.length) mob.push(`${u}: ${p.errors.join('; ')}`); await p.ctx.close();
+    }
+    rec('GuideCTA', 'Phones 360x740 + 390x844: card within one short scroll, bar after it, hidden over the form, no overflow', mob.length === 0, mob.length ? mob.join(' | ') : '8 checks OK');
+
+    // dataLayer: three guide_scroll events, one cta_click per new CTA (clicks are prevented, so nothing navigates or dials)
+    const dl = [];
+    for (const u of ['/guias/umbrella-responsabilidad/', '/en/guides/umbrella-liability/']) {
+      const p = await freshPage(MOBILE); await p.goto(BASE + u); await settle(p);
+      for (let i = 0; i < 4; i++) { await p.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' })); await p.waitForTimeout(150); await p.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' })); await p.waitForTimeout(150); }
+      const r = await p.evaluate(() => {
+        window.addEventListener('click', e => e.preventDefault());
+        const sc = dataLayer.filter(x => x && x.event === 'guide_scroll').map(x => x.scroll_pct).join(',');
+        const k = document.querySelector('a[data-cta^="guide_quiz_"]').getAttribute('data-cta').replace('guide_quiz_', '');
+        const want = ['guide_top_quiz_', 'guide_top_write_', 'guide_bar_quiz_', 'guide_bar_write_', 'guide_mid_quiz_', 'guide_mid_'].map(x => x + k), miss = [];
+        for (const c of want) { const before = dataLayer.filter(x => x && x.event === 'cta_click' && x.cta === c).length; document.querySelector(`[data-cta="${c}"]`).click();
+          if (dataLayer.filter(x => x && x.event === 'cta_click' && x.cta === c).length !== before + 1) miss.push(c); }
+        return { sc, miss };
+      });
+      if (r.sc !== '25,50,75' || r.miss.length) dl.push(`${u}: guide_scroll [${r.sc}], cta_click missing [${r.miss}]`); await p.ctx.close();
+    }
+    rec('GuideCTA', 'dataLayer: guide_scroll 25/50/75 exactly once each; each new CTA pushes one cta_click', dl.length === 0, dl.length ? dl.join(' | ') : 'ES and EN OK');
+  }
+
   await http.dispose(); await browser.close();
   fs.writeFileSync(path.join(OUT, 'results.json'), JSON.stringify(results, null, 1));
   const f = results.filter(r => !r.pass).length;

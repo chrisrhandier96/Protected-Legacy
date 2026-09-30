@@ -54,7 +54,9 @@ T = {  # interface strings
         "sources": "Fuentes", "related": "Siga leyendo", "read": "Leer la guía", "cta_t": "¿Dónde está su familia en este tema?",
         "cta_p": "El Mapa de Protección Familiar toma tres minutos, es anónimo y le muestra qué zonas de su plan quedaron en blanco.",
         "cta_quiz": "Hacer la autoevaluación", "cta_write": "¿Le quedaron preguntas? Escríbame",
-        "mid_pre": "Si quiere revisar cómo aplica esto a su familia,", "mid_link": "escríbame",
+        "mid_pre": "Si quiere ver cómo aplica esto a su familia,", "mid_quiz": "haga la autoevaluación de 3 minutos", "mid_or": "o", "mid_link": "escríbame",
+        "top_t": "Revise los vacíos de su familia en 3 minutos", "top_p": "El Mapa de Protección Familiar es anónimo y le muestra qué zonas de su plan quedaron en blanco.",
+        "top_quiz": "Hacer la autoevaluación", "top_write": "o escríbame", "bar_quiz": "Autoevaluación",
         "bar_write": "Escríbame", "bar_call": "Llamar", "bar_label": "Contacto",
         "f_h": "Escríbame sobre su caso", "f_p": "Le respondo personalmente, normalmente dentro de 48 horas.",
         "f_name": "Nombre", "f_email": "Correo electrónico", "f_tel": "Teléfono (opcional)", "f_msg": "¿Qué le gustaría revisar? (opcional)",
@@ -74,7 +76,9 @@ T = {  # interface strings
         "sources": "Sources", "related": "Keep reading", "read": "Read the guide", "cta_t": "Where does your family stand on this?",
         "cta_p": "The Family Protection Map takes three minutes, is anonymous, and shows which parts of your plan are still blank.",
         "cta_quiz": "Take the self-assessment", "cta_write": "Still have questions? Write to me",
-        "mid_pre": "If you want to look at how this applies to your family,", "mid_link": "write to me",
+        "mid_pre": "If you want to see how this applies to your family,", "mid_quiz": "take the 3-minute self-assessment", "mid_or": "or", "mid_link": "write to me",
+        "top_t": "See your family's gaps in 3 minutes", "top_p": "The Family Protection Map is anonymous and shows which parts of your plan are still blank.",
+        "top_quiz": "Take the self-assessment", "top_write": "or write to me", "bar_quiz": "Self-check",
         "bar_write": "Write to me", "bar_call": "Call", "bar_label": "Contact",
         "f_h": "Write to me about your situation", "f_p": "I reply personally, usually within 48 hours.",
         "f_name": "Name", "f_email": "Email", "f_tel": "Phone (optional)", "f_msg": "What would you like to review? (optional)",
@@ -164,7 +168,7 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 @media(max-width:980px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
 /* guides on phones: a contact bar pinned to the bottom once the reader starts scrolling */
 .gbar{display:none}
-@media(max-width:980px){.gbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:900;display:flex;gap:10px;transform:translateY(140%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s}.gbar.on{transform:none;visibility:visible;transition:transform .3s ease}.gbar a{flex:1;display:flex;align-items:center;justify-content:center;height:50px;border-radius:99px;font:600 15px/1 var(--body);letter-spacing:.03em;text-decoration:none;box-shadow:0 12px 30px -10px rgba(13,36,28,.55)}.gbar .gb-w{background:var(--oro);color:var(--verde-oscuro)}.gbar .gb-c{background:var(--verde);color:var(--blanco);border:1px solid rgba(194,155,64,.6)}body[data-type="guide"] footer{padding-bottom:84px}}
+@media(max-width:980px){.gbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:900;display:flex;gap:10px;transform:translateY(140%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s}.gbar.on{transform:none;visibility:visible;transition:transform .3s ease}.gbar{gap:8px}.gbar a{display:flex;align-items:center;justify-content:center;height:50px;padding:0 10px;border-radius:99px;font:600 14px/1 var(--body);letter-spacing:.02em;white-space:nowrap;text-decoration:none;box-shadow:0 12px 30px -10px rgba(13,36,28,.55)}.gbar .gb-q{flex:1.25 1 0;min-width:0;background:var(--oro);color:var(--verde-oscuro)}.gbar .gb-w{flex:1 1 0;min-width:0;background:var(--verde);color:var(--blanco);border:1px solid rgba(194,155,64,.6)}.gbar .gb-c{flex:0 0 50px;width:50px;padding:0;background:var(--verde-oscuro);color:var(--oro-claro);border:1px solid rgba(194,155,64,.6)}body[data-type="guide"] footer{padding-bottom:84px}}
 @media(prefers-reduced-motion:reduce){.gbar,.gbar.on{transition:none}}
 .toc{position:sticky;top:88px;align-self:start;font-size:14px}
 .toc a.toc-cta,.toc a.toc-cta:hover{color:var(--verde-oscuro)!important;border:0}
@@ -194,6 +198,12 @@ article p{margin-bottom:16px}article ul{padding-left:22px;margin:0 0 18px}articl
 .tbl{overflow-x:auto;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:15px;background:var(--blanco)}
 th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--verde);color:var(--blanco);font-weight:600}
 .fn{font-size:.62em;vertical-align:super;line-height:0}.fn a{color:var(--oro);text-decoration:none;font-weight:700;padding:0 2px}
+.topcta{background:var(--blanco);border:1px solid var(--arena-oscura);border-left:3px solid var(--oro);border-radius:3px;padding:14px 18px;margin:-16px 0 40px}
+.topcta-t{margin:0;font-weight:600;font-size:15.5px;line-height:1.3;color:var(--verde)}.topcta-p{margin:4px 0 10px;font-size:14px;line-height:1.45;color:var(--tinta)}
+.topcta .row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px}.topcta .btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;font-size:14.5px}
+.topcta-w{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:14.5px;color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+/* phones: the article heading fills the first screen, so show the self-check card above the summary (markup order stays: summary, then card) */
+@media(max-width:980px){article{display:flex;flex-direction:column}article>*{margin-top:0!important}.topcta{order:-1;margin:0 0 24px}}
 .midnote{margin:36px 0;padding:14px 20px;border-left:3px solid var(--oro);background:var(--blanco);font-size:16px}.midnote a{font-weight:600}
 .qbox{background:var(--verde);color:var(--arena);border-radius:3px;padding:28px 30px;margin:48px 0}.qbox h2{color:var(--oro-claro)}
 .faq details{border-bottom:1px solid var(--arena-oscura);padding:16px 0}.faq summary{cursor:pointer;font-weight:600;color:var(--verde);list-style:none;display:flex;justify-content:space-between;gap:16px}
@@ -419,7 +429,7 @@ for k in ORDER:
         toc = "".join(f'<li><a href="#{s["id"]}">{esc(plain(s["h2"]))}</a></li>' for s in secs)
         tema = '#contacto'
         # one quiet contact line halfway through, for readers who arrive from a search or an ad
-        mid = f'<p class="midnote no-print">{t["mid_pre"]} <a href="{tema}" data-cta="guide_mid_{k}">{t["mid_link"]}</a>.</p>'
+        mid = f'<p class="midnote no-print">{t["mid_pre"]} <a href="{p_home(l)}#mapa" data-cta="guide_mid_quiz_{k}">{t["mid_quiz"]}</a> {t["mid_or"]} <a href="{tema}" data-cta="guide_mid_{k}">{t["mid_link"]}</a>.</p>'
         half = (len(secs) + 1) // 2
         body_secs = "".join(f'<section id="{s["id"]}"><h2>{esc(plain(s["h2"]))}</h2>{render_blocks(s["blocks"])}</section>' + (mid if i == half - 1 else '') for i, s in enumerate(secs))
         summ = "".join(f"<li>{rich(x)}</li>" for x in c["summary"])
@@ -460,6 +470,11 @@ for k in ORDER:
   <aside class="toc" aria-label="{t['toc']}"><h2>{t['toc']}</h2><ol>{toc}</ol><a class="toc-cta" href="#contacto" data-cta="guide_toc_write_{k}">{t['toc_write']}</a></aside>
   <article>
     <div class="sumbox"><h2>{t['summary']}</h2><ul>{summ}</ul></div>
+    <div class="topcta no-print">
+      <p class="topcta-t">{t['top_t']}</p>
+      <p class="topcta-p">{t['top_p']}</p>
+      <div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="guide_top_quiz_{k}">{t['top_quiz']}</a><a class="topcta-w" href="{tema}" data-cta="guide_top_write_{k}">{t['top_write']}</a></div>
+    </div>
     {body_secs}
     <div class="qbox"><h2>{t['questions']}</h2><ol>{qs}</ol></div>
     <section class="faq" id="preguntas"><h2>{t['faqh']}</h2>{fq}</section>
@@ -470,7 +485,7 @@ for k in ORDER:
   </article>
 </div>
 <section class="band alt"><div class="wrap"><h2 class="sec">{t['related']}</h2><div class="cards">{rel_cards}</div></div></section>
-<div class="gbar no-print" id="gbar" role="region" aria-label="{t['bar_label']}"><a class="gb-w" href="{tema}" data-cta="guide_bar_write_{k}">{t['bar_write']}</a><a class="gb-c" href="tel:+17866712171" data-track="llamada">{t['bar_call']}</a></div>
+<div class="gbar no-print" id="gbar" role="region" aria-label="{t['bar_label']}"><a class="gb-q" href="{p_home(l)}#mapa" data-cta="guide_bar_quiz_{k}">{t['bar_quiz']}</a><a class="gb-w" href="{tema}" data-cta="guide_bar_write_{k}">{t['bar_write']}</a><a class="gb-c" href="tel:+17866712171" data-track="llamada" aria-label="{t['bar_call']}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg></a></div>
 """
         ld = [
             {"@context": "https://schema.org", "@type": "Article", "headline": plain(c["h1"])[:110], "description": c["meta"],
@@ -486,10 +501,20 @@ var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-20% 0px -70% 0px'});
 document.querySelectorAll('article section[id]').forEach(function(s){io.observe(s);});})();
 (function(){var b=document.getElementById('gbar'),s=document.getElementById('contacto');if(!b)return;var near=false,typing=false;
-var f=function(){b.classList.toggle('on',window.scrollY>window.innerHeight*0.6&&!near&&!typing);};
-if(s&&'IntersectionObserver' in window)new IntersectionObserver(function(es){near=es[0].isIntersecting;f();}).observe(s);
+var card=document.querySelector('.topcta'),io='IntersectionObserver' in window,past=false;
+var f=function(){if(card&&io)past=card.getBoundingClientRect().bottom<0;var gone=(card&&io)?past:window.scrollY>window.innerHeight*0.25;b.classList.toggle('on',gone&&!near&&!typing);};
+/* the observer reacts when the card crosses the screen edge; f() also re-reads its position on scroll, so a fast jump past the card still shows the bar */
+if(card&&io)new IntersectionObserver(function(){f();}).observe(card);
+if(s&&io)new IntersectionObserver(function(es){near=es[0].isIntersecting;f();}).observe(s);
 document.addEventListener('focusin',function(e){if(e.target.closest&&e.target.closest('#gForm')){typing=true;f();}});document.addEventListener('focusout',function(){typing=false;setTimeout(f,50);});
 window.addEventListener('scroll',f,{passive:true});f();})();
+/* scroll depth on guides: guide_scroll at 25, 50 and 75% of the page, once each per page view */
+(function(){if(document.body.getAttribute('data-type')!=='guide')return;var T=[25,50,75],sent=new Set(),busy=false,L=document.documentElement.lang;
+function check(){busy=false;var h=document.documentElement,pct=(window.scrollY+window.innerHeight)/h.scrollHeight*100;
+T.forEach(function(p){if(pct>=p&&!sent.has(p)){sent.add(p);try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'guide_scroll',scroll_pct:p,page_type:'guide',language:L});}catch(x){}}});
+if(sent.size===T.length)window.removeEventListener('scroll',on);}
+function on(){if(!busy){busy=true;requestAnimationFrame(check);}}
+window.addEventListener('scroll',on,{passive:true});check();})();
 (function(){var F=document.getElementById('gForm');if(!F)return;var L=document.documentElement.lang,K=F.getAttribute('data-key'),E=document.getElementById('gf-err'),B=document.getElementById('gf-send'),T=B.textContent;
 [].forEach.call(F.querySelectorAll('[data-pp]'),function(i){var v='';try{v=sessionStorage.getItem('pp.'+i.getAttribute('data-pp'))||'';}catch(x){}i.value=v||(i.getAttribute('data-pp')==='landing'?location.pathname:'');});
 function err(m,withMail){E.textContent=m;if(withMail){var a=document.createElement('a');a.href='mailto:chrisrhandier96@gmail.com';a.setAttribute('data-track','email');a.textContent=' chrisrhandier96@gmail.com';E.appendChild(a);}E.style.display='block';}
