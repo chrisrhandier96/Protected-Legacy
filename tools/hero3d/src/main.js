@@ -143,7 +143,7 @@ export function start(o) {
     const dt = lastT ? Math.min(0.05, (now - lastT) / 1000) : 1 / 60; lastT = now;
     let moving = false;
     /* draw-in: about 1.6 s, each object from its first stroke */
-    if (!drawn) { const p = Math.min(1, (now - drawT0) / 1600); const e = 1 - Math.pow(1 - p, 2); mat.dashOffset = total - e * total; moving = true; if (p >= 1) { drawn = true; mat.dashed = false; mat.needsUpdate = true; activeUntil = Math.max(activeUntil, now + (lite ? 6000 : 1200)); } }
+    if (!drawn) { const p = Math.min(1, (now - drawT0) / 1600); const e = 1 - Math.pow(1 - p, 2); mat.dashOffset = total - e * total; moving = true; if (p >= 1) { drawn = true; mat.dashOffset = 0; activeUntil = Math.max(activeUntil, now + (lite ? 6000 : 1200)); } }
     /* phones: one slow sway after the draw-in; desktop: pointer drift */
     if (lite && drawn && now < activeUntil) tYaw = Math.sin((now - drawT0) / 4000) * 0.035;
     /* ease toward the targets; snap when close so the loop can stop */
@@ -168,12 +168,14 @@ export function start(o) {
   /* ---- build over several frames ---- */
   const steps = [
     function () {
-      renderer = new WebGLRenderer({ alpha: true, antialias: !lite, powerPreference: 'low-power', premultipliedAlpha: true });
+      /* no software rendering unless forced for testing: a GPU-less browser keeps the SVG */
+      renderer = new WebGLRenderer({ alpha: true, antialias: !lite, powerPreference: 'low-power', premultipliedAlpha: true, failIfMajorPerformanceCaveat: !o.force });
       renderer.setPixelRatio(dpr); renderer.setClearColor(0x000000, 0);
       renderer.domElement.addEventListener('webglcontextlost', function (e) { e.preventDefault(); fallback('context-lost'); });
       scene = new Scene(); cam = new PerspectiveCamera(28, 2, 10, 2600); cam.fov = 28;
       mat = new LineMaterial({ vertexColors: true, linewidth: lite ? 1.25 : 1.4, transparent: true, opacity: 0.78, dashed: true, dashSize: 1, gapSize: 1, depthWrite: false });
-      domeMat = cam.domeMat = new LineMaterial({ vertexColors: true, linewidth: 1, transparent: true, opacity: 0, depthWrite: false });
+      /* same shader variant as the skyline (dashed, vertex colors) so the whole scene is one program compile; gap 0 means always visible */
+      domeMat = cam.domeMat = new LineMaterial({ vertexColors: true, linewidth: 1, transparent: true, opacity: 0, depthWrite: false, dashed: true, dashSize: 1, gapSize: 0 });
       mount.appendChild(renderer.domElement);
       frame(cam, hero.clientWidth, Math.round(bandH() * 1.3), bandH());
     },
@@ -191,17 +193,24 @@ export function start(o) {
       mat.dashSize = total; mat.gapSize = total; mat.dashOffset = total;
     },
     function () {
-      size(); built = true; drawT0 = performance.now(); placeCamera();
-      renderer.render(scene, cam); state.frames = 1;
-      requestAnimationFrame(function () {
-        hero.classList.add('hero-3d-on'); state.ready = true;
-        dl({ event: 'hero3d_ready', mode: 'webgl', reason: null });
-        wake(2400);
-      });
+      size(); placeCamera();
+      /* shaders compile in parallel (KHR_parallel_shader_compile) so the first frame is not one long task */
+      const first = function () {
+        if (lost) return;
+        built = true; drawT0 = performance.now(); placeCamera();
+        const t = performance.now(); renderer.render(scene, cam); state.frames = 1; state.firstRenderMs = Math.round(performance.now() - t);
+        requestAnimationFrame(function () {
+          hero.classList.add('hero-3d-on'); state.ready = true;
+          dl({ event: 'hero3d_ready', mode: 'webgl', reason: null });
+          wake(2400);
+        });
+      };
+      const c = renderer.compileAsync ? renderer.compileAsync(scene, cam) : Promise.resolve();
+      c.then(function () { requestAnimationFrame(first); }, function () { requestAnimationFrame(first); });
     }
   ];
-  let si = 0;
-  function next() { if (lost) return; try { steps[si++](); } catch (e) { fallback('no-webgl'); return; } if (si < steps.length) requestAnimationFrame(next); }
+  let si = 0; state.ms = [];
+  function next() { if (lost) return; const t = performance.now(); try { steps[si++](); } catch (e) { fallback('no-webgl'); return; } state.ms.push(Math.round(performance.now() - t)); if (si < steps.length) requestAnimationFrame(next); }
   requestAnimationFrame(next);
 
   /* ---- inputs: pointer drift and the protection moment (desktop), scroll dolly, visibility ---- */

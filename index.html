@@ -2081,8 +2081,9 @@ details.more .more-in{padding:4px 16px 8px}
   sync();vis();
 })();
 </script>
+<!-- 3D hero loader: decides (flags, reduced motion, Save-Data, slow network, low device), waits for the preloader, load and an idle moment,
+     checks for a real GPU in a worker (software renderers keep the SVG), then imports /js/hero3d.v1.js. Source: tools/hero3d. -->
 <script id="pp-hero3d-loader">
-/* 3D hero: decides, waits for the preloader, load and an idle moment, then imports /js/hero3d.v1.js (SVG stays otherwise) */
 (function(){var H=document.querySelector('.hero'),M=document.querySelector('.hero-3d');if(!H||!M)return;
 var q=location.search,force=/[?&]3d=1/.test(q),n=navigator,c=n.connection||{},why=null;
 var dl=function(o){o.page_type='home';o.language=document.documentElement.lang;window.dataLayer=window.dataLayer||[];window.dataLayer.push(o);};
@@ -2092,8 +2093,11 @@ else if(!force){if(matchMedia('(prefers-reduced-motion: reduce)').matches)why='r
 else if(c.saveData||/(^|[^4])[23]g$/.test(c.effectiveType||''))why='save-data';
 else if((n.deviceMemory&&n.deviceMemory<4)||(n.hardwareConcurrency&&n.hardwareConcurrency<4))why='low-device';}
 if(why)return off(why);
-function go(){var cv=document.createElement('canvas'),gl=null;try{gl=cv.getContext('webgl2');}catch(e){}if(!gl)return off('no-webgl');var x=gl.getExtension('WEBGL_lose_context');if(x)x.loseContext();
-import('/js/hero3d.v1.js').then(function(m){m.start({hero:H,mount:M,dl:dl,lite:matchMedia('(max-width:820px),(pointer:coarse)').matches,force:force});}).catch(function(){off('load-error');});}
+function load(){import('/js/hero3d.v1.js').then(function(m){m.start({hero:H,mount:M,dl:dl,lite:matchMedia('(max-width:820px),(pointer:coarse)').matches,force:force});}).catch(function(){off('load-error');});}
+function go(){if(!window.WebGL2RenderingContext)return off('no-webgl');if(force)return load();
+var ok=false;try{var w=new Worker(URL.createObjectURL(new Blob(["try{var g=new OffscreenCanvas(1,1).getContext('webgl2'),d=g&&g.getExtension('WEBGL_debug_renderer_info');postMessage(g?String(d?g.getParameter(d.UNMASKED_RENDERER_WEBGL):'gpu'):'')}catch(e){postMessage('')}"],{type:'text/javascript'})));
+w.onmessage=function(e){ok=true;w.terminate();var r=e.data;if(!r)return off('no-webgl');if(/swiftshader|llvmpipe|softpipe|software|basic render/i.test(r))return off('low-device');load();};
+setTimeout(function(){if(!ok){w.terminate();load();}},3000);}catch(e){load();}}
 function idle(){(window.requestIdleCallback||function(f){setTimeout(f,300);})(go,{timeout:2000});}
 function after(){var l=document.getElementById('ppLoader');if(l&&!l.classList.contains('done'))return setTimeout(after,120);idle();}
 if(document.readyState==='complete')after();else addEventListener('load',after);})();
@@ -2113,7 +2117,7 @@ if(document.readyState==='complete')after();else addEventListener('load',after);
     main section .eyebrow{animation:ppLabelIn linear both;animation-timeline:view();animation-range:entry 0% entry 100%}
   }
 }
-@keyframes ppLabelIn{from{transform:translateY(18px);opacity:.35}to{transform:none;opacity:1}}
+@keyframes ppLabelIn{from{transform:translateY(18px)}to{transform:none}}
 </style>
 <style id="pp-map3d">
 /* ===== The Family Protection Map, made literal (Part D): gold line tiles on a tilted plane ===== */

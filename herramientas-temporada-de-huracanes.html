@@ -127,7 +127,7 @@ th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;ver
 .pp-tilt:hover .pp-edge{opacity:1}
 @media(hover:none),(prefers-reduced-motion:reduce){.pp-edge{display:none}}
 @supports(animation-timeline:view()){@media(prefers-reduced-motion:no-preference){.head h1,.head .dek{animation:ppHeadOut linear both;animation-timeline:view();animation-range:exit 0% exit 100%}article section>h2,.band h2.sec{animation:ppLabelIn linear both;animation-timeline:view();animation-range:entry 0% entry 100%}}}
-@keyframes ppHeadOut{to{transform:translateY(26px);opacity:.55}}@keyframes ppLabelIn{from{transform:translateY(14px);opacity:.4}to{transform:none;opacity:1}}
+@keyframes ppHeadOut{to{transform:translateY(26px);opacity:.55}}@keyframes ppLabelIn{from{transform:translateY(14px)}to{transform:none}}
 .qbox{background:var(--verde);color:var(--arena);border-radius:3px;padding:28px 30px;margin:48px 0}.qbox h2{color:var(--oro-claro)}
 .faq details{border-bottom:1px solid var(--arena-oscura);padding:16px 0}.faq summary{cursor:pointer;font-weight:600;color:var(--verde);list-style:none;display:flex;justify-content:space-between;gap:16px}
 .faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--oro);font-size:22px;line-height:1}.faq details[open] summary::after{content:"\2212"}
