@@ -1,0 +1,30 @@
+{
+ "url": "http://localhost:8788/en/guides/flood/",
+ "fetchTime": "2026-10-05T18:05:42.182Z",
+ "formFactor": "desktop",
+ "scores": {
+  "performance": 100,
+  "accessibility": 100,
+  "best-practices": 96,
+  "seo": 100
+ },
+ "lcp": 323,
+ "fcp": 247,
+ "tbt": 0,
+ "si": 247,
+ "cls": 0,
+ "tti": 323,
+ "weightKiB": 67,
+ "mainThreadMs": 134,
+ "bootupMs": 8,
+ "longTasks": [],
+ "lcpElement": "",
+ "opps": [],
+ "failedBP": [
+  "errors-in-console"
+ ],
+ "consoleErrors": [
+  "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+ ],
+ "run": 1
+}

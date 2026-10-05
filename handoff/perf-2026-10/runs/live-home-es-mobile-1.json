@@ -1,0 +1,80 @@
+{
+ "url": "https://www.protectedlegacyfl.com/",
+ "fetchTime": "2026-10-05T18:11:40.171Z",
+ "formFactor": "mobile",
+ "scores": {
+  "performance": 70,
+  "accessibility": 100,
+  "best-practices": 81,
+  "seo": 100
+ },
+ "lcp": 4122,
+ "fcp": 1431,
+ "tbt": 510,
+ "si": 4710,
+ "cls": 0,
+ "tti": 6075,
+ "weightKiB": 655,
+ "mainThreadMs": 4927,
+ "bootupMs": 1331,
+ "longTasks": [
+  {
+   "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+   "start": 5890,
+   "dur": 468
+  },
+  {
+   "url": "https://www.protectedlegacyfl.com/",
+   "start": 1222,
+   "dur": 267
+  },
+  {
+   "url": "dlegacyfl.com/cdn-cgi/challenge-platform/scripts/jsd/main.js",
+   "start": 2368,
+   "dur": 136
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+   "start": 4338,
+   "dur": 109
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+   "start": 4447,
+   "dur": 108
+  },
+  {
+   "url": "https://www.protectedlegacyfl.com/",
+   "start": 1632,
+   "dur": 98
+  },
+  {
+   "url": "https://www.protectedlegacyfl.com/",
+   "start": 1730,
+   "dur": 77
+  },
+  {
+   "url": "https://www.protectedlegacyfl.com/",
+   "start": 1489,
+   "dur": 65
+  }
+ ],
+ "lcpElement": "",
+ "opps": [
+  {
+   "id": "server-response-time",
+   "savingsMs": 220,
+   "savingsBytes": 0
+  },
+  {
+   "id": "unused-javascript",
+   "savingsMs": 320,
+   "savingsBytes": 132917
+  }
+ ],
+ "failedBP": [
+  "deprecations"
+ ],
+ "consoleErrors": [],
+ "run": 1
+}

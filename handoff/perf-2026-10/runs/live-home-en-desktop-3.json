@@ -1,0 +1,38 @@
+{
+ "url": "https://www.protectedlegacyfl.com/en/",
+ "fetchTime": "2026-10-05T18:13:51.659Z",
+ "formFactor": "desktop",
+ "scores": {
+  "performance": 84,
+  "accessibility": 100,
+  "best-practices": 100,
+  "seo": 100
+ },
+ "lcp": 533,
+ "fcp": 393,
+ "tbt": 54,
+ "si": 1923,
+ "cls": 0.242,
+ "tti": 1396,
+ "weightKiB": 618,
+ "mainThreadMs": 1230,
+ "bootupMs": 305,
+ "longTasks": [
+  {
+   "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+   "start": 1291,
+   "dur": 157
+  }
+ ],
+ "lcpElement": "",
+ "opps": [
+  {
+   "id": "server-response-time",
+   "savingsMs": 140,
+   "savingsBytes": 0
+  }
+ ],
+ "failedBP": [],
+ "consoleErrors": [],
+ "run": 3
+}

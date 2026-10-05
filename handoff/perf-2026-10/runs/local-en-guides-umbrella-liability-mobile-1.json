@@ -1,0 +1,51 @@
+{
+ "url": "http://localhost:8788/en/guides/umbrella-liability/",
+ "fetchTime": "2026-10-05T18:04:31.679Z",
+ "formFactor": "mobile",
+ "scores": {
+  "performance": 100,
+  "accessibility": 100,
+  "best-practices": 96,
+  "seo": 100
+ },
+ "lcp": 1278,
+ "fcp": 1022,
+ "tbt": 6,
+ "si": 1022,
+ "cls": 0,
+ "tti": 1285,
+ "weightKiB": 77,
+ "mainThreadMs": 701,
+ "bootupMs": 60,
+ "longTasks": [
+  {
+   "url": "http://localhost:8788/en/guides/umbrella-liability/",
+   "start": 901,
+   "dur": 123
+  },
+  {
+   "url": "http://localhost:8788/en/guides/umbrella-liability/",
+   "start": 809,
+   "dur": 92
+  },
+  {
+   "url": "Unattributable",
+   "start": 751,
+   "dur": 58
+  },
+  {
+   "url": "http://localhost:8788/en/guides/umbrella-liability/",
+   "start": 1049,
+   "dur": 56
+  }
+ ],
+ "lcpElement": "",
+ "opps": [],
+ "failedBP": [
+  "errors-in-console"
+ ],
+ "consoleErrors": [
+  "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+ ],
+ "run": 1
+}

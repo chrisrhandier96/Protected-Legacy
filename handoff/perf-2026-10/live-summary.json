@@ -1,0 +1,603 @@
+[
+ {
+  "page": "/",
+  "ff": "mobile",
+  "median": {
+   "url": "https://www.protectedlegacyfl.com/",
+   "fetchTime": "2026-10-05T18:12:05.590Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 63,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+   },
+   "lcp": 6107,
+   "fcp": 2096,
+   "tbt": 389,
+   "si": 5363,
+   "cls": 0,
+   "tti": 6147,
+   "weightKiB": 641,
+   "mainThreadMs": 3676,
+   "bootupMs": 1066,
+   "longTasks": [
+    {
+     "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+     "start": 5726,
+     "dur": 551
+    },
+    {
+     "url": "https://www.protectedlegacyfl.com/",
+     "start": 1127,
+     "dur": 192
+    },
+    {
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+     "start": 4173,
+     "dur": 140
+    },
+    {
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+     "start": 4313,
+     "dur": 98
+    },
+    {
+     "url": "https://www.protectedlegacyfl.com/",
+     "start": 1319,
+     "dur": 83
+    }
+   ],
+   "lcpElement": "",
+   "opps": [
+    {
+     "id": "server-response-time",
+     "savingsMs": 188,
+     "savingsBytes": 0
+    },
+    {
+     "id": "unused-javascript",
+     "savingsMs": 630,
+     "savingsBytes": 133771
+    }
+   ],
+   "failedBP": [],
+   "consoleErrors": [],
+   "run": 3
+  },
+  "all": [
+   61,
+   63,
+   70
+  ]
+ },
+ {
+  "page": "/",
+  "ff": "desktop",
+  "median": {
+   "url": "https://www.protectedlegacyfl.com/",
+   "fetchTime": "2026-10-05T18:12:40.955Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 91,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+   },
+   "lcp": 1589,
+   "fcp": 581,
+   "tbt": 56,
+   "si": 1823,
+   "cls": 0.009,
+   "tti": 1594,
+   "weightKiB": 617,
+   "mainThreadMs": 1112,
+   "bootupMs": 259,
+   "longTasks": [
+    {
+     "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+     "start": 1412,
+     "dur": 106
+    },
+    {
+     "url": "https://www.protectedlegacyfl.com/",
+     "start": 370,
+     "dur": 57
+    }
+   ],
+   "lcpElement": "",
+   "opps": [
+    {
+     "id": "unused-javascript",
+     "savingsMs": 60,
+     "savingsBytes": 133531
+    }
+   ],
+   "failedBP": [],
+   "consoleErrors": [],
+   "run": 3
+  },
+  "all": [
+   91,
+   91,
+   93
+  ]
+ },
+ {
+  "page": "/en/",
+  "ff": "mobile",
+  "median": {
+   "url": "https://www.protectedlegacyfl.com/en/",
+   "fetchTime": "2026-10-05T18:13:16.522Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 60,
+    "accessibility": 100,
+    "best-practices": 77,
+    "seo": 100
+   },
+   "lcp": 6889,
+   "fcp": 2080,
+   "tbt": 430,
+   "si": 5142,
+   "cls": 0,
+   "tti": 6917,
+   "weightKiB": 788,
+   "mainThreadMs": 3930,
+   "bootupMs": 997,
+   "longTasks": [
+    {
+     "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+     "start": 6393,
+     "dur": 461
+    },
+    {
+     "url": "https://www.protectedlegacyfl.com/en/",
+     "start": 1217,
+     "dur": 205
+    },
+    {
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+     "start": 4922,
+     "dur": 135
+    },
+    {
+     "url": "https://www.protectedlegacyfl.com/en/",
+     "start": 1445,
+     "dur": 120
+    },
+    {
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+     "start": 5057,
+     "dur": 108
+    },
+    {
+     "url": "https://www.protectedlegacyfl.com/en/",
+     "start": 1151,
+     "dur": 66
+    },
+    {
+     "url": "Unattributable",
+     "start": 1099,
+     "dur": 52
+    }
+   ],
+   "lcpElement": "",
+   "opps": [
+    {
+     "id": "server-response-time",
+     "savingsMs": 74,
+     "savingsBytes": 0
+    },
+    {
+     "id": "unused-javascript",
+     "savingsMs": 760,
+     "savingsBytes": 133791
+    }
+   ],
+   "failedBP": [
+    "third-party-cookies",
+    "inspector-issues"
+   ],
+   "consoleErrors": [],
+   "run": 3
+  },
+  "all": [
+   57,
+   60,
+   61
+  ]
+ },
+ {
+  "page": "/en/",
+  "ff": "desktop",
+  "median": {
+   "url": "https://www.protectedlegacyfl.com/en/",
+   "fetchTime": "2026-10-05T18:13:40.334Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 93,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+   },
+   "lcp": 1237,
+   "fcp": 650,
+   "tbt": 29,
+   "si": 1904,
+   "cls": 0.009,
+   "tti": 1512,
+   "weightKiB": 617,
+   "mainThreadMs": 1216,
+   "bootupMs": 277,
+   "longTasks": [
+    {
+     "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+     "start": 1467,
+     "dur": 108
+    },
+    {
+     "url": "https://www.protectedlegacyfl.com/en/",
+     "start": 420,
+     "dur": 55
+    }
+   ],
+   "lcpElement": "",
+   "opps": [
+    {
+     "id": "server-response-time",
+     "savingsMs": 20,
+     "savingsBytes": 0
+    },
+    {
+     "id": "unused-javascript",
+     "savingsMs": 60,
+     "savingsBytes": 133459
+    }
+   ],
+   "failedBP": [],
+   "consoleErrors": [],
+   "run": 2
+  },
+  "all": [
+   84,
+   93,
+   95
+  ]
+ },
+ {
+  "page": "/guias/umbrella-responsabilidad/",
+  "ff": "mobile",
+  "median": {
+   "url": "https://www.protectedlegacyfl.com/guias/umbrella-responsabilidad/",
+   "fetchTime": "2026-10-05T18:14:03.465Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 83,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+   },
+   "lcp": 1875,
+   "fcp": 1797,
+   "tbt": 467,
+   "si": 1797,
+   "cls": 0.114,
+   "tti": 5238,
+   "weightKiB": 445,
+   "mainThreadMs": 1569,
+   "bootupMs": 877,
+   "longTasks": [
+    {
+     "url": "ogletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10h1",
+     "start": 4855,
+     "dur": 511
+    },
+    {
+     "url": "://www.protectedlegacyfl.com/guias/umbrella-responsabilidad/",
+     "start": 1008,
+     "dur": 154
+    },
+    {
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+     "start": 3333,
+     "dur": 138
+    },
+    {
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+     "start": 3471,
+     "dur": 110
+    },
+    {
+     "url": "Unattributable",
+     "start": 948,
+     "dur": 60
+    }
+   ],
+   "lcpElement": "",
+   "opps": [
+    {
+     "id": "server-response-time",
+     "savingsMs": 375,
+     "savingsBytes": 0
+    }
+   ],
+   "failedBP": [],
+   "consoleErrors": [],
+   "run": 1
+  },
+  "all": [
+   64,
+   83,
+   83
+  ]
+ },
+ {
+  "page": "/guias/umbrella-responsabilidad/",
+  "ff": "desktop",
+  "median": {
+   "url": "https://www.protectedlegacyfl.com/guias/umbrella-responsabilidad/",
+   "fetchTime": "2026-10-05T18:14:42.402Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+   },
+   "lcp": 733,
+   "fcp": 374,
+   "tbt": 59,
+   "si": 407,
+   "cls": 0.056,
+   "tti": 1213,
+   "weightKiB": 433,
+   "mainThreadMs": 378,
+   "bootupMs": 198,
+   "longTasks": [
+    {
+     "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+     "start": 1103,
+     "dur": 113
+    }
+   ],
+   "lcpElement": "",
+   "opps": [
+    {
+     "id": "unused-javascript",
+     "savingsMs": 40,
+     "savingsBytes": 133956
+    }
+   ],
+   "failedBP": [],
+   "consoleErrors": [],
+   "run": 2
+  },
+  "all": [
+   99,
+   99,
+   100
+  ]
+ },
+ {
+  "page": "/en/guides/umbrella-liability/",
+  "ff": "mobile",
+  "median": {
+   "url": "https://www.protectedlegacyfl.com/en/guides/umbrella-liability/",
+   "fetchTime": "2026-10-05T18:15:11.169Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 64,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+   },
+   "lcp": 5437,
+   "fcp": 1827,
+   "tbt": 477,
+   "si": 4820,
+   "cls": 0,
+   "tti": 5448,
+   "weightKiB": 445,
+   "mainThreadMs": 1268,
+   "bootupMs": 744,
+   "longTasks": [
+    {
+     "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+     "start": 4762,
+     "dur": 409
+    },
+    {
+     "url": "ps://www.protectedlegacyfl.com/en/guides/umbrella-liability/",
+     "start": 1026,
+     "dur": 119
+    },
+    {
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+     "start": 3279,
+     "dur": 109
+    },
+    {
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+     "start": 3388,
+     "dur": 109
+    },
+    {
+     "url": "Unattributable",
+     "start": 967,
+     "dur": 51
+    }
+   ],
+   "lcpElement": "",
+   "opps": [
+    {
+     "id": "server-response-time",
+     "savingsMs": 71,
+     "savingsBytes": 0
+    },
+    {
+     "id": "unused-javascript",
+     "savingsMs": 710,
+     "savingsBytes": 134260
+    }
+   ],
+   "failedBP": [],
+   "consoleErrors": [],
+   "run": 2
+  },
+  "all": [
+   58,
+   64,
+   84
+  ]
+ },
+ {
+  "page": "/en/guides/umbrella-liability/",
+  "ff": "desktop",
+  "median": {
+   "url": "https://www.protectedlegacyfl.com/en/guides/umbrella-liability/",
+   "fetchTime": "2026-10-05T18:15:40.290Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+   },
+   "lcp": 465,
+   "fcp": 377,
+   "tbt": 45,
+   "si": 418,
+   "cls": 0.025,
+   "tti": 1278,
+   "weightKiB": 433,
+   "mainThreadMs": 411,
+   "bootupMs": 229,
+   "longTasks": [
+    {
+     "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+     "start": 1179,
+     "dur": 134
+    }
+   ],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [],
+   "consoleErrors": [],
+   "run": 2
+  },
+  "all": [
+   100,
+   100,
+   100
+  ]
+ },
+ {
+  "page": "/en/guides/flood/",
+  "ff": "mobile",
+  "median": {
+   "url": "https://www.protectedlegacyfl.com/en/guides/flood/",
+   "fetchTime": "2026-10-05T18:16:09.616Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 62,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+   },
+   "lcp": 5371,
+   "fcp": 1833,
+   "tbt": 536,
+   "si": 2781,
+   "cls": 0.114,
+   "tti": 5371,
+   "weightKiB": 446,
+   "mainThreadMs": 1512,
+   "bootupMs": 812,
+   "longTasks": [
+    {
+     "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+     "start": 4525,
+     "dur": 453
+    },
+    {
+     "url": "https://www.protectedlegacyfl.com/en/guides/flood/",
+     "start": 1009,
+     "dur": 145
+    },
+    {
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+     "start": 3148,
+     "dur": 123
+    },
+    {
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+     "start": 3038,
+     "dur": 110
+    }
+   ],
+   "lcpElement": "",
+   "opps": [
+    {
+     "id": "server-response-time",
+     "savingsMs": 58,
+     "savingsBytes": 0
+    },
+    {
+     "id": "unused-javascript",
+     "savingsMs": 620,
+     "savingsBytes": 133809
+    }
+   ],
+   "failedBP": [],
+   "consoleErrors": [],
+   "run": 2
+  },
+  "all": [
+   59,
+   62,
+   82
+  ]
+ },
+ {
+  "page": "/en/guides/flood/",
+  "ff": "desktop",
+  "median": {
+   "url": "https://www.protectedlegacyfl.com/en/guides/flood/",
+   "fetchTime": "2026-10-05T18:16:29.149Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+   },
+   "lcp": 590,
+   "fcp": 546,
+   "tbt": 50,
+   "si": 546,
+   "cls": 0.039,
+   "tti": 1253,
+   "weightKiB": 435,
+   "mainThreadMs": 379,
+   "bootupMs": 208,
+   "longTasks": [
+    {
+     "url": "ogletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10h1",
+     "start": 1151,
+     "dur": 123
+    }
+   ],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [],
+   "consoleErrors": [],
+   "run": 1
+  },
+  "all": [
+   99,
+   100,
+   100
+  ]
+ }
+]
