@@ -121,6 +121,13 @@ th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;ver
 @supports(animation-timeline:view()){.fig3d .f3-lift,.fig3d .f3-drop{transition:none;animation:f3lift linear both;animation-timeline:view();animation-range:entry 15% entry 80%}.fig3d .f3-drop{animation-name:f3drop}}
 @keyframes f3lift{from{transform:translateY(16px)}to{transform:none}}@keyframes f3drop{from{transform:translateY(-14px)}to{transform:none}}
 @media(prefers-reduced-motion:reduce){.fig3d .f3-lift,.fig3d .f3-drop{animation:none!important;transition:none!important;transform:none!important}}
+/* depth (work order 2026-10, Part F): cards tilt toward a fine pointer (4 degrees max) with a gold edge light; the header eases back as it scrolls out */
+.pp-tilt{position:relative}
+.pp-edge{position:absolute;inset:-1px;z-index:3;border-radius:inherit;padding:1px;pointer-events:none;opacity:0;transition:opacity .35s ease;background:linear-gradient(var(--la,135deg),rgba(217,188,114,.9),rgba(217,188,114,0) 52%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
+.pp-tilt:hover .pp-edge{opacity:1}
+@media(hover:none),(prefers-reduced-motion:reduce){.pp-edge{display:none}}
+@supports(animation-timeline:view()){@media(prefers-reduced-motion:no-preference){.head h1,.head .dek{animation:ppHeadOut linear both;animation-timeline:view();animation-range:exit 0% exit 100%}article section>h2,.band h2.sec{animation:ppLabelIn linear both;animation-timeline:view();animation-range:entry 0% entry 100%}}}
+@keyframes ppHeadOut{to{transform:translateY(26px);opacity:.55}}@keyframes ppLabelIn{from{transform:translateY(14px);opacity:.4}to{transform:none;opacity:1}}
 .qbox{background:var(--verde);color:var(--arena);border-radius:3px;padding:28px 30px;margin:48px 0}.qbox h2{color:var(--oro-claro)}
 .faq details{border-bottom:1px solid var(--arena-oscura);padding:16px 0}.faq summary{cursor:pointer;font-weight:600;color:var(--verde);list-style:none;display:flex;justify-content:space-between;gap:16px}
 .faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--oro);font-size:22px;line-height:1}.faq details[open] summary::after{content:"\2212"}
@@ -291,6 +298,11 @@ function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.que
 (function(){var bar=document.getElementById('bar');if(bar){addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});}
  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a)return;try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'cta_click',cta:a.getAttribute('data-cta'),page_type:document.body.getAttribute('data-type')||'',language:document.documentElement.lang});}catch(x){}});
  try{localStorage.setItem('pp.lang',document.documentElement.lang);}catch(e){}
+ /* depth: cards tilt toward a fine pointer, 4 degrees at most, with a gold edge light; the box is read once per hover */
+ if(matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches)[].forEach.call(document.querySelectorAll('.card'),function(c){var b=null,r=null,x=0,y=0,i=document.createElement('i');i.className='pp-edge';c.appendChild(i);c.classList.add('pp-tilt');
+ c.addEventListener('pointerenter',function(){var q=c.getBoundingClientRect();b={l:q.left+scrollX,t:q.top+scrollY,w:q.width,h:q.height};});
+ c.addEventListener('pointermove',function(e){x=e.pageX;y=e.pageY;if(!r)r=requestAnimationFrame(function(){r=null;if(!b)return;var nx=(x-b.l)/b.w-.5,ny=(y-b.t)/b.h-.5;c.style.transform='perspective(900px) rotateX('+(-ny*8).toFixed(2)+'deg) rotateY('+(nx*8).toFixed(2)+'deg) translateY(-4px)';c.style.setProperty('--la',(Math.atan2(nx,-ny)*180/Math.PI+180).toFixed(0)+'deg');});});
+ c.addEventListener('pointerleave',function(){b=null;c.style.transform='';});});
  /* contact links: same dataLayer format as the homepage (phone_click for calls/texts, contact_click for LinkedIn/email) */
  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track'),o={event:(m==='linkedin'||m==='email')?'contact_click':'phone_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname,page_type:document.body.getAttribute('data-type')||'',language:document.documentElement.lang};try{window.dataLayer=window.dataLayer||[];dataLayer.push(o);}catch(x){}});
 })();

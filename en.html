@@ -1672,17 +1672,22 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
 
   /* Subtle 3D tilt on cards (pointer devices only) */
   if(!reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
-    /* the card box is read once when the pointer enters; moves only write, one frame at a time */
-    document.querySelectorAll('.vcard,.fact,.pro').forEach(function(el){
-      var b = null, raf = null, px = 0, py = 0;
+    /* Depth (Part F): every card tilts toward the pointer, 4 degrees at most, and a gold edge light follows the tilt.
+       The card box is read once when the pointer enters; moves only write, one frame at a time. Open domain cards stay flat. */
+    document.querySelectorAll('.vcard,.fact,.pro,.bib-card,.dom').forEach(function(el){
+      var b = null, raf = null, px = 0, py = 0, edge = document.createElement('i');
+      edge.className = 'pp-edge'; edge.setAttribute('aria-hidden', 'true'); el.appendChild(edge); el.classList.add('pp-tilt');
       el.addEventListener('pointerenter', function(){ var r = el.getBoundingClientRect(); b = {l:r.left + scrollX, t:r.top + scrollY, w:r.width, h:r.height}; });
       el.addEventListener('pointermove', function(e){
         px = e.pageX; py = e.pageY;
         if(!raf) raf = requestAnimationFrame(function(){ raf = null; if(!b) return;
-          var rx = ((py - b.t)/b.h - .5) * -5, ry = ((px - b.l)/b.w - .5) * 6;
-          el.style.transform = 'perspective(900px) rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg) translateY(-4px)'; });
+          if(el.classList.contains('open')){ el.style.transform = ''; return; }
+          var nx = (px - b.l)/b.w - .5, ny = (py - b.t)/b.h - .5;
+          el.style.transform = 'perspective(900px) rotateX('+(ny * -8).toFixed(2)+'deg) rotateY('+(nx * 8).toFixed(2)+'deg) translateY(-4px)';
+          el.style.setProperty('--la', (Math.atan2(nx, -ny) * 180 / Math.PI + 180).toFixed(0) + 'deg'); });
       });
       el.addEventListener('pointerleave', function(){ b = null; el.style.transform = ''; });
+      el.addEventListener('click', function(){ b = null; });
     });
   }
 
@@ -2096,6 +2101,22 @@ function after(){var l=document.getElementById('ppLoader');if(l&&!l.classList.co
 if(document.readyState==='complete')after();else addEventListener('load',after);})();
 </script>
 <!-- ============ FIN CAPA DE CONVERSION ============ -->
+<style id="pp-depth">
+/* ===== Depth across the page (Part F): gold edge light on tilted cards, section labels rise slightly as they enter ===== */
+.pp-tilt{position:relative}
+.pp-edge{position:absolute;inset:-1px;z-index:3;border-radius:inherit;padding:1px;pointer-events:none;opacity:0;transition:opacity .35s ease;
+  background:linear-gradient(var(--la,135deg),rgba(217,188,114,.9),rgba(217,188,114,0) 52%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
+.pp-tilt:hover .pp-edge{opacity:1}
+.dom.open .pp-edge{opacity:0}
+@media(hover:none),(prefers-reduced-motion:reduce){.pp-edge{display:none}}
+@supports(animation-timeline:view()){
+  @media(prefers-reduced-motion:no-preference){
+    main section .eyebrow{animation:ppLabelIn linear both;animation-timeline:view();animation-range:entry 0% entry 100%}
+  }
+}
+@keyframes ppLabelIn{from{transform:translateY(18px);opacity:.35}to{transform:none;opacity:1}}
+</style>
 <style id="pp-map3d">
 /* ===== The Family Protection Map, made literal (Part D): gold line tiles on a tilted plane ===== */
 .mapa-shell{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:36px;align-items:center;max-width:1160px}
