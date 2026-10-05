@@ -1,0 +1,9 @@
+{
+  "name": "pp-hero3d",
+  "private": true,
+  "description": "Builds /js/hero3d.vN.js, the gold line skyline for the homepage hero (see handoff/HANDOFF.md). Run: npm install && node build.mjs",
+  "type": "module",
+  "scripts": { "build": "node build.mjs" },
+  "dependencies": { "three": "0.186.1" },
+  "devDependencies": { "esbuild": "0.28.2" }
+}

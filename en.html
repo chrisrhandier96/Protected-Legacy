@@ -189,6 +189,13 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 .skyline .fill-soft{fill:rgba(194,155,64,.06);stroke:none;opacity:1}
 .skyline .draw{stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 5s ease forwards .4s}
 @keyframes draw{to{stroke-dashoffset:0}}
+/* 3D skyline (Part C): mounts over the SVG band without shifting anything; the SVG stays as first paint and fallback */
+.hero-3d{position:absolute;left:0;right:0;bottom:0;height:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .6s ease}
+.hero-3d canvas{display:block;width:100%;height:100%}
+.hero.hero-3d-on .hero-3d{opacity:1}
+.hero.hero-3d-on .skyline{opacity:0;transition:opacity .6s ease}
+.hero.hero-3d-on .skyline *{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.hero-3d{display:none}}
 .hero-orb{position:absolute;right:-160px;top:-160px;width:560px;height:560px;border:1px solid rgba(194,155,64,.26);border-radius:50%;z-index:0}
 .hero-orb.b{right:-70px;top:-70px;width:380px;height:380px;opacity:.6}
 @media(max-width:640px){.hero{padding-top:70px}.cta-row .btn{width:100%}}
@@ -681,6 +688,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a class="btn btn-ghost" href="#mitos" data-es="Ver los mitos más costosos" data-en="See the costliest myths">See the costliest myths</a>
     </div>
   </div>
+  <div class="hero-3d" aria-hidden="true"></div>
   <svg class="skyline" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
     <rect class="fill-soft" x="0" y="190" width="1440" height="70"/>
     <path class="draw" d="M60 190V120h34v70 M78 120v-18 M110 190V96h44v94 M120 96v-14h24v14 M180 190V140h30v50 M230 190V70h50v120 M244 70V52h22v18 M300 190V110h36v80 M356 190V88h46v102 M370 88V66h18v22"/>
@@ -2068,6 +2076,23 @@ details.more .more-in{padding:4px 16px 8px}
   lightAll();seen=true;   /* after a language switch, rebuilt phrases show lit right away */
   sync();vis();
 })();
+</script>
+<script id="pp-hero3d-loader">
+/* 3D hero: decides, waits for the preloader, load and an idle moment, then imports /js/hero3d.v1.js (SVG stays otherwise) */
+(function(){var H=document.querySelector('.hero'),M=document.querySelector('.hero-3d');if(!H||!M)return;
+var q=location.search,force=/[?&]3d=1/.test(q),n=navigator,c=n.connection||{},why=null;
+var dl=function(o){o.page_type='home';o.language=document.documentElement.lang;window.dataLayer=window.dataLayer||[];window.dataLayer.push(o);};
+function off(r){window.ppHero3d={mode:'fallback',reason:r};dl({event:'hero3d_ready',mode:'fallback',reason:r});}
+if(/[?&]no3d=1/.test(q))why='flag';
+else if(!force){if(matchMedia('(prefers-reduced-motion: reduce)').matches)why='reduced-motion';
+else if(c.saveData||/(^|[^4])[23]g$/.test(c.effectiveType||''))why='save-data';
+else if((n.deviceMemory&&n.deviceMemory<4)||(n.hardwareConcurrency&&n.hardwareConcurrency<4))why='low-device';}
+if(why)return off(why);
+function go(){var cv=document.createElement('canvas'),gl=null;try{gl=cv.getContext('webgl2');}catch(e){}if(!gl)return off('no-webgl');var x=gl.getExtension('WEBGL_lose_context');if(x)x.loseContext();
+import('/js/hero3d.v1.js').then(function(m){m.start({hero:H,mount:M,dl:dl,lite:matchMedia('(max-width:820px),(pointer:coarse)').matches,force:force});}).catch(function(){off('load-error');});}
+function idle(){(window.requestIdleCallback||function(f){setTimeout(f,300);})(go,{timeout:2000});}
+function after(){var l=document.getElementById('ppLoader');if(l&&!l.classList.contains('done'))return setTimeout(after,120);idle();}
+if(document.readyState==='complete')after();else addEventListener('load',after);})();
 </script>
 <!-- ============ FIN CAPA DE CONVERSION ============ -->
 
