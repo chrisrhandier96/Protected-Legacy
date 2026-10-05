@@ -11,6 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-P88VGFHR');</script>
 <!-- End Google Tag Manager -->
+<script>if(location.hash)document.documentElement.className+=' pp-nocv';</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Patrimonio Protegido | Christian R. González · Insurance in Florida</title>
@@ -451,6 +452,18 @@ section:hover .eyebrow::before{width:52px}
   *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}.ticker-track{animation:none}.skyline .draw{stroke-dashoffset:0}
 }
+
+/* Below the fold: sections after the domains skip layout and paint until they come near the screen.
+   Sizes are the measured content heights, so the scrollbar stays steady; once rendered, the real size is kept (auto).
+   Off whenever the page opens on an anchor or an in-page jump starts (html.pp-nocv), so every anchor lands exactly. */
+@supports(content-visibility:auto){
+  html:not(.pp-nocv) #biblioteca,html:not(.pp-nocv) .proceso,html:not(.pp-nocv) #sobre,html:not(.pp-nocv) #mapa,html:not(.pp-nocv) #contacto,html:not(.pp-nocv) footer{content-visibility:auto}
+  #biblioteca{contain-intrinsic-size:auto 1px auto 467px}.proceso{contain-intrinsic-size:auto 1px auto 365px}#sobre{contain-intrinsic-size:auto 1px auto 810px}
+  #mapa{contain-intrinsic-size:auto 1px auto 1022px}#contacto{contain-intrinsic-size:auto 1px auto 695px}footer{contain-intrinsic-size:auto 1px auto 492px}
+  @media(max-width:1080px){#biblioteca{contain-intrinsic-size:auto 1px auto 489px}.proceso{contain-intrinsic-size:auto 1px auto 400px}#sobre{contain-intrinsic-size:auto 1px auto 890px}#contacto{contain-intrinsic-size:auto 1px auto 706px}footer{contain-intrinsic-size:auto 1px auto 548px}}
+  @media(max-width:940px){#biblioteca{contain-intrinsic-size:auto 1px auto 643px}.proceso{contain-intrinsic-size:auto 1px auto 800px}#sobre{contain-intrinsic-size:auto 1px auto 1187px}#mapa{contain-intrinsic-size:auto 1px auto 1002px}#contacto{contain-intrinsic-size:auto 1px auto 1400px}footer{contain-intrinsic-size:auto 1px auto 660px}}
+  @media(max-width:640px){#biblioteca{contain-intrinsic-size:auto 1px auto 1148px}.proceso{contain-intrinsic-size:auto 1px auto 924px}#sobre{contain-intrinsic-size:auto 1px auto 1691px}#mapa{contain-intrinsic-size:auto 1px auto 1173px}#contacto{contain-intrinsic-size:auto 1px auto 1672px}footer{contain-intrinsic-size:auto 1px auto 1265px}}
+}
 </style>
 <style id="cg-logo">.logo-mark.cg-mark{width:auto;height:44px;transform:none!important}.logo-mark.cg-crest{width:auto;height:64px;transform:none!important}</style>
 <style id="pp-a11y">
@@ -492,7 +505,7 @@ nav{background:rgba(13,36,28,.93);-webkit-backdrop-filter:blur(16px) saturate(1.
 .hero-grid::before,.hero-grid::after{content:"";position:absolute;width:15px;height:15px;opacity:.5;background:linear-gradient(var(--oro),var(--oro)) center/1px 100% no-repeat,linear-gradient(var(--oro),var(--oro)) center/100% 1px no-repeat;-webkit-mask-image:none;mask-image:none}
 .hero-grid::before{left:28px;top:28px}.hero-grid::after{right:28px;top:28px}
 .hero .eyebrow{justify-self:start;padding:8px 16px 8px 12px;border-radius:999px;border:1px solid rgba(217,188,114,.32);background:rgba(194,155,64,.09);color:var(--oro-claro);font-size:11px;letter-spacing:.2em}
-.hero .eyebrow::before{width:7px;height:7px;border-radius:50%;background:var(--oro-claro);box-shadow:0 0 0 4px rgba(217,188,114,.16);animation:hvPulse 2.6s ease-in-out infinite}
+.hero .eyebrow::before{width:7px;height:7px;border-radius:50%;background:var(--oro-claro);box-shadow:0 0 0 4px rgba(217,188,114,.16);animation:hvPulse 2.6s ease-in-out 2}
 @keyframes hvPulse{0%,100%{box-shadow:0 0 0 3px rgba(217,188,114,.18)}50%{box-shadow:0 0 0 7px rgba(217,188,114,0)}}
 @media(min-width:1024px){
   .hero .wrap>*:not(.hero-visual){grid-column:1}
@@ -776,7 +789,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M36 300c22-9 44-9 66 0s44 9 66 0 44-9 66 0 M60 322c18-7 36-7 54 0 M196 318c16-6 32-6 48 0"/>
             <path d="M252 96c0 26-18 40-18 40s-18-14-18-40c0-11 8-20 18-20s18 9 18 20z M234 136v32"/>
             <path d="M48 84c8 3 16 3 24 0 M40 96c6 2 12 2 18 0"/>
-          </svg><img src="https://images.pexels.com/photos/38661696/pexels-photo-38661696.jpeg?w=800" alt="" loading="lazy"></div>
+          </svg><picture><source type="image/avif" srcset="/img/plates/residencias-320.avif 320w, /img/plates/residencias-640.avif 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px"><source type="image/webp" srcset="/img/plates/residencias-320.webp 320w, /img/plates/residencias-640.webp 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px"><img src="/img/plates/residencias-640.jpg" srcset="/img/plates/residencias-320.jpg 320w, /img/plates/residencias-640.jpg 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px" width="640" height="800" alt="" loading="lazy" decoding="async"></picture></div>
           <figcaption data-es="Residencias frente al agua" data-en="Waterfront residences">Waterfront residences</figcaption>
         </figure>
         <figure class="plate reveal">
@@ -786,7 +799,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M118 210h30 M124 190h20"/>
             <path d="M28 300c24-10 48-10 72 0s48 10 72 0 48-10 72 0 M74 326c20-8 40-8 60 0 M186 322c18-7 36-7 54 0"/>
             <circle cx="242" cy="72" r="20"/><path d="M242 44v-10 M242 110v-10 M270 72h10 M204 72h10"/>
-          </svg><img src="https://images.pexels.com/photos/5368730/pexels-photo-5368730.jpeg?w=800" alt="" loading="lazy"></div>
+          </svg><picture><source type="image/avif" srcset="/img/plates/embarcaciones-320.avif 320w, /img/plates/embarcaciones-640.avif 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px"><source type="image/webp" srcset="/img/plates/embarcaciones-320.webp 320w, /img/plates/embarcaciones-640.webp 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px"><img src="/img/plates/embarcaciones-640.jpg" srcset="/img/plates/embarcaciones-320.jpg 320w, /img/plates/embarcaciones-640.jpg 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px" width="640" height="800" alt="" loading="lazy" decoding="async"></picture></div>
           <figcaption data-es="Embarcaciones" data-en="Vessels">Vessels</figcaption>
         </figure>
         <figure class="plate reveal">
@@ -796,7 +809,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M150 122v-8 M150 238v-8 M204 176h8 M88 176h8 M188 138l6-6 M106 214l6 6 M188 214l6 6 M106 138l6-6"/>
             <path d="M128 104l-10-46h64l-10 46 M128 248l-10 46h64l-10-46"/>
             <path d="M62 320h176 M84 338h132"/>
-          </svg><img src="https://images.pexels.com/photos/380782/pexels-photo-380782.jpeg?w=800" alt="" loading="lazy"></div>
+          </svg><picture><source type="image/avif" srcset="/img/plates/colecciones-320.avif 320w, /img/plates/colecciones-640.avif 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px"><source type="image/webp" srcset="/img/plates/colecciones-320.webp 320w, /img/plates/colecciones-640.webp 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px"><img src="/img/plates/colecciones-640.jpg" srcset="/img/plates/colecciones-320.jpg 320w, /img/plates/colecciones-640.jpg 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px" width="640" height="800" alt="" loading="lazy" decoding="async"></picture></div>
           <figcaption data-es="Colecciones" data-en="Collections">Collections</figcaption>
         </figure>
         <figure class="plate reveal">
@@ -806,7 +819,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M97 115l35 35 M203 115l-35 35 M97 221l35-35 M203 221l-35 35"/>
             <circle cx="150" cy="168" r="6"/>
             <path d="M46 300c26-10 52-10 78 0s52 10 78 0 52-10 78 0 M92 326c19-8 38-8 58 0 M188 322c17-7 34-7 52 0"/>
-          </svg><img src="https://images.pexels.com/photos/9385084/pexels-photo-9385084.jpeg?w=800" alt="" loading="lazy"></div>
+          </svg><picture><source type="image/avif" srcset="/img/plates/legado-320.avif 320w, /img/plates/legado-640.avif 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px"><source type="image/webp" srcset="/img/plates/legado-320.webp 320w, /img/plates/legado-640.webp 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px"><img src="/img/plates/legado-640.jpg" srcset="/img/plates/legado-320.jpg 320w, /img/plates/legado-640.jpg 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px" width="640" height="800" alt="" loading="lazy" decoding="async"></picture></div>
           <figcaption data-es="Legado familiar" data-en="Family legacy">Family legacy</figcaption>
         </figure>
         <figure class="plate reveal">
@@ -815,7 +828,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M40 210l90-30 40 14 90-30 20 44-90 30-40-14-90 30z"/>
             <path d="M130 180l14-46h18l14 46 M118 224v20 M182 224v20"/>
             <path d="M20 300c24-10 48-10 72 0s48 10 72 0 48-10 72 0 M66 326c19-8 38-8 58 0"/>
-          </svg><img src="https://images.pexels.com/photos/20562279/pexels-photo-20562279.jpeg?w=800" alt="" loading="lazy"></div>
+          </svg><picture><source type="image/avif" srcset="/img/plates/aviacion-320.avif 320w, /img/plates/aviacion-640.avif 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px"><source type="image/webp" srcset="/img/plates/aviacion-320.webp 320w, /img/plates/aviacion-640.webp 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px"><img src="/img/plates/aviacion-640.jpg" srcset="/img/plates/aviacion-320.jpg 320w, /img/plates/aviacion-640.jpg 640w" sizes="(max-width:520px) 320px, (max-width:940px) 46vw, (max-width:1080px) 31vw, 218px" width="640" height="800" alt="" loading="lazy" decoding="async"></picture></div>
           <figcaption data-es="Aviación privada" data-en="Private aviation">Private aviation</figcaption>
         </figure>
       </div>
@@ -915,7 +928,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap about-grid">
     <div class="retrato reveal">
       <div class="marco">
-      <img class="foto" src="/img/christian-retrato.jpg" alt="Christian R. González, Doral, Florida">
+      <picture>
+        <source type="image/avif" srcset="/img/christian-retrato-400.avif 400w, /img/christian-retrato-800.avif 800w" sizes="(max-width:820px) 280px, 320px">
+        <source type="image/webp" srcset="/img/christian-retrato-400.webp 400w, /img/christian-retrato-800.webp 800w" sizes="(max-width:820px) 280px, 320px">
+        <img class="foto" src="/img/christian-retrato-800.jpg" srcset="/img/christian-retrato-400.jpg 400w, /img/christian-retrato-800.jpg 800w" sizes="(max-width:820px) 280px, 320px" width="800" height="1000" alt="Christian R. González, Doral, Florida" loading="lazy" decoding="async">
+      </picture>
       </div>
     </div>
     <div class="reveal">
@@ -1100,7 +1117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer id="fuentes">
   <div class="wrap">
     <div class="logo-lockup" style="margin-bottom:6px">
-      <img class="logo-mark cg-crest" src="/img/cg-crest-64.png" srcset="/img/cg-crest-128.png 2x, /img/cg-crest-192.png 3x" width="84" height="64" alt="">
+      <img class="logo-mark cg-crest" src="/img/cg-crest-64.png" srcset="/img/cg-crest-128.png 2x, /img/cg-crest-192.png 3x" width="84" height="64" alt="" loading="lazy" decoding="async">
       <span class="logo-txt"><span class="logo">Patrimonio <em>Protegido</em></span><span class="logo-sub">Christian R. González</span></span>
     </div>
     <!-- Al obtener la licencia: ponga LICENSED: true y LICENSE_NUMBER arriba, en la
@@ -1428,6 +1445,7 @@ document.getElementById('ppForm').addEventListener('submit',ppSubmit);
 document.addEventListener('click',function(e){const a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;const m=a.getAttribute('data-track');if(m==='linkedin'||m==='email')dl({event:'contact_click',contact_method:m});else dl({event:'phone_click',contact_method:m,link_location:a.classList.contains('dock-call')?'boton_movil':(a.closest('footer')?'pie':'contacto')});});
 document.getElementById('rcGo').addEventListener('click',function(ev){
   ev.preventDefault();prefillTema();dl({event:'cta_click',cta:'resultado_a_formulario'});
+  if(window.ppRenderAll)window.ppRenderAll();
   const f=document.getElementById('ppForm'),y=f.getBoundingClientRect().top+scrollY-110;
   window.scrollTo({top:y,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
   setTimeout(function(){try{document.getElementById('f-nombre').focus({preventScroll:true});}catch(x){}},700);
@@ -1503,36 +1521,37 @@ function animCount(el){const target=parseInt(el.dataset.count,10);const sup=el.q
 
 /* ===== DYNAMIC LAYER ===== */
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-window.addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
-  document.getElementById('scrollbar').style.width=p+'%';
-},{passive:true});
+/* page height cached once per layout change (ResizeObserver), so scroll handlers never read layout */
+window.ppDocMax=0;(function(){var h=document.documentElement;function m(){window.ppDocMax=h.scrollHeight-h.clientHeight;}m();
+if('ResizeObserver' in window)new ResizeObserver(m).observe(document.body);else addEventListener('resize',m);addEventListener('load',m);window.ppMeasure=m;})();
+/* reading progress bar: one write per frame */
+(function(){var bar=document.getElementById('scrollbar'),t=false;function f(){t=false;bar.style.width=(window.ppDocMax>0?Math.min(100,scrollY/window.ppDocMax*100):0)+'%';}
+addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(f);}},{passive:true});f();})();
+/* in-page jumps: render every section first, so anchors land exactly even when sections below the fold are skipped (content-visibility) */
+window.ppRenderAll=function(){document.documentElement.classList.add('pp-nocv');};
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a)window.ppRenderAll();},true);
 if(!reduceMotion){
-  const hero=document.querySelector('.hero');
-  hero.addEventListener('mousemove',e=>{
-    const r=hero.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
-    document.querySelectorAll('.hero-orb').forEach((o,i)=>{
-      const f=(i+1)*14;
-      o.style.translate=(x*f)+'px '+(y*f)+'px';
-    });
-  });
+  /* myth cards: the pointer spotlight reads the card box once per hover, then follows the pointer in page coordinates */
   document.querySelectorAll('.mito').forEach(m=>{
+    let b=null;
+    const box=()=>{const r=m.getBoundingClientRect();b={l:r.left+scrollX,t:r.top+scrollY,w:r.width,h:r.height};};
+    m.addEventListener('mouseenter',box);
     m.addEventListener('mousemove',e=>{
-      const r=m.getBoundingClientRect();
-      m.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
-      m.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+      if(!b)box();
+      m.style.setProperty('--mx',((e.pageX-b.l)/b.w*100)+'%');
+      m.style.setProperty('--my',((e.pageY-b.t)/b.h*100)+'%');
     });
+    m.addEventListener('mouseleave',()=>{b=null;});
   });
 }
 </script>
 <!-- ============ CAPA CINEMATOGRAFICA / CINEMA LAYER ============ -->
 <style id="pp-cinema">
 /* Hero entrance: staggered rise with soft blur */
-@keyframes ppRise{from{opacity:0;transform:translateY(34px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes ppRise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+@keyframes ppRiseSoft{from{opacity:0;transform:translateY(34px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
 .hero .eyebrow,.hero h1,.hero p.lead,.hero .qualifier,.hero .cta-row{opacity:0;animation:ppRise 1.05s cubic-bezier(.22,.8,.24,1) forwards}
-.hero .eyebrow{animation-delay:.15s}
+.hero .eyebrow{animation-delay:.15s;animation-name:ppRiseSoft}
 .hero h1{animation-delay:.35s;animation-duration:1.25s}
 .hero p.lead{animation-delay:.62s}
 .hero .qualifier{animation-delay:.82s}
@@ -1548,8 +1567,8 @@ if(!reduceMotion){
 #ppDust{position:absolute;inset:0;z-index:1;pointer-events:none}
 
 /* Deeper, softer reveals with blur and lift */
-.reveal{filter:blur(5px);transform:translateY(34px) scale(.985);transition:opacity .9s cubic-bezier(.22,.8,.24,1),transform .9s cubic-bezier(.22,.8,.24,1),filter .9s ease;transition-delay:var(--d,0s)}
-.reveal.in{filter:blur(0);transform:none}
+.reveal{transform:translateY(34px) scale(.985);transition:opacity .9s cubic-bezier(.22,.8,.24,1),transform .9s cubic-bezier(.22,.8,.24,1);transition-delay:var(--d,0s)}
+.reveal.in{transform:none}
 
 /* Card lift + gold glow, 3D tilt applied by JS */
 .vcard,.fact,.pro,.mito{transition:transform .45s cubic-bezier(.22,.8,.24,1),box-shadow .45s ease;will-change:transform}
@@ -1574,6 +1593,9 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
   .rule{transform:none;transition:none}
   .vcard,.fact,.pro,.mito{transition:none}
 }
+/* paused off screen and in hidden tabs (classes set by the cinema script) */
+.hero.pp-off::before,.hero.pp-off .hero-orb,.hero.pp-off h1 em,.hero.pp-off .skyline circle,.hero.pp-off .skyline .water-anim,.hero.pp-off .eyebrow::before,.ticker.pp-off .ticker-track,
+.pp-hidden .hero::before,.pp-hidden .hero-orb,.pp-hidden .hero h1 em,.pp-hidden .skyline circle,.pp-hidden .skyline .water-anim,.pp-hidden .ticker-track{animation-play-state:paused}
 </style>
 <script id="pp-cinema-js">
 (function(){
@@ -1597,9 +1619,10 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
     if('IntersectionObserver' in window){
       new IntersectionObserver(function(en){ visible = en[0].isIntersecting; }).observe(hero);
     }
+    var last = 0;
     (function tick(t){
       requestAnimationFrame(tick);
-      if(!visible) return;
+      if(!visible || document.hidden || t - last < 30) return; last = t;
       ctx.clearRect(0,0,W,H);
       for(var i=0;i<motes.length;i++){
         var m = motes[i];
@@ -1620,6 +1643,7 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
   var orbA = document.querySelector('.hero-orb');
   var orbB = document.querySelector('.hero-orb.b');
   var sky  = document.querySelector('.skyline');
+  var sky3 = document.querySelector('.hero-3d');
   var nav  = document.querySelector('nav');
   var ticking = false;
   function onScroll(){
@@ -1629,7 +1653,7 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
       if(!reduce){
         if(orbA) orbA.style.translate = '0 ' + (y*.18).toFixed(1) + 'px';
         if(orbB) orbB.style.translate = '0 ' + (y*.30).toFixed(1) + 'px';
-        if(sky && y < 900) sky.style.translate = '0 ' + (y*.10).toFixed(1) + 'px';
+        if(sky && y < 900){ sky.style.translate = '0 ' + (y*.10).toFixed(1) + 'px'; if(sky3) sky3.style.translate = sky.style.translate; }
       }
       if(nav) nav.classList.toggle('scrolled', y > 24);
       ticking = false;
@@ -1639,14 +1663,17 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
 
   /* Subtle 3D tilt on cards (pointer devices only) */
   if(!reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    /* the card box is read once when the pointer enters; moves only write, one frame at a time */
     document.querySelectorAll('.vcard,.fact,.pro').forEach(function(el){
+      var b = null, raf = null, px = 0, py = 0;
+      el.addEventListener('pointerenter', function(){ var r = el.getBoundingClientRect(); b = {l:r.left + scrollX, t:r.top + scrollY, w:r.width, h:r.height}; });
       el.addEventListener('pointermove', function(e){
-        var r = el.getBoundingClientRect();
-        var rx = ((e.clientY - r.top)/r.height - .5) * -5;
-        var ry = ((e.clientX - r.left)/r.width - .5) * 6;
-        el.style.transform = 'perspective(900px) rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg) translateY(-4px)';
+        px = e.pageX; py = e.pageY;
+        if(!raf) raf = requestAnimationFrame(function(){ raf = null; if(!b) return;
+          var rx = ((py - b.t)/b.h - .5) * -5, ry = ((px - b.l)/b.w - .5) * 6;
+          el.style.transform = 'perspective(900px) rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg) translateY(-4px)'; });
       });
-      el.addEventListener('pointerleave', function(){ el.style.transform = ''; });
+      el.addEventListener('pointerleave', function(){ b = null; el.style.transform = ''; });
     });
   }
 
@@ -1659,6 +1686,13 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
   } else {
     document.querySelectorAll('.rule').forEach(function(r){ r.classList.add('grow'); });
   }
+
+  /* Ambient animations (sweep, shimmer, beacon, orbs, water, ticker) pause while off screen or in a hidden tab */
+  if('IntersectionObserver' in window){
+    var po = new IntersectionObserver(function(en){ en.forEach(function(x){ x.target.classList.toggle('pp-off', !x.isIntersecting); }); });
+    document.querySelectorAll('.hero,.ticker').forEach(function(el){ po.observe(el); });
+  }
+  document.addEventListener('visibilitychange', function(){ document.documentElement.classList.toggle('pp-hidden', document.hidden); });
 })();
 </script>
 <!-- ============ FIN CAPA CINEMATOGRAFICA ============ -->
@@ -1666,13 +1700,13 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
 <!-- ============ CAPA CINEMATOGRAFICA V2 / CINEMA LAYER V2 ============ -->
 <style id="pp-cinema2">
 /* Preloader */
-#ppLoader{position:fixed;inset:0;z-index:1000;background:var(--verde-oscuro);display:grid;place-items:center;transition:opacity .7s ease,visibility .7s}
+#ppLoader{position:fixed;inset:0;z-index:1000;background:var(--verde-oscuro);display:grid;place-items:center;transition:opacity .5s ease,visibility .5s}
 #ppLoader.done{opacity:0;visibility:hidden;pointer-events:none}
 #ppLoader .inner{display:flex;flex-direction:column;align-items:center;gap:18px}
-#ppLoader .crest{display:block;width:auto;height:96px;opacity:0;transform:scale(.86);animation:ldCrest .9s cubic-bezier(.22,.8,.24,1) forwards .15s}
-#ppLoader .wm{font-family:var(--display);color:var(--blanco);font-size:15px;letter-spacing:.34em;text-transform:uppercase;opacity:0;animation:ldFade .8s ease forwards .9s}
+#ppLoader .crest{display:block;width:auto;height:96px;opacity:0;transform:scale(.86);animation:ldCrest .45s cubic-bezier(.22,.8,.24,1) forwards .05s}
+#ppLoader .wm{font-family:var(--display);color:var(--blanco);font-size:15px;letter-spacing:.34em;text-transform:uppercase;opacity:0;animation:ldFade .35s ease forwards .25s}
 #ppLoader .wm em{font-style:normal;color:var(--oro-claro)}
-#ppLoader .ln{width:150px;height:1px;background:var(--oro);transform:scaleX(0);animation:ldLine 1s cubic-bezier(.22,.8,.24,1) forwards 1s}
+#ppLoader .ln{width:150px;height:1px;background:var(--oro);transform:scaleX(0);animation:ldLine .4s cubic-bezier(.22,.8,.24,1) forwards .35s}
 @keyframes ldCrest{to{opacity:1;transform:scale(1)}}
 @keyframes ldFade{to{opacity:1}}
 @keyframes ldLine{to{transform:scaleX(1)}}
@@ -1687,7 +1721,7 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
 /* Shimmer on the thesis word */
 .hero h1 em{background:linear-gradient(100deg,var(--oro-claro) 25%,#FFF4D8 42%,var(--oro-claro) 58%);
   background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:emShine 5.5s ease-in-out infinite 2.2s}
+  animation:emShine 5.5s ease-in-out 2.2s 2}
 @keyframes emShine{0%,100%{background-position:110% 0}45%,55%{background-position:-10% 0}}
 
 /* Magnetic CTAs with sheen */
@@ -1706,11 +1740,11 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
 
 /* Skyline beacon pulse */
 .skyline circle{transform-box:fill-box;transform-origin:center;animation:beacon 4.5s ease-in-out infinite 5s}
-@keyframes beacon{0%,100%{opacity:.7;filter:drop-shadow(0 0 0 rgba(217,188,114,0))}50%{opacity:1;filter:drop-shadow(0 0 10px rgba(217,188,114,.8))}}
+@keyframes beacon{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
 
 /* Back-to-top orb with reading progress ring */
 #ppTop{position:fixed;right:26px;bottom:26px;z-index:90;width:54px;height:54px;border-radius:50%;
-  background:rgba(13,36,28,.92);border:1px solid rgba(194,155,64,.4);backdrop-filter:blur(8px);
+  background:rgba(13,36,28,.96);border:1px solid rgba(194,155,64,.4);
   display:grid;place-items:center;opacity:0;translate:0 14px;pointer-events:none;
   transition:opacity .4s ease,translate .4s ease,box-shadow .3s}
 #ppTop.show{opacity:1;translate:0 0;pointer-events:auto}
@@ -1749,8 +1783,9 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
   var fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
   var hero = document.querySelector('.hero');
 
-  /* ---- Preloader ---- */
-  if(!reduce){
+  /* ---- Preloader: first visit of the session only; never on deep links (#mapa, #contacto) or ad clicks (gclid) ---- */
+  var skipLd = false; try{ skipLd = !!location.hash || /[?&](gclid|gbraid|wbraid)=/.test(location.search) || sessionStorage.getItem('pp.ld')==='1'; }catch(e){}
+  if(!reduce && !skipLd){
     var ld = document.createElement('div'); ld.id='ppLoader'; ld.setAttribute('aria-hidden','true');
     ld.innerHTML =
       '<div class="inner">'+
@@ -1758,13 +1793,19 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
       '<div class="wm">Patrimonio <em>Protegido</em></div>'+
       '<div class="ln"></div></div>';
     document.body.appendChild(ld);
+    try{ sessionStorage.setItem('pp.ld','1'); }catch(e){}
     document.body.style.overflow='hidden';
+    var killed = false, t0 = performance.now();
     var kill = function(){
+      if(killed) return; killed = true;
       ld.classList.add('done');
       document.body.style.overflow='';
-      setTimeout(function(){ ld.remove(); }, 800);
+      setTimeout(function(){ ld.remove(); }, 600);
     };
-    setTimeout(kill, 1900);
+    /* gone once the fonts are in and a frame has painted (never before the crest has landed, 450 ms), 900 ms at most */
+    var fontsIn = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+    fontsIn.then(function(){ requestAnimationFrame(function(){ requestAnimationFrame(function(){ setTimeout(kill, Math.max(0, 450 - (performance.now() - t0))); }); }); });
+    setTimeout(kill, 900);
   }
 
   /* ---- Hero pointer parallax + cursor aura ---- */
@@ -1772,13 +1813,17 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
     var aura = document.createElement('div'); aura.className='pp-aura'; aura.setAttribute('aria-hidden','true');
     hero.appendChild(aura);
     var wrap = hero.querySelector('.wrap');
-    var tx=0, ty=0, ax=0, ay=0, cx=0, cy=0, raf=null;
+    var tx=0, ty=0, ax=0, ay=0, cx=0, cy=0, raf=null, hb=null;
+    /* the hero box is measured when it resizes, not on every pointer move */
+    function heroBox(){ var r = hero.getBoundingClientRect(); hb = {l:r.left + scrollX, t:r.top + scrollY, w:r.width, h:r.height}; }
+    if('ResizeObserver' in window) new ResizeObserver(heroBox).observe(hero); else addEventListener('resize', heroBox);
+    hero.addEventListener('pointerenter', heroBox);
     hero.addEventListener('pointermove', function(e){
-      var r = hero.getBoundingClientRect();
-      var nx = (e.clientX - r.left)/r.width - .5;
-      var ny = (e.clientY - r.top)/r.height - .5;
+      if(!hb) heroBox();
+      var nx = (e.pageX - hb.l)/hb.w - .5;
+      var ny = (e.pageY - hb.t)/hb.h - .5;
       tx = nx * -14; ty = ny * -10;
-      cx = e.clientX - r.left; cy = e.clientY - r.top;
+      cx = e.pageX - hb.l; cy = e.pageY - hb.t;
       if(!raf) raf = requestAnimationFrame(step);
     });
     hero.addEventListener('pointerleave', function(){ tx=0; ty=0; if(!raf) raf=requestAnimationFrame(step); });
@@ -1793,25 +1838,32 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
   /* ---- Magnetic CTAs ---- */
   if(!reduce && fine){
     document.querySelectorAll('.btn').forEach(function(b){
+      var bx = null, raf2 = null, px = 0, py = 0;
+      b.addEventListener('pointerenter', function(){ var r = b.getBoundingClientRect(); bx = {l:r.left + scrollX, t:r.top + scrollY, w:r.width, h:r.height}; });
       b.addEventListener('pointermove', function(e){
-        var r = b.getBoundingClientRect();
-        var x = ((e.clientX-r.left)/r.width - .5) * 8;
-        var y = ((e.clientY-r.top)/r.height - .5) * 6;
-        b.style.transform = 'translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px)';
+        px = e.pageX; py = e.pageY;
+        if(!raf2) raf2 = requestAnimationFrame(function(){ raf2 = null; if(!bx) return;
+          var x = ((px-bx.l)/bx.w - .5) * 8, y = ((py-bx.t)/bx.h - .5) * 6;
+          b.style.transform = 'translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px)'; });
       });
-      b.addEventListener('pointerleave', function(){ b.style.transform=''; });
+      b.addEventListener('pointerleave', function(){ bx = null; b.style.transform=''; });
     });
   }
 
   /* ---- Domain grid cursor spotlight (delegated: survives language rebuilds) ---- */
   var grid = document.getElementById('domGrid');
   if(grid && fine){
+    var cur = null, cb = null, graf = null, gx = 0, gy = 0;
     grid.addEventListener('pointermove', function(e){
       var card = e.target.closest('.dom'); if(!card) return;
-      var r = card.getBoundingClientRect();
-      card.style.setProperty('--gx', ((e.clientX-r.left)/r.width*100).toFixed(1)+'%');
-      card.style.setProperty('--gy', ((e.clientY-r.top)/r.height*100).toFixed(1)+'%');
+      if(card !== cur){ cur = card; var r = card.getBoundingClientRect(); cb = {l:r.left + scrollX, t:r.top + scrollY, w:r.width, h:r.height}; }
+      gx = e.pageX; gy = e.pageY;
+      if(!graf) graf = requestAnimationFrame(function(){ graf = null; if(!cur || !cb) return;
+        cur.style.setProperty('--gx', ((gx-cb.l)/cb.w*100).toFixed(1)+'%');
+        cur.style.setProperty('--gy', ((gy-cb.t)/cb.h*100).toFixed(1)+'%'); });
     });
+    grid.addEventListener('pointerleave', function(){ cur = null; cb = null; });
+    grid.addEventListener('click', function(){ cur = null; cb = null; });
   }
 
   /* ---- Back-to-top orb with progress ring ---- */
@@ -1823,7 +1875,7 @@ nav.scrolled{box-shadow:0 12px 34px -14px rgba(0,0,0,.55)}
   function onScroll2(){
     if(tick2) return; tick2=true;
     requestAnimationFrame(function(){
-      var max = document.documentElement.scrollHeight - innerHeight;
+      var max = window.ppDocMax || 0;
       var p = max>0 ? Math.min(1, scrollY/max) : 0;
       ring.style.strokeDashoffset = (C*(1-p)).toFixed(1);
       topBtn.classList.toggle('show', scrollY > 560);
@@ -1978,6 +2030,7 @@ details.more .more-in{padding:4px 16px 8px}
   var _setLang=setLang;setLang=function(l){_setLang(l);sync();lightAll();};
 
   function toQuiz(){
+    if(window.ppRenderAll)window.ppRenderAll();
     var sh=document.querySelector('.mapa-shell')||$('mapa');
     var y=sh.getBoundingClientRect().top+scrollY-90;
     window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});

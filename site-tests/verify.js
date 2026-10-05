@@ -187,7 +187,7 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     const p = await freshPage(); await p.goto(BASE + '/');
     await p.locator('img.foto').scrollIntoViewIfNeeded(); await p.waitForTimeout(1500);
     const r = await p.evaluate(() => { const i = document.querySelector('img.foto'); return { src: i.currentSrc, ok: i.complete && i.naturalWidth > 0, w: i.naturalWidth, h: i.naturalHeight }; });
-    rec('Pages', 'img/christian-retrato.jpg loads on the homepage', r.ok && /christian-retrato\.jpg$/.test(r.src), `${r.src} ${r.w}x${r.h}`); await p.ctx.close();
+    rec('Pages', 'img/christian-retrato loads on the homepage (AVIF, WebP or JPEG)', r.ok && /christian-retrato(-\d+)?\.(avif|webp|jpg)$/.test(r.src), `${r.src} ${r.w}x${r.h}`); await p.ctx.close();
   }
 
   /* ================= LANGUAGE ROUTING ================= */
