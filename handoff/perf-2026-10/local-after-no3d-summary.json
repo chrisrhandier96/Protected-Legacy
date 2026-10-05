@@ -1,0 +1,191 @@
+[
+ {
+  "page": "/?no3d=1",
+  "ff": "mobile",
+  "median": {
+   "url": "http://localhost:8787/?no3d=1",
+   "fetchTime": "2026-10-05T19:15:29.816Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 2029,
+   "fcp": 1504,
+   "tbt": 0,
+   "si": 2207,
+   "cls": 0,
+   "tti": 2037,
+   "weightKiB": 178,
+   "mainThreadMs": 2734,
+   "bootupMs": 239,
+   "longTasks": [
+    {
+     "url": "http://localhost:8787/?no3d=1",
+     "start": 958,
+     "dur": 196
+    },
+    {
+     "url": "http://localhost:8787/?no3d=1",
+     "start": 1202,
+     "dur": 96
+    },
+    {
+     "url": "Unattributable",
+     "start": 902,
+     "dur": 56
+    }
+   ],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   99,
+   99,
+   99
+  ]
+ },
+ {
+  "page": "/?no3d=1",
+  "ff": "desktop",
+  "median": {
+   "url": "http://localhost:8787/?no3d=1",
+   "fetchTime": "2026-10-05T19:15:57.506Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 484,
+   "fcp": 361,
+   "tbt": 0,
+   "si": 827,
+   "cls": 0.007,
+   "tti": 484,
+   "weightKiB": 163,
+   "mainThreadMs": 589,
+   "bootupMs": 54,
+   "longTasks": [],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   100,
+   100,
+   100
+  ]
+ },
+ {
+  "page": "/en/?no3d=1",
+  "ff": "mobile",
+  "median": {
+   "url": "http://localhost:8787/en/?no3d=1",
+   "fetchTime": "2026-10-05T19:16:25.907Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 2031,
+   "fcp": 1506,
+   "tbt": 0,
+   "si": 2109,
+   "cls": 0,
+   "tti": 2038,
+   "weightKiB": 178,
+   "mainThreadMs": 2735,
+   "bootupMs": 264,
+   "longTasks": [
+    {
+     "url": "http://localhost:8787/en/?no3d=1",
+     "start": 947,
+     "dur": 205
+    },
+    {
+     "url": "http://localhost:8787/en/?no3d=1",
+     "start": 1193,
+     "dur": 65
+    }
+   ],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   99,
+   99,
+   99
+  ]
+ },
+ {
+  "page": "/en/?no3d=1",
+  "ff": "desktop",
+  "median": {
+   "url": "http://localhost:8787/en/?no3d=1",
+   "fetchTime": "2026-10-05T19:16:53.043Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 422,
+   "fcp": 362,
+   "tbt": 0,
+   "si": 901,
+   "cls": 0.014,
+   "tti": 424,
+   "weightKiB": 163,
+   "mainThreadMs": 762,
+   "bootupMs": 68,
+   "longTasks": [
+    {
+     "url": "http://localhost:8787/en/?no3d=1",
+     "start": 267,
+     "dur": 52
+    }
+   ],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   100,
+   100,
+   100
+  ]
+ }
+]

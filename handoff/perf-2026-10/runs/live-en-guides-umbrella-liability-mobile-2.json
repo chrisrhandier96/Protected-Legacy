@@ -1,0 +1,63 @@
+{
+ "url": "https://www.protectedlegacyfl.com/en/guides/umbrella-liability/",
+ "fetchTime": "2026-10-05T18:15:11.169Z",
+ "formFactor": "mobile",
+ "scores": {
+  "performance": 64,
+  "accessibility": 100,
+  "best-practices": 100,
+  "seo": 100
+ },
+ "lcp": 5437,
+ "fcp": 1827,
+ "tbt": 477,
+ "si": 4820,
+ "cls": 0,
+ "tti": 5448,
+ "weightKiB": 445,
+ "mainThreadMs": 1268,
+ "bootupMs": 744,
+ "longTasks": [
+  {
+   "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+   "start": 4762,
+   "dur": 409
+  },
+  {
+   "url": "ps://www.protectedlegacyfl.com/en/guides/umbrella-liability/",
+   "start": 1026,
+   "dur": 119
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+   "start": 3279,
+   "dur": 109
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+   "start": 3388,
+   "dur": 109
+  },
+  {
+   "url": "Unattributable",
+   "start": 967,
+   "dur": 51
+  }
+ ],
+ "lcpElement": "",
+ "opps": [
+  {
+   "id": "server-response-time",
+   "savingsMs": 71,
+   "savingsBytes": 0
+  },
+  {
+   "id": "unused-javascript",
+   "savingsMs": 710,
+   "savingsBytes": 134260
+  }
+ ],
+ "failedBP": [],
+ "consoleErrors": [],
+ "run": 2
+}

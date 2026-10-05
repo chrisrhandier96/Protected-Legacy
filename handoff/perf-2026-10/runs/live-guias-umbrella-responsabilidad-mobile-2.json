@@ -1,0 +1,58 @@
+{
+ "url": "https://www.protectedlegacyfl.com/guias/umbrella-responsabilidad/",
+ "fetchTime": "2026-10-05T18:14:12.971Z",
+ "formFactor": "mobile",
+ "scores": {
+  "performance": 64,
+  "accessibility": 100,
+  "best-practices": 100,
+  "seo": 100
+ },
+ "lcp": 5256,
+ "fcp": 1749,
+ "tbt": 492,
+ "si": 2630,
+ "cls": 0.114,
+ "tti": 5256,
+ "weightKiB": 446,
+ "mainThreadMs": 1326,
+ "bootupMs": 749,
+ "longTasks": [
+  {
+   "url": "ogletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a21h2",
+   "start": 4438,
+   "dur": 428
+  },
+  {
+   "url": "://www.protectedlegacyfl.com/guias/umbrella-responsabilidad/",
+   "start": 953,
+   "dur": 129
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+   "start": 3094,
+   "dur": 111
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+   "start": 2991,
+   "dur": 103
+  }
+ ],
+ "lcpElement": "",
+ "opps": [
+  {
+   "id": "server-response-time",
+   "savingsMs": 50,
+   "savingsBytes": 0
+  },
+  {
+   "id": "unused-javascript",
+   "savingsMs": 600,
+   "savingsBytes": 134486
+  }
+ ],
+ "failedBP": [],
+ "consoleErrors": [],
+ "run": 2
+}

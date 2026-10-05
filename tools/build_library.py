@@ -136,7 +136,7 @@ LOGO = ('<svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circle c
 FAVICON = open(os.path.join(ROOT, "tools", "favicon.txt"), encoding="utf-8").read().strip() if os.path.exists(os.path.join(ROOT, "tools", "favicon.txt")) else ""
 
 CSS = r"""
-:root{--verde:#14352A;--verde-oscuro:#0D241C;--verde-suave:#1E4A3A;--arena:#F5EFE3;--arena-oscura:#E7DDC7;--oro:#C29B40;--oro-claro:#D9BC72;--oro-palido:#EBD9A8;--tinta:#22271F;--humo:#6E7568;--blanco:#FDFBF6;--display:'Marcellus',serif;--accent:'Cormorant Garamond',serif;--body:'Figtree',sans-serif}
+:root{--verde:#14352A;--verde-oscuro:#0D241C;--verde-suave:#1E4A3A;--arena:#F5EFE3;--arena-oscura:#E7DDC7;--oro:#C29B40;--oro-claro:#D9BC72;--oro-palido:#EBD9A8;--tinta:#22271F;--humo:#6E7568;--blanco:#FDFBF6;--display:'Marcellus','Marcellus Fallback',serif;--accent:'Cormorant Garamond','Cormorant Fallback',serif;--body:'Figtree','Figtree Fallback',sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:var(--body);color:var(--tinta);background:var(--arena);line-height:1.7;font-size:17px}
 h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.18}a{color:inherit}
@@ -205,6 +205,25 @@ th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;ver
 /* phones: the article heading fills the first screen, so show the self-check card above the summary (markup order stays: summary, then card) */
 @media(max-width:980px){article{display:flex;flex-direction:column}article>*{margin-top:0!important}.topcta{order:-1;margin:0 0 24px}}
 .midnote{margin:36px 0;padding:14px 20px;border-left:3px solid var(--oro);background:var(--blanco);font-size:16px}.midnote a{font-weight:600}
+/* layers figure (work order 2026-10, Part E): isometric slabs in inline SVG, CSS 3D-style depth, gold lines on sand */
+.fig3d{margin:26px 0 30px;padding:18px 16px 14px;border:1px solid var(--arena-oscura);border-radius:3px;background:var(--blanco)}
+.fig3d svg{display:block;width:100%;max-width:520px;height:auto;margin:0 auto;overflow:visible}
+.fig3d .f3-face{fill:rgba(194,155,64,.08);stroke:var(--oro);stroke-width:1.3;stroke-linejoin:round}.fig3d .f3-side{fill:rgba(194,155,64,.17)}.fig3d .f3-side2{fill:rgba(194,155,64,.26)}
+.fig3d .f3-dash .f3-face,.fig3d .f3-dash .f3-side,.fig3d .f3-dash .f3-side2{fill:none;stroke-dasharray:4 3;stroke:rgba(194,155,64,.8)}
+.fig3d .f3-t{font:600 13px var(--body);fill:var(--verde)}.fig3d .f3-n{font:600 12px var(--body);fill:var(--verde)}
+.f3-legend{margin:14px auto 0;max-width:520px;padding:0;list-style:none;font-size:14.5px;line-height:1.5;color:var(--tinta)}
+.f3-legend li{display:flex;gap:10px;align-items:flex-start;padding:4px 0}.f3-legend b{flex:none;width:22px;height:22px;margin-top:1px;border:1px solid var(--oro);border-radius:50%;font-size:11px;display:grid;place-items:center;color:var(--oro-tx,#7E5F17)}.f3-legend sup{font-size:.7em;color:var(--oro-tx,#7E5F17)}
+.fig3d .f3-lift,.fig3d .f3-drop{transition:transform .9s cubic-bezier(.22,.8,.24,1)}.fig3d:not(.in) .f3-lift{transform:translateY(16px)}.fig3d:not(.in) .f3-drop{transform:translateY(-14px)}
+@supports(animation-timeline:view()){.fig3d .f3-lift,.fig3d .f3-drop{transition:none;animation:f3lift linear both;animation-timeline:view();animation-range:entry 15% entry 80%}.fig3d .f3-drop{animation-name:f3drop}}
+@keyframes f3lift{from{transform:translateY(16px)}to{transform:none}}@keyframes f3drop{from{transform:translateY(-14px)}to{transform:none}}
+@media(prefers-reduced-motion:reduce){.fig3d .f3-lift,.fig3d .f3-drop{animation:none!important;transition:none!important;transform:none!important}}
+/* depth (work order 2026-10, Part F): cards tilt toward a fine pointer (4 degrees max) with a gold edge light; the header eases back as it scrolls out */
+.pp-tilt{position:relative}
+.pp-edge{position:absolute;inset:-1px;z-index:3;border-radius:inherit;padding:1px;pointer-events:none;opacity:0;transition:opacity .35s ease;background:linear-gradient(var(--la,135deg),rgba(217,188,114,.9),rgba(217,188,114,0) 52%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
+.pp-tilt:hover .pp-edge{opacity:1}
+@media(hover:none),(prefers-reduced-motion:reduce){.pp-edge{display:none}}
+@supports(animation-timeline:view()){@media(prefers-reduced-motion:no-preference){.head h1,.head .dek{animation:ppHeadOut linear both;animation-timeline:view();animation-range:exit 0% exit 100%}article section>h2,.band h2.sec{animation:ppLabelIn linear both;animation-timeline:view();animation-range:entry 0% entry 100%}}}
+@keyframes ppHeadOut{to{transform:translateY(26px);opacity:.55}}@keyframes ppLabelIn{from{transform:translateY(14px)}to{transform:none}}
 .qbox{background:var(--verde);color:var(--arena);border-radius:3px;padding:28px 30px;margin:48px 0}.qbox h2{color:var(--oro-claro)}
 .faq details{border-bottom:1px solid var(--arena-oscura);padding:16px 0}.faq summary{cursor:pointer;font-weight:600;color:var(--verde);list-style:none;display:flex;justify-content:space-between;gap:16px}
 .faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--oro);font-size:22px;line-height:1}.faq details[open] summary::after{content:"\2212"}
@@ -265,6 +284,11 @@ function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.que
 (function(){var bar=document.getElementById('bar');if(bar){addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});}
  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a)return;try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'cta_click',cta:a.getAttribute('data-cta'),page_type:document.body.getAttribute('data-type')||'',language:document.documentElement.lang});}catch(x){}});
  try{localStorage.setItem('pp.lang',document.documentElement.lang);}catch(e){}
+ /* depth: cards tilt toward a fine pointer, 4 degrees at most, with a gold edge light; the box is read once per hover */
+ if(matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches)[].forEach.call(document.querySelectorAll('.card'),function(c){var b=null,r=null,x=0,y=0,i=document.createElement('i');i.className='pp-edge';c.appendChild(i);c.classList.add('pp-tilt');
+ c.addEventListener('pointerenter',function(){var q=c.getBoundingClientRect();b={l:q.left+scrollX,t:q.top+scrollY,w:q.width,h:q.height};});
+ c.addEventListener('pointermove',function(e){x=e.pageX;y=e.pageY;if(!r)r=requestAnimationFrame(function(){r=null;if(!b)return;var nx=(x-b.l)/b.w-.5,ny=(y-b.t)/b.h-.5;c.style.transform='perspective(900px) rotateX('+(-ny*8).toFixed(2)+'deg) rotateY('+(nx*8).toFixed(2)+'deg) translateY(-4px)';c.style.setProperty('--la',(Math.atan2(nx,-ny)*180/Math.PI+180).toFixed(0)+'deg');});});
+ c.addEventListener('pointerleave',function(){b=null;c.style.transform='';});});
  /* contact links: same dataLayer format as the homepage (phone_click for calls/texts, contact_click for LinkedIn/email) */
  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track'),o={event:(m==='linkedin'||m==='email')?'contact_click':'phone_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname,page_type:document.body.getAttribute('data-type')||'',language:document.documentElement.lang};try{window.dataLayer=window.dataLayer||[];dataLayer.push(o);}catch(x){}});
 })();
@@ -415,6 +439,39 @@ def render_blocks(blocks):
             sys.exit(f"unknown block {list(b)}")
     return "\n".join(out)
 
+def iso(x, y, z): return ((x - y) * 0.866, (x + y) * 0.5 - z)
+def iso_box(x, y, z, w, d, h, cls="", extra=""):
+    """an isometric slab: top face, the +y face (front left) and the +x face (front right)"""
+    P = lambda pts: " ".join(f"{a:.1f},{b:.1f}" for a, b in (iso(*q) for q in pts))
+    top = [(x, y, z + h), (x + w, y, z + h), (x + w, y + d, z + h), (x, y + d, z + h)]
+    left = [(x, y + d, z), (x + w, y + d, z), (x + w, y + d, z + h), (x, y + d, z + h)]
+    right = [(x + w, y, z), (x + w, y + d, z), (x + w, y + d, z + h), (x + w, y, z + h)]
+    return (f'<g class="{cls}">{extra}<polygon class="f3-face f3-side" points="{P(left)}"/><polygon class="f3-face f3-side2" points="{P(right)}"/>'
+            f'<polygon class="f3-face" points="{P(top)}"/></g>')
+def render_figure(fig, l):
+    """Part E: the layers figure. kind=umbrella: three base slabs and one wide slab above; kind=stack: three stacked slabs with a legend."""
+    items = fig["items"]
+    if fig["kind"] == "umbrella":
+        parts, W, D, H = [], 100, 90, 24
+        for i, name in enumerate(items[:3]):
+            x = i * 120; cx, cy = iso(x + W / 2, D / 2, H)
+            parts.append(iso_box(x, 0, 0, W, D, H, "f3-base", f'<text class="f3-t" x="{cx:.1f}" y="{cy + 4:.1f}" text-anchor="middle">{esc(name)}</text>'))
+        cx, cy = iso(-10 + 360 / 2, -10 + 110 / 2, 104 + 14)
+        parts.append(iso_box(-10, -10, 104, 360, 110, 14, "f3-top f3-lift", f'<text class="f3-t" x="{cx:.1f}" y="{cy + 4:.1f}" text-anchor="middle">{esc(items[3])}</text>'))
+        svg = f'<svg viewBox="-110 -130 450 308" aria-hidden="true" focusable="false">{"".join(parts)}</svg>'
+        return f'<figure class="fig3d fig3d-umbrella" role="img" aria-label="{esc(plain(fig["label"]))}">{svg}</figure>'
+    # stack: bottom slab dashed (the policy that excludes flood), then the NFIP slab, then the excess slab
+    parts, W, D, H = [], 220, 140, 24
+    for i, z, cls in ((0, 0, "f3-dash f3-drop"), (1, 46, ""), (2, 92, "f3-lift")):
+        nx, ny = iso(W + 2, D / 2, z + H / 2)
+        parts.append(iso_box(0, 0, z, W, D, H, cls, f'<text class="f3-n" x="{nx + 16:.1f}" y="{ny + 4:.1f}" text-anchor="middle">{i + 1}</text>'))
+    svg = f'<svg viewBox="-135 -125 360 330" aria-hidden="true" focusable="false">{"".join(parts)}</svg>'
+    def cap(t):
+        t = html.escape(t, quote=False)
+        return re.sub(r"\s*(?:\[\d+\])+", lambda m: "<sup>" + ",".join(re.findall(r"\d+", m.group(0))) + "</sup>", t)
+    legend = '<ol class="f3-legend">' + "".join(f"<li><b>{i + 1}</b><span>{cap(t)}</span></li>" for i, t in enumerate(items)) + "</ol>"
+    return f'<figure class="fig3d fig3d-stack" role="img" aria-label="{esc(plain(fig["label"]))}">{svg}{legend}</figure>'
+
 def guide_card(g, l):
     c = g[l]
     return (f'<a class="card" href="{p_guide(g, l)}">{ico(ICONS[g["key"]])}<h3>{esc(plain(c["h1"]))}</h3>'
@@ -431,7 +488,13 @@ for k in ORDER:
         # one quiet contact line halfway through, for readers who arrive from a search or an ad
         mid = f'<p class="midnote no-print">{t["mid_pre"]} <a href="{p_home(l)}#mapa" data-cta="guide_mid_quiz_{k}">{t["mid_quiz"]}</a> {t["mid_or"]} <a href="{tema}" data-cta="guide_mid_{k}">{t["mid_link"]}</a>.</p>'
         half = (len(secs) + 1) // 2
-        body_secs = "".join(f'<section id="{s["id"]}"><h2>{esc(plain(s["h2"]))}</h2>{render_blocks(s["blocks"])}</section>' + (mid if i == half - 1 else '') for i, s in enumerate(secs))
+        fig = (g.get("figure") or {}).get(l)
+        def render_section(s):
+            if fig and s["id"] == fig["section"]:
+                a = fig["after"] + 1
+                return render_blocks(s["blocks"][:a]) + "\n" + render_figure(fig, l) + "\n" + render_blocks(s["blocks"][a:])
+            return render_blocks(s["blocks"])
+        body_secs = "".join(f'<section id="{s["id"]}"><h2>{esc(plain(s["h2"]))}</h2>{render_section(s)}</section>' + (mid if i == half - 1 else '') for i, s in enumerate(secs))
         summ = "".join(f"<li>{rich(x)}</li>" for x in c["summary"])
         qs = "".join(f"<li>{rich(x)}</li>" for x in c["questions"])
         fq = "".join(f"<details><summary>{esc(plain(f['q']))}</summary><p>{rich(f['a'])}</p></details>" for f in c["faq"])
@@ -496,7 +559,8 @@ for k in ORDER:
             {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": l,
              "mainEntity": [{"@type": "Question", "name": plain(f["q"]), "acceptedAnswer": {"@type": "Answer", "text": plain(f["a"])}} for f in c["faq"]]},
         ]
-        js = r"""(function(){var links=[].slice.call(document.querySelectorAll('.toc a'));if(!('IntersectionObserver' in window)||!links.length)return;
+        js = r"""(function(){var f=[].slice.call(document.querySelectorAll('.fig3d'));if(!f.length)return;if(!('IntersectionObserver' in window)){f.forEach(function(x){x.classList.add('in');});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.35});f.forEach(function(x){io.observe(x);});})();
+(function(){var links=[].slice.call(document.querySelectorAll('.toc a'));if(!('IntersectionObserver' in window)||!links.length)return;
 var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-20% 0px -70% 0px'});
 document.querySelectorAll('article section[id]').forEach(function(s){io.observe(s);});})();

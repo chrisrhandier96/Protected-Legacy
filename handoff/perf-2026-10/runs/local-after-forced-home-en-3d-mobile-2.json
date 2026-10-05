@@ -1,0 +1,77 @@
+{
+ "url": "http://localhost:8787/en/?3d=1",
+ "fetchTime": "2026-10-05T19:18:30.770Z",
+ "formFactor": "mobile",
+ "scores": {
+  "performance": 81,
+  "accessibility": 100,
+  "best-practices": 96,
+  "seo": 100
+ },
+ "lcp": 2921,
+ "fcp": 1504,
+ "tbt": 526,
+ "si": 2571,
+ "cls": 0,
+ "tti": 7040,
+ "weightKiB": 320,
+ "mainThreadMs": 9513,
+ "bootupMs": 876,
+ "longTasks": [
+  {
+   "url": "http://localhost:8787/en/?3d=1",
+   "start": 950,
+   "dur": 243
+  },
+  {
+   "url": "http://localhost:8787/js/hero3d.v1.js",
+   "start": 2991,
+   "dur": 147
+  },
+  {
+   "url": "http://localhost:8787/js/hero3d.v1.js",
+   "start": 7676,
+   "dur": 89
+  },
+  {
+   "url": "http://localhost:8787/js/hero3d.v1.js",
+   "start": 6931,
+   "dur": 85
+  },
+  {
+   "url": "http://localhost:8787/js/hero3d.v1.js",
+   "start": 3639,
+   "dur": 82
+  },
+  {
+   "url": "http://localhost:8787/js/hero3d.v1.js",
+   "start": 4648,
+   "dur": 76
+  },
+  {
+   "url": "http://localhost:8787/js/hero3d.v1.js",
+   "start": 3564,
+   "dur": 75
+  },
+  {
+   "url": "http://localhost:8787/js/hero3d.v1.js",
+   "start": 3928,
+   "dur": 74
+  }
+ ],
+ "lcpElement": "",
+ "opps": [
+  {
+   "id": "unused-javascript",
+   "savingsMs": 300,
+   "savingsBytes": 62867
+  }
+ ],
+ "failedBP": [
+  "errors-in-console"
+ ],
+ "consoleErrors": [
+  "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+ ],
+ "run": 2
+}

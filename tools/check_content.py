@@ -81,6 +81,36 @@ for k in keys:
                 if re.search(pat, s, flags=re.I): errs.append(f"{l}: banned /{pat}/ in: {s[:70]}")
             for pat in REVIEW:
                 if re.search(pat, s, flags=re.I): notes.append(f"{l} review /{pat}/: {s[:50]}")
+    # optional "figure" (work order 2026-10, Part E): same checks as everything else, plus every caption must be verbatim guide text
+    fig = g.get("figure")
+    if fig:
+        strip = lambda t: re.sub(r"\s*\[\d+\]", "", t)
+        for l in ("es", "en"):
+            fl = fig.get(l)
+            if not fl: errs.append(f"{l}: figure missing"); continue
+            for f in ("section", "after", "kind", "label", "items"):
+                if f not in fl: errs.append(f"{l}: figure missing {f}")
+            secs = {x["id"]: x for x in g[l]["sections"]}
+            if fl.get("section") not in secs: errs.append(f"{l}: figure section {fl.get('section')} not found")
+            else:
+                sec = secs[fl["section"]]
+                if not 0 <= fl.get("after", -1) < len(sec["blocks"]): errs.append(f"{l}: figure 'after' out of range")
+                if strip(fl.get("label", "")) not in strip(text_of({"sections": [sec]})): errs.append(f"{l}: figure label is not a sentence of section {fl['section']}")
+            whole = strip(text_of(g[l])).lower()
+            for it in fl.get("items", []):
+                if strip(it).lower() not in whole: errs.append(f"{l}: figure caption is not verbatim guide text: {it[:50]}")
+            refs = {int(n) for x in all_strings(fl) for n in re.findall(r"\[(\d+)\]", x)}
+            if refs - src: errs.append(f"{l}: figure footnotes without source {sorted(refs - src)}")
+            for x in all_strings(fl):
+                for pat in NAMES:
+                    if re.search(pat, x): errs.append(f"{l}: figure name /{pat}/ in: {x[:70]}")
+                for pat in PHRASES:
+                    if re.search(pat, x, flags=re.I): errs.append(f"{l}: figure banned /{pat}/ in: {x[:70]}")
+        a, b = fig.get("es", {}), fig.get("en", {})
+        if a.get("kind") != b.get("kind") or a.get("after") != b.get("after") or len(a.get("items", [])) != len(b.get("items", [])): errs.append("figure: ES/EN kind, position or item count differ")
+        for x, y in zip(a.get("items", []), b.get("items", [])):
+            if sorted(re.findall(r"\[(\d+)\]", x)) != sorted(re.findall(r"\[(\d+)\]", y)): errs.append(f"figure: footnotes differ between languages: {x[:40]} / {y[:40]}")
+        notes.append("figure " + a.get("kind", "?"))
     es, en = g["es"]["sections"], g["en"]["sections"]
     if len(es) != len(en): errs.append("ES/EN section count differs")
     for a, b in zip(es, en):

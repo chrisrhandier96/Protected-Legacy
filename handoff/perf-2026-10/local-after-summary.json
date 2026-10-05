@@ -1,0 +1,462 @@
+[
+ {
+  "page": "/",
+  "ff": "mobile",
+  "median": {
+   "url": "http://localhost:8787/",
+   "fetchTime": "2026-10-05T19:11:00.327Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 1877,
+   "fcp": 1502,
+   "tbt": 0,
+   "si": 2247,
+   "cls": 0,
+   "tti": 1884,
+   "weightKiB": 178,
+   "mainThreadMs": 7654,
+   "bootupMs": 4119,
+   "longTasks": [
+    {
+     "url": "http://localhost:8787/",
+     "start": 1049,
+     "dur": 212
+    },
+    {
+     "url": "Unattributable",
+     "start": 901,
+     "dur": 105
+    },
+    {
+     "url": "http://localhost:8787/",
+     "start": 1294,
+     "dur": 80
+    },
+    {
+     "url": "http://localhost:8787/",
+     "start": 1470,
+     "dur": 51
+    }
+   ],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   98,
+   99,
+   99
+  ]
+ },
+ {
+  "page": "/",
+  "ff": "desktop",
+  "median": {
+   "url": "http://localhost:8787/",
+   "fetchTime": "2026-10-05T19:11:33.194Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 422,
+   "fcp": 362,
+   "tbt": 0,
+   "si": 847,
+   "cls": 0.014,
+   "tti": 424,
+   "weightKiB": 163,
+   "mainThreadMs": 657,
+   "bootupMs": 58,
+   "longTasks": [],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   100,
+   100,
+   100
+  ]
+ },
+ {
+  "page": "/en/",
+  "ff": "mobile",
+  "median": {
+   "url": "http://localhost:8787/en/",
+   "fetchTime": "2026-10-05T19:12:01.613Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 1952,
+   "fcp": 1502,
+   "tbt": 0,
+   "si": 2086,
+   "cls": 0,
+   "tti": 1967,
+   "weightKiB": 178,
+   "mainThreadMs": 2681,
+   "bootupMs": 250,
+   "longTasks": [
+    {
+     "url": "http://localhost:8787/en/",
+     "start": 998,
+     "dur": 152
+    },
+    {
+     "url": "http://localhost:8787/en/",
+     "start": 1191,
+     "dur": 64
+    },
+    {
+     "url": "Unattributable",
+     "start": 901,
+     "dur": 55
+    }
+   ],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   99,
+   99,
+   99
+  ]
+ },
+ {
+  "page": "/en/",
+  "ff": "desktop",
+  "median": {
+   "url": "http://localhost:8787/en/",
+   "fetchTime": "2026-10-05T19:12:29.040Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 482,
+   "fcp": 362,
+   "tbt": 0,
+   "si": 834,
+   "cls": 0.007,
+   "tti": 482,
+   "weightKiB": 163,
+   "mainThreadMs": 597,
+   "bootupMs": 52,
+   "longTasks": [],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   100,
+   100,
+   100
+  ]
+ },
+ {
+  "page": "/guias/umbrella-responsabilidad/",
+  "ff": "mobile",
+  "median": {
+   "url": "http://localhost:8787/guias/umbrella-responsabilidad/",
+   "fetchTime": "2026-10-05T19:12:56.402Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 1277,
+   "fcp": 953,
+   "tbt": 0,
+   "si": 953,
+   "cls": 0,
+   "tti": 1284,
+   "weightKiB": 79,
+   "mainThreadMs": 638,
+   "bootupMs": 51,
+   "longTasks": [
+    {
+     "url": "http://localhost:8787/guias/umbrella-responsabilidad/",
+     "start": 751,
+     "dur": 130
+    },
+    {
+     "url": "http://localhost:8787/guias/umbrella-responsabilidad/",
+     "start": 925,
+     "dur": 72
+    }
+   ],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   100,
+   100,
+   100
+  ]
+ },
+ {
+  "page": "/guias/umbrella-responsabilidad/",
+  "ff": "desktop",
+  "median": {
+   "url": "http://localhost:8787/guias/umbrella-responsabilidad/",
+   "fetchTime": "2026-10-05T19:13:20.362Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 322,
+   "fcp": 254,
+   "tbt": 0,
+   "si": 254,
+   "cls": 0,
+   "tti": 322,
+   "weightKiB": 67,
+   "mainThreadMs": 161,
+   "bootupMs": 10,
+   "longTasks": [],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   100,
+   100,
+   100
+  ]
+ },
+ {
+  "page": "/en/guides/umbrella-liability/",
+  "ff": "mobile",
+  "median": {
+   "url": "http://localhost:8787/en/guides/umbrella-liability/",
+   "fetchTime": "2026-10-05T19:13:45.452Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 1278,
+   "fcp": 934,
+   "tbt": 0,
+   "si": 934,
+   "cls": 0,
+   "tti": 1286,
+   "weightKiB": 78,
+   "mainThreadMs": 559,
+   "bootupMs": 42,
+   "longTasks": [
+    {
+     "url": "http://localhost:8787/en/guides/umbrella-liability/",
+     "start": 752,
+     "dur": 130
+    },
+    {
+     "url": "http://localhost:8787/en/guides/umbrella-liability/",
+     "start": 915,
+     "dur": 52
+    }
+   ],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   100,
+   100,
+   100
+  ]
+ },
+ {
+  "page": "/en/guides/umbrella-liability/",
+  "ff": "desktop",
+  "median": {
+   "url": "http://localhost:8787/en/guides/umbrella-liability/",
+   "fetchTime": "2026-10-05T19:14:09.161Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 323,
+   "fcp": 246,
+   "tbt": 0,
+   "si": 246,
+   "cls": 0,
+   "tti": 323,
+   "weightKiB": 67,
+   "mainThreadMs": 138,
+   "bootupMs": 8,
+   "longTasks": [],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   100,
+   100,
+   100
+  ]
+ },
+ {
+  "page": "/en/guides/flood/",
+  "ff": "mobile",
+  "median": {
+   "url": "http://localhost:8787/en/guides/flood/",
+   "fetchTime": "2026-10-05T19:14:33.636Z",
+   "formFactor": "mobile",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 1278,
+   "fcp": 977,
+   "tbt": 6,
+   "si": 977,
+   "cls": 0,
+   "tti": 1286,
+   "weightKiB": 80,
+   "mainThreadMs": 657,
+   "bootupMs": 40,
+   "longTasks": [
+    {
+     "url": "http://localhost:8787/en/guides/flood/",
+     "start": 793,
+     "dur": 169
+    },
+    {
+     "url": "http://localhost:8787/en/guides/flood/",
+     "start": 999,
+     "dur": 56
+    }
+   ],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   100,
+   100,
+   100
+  ]
+ },
+ {
+  "page": "/en/guides/flood/",
+  "ff": "desktop",
+  "median": {
+   "url": "http://localhost:8787/en/guides/flood/",
+   "fetchTime": "2026-10-05T19:14:58.400Z",
+   "formFactor": "desktop",
+   "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+   },
+   "lcp": 321,
+   "fcp": 257,
+   "tbt": 0,
+   "si": 257,
+   "cls": 0,
+   "tti": 321,
+   "weightKiB": 69,
+   "mainThreadMs": 160,
+   "bootupMs": 13,
+   "longTasks": [],
+   "lcpElement": "",
+   "opps": [],
+   "failedBP": [
+    "errors-in-console"
+   ],
+   "consoleErrors": [
+    "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+   ],
+   "run": 2
+  },
+  "all": [
+   100,
+   100,
+   100
+  ]
+ }
+]
