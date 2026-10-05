@@ -1,0 +1,42 @@
+{
+ "url": "http://localhost:8787/?3d=1",
+ "fetchTime": "2026-10-05T19:17:59.649Z",
+ "formFactor": "desktop",
+ "scores": {
+  "performance": 100,
+  "accessibility": 100,
+  "best-practices": 96,
+  "seo": 100
+ },
+ "lcp": 669,
+ "fcp": 362,
+ "tbt": 6,
+ "si": 917,
+ "cls": 0.007,
+ "tti": 729,
+ "weightKiB": 305,
+ "mainThreadMs": 2057,
+ "bootupMs": 189,
+ "longTasks": [
+  {
+   "url": "http://localhost:8787/js/hero3d.v1.js",
+   "start": 695,
+   "dur": 61
+  }
+ ],
+ "lcpElement": "",
+ "opps": [
+  {
+   "id": "unused-javascript",
+   "savingsMs": 40,
+   "savingsBytes": 62867
+  }
+ ],
+ "failedBP": [
+  "errors-in-console"
+ ],
+ "consoleErrors": [
+  "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+ ],
+ "run": 2
+}

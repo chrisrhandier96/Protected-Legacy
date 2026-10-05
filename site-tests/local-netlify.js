@@ -7,7 +7,7 @@ const rules = fs.readFileSync(path.join(ROOT, 'netlify.toml'), 'utf8').split('[[
   status: +((b.match(/status\s*=\s*(\d+)/) || [])[1]), query: (b.match(/query\s*=\s*\{\s*(\w+)\s*=\s*"([^"]+)"/) || []).slice(1),
 }));
 const norm = p => (p.length > 1 ? p.replace(/\/$/, '') : p);
-const types = { '.html': 'text/html; charset=utf-8', '.jpg': 'image/jpeg', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain', '.json': 'application/json', '.md': 'text/markdown', '.py': 'text/plain', '.toml': 'text/plain' };
+const types = { '.html': 'text/html; charset=utf-8', '.jpg': 'image/jpeg', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain', '.json': 'application/json', '.md': 'text/markdown', '.py': 'text/plain', '.toml': 'text/plain', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.woff2': 'font/woff2', '.avif': 'image/avif', '.webp': 'image/webp' };
 const zlib = require('zlib'); let curReq = null;
 function notFound(res) {
   const f = path.join(ROOT, '404.html');

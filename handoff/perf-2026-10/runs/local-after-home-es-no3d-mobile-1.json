@@ -1,0 +1,46 @@
+{
+ "url": "http://localhost:8787/?no3d=1",
+ "fetchTime": "2026-10-05T19:15:19.862Z",
+ "formFactor": "mobile",
+ "scores": {
+  "performance": 99,
+  "accessibility": 100,
+  "best-practices": 96,
+  "seo": 100
+ },
+ "lcp": 2032,
+ "fcp": 1507,
+ "tbt": 0,
+ "si": 2177,
+ "cls": 0,
+ "tti": 2040,
+ "weightKiB": 178,
+ "mainThreadMs": 2747,
+ "bootupMs": 235,
+ "longTasks": [
+  {
+   "url": "http://localhost:8787/?no3d=1",
+   "start": 1002,
+   "dur": 195
+  },
+  {
+   "url": "http://localhost:8787/?no3d=1",
+   "start": 1241,
+   "dur": 60
+  },
+  {
+   "url": "Unattributable",
+   "start": 904,
+   "dur": 56
+  }
+ ],
+ "lcpElement": "",
+ "opps": [],
+ "failedBP": [
+  "errors-in-console"
+ ],
+ "consoleErrors": [
+  "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+ ],
+ "run": 1
+}

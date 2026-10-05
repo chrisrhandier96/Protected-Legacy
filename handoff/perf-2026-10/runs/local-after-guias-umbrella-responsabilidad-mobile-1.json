@@ -1,0 +1,41 @@
+{
+ "url": "http://localhost:8787/guias/umbrella-responsabilidad/",
+ "fetchTime": "2026-10-05T19:12:48.674Z",
+ "formFactor": "mobile",
+ "scores": {
+  "performance": 100,
+  "accessibility": 100,
+  "best-practices": 96,
+  "seo": 100
+ },
+ "lcp": 1279,
+ "fcp": 939,
+ "tbt": 0,
+ "si": 939,
+ "cls": 0,
+ "tti": 1286,
+ "weightKiB": 79,
+ "mainThreadMs": 575,
+ "bootupMs": 62,
+ "longTasks": [
+  {
+   "url": "http://localhost:8787/guias/umbrella-responsabilidad/",
+   "start": 752,
+   "dur": 135
+  },
+  {
+   "url": "http://localhost:8787/guias/umbrella-responsabilidad/",
+   "start": 925,
+   "dur": 52
+  }
+ ],
+ "lcpElement": "",
+ "opps": [],
+ "failedBP": [
+  "errors-in-console"
+ ],
+ "consoleErrors": [
+  "Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID"
+ ],
+ "run": 1
+}

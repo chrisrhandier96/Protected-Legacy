@@ -2,7 +2,7 @@
 // browser context. POSTs to the site are always aborted (no form submissions),
 // and analytics/ads beacons are aborted so tests do not pollute the data.
 const { chromium, request } = require('playwright');
-const fs = require('fs'), path = require('path');
+const fs = require('fs'), path = require('path'), zlib = require('zlib');
 
 const BASE = process.env.BASE || 'https://www.protectedlegacyfl.com';
 const OUT = process.env.OUT || path.join(__dirname, 'out');
@@ -62,7 +62,8 @@ const selectedTema = p => p.evaluate(() => { const s = document.getElementById('
 const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s).getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }, sel);
 
 (async () => {
-  browser = await chromium.launch();
+  // software WebGL so the 3D hero can be exercised headless (harmless for everything else)
+  browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
   const http = await request.newContext({ baseURL: BASE });
   const smText = await (await http.get('/sitemap.xml')).text();
   // sitemap holds production URLs; test them on BASE (same thing when BASE is production)
@@ -185,7 +186,8 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
 
   if (want('img')) {
     const p = await freshPage(); await p.goto(BASE + '/');
-    await p.locator('img.foto').scrollIntoViewIfNeeded(); await p.waitForTimeout(1500);
+    await p.locator('img.foto').scrollIntoViewIfNeeded();
+    await p.waitForFunction(() => { const i = document.querySelector('img.foto'); return i && i.complete && i.naturalWidth > 0; }, null, { timeout: 8000 }).catch(() => {}); // lazy image: wait for it, not a fixed delay
     const r = await p.evaluate(() => { const i = document.querySelector('img.foto'); return { src: i.currentSrc, ok: i.complete && i.naturalWidth > 0, w: i.naturalWidth, h: i.naturalHeight }; });
     rec('Pages', 'img/christian-retrato loads on the homepage (AVIF, WebP or JPEG)', r.ok && /christian-retrato(-\d+)?\.(avif|webp|jpg)$/.test(r.src), `${r.src} ${r.w}x${r.h}`); await p.ctx.close();
   }
@@ -364,7 +366,10 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     for (const [u, lang] of [['/', 'es'], ['/en/', 'en'], ['/guias/inundacion/', 'es'], ['/en/guides/flood/', 'en'], ['/glosario/', 'es'], ['/gracias.html', 'es']]) {
       const p = await freshPage(); await p.goto(BASE + u); await settle(p);
       const tabVis = await p.locator('#pplTab').isVisible();
-      await p.click('#pplTab'); await p.waitForTimeout(600); const s = await panelState(p);
+      await p.click('#pplTab');
+      // wait for the slide-in to finish (the panel's own transition), not a fixed delay: a busy main thread must not read as a closed panel
+      await p.waitForFunction(() => { const pn = document.getElementById('pplPanel'), r = pn.getBoundingClientRect(); return document.getElementById('ppl').classList.contains('ppl-on') && r.right <= innerWidth + 1 && getComputedStyle(pn).visibility === 'visible'; }, null, { timeout: 5000 }).catch(() => {});
+      await p.waitForTimeout(150); const s = await panelState(p);
       await p.keyboard.press('Escape'); await p.waitForTimeout(500); const closed = !(await panelState(p)).open;
       const exp = lang === 'en' ? { t: 'Library', g: '/en/guides/' } : { t: 'Biblioteca', g: '/guias/' };
       const good = tabVis && s.open && s.n === PANEL_LINKS && s.title === exp.t && s.hrefs[0] === exp.g && closed;
@@ -381,7 +386,9 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
       const tabVis = await p.locator('#pplTab').isVisible();
       await p.click('.hamb'); await p.waitForTimeout(400);
       const entry = p.locator('#mobileMenu .ppl-mm'); const eVis = await entry.isVisible(); const eTxt = eVis ? (await entry.textContent()).trim() : '';
-      if (eVis) await entry.click(); await p.waitForTimeout(600); const s = await panelState(p);
+      if (eVis) await entry.click();
+      await p.waitForFunction(() => { const pn = document.getElementById('pplPanel'), r = pn.getBoundingClientRect(); return document.getElementById('ppl').classList.contains('ppl-on') && r.right <= innerWidth + 1; }, null, { timeout: 5000 }).catch(() => {});
+      await p.waitForTimeout(150); const s = await panelState(p);
       if (u === '/') await p.screenshot({ path: path.join(OUT, 'shots', 'panel-mobile.png') });
       mb.push({ u, ok: !tabVis && eVis && s.open && s.n === PANEL_LINKS && s.w <= 390, d: `${u}: tab hidden=${!tabVis}, menu entry "${eTxt}", panel open=${s.open} width=${s.w}` });
       await p.ctx.close();
@@ -564,6 +571,86 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
       if (r.sc !== '25,50,75' || r.miss.length) dl.push(`${u}: guide_scroll [${r.sc}], cta_click missing [${r.miss}]`); await p.ctx.close();
     }
     rec('GuideCTA', 'dataLayer: guide_scroll 25/50/75 exactly once each; each new CTA pushes one cta_click', dl.length === 0, dl.length ? dl.join(' | ') : 'ES and EN OK');
+  }
+
+
+  /* ================= 3D (work order 2026-10): hero, map, layers figures ================= */
+  if (want('three')) {
+    const ready = p => p.waitForFunction(() => window.ppHero3d && (window.ppHero3d.ready || window.ppHero3d.mode === 'fallback'), null, { timeout: 25000 }).catch(() => {});
+    const dlEv = (p, ev) => p.evaluate(e => (window.dataLayer || []).filter(o => o && o.event === e), ev);
+    // 1. desktop with ?3d=1: canvas, hero3d_ready webgl, no console errors, text and buttons clickable, no layout shift from the mount
+    for (const u of ['/', '/en/']) {
+      const p = await freshPage();
+      await p.addInitScript(() => { window.__cls = 0; new PerformanceObserver(l => { for (const e of l.getEntries()) if (!e.hadRecentInput) window.__cls += e.value; }).observe({ type: 'layout-shift', buffered: true }); });
+      await p.goto(BASE + u + '?3d=1', { waitUntil: 'load' }); await ready(p); await p.waitForTimeout(1500);
+      const r = await p.evaluate(() => {
+        const hit = el => { const b = el.getBoundingClientRect(); const t = document.elementFromPoint(b.left + b.width / 2, b.top + b.height / 2); return !!t && (el === t || el.contains(t)); };
+        const vis = el => { const b = el.getBoundingClientRect(); return b.width > 0 && b.height > 0 && getComputedStyle(el).visibility !== 'hidden' && parseFloat(getComputedStyle(el).opacity) > .9; };
+        const h1 = document.querySelector('.hero h1'), btns = [...document.querySelectorAll('.hero .cta-row .btn')];
+        return { canvas: !!document.querySelector('.hero-3d canvas'), on: document.querySelector('.hero').classList.contains('hero-3d-on'), state: window.ppHero3d, cls: +window.__cls.toFixed(4),
+          h1: vis(h1), btns: btns.length === 2 && btns.every(b => vis(b) && hit(b)) };
+      });
+      const ev = await dlEv(p, 'hero3d_ready');
+      rec('3D', `${u}?3d=1 desktop: canvas in .hero-3d, hero3d_ready webgl, no errors, H1 and both buttons visible and clickable, CLS <= 0.02`,
+        r.canvas && r.on && ev.length === 1 && ev[0].mode === 'webgl' && ev[0].page_type === 'home' && !!ev[0].language && p.errors.length === 0 && r.h1 && r.btns && r.cls <= 0.02,
+        `canvas=${r.canvas} on=${r.on} ready=${JSON.stringify(ev[0] || null)} errors=${p.errors.length} h1=${r.h1} buttons=${r.btns} cls=${r.cls} frames=${r.state && r.state.frames}`);
+      await p.ctx.close();
+    }
+    // 2. reduced motion: SVG stays, no canvas, fallback reason reduced-motion
+    { const c = await browser.newContext({ ...DESKTOP, reducedMotion: 'reduce', locale: 'es-US' }); await c.route('**/*', rt => BEACONS.test(rt.request().url()) || !['GET', 'HEAD'].includes(rt.request().method()) ? rt.abort() : rt.continue());
+      const p = await c.newPage(); await p.goto(BASE + '/', { waitUntil: 'load' }); await p.waitForTimeout(3500);
+      const r = await p.evaluate(() => ({ canvas: !!document.querySelector('.hero-3d canvas'), sky: getComputedStyle(document.querySelector('svg.skyline')).opacity, ev: (window.dataLayer || []).filter(o => o && o.event === 'hero3d_ready') }));
+      rec('3D', 'Reduced motion: no canvas, SVG skyline visible, hero3d_ready fallback / reduced-motion', !r.canvas && r.sky === '1' && r.ev.length === 1 && r.ev[0].mode === 'fallback' && r.ev[0].reason === 'reduced-motion', JSON.stringify(r)); await c.close(); }
+    // 3. ?no3d=1: the bundle is never requested
+    { const p = await freshPage(); const hits = []; p.on('request', q => { if (/\/js\/hero3d/.test(q.url())) hits.push(q.url()); });
+      await p.goto(BASE + '/?no3d=1', { waitUntil: 'load' }); await p.waitForTimeout(4000); const ev = await dlEv(p, 'hero3d_ready');
+      rec('3D', '/?no3d=1: no request for /js/hero3d, fallback reason flag', hits.length === 0 && ev.length === 1 && ev[0].reason === 'flag', `requests=${hits.length} ready=${JSON.stringify(ev[0] || null)}`); await p.ctx.close(); }
+    // 4 + 7. every guide and tool page: no 3D bundle, weight inside the budget (77 KiB + 8), layers figure only on umbrella and flood
+    { const pages = locs.map(u => new URL(u).pathname).filter(x => /^\/(guias|en\/guides|herramientas|en\/tools)\/[^/]+\/$/.test(x));
+      const bad = [], figs = {}, weights = [];
+      for (const pth of pages) {
+        const p = await freshPage(); const hits = [], sizes = [];
+        p.on('request', q => { if (/\/js\/hero3d/.test(q.url())) hits.push(q.url()); });
+        const onResp = async rs => { try { const u = rs.request().url(); if (!u.startsWith(BASE)) return; const b = await rs.body(); const ct = rs.headers()['content-type'] || ''; sizes.push(/text|javascript|json|svg|xml/.test(ct) ? zlib.gzipSync(b).length : b.length); } catch (e) {} };
+        p.on('response', onResp); await p.goto(BASE + pth, { waitUntil: 'load' }); await p.waitForTimeout(900); p.off('response', onResp);
+        const kb = Math.round(sizes.reduce((a, b) => a + b, 0) / 1024); weights.push(kb);
+        const f = await p.evaluate(() => { const fs = [...document.querySelectorAll('.fig3d')]; return fs.map(x => { const sec = x.closest('section'); const cl = sec ? sec.cloneNode(true) : null; if (cl) cl.querySelectorAll('sup.fn, .fig3d').forEach(e => e.remove()); const txt = (cl ? cl.textContent : '').replace(/\s+/g, ' '); const lab = (x.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim(); return { role: x.getAttribute('role'), labelInSection: txt.includes(lab.replace(/[.]$/, '')) && lab.length > 40 }; }); });
+        figs[pth] = f; if (hits.length) bad.push(`${pth}: hero3d requested`); if (kb > 85) bad.push(`${pth}: ${kb} KiB`);
+        await p.ctx.close();
+      }
+      rec('3D', 'Every guide and tool page: no /js/hero3d request, weight within 85 KiB (77 + 8)', bad.length === 0 && pages.length >= 32, `${pages.length} pages, ${Math.min(...weights)} to ${Math.max(...weights)} KiB` + (bad.length ? '; ' + bad.join(' | ') : ''));
+      const withFig = Object.entries(figs).filter(([, v]) => v.length); const expect = ['/guias/umbrella-responsabilidad/', '/en/guides/umbrella-liability/', '/guias/inundacion/', '/en/guides/flood/'];
+      const okFig = expect.every(e => figs[e] && figs[e].length === 1 && figs[e][0].role === 'img' && figs[e][0].labelInSection) && withFig.length === 4;
+      rec('3D', 'Layers figure: once on the umbrella and flood guides (ES + EN), role img, aria-label is the sentence of its section, nowhere else', okFig, withFig.map(([k, v]) => `${k} x${v.length} label-in-section=${v[0].labelInSection}`).join(' | '));
+    }
+    // 5. phone 390: no horizontal scroll, both hero buttons above the fold, pixel ratio <= 1.5
+    for (const u of ['/', '/en/']) {
+      const p = await freshPage(MOBILE); await p.goto(BASE + u + '?3d=1', { waitUntil: 'load' }); await ready(p); await p.waitForTimeout(1200);
+      const r = await p.evaluate(() => { const c = document.querySelector('.hero-3d canvas'); const btns = [...document.querySelectorAll('.hero .cta-row .btn')].map(b => Math.round(b.getBoundingClientRect().bottom));
+        return { sw: document.documentElement.scrollWidth, iw: innerWidth, ih: innerHeight, btns, dpr: window.ppHero3d && window.ppHero3d.dpr, ratio: c ? +(c.width / c.clientWidth).toFixed(2) : null, mode: window.ppHero3d && window.ppHero3d.mode, y: scrollY }; });
+      rec('3D', `${u} at 390 px: no horizontal scroll, both hero buttons above the fold, canvas pixel ratio <= 1.5`, r.sw <= r.iw && r.btns.length === 2 && r.btns.every(b => b <= r.ih) && r.mode === 'webgl' && r.ratio !== null && r.ratio <= 1.5 && r.dpr <= 1.5, JSON.stringify(r)); await p.ctx.close();
+    }
+    // 6. the map: answer all twelve (the form is never submitted), tile states match the result, blank tiles link to the right guide, map3d_view once
+    for (const [lang, u] of [['es', '/'], ['en', '/en/']]) {
+      const p = await freshPage(); await p.goto(BASE + u + '?no3d=1', { waitUntil: 'load' }); await settle(p);
+      await p.locator('#mapa').scrollIntoViewIfNeeded(); await p.waitForTimeout(900);
+      const btns = ['#a-si', '#a-ns', '#a-no', '#a-na'];
+      for (let i = 0; i < 12; i++) { const before = (await p.textContent('#qcount')).trim(); await p.click(btns[i % 4]); if (i < 11) await p.waitForFunction(b => document.getElementById('qcount').textContent.trim() !== b, before, { timeout: 5000 }).catch(() => {}); }
+      await p.waitForSelector('#resultado', { state: 'visible', timeout: 5000 }).catch(() => {}); await p.waitForTimeout(1200);
+      const r = await p.evaluate(l => {
+        const st = qStats(), G2 = { vid: 'str', leg: 'emp' }, tiles = [...document.querySelectorAll('.m3-tile')], probs = [];
+        const answered = {}; picks.forEach((pk, i) => { const d = questions[i].d; if (pk >= 0) answered[d] = true; else if (!answered[d]) answered[d] = 'na'; });
+        for (const t of tiles) { const k = t.dataset.k, weak = st.weak.includes(k), blank = t.classList.contains('blank'), gold = t.classList.contains('gold');
+          if (weak !== blank) probs.push(`${k}: blank=${blank} weak=${weak}`);
+          if (!weak && answered[k] === true && !gold) probs.push(`${k}: aware but not gold`);
+          if (weak) { const want = (GUIDE_URL[G2[k] || k] || {})[l]; if (t.getAttribute('href') !== want) probs.push(`${k}: href ${t.getAttribute('href')} want ${want}`); }
+          else if (t.hasAttribute('href')) probs.push(`${k}: unexpected link`); }
+        return { tiles: tiles.length, face: document.getElementById('map3d').classList.contains('face'), weak: st.weak.length, probs, ev: (window.dataLayer || []).filter(o => o && o.event === 'map3d_view') };
+      }, lang);
+      rec('3D', `${u} map: 10 tiles, states match the result, blank tiles link to their ${lang.toUpperCase()} guides, map3d_view once with blank_count`, r.tiles === 10 && r.face && r.probs.length === 0 && r.ev.length === 1 && r.ev[0].blank_count === r.weak && p.errors.length === 0,
+        `tiles=${r.tiles} face=${r.face} blank=${r.weak} event=${JSON.stringify(r.ev[0] || null)}` + (r.probs.length ? '; ' + r.probs.join(' | ') : '') + (p.errors.length ? '; errors: ' + p.errors.join(' / ') : ''));
+      await p.ctx.close();
+    }
   }
 
   await http.dispose(); await browser.close();
