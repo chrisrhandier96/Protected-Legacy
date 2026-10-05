@@ -559,6 +559,30 @@
       }
     ]
   },
+  "figure": {
+    "es": {
+      "section": "conceptos-nfip",
+      "after": 0,
+      "kind": "stack",
+      "label": "Para una vivienda, el máximo es $250,000 para el edificio y $100,000 para el contenido, y la cobertura de contenido se compra por separado de la del edificio.",
+      "items": [
+        "La mayoría de las pólizas de propietario y de inquilino no cubren daños por inundación [2][7]",
+        "el máximo es $250,000 para el edificio y $100,000 para el contenido [1]",
+        "El seguro de inundación de exceso se ubica por encima de una póliza primaria, por lo general la del NFIP"
+      ]
+    },
+    "en": {
+      "section": "nfip-basics",
+      "after": 0,
+      "kind": "stack",
+      "label": "For a home, the maximum is $250,000 for the building and $100,000 for contents, and contents coverage is purchased separately from building coverage.",
+      "items": [
+        "Most homeowners and renters policies do not cover flood damage [2][7]",
+        "the maximum is $250,000 for the building and $100,000 for contents [1]",
+        "Excess flood insurance sits above a primary flood policy, usually the NFIP"
+      ]
+    }
+  },
   "sources": [
     {
       "n": 1,

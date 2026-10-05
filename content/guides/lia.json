@@ -289,6 +289,32 @@
       {"q": "Does umbrella insurance cover crashes with uninsured drivers in Florida?", "a": "It depends on the contract. Florida law does not require UM coverage on policies that are not primary auto liability, such as many umbrellas, but the insurer must make it available, at an insured's written request, up to the policy's bodily injury limits or $1 million, whichever is less. Check whether your umbrella includes it and on what terms."}
     ]
   },
+  "figure": {
+    "es": {
+      "section": "como-funciona",
+      "after": 0,
+      "kind": "umbrella",
+      "label": "Una póliza umbrella, también llamada seguro umbrella o seguro de responsabilidad civil en exceso, es una capa adicional de responsabilidad civil personal que se coloca por encima de sus pólizas de hogar, auto y, con frecuencia, embarcación.",
+      "items": [
+        "Hogar",
+        "Auto",
+        "Embarcación",
+        "Umbrella"
+      ]
+    },
+    "en": {
+      "section": "how-it-works",
+      "after": 0,
+      "kind": "umbrella",
+      "label": "Umbrella insurance, sometimes called excess personal liability insurance, is an extra layer of personal liability coverage that sits on top of your home, auto and, often, boat policies.",
+      "items": [
+        "Home",
+        "Auto",
+        "Boat",
+        "Umbrella"
+      ]
+    }
+  },
   "sources": [
     {"n": 1, "label": "Insurance Information Institute (Triple-I), Should I purchase an umbrella liability policy?", "url": "https://www.iii.org/article/should-i-purchase-an-umbrella-liability-policy"},
     {"n": 2, "label": "NAIC, What's an Umbrella Policy?", "url": "https://content.naic.org/article/whats-umbrella-policy"},
