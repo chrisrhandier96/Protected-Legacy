@@ -967,6 +967,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="reveal" style="max-width:58ch;margin:16px auto 0;color:#3B4237" data-es="Doce preguntas sobre las zonas de riesgo de su familia. Al final verá su nivel de conciencia y los dominios donde su mapa quedó en blanco. No pedimos cifras ni datos personales." data-en="Twelve questions across the risk zones of your family. At the end you will see your awareness level and the domains where your map went blank. We ask for no figures or personal data.">Doce preguntas sobre las zonas de riesgo de su familia. Al final verá su nivel de conciencia y los dominios donde su mapa quedó en blanco. No pedimos cifras ni datos personales.</p>
     </div>
     <div class="mapa-shell reveal">
+      <div class="map3d" id="map3d" aria-hidden="true"></div>
       <div id="quiz">
         <div class="progress"><div class="progress-fill" id="prog"></div></div>
         <div class="q-count" id="qcount"></div>
@@ -2095,6 +2096,82 @@ function after(){var l=document.getElementById('ppLoader');if(l&&!l.classList.co
 if(document.readyState==='complete')after();else addEventListener('load',after);})();
 </script>
 <!-- ============ FIN CAPA DE CONVERSION ============ -->
+<style id="pp-map3d">
+/* ===== The Family Protection Map, made literal (Part D): gold line tiles on a tilted plane ===== */
+.mapa-shell{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:36px;align-items:center;max-width:1160px}
+.mapa-shell>#quiz,.mapa-shell>#resultado{grid-column:1;grid-row:1;min-width:0}
+#map3d{grid-column:2;grid-row:1;position:relative;min-height:230px;display:flex;align-items:center;justify-content:center;perspective:900px;perspective-origin:50% 40%}
+#map3d.face{align-self:start;position:sticky;top:96px;padding-top:12px}
+.m3-plane{display:grid;grid-template-columns:repeat(5,52px);gap:12px;transform-style:preserve-3d;transform:rotateX(55deg) rotateZ(-40deg);transition:transform .9s var(--ease,ease),gap .9s var(--ease,ease)}
+.m3-tile{position:relative;display:block;width:52px;height:52px;border:1.5px solid rgba(194,155,64,.5);border-radius:5px;background:rgba(194,155,64,.05);text-decoration:none;transform-style:preserve-3d;transition:transform .45s var(--ease,ease),background .45s,border-color .45s,box-shadow .45s}
+.m3-tile svg{position:absolute;inset:0;margin:auto;width:24px;height:24px;stroke:var(--oro);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
+.m3-tile.now{border-color:var(--oro-claro);box-shadow:0 0 0 3px rgba(217,188,114,.28)}
+.m3-tile.up{transform:translateZ(18px);border-color:var(--oro)}
+.m3-tile.up::before{content:"";position:absolute;inset:0;border-radius:5px;background:rgba(20,53,42,.22);transform:translateZ(-18px) translate(4px,6px);pointer-events:none}
+.m3-tile.gold{background:linear-gradient(160deg,#D9BC72,#C29B40);border-color:#D9BC72;box-shadow:0 10px 24px -12px rgba(194,155,64,.7)}
+.m3-tile.gold svg{stroke:var(--verde-oscuro);opacity:1}
+.m3-tile.blank{background:rgba(253,251,246,.9);border-style:dashed}
+.m3-lab{display:none;position:absolute;top:100%;left:50%;width:76px;margin:6px 0 0 -38px;font:600 9.5px/1.2 var(--body);letter-spacing:0;text-align:center;color:var(--verde);text-transform:none;overflow-wrap:break-word;hyphens:auto}
+#map3d:not(.face) .m3-tile{pointer-events:none}
+#map3d.face .m3-plane{transform:none;grid-template-columns:repeat(5,60px);gap:36px 16px}
+#map3d.face .m3-tile{width:60px;height:60px}
+#map3d.face .m3-tile.up{transform:none}
+#map3d.face .m3-tile.up::before{display:none}
+#map3d.face .m3-tile.blank .m3-lab{display:block}
+#map3d.face .m3-tile[href]:hover{border-color:var(--verde);box-shadow:0 0 0 3px rgba(20,53,42,.15)}
+#map3d.face .m3-tile[href]:hover .m3-lab{text-decoration:underline}
+@media(max-width:1080px){.mapa-shell{grid-template-columns:minmax(0,1fr) 300px}.m3-plane{transform:scale(.86) rotateX(55deg) rotateZ(-40deg)}#map3d.face .m3-plane{grid-template-columns:repeat(5,52px);gap:34px 10px}#map3d.face .m3-tile{width:52px;height:52px}.m3-lab{width:62px;margin-left:-31px;font-size:9px}}
+@media(max-width:860px){
+  .mapa-shell{grid-template-columns:minmax(0,1fr);gap:8px;max-width:800px}
+  .mapa-shell>#quiz,.mapa-shell>#resultado{grid-row:2}
+  #map3d{grid-column:1;grid-row:1;min-height:128px;margin:-8px 0 18px;perspective-origin:50% 60%}
+  .m3-plane{transform:scale(.68) rotateX(55deg) rotateZ(-40deg);transform-origin:50% 50%}
+  #map3d.face{min-height:200px}
+  #map3d.face{position:static;padding-top:0}
+  #map3d.face .m3-plane{transform:none;grid-template-columns:repeat(5,52px);gap:30px 8px}
+  #map3d.face .m3-tile{width:52px;height:52px}
+  .m3-lab{width:60px;margin-left:-30px;font-size:9px}
+}
+@media(max-width:360px){#map3d.face .m3-plane{grid-template-columns:repeat(5,48px)}#map3d.face .m3-tile{width:48px;height:48px}}
+@media (prefers-reduced-motion: reduce){.m3-plane,.m3-tile{transition:none}}
+</style>
+<script id="pp-map3d-js">
+(function(){
+  /* ten tiles, the same ten domains the twelve questions cover; icons and names come from ICONS and DOM_NAMES */
+  var K=['res','flo','aut','mar','avi','col','vid','lia','emp','leg'],G2={vid:'str',leg:'emp'};
+  var EXTRA={leg:'<path d="M5 4h14v16H5z"/><path d="M9 9h6M9 13h6M9 17h3"/>',vid:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18"/><path d="M12 3c-3 3-3 15 0 18"/>'};
+  var host=document.getElementById('map3d'),sec=document.getElementById('mapa');if(!host)return;
+  var built=false,viewed=false;
+  function build(){
+    if(built)return;built=true;
+    host.innerHTML='<div class="m3-plane">'+K.map(function(k){return '<a class="m3-tile" data-k="'+k+'"><svg viewBox="0 0 24 24" aria-hidden="true">'+(ICONS[k]||EXTRA[k])+'</svg><span class="m3-lab"></span></a>';}).join('')+'</div>';
+    update();
+  }
+  function update(){
+    if(!built)return;
+    var st=qStats(),answered={},aware={};
+    picks.forEach(function(p,i){var d=questions[i].d;if(p>=0){answered[d]=true;aware[d]=(aware[d]===undefined?true:aware[d])&&p===2;}else if(answered[d]===undefined)answered[d]='na';});
+    var cur=finished?null:(questions[picks.length]||{}).d;
+    K.forEach(function(k){
+      var t=host.querySelector('[data-k="'+k+'"]'),a=answered[k],weak=st.weak.indexOf(k)>=0;
+      t.classList.toggle('up',!!a);t.classList.toggle('gold',a===true&&aware[k]===true&&!weak);t.classList.toggle('blank',weak);t.classList.toggle('now',k===cur);
+      t.querySelector('.m3-lab').textContent=weak?DOM_NAMES[k][lang]:'';
+      var g=GUIDE_URL[G2[k]||k];
+      if(finished&&weak&&g){t.setAttribute('href',g[lang]);t.setAttribute('tabindex','-1');}else{t.removeAttribute('href');t.removeAttribute('tabindex');}
+    });
+    host.classList.toggle('face',finished);
+    if(finished&&!viewed){viewed=true;dl({event:'map3d_view',blank_count:st.weak.length});}
+  }
+  /* follow the quiz: every save (answer, back, restart), the result, and the language switch */
+  var _save=qSave;qSave=function(){_save();update();};
+  var _show=showResult;showResult=function(f){_show(f);update();};
+  var _lang=setLang;setLang=function(l){_lang(l);update();};
+  /* build only when the section comes near the screen */
+  if('IntersectionObserver' in window&&sec){var io=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting;})){build();io.disconnect();}},{rootMargin:'600px 0px'});io.observe(sec);}
+  else build();
+})();
+</script>
+
 
 <!-- PP LIBRARY PANEL -->
 <style>
