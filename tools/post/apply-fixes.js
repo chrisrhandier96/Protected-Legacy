@@ -9,6 +9,10 @@ const FACES = '<style id="pp-fonts">' +
   "@font-face{font-family:'Figtree';font-style:normal;font-weight:300 700;font-display:swap;src:url(/fonts/figtree-var.woff2) format('woff2')}" +
   "@font-face{font-family:'Figtree';font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/figtree-italic-400.woff2) format('woff2')}" +
   "@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500 600;font-display:swap;src:url(/fonts/cormorant-garamond-italic.woff2) format('woff2')}" +
+  /* local fallbacks sized to the web fonts' metrics (size-adjust and overrides), so the swap moves nothing (live CLS was 0.11 from the headline font) */
+  "@font-face{font-family:'Marcellus Fallback';src:local('Times New Roman'),local('TimesNewRomanPSMT'),local('Liberation Serif'),local('Tinos'),local('Noto Serif');size-adjust:113.8%;ascent-override:85.6%;descent-override:24.6%;line-gap-override:0%}" +
+  "@font-face{font-family:'Figtree Fallback';src:local('Arial'),local('ArialMT'),local('Liberation Sans'),local('Roboto'),local('Helvetica Neue');size-adjust:100.3%;ascent-override:94.7%;descent-override:24.9%;line-gap-override:0%}" +
+  "@font-face{font-family:'Cormorant Fallback';font-style:italic;src:local('Times New Roman Italic'),local('TimesNewRomanPS-ItalicMT'),local('Liberation Serif Italic'),local('Tinos Italic'),local('Noto Serif Italic');size-adjust:87.1%;ascent-override:106.1%;descent-override:32.9%;line-gap-override:0%}" +
   '.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}' +
   '</style>';
 const pre = f => `<link rel="preload" href="/fonts/${f}" as="font" type="font/woff2" crossorigin>`;
@@ -17,7 +21,9 @@ for (const f of fs.readdirSync(ROOT).filter(f => f.endsWith('.html'))) {
   const file = path.join(ROOT, f); let s = fs.readFileSync(file, 'utf8'); const before = s;
   const home = f === 'index.html' || f === 'en.html';
 
-  // 1. fonts: drop Google Fonts link + preconnects, add local @font-face + preloads
+  // 1. fonts: drop Google Fonts link + preconnects, add local @font-face + preloads; an existing block is refreshed in place
+  const pf = s.match(/<style id="pp-fonts">[\s\S]*?<\/style>/);
+  if (pf && pf[0] !== FACES) { s = s.replace(pf[0], FACES); note(f, 'fonts refreshed'); }
   if (!s.includes('id="pp-fonts"')) {
     const gf = s.match(/<link href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]*" rel="stylesheet">/);
     if (gf) {

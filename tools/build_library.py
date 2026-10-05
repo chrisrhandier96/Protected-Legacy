@@ -136,7 +136,7 @@ LOGO = ('<svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circle c
 FAVICON = open(os.path.join(ROOT, "tools", "favicon.txt"), encoding="utf-8").read().strip() if os.path.exists(os.path.join(ROOT, "tools", "favicon.txt")) else ""
 
 CSS = r"""
-:root{--verde:#14352A;--verde-oscuro:#0D241C;--verde-suave:#1E4A3A;--arena:#F5EFE3;--arena-oscura:#E7DDC7;--oro:#C29B40;--oro-claro:#D9BC72;--oro-palido:#EBD9A8;--tinta:#22271F;--humo:#6E7568;--blanco:#FDFBF6;--display:'Marcellus',serif;--accent:'Cormorant Garamond',serif;--body:'Figtree',sans-serif}
+:root{--verde:#14352A;--verde-oscuro:#0D241C;--verde-suave:#1E4A3A;--arena:#F5EFE3;--arena-oscura:#E7DDC7;--oro:#C29B40;--oro-claro:#D9BC72;--oro-palido:#EBD9A8;--tinta:#22271F;--humo:#6E7568;--blanco:#FDFBF6;--display:'Marcellus','Marcellus Fallback',serif;--accent:'Cormorant Garamond','Cormorant Fallback',serif;--body:'Figtree','Figtree Fallback',sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:var(--body);color:var(--tinta);background:var(--arena);line-height:1.7;font-size:17px}
 h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.18}a{color:inherit}
