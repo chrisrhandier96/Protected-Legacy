@@ -1,0 +1,63 @@
+{
+ "url": "https://www.protectedlegacyfl.com/en/guides/flood/",
+ "fetchTime": "2026-10-05T20:15:23.399Z",
+ "formFactor": "mobile",
+ "scores": {
+  "performance": 60,
+  "accessibility": 100,
+  "best-practices": 100,
+  "seo": 100
+ },
+ "lcp": 5617,
+ "fcp": 1855,
+ "tbt": 734,
+ "si": 2590,
+ "cls": 0,
+ "tti": 5628,
+ "weightKiB": 448,
+ "mainThreadMs": 1909,
+ "bootupMs": 1048,
+ "longTasks": [
+  {
+   "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+   "start": 4902,
+   "dur": 584
+  },
+  {
+   "url": "https://www.protectedlegacyfl.com/en/guides/flood/",
+   "start": 1045,
+   "dur": 186
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+   "start": 3335,
+   "dur": 158
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P88VGFHR",
+   "start": 3493,
+   "dur": 142
+  },
+  {
+   "url": "https://www.protectedlegacyfl.com/en/guides/flood/",
+   "start": 1267,
+   "dur": 79
+  },
+  {
+   "url": "Unattributable",
+   "start": 985,
+   "dur": 60
+  }
+ ],
+ "lcpElement": "",
+ "opps": [
+  {
+   "id": "unused-javascript",
+   "savingsMs": 630,
+   "savingsBytes": 134260
+  }
+ ],
+ "failedBP": [],
+ "consoleErrors": [],
+ "run": 3
+}

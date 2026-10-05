@@ -1,0 +1,43 @@
+{
+ "url": "https://www.protectedlegacyfl.com/en/guides/flood/",
+ "fetchTime": "2026-10-05T20:15:33.433Z",
+ "formFactor": "desktop",
+ "scores": {
+  "performance": 100,
+  "accessibility": 100,
+  "best-practices": 100,
+  "seo": 100
+ },
+ "lcp": 577,
+ "fcp": 577,
+ "tbt": 65,
+ "si": 577,
+ "cls": 0.033,
+ "tti": 1322,
+ "weightKiB": 438,
+ "mainThreadMs": 473,
+ "bootupMs": 220,
+ "longTasks": [
+  {
+   "url": "ogletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10h1",
+   "start": 1206,
+   "dur": 128
+  },
+  {
+   "url": "https://www.protectedlegacyfl.com/en/guides/flood/",
+   "start": 307,
+   "dur": 55
+  }
+ ],
+ "lcpElement": "",
+ "opps": [
+  {
+   "id": "server-response-time",
+   "savingsMs": 9,
+   "savingsBytes": 0
+  }
+ ],
+ "failedBP": [],
+ "consoleErrors": [],
+ "run": 1
+}

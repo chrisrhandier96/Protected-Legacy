@@ -93,6 +93,29 @@ The first two tasks are still the initial style and layout of the document (hero
 - Speed Index: no blur filters in the entrance, the preloader gone within 900 ms (and skipped for ad clicks, deep links and repeat views), fewer repaints.
 - CLS on live: the font fallback faces (see `baseline.md`, live-only findings) remove the 0.11 shift the headline font caused; measured locally with the font delayed 1.5 s, the flood guide went from 0.114 to 0.000.
 
-### Live (to be filled after the deploy)
+### Live, after the deploy (merge `26bc305`, Netlify published 2026-10-05)
 
-Pending Christian's yes. The live run repeats the Part A pages with the same runner; the GTM double load from Cloudflare's tag gateway is the expected live-only failure.
+Same runner and conditions as the live baseline (through the sandbox proxy, tag scripts load, collection endpoints blocked). Live phone numbers are dominated by the tag scripts and by the proxy's latency (LCP 5 to 6 s with a 1 to 2 s server round trip), so treat them as a before/after comparison under the same handicap, not as what a visitor in Florida sees.
+
+| Page | Form | Before: score / LCP / TBT / SI / CLS / weight | After |
+|---|---|---|---|
+| / | mobile | 63 / 6.1 s / 389 ms / 5.4 s / 0 / 641 KiB | 57 / 6.2 s / 530 ms / 4.9 s / 0 / 560 KiB |
+| / | desktop | 91 / 1.6 s / 56 ms / 1.8 s / 0.009 / 617 KiB | 95 / 1.4 s / 69 ms / 0.9 s / 0.007 / 532 KiB |
+| /en/ | mobile | 60 / 6.9 s / 430 ms / 5.1 s / 0 / 788 KiB | 58 / 6.0 s / 556 ms / 5.1 s / 0 / 548 KiB |
+| /en/ | desktop | 93 / 1.2 s / 29 ms / 1.9 s / 0.009 / 617 KiB | 94 / 1.5 s / 64 ms / 1.2 s / 0.014 / 532 KiB |
+| /guias/umbrella-responsabilidad/ | mobile | 83 / 1.9 s / 467 ms / 1.8 s / 0.114 / 445 KiB | 63 / 5.4 s / 576 ms / 2.8 s / 0.042 / 448 KiB |
+| /guias/umbrella-responsabilidad/ | desktop | 99 / 0.7 s / 59 ms / 0.4 s / 0.056 / 433 KiB | 100 / 0.7 s / 43 ms / 0.5 s / 0.045 / 435 KiB |
+| /en/guides/umbrella-liability/ | mobile | 64 / 5.4 s / 477 ms / 4.8 s / 0 / 445 KiB | 65 / 5.4 s / 531 ms / 2.6 s / 0 / 446 KiB |
+| /en/guides/umbrella-liability/ | desktop | 100 / 0.5 s / 45 ms / 0.4 s / 0.025 / 433 KiB | 100 / 0.6 s / 38 ms / 0.4 s / 0.019 / 435 KiB |
+| /en/guides/flood/ | mobile | 62 / 5.4 s / 536 ms / 2.8 s / 0.114 / 446 KiB | 61 / 5.6 s / 576 ms / 4.4 s / 0 / 450 KiB |
+| /en/guides/flood/ | desktop | 100 / 0.6 s / 50 ms / 0.5 s / 0.039 / 435 KiB | 100 / 0.7 s / 44 ms / 0.5 s / 0.031 / 437 KiB |
+
+What moved on live:
+
+- Weight on the home pages: 641 and 788 KiB before, 560 and 548 KiB after (the site's own bytes went from 270 to 178 KiB; the rest is Tag Manager, GA4, Google Ads and Cloudflare).
+- Desktop home: 91 and 93 before, 95 and 94 after. Desktop guides stay at 100.
+- CLS on the guides on phones: 0.114 before on the umbrella and flood guides, now 0.042 and 0. The fallback fonts did their job; the small remaining shift on the Spanish umbrella guide is the "11 min de lectura" meta line re-wrapping when Figtree arrives.
+- Phone performance scores on live are within run-to-run noise of the baseline (single runs on the same page range from 61 to 86), because the blocking time is the tag scripts' and the LCP is the proxy's; the budget rows that depend on the site's own code are the local tables above.
+- Best practices 81 on one home mobile run comes from the Google tags' third-party cookies, as in the baseline.
+
+Live checks after the deploy: every main page returns 200, `/js/hero3d.v1.js` is served with `cache-control: public, max-age=31536000, immutable`, the loader keeps the SVG in a GPU-less browser (`hero3d_ready` fallback, low-device) and renders the 3D when forced with `?3d=1`, Tag Manager loaded and consumed the event, no console errors. Live suite: 73 of 73, including "Tag Manager loads exactly once".

@@ -1,0 +1,37 @@
+{
+ "url": "https://www.protectedlegacyfl.com/en/guides/umbrella-liability/",
+ "fetchTime": "2026-10-05T20:14:41.712Z",
+ "formFactor": "desktop",
+ "scores": {
+  "performance": 100,
+  "accessibility": 100,
+  "best-practices": 100,
+  "seo": 100
+ },
+ "lcp": 552,
+ "fcp": 432,
+ "tbt": 38,
+ "si": 434,
+ "cls": 0.019,
+ "tti": 1277,
+ "weightKiB": 435,
+ "mainThreadMs": 414,
+ "bootupMs": 212,
+ "longTasks": [
+  {
+   "url": "googletagmanager.com/gtag/js?id=G-5ESNN0V2XX&cx=c&gtm=4e6a10",
+   "start": 1186,
+   "dur": 114
+  },
+  {
+   "url": "ps://www.protectedlegacyfl.com/en/guides/umbrella-liability/",
+   "start": 328,
+   "dur": 53
+  }
+ ],
+ "lcpElement": "",
+ "opps": [],
+ "failedBP": [],
+ "consoleErrors": [],
+ "run": 2
+}
