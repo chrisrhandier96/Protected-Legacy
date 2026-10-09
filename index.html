@@ -427,17 +427,8 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;p
 .gap-list li small{display:block;font-size:13.5px;color:var(--humo);margin-top:3px;line-height:1.5}
 .res-capture{background:var(--verde);border-radius:4px;padding:28px 26px;margin:26px auto 14px;max-width:560px;text-align:left}
 .rc-t{font-family:var(--display);font-size:23px;line-height:1.25;color:var(--blanco);margin-bottom:6px}
-.result .res-capture .rc-s{color:#C9D6CC;font-size:14.5px;margin:0 0 18px;max-width:none}
-.rc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-@media(max-width:560px){.rc-row{grid-template-columns:1fr}}
-.rc-f label{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-claro);margin-bottom:6px}
-.rc-f input{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:var(--blanco);border-radius:2px;font-family:var(--body);font-size:16px}
-.rc-f input:focus{outline:2px solid var(--oro);border-color:var(--oro)}
-.rc-consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:#C9D6CC;margin:4px 0 16px;line-height:1.5;cursor:pointer}
-.rc-consent input{margin-top:3px;accent-color:var(--oro);flex:none}
-.result .res-capture .rc-note{font-size:12px;color:#9FB2A6;margin:12px 0 0;max-width:none}
-.result .res-capture .rc-err{display:none;font-size:13px;color:#F2B8B8;margin:10px 0 0;max-width:none}
-.rc-go{display:block;width:100%}
+.result .res-capture .rc-note{font-size:12px;color:#9FB2A6;margin:12px 0 0;max-width:none}.rc-more{display:inline-block;margin-top:16px;padding:4px 0;color:var(--oro-claro);font-size:14.5px;font-weight:600;text-decoration:underline;text-underline-offset:3px}.rc-more:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+
 .res-alt{display:inline-block;margin-top:4px;font-size:14px;color:var(--verde);text-decoration:underline;text-underline-offset:3px}
 
 .eyebrow::before{transition:width .4s ease}
@@ -997,10 +988,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <ul id="gapItems"></ul>
         </div>
         <div class="res-capture" id="resCapture">
-          <div class="rc-t" data-es="Reciba su mapa con un comentario personal" data-en="Get your map with a personal note">Reciba su mapa con un comentario personal</div>
-          <p class="rc-s" data-es="Sus respuestas ya quedaron guardadas. Escríbame en el formulario de abajo y llegarán adjuntas a su mensaje, junto con lo que yo revisaría primero en sus zonas en blanco." data-en="Your answers are already saved. Write to me in the form below and they will arrive attached to your message, along with what I would review first in your blank zones.">Sus respuestas ya quedaron guardadas. Escríbame en el formulario de abajo y llegarán adjuntas a su mensaje, junto con lo que yo revisaría primero en sus zonas en blanco.</p>
-          <a class="btn btn-oro rc-go" href="#contacto" id="rcGo" data-es="Continuar al formulario &darr;" data-en="Continue to the form &darr;">Continuar al formulario &darr;</a>
-          <p class="rc-note" data-es="Nada sale de su navegador hasta que usted envíe el formulario." data-en="Nothing leaves your browser until you send the form.">Nada sale de su navegador hasta que usted envíe el formulario.</p>
+          <div class="rc-t" id="miniT" data-es="Le envío su mapa con una nota personal" data-en="I will send you your map with a personal note">Le envío su mapa con una nota personal</div>
+          <div id="miniSlot"></div>
+          <a class="rc-more" href="#contacto" id="rcGo" data-es="¿Prefiere contarme más?" data-en="Prefer to tell me more?">¿Prefiere contarme más?</a>
+          <p class="rc-note" data-es="Nada sale de su navegador hasta que usted toque el botón." data-en="Nothing leaves your browser until you tap the button.">Nada sale de su navegador hasta que usted toque el botón.</p>
         </div>
         <button class="restart" onclick="restartQuiz()" data-es="Volver a empezar" data-en="Start over">Volver a empezar</button>
       </div>
@@ -1032,7 +1023,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <input type="hidden" name="campana" id="f-camp" value="">
         <input type="hidden" name="termino" id="f-term" value="">
         <input type="hidden" name="gclid" id="f-gclid" value="">
-<input type="hidden" name="telefono" id="f-tel-reg" value="">
+<input type="hidden" name="form_id" id="f-form-id" value="long">
+<input type="hidden" name="nivel_conciencia" id="f-level" value="">
 <input type="hidden" name="pagina_entrada" id="f-landing" value="">
         <input type="hidden" name="autoevaluacion_puntaje" id="f-quiz-score" value="">
         <textarea name="autoevaluacion_respuestas" id="f-quiz-answers" style="display:none" aria-hidden="true" tabindex="-1"></textarea>
@@ -1041,14 +1033,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div id="formFields">
         <div class="two-col">
           <div class="field"><label for="f-nombre" data-es="Nombre" data-en="Name">Nombre</label><input id="f-nombre" name="nombre" type="text" autocomplete="name"></div>
-          <div class="field"><label for="f-email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="f-tel" data-es="Teléfono o WhatsApp <span class=&quot;opt&quot;>(opcional)</span>" data-en="Phone or WhatsApp <span class=&quot;opt&quot;>(optional)</span>">Teléfono o WhatsApp <span class="opt">(opcional)</span></label><input id="f-tel" name="telefono" type="tel" inputmode="tel" autocomplete="tel"></div>
         </div>
         <div class="two-col">
+          <div class="field"><label for="f-email" data-es="Correo electrónico <span class=&quot;opt&quot;>(si no dejó teléfono)</span>" data-en="Email <span class=&quot;opt&quot;>(if you left no phone)</span>">Correo electrónico <span class="opt">(si no dejó teléfono)</span></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
           <div class="field"><label for="f-ciudad" data-es="Ciudad (Florida)" data-en="City (Florida)">Ciudad (Florida)</label><input id="f-ciudad" name="ciudad" type="text" placeholder="Coral Gables, Weston, Naples, Tampa…"></div>
-          <div class="field"><label for="f-idioma" data-es="Idioma preferido" data-en="Preferred language">Idioma preferido</label>
+        </div>
+        <div class="field"><label for="f-idioma" data-es="Idioma preferido" data-en="Preferred language">Idioma preferido</label>
             <select id="f-idioma" name="idioma"><option data-es="Español" data-en="Spanish">Español</option><option data-es="English" data-en="English">English</option><option data-es="Ambos" data-en="Both">Ambos</option></select>
           </div>
-        </div>
         <div class="field"><label for="f-tema" data-es="Tema de interés" data-en="Topic of interest">Tema de interés</label>
           <select id="f-tema" name="tema">
             <option data-es="Residencias y huracanes" data-en="Residences and hurricanes">Residencias y huracanes</option>
@@ -1409,22 +1402,32 @@ if(picks.length>=12){finished=true;showResult(true);}else renderQuestion();
 /* ===== ENVIO DE LEADS =====
    Ambos formularios (contacto y resultado de la autoevaluacion) llegan al mismo
    formulario "contacto" de Netlify. El evento generate_lead va al dataLayer para GTM. */
-function sendLead(params,source,onFail){
-  const P=window.PP||{};
+function sendLead(params,source,onFail,opts){
+  const P=window.PP||{};opts=opts||{};
   const url=P.FORM_ENDPOINT||'/';
   fetch(url,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:params.toString()})
     .then(function(r){
       if(!r||!r.ok)throw new Error('send');
+      const push=Object.assign({event:'generate_lead',lead_source:source,language:lang,quiz_score:params.get('autoevaluacion_puntaje')||''},opts.push||{});
+      if(opts.onOk){dl(push);opts.onOk();return;}
       let gone=false;const go=function(){if(gone)return;gone=true;window.location.href='/gracias.html?lang='+lang;};
-      dl({event:'generate_lead',lead_source:source,language:lang,quiz_score:params.get('autoevaluacion_puntaje')||'',eventCallback:go,eventTimeout:1500});
+      push.eventCallback=go;push.eventTimeout=1500;dl(push);
       try{if(window.gtag&&P.ADS_ID&&P.ADS_LABEL)gtag('event','conversion',{send_to:P.ADS_ID+'/'+P.ADS_LABEL});}catch(x){}
       setTimeout(go,1700);
     }).catch(onFail);
 }
-function validLead(n,e,c){
-  if(!n||!e){alert(lang==='es'?'Por favor complete su nombre y correo.':'Please fill in your name and email.');return false;}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e)){alert(lang==='es'?'Por favor verifique su correo electrónico.':'Please check your email address.');return false;}
-  if(!c){alert(lang==='es'?'Por favor marque la casilla de autorización.':'Please check the authorization box.');return false;}
+/* phone counts when it has at least 7 digits */
+function telOk(t){return t.replace(/\D/g,'').length>=7;}
+function mailOk(e){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);}
+/* awareness level from the quiz score: the same bands as the result titles */
+function awareness(){if(!finished)return {key:'',es:''};const p=qStats().pct;
+  return p>=75?{key:'high',es:'Guardián del patrimonio'}:p>=45?{key:'medium',es:'Constructor consciente'}:{key:'starting',es:'El momento de empezar es hoy'};}
+function validLead(n,e,c,t){
+  const es=lang==='es';
+  if(!n||(!e&&!t)){alert(es?'Por favor escriba su nombre y su teléfono o correo.':'Please fill in your name and your phone or email.');return false;}
+  if(t&&!telOk(t)){alert(es?'Por favor verifique su teléfono.':'Please check your phone number.');return false;}
+  if(e&&!mailOk(e)){alert(es?'Por favor verifique su correo electrónico.':'Please check your email address.');return false;}
+  if(!c){alert(es?'Por favor marque la casilla de autorización.':'Please check the authorization box.');return false;}
   return true;
 }
 function ppSubmit(ev){
@@ -1432,20 +1435,22 @@ function ppSubmit(ev){
   const P=window.PP||{};
   const n=document.getElementById('f-nombre').value.trim();
   const e=document.getElementById('f-email').value.trim();
-  if(!validLead(n,e,document.getElementById('f-consent').checked))return false;
+  const t=document.getElementById('f-tel').value.trim();
+  if(!validLead(n,e,document.getElementById('f-consent').checked,t))return false;
   const form=document.getElementById('ppForm'),btn=document.getElementById('ppSend');
   document.getElementById('f-lang-site').value=lang;
   const qp=window.ppNoQuiz?null:quizPayload();
   document.getElementById('f-quiz-score').value=qp?qp.score:'';
   document.getElementById('f-quiz-answers').value=qp?qp.answers:'';
   document.getElementById('f-quiz-gaps').value=qp?qp.gaps:'';
+  document.getElementById('f-form-id').value='long';document.getElementById('f-level').value=qp?awareness().es:'';
   btn.disabled=true;
   const perfil=[...document.querySelectorAll('input[name="perfil"]:checked')].map(x=>x.value).join(', ');
   const fd=new FormData(form);fd.set('perfil',perfil);
   const fail=()=>{btn.disabled=false;const err=document.getElementById('formErr');err.style.display='block';
     if(P.CONTACT_EMAIL&&P.CONTACT_EMAIL.indexOf('REEMPLAZAR')<0&&err.innerHTML.indexOf('mailto:')<0){
       err.innerHTML=err.innerHTML+' <a href="mailto:'+P.CONTACT_EMAIL+'?subject='+encodeURIComponent('Patrimonio Protegido')+'" data-track="email" style="color:var(--oro)">'+P.CONTACT_EMAIL+'</a>';}};
-  sendLead(new URLSearchParams(fd),qp?'formulario_con_mapa':'formulario',fail);
+  sendLead(new URLSearchParams(fd),qp?'formulario_con_mapa':'formulario',fail,{push:{form_id:'long'}});
   return false;
 }
 document.getElementById('ppForm').addEventListener('submit',ppSubmit);
@@ -2314,5 +2319,6 @@ if(document.readyState==='complete')after();else addEventListener('load',after);
 })();
 </script>
 <!-- /PP LIBRARY PANEL -->
+<script src="/js/lead.v1.js" defer></script>
 </body>
 </html>
