@@ -664,7 +664,8 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     // 6. guide phone bar: Self-check, Call, Write to me; the call link shows its word and reports phone_click from the bar (click prevented: nothing dials)
     const bar = [];
     for (const [u, word] of [['/guias/umbrella-responsabilidad/', 'Llamar'], ['/en/guides/umbrella-liability/', 'Call'], ['/guias/inundacion/', 'Llamar'], ['/en/guides/flood/', 'Call']]) {
-      const p = await freshPage(MOBILE); await p.goto(BASE + u); await settle(p);
+      const p = await freshPage(MOBILE); await POST_ROUTES(p, []); // Google tags blocked: the check needs only the site's own listener
+      await p.goto(BASE + u); await settle(p);
       await p.evaluate(() => { const c = document.querySelector('.topcta'); window.scrollTo({ top: c.getBoundingClientRect().bottom + scrollY + 40, behavior: 'instant' }); }); await p.waitForTimeout(700);
       const r = await p.evaluate(() => { window.addEventListener('click', e => e.preventDefault());
         const b = document.getElementById('gbar'), a = b.querySelector('.gb-c'); const before = dataLayer.length; a.click();

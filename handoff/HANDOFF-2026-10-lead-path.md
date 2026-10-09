@@ -14,7 +14,7 @@ Screenshots, speed numbers and the local suite log are in `handoff/lead-path-202
   - A visible "Teléfono o WhatsApp (opcional)" / "Phone or WhatsApp (optional)" field above email. It replaces the hidden `telefono` input, so Netlify keeps the field.
   - Email is required only when phone is blank.
   - New hidden fields `form_id` (`long`) and `nivel_conciencia`. Netlify only stores fields that exist in the static form, which is why they are in `#ppForm`.
-  - Consent line unchanged.
+  - Consent line now reads "por correo electrónico o por teléfono" / "by email or phone", the same as the guide forms (approved by Christian on Oct 9; the work order had said unchanged).
 - **Part 3, the 28 guides.**
   - Phone bar order is now Autoevaluación / Self-check, Llamar / Call (phone icon plus the word), Escríbame / Write to me. The call link stays `tel:+17866712171`.
   - The guide click listener reports the bar's call as `phone_click` with `link_location: 'barra_movil'`.
