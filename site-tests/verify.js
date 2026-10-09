@@ -527,7 +527,9 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
           if (!bq || path(bq) !== home) e.push('bar quiz link wrong or missing');
           if (!bar.querySelector(`a[data-cta="guide_bar_write_${k}"]`)) e.push('bar write link missing');
           const tel = bar.querySelectorAll('a[href="tel:+17866712171"][data-track="llamada"]');
-          if (tel.length !== 1 || !tel[0].getAttribute('aria-label')) e.push(`bar call links: ${tel.length}, aria-label ${tel[0] ? tel[0].getAttribute('aria-label') : '-'}`);
+          const word = en ? 'Call' : 'Llamar', order = [...bar.children].map(a => a.className).join(',');
+          if (tel.length !== 1 || tel[0].textContent.trim() !== word) e.push(`bar call links: ${tel.length}, label "${tel[0] ? tel[0].textContent.trim() : '-'}" (want ${word})`);
+          if (order !== 'gb-q,gb-c,gb-w') e.push(`bar order ${order} (want self-check, call, write)`);
         }
         if (!mid || !mid.querySelector(`a[data-cta="guide_mid_quiz_${k}"]`) || !mid.querySelector(`a[data-cta="guide_mid_${k}"]`)) e.push('midnote links missing');
         if (document.documentElement.outerHTML.includes('—')) e.push('em dash in page');
@@ -573,6 +575,121 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     rec('GuideCTA', 'dataLayer: guide_scroll 25/50/75 exactly once each; each new CTA pushes one cta_click', dl.length === 0, dl.length ? dl.join(' | ') : 'ES and EN OK');
   }
 
+
+  /* ================= LEAD PATH (work order 2026-10-08): two-field form at the result, phone in the long form, guide bar ================= */
+  if (want('leadpath')) {
+    const DONE_PICKS = '[2,1,0,-1,2,1,0,-1,2,1,0,-1]'; // a finished self-check, preloaded so each test starts on the result screen
+    const POST_ROUTES = async (p, store, delay = 0) => p.route('**/*', async rt => {
+      const q = rt.request(), u = new URL(q.url());
+      if (q.method() === 'POST') { if (u.pathname === '/') store.push(q.postData() || ''); if (delay) await new Promise(r => setTimeout(r, delay)); return rt.fulfill({ status: 200, body: 'ok' }); } // answered in the browser: nothing reaches Netlify
+      if (/google|doubleclick|googleadservices/.test(u.host)) return rt.abort();
+      return rt.continue();
+    });
+    const T = {
+      es: { url: '/', h: 'Le envío su mapa con una nota personal', name: 'Nombre', tel: 'Teléfono o WhatsApp', swap: 'o correo', send: 'Enviarme mi mapa',
+        line: 'Sin costo y sin compromiso. Uso educativo; no es asesoría de seguros.', done: 'Listo. Le escribo hoy mismo.', more: '¿Prefiere contarme más?', none: 'Escriba su teléfono o su correo, por favor.' },
+      en: { url: '/en/', h: 'I will send you your map with a personal note', name: 'Name', tel: 'Phone or WhatsApp', swap: 'or email', send: 'Send me my map',
+        line: 'No cost, no obligation. Educational use; not insurance advice.', done: 'Done. I will write to you today.', more: 'Prefer to tell me more?', none: 'Please type your phone or your email.' },
+    };
+    const openResult = async (lang, query = '') => {
+      const p = await freshPage(MOBILE); await p.addInitScript(v => { try { localStorage.setItem('pp.quiz', v); } catch (e) {} }, DONE_PICKS);
+      const store = []; await POST_ROUTES(p, store, 400); p.posts = store;
+      await p.goto(BASE + T[lang].url + query + '#mapa'); await settle(p);
+      await p.locator('#resCapture').scrollIntoViewIfNeeded(); await p.waitForTimeout(500); return p;
+    };
+    const leads = p => p.evaluate(() => (window.dataLayer || []).filter(o => o && o.event === 'generate_lead').map(o => { const c = { ...o }; delete c.eventCallback; delete c['gtm.uniqueEventId']; return c; }));
+    let sample = null;
+    for (const lang of ['es', 'en']) {
+      const L = T[lang];
+      // 1. the result screen shows the two-field form, in the right language, readable at 390 px, tab order name -> phone -> swap -> send
+      { const p = await openResult(lang);
+        const r = await p.evaluate(() => { const t = s => (document.querySelector(s) || {}).textContent || '', vis = s => { const e = document.querySelector(s); return !!e && !e.hidden && e.offsetParent !== null; };
+          return { h: t('#miniT').trim(), name: t('label[for="m-nombre"]').trim(), tel: t('label[for="m-tel"]').trim(), swap: t('#m-swap').trim(), send: t('#m-send').trim(), line: t('.rc-line').trim(), more: t('#rcGo').trim(),
+            vis: vis('#miniForm') && vis('#m-nombre') && vis('#m-tel') && !vis('#m-email') && vis('#rcGo'), over: document.documentElement.scrollWidth > innerWidth,
+            above: document.getElementById('miniForm').getBoundingClientRect().top < document.getElementById('rcGo').getBoundingClientRect().top }; });
+        await p.focus('#m-nombre'); const order = [];
+        for (let i = 0; i < 3; i++) { await p.keyboard.press('Tab'); order.push(await p.evaluate(() => document.activeElement.id)); }
+        await p.locator('#resCapture').screenshot({ path: path.join(OUT, 'shots', `lead-mini-${lang}-390.png`) });
+        await p.screenshot({ path: path.join(OUT, 'shots', `lead-result-${lang}-390.png`) });
+        const ok = r.vis && !r.over && r.above && r.h === L.h && r.name === L.name && r.tel === L.tel && r.swap === L.swap && r.send === L.send && r.line === L.line && r.more === L.more && order.join(',') === 'm-tel,m-swap,m-send' && !p.errors.length;
+        rec('LeadPath', `${L.url} result screen: two-field form, ${lang.toUpperCase()} labels, 390 px, tab order`, ok,
+          `heading "${r.h}", labels ${r.name}/${r.tel}, button "${r.send}", line ok=${r.line === L.line}, link "${r.more}" below=${r.above}, overflow=${r.over}, tab ${order.join('>')}` + (p.errors.length ? '; ' + p.errors.join('; ') : ''));
+        await p.ctx.close(); }
+      // 2. neither phone nor email: blocked with a plain message, nothing sent
+      { const p = await openResult(lang);
+        await p.fill('#m-nombre', 'Prueba'); await p.click('#m-send'); await p.waitForTimeout(900);
+        const msg = (await p.textContent('#m-err')).trim(), shown = await p.isVisible('#m-err'), n = (await leads(p)).length;
+        rec('LeadPath', `${L.url} mini form with no phone and no email is blocked with a plain message`, shown && msg === L.none && p.posts.length === 0 && n === 0, `"${msg}", posts ${p.posts.length}, generate_lead ${n}`);
+        await p.ctx.close(); }
+      // 3. phone and no email: one POST to the same Netlify form with the hidden fields, one generate_lead (form_id mini), in-page success, long form collapses
+      { const p = await openResult(lang, '?gclid=TESTGCLID&utm_source=google');
+        await p.fill('#m-nombre', 'Test Automatizado'); await p.fill('#m-tel', '305 555 0100');
+        await p.click('#m-send'); await p.click('#m-send', { force: true }).catch(() => {}); // a double tap must not send twice
+        await p.waitForTimeout(2200);
+        const f = new URLSearchParams(p.posts[0] || ''), L2 = await leads(p), url = new URL(p.url());
+        const st = await p.evaluate(() => ({ done: !document.getElementById('miniDone').hidden ? document.getElementById('miniDone').textContent.trim() : '', mini: document.getElementById('miniForm').hidden,
+          long: document.getElementById('ppForm').hidden && document.getElementById('ppForm').offsetParent === null && document.getElementById('rcGo').offsetParent === null, longDone: (document.getElementById('formDone') || {}).textContent || '' }));
+        const need = ['form-name', 'form_id', 'nombre', 'telefono', 'idioma_sitio', 'autoevaluacion_puntaje', 'autoevaluacion_respuestas', 'autoevaluacion_zonas_en_blanco', 'nivel_conciencia', 'gclid', 'origen', 'pagina_entrada'];
+        const miss = need.filter(k => !f.get(k)); const g = L2[0] || {};
+        const ok = p.posts.length === 1 && !miss.length && f.get('form-name') === 'contacto' && f.get('form_id') === 'mini' && f.get('email') === '' && f.get('idioma_sitio') === lang && f.get('gclid') === 'TESTGCLID'
+          && L2.length === 1 && g.form_id === 'mini' && g.lang === lang && ['high', 'medium', 'starting'].includes(g.awareness_level) && Number.isInteger(g.blank_count)
+          && st.done === L.done && st.mini && st.long && st.longDone === L.done && url.pathname === T[lang].url && !p.errors.length;
+        rec('LeadPath', `${L.url} phone, no email: sends once, generate_lead once (form_id mini), "${L.done}", long form collapses`, ok,
+          `posts ${p.posts.length}, missing [${miss}], form_id=${f.get('form_id')}, generate_lead ${L2.length} ${JSON.stringify(g)}, done "${st.done}", mini hidden ${st.mini}, long hidden ${st.long}, stayed on ${url.pathname}` + (p.errors.length ? '; ' + p.errors.join('; ') : ''));
+        await p.locator('#resCapture').screenshot({ path: path.join(OUT, 'shots', `lead-mini-done-${lang}-390.png`) });
+        if (lang === 'es') sample = g;
+        await p.ctx.close(); }
+      // 4. the "or email" switch: email only also works
+      { const p = await openResult(lang);
+        await p.fill('#m-nombre', 'Test Automatizado'); await p.click('#m-swap'); const sw = (await p.textContent('#m-swap')).trim();
+        await p.fill('#m-email', 'test@example.com'); await p.click('#m-send'); await p.waitForTimeout(1500);
+        const f = new URLSearchParams(p.posts[0] || ''), n = (await leads(p)).length;
+        rec('LeadPath', `${L.url} "${L.swap}" switch: email only sends once`, p.posts.length === 1 && f.get('email') === 'test@example.com' && f.get('telefono') === '' && n === 1 && sw === (lang === 'es' ? 'o teléfono' : 'or phone'),
+          `swap now "${sw}", posts ${p.posts.length}, email=${f.get('email')}, generate_lead ${n}`);
+        await p.ctx.close(); }
+      // 5. long form: phone without email is accepted (generate_lead form_id long, thank-you page); neither is blocked
+      { const p = await freshPage(); const store = []; await POST_ROUTES(p, store); const alerts = []; p.on('dialog', d => { alerts.push(d.message()); d.dismiss().catch(() => {}); });
+        await p.goto(BASE + T[lang].url + '#contacto'); await settle(p);
+        const lab = (await p.textContent('label[for="f-tel"]')).trim(), telFirst = await p.evaluate(() => document.getElementById('f-tel').compareDocumentPosition(document.getElementById('f-email')) & Node.DOCUMENT_POSITION_FOLLOWING);
+        await p.fill('#f-nombre', 'Test Automatizado'); await p.check('#f-consent'); await p.click('#ppSend'); await p.waitForTimeout(600);
+        const blocked = store.length === 0 && alerts.length === 1;
+        await p.fill('#f-tel', '3055550100'); await p.click('#ppSend'); await p.waitForTimeout(2600);
+        const f = new URLSearchParams(store[0] || ''), end = new URL(p.url()).pathname;
+        rec('LeadPath', `${L.url} long form: optional phone above email; phone only is enough; neither is blocked`, lab.startsWith(L.tel) && !!telFirst && blocked && store.length === 1 && f.get('telefono') === '3055550100' && f.get('email') === '' && f.get('form_id') === 'long' && end === '/gracias.html',
+          `label "${lab}", phone before email ${!!telFirst}, blocked ${blocked} ("${alerts[0] || ''}"), posts ${store.length}, form_id=${f.get('form_id')}, landed ${end}`);
+        await p.ctx.close(); }
+    }
+    if (sample) { fs.writeFileSync(path.join(OUT, 'lead-mini-datalayer.json'), JSON.stringify(sample, null, 1)); rec('LeadPath', 'Sample mini-form dataLayer push saved', true, JSON.stringify(sample)); }
+
+    // 6. guide phone bar: Self-check, Call, Write to me; the call link shows its word and reports phone_click from the bar (click prevented: nothing dials)
+    const bar = [];
+    for (const [u, word] of [['/guias/umbrella-responsabilidad/', 'Llamar'], ['/en/guides/umbrella-liability/', 'Call'], ['/guias/inundacion/', 'Llamar'], ['/en/guides/flood/', 'Call']]) {
+      const p = await freshPage(MOBILE); await POST_ROUTES(p, []); // Google tags blocked: the check needs only the site's own listener
+      await p.goto(BASE + u); await settle(p);
+      await p.evaluate(() => { const c = document.querySelector('.topcta'); window.scrollTo({ top: c.getBoundingClientRect().bottom + scrollY + 40, behavior: 'instant' }); }); await p.waitForTimeout(700);
+      const r = await p.evaluate(() => { window.addEventListener('click', e => e.preventDefault());
+        const b = document.getElementById('gbar'), a = b.querySelector('.gb-c'); const before = dataLayer.length; a.click();
+        const ev = dataLayer.slice(before).find(o => o && o.event === 'phone_click');
+        return { on: b.classList.contains('on'), order: [...b.children].map(x => x.textContent.trim()).join(' | '), word: a.textContent.trim(), href: a.getAttribute('href'), ev: ev ? ev.link_location : '',
+          clip: [...b.children].some(x => x.scrollWidth > x.clientWidth + 1) }; });
+      if (u === '/guias/umbrella-responsabilidad/' || u === '/en/guides/umbrella-liability/') await p.screenshot({ path: path.join(OUT, 'shots', `lead-guide-bar-${u.startsWith('/en/') ? 'en' : 'es'}-390.png`) });
+      if (!(r.on && r.word === word && r.href === 'tel:+17866712171' && r.ev === 'barra_movil' && !r.clip && r.order.split(' | ')[1] === word)) bar.push(`${u}: ${JSON.stringify(r)}`);
+      await p.ctx.close();
+    }
+    rec('LeadPath', 'Guide phone bar: Self-check, Call, Write to me; Call labelled; phone_click from barra_movil; nothing clipped', bar.length === 0, bar.length ? bar.join(' | ') : '4 guides OK');
+
+    // 7. copy: Spanish accents intact, no em dash, no pressure words in the new strings
+    const js = fs.readFileSync(path.join(__dirname, '..', 'js', 'lead.v1.js'), 'utf8'); // the short form's strings live in the script
+    const src = { es: fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8') + js, en: fs.readFileSync(path.join(__dirname, '..', 'en.html'), 'utf8') + js };
+    const accents = ['Le envío su mapa con una nota personal', 'Teléfono o WhatsApp', 'no es asesoría de seguros', '¿Prefiere contarme más?', 'si no dejó teléfono'];
+    const miss = Object.entries(src).flatMap(([k, s]) => accents.filter(a => !s.includes(a)).map(a => `${k}: ${a}`));
+    const BAN = /—|\bcall now\b|llame ya|cotice ya|get a quote today|\bguarantee|garantiz|\bbest price|\bcheap|barat[oa]|\burgent|\burgente|last chance|última oportunidad|\blimited time/i;
+    // the new pieces only (the whole-site sales-phrase scan lives in the "expansion" group)
+    const pieces = s => [s.slice(s.indexOf('id="resCapture"'), s.indexOf('class="restart"')), s.slice(s.indexOf('<label for="f-tel"'), s.indexOf('<label for="f-ciudad"')),
+      js].join('\n');
+    const ban = Object.entries(src).filter(([, s]) => BAN.test(pieces(s)) || pieces(s).length < 2000).map(([k, s]) => `${k}: ${(pieces(s).match(BAN) || ['(new pieces not found)'])[0]}`);
+    rec('LeadPath', 'New copy: Spanish accents intact, no em dash, no pressure or price words', !miss.length && !ban.length, (miss.length ? 'missing ' + miss.join(', ') : 'accents OK') + (ban.length ? '; banned ' + ban.join(', ') : '; scan clean'));
+  }
 
   /* ================= 3D (work order 2026-10): hero, map, layers figures ================= */
   if (want('three')) {

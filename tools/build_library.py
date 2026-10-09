@@ -168,7 +168,7 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 @media(max-width:980px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
 /* guides on phones: a contact bar pinned to the bottom once the reader starts scrolling */
 .gbar{display:none}
-@media(max-width:980px){.gbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:900;display:flex;gap:10px;transform:translateY(140%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s}.gbar.on{transform:none;visibility:visible;transition:transform .3s ease}.gbar{gap:8px}.gbar a{display:flex;align-items:center;justify-content:center;height:50px;padding:0 10px;border-radius:99px;font:600 14px/1 var(--body);letter-spacing:.02em;white-space:nowrap;text-decoration:none;box-shadow:0 12px 30px -10px rgba(13,36,28,.55)}.gbar .gb-q{flex:1.25 1 0;min-width:0;background:var(--oro);color:var(--verde-oscuro)}.gbar .gb-w{flex:1 1 0;min-width:0;background:var(--verde);color:var(--blanco);border:1px solid rgba(194,155,64,.6)}.gbar .gb-c{flex:0 0 50px;width:50px;padding:0;background:var(--verde-oscuro);color:var(--oro-claro);border:1px solid rgba(194,155,64,.6)}body[data-type="guide"] footer{padding-bottom:84px}}
+@media(max-width:980px){.gbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:900;display:flex;gap:10px;transform:translateY(140%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s}.gbar.on{transform:none;visibility:visible;transition:transform .3s ease}.gbar{gap:8px}.gbar a{display:flex;align-items:center;justify-content:center;height:50px;padding:0 10px;border-radius:99px;font:600 14px/1 var(--body);letter-spacing:.02em;white-space:nowrap;text-decoration:none;box-shadow:0 12px 30px -10px rgba(13,36,28,.55)}.gbar .gb-q{flex:1.25 1 0;min-width:0;background:var(--oro);color:var(--verde-oscuro)}.gbar .gb-w{flex:1 1 0;min-width:0;background:var(--verde);color:var(--blanco);border:1px solid rgba(194,155,64,.6)}.gbar .gb-c{flex:.9 1 0;min-width:0;gap:6px;background:var(--verde-oscuro);color:var(--oro-claro);border:1px solid rgba(194,155,64,.6)}.gbar .gb-c svg{flex:none}body[data-type="guide"] footer{padding-bottom:84px}}
 @media(prefers-reduced-motion:reduce){.gbar,.gbar.on{transition:none}}
 .toc{position:sticky;top:88px;align-self:start;font-size:14px}
 .toc a.toc-cta,.toc a.toc-cta:hover{color:var(--verde-oscuro)!important;border:0}
@@ -290,7 +290,7 @@ function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.que
  c.addEventListener('pointermove',function(e){x=e.pageX;y=e.pageY;if(!r)r=requestAnimationFrame(function(){r=null;if(!b)return;var nx=(x-b.l)/b.w-.5,ny=(y-b.t)/b.h-.5;c.style.transform='perspective(900px) rotateX('+(-ny*8).toFixed(2)+'deg) rotateY('+(nx*8).toFixed(2)+'deg) translateY(-4px)';c.style.setProperty('--la',(Math.atan2(nx,-ny)*180/Math.PI+180).toFixed(0)+'deg');});});
  c.addEventListener('pointerleave',function(){b=null;c.style.transform='';});});
  /* contact links: same dataLayer format as the homepage (phone_click for calls/texts, contact_click for LinkedIn/email) */
- document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track'),o={event:(m==='linkedin'||m==='email')?'contact_click':'phone_click',contact_method:m,link_location:a.closest('footer')?'pie':'contenido',page_path:location.pathname,page_type:document.body.getAttribute('data-type')||'',language:document.documentElement.lang};try{window.dataLayer=window.dataLayer||[];dataLayer.push(o);}catch(x){}});
+ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track'),o={event:(m==='linkedin'||m==='email')?'contact_click':'phone_click',contact_method:m,link_location:a.closest('#gbar')?'barra_movil':(a.closest('footer')?'pie':'contenido'),page_path:location.pathname,page_type:document.body.getAttribute('data-type')||'',language:document.documentElement.lang};try{window.dataLayer=window.dataLayer||[];dataLayer.push(o);}catch(x){}});
 })();
 """
 
@@ -392,7 +392,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 def write(path, content):
     fp = os.path.join(ROOT, path.strip("/"), "index.html")
     os.makedirs(os.path.dirname(fp), exist_ok=True)
-    open(fp, "w", encoding="utf-8").write(tag_contacts(content))
+    open(fp, "w", encoding="utf-8", newline="\n").write(tag_contacts(content))  # LF on every OS
     return fp
 
 def crumbs(l, items):
@@ -548,7 +548,7 @@ for k in ORDER:
   </article>
 </div>
 <section class="band alt"><div class="wrap"><h2 class="sec">{t['related']}</h2><div class="cards">{rel_cards}</div></div></section>
-<div class="gbar no-print" id="gbar" role="region" aria-label="{t['bar_label']}"><a class="gb-q" href="{p_home(l)}#mapa" data-cta="guide_bar_quiz_{k}">{t['bar_quiz']}</a><a class="gb-w" href="{tema}" data-cta="guide_bar_write_{k}">{t['bar_write']}</a><a class="gb-c" href="tel:+17866712171" data-track="llamada" aria-label="{t['bar_call']}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg></a></div>
+<div class="gbar no-print" id="gbar" role="region" aria-label="{t['bar_label']}"><a class="gb-q" href="{p_home(l)}#mapa" data-cta="guide_bar_quiz_{k}">{t['bar_quiz']}</a><a class="gb-c" href="tel:+17866712171" data-track="llamada"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg><span>{t['bar_call']}</span></a><a class="gb-w" href="{tema}" data-cta="guide_bar_write_{k}">{t['bar_write']}</a></div>
 """
         ld = [
             {"@context": "https://schema.org", "@type": "Article", "headline": plain(c["h1"])[:110], "description": c["meta"],

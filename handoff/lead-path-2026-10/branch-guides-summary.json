@@ -1,0 +1,46 @@
+[
+ {
+  "page": "/guias/umbrella-responsabilidad/",
+  "perf": 100,
+  "a11y": 100,
+  "lcp": 1533,
+  "tbt": 6,
+  "si": 1121,
+  "cls": 0,
+  "kib": 77,
+  "all": "99/100/100"
+ },
+ {
+  "page": "/en/guides/umbrella-liability/",
+  "perf": 99,
+  "a11y": 100,
+  "lcp": 1533,
+  "tbt": 119,
+  "si": 1009,
+  "cls": 0,
+  "kib": 77,
+  "all": "99/99/100"
+ },
+ {
+  "page": "/guias/inundacion/",
+  "perf": 100,
+  "a11y": 100,
+  "lcp": 1534,
+  "tbt": 50,
+  "si": 952,
+  "cls": 0,
+  "kib": 80,
+  "all": "99/100/100"
+ },
+ {
+  "page": "/en/guides/flood/",
+  "perf": 100,
+  "a11y": 100,
+  "lcp": 1533,
+  "tbt": 47,
+  "si": 957,
+  "cls": 0,
+  "kib": 79,
+  "all": "99/100/100"
+ }
+]
