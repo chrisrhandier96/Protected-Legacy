@@ -1,0 +1,87 @@
+PASS [Pages] Every sitemap <loc> returns 200 :: 41 URLs
+PASS [Pages] Homepage title starts "Patrimonio Protegido | Christian R. González" :: title="Patrimonio Protegido | Christian R. González · Seguros en Florida" h1="Su familia construyó algo Extraordinario. Aprenda a proteger"
+PASS [Pages] /en/ is the English homepage :: lang=en path=/en/ h1="Your family built something Extraordinary. Learn how to prot"
+PASS [Pages] /guias/inundacion/ shows the flood guide :: status=200 h1="Inundación y marejada ciclónica: cómo funciona el seguro de inundación en Florida"
+PASS [Pages] /en/guides/flood/ shows the flood guide :: status=200 h1="Flood and storm surge: how flood insurance works in Florida"
+PASS [Pages] /guias/inundacion (no slash) redirects to /guias/inundacion/ :: HTTP 200; browser ends at /guias/inundacion/
+PASS [Pages] /aut.json, /build_library.py, /BRIEF.md not 200 :: /aut.json=404 /build_library.py=404 /BRIEF.md=404
+FAIL [Pages] (extra) all 16 stray files + deploy.md + netlify.toml not 200 :: served: /netlify.toml
+PASS [Pages] Unknown URL shows the bilingual 404 page (status 404, right language) :: ES and EN OK
+PASS [Pages] Crawl: every internal link resolves (no 404) :: 41 pages, 41 unique URLs
+PASS [Pages] Crawl: every #anchor exists on its target page :: 551 unique anchors
+PASS [Pages] Every page contains GTM-P88VGFHR :: 41 pages; container loaded on 41
+PASS [Pages] No JavaScript errors on any page :: 41 pages clean
+PASS [Logo] Every image on every page loads; CG crest shown on every page :: 41 pages, crest images per page: 2/1
+PASS [Logo] Favicons / home-screen icon resolve on every page :: /img/favicon-32.png, /img/favicon-192.png, /img/apple-touch-icon.png
+PASS [Logo] Share preview: every content page has the right-language card in its raw HTML :: 40 pages; og.png + og-en.png are 1200x630 PNG under 300 KB
+PASS [Pages] No stray text or leaked markup on any page :: 41 pages clean
+PASS [Logo] Structured data (JSON-LD) still valid on every page :: all parse
+PASS [Pages] img/christian-retrato loads on the homepage (AVIF, WebP or JPEG) :: http://localhost:8787/img/christian-retrato-400.avif 320x400
+PASS [Language] Homepage ES -> EN button goes to /en/ :: after click /en/ lang=en h1="Your family built something Extraordinary. Learn h"; after reload /en/ lang=en
+PASS [Language] Homepage EN -> ES button goes to / :: after click / lang=es h1="Su familia construyó algo Extraordinario. Aprenda "; after reload / lang=es
+PASS [Language] Guide /guias/inundacion/ lang button -> /en/guides/flood/ :: landed on /en/guides/flood/ lang=en
+PASS [Language] Guide /en/guides/flood/ lang button -> /guias/inundacion/ :: landed on /guias/inundacion/ lang=es
+PASS [Language] (extra) every library page lang button = its other-language twin :: 39 pages
+PASS [Language] pp.lang="en" then /?gclid=test stays Spanish :: lang=es path=/ h1="Su familia construyó algo Extraordinario. Aprenda " gclid field="test"
+PASS [Language] pp.lang="es" then /en/?gclid=test stays English :: lang=en path=/en/ h1="Your family built something Extraordinary. Learn h" gclid field="test"
+PASS [Quiz] / quiz: Q1 shown once, 12 questions in order, result appears :: Q1 visible 1x; sequence OK 1..12; result "Constructor consciente"
+PASS [Quiz] / "Continue to the form" scrolls to #contacto :: scrollY 8263 -> 10127; form in view=true
+PASS [Quiz] / hidden quiz fields filled (score/answers) :: score="63% (completa, 12/12)" answers=1998 chars, gaps="Residencias, Inundación, Aviación, Colecciones, Responsabilidad, Personal del hogar"
+PASS [Quiz] / "self-assessment will be attached" note visible :: "Su autoevaluación (12/12) se adjuntará a este mensaje."; topic preselected="Revisión de mi autoevaluación"
+PASS [Quiz] /en/ quiz: Q1 shown once, 12 questions in order, result appears :: Q1 visible 1x; sequence OK 1..12; result "Aware builder"
+PASS [Quiz] /en/ "Continue to the form" scrolls to #contacto :: scrollY 8288 -> 9996; form in view=true
+PASS [Quiz] /en/ hidden quiz fields filled (score/answers) :: score="63% (completa, 12/12)" answers=1998 chars, gaps="Residencias, Inundación, Aviación, Colecciones, Responsabilidad, Personal del hogar"
+PASS [Quiz] /en/ "self-assessment will be attached" note visible :: "Your self-assessment (12/12) will be attached to this message."; topic preselected="Revisión de mi autoevaluación"
+PASS [Quiz] /?tema=flo#contacto preselects flood :: selected="Inundación y marejada"
+PASS [Quiz] Each guide CTA -> the form on the same page, with its topic set :: 28/28 OK
+PASS [Quiz] Guide form sends all lead fields and goes to the thank-you page (simulated, nothing sent) :: ES and EN OK
+PASS [Tools] /glosario/ search "NFIP" filters terms :: 102 terms -> 5 shown: Costo Mayor de Cumplimiento (ICC); NFIP (Programa Nacional de Seguro contra; Período de espera; Póliza de inundación en exceso; Zona de inundación
+PASS [Tools] /glosario/ category chips filter :: Inundación 7 (cats inundacion), Autos 7, Todos 102/102
+PASS [Tools] /herramientas/temporada-de-huracanes/ checks persist after reload :: h1=true h2=true h3=false
+PASS [Tools] /herramientas/temporada-de-huracanes/ progress bar updates :: width 0% -> 4.54545% -> after reload 4.54545%
+PASS [Tools] /preguntas-frecuentes/#<id> opens that answer :: 29 questions; tested #deducible-huracan=open #transferencia-cierre=open #que-hace-este-sitio=open
+PASS [Contact] Every tel/sms/mailto/LinkedIn link is tagged and pushes its dataLayer event (not dialed) :: / 7/7, /en/ 7/7, /guias/residencias-huracanes/ 2/2, /en/guides/homes-hurricanes/ 2/2, /guias/inundacion/ 2/2, /en/guides/flood/ 2/2, /guias/autos/ 2/2, /en/guides/auto/ 2/2, /guias/embarcaciones/ 2/2, /en/guides/boats/ 2/2, /guias/aviacion-privada/ 2/2, /en/guides/private-aviation/ 2/2, /guias/colecciones-arte-joyas/ 2/2, /en/guides/collections-art-jewelry/ 2/2, /guias/umbrella-responsabilidad/ 2/2, /en/guides/umbrella-liability/ 2/2, /guias/personal-del-hogar-legado/ 2/2, /en/guides/household-staff-legacy/ 2/2, /guias/ciber-proteccion-familiar/ 2/2, /en/guides/personal-cyber/ 2/2, /guias/secuestro-y-extorsion/ 2/2, /en/guides/kidnap-ransom/ 2/2, /guias/alquiler-vacacional/ 2/2, /en/guides/short-term-rentals/ 2/2, /guias/remodelaciones/ 2/2, /en/guides/renovations-builders-risk/ 2/2, /guias/juntas-y-fundaciones/ 2/2, /en/guides/board-service-family-foundations/ 2/2, /guias/condominios-y-hoa/ 2/2, /en/guides/condos-hoa/ 2/2, /guias/ 1/1, /en/guides/ 1/1, /glosario/ 1/1, /en/glossary/ 1/1, /preguntas-frecuentes/ 1/1, /en/faq/ 1/1, /herramientas/temporada-de-huracanes/ 1/1, /en/tools/hurricane-season/ 1/1, /herramientas/inventario-familiar/ 1/1, /en/tools/family-inventory/ 1/1, /privacidad.html 1/1, /gracias.html 0/0
+PASS [Hero] / hero has no quiz card; quiz sits after Sobre mí, before Contacto :: card=false; order datos>mitos>dominios>biblioteca>sobre>mapa>contacto
+PASS [Hero] /en/ hero has no quiz card; quiz sits after Sobre mí, before Contacto :: card=false; order datos>mitos>dominios>biblioteca>sobre>mapa>contacto
+PASS [Nav] Desktop: side tab opens the library panel (20 links, right language), Esc closes :: 6 pages OK
+PASS [Nav] Homepage: panel follows the ES/EN switch :: after EN switch: title=Library, first link /en/guides/, tab="Library"
+PASS [Nav] Phone: hamburger menu entry opens the panel (tab hidden) :: /: tab hidden=true, menu entry "Biblioteca", panel open=true width=343 | /en/: tab hidden=true, menu entry "Library", panel open=true width=343 | /guias/inundacion/: tab hidden=true, menu entry "Biblioteca", panel open=true width=343 | /en/faq/: tab hidden=true, menu entry "Library", panel open=true width=343
+PASS [Logo] Close-up screenshots of nav, footer, thank-you page :: out-local\shots
+PASS [Visual] Screenshots taken (6 pages x desktop 1440 / mobile 390) :: out-local\shots
+PASS [Visual] Mobile 390px: no page scrolls horizontally :: 42 pages checked
+PASS [Expansion] Every sitemap URL returns 200 :: 41 URLs
+PASS [Expansion] ES/EN pairs exist and hreflang matches both ways :: 41 pages
+PASS [Expansion] Every guide has the #mitigacion / #mitigation section :: 28 guides
+PASS [Expansion] Hub Mitigation card deep-links to every guide :: ES 14, EN 14 links
+PASS [Expansion] ?tema= prefill works for all 14 keys on / and /en/ :: all selected
+PASS [Expansion] No em dashes, carrier names, employer name or banned sales phrases :: 43 pages scanned
+PASS [Expansion] Tag Manager (GTM-P88VGFHR) loads exactly once :: /: 1 (www.googletagmanager.com) | /en/: 1 (www.googletagmanager.com) | /guias/condominios-y-hoa/: 1 (www.googletagmanager.com) | /en/guides/personal-cyber/: 1 (www.googletagmanager.com)
+PASS [Visual] Screenshots of the 6 new guides (ES + EN, desktop 1440 + mobile 390), no JS errors :: out-local\shots\new-*.png
+PASS [GuideCTA] Every guide: card after the summary, 3-action phone bar, two-link midnote, no em dash :: 28/28 OK
+PASS [GuideCTA] ES/EN parity: same number of [data-cta] on each guide pair :: 14 pairs match
+PASS [GuideCTA] Phones 360x740 + 390x844: card within one short scroll, bar after it, hidden over the form, no overflow :: 8 checks OK
+PASS [GuideCTA] dataLayer: guide_scroll 25/50/75 exactly once each; each new CTA pushes one cta_click :: ES and EN OK
+PASS [LeadPath] / result screen: two-field form, ES labels, 390 px, tab order :: heading "Le envío su mapa con una nota personal", labels Nombre/Teléfono o WhatsApp, button "Enviarme mi mapa", line ok=true, link "¿Prefiere contarme más?" below=true, overflow=false, tab m-tel>m-swap>m-send
+PASS [LeadPath] / mini form with no phone and no email is blocked with a plain message :: "Escriba su teléfono o su correo, por favor.", posts 0, generate_lead 0
+PASS [LeadPath] / phone, no email: sends once, generate_lead once (form_id mini), "Listo. Le escribo hoy mismo.", long form collapses :: posts 1, missing [], form_id=mini, generate_lead 1 {"event":"generate_lead","lead_source":"formulario_corto_mapa","language":"es","quiz_score":"50% (completa, 12/12)","form_id":"mini","lang":"es","awareness_level":"medium","blank_count":6,"page_type":"home"}, done "Listo. Le escribo hoy mismo.", mini hidden true, long hidden true, stayed on /
+PASS [LeadPath] / "o correo" switch: email only sends once :: swap now "o teléfono", posts 1, email=test@example.com, generate_lead 1
+PASS [LeadPath] / long form: optional phone above email; phone only is enough; neither is blocked :: label "Teléfono o WhatsApp (opcional)", phone before email true, blocked true ("Por favor escriba su nombre y su teléfono o correo."), posts 1, form_id=long, landed /gracias.html
+PASS [LeadPath] /en/ result screen: two-field form, EN labels, 390 px, tab order :: heading "I will send you your map with a personal note", labels Name/Phone or WhatsApp, button "Send me my map", line ok=true, link "Prefer to tell me more?" below=true, overflow=false, tab m-tel>m-swap>m-send
+PASS [LeadPath] /en/ mini form with no phone and no email is blocked with a plain message :: "Please type your phone or your email.", posts 0, generate_lead 0
+PASS [LeadPath] /en/ phone, no email: sends once, generate_lead once (form_id mini), "Done. I will write to you today.", long form collapses :: posts 1, missing [], form_id=mini, generate_lead 1 {"event":"generate_lead","lead_source":"formulario_corto_mapa","language":"en","quiz_score":"50% (completa, 12/12)","form_id":"mini","lang":"en","awareness_level":"medium","blank_count":6,"page_type":"home"}, done "Done. I will write to you today.", mini hidden true, long hidden true, stayed on /en/
+PASS [LeadPath] /en/ "or email" switch: email only sends once :: swap now "or phone", posts 1, email=test@example.com, generate_lead 1
+PASS [LeadPath] /en/ long form: optional phone above email; phone only is enough; neither is blocked :: label "Phone or WhatsApp (optional)", phone before email true, blocked true ("Please fill in your name and your phone or email."), posts 1, form_id=long, landed /gracias.html
+PASS [LeadPath] Sample mini-form dataLayer push saved :: {"event":"generate_lead","lead_source":"formulario_corto_mapa","language":"es","quiz_score":"50% (completa, 12/12)","form_id":"mini","lang":"es","awareness_level":"medium","blank_count":6,"page_type":"home"}
+PASS [LeadPath] Guide phone bar: Self-check, Call, Write to me; Call labelled; phone_click from barra_movil; nothing clipped :: 4 guides OK
+PASS [LeadPath] New copy: Spanish accents intact, no em dash, no pressure or price words :: accents OK; scan clean
+PASS [3D] /?3d=1 desktop: canvas in .hero-3d, hero3d_ready webgl, no errors, H1 and both buttons visible and clickable, CLS <= 0.02 :: canvas=true on=true ready={"event":"hero3d_ready","mode":"webgl","reason":null,"page_type":"home","language":"es","gtm.uniqueEventId":13} errors=0 h1=true buttons=true cls=0.0033 frames=17
+PASS [3D] /en/?3d=1 desktop: canvas in .hero-3d, hero3d_ready webgl, no errors, H1 and both buttons visible and clickable, CLS <= 0.02 :: canvas=true on=true ready={"event":"hero3d_ready","mode":"webgl","reason":null,"page_type":"home","language":"en","gtm.uniqueEventId":13} errors=0 h1=true buttons=true cls=0.0032 frames=17
+PASS [3D] Reduced motion: no canvas, SVG skyline visible, hero3d_ready fallback / reduced-motion :: {"canvas":false,"sky":"1","ev":[{"event":"hero3d_ready","mode":"fallback","reason":"reduced-motion","page_type":"home","language":"es","gtm.uniqueEventId":4}]}
+PASS [3D] /?no3d=1: no request for /js/hero3d, fallback reason flag :: requests=0 ready={"event":"hero3d_ready","mode":"fallback","reason":"flag","page_type":"home","language":"es","gtm.uniqueEventId":4}
+PASS [3D] Every guide and tool page: no /js/hero3d request, weight within 85 KiB (77 + 8) :: 32 pages, 56 to 67 KiB
+PASS [3D] Layers figure: once on the umbrella and flood guides (ES + EN), role img, aria-label is the sentence of its section, nowhere else :: /guias/inundacion/ x1 label-in-section=true | /en/guides/flood/ x1 label-in-section=true | /guias/umbrella-responsabilidad/ x1 label-in-section=true | /en/guides/umbrella-liability/ x1 label-in-section=true
+PASS [3D] / at 390 px: no horizontal scroll, both hero buttons above the fold, canvas pixel ratio <= 1.5 :: {"sw":390,"iw":390,"ih":844,"btns":[716,785],"dpr":1.5,"ratio":1.5,"mode":"webgl","y":0}
+PASS [3D] /en/ at 390 px: no horizontal scroll, both hero buttons above the fold, canvas pixel ratio <= 1.5 :: {"sw":390,"iw":390,"ih":844,"btns":[716,785],"dpr":1.5,"ratio":1.5,"mode":"webgl","y":0}
+PASS [3D] / map: 10 tiles, states match the result, blank tiles link to their ES guides, map3d_view once with blank_count :: tiles=10 face=true blank=6 event={"event":"map3d_view","blank_count":6,"page_type":"home","language":"es","gtm.uniqueEventId":16}
+PASS [3D] /en/ map: 10 tiles, states match the result, blank tiles link to their EN guides, map3d_view once with blank_count :: tiles=10 face=true blank=6 event={"event":"map3d_view","blank_count":6,"page_type":"home","language":"en","gtm.uniqueEventId":16}
+85/86 passed, 1 failed

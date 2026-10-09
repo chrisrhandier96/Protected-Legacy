@@ -1,0 +1,11 @@
+{
+ "event": "generate_lead",
+ "lead_source": "formulario_corto_mapa",
+ "language": "es",
+ "quiz_score": "50% (completa, 12/12)",
+ "form_id": "mini",
+ "lang": "es",
+ "awareness_level": "medium",
+ "blank_count": 6,
+ "page_type": "home"
+}
