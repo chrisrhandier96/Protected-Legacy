@@ -35,6 +35,7 @@ async function freshContext(opts = DESKTOP) {
 }
 async function freshPage(opts) {
   const c = await freshContext(opts);
+  c.setDefaultNavigationTimeout(+process.env.NAV_TIMEOUT || 30000); // raise it for live runs on a slow connection
   const p = await c.newPage();
   p.errors = [];
   p.on('pageerror', e => p.errors.push('uncaught: ' + (e.message || e)));
