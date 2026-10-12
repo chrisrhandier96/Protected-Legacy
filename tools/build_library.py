@@ -58,6 +58,10 @@ T = {  # interface strings
         "top_t": "Revise los vacíos de su familia en 3 minutos", "top_p": "El Mapa de Protección Familiar es anónimo y le muestra qué zonas de su plan quedaron en blanco.",
         "top_quiz": "Hacer la autoevaluación", "top_write": "o escríbame", "bar_quiz": "Autoevaluación",
         "bar_write": "Escríbame", "bar_call": "Llamar", "bar_label": "Contacto",
+        "qc_t": "Su responsabilidad en 4 preguntas", "qc_p": "Cuatro preguntas del Mapa de Protección Familiar, sin salir de esta página. Nada se envía hasta que usted lo decida.",
+        "qc_n": "Pregunta 1 de 4", "qc_full": "Autoevaluación completa (12 preguntas)",
+        "qc_q1": "¿Tiene una póliza umbrella con límites al menos comparables a su patrimonio neto?",
+        "qc_a": ["Sí, con certeza", "No estoy seguro/a", "No / Nunca lo he pensado", "No aplica a mi familia"],
         "f_h": "Escríbame sobre su caso", "f_p": "Le respondo personalmente, normalmente dentro de 48 horas.",
         "f_name": "Nombre", "f_email": "Correo electrónico", "f_tel": "Teléfono (opcional)", "f_msg": "¿Qué le gustaría revisar? (opcional)",
         "f_consent": "Autorizo a Christian R. González a responderme por correo electrónico o por teléfono sobre mi consulta. Entiendo que este sitio es educativo y no ofrece asesoría de seguros.",
@@ -80,6 +84,10 @@ T = {  # interface strings
         "top_t": "See your family's gaps in 3 minutes", "top_p": "The Family Protection Map is anonymous and shows which parts of your plan are still blank.",
         "top_quiz": "Take the self-assessment", "top_write": "or write to me", "bar_quiz": "Self-check",
         "bar_write": "Write to me", "bar_call": "Call", "bar_label": "Contact",
+        "qc_t": "Your liability in 4 questions", "qc_p": "Four questions from the Family Protection Map, without leaving this page. Nothing is sent until you decide.",
+        "qc_n": "Question 1 of 4", "qc_full": "Full self-assessment (12 questions)",
+        "qc_q1": "Do you carry an umbrella policy with limits at least comparable to your net worth?",
+        "qc_a": ["Yes, with certainty", "I'm not sure", "No / I've never thought about it", "Doesn't apply to my family"],
         "f_h": "Write to me about your situation", "f_p": "I reply personally, usually within 48 hours.",
         "f_name": "Name", "f_email": "Email", "f_tel": "Phone (optional)", "f_msg": "What would you like to review? (optional)",
         "f_consent": "I authorize Christian R. González to reply to my inquiry by email or phone. I understand this site is educational and does not offer insurance advice.",
@@ -202,6 +210,9 @@ th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;ver
 .topcta-t{margin:0;font-weight:600;font-size:15.5px;line-height:1.3;color:var(--verde)}.topcta-p{margin:4px 0 10px;font-size:14px;line-height:1.45;color:var(--tinta)}
 .topcta .row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px}.topcta .btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;font-size:14.5px}
 .topcta-w{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:14.5px;color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+.qc-n{margin:4px 0 4px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#7E5F17}.qc-q{margin:0 0 12px;font-size:16px;line-height:1.45;color:var(--tinta)}
+.qc-a{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 6px}.qc-a button{min-height:44px;padding:8px 14px;border:1px solid var(--arena-oscura);border-radius:12px;background:var(--arena);color:var(--verde);font:600 14px/1.3 var(--body);text-align:left;cursor:pointer}
+.qc-a button:hover,.qc-a button:focus-visible{border-color:var(--oro);outline:2px solid var(--oro);outline-offset:1px}@media(max-width:560px){.qc-a{grid-template-columns:1fr}}
 /* phones: the article heading fills the first screen, so show the self-check card above the summary (markup order stays: summary, then card) */
 @media(max-width:980px){article{display:flex;flex-direction:column}article>*{margin-top:0!important}.topcta{order:-1;margin:0 0 24px}}
 .midnote{margin:36px 0;padding:14px 20px;border-left:3px solid var(--oro);background:var(--blanco);font-size:16px}.midnote a{font-weight:600}
@@ -521,6 +532,16 @@ for k in ORDER:
 <p class="gf-err" id="gf-err" role="alert" data-req="{t['f_err_req']}" data-mail="{t['f_err_mail']}" data-consent="{t['f_err_consent']}" data-send="{t['f_err_send']}"></p>
 <p class="gf-priv"><a href="/privacidad.html">{t['f_priv']}</a></p>
 </form></section>"""
+        if k == "lia":  # Part 4: the umbrella quick check, inline (script: /js/quick-check.v1.js)
+            btns = "".join(f'<button type="button" data-v="{v}">{esc(x)}</button>' for v, x in zip((2, 1, 0, -1), t["qc_a"]))
+            topcard = (f'<div class="topcta qcheck no-print" id="qcheck" aria-live="polite">\n      <p class="topcta-t">{t["qc_t"]}</p>\n      <p class="topcta-p">{t["qc_p"]}</p>\n'
+                       f'      <div id="qc-step"><p class="qc-n" id="qc-n">{t["qc_n"]}</p><p class="qc-q" id="qc-q">{esc(t["qc_q1"])}</p>\n'
+                       f'      <div class="qc-a" role="group" aria-labelledby="qc-q">{btns}</div></div>\n      <div id="qc-res" hidden></div>\n'
+                       f'      <div class="row"><a class="topcta-w" href="{p_home(l)}#mapa" data-cta="guide_top_quiz_{k}">{t["qc_full"]}</a><a class="topcta-w" href="{tema}" data-cta="guide_top_write_{k}">{t["top_write"]}</a></div>\n'
+                       f'    </div>\n    <script src="/js/quick-check.v1.js" defer></script>')
+        else:
+            topcard = (f'<div class="topcta no-print">\n      <p class="topcta-t">{t["top_t"]}</p>\n      <p class="topcta-p">{t["top_p"]}</p>\n'
+                       f'      <div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="guide_top_quiz_{k}">{t["top_quiz"]}</a><a class="topcta-w" href="{tema}" data-cta="guide_top_write_{k}">{t["top_write"]}</a></div>\n    </div>')
         body = f"""
 <header class="head"><div class="wrap">
   {crumbs(l, [(p_hub(l), t['guides']), (None, plain(c['kicker']).split('·')[-1].strip())])}
@@ -533,11 +554,7 @@ for k in ORDER:
   <aside class="toc" aria-label="{t['toc']}"><h2>{t['toc']}</h2><ol>{toc}</ol><a class="toc-cta" href="#contacto" data-cta="guide_toc_write_{k}">{t['toc_write']}</a></aside>
   <article>
     <div class="sumbox"><h2>{t['summary']}</h2><ul>{summ}</ul></div>
-    <div class="topcta no-print">
-      <p class="topcta-t">{t['top_t']}</p>
-      <p class="topcta-p">{t['top_p']}</p>
-      <div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="guide_top_quiz_{k}">{t['top_quiz']}</a><a class="topcta-w" href="{tema}" data-cta="guide_top_write_{k}">{t['top_write']}</a></div>
-    </div>
+    {topcard}
     {body_secs}
     <div class="qbox"><h2>{t['questions']}</h2><ol>{qs}</ol></div>
     <section class="faq" id="preguntas"><h2>{t['faqh']}</h2>{fq}</section>
@@ -589,7 +606,7 @@ if(!document.getElementById('gf-consent').checked){err(E.getAttribute('data-cons
 B.disabled=true;B.textContent=B.getAttribute('data-sending');
 fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(F)).toString()}).then(function(r){if(!r||!r.ok)throw new Error('send');
 var gone=false,go=function(){if(gone)return;gone=true;location.href='/gracias.html?lang='+L;};
-try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'generate_lead',lead_source:'guia_'+K,language:L,page_type:'guide',quiz_score:'',eventCallback:go,eventTimeout:1500});}catch(x){}
+try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'generate_lead',lead_source:'guia_'+K,form_id:'guia',language:L,page_type:'guide',quiz_score:'',eventCallback:go,eventTimeout:1500});}catch(x){}
 setTimeout(go,1700);}).catch(function(){B.disabled=false;B.textContent=T;err(E.getAttribute('data-send'),true);});});})();"""
         written.append(write(path, page(l, path, alt, c["title"], c["meta"], body, "guide", ld, js)))
         if l == "es": sitemap.append((path, alt))

@@ -25,6 +25,7 @@ async function freshContext(opts = DESKTOP) {
   await c.route('**/*', route => {
     const r = route.request(), u = r.url();
     if (BEACONS.test(u)) return route.abort();
+    if (process.env.BLOCK_GTM && /googletagmanager\.com/.test(u)) return route.abort(); // local runs when Tag Manager is unreachable (the page's load event waits for it)
     if (!['GET', 'HEAD'].includes(r.method()) && (u.includes('protectedlegacyfl.com') || u.startsWith(BASE))) {
       console.log('  !! aborted non-GET request to', u);
       return route.abort();
@@ -35,6 +36,7 @@ async function freshContext(opts = DESKTOP) {
 }
 async function freshPage(opts) {
   const c = await freshContext(opts);
+  c.setDefaultNavigationTimeout(+process.env.NAV_TIMEOUT || 30000); // raise it for live runs on a slow connection
   const p = await c.newPage();
   p.errors = [];
   p.on('pageerror', e => p.errors.push('uncaught: ' + (e.message || e)));
@@ -689,6 +691,55 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
       js].join('\n');
     const ban = Object.entries(src).filter(([, s]) => BAN.test(pieces(s)) || pieces(s).length < 2000).map(([k, s]) => `${k}: ${(pieces(s).match(BAN) || ['(new pieces not found)'])[0]}`);
     rec('LeadPath', 'New copy: Spanish accents intact, no em dash, no pressure or price words', !miss.length && !ban.length, (miss.length ? 'missing ' + miss.join(', ') : 'accents OK') + (ban.length ? '; banned ' + ban.join(', ') : '; scan clean'));
+  }
+
+  /* ================= UMBRELLA QUICK CHECK (work order 2026-10-08, Part 4) ================= */
+  if (want('umbrella')) {
+    const R = async (p, store) => p.route('**/*', async rt => { const q = rt.request(), u = new URL(q.url());
+      if (q.method() === 'POST') { if (u.pathname === '/') store.push(q.postData() || ''); await new Promise(r => setTimeout(r, 300)); return rt.fulfill({ status: 200, body: 'ok' }); } // answered in the browser
+      if (/google|doubleclick|googleadservices/.test(u.host)) return rt.abort(); return rt.continue(); });
+    const C = {
+      es: { u: '/guias/umbrella-responsabilidad/', q1: '¿Tiene una póliza umbrella con límites al menos comparables a su patrimonio neto?', n4: 'Pregunta 4 de 4', done: 'Listo. Le escribo hoy mismo.', none: 'Escriba su teléfono o su correo, por favor.', tema: 'Responsabilidad y umbrella' },
+      en: { u: '/en/guides/umbrella-liability/', q1: 'Do you carry an umbrella policy with limits at least comparable to your net worth?', n4: 'Question 4 of 4', done: 'Done. I will write to you today.', none: 'Please type your phone or your email.', tema: 'Responsabilidad y umbrella' },
+    };
+    for (const lang of ['es', 'en']) {
+      const c = C[lang];
+      // static first question, four answers, the two links, readable at 390 px
+      { const p = await freshPage(MOBILE); await R(p, []); await p.goto(BASE + c.u); await settle(p);
+        const r = await p.evaluate(() => { const k = document.getElementById('qcheck'); return { q: (document.getElementById('qc-q') || {}).textContent, n: k ? k.querySelectorAll('.qc-a button').length : 0,
+          links: k ? k.querySelectorAll('a[data-cta^="guide_top_"]').length : 0, over: document.documentElement.scrollWidth > innerWidth, first: !!k && k.previousElementSibling && k.previousElementSibling.classList.contains('sumbox') }; });
+        await p.locator('#qcheck').screenshot({ path: path.join(OUT, 'shots', `umbrella-check-q1-${lang}-390.png`) });
+        rec('Umbrella', `${c.u} card: question 1 in the page, 4 answers, 2 links, 390 px`, r.q === c.q1 && r.n === 4 && r.links === 2 && !r.over && r.first && !p.errors.length, JSON.stringify(r) + (p.errors.length ? ' ' + p.errors.join('; ') : ''));
+        await p.ctx.close(); }
+      // through the 4 questions to the result; blocked with no contact; phone only sends once and collapses the guide form
+      { const p = await freshPage(MOBILE); const store = []; await R(p, store); await p.goto(BASE + c.u + '?gclid=TESTGCLID&utm_source=google'); await settle(p);
+        const seen = [];
+        for (const v of ['2', '1', '0', '1']) { seen.push((await p.textContent('#qc-n')).trim()); await p.click(`#qcheck .qc-a button[data-v="${v}"]`); await p.waitForTimeout(150); }
+        const r = await p.evaluate(() => { const res = document.getElementById('qc-res'); return { vis: !res.hidden && !!document.getElementById('qcForm'), score: (res.querySelector('.qc-score') || {}).textContent,
+          title: (res.querySelector('.qc-title') || {}).textContent, links: [...res.querySelectorAll('.qc-rev a')].map(a => a.getAttribute('href')), ok: [...res.querySelectorAll('.qc-rev a')].every(a => !!document.getElementById(a.getAttribute('href').slice(1))),
+          qc: dataLayer.filter(o => o && o.event === 'quiz_complete' && o.quiz_id === 'umbrella_4').length }; });
+        await p.locator('#qcheck').screenshot({ path: path.join(OUT, 'shots', `umbrella-check-result-${lang}-390.png`) });
+        rec('Umbrella', `${c.u} four questions in order, then the result with links to this guide`, seen[3] === c.n4 && r.vis && r.score.includes('50%') && !!r.title && r.links.length === 2 && r.ok && r.qc === 1,
+          `steps ${seen.join(' > ')}; ${r.score} "${r.title}", review links ${r.links.join(' ')} (all exist ${r.ok}), quiz_complete ${r.qc}`);
+        await p.fill('#qc-nombre', 'Prueba'); await p.click('#qc-send'); await p.waitForTimeout(500);
+        const m = (await p.textContent('#qc-err')).trim(); const blocked = store.length === 0 && m === c.none;
+        await p.fill('#qc-tel', '305 555 0100'); await p.click('#qc-send'); await p.click('#qc-send', { force: true }).catch(() => {}); await p.waitForTimeout(1500);
+        const f = new URLSearchParams(store[0] || ''), L2 = await p.evaluate(() => dataLayer.filter(o => o && o.event === 'generate_lead').map(o => ({ ...o })));
+        const st = await p.evaluate(() => ({ done: !document.getElementById('qc-done').hidden ? document.getElementById('qc-done').textContent.trim() : '', g: document.getElementById('gForm').hidden, gd: (document.getElementById('formDone') || {}).textContent || '' }));
+        const g = L2[0] || {}, need = ['form-name', 'tema', 'idioma_sitio', 'nombre', 'telefono', 'gclid', 'origen', 'pagina_entrada', 'autoevaluacion_puntaje', 'autoevaluacion_respuestas', 'nivel_conciencia'];
+        const miss = need.filter(k => !f.get(k));
+        await p.locator('#qcheck').screenshot({ path: path.join(OUT, 'shots', `umbrella-check-done-${lang}-390.png`) });
+        rec('Umbrella', `${c.u} no contact is blocked; phone only sends once, one generate_lead, guide form collapses, same page`,
+          blocked && store.length === 1 && !miss.length && f.get('form_id') === 'mini' && f.get('form-name') === 'contacto' && f.get('tema') === c.tema && f.get('gclid') === 'TESTGCLID' && f.get('idioma_sitio') === lang
+          && L2.length === 1 && g.form_id === 'mini' && g.lead_source === 'umbrella_quick_check' && g.lang === lang && g.awareness_level === 'medium' && g.blank_count === 3
+          && st.done === c.done && st.g && st.gd === c.done && new URL(p.url()).pathname === c.u && !p.errors.length,
+          `blocked ${blocked} ("${m}"), posts ${store.length}, missing [${miss}], form_id ${f.get('form_id')}, tema "${f.get('tema')}", generate_lead ${L2.length} ${JSON.stringify(g).slice(0, 220)}, done "${st.done}", guide form hidden ${st.g}` + (p.errors.length ? ' ' + p.errors.join('; ') : ''));
+        await p.ctx.close(); }
+    }
+    // the other 26 guides keep the plain card
+    { const p = await freshPage(); await R(p, []); await p.goto(BASE + '/guias/inundacion/'); await settle(p);
+      const r = await p.evaluate(() => ({ qc: !!document.getElementById('qcheck'), card: !!document.querySelector('.topcta a[data-cta="guide_top_quiz_flo"]'), js: !!document.querySelector('script[src*="quick-check"]') }));
+      rec('Umbrella', 'Other guides keep the plain self-check card (no quick check, no script)', !r.qc && r.card && !r.js, JSON.stringify(r)); await p.ctx.close(); }
   }
 
   /* ================= 3D (work order 2026-10): hero, map, layers figures ================= */
