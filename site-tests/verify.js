@@ -517,8 +517,9 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
         const sum = q('article .sumbox'), card = q('article .topcta'), bar = q('#gbar'), mid = q('.midnote');
         const path = a => a ? new URL(a.getAttribute('href'), location.href).pathname + new URL(a.getAttribute('href'), location.href).hash : '';
         const e = [];
+        if (!q('.toc a.toc-call[href="tel:+17866712171"][data-track="llamada"]')) e.push('sidebar call link missing');
         if (!card) e.push('no .topcta'); else {
-          if (!sum || sum.nextElementSibling !== card) e.push('.topcta not directly after .sumbox');
+          if (!sum || (n => { while (n && n.tagName === 'SCRIPT') n = n.nextElementSibling; return n; })(card.nextElementSibling) !== sum || card.parentElement.firstElementChild !== card) e.push('.topcta not first in the article, directly before .sumbox');
           const tq = card.querySelector(`a[data-cta="guide_top_quiz_${k}"]`);
           if (!tq || path(tq) !== home) e.push(`top quiz link ${tq ? path(tq) : 'missing'} (want ${home})`);
           if (!card.querySelector(`a[data-cta="guide_top_write_${k}"]`)) e.push('top write link missing');
@@ -539,7 +540,7 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
       });
       counts[g] = r; if (r.e.length) bad.push(`${g}: ${r.e.join('; ')}`); await p.ctx.close();
     }
-    rec('GuideCTA', 'Every guide: card after the summary, 3-action phone bar, two-link midnote, no em dash', bad.length === 0 && guides.length === 28, `${guides.length - bad.length}/${guides.length} OK` + (bad.length ? '; ' + bad.join(' | ') : ''));
+    rec('GuideCTA', 'Every guide: card first (before the summary), sidebar call link, 3-action phone bar, two-link midnote, no em dash', bad.length === 0 && guides.length === 28, `${guides.length - bad.length}/${guides.length} OK` + (bad.length ? '; ' + bad.join(' | ') : ''));
     const par = guides.filter(g => g.startsWith('/guias/')).map(g => { const en = counts[g].alt, a = counts[g].n, b = counts[en] ? counts[en].n : -1; return a === b ? null : `${g} ${a} vs ${en} ${b}`; }).filter(Boolean);
     rec('GuideCTA', 'ES/EN parity: same number of [data-cta] on each guide pair', par.length === 0, par.length ? par.join(' | ') : '14 pairs match');
 
@@ -707,7 +708,7 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
       // static first question, four answers, the two links, readable at 390 px
       { const p = await freshPage(MOBILE); await R(p, []); await p.goto(BASE + c.u); await settle(p);
         const r = await p.evaluate(() => { const k = document.getElementById('qcheck'); return { q: (document.getElementById('qc-q') || {}).textContent, n: k ? k.querySelectorAll('.qc-a button').length : 0,
-          links: k ? k.querySelectorAll('a[data-cta^="guide_top_"]').length : 0, over: document.documentElement.scrollWidth > innerWidth, first: !!k && k.previousElementSibling && k.previousElementSibling.classList.contains('sumbox') }; });
+          links: k ? k.querySelectorAll('a[data-cta^="guide_top_"]').length : 0, over: document.documentElement.scrollWidth > innerWidth, first: !!k && k.parentElement.firstElementChild === k && (n => { while (n && n.tagName === 'SCRIPT') n = n.nextElementSibling; return !!n && n.classList.contains('sumbox'); })(k.nextElementSibling) }; });
         await p.locator('#qcheck').screenshot({ path: path.join(OUT, 'shots', `umbrella-check-q1-${lang}-390.png`) });
         rec('Umbrella', `${c.u} card: question 1 in the page, 4 answers, 2 links, 390 px`, r.q === c.q1 && r.n === 4 && r.links === 2 && !r.over && r.first && !p.errors.length, JSON.stringify(r) + (p.errors.length ? ' ' + p.errors.join('; ') : ''));
         await p.ctx.close(); }

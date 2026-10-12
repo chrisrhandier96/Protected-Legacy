@@ -76,6 +76,7 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 @media(prefers-reduced-motion:reduce){.gbar,.gbar.on{transition:none}}
 .toc{position:sticky;top:88px;align-self:start;font-size:14px}
 .toc a.toc-cta,.toc a.toc-cta:hover{color:var(--verde-oscuro)!important;border:0}
+.toc a.toc-call{display:block;margin-top:12px;padding:0;border:0;font-weight:600;color:var(--verde)}.toc a.toc-call:hover{color:var(--verde-oscuro);text-decoration:underline}
 .toc .toc-cta{display:inline-block;margin-top:18px;padding:10px 18px;border-radius:99px;background:var(--oro);color:var(--verde-oscuro);font-weight:600;text-decoration:none}
 .gform{background:var(--verde);color:var(--arena);border-radius:3px;padding:30px 30px 26px;margin:48px 0;scroll-margin-top:96px}.gform h2{color:var(--oro-claro);margin-top:0}
 .gform>p{color:#C9D5CC;margin:6px 0 20px}.gform .gf-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}.gform .gf-full{grid-column:1/-1}
@@ -102,7 +103,7 @@ article p{margin-bottom:16px}article ul{padding-left:22px;margin:0 0 18px}articl
 .tbl{overflow-x:auto;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:15px;background:var(--blanco)}
 th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--verde);color:var(--blanco);font-weight:600}
 .fn{font-size:.62em;vertical-align:super;line-height:0}.fn a{color:var(--oro);text-decoration:none;font-weight:700;padding:0 2px}
-.topcta{background:var(--blanco);border:1px solid var(--arena-oscura);border-left:3px solid var(--oro);border-radius:3px;padding:14px 18px;margin:-16px 0 40px}
+.topcta{background:var(--blanco);border:1px solid var(--arena-oscura);border-left:3px solid var(--oro);border-radius:3px;padding:14px 18px;margin:0 0 32px}
 .topcta-t{margin:0;font-weight:600;font-size:15.5px;line-height:1.3;color:var(--verde)}.topcta-p{margin:4px 0 10px;font-size:14px;line-height:1.45;color:var(--tinta)}
 .topcta .row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px}.topcta .btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;font-size:14.5px}
 .topcta-w{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:14.5px;color:var(--verde);text-decoration:underline;text-underline-offset:3px}
@@ -260,7 +261,7 @@ function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.que
  c.addEventListener('pointermove',function(e){x=e.pageX;y=e.pageY;if(!r)r=requestAnimationFrame(function(){r=null;if(!b)return;var nx=(x-b.l)/b.w-.5,ny=(y-b.t)/b.h-.5;c.style.transform='perspective(900px) rotateX('+(-ny*8).toFixed(2)+'deg) rotateY('+(nx*8).toFixed(2)+'deg) translateY(-4px)';c.style.setProperty('--la',(Math.atan2(nx,-ny)*180/Math.PI+180).toFixed(0)+'deg');});});
  c.addEventListener('pointerleave',function(){b=null;c.style.transform='';});});
  /* contact links: same dataLayer format as the homepage (phone_click for calls/texts, contact_click for LinkedIn/email) */
- document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track'),o={event:(m==='linkedin'||m==='email')?'contact_click':'phone_click',contact_method:m,link_location:a.closest('#gbar')?'barra_movil':(a.closest('footer')?'pie':'contenido'),page_path:location.pathname,page_type:document.body.getAttribute('data-type')||'',language:document.documentElement.lang};try{window.dataLayer=window.dataLayer||[];dataLayer.push(o);}catch(x){}});
+ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var m=a.getAttribute('data-track'),o={event:(m==='linkedin'||m==='email')?'contact_click':'phone_click',contact_method:m,link_location:a.closest('#gbar')?'barra_movil':(a.closest('.toc')?'barra_lateral':(a.closest('footer')?'pie':'contenido')),page_path:location.pathname,page_type:document.body.getAttribute('data-type')||'',language:document.documentElement.lang};try{window.dataLayer=window.dataLayer||[];dataLayer.push(o);}catch(x){}});
 })();
 </script>
 <!-- PP LIBRARY PANEL -->
