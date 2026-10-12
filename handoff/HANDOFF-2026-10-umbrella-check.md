@@ -38,3 +38,12 @@ The +6 KiB is the deferred script. The umbrella guide HTML is about 25 KB compre
 - The other guides keep the plain card and don't load the script.
 
 New option `BLOCK_GTM=1` aborts Tag Manager for local runs when it is unreachable: the page's load event waits for it. `NAV_TIMEOUT` raises the page-load limit.
+
+## Live, after the merge (2026-10-12, main 880396f)
+
+- End to end on https://www.protectedlegacyfl.com in ES and EN (Playwright, 390 px, the form's POST answered inside the browser so nothing reached Netlify):
+  - No contact is blocked. Phone only sends 1 POST: `form_id=mini`, `gclid` carried from the ad click, topic "Responsabilidad y umbrella".
+  - It fires 1 `quiz_complete` (`umbrella_4`) and 1 `generate_lead` (`umbrella_quick_check`, `mini`, `medium`, `blank_count` 3).
+  - The done line shows, the guide form collapses, and there are no script errors. The home page's short form is still in place.
+- Lighthouse (same runner, CPU 1.5x, Google tags blocked, 3 runs): ES umbrella guide 100 [99 100 100], EN 98 [94 98 99], CLS 0 on both, about 98 KiB including Cloudflare's injected scripts.
+- The full Playwright harness could not finish against live this time: this PC's connection kept stalling page loads, and Tag Manager took about 15 s per request. The checks above were run with a lighter script that waits only for the page content.
