@@ -1383,9 +1383,9 @@ function quizPayload(){
   if(!picks.length)return null;
   const st=qStats(),done=picks.length>=12;
   return{
-    score:st.pct+'% '+(done?'(completa, 12/12)':'(parcial, '+picks.length+'/12)'),
-    answers:picks.map((p,i)=>{const q=questions[i];return 'P'+(i+1)+' · '+DOM_NAMES[q.d].es+'\n'+q.es+'\n→ '+ANS[P2K[p]].es;}).join('\n\n'),
-    gaps:st.weak.map(d=>DOM_NAMES[d].es).join(', ')||'Ninguna'
+    score:st.pct+'% '+(lang==='en'?(done?'(complete, 12/12)':'(partial, '+picks.length+'/12)'):(done?'(completa, 12/12)':'(parcial, '+picks.length+'/12)')),
+    answers:picks.map((p,i)=>{const q=questions[i];return (lang==='en'?'Q':'P')+(i+1)+' · '+DOM_NAMES[q.d][lang]+'\n'+q[lang]+'\n→ '+ANS[P2K[p]][lang];}).join('\n\n'),
+    gaps:st.weak.map(d=>DOM_NAMES[d][lang]).join(', ')||(lang==='en'?'None':'Ninguna')
   };
 }
 document.addEventListener('keydown',function(e){
@@ -1421,7 +1421,8 @@ function telOk(t){return t.replace(/\D/g,'').length>=7;}
 function mailOk(e){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);}
 /* awareness level from the quiz score: the same bands as the result titles */
 function awareness(){if(!finished)return {key:'',es:''};const p=qStats().pct;
-  return p>=75?{key:'high',es:'Guardián del patrimonio'}:p>=45?{key:'medium',es:'Constructor consciente'}:{key:'starting',es:'El momento de empezar es hoy'};}
+  const en=lang==='en';/* .es holds the label in the page language */
+  return p>=75?{key:'high',es:en?'Guardian of the estate':'Guardián del patrimonio'}:p>=45?{key:'medium',es:en?'Aware builder':'Constructor consciente'}:{key:'starting',es:en?'The time to start is today':'El momento de empezar es hoy'};}
 function validLead(n,e,c,t){
   const es=lang==='es';
   if(!n||(!e&&!t)){alert(es?'Por favor escriba su nombre y su teléfono o correo.':'Please fill in your name and your phone or email.');return false;}
