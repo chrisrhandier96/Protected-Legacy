@@ -52,11 +52,11 @@ T = {  # interface strings
         "updated": "Actualizada", "min": "min de lectura", "summary": "En resumen", "toc": "En esta guía",
         "questions": "Preguntas para revisar con su agente, abogado o contador", "faqh": "Preguntas frecuentes",
         "sources": "Fuentes", "related": "Siga leyendo", "read": "Leer la guía", "cta_t": "¿Dónde está su familia en este tema?",
-        "cta_p": "El Mapa de Protección Familiar toma tres minutos, es anónimo y le muestra qué zonas de su plan quedaron en blanco.",
-        "cta_quiz": "Hacer la autoevaluación", "cta_write": "¿Le quedaron preguntas? Escríbame",
+        "cta_p": "El Mapa de Protección Familiar toma tres minutos y le muestra qué zonas de su plan quedaron en blanco.",
+        "cta_quiz": "Hacer la autoevaluación", "cta_write": "Solicitar una revisión de sus pólizas",
         "mid_pre": "Si quiere ver cómo aplica esto a su familia,", "mid_quiz": "haga la autoevaluación de 3 minutos", "mid_or": "o", "mid_link": "escríbame",
-        "top_t": "Revise los vacíos de su familia en 3 minutos", "top_p": "El Mapa de Protección Familiar es anónimo y le muestra qué zonas de su plan quedaron en blanco.",
-        "top_quiz": "Hacer la autoevaluación", "top_write": "o escríbame", "bar_quiz": "Autoevaluación",
+        "top_t": "Revise los vacíos de su familia en 3 minutos", "top_p": "El Mapa de Protección Familiar le muestra qué zonas de su plan quedaron en blanco.",
+        "top_quiz": "Hacer la autoevaluación", "top_write": "o solicite una revisión de sus pólizas", "bar_quiz": "Autoevaluación",
         "bar_write": "Escríbame", "bar_call": "Llamar", "bar_label": "Contacto",
         "qc_t": "Su responsabilidad en 4 preguntas", "qc_p": "Cuatro preguntas del Mapa de Protección Familiar, sin salir de esta página. Nada se envía hasta que usted lo decida.",
         "qc_n": "Pregunta 1 de 4", "qc_full": "Autoevaluación completa (12 preguntas)",
@@ -64,25 +64,29 @@ T = {  # interface strings
         "qc_a": ["Sí, con certeza", "No estoy seguro/a", "No / Nunca lo he pensado", "No aplica a mi familia"],
         "f_h": "Escríbame sobre su caso", "f_p": "Le respondo personalmente, normalmente dentro de 48 horas.",
         "f_name": "Nombre", "f_email": "Correo electrónico", "f_tel": "Teléfono (opcional)", "f_msg": "¿Qué le gustaría revisar? (opcional)",
-        "f_consent": "Autorizo a Christian R. González a responderme por correo electrónico o por teléfono sobre mi consulta. Entiendo que este sitio es educativo y no ofrece asesoría de seguros.",
+        "f_consent": "Autorizo a Christian R. González a responderme por correo electrónico o por teléfono sobre mi consulta. Entiendo que la información de este sitio es general.",
         "f_send": "Enviar mensaje", "f_sending": "Enviando…", "f_priv": "Cómo cuido sus datos", "f_lang": "Español",
         "f_err_req": "Por favor complete su nombre y correo.", "f_err_mail": "Por favor verifique su correo electrónico.", "f_err_consent": "Por favor marque la casilla de autorización.",
-        "f_err_send": "No pudimos enviar el mensaje desde el sitio. Escríbame directamente:", "toc_write": "Escríbame",
+        "f_err_send": "No pudimos enviar el mensaje desde el sitio. Escríbame directamente:", "toc_write": "Solicitar una revisión", "adv_l": "Agente de seguros con licencia en la Florida · Lic. W606240", "wa": "https://wa.me/17866712171?text=Hola%20Christian%2C%20vi%20su%20gu%C3%ADa%20en%20protectedlegacyfl.com%20y%20quisiera%20revisar%20mis%20p%C3%B3lizas.",
+        "calc_t": "Sus cifras: deducible de huracán y cobertura de inundación", "calc_p": "Mueva los valores para ver dos cifras que muchas familias no tienen a mano. Es un cálculo ilustrativo y no envía datos.",
+        "calc_l": "Límite de vivienda (Cobertura A)", "calc_d": "Deducible de huracán", "calc_f": "Cobertura de inundación para el edificio", "calc_f0": "Ninguna", "calc_f1": "$250,000 (máximo del NFIP para una vivienda)", "calc_f2": "Igual al límite de vivienda",
+        "calc_o1": "Deducible de huracán en dólares", "calc_o2": "Parte del edificio sin cobertura de inundación", "calc_note": "Ilustrativo: no incluye el deducible de inundación, el contenido ni los demás términos de su póliza.", "calc_cta": "Revisar estas cifras con Christian",
+        "calc_msg": "Mis cifras: límite de vivienda {L}, deducible de huracán {D}, cobertura de inundación del edificio {F}.",
         "print": "Imprimir", "search": "Buscar un término", "all": "Todos", "seeguide": "Ver la guía", "clear": "Borrar marcas",
         "months": ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
-        "switch": "EN", "lic": "Christian R. González es agente de seguros con licencia en el estado de la Florida (Lic. W606240). Este sitio es educativo: no vende, cotiza ni negocia pólizas a través de esta página.",
-        "disc": "<strong>Aviso importante:</strong> Este sitio tiene fines exclusivamente educativos e informativos. No constituye asesoría de seguros, legal, fiscal ni financiera, ni una oferta o solicitud para la venta de productos de seguros. {LIC} Los conceptos descritos son generales; cada póliza tiene sus propios términos, condiciones y exclusiones que prevalecen sobre cualquier descripción general. Para decisiones sobre coberturas, consulte a un agente con licencia; para temas legales o fiscales, consulte a un abogado o contador calificado. Las opiniones expresadas en este sitio son personales y no representan las de ningún empleador.",
+        "switch": "EN", "lic": "Christian R. González es agente de seguros con licencia en el estado de la Florida (Lic. W606240). Para revisar su caso, puede contactarlo directamente.",
+        "disc": "<strong>Aviso importante:</strong> La información de este sitio es general. No constituye asesoría de seguros, legal, fiscal ni financiera, ni una oferta o solicitud para la venta de productos de seguros. {LIC} Los conceptos descritos son generales; cada póliza tiene sus propios términos, condiciones y exclusiones que prevalecen sobre cualquier descripción general. Para decisiones sobre coberturas, consulte a un agente con licencia; para temas legales o fiscales, consulte a un abogado o contador calificado. Las opiniones expresadas en este sitio son personales y no representan las de ningún empleador.",
         "privacy": "Privacidad", "made": "Hecho con orgullo para la comunidad hispana de la Florida"},
  "en": {"home": "Home", "guides": "Guides", "glossary": "Glossary", "faq": "FAQ", "tools": "Tools",
         "quiz": "Self-Assessment", "contact": "Contact", "library": "Library", "by": "By Christian R. González, licensed Florida insurance agent",
         "updated": "Updated", "min": "min read", "summary": "At a glance", "toc": "In this guide",
         "questions": "Questions to review with your agent, attorney or CPA", "faqh": "Frequently asked questions",
         "sources": "Sources", "related": "Keep reading", "read": "Read the guide", "cta_t": "Where does your family stand on this?",
-        "cta_p": "The Family Protection Map takes three minutes, is anonymous, and shows which parts of your plan are still blank.",
-        "cta_quiz": "Take the self-assessment", "cta_write": "Still have questions? Write to me",
+        "cta_p": "The Family Protection Map takes three minutes and shows which parts of your plan are still blank.",
+        "cta_quiz": "Take the self-assessment", "cta_write": "Request a policy review",
         "mid_pre": "If you want to see how this applies to your family,", "mid_quiz": "take the 3-minute self-assessment", "mid_or": "or", "mid_link": "write to me",
-        "top_t": "See your family's gaps in 3 minutes", "top_p": "The Family Protection Map is anonymous and shows which parts of your plan are still blank.",
-        "top_quiz": "Take the self-assessment", "top_write": "or write to me", "bar_quiz": "Self-check",
+        "top_t": "See your family's gaps in 3 minutes", "top_p": "The Family Protection Map shows which parts of your plan are still blank.",
+        "top_quiz": "Take the self-assessment", "top_write": "or request a policy review", "bar_quiz": "Self-check",
         "bar_write": "Write to me", "bar_call": "Call", "bar_label": "Contact",
         "qc_t": "Your liability in 4 questions", "qc_p": "Four questions from the Family Protection Map, without leaving this page. Nothing is sent until you decide.",
         "qc_n": "Question 1 of 4", "qc_full": "Full self-assessment (12 questions)",
@@ -90,14 +94,18 @@ T = {  # interface strings
         "qc_a": ["Yes, with certainty", "I'm not sure", "No / I've never thought about it", "Doesn't apply to my family"],
         "f_h": "Write to me about your situation", "f_p": "I reply personally, usually within 48 hours.",
         "f_name": "Name", "f_email": "Email", "f_tel": "Phone (optional)", "f_msg": "What would you like to review? (optional)",
-        "f_consent": "I authorize Christian R. González to reply to my inquiry by email or phone. I understand this site is educational and does not offer insurance advice.",
+        "f_consent": "I authorize Christian R. González to reply to my inquiry by email or phone. I understand the information on this site is general.",
         "f_send": "Send message", "f_sending": "Sending…", "f_priv": "How I handle your data", "f_lang": "English",
         "f_err_req": "Please fill in your name and email.", "f_err_mail": "Please check your email address.", "f_err_consent": "Please check the authorization box.",
-        "f_err_send": "We could not send the message from the site. Write to me directly:", "toc_write": "Write to me",
+        "f_err_send": "We could not send the message from the site. Write to me directly:", "toc_write": "Request a review", "adv_l": "Licensed Florida insurance agent · Lic. W606240", "wa": "https://wa.me/17866712171?text=Hi%20Christian%2C%20I%20read%20your%20guide%20on%20protectedlegacyfl.com%20and%20would%20like%20to%20review%20my%20policies.",
+        "calc_t": "Your numbers: hurricane deductible and flood coverage", "calc_p": "Move the values to see two numbers many families do not have at hand. It is an illustrative calculation and sends no data.",
+        "calc_l": "Dwelling limit (Coverage A)", "calc_d": "Hurricane deductible", "calc_f": "Flood coverage for the building", "calc_f0": "None", "calc_f1": "$250,000 (NFIP maximum for a home)", "calc_f2": "Equal to the dwelling limit",
+        "calc_o1": "Hurricane deductible in dollars", "calc_o2": "Part of the building without flood coverage", "calc_note": "Illustrative: it does not include the flood deductible, contents or the other terms of your policy.", "calc_cta": "Review these numbers with Christian",
+        "calc_msg": "My numbers: dwelling limit {L}, hurricane deductible {D}, building flood coverage {F}.",
         "print": "Print", "search": "Search a term", "all": "All", "seeguide": "See the guide", "clear": "Clear checks",
         "months": ["January","February","March","April","May","June","July","August","September","October","November","December"],
-        "switch": "ES", "lic": "Christian R. González is a licensed insurance agent in the State of Florida (Lic. W606240). This site is educational: it does not sell, quote, or negotiate policies through this page.",
-        "disc": "<strong>Important notice:</strong> This site is for educational and informational purposes only. It does not constitute insurance, legal, tax, or financial advice, nor an offer or solicitation for the sale of insurance products. {LIC} Concepts described here are general; every policy has its own terms, conditions, and exclusions that prevail over any general description. For coverage decisions, consult a licensed agent; for legal or tax matters, consult a qualified attorney or CPA. The opinions expressed on this site are personal and do not represent those of any employer.",
+        "switch": "ES", "lic": "Christian R. González is a licensed insurance agent in the State of Florida (Lic. W606240). To review your own situation, you can contact him directly.",
+        "disc": "<strong>Important notice:</strong> The information on this site is general. It does not constitute insurance, legal, tax, or financial advice, nor an offer or solicitation for the sale of insurance products. {LIC} Concepts described here are general; every policy has its own terms, conditions, and exclusions that prevail over any general description. For coverage decisions, consult a licensed agent; for legal or tax matters, consult a qualified attorney or CPA. The opinions expressed on this site are personal and do not represent those of any employer.",
         "privacy": "Privacy", "made": "Made with pride for Florida's Hispanic community"},
 }
 CATS = {"es": {"hogar": "Hogar", "inundacion": "Inundación", "autos": "Autos", "nautica": "Náutica", "aviacion": "Aviación",
@@ -181,6 +189,7 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 .toc{position:sticky;top:88px;align-self:start;font-size:14px}
 .toc a.toc-cta,.toc a.toc-cta:hover{color:var(--verde-oscuro)!important;border:0}
 .toc a.toc-call{display:block;margin-top:12px;padding:0;border:0;font-weight:600;color:var(--verde)}.toc a.toc-call:hover{color:var(--verde-oscuro);text-decoration:underline}
+.toc{max-height:calc(100vh - 100px);overflow-y:auto;scrollbar-width:thin}.adv{margin-top:18px;padding:14px;border:1px solid var(--arena-oscura);border-radius:3px;background:var(--blanco)}.adv-h{display:flex;gap:10px;align-items:center}.adv-h img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none}.adv-h p{margin:0;font-size:13px;line-height:1.35;color:var(--tinta)}.adv-h b{display:block;font-size:14px;color:var(--verde)}.adv .toc-cta{margin-top:12px}.toc .adv a.toc-call{margin-top:8px}
 .toc .toc-cta{display:inline-block;margin-top:18px;padding:10px 18px;border-radius:99px;background:var(--oro);color:var(--verde-oscuro);font-weight:600;text-decoration:none}
 .gform{background:var(--verde);color:var(--arena);border-radius:3px;padding:30px 30px 26px;margin:48px 0;scroll-margin-top:96px}.gform h2{color:var(--oro-claro);margin-top:0}
 .gform>p{color:#C9D5CC;margin:6px 0 20px}.gform .gf-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}.gform .gf-full{grid-column:1/-1}
@@ -210,6 +219,8 @@ th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;ver
 .topcta{background:var(--blanco);border:1px solid var(--arena-oscura);border-left:3px solid var(--oro);border-radius:3px;padding:14px 18px;margin:0 0 32px}
 .topcta-t{margin:0;font-weight:600;font-size:15.5px;line-height:1.3;color:var(--verde)}.topcta-p{margin:4px 0 10px;font-size:14px;line-height:1.45;color:var(--tinta)}
 .topcta .row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px}.topcta .btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;font-size:14.5px}
+.calc{background:var(--blanco);border:1px solid var(--arena-oscura);border-top:3px solid var(--oro);border-radius:3px;padding:22px 24px;margin:0 0 40px}.calc h2{font-size:22px;margin:0 0 6px}.calc-p{font-size:14.5px;margin:0 0 16px}.calc-g{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}.calc-full{grid-column:1/-1;font-weight:600;font-size:14.5px}.calc-g input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--oro);min-height:32px}.calc-g label{display:block;font-size:14px;font-weight:600;margin-bottom:4px}.calc-g select{width:100%;min-height:44px;padding:0 10px;border:1px solid var(--arena-oscura);border-radius:3px;background:var(--blanco);font:inherit;font-size:15px}.calc-o{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 10px}.calc-o div{padding:12px 14px;border-radius:3px;background:var(--arena)}.calc-o span{display:block;font-size:13px;line-height:1.35}.calc-o b{display:block;font-size:24px;color:var(--verde);margin-top:4px}.calc-o .calc-gap{background:#FBEDEA}.calc-o .calc-gap b{color:#8E2A1C}.calc-note{font-size:13px;color:var(--humo);margin:0 0 14px}@media(max-width:620px){.calc{padding:18px 16px}.calc-g,.calc-o{grid-template-columns:1fr}}
+@media(max-width:640px){.tbl-cards{overflow:visible}.tbl-cards table,.tbl-cards tbody,.tbl-cards tr,.tbl-cards td{display:block;width:100%}.tbl-cards thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.tbl-cards tr{border:1px solid var(--arena-oscura);border-radius:3px;margin:0 0 12px;background:var(--blanco)}.tbl-cards td{border:0;border-bottom:1px solid var(--arena-oscura)}.tbl-cards td:last-child{border-bottom:0}.tbl-cards td::before{content:attr(data-label);display:block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--verde);margin-bottom:3px}}
 .topcta-w{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:14.5px;color:var(--verde);text-decoration:underline;text-underline-offset:3px}
 .qc-n{margin:4px 0 4px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#7E5F17}.qc-q{margin:0 0 12px;font-size:16px;line-height:1.45;color:var(--tinta)}
 .qc-a{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 6px}.qc-a button{min-height:44px;padding:8px 14px;border:1px solid var(--arena-oscura);border-radius:12px;background:var(--arena);color:var(--verde);font:600 14px/1.3 var(--body);text-align:left;cursor:pointer}
@@ -420,6 +431,8 @@ def bc_ld(l, items):
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": li}
 
 AUTHOR = {"@type": "Person", "name": "Christian R. González", "jobTitle": "Licensed insurance agent (Florida)",
+          "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Florida insurance agent license W606240",
+                            "recognizedBy": {"@type": "GovernmentOrganization", "name": "Florida Department of Financial Services"}},
           "url": BASE + "/", "sameAs": ["https://www.linkedin.com/in/christiangonzalez22/"]}
 
 # ---------- build ----------
@@ -445,8 +458,9 @@ def render_blocks(blocks):
         elif "table" in b:
             tb = b["table"]
             head = "".join(f"<th scope=\"col\">{rich(h)}</th>" for h in tb["head"])
-            rows = "".join("<tr>" + "".join(f"<td>{rich(c)}</td>" for c in r) + "</tr>" for r in tb["rows"])
-            out.append(f'<div class="tbl"><table><thead><tr>{head}</tr></thead><tbody>{rows}</tbody></table></div>')
+            labs = [esc(plain(h)) for h in tb["head"]]
+            rows = "".join("<tr>" + "".join(f'<td data-label="{labs[i]}">{rich(c)}</td>' for i, c in enumerate(r)) + "</tr>" for r in tb["rows"])
+            out.append(f'<div class="tbl tbl-cards"><table><thead><tr>{head}</tr></thead><tbody>{rows}</tbody></table></div>')
         else:
             sys.exit(f"unknown block {list(b)}")
     return "\n".join(out)
@@ -543,6 +557,16 @@ for k in ORDER:
         else:
             topcard = (f'<div class="topcta no-print">\n      <p class="topcta-t">{t["top_t"]}</p>\n      <p class="topcta-p">{t["top_p"]}</p>\n'
                        f'      <div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="guide_top_quiz_{k}">{t["top_quiz"]}</a><a class="topcta-w" href="{tema}" data-cta="guide_top_write_{k}">{t["top_write"]}</a></div>\n    </div>')
+        calc = ""
+        if k in ("flo", "res"):  # exposure calculator (script: /js/exposure.v1.js); defaults match the guides' own example
+            calc = (f'<section class="calc no-print" id="calc" aria-labelledby="calc-t" data-msg="{esc(t["calc_msg"])}">\n      <h2 id="calc-t">{t["calc_t"]}</h2><p class="calc-p">{t["calc_p"]}</p>\n'
+                    f'      <div class="calc-g"><label class="calc-full" for="calc-l">{t["calc_l"]}: <output id="calc-lv" for="calc-l">$2,000,000</output></label>'
+                    f'<input id="calc-l" type="range" min="500000" max="10000000" step="250000" value="2000000">\n'
+                    f'      <div><label for="calc-d">{t["calc_d"]}</label><select id="calc-d"><option value="2">2%</option><option value="5" selected>5%</option><option value="10">10%</option></select></div>'
+                    f'<div><label for="calc-f">{t["calc_f"]}</label><select id="calc-f"><option value="0">{t["calc_f0"]}</option><option value="250000" selected>{t["calc_f1"]}</option><option value="full">{t["calc_f2"]}</option></select></div></div>\n'
+                    f'      <div class="calc-o"><div><span>{t["calc_o1"]}</span><b id="calc-o1">$100,000</b></div><div class="calc-gap"><span>{t["calc_o2"]}</span><b id="calc-o2">$1,750,000</b></div></div>\n'
+                    f'      <p class="calc-note">{t["calc_note"]}</p><a class="btn btn-oro" id="calc-go" href="#contacto" data-cta="guide_calc_review_{k}">{t["calc_cta"]}</a>\n'
+                    f'    </section>\n    <script src="/js/exposure.v1.js" defer></script>')
         body = f"""
 <header class="head"><div class="wrap">
   {crumbs(l, [(p_hub(l), t['guides']), (None, plain(c['kicker']).split('·')[-1].strip())])}
@@ -552,15 +576,16 @@ for k in ORDER:
   <div class="meta"><span>{t['by']}</span><span><b>{t['updated']}:</b> {fmt_date(g['updated'], l)}</span><span>{minutes(g, l)} {t['min']}</span></div>
 </div></header>
 <div class="wrap layout">
-  <aside class="toc" aria-label="{t['toc']}"><h2>{t['toc']}</h2><ol>{toc}</ol><a class="toc-cta" href="#contacto" data-cta="guide_toc_write_{k}">{t['toc_write']}</a><a class="toc-call" href="tel:+17866712171" data-track="llamada">{t['bar_call']}: (786) 671-2171</a></aside>
+  <aside class="toc" aria-label="{t['toc']}"><h2>{t['toc']}</h2><ol>{toc}</ol><div class="adv"><div class="adv-h"><img src="/img/christian-retrato-400.webp" width="52" height="52" alt="" loading="lazy" decoding="async"><p><b>Christian R. González</b><span>{t['adv_l']}</span></p></div><a class="toc-cta" href="#contacto" data-cta="guide_toc_write_{k}">{t['toc_write']}</a><a class="toc-call" href="tel:+17866712171" data-track="llamada">{t['bar_call']}: (786) 671-2171</a><a class="toc-call" href="{t['wa']}" target="_blank" rel="noopener" data-track="whatsapp">WhatsApp</a></div></aside>
   <article>
     {topcard}
     <div class="sumbox"><h2>{t['summary']}</h2><ul>{summ}</ul></div>
+    {calc}
     {body_secs}
     <div class="qbox"><h2>{t['questions']}</h2><ol>{qs}</ol></div>
     <section class="faq" id="preguntas"><h2>{t['faqh']}</h2>{fq}</section>
     <div class="cta"><h2>{t['cta_t']}</h2><p>{t['cta_p']}</p>
-      <div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="guide_quiz_{k}">{t['cta_quiz']}</a><a class="btn btn-line" href="{tema}" data-cta="guide_contact_{k}">{t['cta_write']}</a></div></div>
+      <div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="guide_quiz_{k}">{t['cta_quiz']}</a><a class="btn btn-line" href="{tema}" data-cta="guide_contact_{k}">{t['cta_write']}</a><a class="btn btn-line" href="{t['wa']}" target="_blank" rel="noopener" data-track="whatsapp">WhatsApp</a></div></div>
     {gform}
     <div class="srcs"><h2>{t['sources']}</h2><ol>{src}</ol></div>
   </article>
