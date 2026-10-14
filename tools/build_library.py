@@ -17,6 +17,20 @@ ORDER = ["res", "flo", "aut", "mar", "avi", "col", "lia", "emp", "cyb", "kr", "s
 ORDER = [k for k in ORDER if os.path.exists(os.path.join(ROOT, "content", "guides", k + ".json"))]
 NUM = {"es": {8: "Ocho", 9: "Nueve", 10: "Diez", 11: "Once", 12: "Doce", 13: "Trece", 14: "Catorce", 15: "Quince", 16: "Dieciséis"},
        "en": {8: "Eight", 9: "Nine", 10: "Ten", 11: "Eleven", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen"}}
+PHOTO = {"aut": "guide-auto", "avi": "guide-aviation", "brd": "guide-boards", "cnd": "guide-condos", "col": "guide-collections", "cyb": "guide-cyber",
+         "emp": "guide-household", "flo": "guide-flood", "kr": "guide-security", "lia": "guide-umbrella", "mar": "guide-boats", "ren": "guide-renovations",
+         "res": "guide-hurricanes", "str": "guide-rentals"}
+PIX1 = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+
+def card_ph(k):
+    n = PHOTO[k]
+    return (f'<picture class="card-ph"><source type="image/avif" srcset="/img/ph/{n}-480.avif"><img src="/img/ph/{n}-480.webp" alt="" width="480" height="360" loading="lazy" decoding="async"></picture>')
+
+def head_ph(n):
+    # laptops only: phones get a 1x1 placeholder, so they never download the photo
+    return (f'<picture class="head-ph no-print" aria-hidden="true"><source media="(min-width:981px)" type="image/avif" srcset="/img/ph/{n}-960.avif">'
+            f'<source media="(min-width:981px)" type="image/webp" srcset="/img/ph/{n}-960.webp"><img src="{PIX1}" alt="" width="960" height="720" decoding="async"></picture>')
+
 ICONS = {
  "res": '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
  "flo": '<path d="M2 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M12 3v7"/><path d="M9 7l3 3 3-3"/>',
@@ -69,7 +83,7 @@ T = {  # interface strings
         "f_err_req": "Por favor complete su nombre y correo.", "f_err_mail": "Por favor verifique su correo electrónico.", "f_err_consent": "Por favor marque la casilla de autorización.",
         "f_err_send": "No pudimos enviar el mensaje desde el sitio. Escríbame directamente:", "toc_write": "Solicitar una revisión", "adv_l": "Agente de seguros con licencia en la Florida · Lic. W606240", "wa": "https://wa.me/17866712171?text=Hola%20Christian%2C%20vi%20su%20gu%C3%ADa%20en%20protectedlegacyfl.com%20y%20quisiera%20revisar%20mis%20p%C3%B3lizas.",
         "calc_t": "Sus cifras: deducible de huracán y cobertura de inundación", "calc_p": "Mueva los valores para ver dos cifras que muchas familias no tienen a mano. Es un cálculo ilustrativo y no envía datos.",
-        "calc_l": "Límite de vivienda (Cobertura A)", "calc_d": "Deducible de huracán", "calc_f": "Cobertura de inundación para el edificio", "calc_f0": "Ninguna", "calc_f1": "$250,000 (máximo del NFIP para una vivienda)", "calc_f2": "Igual al límite de vivienda",
+        "calc_l": "Límite de vivienda (Cobertura A)", "calc_d": "Deducible de huracán", "calc_f": "Cobertura de inundación para el edificio", "calc_f0": "Ninguna", "calc_f1": "$250,000 (máximo del NFIP para una vivienda)", "calc_f2": "Igual al límite de vivienda", "calc_lf": "Con cobertura de inundación",
         "calc_o1": "Deducible de huracán en dólares", "calc_o2": "Parte del edificio sin cobertura de inundación", "calc_note": "Ilustrativo: no incluye el deducible de inundación, el contenido ni los demás términos de su póliza.", "calc_cta": "Revisar estas cifras con Christian",
         "calc_msg": "Mis cifras: límite de vivienda {L}, deducible de huracán {D}, cobertura de inundación del edificio {F}.",
         "print": "Imprimir", "search": "Buscar un término", "all": "Todos", "seeguide": "Ver la guía", "clear": "Borrar marcas",
@@ -99,7 +113,7 @@ T = {  # interface strings
         "f_err_req": "Please fill in your name and email.", "f_err_mail": "Please check your email address.", "f_err_consent": "Please check the authorization box.",
         "f_err_send": "We could not send the message from the site. Write to me directly:", "toc_write": "Request a review", "adv_l": "Licensed Florida insurance agent · Lic. W606240", "wa": "https://wa.me/17866712171?text=Hi%20Christian%2C%20I%20read%20your%20guide%20on%20protectedlegacyfl.com%20and%20would%20like%20to%20review%20my%20policies.",
         "calc_t": "Your numbers: hurricane deductible and flood coverage", "calc_p": "Move the values to see two numbers many families do not have at hand. It is an illustrative calculation and sends no data.",
-        "calc_l": "Dwelling limit (Coverage A)", "calc_d": "Hurricane deductible", "calc_f": "Flood coverage for the building", "calc_f0": "None", "calc_f1": "$250,000 (NFIP maximum for a home)", "calc_f2": "Equal to the dwelling limit",
+        "calc_l": "Dwelling limit (Coverage A)", "calc_d": "Hurricane deductible", "calc_f": "Flood coverage for the building", "calc_f0": "None", "calc_f1": "$250,000 (NFIP maximum for a home)", "calc_f2": "Equal to the dwelling limit", "calc_lf": "With flood coverage",
         "calc_o1": "Hurricane deductible in dollars", "calc_o2": "Part of the building without flood coverage", "calc_note": "Illustrative: it does not include the flood deductible, contents or the other terms of your policy.", "calc_cta": "Review these numbers with Christian",
         "calc_msg": "My numbers: dwelling limit {L}, hurricane deductible {D}, building flood coverage {F}.",
         "print": "Print", "search": "Search a term", "all": "All", "seeguide": "See the guide", "clear": "Clear checks",
@@ -221,6 +235,11 @@ th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;ver
 .topcta .row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px}.topcta .btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;font-size:14.5px}
 .calc{background:var(--blanco);border:1px solid var(--arena-oscura);border-top:3px solid var(--oro);border-radius:3px;padding:22px 24px;margin:0 0 40px}.calc h2{font-size:22px;margin:0 0 6px}.calc-p{font-size:14.5px;margin:0 0 16px}.calc-g{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}.calc-full{grid-column:1/-1;font-weight:600;font-size:14.5px}.calc-g input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--oro);min-height:32px}.calc-g label{display:block;font-size:14px;font-weight:600;margin-bottom:4px}.calc-g select{width:100%;min-height:44px;padding:0 10px;border:1px solid var(--arena-oscura);border-radius:3px;background:var(--blanco);font:inherit;font-size:15px}.calc-o{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 10px}.calc-o div{padding:12px 14px;border-radius:3px;background:var(--arena)}.calc-o span{display:block;font-size:13px;line-height:1.35}.calc-o b{display:block;font-size:24px;color:var(--verde);margin-top:4px}.calc-o .calc-gap{background:#FBEDEA}.calc-o .calc-gap b{color:#8E2A1C}.calc-note{font-size:13px;color:var(--humo);margin:0 0 14px}@media(max-width:620px){.calc{padding:18px 16px}.calc-g,.calc-o{grid-template-columns:1fr}}
 @media(max-width:640px){.tbl-cards{overflow:visible}.tbl-cards table,.tbl-cards tbody,.tbl-cards tr,.tbl-cards td{display:block;width:100%}.tbl-cards thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.tbl-cards tr{border:1px solid var(--arena-oscura);border-radius:3px;margin:0 0 12px;background:var(--blanco)}.tbl-cards td{border:0;border-bottom:1px solid var(--arena-oscura)}.tbl-cards td:last-child{border-bottom:0}.tbl-cards td::before{content:attr(data-label);display:block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--verde);margin-bottom:3px}}
+.head-ph{display:none}@media(min-width:981px){.head-photo .head-ph{display:block;position:absolute;top:0;right:0;bottom:0;width:46%;margin:0}.head-ph img{width:100%;height:100%;object-fit:cover}.head-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--verde-oscuro) 0%,rgba(13,36,28,.62) 32%,rgba(13,36,28,.12) 100%)}.head-photo .wrap{position:relative;z-index:1}.head-photo::after{z-index:1}}
+.card.card-photo{padding-top:0;overflow:hidden}.card-ph{display:block;margin:0 -24px 4px;aspect-ratio:4/3;overflow:hidden;background:var(--verde)}.card-ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}.card-photo:hover .card-ph img{transform:scale(1.04)}.card-photo .ico{margin-top:-34px;position:relative;background:var(--blanco)}@media(prefers-reduced-motion:reduce){.card-ph img{transition:none}}
+.strip{background:var(--verde-oscuro);padding:0}.strip-g{display:grid;grid-template-columns:repeat(6,1fr)}.strip a{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;text-decoration:none}.strip img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}.strip a:hover img{transform:scale(1.05)}.strip span{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-size:13px;font-weight:600;letter-spacing:.02em;color:#fff;background:linear-gradient(0deg,rgba(7,34,26,.9),rgba(7,34,26,0))}@media(max-width:820px){.strip-g{grid-template-columns:repeat(3,1fr)}}@media(max-width:460px){.strip-g{grid-template-columns:repeat(2,1fr)}}
+.poll-a{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 14px}.poll-a button{min-height:44px;padding:8px 16px;border:1px solid var(--arena-oscura);border-radius:99px;background:var(--blanco);font:inherit;font-size:15px;color:var(--tinta);cursor:pointer}.poll-a button:hover,.poll-a button:focus-visible{border-color:var(--oro);outline:2px solid var(--oro);outline-offset:1px}.poll-a button[aria-pressed=true]{background:var(--verde);color:var(--blanco);border-color:var(--verde)}.poll-r{font-weight:600;font-size:16px}.poll-r a{color:var(--verde)}
+.calc-chart{margin:4px 0 14px}.calc-bar{display:flex;height:16px;border-radius:99px;overflow:hidden;background:var(--arena)}.calc-bar span{display:block;height:100%;transition:width .35s ease}.cb-f{background:var(--oro)}.cb-g{background:#B5432F}.calc-leg{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:8px;font-size:13px}.calc-leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}.calc-leg .lf{background:var(--oro)}.calc-leg .lg{background:#B5432F}
 .topcta-w{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:14.5px;color:var(--verde);text-decoration:underline;text-underline-offset:3px}
 .qc-n{margin:4px 0 4px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#7E5F17}.qc-q{margin:0 0 12px;font-size:16px;line-height:1.45;color:var(--tinta)}
 .qc-a{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 6px}.qc-a button{min-height:44px;padding:8px 14px;border:1px solid var(--arena-oscura);border-radius:12px;background:var(--arena);color:var(--verde);font:600 14px/1.3 var(--body);text-align:left;cursor:pointer}
@@ -330,7 +349,13 @@ def tag_contacts(html_out):
         return tag
     return re.sub(r"<a\b[^>]*>", _t, html_out)
 
-def page(l, path, alt_path, title, meta, body, ptype, jsonld=None, extra_js="", noindex=False):
+def og_tags(img, alt):
+    if not img:
+        return ""
+    return (f'<meta property="og:image" content="{BASE}{img}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
+            f'<meta property="og:image:alt" content="{esc(alt)}">\n<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:image" content="{BASE}{img}">\n')
+
+def page(l, path, alt_path, title, meta, body, ptype, jsonld=None, extra_js="", noindex=False, og_img=None, og_alt=""):
     other = "en" if l == "es" else "es"
     es_path, en_path = (path, alt_path) if l == "es" else (alt_path, path)
     t = T[l]
@@ -377,7 +402,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:description" content="{esc(meta)}">
 <meta property="og:url" content="{BASE}{path}">
 <meta property="og:locale" content="{'es_US' if l == 'es' else 'en_US'}">
-{FAVICON}
+{og_tags(og_img, og_alt)}{FAVICON}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style>
@@ -500,7 +525,7 @@ def render_figure(fig, l):
 
 def guide_card(g, l):
     c = g[l]
-    return (f'<a class="card" href="{p_guide(g, l)}">{ico(ICONS[g["key"]])}<h3>{esc(plain(c["h1"]))}</h3>'
+    return (f'<a class="card card-photo" href="{p_guide(g, l)}">{card_ph(g["key"])}{ico(ICONS[g["key"]])}<h3>{esc(plain(c["h1"]))}</h3>'
             f'<p>{esc(plain(c["dek"]))}</p><span class="go">{T[l]["read"]} · {minutes(g, l)} {T[l]["min"]} →</span></a>')
 
 for k in ORDER:
@@ -565,10 +590,12 @@ for k in ORDER:
                     f'      <div><label for="calc-d">{t["calc_d"]}</label><select id="calc-d"><option value="2">2%</option><option value="5" selected>5%</option><option value="10">10%</option></select></div>'
                     f'<div><label for="calc-f">{t["calc_f"]}</label><select id="calc-f"><option value="0">{t["calc_f0"]}</option><option value="250000" selected>{t["calc_f1"]}</option><option value="full">{t["calc_f2"]}</option></select></div></div>\n'
                     f'      <div class="calc-o"><div><span>{t["calc_o1"]}</span><b id="calc-o1">$100,000</b></div><div class="calc-gap"><span>{t["calc_o2"]}</span><b id="calc-o2">$1,750,000</b></div></div>\n'
+                    f'      <div class="calc-chart" aria-hidden="true"><div class="calc-bar"><span class="cb-f" id="cb-f" style="width:12.5%"></span><span class="cb-g" id="cb-g" style="width:87.5%"></span></div>'
+                    f'<div class="calc-leg"><span><i class="lf"></i>{t["calc_lf"]}</span><span><i class="lg"></i>{t["calc_o2"]}</span></div></div>\n'
                     f'      <p class="calc-note">{t["calc_note"]}</p><a class="btn btn-oro" id="calc-go" href="#contacto" data-cta="guide_calc_review_{k}">{t["calc_cta"]}</a>\n'
-                    f'    </section>\n    <script src="/js/exposure.v1.js" defer></script>')
+                    f'    </section>\n    <script src="/js/exposure.v2.js" defer></script>')
         body = f"""
-<header class="head"><div class="wrap">
+<header class="head head-photo">{head_ph(PHOTO[k])}<div class="wrap">
   {crumbs(l, [(p_hub(l), t['guides']), (None, plain(c['kicker']).split('·')[-1].strip())])}
   <span class="kicker">{esc(plain(c['kicker']))}</span>
   <h1>{esc(plain(c['h1']))}</h1>
@@ -576,7 +603,7 @@ for k in ORDER:
   <div class="meta"><span>{t['by']}</span><span><b>{t['updated']}:</b> {fmt_date(g['updated'], l)}</span><span>{minutes(g, l)} {t['min']}</span></div>
 </div></header>
 <div class="wrap layout">
-  <aside class="toc" aria-label="{t['toc']}"><h2>{t['toc']}</h2><ol>{toc}</ol><div class="adv"><div class="adv-h"><img src="/img/christian-retrato-400.webp" width="52" height="52" alt="" loading="lazy" decoding="async"><p><b>Christian R. González</b><span>{t['adv_l']}</span></p></div><a class="toc-cta" href="#contacto" data-cta="guide_toc_write_{k}">{t['toc_write']}</a><a class="toc-call" href="tel:+17866712171" data-track="llamada">{t['bar_call']}: (786) 671-2171</a><a class="toc-call" href="{t['wa']}" target="_blank" rel="noopener" data-track="whatsapp">WhatsApp</a></div></aside>
+  <aside class="toc" aria-label="{t['toc']}"><h2>{t['toc']}</h2><ol>{toc}</ol><div class="adv"><div class="adv-h"><img src="/img/christian-emerald-sq-160.webp" width="52" height="52" alt="" loading="lazy" decoding="async"><p><b>Christian R. González</b><span>{t['adv_l']}</span></p></div><a class="toc-cta" href="#contacto" data-cta="guide_toc_write_{k}">{t['toc_write']}</a><a class="toc-call" href="tel:+17866712171" data-track="llamada">{t['bar_call']}: (786) 671-2171</a><a class="toc-call" href="{t['wa']}" target="_blank" rel="noopener" data-track="whatsapp">WhatsApp</a></div></aside>
   <article>
     {topcard}
     <div class="sumbox"><h2>{t['summary']}</h2><ul>{summ}</ul></div>
@@ -634,7 +661,7 @@ fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlenco
 var gone=false,go=function(){if(gone)return;gone=true;location.href='/gracias.html?lang='+L;};
 try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'generate_lead',lead_source:'guia_'+K,form_id:'guia',language:L,page_type:'guide',quiz_score:'',eventCallback:go,eventTimeout:1500});}catch(x){}
 setTimeout(go,1700);}).catch(function(){B.disabled=false;B.textContent=T;err(E.getAttribute('data-send'),true);});});})();"""
-        written.append(write(path, page(l, path, alt, c["title"], c["meta"], body, "guide", ld, js)))
+        written.append(write(path, page(l, path, alt, c["title"], c["meta"], body, "guide", ld, js, og_img=f"/img/og/{k}-{l}.jpg", og_alt=plain(c["h1"]))))
         if l == "es": sitemap.append((path, alt))
 
 # ---------- hub ----------
@@ -659,16 +686,34 @@ for l in ("es", "en"):
     mcard = f'<div class="card mit-card" id="{mid}">{ico(ICON_EXTRA["mitigation"])}<h2 class="sec">{mh}</h2><p>{mp}</p><ul class="mit-links">{mlinks}</ul></div>'
     tcards = "".join(f'<a class="card" href="{h}">{ico(ICON_EXTRA[ic])}<h3>{esc(n)}</h3><p>{esc(d)}</p><span class="go">→</span></a>' for h, ic, n, d in tools_meta[l])
     if l == "es":
-        h1, dek, title = "Biblioteca de protección patrimonial", f"{NUM['es'].get(len(ORDER), len(ORDER))} guías a fondo, un glosario bilingüe y herramientas prácticas para familias que construyeron algo en la Florida. Educación, no ventas.", "Guías de seguros en español para familias en la Florida"
+        h1, dek, title = "Biblioteca de protección patrimonial", f"{NUM['es'].get(len(ORDER), len(ORDER))} guías a fondo, un glosario bilingüe y herramientas prácticas para familias que construyeron algo en la Florida.", "Guías de seguros en español para familias en la Florida"
         meta = "Guías en español sobre casa, inundación, autos, embarcaciones, aviación, colecciones, umbrella, personal del hogar, ciberseguridad, condominios y más en la Florida."
         th, tl = "Herramientas y referencias", "Para consultar, imprimir y compartir con su familia o sus asesores."
     else:
-        h1, dek, title = "The protection library", f"{NUM['en'].get(len(ORDER), len(ORDER))} in-depth guides, a bilingual glossary and practical tools for families who built something in Florida. Education, not sales.", "Insurance guides for Florida families | Patrimonio Protegido"
-        meta = "Guides on home, flood, auto, boat, aviation, collections, umbrella, household staff, cyber, condo and board insurance for Florida families. Education, not sales."
+        h1, dek, title = "The protection library", f"{NUM['en'].get(len(ORDER), len(ORDER))} in-depth guides, a bilingual glossary and practical tools for families who built something in Florida.", "Insurance guides for Florida families | Patrimonio Protegido"
+        meta = "Guides on home, flood, auto, boat, aviation, collections, umbrella, household staff, cyber, condo and board insurance for Florida families."
         th, tl = "Tools and references", "To look up, print and share with your family or your advisors."
+    S = [("family-estate", "res"), ("guide-boats", "mar"), ("guide-aviation", "avi"), ("guide-collections", "col"), ("private-island", "res"), ("submarine", "mar")]
+    SL = {"es": ["Residencias", "Yates y embarcaciones", "Aviación privada", "Arte y colecciones", "Islas y propiedades remotas", "Sumergibles y tenders"],
+          "en": ["Residences", "Yachts and vessels", "Private aviation", "Art and collections", "Islands and remote homes", "Submersibles and tenders"]}[l]
+    strip = ('<section class="strip no-print" aria-label="' + ("Lo que protegen las familias" if l == "es" else "What families protect") + '"><div class="strip-g">'
+             + "".join(f'<a href="{p_guide(guides[g], l)}"><picture><source type="image/avif" srcset="/img/ph/{ph}-480.avif"><img src="/img/ph/{ph}-480.webp" alt="" width="480" height="360" loading="lazy" decoding="async"></picture><span>{esc(SL[i])}</span></a>'
+                       for i, (ph, g) in enumerate(S)) + '</div></section>')
+    PQ = {"es": ("Pregunta rápida: ¿qué le preocupa más hoy?", "Elija una opción y le muestro por dónde empezar.", "Empiece por esta guía:",
+                 [("res", "Un huracán y mi casa"), ("flo", "Inundación"), ("lia", "Una demanda contra mi familia"), ("mar", "Mi yate o embarcación"), ("avi", "Mi avión"), ("col", "Arte, joyas y colecciones"), ("cyb", "Fraude y robo de identidad"), ("emp", "Personal del hogar")]),
+          "en": ("Quick question: what worries you most today?", "Pick one and I will show you where to start.", "Start with this guide:",
+                 [("res", "A hurricane and my home"), ("flo", "Flooding"), ("lia", "A lawsuit against my family"), ("mar", "My yacht or boat"), ("avi", "My aircraft"), ("col", "Art, jewelry and collections"), ("cyb", "Fraud and identity theft"), ("emp", "Household staff")])}[l]
+    poll = ('<section class="band alt poll no-print" id="pregunta"><div class="wrap"><h2 class="sec">' + PQ[0] + '</h2><p class="lede">' + PQ[1] + '</p><div class="poll-a" role="group" aria-label="' + PQ[0] + '">'
+            + "".join(f'<button type="button" data-k="{k2}" data-href="{p_guide(guides[k2], l)}" data-t="{esc(plain(guides[k2][l]["h1"]))}">{esc(lab)}</button>' for k2, lab in PQ[3])
+            + f'</div><p class="poll-r" id="poll-r" hidden>{PQ[2]} <a href="#"></a></p></div></section>'
+            + '<script>(function(){var r=document.getElementById("poll-r");if(!r)return;var a=r.querySelector("a");[].forEach.call(document.querySelectorAll(".poll-a button"),function(b){b.addEventListener("click",function(){'
+              '[].forEach.call(document.querySelectorAll(".poll-a button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});a.href=b.getAttribute("data-href");a.textContent=b.getAttribute("data-t");r.hidden=false;'
+              'try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:"poll_vote",poll_id:"library_concern",answer:b.getAttribute("data-k"),language:document.documentElement.lang});}catch(e){}});});})();</script>')
     body = f"""
 <header class="head"><div class="wrap">{crumbs(l, [(None, t['guides'])])}<span class="kicker">{t['library']}</span><h1>{h1}</h1><p class="dek">{dek}</p>
 <div class="meta"><span>{t['by']}</span></div></div></header>
+{strip}
+{poll}
 <section class="band"><div class="wrap"><div class="cards">{cards}</div></div></section>
 <section class="band alt"><div class="wrap">{mcard}</div></section>
 <section class="band" id="herramientas"><div class="wrap"><h2 class="sec">{th}</h2><p class="lede">{tl}</p><div class="cards">{tcards}</div></div></section>
