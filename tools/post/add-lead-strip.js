@@ -1,6 +1,7 @@
 // Lead strip (2026-10-26): puts the two-field "call me" card near the top of every guide (both languages) and
 // under the hero on both homepages, and loads /js/lead-strip.v1.js. Idempotent: a page that already has the
-// slot or the script is left alone. Usage: node tools/post/add-lead-strip.js <repo root>
+// slot or the script is left alone. On the umbrella guides the slot goes under the guided path (guide-path.v1.js).
+// Runs as the last step of tools/postbuild.js. Usage: node tools/post/add-lead-strip.js <repo root>
 const fs = require('fs'); const path = require('path');
 const ROOT = path.resolve(process.argv[2] || path.join(__dirname, '..', '..'));
 const SCRIPT = '<script src="/js/lead-strip.v1.js" defer></script>';
@@ -13,7 +14,10 @@ for (const f of fs.readdirSync(ROOT)) {
   if (!isGuide && !isHome) continue;
   const p = path.join(ROOT, f); let h = fs.readFileSync(p, 'utf8'); const before = h;
   if (!h.includes('id="leadStrip"')) {
-    if (isGuide) {
+    if (isGuide && h.includes('/js/guide-path.v1.js')) {
+      // the umbrella guides: under the guided path, so the path comes first on every screen size
+      h = h.replace(/(<script src="\/js\/guide-path\.v1\.js" defer><\/script>\n)/, '$1    ' + SLOT + '\n');
+    } else if (isGuide) {
       // after the article opens, before the top card
       h = h.replace(/<article>\s*\n?/, m => m + '    ' + SLOT + '\n');
     } else {
