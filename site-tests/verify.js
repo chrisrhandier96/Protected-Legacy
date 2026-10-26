@@ -519,7 +519,8 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
         const e = [];
         if (!q('.toc a.toc-call[href="tel:+17866712171"][data-track="llamada"]')) e.push('sidebar call link missing');
         if (!card) e.push('no .topcta'); else {
-          if (!sum || (n => { while (n && n.tagName === 'SCRIPT') n = n.nextElementSibling; return n; })(card.nextElementSibling) !== sum || card.parentElement.firstElementChild !== card) e.push('.topcta not first in the article, directly before .sumbox');
+          const skip = n => n && (n.tagName === 'SCRIPT' || n.id === 'leadStrip'), walk = n => { while (skip(n)) n = n.nextElementSibling; return n; }; // the call-me strip (2026-10-26) sits next to the card
+          if (!sum || walk(card.nextElementSibling) !== sum || walk(card.parentElement.firstElementChild) !== card) e.push('.topcta not first in the article (call-me strip aside), directly before .sumbox');
           const tq = card.querySelector(`a[data-cta="guide_top_quiz_${k}"]`);
           if (!tq || path(tq) !== home) e.push(`top quiz link ${tq ? path(tq) : 'missing'} (want ${home})`);
           if (!card.querySelector(`a[data-cta="guide_top_write_${k}"]`)) e.push('top write link missing');
@@ -544,20 +545,20 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     const par = guides.filter(g => g.startsWith('/guias/')).map(g => { const en = counts[g].alt, a = counts[g].n, b = counts[en] ? counts[en].n : -1; return a === b ? null : `${g} ${a} vs ${en} ${b}`; }).filter(Boolean);
     rec('GuideCTA', 'ES/EN parity: same number of [data-cta] on each guide pair', par.length === 0, par.length ? par.join(' | ') : '14 pairs match');
 
-    // phones: card near the first screen, bar after the card, hidden over the form, nothing overflows (Google tags blocked, no navigation)
+    // phones: the first call-to-action (the call-me strip, 2026-10-26, or the card) near the first screen, bar after the card, hidden over the form, nothing overflows (Google tags blocked, no navigation)
     const mob = [];
     for (const [w, h] of [[360, 740], [390, 844]]) for (const u of ['/guias/umbrella-responsabilidad/', '/en/guides/umbrella-liability/', '/guias/inundacion/', '/en/guides/flood/']) {
       const p = await freshPage({ viewport: { width: w, height: h }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 }); await p.goto(BASE + u); await settle(p);
       const on = () => p.evaluate(() => document.getElementById('gbar').classList.contains('on'));
       const go = y => p.evaluate(y => window.scrollTo({ top: y, behavior: 'instant' }), y).then(() => p.waitForTimeout(350));
-      await go(0); const s = await p.evaluate(() => { const r = document.querySelector('.topcta').getBoundingClientRect(); return { top: r.top + scrollY, bottom: r.bottom + scrollY, ov: document.documentElement.scrollWidth > innerWidth, labels: [...document.querySelectorAll('#gbar a')].some(a => a.scrollWidth > a.clientWidth + 1) }; });
+      await go(0); const s = await p.evaluate(() => { const r = document.querySelector('.topcta').getBoundingClientRect(), st = document.getElementById('leadStrip'); return { top: Math.min(r.top, st ? st.getBoundingClientRect().top : Infinity) + scrollY, bottom: r.bottom + scrollY, ov: document.documentElement.scrollWidth > innerWidth, labels: [...document.querySelectorAll('#gbar a')].some(a => a.scrollWidth > a.clientWidth + 1) }; });
       const atTop = await on(); await go(s.bottom + 10); const past = await on();
       await p.evaluate(() => document.getElementById('contacto').scrollIntoView({ behavior: 'instant' })); await p.waitForTimeout(350); const form = await on();
       const ok = s.top < h * 1.35 && !atTop && past && !form && !s.ov && !s.labels;
-      if (!ok) mob.push(`${w}x${h} ${u}: cardTop ${Math.round(s.top)}, bar top/past/form ${atTop}/${past}/${form}, overflow ${s.ov}, label overflow ${s.labels}`);
+      if (!ok) mob.push(`${w}x${h} ${u}: first call-to-action top ${Math.round(s.top)}, bar top/past/form ${atTop}/${past}/${form}, overflow ${s.ov}, label overflow ${s.labels}`);
       if (p.errors.length) mob.push(`${u}: ${p.errors.join('; ')}`); await p.ctx.close();
     }
-    rec('GuideCTA', 'Phones 360x740 + 390x844: card within one short scroll, bar after it, hidden over the form, no overflow', mob.length === 0, mob.length ? mob.join(' | ') : '8 checks OK');
+    rec('GuideCTA', 'Phones 360x740 + 390x844: first call-to-action (call-me strip or card) within one short scroll, bar after the card, hidden over the form, no overflow', mob.length === 0, mob.length ? mob.join(' | ') : '8 checks OK');
 
     // dataLayer: three guide_scroll events, one cta_click per new CTA (clicks are prevented, so nothing navigates or dials)
     const dl = [];
@@ -694,53 +695,84 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     rec('LeadPath', 'New copy: Spanish accents intact, no em dash, no pressure or price words', !miss.length && !ban.length, (miss.length ? 'missing ' + miss.join(', ') : 'accents OK') + (ban.length ? '; banned ' + ban.join(', ') : '; scan clean'));
   }
 
-  /* ================= UMBRELLA QUICK CHECK (work order 2026-10-08, Part 4) ================= */
+  /* ================= GUIDED PATH on the umbrella guides (2026-10-26; replaced the 4-question quick check) ================= */
   if (want('umbrella')) {
     const R = async (p, store) => p.route('**/*', async rt => { const q = rt.request(), u = new URL(q.url());
       if (q.method() === 'POST') { if (u.pathname === '/') store.push(q.postData() || ''); await new Promise(r => setTimeout(r, 300)); return rt.fulfill({ status: 200, body: 'ok' }); } // answered in the browser
       if (/google|doubleclick|googleadservices/.test(u.host)) return rt.abort(); return rt.continue(); });
     const C = {
-      es: { u: '/guias/umbrella-responsabilidad/', q1: '¿Tiene una póliza umbrella con límites al menos comparables a su patrimonio neto?', n4: 'Pregunta 4 de 4', done: 'Listo. Le escribo hoy mismo.', none: 'Escriba su teléfono o su correo, por favor.', tema: 'Responsabilidad y umbrella' },
-      en: { u: '/en/guides/umbrella-liability/', q1: 'Do you carry an umbrella policy with limits at least comparable to your net worth?', n4: 'Question 4 of 4', done: 'Done. I will write to you today.', none: 'Please type your phone or your email.', tema: 'Responsabilidad y umbrella' },
+      es: { u: '/guias/umbrella-responsabilidad/', t: '¿Cuál es su duda sobre la umbrella?', home: '/#mapa', s2: 'Paso 2 de 3', s3: 'Paso 3 de 3',
+        chips: ['¿Cuánta umbrella necesito?', '¿Qué cubre y qué no?', '¿Cubre mi embarcación, alquiler y autos?', '¿Vale la pena para mi familia?', 'Sirvo en una junta directiva', 'Otra duda: pregúnteme'],
+        name: 'Escriba su nombre.', tel: 'Escriba un teléfono con código de área, por ejemplo 305 555 0123.', done: 'Gracias, Prueba. Le llamo hoy mismo, en horario de Miami, sobre: ¿Cuánta umbrella necesito?' },
+      en: { u: '/en/guides/umbrella-liability/', t: 'What is your question about umbrella insurance?', home: '/en/#mapa', s2: 'Step 2 of 3', s3: 'Step 3 of 3',
+        chips: ['How much umbrella do I need?', 'What does it cover, and what not?', 'Does it cover my boat, rental and cars?', 'Is it worth it for my family?', 'I serve on a board', 'Something else: ask me'],
+        name: 'Please enter your name.', tel: 'Please enter a phone number with area code, for example 305 555 0123.', done: 'Thank you, Prueba. I will call you today, Miami time, about: How much umbrella do I need?' },
     };
+    const G = '#guidePath';
     for (const lang of ['es', 'en']) {
       const c = C[lang];
-      // static first question, four answers, the two links, readable at 390 px
+      // start screen: first in the article, above the call-me strip, the six doubts, the two links every top card carries, readable at 390 px
       { const p = await freshPage(MOBILE); await R(p, []); await p.goto(BASE + c.u); await settle(p);
-        const r = await p.evaluate(() => { const k = document.getElementById('qcheck'); return { q: (document.getElementById('qc-q') || {}).textContent, n: k ? k.querySelectorAll('.qc-a button').length : 0,
-          links: k ? k.querySelectorAll('a[data-cta^="guide_top_"]').length : 0, over: document.documentElement.scrollWidth > innerWidth, first: !!k && k.parentElement.firstElementChild === k && (n => { while (n && n.tagName === 'SCRIPT') n = n.nextElementSibling; return !!n && n.classList.contains('sumbox'); })(k.nextElementSibling) }; });
-        await p.locator('#qcheck').screenshot({ path: path.join(OUT, 'shots', `umbrella-check-q1-${lang}-390.png`) });
-        rec('Umbrella', `${c.u} card: question 1 in the page, 4 answers, 2 links, 390 px`, r.q === c.q1 && r.n === 4 && r.links === 2 && !r.over && r.first && !p.errors.length, JSON.stringify(r) + (p.errors.length ? ' ' + p.errors.join('; ') : ''));
+        const r = await p.evaluate(() => { const g = document.getElementById('guidePath'), art = g && g.closest('article'), st = document.getElementById('leadStrip');
+          return { t: g ? (g.querySelector('.gp-t') || {}).textContent : null, chips: g ? [...g.querySelectorAll('button[data-d]')].map(b => b.textContent) : [],
+            links: g ? [...g.querySelectorAll('a[data-cta^="guide_top_"]')].map(a => a.getAttribute('data-cta') + ' ' + a.getAttribute('href')) : [],
+            first: !!art && art.firstElementChild === g, above: !!g && !!st && g.getBoundingClientRect().top < st.getBoundingClientRect().top,
+            old: !!document.getElementById('qcheck') || !!document.querySelector('script[src*="quick-check"]'), over: document.documentElement.scrollWidth > innerWidth }; });
+        await p.locator(G).screenshot({ path: path.join(OUT, 'shots', `umbrella-path-start-${lang}-390.png`) });
+        const links = r.links.join(' | ') === `guide_top_quiz_lia ${c.home} | guide_top_write_lia #contacto`;
+        rec('Umbrella', `${c.u} guided path: first in the article, above the call-me strip, 6 doubts, the 2 top-card links, no quick check, 390 px`,
+          r.t === c.t && r.chips.join('|') === c.chips.join('|') && links && r.first && r.above && !r.old && !r.over && !p.errors.length, JSON.stringify(r) + (p.errors.length ? ' ' + p.errors.join('; ') : ''));
         await p.ctx.close(); }
-      // through the 4 questions to the result; blocked with no contact; phone only sends once and collapses the guide form
+      // "how much": several picks, None clears the rest, the answer with its section link; then the call-me step (name and phone required, one request, one generate_lead)
       { const p = await freshPage(MOBILE); const store = []; await R(p, store); await p.goto(BASE + c.u + '?gclid=TESTGCLID&utm_source=google'); await settle(p);
-        const seen = [];
-        for (const v of ['2', '1', '0', '1']) { seen.push((await p.textContent('#qc-n')).trim()); await p.click(`#qcheck .qc-a button[data-v="${v}"]`); await p.waitForTimeout(150); }
-        const r = await p.evaluate(() => { const res = document.getElementById('qc-res'); return { vis: !res.hidden && !!document.getElementById('qcForm'), score: (res.querySelector('.qc-score') || {}).textContent,
-          title: (res.querySelector('.qc-title') || {}).textContent, links: [...res.querySelectorAll('.qc-rev a')].map(a => a.getAttribute('href')), ok: [...res.querySelectorAll('.qc-rev a')].every(a => !!document.getElementById(a.getAttribute('href').slice(1))),
-          qc: dataLayer.filter(o => o && o.event === 'quiz_complete' && o.quiz_id === 'umbrella_4').length }; });
-        await p.locator('#qcheck').screenshot({ path: path.join(OUT, 'shots', `umbrella-check-result-${lang}-390.png`) });
-        rec('Umbrella', `${c.u} four questions in order, then the result with links to this guide`, seen[3] === c.n4 && r.vis && r.score.includes('50%') && !!r.title && r.links.length === 2 && r.ok && r.qc === 1,
-          `steps ${seen.join(' > ')}; ${r.score} "${r.title}", review links ${r.links.join(' ')} (all exist ${r.ok}), quiz_complete ${r.qc}`);
-        await p.fill('#qc-nombre', 'Prueba'); await p.click('#qc-send'); await p.waitForTimeout(500);
-        const m = (await p.textContent('#qc-err')).trim(); const blocked = store.length === 0 && m === c.none;
-        await p.fill('#qc-tel', '305 555 0100'); await p.click('#qc-send'); await p.click('#qc-send', { force: true }).catch(() => {}); await p.waitForTimeout(1500);
+        await p.click(`${G} button[data-d="limit"]`); await p.waitForTimeout(150);
+        const s2 = await p.evaluate(g => ({ k: document.querySelector(g + ' .gp-k').textContent, n: document.querySelectorAll(g + ' button[data-o]').length, off: document.querySelector(g + ' .gp-go').disabled }), G);
+        const pressed = () => p.$$eval(`${G} button[aria-pressed="true"]`, x => x.map(b => b.getAttribute('data-o')).join(','));
+        for (const o of ['pool', 'boat', 'teen']) await p.click(`${G} button[data-o="${o}"]`);
+        await p.click(`${G} button[data-o="none"]`); const solo = await pressed();
+        for (const o of ['pool', 'boat', 'teen']) await p.click(`${G} button[data-o="${o}"]`); const picks = await pressed();
+        await p.click(`${G} .gp-go`); await p.waitForTimeout(150);
+        const a = await p.evaluate(g => { const el = document.querySelector(g), l = el.querySelector('a[data-sec]');
+          return { k: el.querySelector('.gp-k').textContent, items: el.querySelectorAll('.gp-list li').length, paras: el.querySelectorAll('.gp-a').length, sec: l && l.getAttribute('href'),
+            secOk: !!l && !!document.getElementById(l.getAttribute('href').slice(1)), ev: dataLayer.filter(o => o && o.event === 'cta_click' && /^path_/.test(o.cta)).map(o => o.cta).join(',') }; }, G);
+        await p.locator(G).screenshot({ path: path.join(OUT, 'shots', `umbrella-path-answer-${lang}-390.png`) });
+        rec('Umbrella', `${c.u} "how much": multi-pick, None clears the rest, answer with intro, 3 marked lines, the several-exposures line and a working section link`,
+          s2.k === c.s2 && s2.n === 7 && s2.off && solo === 'none' && picks === 'pool,boat,teen' && a.k === c.s3 && a.items === 3 && a.paras === 2 && a.secOk && a.ev === 'path_start_limit,path_answer_limit',
+          `step 2 ${JSON.stringify(s2)}, None -> ${solo}, picks ${picks}, answer ${JSON.stringify(a)}`);
+        await p.fill('#gp-tel', '305 555 0100'); await p.click(`${G} .gp-send`); await p.waitForTimeout(300); const e1 = (await p.textContent(`${G} .gp-err`)).trim();
+        await p.fill('#gp-n', 'Prueba'); await p.fill('#gp-tel', '305 555'); await p.click(`${G} .gp-send`); await p.waitForTimeout(300); const e2 = (await p.textContent(`${G} .gp-err`)).trim(), before = store.length;
+        await p.fill('#gp-tel', '305 555 0100'); await p.click(`${G} .gp-send`); await p.click(`${G} .gp-send`, { force: true, timeout: 1000 }).catch(() => {}); await p.waitForTimeout(1500);
         const f = new URLSearchParams(store[0] || ''), L2 = await p.evaluate(() => dataLayer.filter(o => o && o.event === 'generate_lead').map(o => ({ ...o })));
-        const st = await p.evaluate(() => ({ done: !document.getElementById('qc-done').hidden ? document.getElementById('qc-done').textContent.trim() : '', g: document.getElementById('gForm').hidden, gd: (document.getElementById('formDone') || {}).textContent || '' }));
-        const g = L2[0] || {}, need = ['form-name', 'tema', 'idioma_sitio', 'nombre', 'telefono', 'gclid', 'origen', 'pagina_entrada', 'autoevaluacion_puntaje', 'autoevaluacion_respuestas', 'nivel_conciencia'];
-        const miss = need.filter(k => !f.get(k));
-        await p.locator('#qcheck').screenshot({ path: path.join(OUT, 'shots', `umbrella-check-done-${lang}-390.png`) });
-        rec('Umbrella', `${c.u} no contact is blocked; phone only sends once, one generate_lead, guide form collapses, same page`,
-          blocked && store.length === 1 && !miss.length && f.get('form_id') === 'mini' && f.get('form-name') === 'contacto' && f.get('tema') === c.tema && f.get('gclid') === 'TESTGCLID' && f.get('idioma_sitio') === lang
-          && L2.length === 1 && g.form_id === 'mini' && g.lead_source === 'umbrella_quick_check' && g.lang === lang && g.awareness_level === 'medium' && g.blank_count === 3
-          && st.done === c.done && st.g && st.gd === c.done && new URL(p.url()).pathname === c.u && !p.errors.length,
-          `blocked ${blocked} ("${m}"), posts ${store.length}, missing [${miss}], form_id ${f.get('form_id')}, tema "${f.get('tema')}", generate_lead ${L2.length} ${JSON.stringify(g).slice(0, 220)}, done "${st.done}", guide form hidden ${st.g}` + (p.errors.length ? ' ' + p.errors.join('; ') : ''));
+        const done = await p.evaluate(g => (document.querySelector(g + ' .gp-done') || {}).textContent || '', G), g = L2[0] || {};
+        const miss = ['form-name', 'form_id', 'tema', 'idioma', 'idioma_sitio', 'nombre', 'telefono', 'mensaje', 'gclid', 'origen', 'pagina_entrada'].filter(k => !f.get(k));
+        await p.locator(G).screenshot({ path: path.join(OUT, 'shots', `umbrella-path-done-${lang}-390.png`) });
+        rec('Umbrella', `${c.u} call-me: name and phone required; one request with the doubt, the picks and the attribution; one generate_lead; thank-you in place, same page`,
+          e1 === c.name && e2 === c.tel && before === 0 && store.length === 1 && !miss.length && f.get('form-name') === 'contacto' && f.get('form_id') === 'path' && f.get('tema') === 'Responsabilidad y umbrella'
+          && f.get('gclid') === 'TESTGCLID' && f.get('idioma_sitio') === lang && (f.get('mensaje') || '').startsWith('Duda (guía umbrella): ¿Cuánta umbrella necesito? · Marcó: ')
+          && L2.length === 1 && g.form_id === 'path' && g.lead_source === 'path_limit' && done.startsWith(c.done) && new URL(p.url()).pathname === c.u && !p.errors.length,
+          `errors "${e1}" / "${e2}", posts ${store.length}, missing [${miss}], form_id ${f.get('form_id')}, mensaje "${(f.get('mensaje') || '').slice(0, 150)}", generate_lead ${L2.length} ${JSON.stringify(g).slice(0, 200)}, done "${done.slice(0, 100)}"` + (p.errors.length ? ' ' + p.errors.join('; ') : ''));
+        await p.ctx.close(); }
+      // "what it covers" > a car accident: one answer with the Florida figure and the UM rule, its section link works, "another question" goes back to the six doubts
+      { const p = await freshPage(MOBILE); await R(p, []); await p.goto(BASE + c.u); await settle(p);
+        await p.click(`${G} button[data-d="cover"]`); await p.waitForTimeout(150); await p.click(`${G} button[data-o="car"]`); await p.waitForTimeout(150);
+        const a = await p.evaluate(g => { const el = document.querySelector(g), l = el.querySelector('a[data-sec]'); return { k: el.querySelector('.gp-k').textContent, fig: el.textContent.includes('20.6%'), um: el.textContent.includes('UM'), sec: l && l.getAttribute('href'), secOk: !!l && !!document.getElementById(l.getAttribute('href').slice(1)) }; }, G);
+        await p.click(`${G} .gp-links button[data-restart]`); await p.waitForTimeout(150); const back = await p.$$eval(`${G} button[data-d]`, x => x.length);
+        rec('Umbrella', `${c.u} "what it covers" > car: answer with the 20.6% figure and the UM rule, working section link, restart shows the 6 doubts`,
+          a.k === c.s3 && a.fig && a.um && a.secOk && back === 6 && !p.errors.length, JSON.stringify(a) + ` restart ${back}` + (p.errors.length ? ' ' + p.errors.join('; ') : ''));
+        await p.ctx.close(); }
+      // "something else": the free question goes in the message
+      { const p = await freshPage(MOBILE); const store = []; await R(p, store); await p.goto(BASE + c.u); await settle(p);
+        await p.click(`${G} button[data-d="other"]`); await p.waitForTimeout(150);
+        await p.fill('#gp-q', 'Prueba de pregunta'); await p.fill('#gp-n', 'Prueba'); await p.fill('#gp-tel', '305 555 0100'); await p.click(`${G} .gp-send`); await p.waitForTimeout(1200);
+        const f = new URLSearchParams(store[0] || ''), L2 = await p.evaluate(() => dataLayer.filter(o => o && o.event === 'generate_lead').map(o => o.lead_source).join(','));
+        rec('Umbrella', `${c.u} "something else": the free question goes in the message, lead source path_other`,
+          store.length === 1 && (f.get('mensaje') || '').includes('Pregunta: Prueba de pregunta') && L2 === 'path_other' && !p.errors.length, `posts ${store.length}, mensaje "${(f.get('mensaje') || '').slice(0, 140)}", generate_lead ${L2}` + (p.errors.length ? ' ' + p.errors.join('; ') : ''));
         await p.ctx.close(); }
     }
     // the other 26 guides keep the plain card
     { const p = await freshPage(); await R(p, []); await p.goto(BASE + '/guias/inundacion/'); await settle(p);
-      const r = await p.evaluate(() => ({ qc: !!document.getElementById('qcheck'), card: !!document.querySelector('.topcta a[data-cta="guide_top_quiz_flo"]'), js: !!document.querySelector('script[src*="quick-check"]') }));
-      rec('Umbrella', 'Other guides keep the plain self-check card (no quick check, no script)', !r.qc && r.card && !r.js, JSON.stringify(r)); await p.ctx.close(); }
+      const r = await p.evaluate(() => ({ path: !!document.getElementById('guidePath') || !!document.querySelector('script[src*="guide-path"]'), qc: !!document.getElementById('qcheck') || !!document.querySelector('script[src*="quick-check"]'), card: !!document.querySelector('.topcta a[data-cta="guide_top_quiz_flo"]') }));
+      rec('Umbrella', 'Other guides keep the plain self-check card (no guided path, no quick check)', !r.path && !r.qc && r.card, JSON.stringify(r)); await p.ctx.close(); }
   }
 
   /* ================= 3D (work order 2026-10): hero, map, layers figures ================= */
