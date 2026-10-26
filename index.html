@@ -458,6 +458,7 @@ section:hover .eyebrow::before{width:52px}
 }
 </style>
 <style id="cg-logo">.logo-mark.cg-mark{width:auto;height:44px;transform:none!important}.logo-mark.cg-crest{width:auto;height:64px;transform:none!important}</style>
+<style id="ls-reserve">/* Call-me strip on the home hero: js/lead-strip.v1.js fills #leadStrip after the first paint, so its box is reserved here (the card margins plus its height per language and width) and the hero does not grow when it arrives. Heights measured Oct 26 2026 on the v1 copy; each step sits 20px past the measured wrap point so a classic 17px scrollbar never makes the card taller than its box. Measure again if the strip copy or its CSS changes. */.hero #leadStrip{margin:-28px 0 56px}@media(min-width:701px){.hero #leadStrip{min-height:266.61px}html[lang="en"] .hero #leadStrip{min-height:284.61px}}@media(min-width:730px){html[lang="en"] .hero #leadStrip{min-height:266.61px}}@media(min-width:871px){html[lang="en"] .hero #leadStrip{min-height:245.61px}}@media(min-width:990px){.hero #leadStrip{min-height:245.61px}}html[lang] .hero #leadStrip:has(.ls-done){min-height:0}</style>
 <style id="pp-a11y">
 /* WCAG AA: gold and grey text on the light sand backgrounds (gold stays bright on dark green) */
 :root{--oro-tx:#7E5F17;--oro-tx-lg:#9A7424;--humo-tx:#5F665A}
