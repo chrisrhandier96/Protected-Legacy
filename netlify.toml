@@ -25,6 +25,12 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Browsers ask for /favicon.ico on their own; serve the SVG instead of a 404
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.svg"
+  status = 200
+
 # Old English links (/?lang=en) go to the real English page
 [[redirects]]
   from = "/"
