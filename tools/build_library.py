@@ -572,13 +572,8 @@ for k in ORDER:
 <p class="gf-err" id="gf-err" role="alert" data-req="{t['f_err_req']}" data-mail="{t['f_err_mail']}" data-consent="{t['f_err_consent']}" data-send="{t['f_err_send']}"></p>
 <p class="gf-priv"><a href="/privacidad.html">{t['f_priv']}</a></p>
 </form></section>"""
-        if k == "lia":  # Part 4: the umbrella quick check, inline (script: /js/quick-check.v1.js)
-            btns = "".join(f'<button type="button" data-v="{v}">{esc(x)}</button>' for v, x in zip((2, 1, 0, -1), t["qc_a"]))
-            topcard = (f'<div class="topcta qcheck no-print" id="qcheck" aria-live="polite">\n      <p class="topcta-t">{t["qc_t"]}</p>\n      <p class="topcta-p">{t["qc_p"]}</p>\n'
-                       f'      <div id="qc-step"><p class="qc-n" id="qc-n">{t["qc_n"]}</p><p class="qc-q" id="qc-q">{esc(t["qc_q1"])}</p>\n'
-                       f'      <div class="qc-a" role="group" aria-labelledby="qc-q">{btns}</div></div>\n      <div id="qc-res" hidden></div>\n'
-                       f'      <div class="row"><a class="topcta-w" href="{p_home(l)}#mapa" data-cta="guide_top_quiz_{k}">{t["qc_full"]}</a><a class="topcta-w" href="{tema}" data-cta="guide_top_write_{k}">{t["top_write"]}</a></div>\n'
-                       f'    </div>\n    <script src="/js/quick-check.v1.js" defer></script>')
+        if k == "lia":  # guided path (2026-10-26; replaced the 4-question quick check): /js/guide-path.v1.js draws the card, its two top-card links included
+            topcard = '<div class="topcta gpath no-print" id="guidePath"></div>\n    <script src="/js/guide-path.v1.js" defer></script>'
         else:
             topcard = (f'<div class="topcta no-print">\n      <p class="topcta-t">{t["top_t"]}</p>\n      <p class="topcta-p">{t["top_p"]}</p>\n'
                        f'      <div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="guide_top_quiz_{k}">{t["top_quiz"]}</a><a class="topcta-w" href="{tema}" data-cta="guide_top_write_{k}">{t["top_write"]}</a></div>\n    </div>')
