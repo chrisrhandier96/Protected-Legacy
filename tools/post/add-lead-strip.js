@@ -6,6 +6,25 @@ const fs = require('fs'); const path = require('path');
 const ROOT = path.resolve(process.argv[2] || path.join(__dirname, '..', '..'));
 const SCRIPT = '<script src="/js/lead-strip.v1.js" defer></script>';
 const SLOT = '<div id="leadStrip"></div>';
+// Layout-shift guard for the guides (2026-11-01): the strip is injected after the first paint, so its box is
+// reserved here. Heights measured with Playwright on the v1 copy, per language and viewport width (the card is
+// 268px once the content column caps at 720px, and wraps on narrower screens). The reserve collapses once the
+// thank-you replaces the form. Measure again if the strip copy or its CSS changes. The homepages keep their own
+// reserve in index.html and en.html.
+const RESERVE = '<style id="ls-reserve-guide">'
+  + '#leadStrip{order:-2;margin:0 0 24px;box-sizing:border-box;min-height:535px}'
+  + 'html[lang="en"] #leadStrip{min-height:488px}'
+  + '@media(min-width:336px){#leadStrip{min-height:470px}}'
+  + '@media(min-width:354px){html[lang="en"] #leadStrip{min-height:470px}}'
+  + '@media(min-width:417px){html[lang="en"] #leadStrip{min-height:449px}}'
+  + '@media(min-width:455px){html[lang="en"] #leadStrip{min-height:422px}}'
+  + '@media(min-width:479px){#leadStrip{min-height:449px}}'
+  + '@media(min-width:572px){#leadStrip{min-height:422px}}'
+  + '@media(min-width:628px){#leadStrip{min-height:404px}}'
+  + '@media(min-width:654px){html[lang="en"] #leadStrip{min-height:404px}}'
+  + '@media(min-width:701px){#leadStrip{min-height:268px}html[lang="en"] #leadStrip{min-height:268px}}'
+  + '#leadStrip:has(.ls-done){min-height:0}'
+  + '</style>';
 let touched = 0, skipped = 0;
 for (const f of fs.readdirSync(ROOT)) {
   if (!/\.html$/.test(f)) continue;
@@ -26,6 +45,7 @@ for (const f of fs.readdirSync(ROOT)) {
     }
   }
   if (!h.includes('/js/lead-strip.v1.js')) h = h.replace(/<\/body>/, SCRIPT + '\n</body>');
+  if (isGuide && !h.includes('id="ls-reserve-guide"')) h = h.replace(/<\/head>/, RESERVE + '\n</head>');
   if (h !== before) { fs.writeFileSync(p, h); touched++; } else skipped++;
 }
 process.stdout.write(`add-lead-strip: ${touched} page(s) changed, ${skipped} already done\n`);
