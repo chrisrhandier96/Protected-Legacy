@@ -258,8 +258,8 @@
    "es": "Infraseguro",
    "en": "Underinsurance",
    "cat": "hogar",
-   "def_es": "Cuando el límite asegurado es menor que el costo real de reconstruir o reemplazar. Cotality (antes CoreLogic) estimó que cerca del 64% de las viviendas en Estados Unidos están infraseguradas, y los costos de reconstrucción subieron 25.9% entre marzo de 2020 y mayo de 2023.",
-   "def_en": "When the insured limit is lower than the real cost to rebuild or replace. Cotality (formerly CoreLogic) estimated about 64% of U.S. homes are underinsured, and residential reconstruction costs rose 25.9% from March 2020 to May 2023.",
+   "def_es": "Cuando el límite asegurado es menor que el costo real de reconstruir o reemplazar. Cotality (antes CoreLogic) estimó que cerca del 64% de las viviendas en Estados Unidos están infraseguradas, y los costos de reconstrucción subieron 25.9% entre marzo de 2020 y mayo de 2023 (Verisk).",
+   "def_en": "When the insured limit is lower than the real cost to rebuild or replace. Cotality (formerly CoreLogic) estimated about 64% of U.S. homes are underinsured, and residential reconstruction costs rose 25.9% from March 2020 to May 2023 (Verisk).",
    "guide": "res"
   },
   {
