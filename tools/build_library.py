@@ -573,7 +573,12 @@ for k in ORDER:
 <p class="gf-priv"><a href="/privacidad.html">{t['f_priv']}</a></p>
 </form></section>"""
         if k == "lia":  # guided path (2026-10-26; replaced the 4-question quick check): /js/guide-path.v1.js draws the card, its two top-card links included
-            topcard = '<div class="topcta gpath no-print" id="guidePath"></div>\n    <script src="/js/guide-path.v1.js" defer></script>'
+            # Layout-shift guard (2026-11-03): guide-path.v1.js fills the slot after the first paint, which pushed the page
+            # down (up to 0.55 CLS on phones when a visitor scrolled early). Heights measured with Playwright in Chrome on the
+            # v1 copy, per language, at every width from 300 to 760 px (constant above 670 es / 642 en). Measure again if the
+            # guided path's copy or CSS changes. order:-3 is the script's own .gpath rule, set here so the card is in place before it runs.
+            GP_RESERVE = '<style id="gp-reserve">#guidePath{order:-3}html[lang="es"] #guidePath{min-height:619px}@media(min-width:315px){html[lang="es"] #guidePath{min-height:597px}}@media(min-width:318px){html[lang="es"] #guidePath{min-height:592px}}@media(min-width:351px){html[lang="es"] #guidePath{min-height:580px}}@media(min-width:370px){html[lang="es"] #guidePath{min-height:554px}}@media(min-width:557px){html[lang="es"] #guidePath{min-height:532px}}@media(min-width:561px){html[lang="es"] #guidePath{min-height:382px}}@media(min-width:583px){html[lang="es"] #guidePath{min-height:334px}}@media(min-width:670px){html[lang="es"] #guidePath{min-height:322px}}html[lang="en"] #guidePath{min-height:625px}@media(min-width:306px){html[lang="en"] #guidePath{min-height:613px}}@media(min-width:337px){html[lang="en"] #guidePath{min-height:580px}}@media(min-width:473px){html[lang="en"] #guidePath{min-height:532px}}@media(min-width:500px){html[lang="en"] #guidePath{min-height:506px}}@media(min-width:561px){html[lang="en"] #guidePath{min-height:367px}}@media(min-width:580px){html[lang="en"] #guidePath{min-height:355px}}@media(min-width:634px){html[lang="en"] #guidePath{min-height:334px}}@media(min-width:642px){html[lang="en"] #guidePath{min-height:322px}}</style>'
+            topcard = GP_RESERVE + '\n    <div class="topcta gpath no-print" id="guidePath"></div>\n    <script src="/js/guide-path.v1.js" defer></script>'
         else:
             topcard = (f'<div class="topcta no-print">\n      <p class="topcta-t">{t["top_t"]}</p>\n      <p class="topcta-p">{t["top_p"]}</p>\n'
                        f'      <div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="guide_top_quiz_{k}">{t["top_quiz"]}</a><a class="topcta-w" href="{tema}" data-cta="guide_top_write_{k}">{t["top_write"]}</a></div>\n    </div>')
