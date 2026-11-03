@@ -19,3 +19,8 @@ Why only five guides: the other nine sets (boats, garage, gallery, office, kitch
 Build: `python3 tools/check_content.py && python3 tools/build_library.py && python3 tools/flatten.py && node tools/postbuild.js` (images only when the renders change: `python3 tools/scenes/build_scene_images.py`).
 
 Test: `node local-netlify.js .. 8787 &` then `BASE=http://localhost:8787 OUT=out-scenes node scenes-check.js` (add `CHANNEL=chrome` without the Playwright browser download).
+
+Results before the merge (local build, Chrome):
+- scenes-check.js: all passed (10 pages, phone and laptop).
+- verify.js pages, crawl, img, lang, quiz, contact, tools, nav, expansion, newshots, visual: 53/56, and none of the 3 failures comes from this change. One is the known local-only `netlify.toml` quirk. The other two fail the same way on the live site: stale tests that still expect the old shared card (`/og.png`) on the guides and the old portrait name (`christian-retrato`) on the homepage. The site now uses per-guide share cards and `christian-emerald`; update those two assertions in `verify.js` when convenient.
+- verify.js guidecta, leadpath, umbrella, hero: 30/30. The reserve lives in the head (`page(..., head_extra=)`), because the order check wants the guided path as the article's first element.
