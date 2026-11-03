@@ -31,7 +31,7 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
           .observe({ type: 'layout-shift', buffered: true });
       });
       const tag = `[${vname}] ${url}`;
-      const res = await page.goto(BASE + url, { waitUntil: 'load' });
+      const res = await page.goto(BASE + url + '?no3d=1', { waitUntil: 'load' });   // the frames path (flood3d-check.js covers the live 3D one)
       log(res.status() === 200, `${tag} status ${res.status()}`);
       const fig = page.locator(`figure.scn[data-scene="${key}"]`);
       log(await fig.count() === 1, `${tag} one scene`);

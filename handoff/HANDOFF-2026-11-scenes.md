@@ -26,3 +26,28 @@ Results before the merge (local build, Chrome):
 - verify.js guidecta, leadpath, umbrella, hero: 30/30. The reserve lives in the head (`page(..., head_extra=)`), because the order check wants the guided path as the article's first element.
 
 After the deploy (Nov 3): `/js/scenes.v1.js` answered 404 from Cloudflare on the live domain. A poll made before the deploy finished had stored the 404 under the `/js/*` one-year immutable header. Fix: the pages now load `/js/scenes.v2.js` (same code, new name). `scenes.v1.js` stays for any copy of a page cached with the old name. Rule: never request a new `/js/` URL on www.protectedlegacyfl.com until the HTML that references it is live. Watch the HTML, not the script.
+
+## Live 3D flood viewer (Nov 3, second deploy)
+
+The flood guides (ES + EN) now upgrade their scene to a live 3D model of Casa Patrimonio when the device can take it:
+drag to turn on laptops, a gentle sway on phones (one finger still scrolls the page), and the figure's own slider becomes
+continuous from normal tide to 12 ft. The water eases to the level, turns from teal to muddy brown green once it is over
+the land, the boat floats up, debris appears from 3 ft, the windows glow at dusk. The nine rendered frames stay as the
+fallback and come back if anything fails.
+
+- Model: `img/scenes/flo3d/casa.glb`, 95 KB (27 KB gzip), meshopt and quantized. Exported from Unreal by
+  `ue-renders/export_casa_glb.py` (a custom exporter: the stock glTF exporter skips Geometry Script meshes), then
+  `npx gltf-transform meshopt in.glb img/scenes/flo3d/casa.glb --level medium` from `tools/flood3d`.
+- Code: `tools/flood3d/src/main.js` (three.js r186 + GLTFLoader + OrbitControls + meshopt decoder), built by
+  `cd tools/flood3d && npm install && node build.mjs` into `js/flood3d.v1.js` (169.8 KB gzip, loaded only near the scene).
+  /js/ is immutable: change the content, bump the version (`--version 2`) and `live3d` in `tools/scenes/scenes.json`.
+- Loader: inline `pp-scene3d-loader`, written by `tools/post/add-scenes.js` for any scene with `live3d`. Same gates as the
+  homepage hero: `?no3d=1`, save-data or 2G/3G, under 4 GB or 4 cores, no WebGL2, software renderer. `?3d=1` forces it.
+  Reduced motion gets the model with still water and no sway.
+- Performance: one render loop, render only on screen and while the page is visible, shadows drawn only when the boat
+  moves, a quality guard drops to phone settings if the first 90 frames average over 28 ms. Measured 60 fps on an
+  Intel HD 530 at full quality.
+- dataLayer: `scene3d_ready` (mode full, lite or fallback with a reason), `scene3d_level` on slider use,
+  `scene3d_quality` when the guard steps down.
+- Test: `BASE=http://localhost:8787 OUT=out-flood3d CHANNEL=chrome node flood3d-check.js` (both languages, laptop and
+  phone: mounts, continuous slider, readout, badge, no console errors, screenshots at tide, 4 ft, 12 ft).
