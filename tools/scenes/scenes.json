@@ -1,0 +1,110 @@
+{
+  "_note": "Interactive 3D scenes (2026-11). Frames come from the Unreal renders (Casa Patrimonio, a hypothetical home). Every claim in a caption or hotspot is already in that guide or in content/BRIEF.md's verified facts. Voice rules apply: no selling, no carriers, no limits, no em dashes. Build images with tools/scenes/build_scene_images.py; tools/post/add-scenes.js injects the markup after the guide's summary box.",
+  "ui": {
+    "es": {"badge": "Ilustración 3D", "kicker": "Escena interactiva", "slider": "Nivel del agua sobre el piso", "layers": "Mostrar", "spots": "Toque un punto", "close": "Cerrar"},
+    "en": {"badge": "3D illustration", "kicker": "Interactive scene", "slider": "Water level above the floor", "layers": "Show", "spots": "Tap a point", "close": "Close"}
+  },
+  "scenes": {
+    "flo": {
+      "kind": "slider",
+      "es": {"title": "¿Hasta dónde llega el agua?",
+             "caption": "Ilustración 3D de una casa hipotética frente al agua, con el nivel de la inundación medido sobre el piso de la planta baja. FEMA estima que apenas una pulgada de agua puede causar $25,000 en daños a una vivienda.",
+             "alt": "Ilustración 3D de una casa frente al agua: {label}"},
+      "en": {"title": "How high is the water?",
+             "caption": "3D illustration of a hypothetical waterfront home, with the flood level measured above the first floor. FEMA estimates that just one inch of water can cause $25,000 in damage to a home.",
+             "alt": "3D illustration of a waterfront home: {label}"},
+      "frames": [
+        {"name": "flo-water-00", "es": "Marea normal", "en": "Normal tide"},
+        {"name": "flo-water-01", "es": "1 pie", "en": "1 ft"},
+        {"name": "flo-water-02", "es": "2 pies", "en": "2 ft"},
+        {"name": "flo-water-03", "es": "3 pies", "en": "3 ft"},
+        {"name": "flo-water-04", "es": "4 pies", "en": "4 ft"},
+        {"name": "flo-water-06", "es": "6 pies", "en": "6 ft"},
+        {"name": "flo-water-08", "es": "8 pies", "en": "8 ft"},
+        {"name": "flo-water-10", "es": "10 pies", "en": "10 ft"},
+        {"name": "flo-water-12", "es": "12 pies", "en": "12 ft"}
+      ]
+    },
+    "res": {
+      "kind": "tabs",
+      "es": {"title": "La misma casa, antes y durante un huracán",
+             "caption": "Ilustración 3D hipotética. Preparada: contraventanas cerradas, muebles de patio guardados y la embarcación fuera del agua. Las escenas de tormenta son simplificadas y no muestran daños reales ni el resultado de un reclamo.",
+             "alt": "Ilustración 3D de una casa frente al agua: {label}"},
+      "en": {"title": "The same home, before and during a hurricane",
+             "caption": "Hypothetical 3D illustration. Prepared: shutters closed, patio furniture stored and the boat out of the water. The storm scenes are simplified and do not show real damage or the outcome of a claim.",
+             "alt": "3D illustration of a waterfront home: {label}"},
+      "frames": [
+        {"name": "res-prep-on", "es": "Preparada", "en": "Prepared"},
+        {"name": "res-prep-off", "es": "Sin preparar", "en": "Not prepared"},
+        {"name": "res-storm-ts", "es": "Tormenta tropical", "en": "Tropical storm"},
+        {"name": "res-storm-c1", "es": "Categoría 1", "en": "Category 1"},
+        {"name": "res-storm-c3", "es": "Categoría 3", "en": "Category 3"},
+        {"name": "res-after", "es": "Después", "en": "After"}
+      ]
+    },
+    "cnd": {
+      "kind": "layers",
+      "es": {"title": "¿Quién asegura qué en un condominio?",
+             "caption": "Ilustración 3D simplificada de una unidad en corte. La ley de Florida exige que la póliza de la asociación cubra la propiedad tal como se instaló originalmente, y excluye los acabados y bienes dentro de cada unidad, que son responsabilidad del propietario. Cada declaración de condominio y cada póliza tienen sus propios términos.",
+             "alt": "Ilustración 3D de una unidad de condominio en corte"},
+      "en": {"title": "Who insures what in a condo?",
+             "caption": "Simplified 3D cutaway of a unit. Florida law requires a condominium association's policy to cover the property as originally installed, and excludes the finishes and belongings inside each unit, which are the owner's responsibility. Every condominium declaration and every policy has its own terms.",
+             "alt": "3D cutaway illustration of a condominium unit"},
+      "frames": [{"name": "cnd-unit", "es": "Unidad", "en": "Unit"}],
+      "layers_frame": "cnd-unit",
+      "layers": [
+        {"id": "assoc", "tint": "#1E8A72", "alpha": 0.62, "mask_colours": ["#FF0000", "#FFFF00", "#00FFFF"],
+         "es": "Póliza de la asociación: la estructura tal como se instaló", "en": "Association policy: the structure as originally installed"},
+        {"id": "finish", "tint": "#C29B40", "alpha": 0.66, "mask_colours": ["#00FF00"],
+         "es": "Propietario (HO-6): acabados de la unidad", "en": "Owner (HO-6): the unit's finishes"},
+        {"id": "contents", "tint": "#C2563F", "alpha": 0.70, "mask_colours": ["#0000FF"],
+         "es": "Propietario (HO-6): sus bienes", "en": "Owner (HO-6): your belongings"}
+      ]
+    },
+    "lia": {
+      "kind": "hotspots",
+      "es": {"title": "Dónde vive la responsabilidad civil en una propiedad",
+             "caption": "Ilustración 3D de una propiedad hipotética. No existe una fórmula oficial para escoger el límite de una póliza umbrella: muchas familias parten del patrimonio neto y ajustan según exposiciones como estas.",
+             "alt": "Ilustración 3D aérea de una propiedad frente al agua"},
+      "en": {"title": "Where liability lives on a property",
+             "caption": "3D illustration of a hypothetical property. There is no official formula for choosing an umbrella limit: many families start from net worth and adjust for exposures like these.",
+             "alt": "3D aerial illustration of a waterfront property"},
+      "frames": [{"name": "lia-aerial", "es": "Propiedad", "en": "Property"}],
+      "hotspots_frame": "lia-aerial",
+      "hotspots": [
+        {"id": "pool", "mask_colour": "#FF0000",
+         "es": ["Piscina", "La responsabilidad por lesiones de invitados en la propiedad, como en la piscina, es una exposición que muchas familias consideran al elegir el límite."],
+         "en": ["Pool", "Liability for guests' injuries on the property, such as at the pool, is an exposure many families weigh when choosing a limit."]},
+        {"id": "boat", "mask_colour": "#00FF00",
+         "es": ["Embarcación", "Una póliza umbrella se coloca por encima de sus pólizas de hogar, auto y, con frecuencia, embarcación."],
+         "en": ["Boat", "An umbrella policy sits on top of your home, auto and, often, boat policies."]},
+        {"id": "pwc", "mask_colour": "#0000FF",
+         "es": ["Moto acuática", "En 2025, las motos acuáticas fueron el 17% de las embarcaciones registradas en Florida y el 23% de los accidentes reportables (FWC)."],
+         "en": ["Personal watercraft", "In 2025, personal watercraft were 17% of Florida's registered vessels and 23% of reportable accidents (FWC)."]},
+        {"id": "cars", "mask_colour": "#FFFF00",
+         "es": ["Autos y conductores jóvenes", "Los conductores jóvenes son otra de las exposiciones que muchas familias consideran al elegir el límite."],
+         "en": ["Cars and young drivers", "Young drivers are another exposure many families weigh when choosing a limit."]},
+        {"id": "events", "mask_colour": "#FF8000",
+         "es": ["Eventos en casa", "La ley de Florida (768.125) tiene excepciones, como servir alcohol de forma deliberada e ilegal a un menor de 21 años."],
+         "en": ["Events at home", "Florida law (768.125) has exceptions, such as willfully and unlawfully serving alcohol to someone under 21."]},
+        {"id": "staff", "mask_colour": "#FF00FF",
+         "es": ["Personal del hogar", "Quienes trabajan en la casa son otra exposición que muchas familias revisan con su agente y su abogado."],
+         "en": ["Household staff", "People who work at the home are another exposure many families review with their agent and attorney."]}
+      ]
+    },
+    "ren": {
+      "kind": "tabs",
+      "es": {"title": "Una remodelación cambia el riesgo",
+             "caption": "Ilustración 3D hipotética. En Florida, pregunte en qué fecha empieza la cobertura de viento de su póliza de construcción y compárela con el calendario de la obra y con la temporada de huracanes.",
+             "alt": "Ilustración 3D de una casa en remodelación: {label}"},
+      "en": {"title": "A renovation changes the risk",
+             "caption": "Hypothetical 3D illustration. In Florida, ask on what date your builder's risk wind coverage begins, and compare it with the construction schedule and with hurricane season.",
+             "alt": "3D illustration of a home under renovation: {label}"},
+      "frames": [
+        {"name": "ren-before", "es": "Antes", "en": "Before"},
+        {"name": "ren-during", "es": "Durante la obra", "en": "During the work"},
+        {"name": "ren-after", "es": "Después", "en": "After"}
+      ]
+    }
+  }
+}
