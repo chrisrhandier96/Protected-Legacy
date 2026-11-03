@@ -70,3 +70,33 @@ v2 (Nov 3, same day): all ten scenes load `js/casa3d.v2.js` and the models in `i
 car). New path because /img/ is cached for a week and the models gained cameras (dock, gate, PWC lift, drone). Re-export
 every model with `bash tools/export_web3d.sh` in the ue-renders repo. v1 files (`js/casa3d.v1.js`, `img/scenes/flo3d/`) stay
 for cached pages. New scene kind `single` (one picture, no controls) and a per-scene `slider` label in scenes.json.
+
+v3 (Nov 3, later): four interiors join, so all 14 guides with a scene now load `js/casa3d.v3.js` (175.8 KB gzip).
+
+| Guide | Model | What the reader sees |
+|---|---|---|
+| Collections (`col`) | interior.glb | Two tabs: the gallery, then its display case, lit like a museum. |
+| Personal cyber (`cyb`) | interior.glb + interior-props.glb | The home office at night with its screens on. |
+| Household staff (`emp`) | interior.glb + interior-props.glb | The kitchen at 7 a.m., with signs of the staff's morning. |
+| Boards (`brd`) | board.glb | Two tabs: the boardroom, then its table. |
+
+- Indoors the camera stands where the render's camera stood and only looks around: about 26 degrees left or right and 14
+  up or down, so it never sees through a wall. Shadows are off indoors because the ceiling would shade the whole room.
+  Unreal's lights do not travel in glTF, so each room gets point lights: museum, screens, morning, or lamps.
+- Models in `img/scenes/3d/`: interior.glb 153 KB, interior-props.glb 21 KB, board.glb 80 KB. To re-export, run
+  `bash tools/export_interiors.sh` in the ue-renders repo. The frames for all four sit in `img/scenes/{col,cyb,emp,brd}`.
+- v1 and v2 bundles stay unchanged for cached pages. Never rebuild a deployed version; build the next number.
+
+Layout-shift fixes (Nov 3):
+- `tools/post/nav-reserve.js` runs in postbuild after add-lead-strip. Below 430 px the top bar used to flip between two
+  lines (93 px) and one (82 px) after first paint, a shift of up to 0.035 on every page. It now reserves 93 px.
+- The homepages reserved the call-me strip's box only from 701 px up. On phones the strip arrived about 500 px tall with
+  no reserved box, a shift of 0.35 on `/` and `/en/` (the live site had it too). The reserve inside index.html and en.html
+  now has phone steps from 300 to 700 px, measured per language. The homepages now measure under 0.006 from 320 to 1280 px.
+  Measure again if the strip copy or CSS changes.
+- Still open: a font-swap shift of about 0.014 to 0.035 on `/en/guides/private-aviation/` at 390 px. The intro paragraph
+  gains a line when Figtree replaces its Arial fallback. Scoring size-adjust from 99% to 103% across 10 pages and 3 phone
+  widths showed today's 100.3% is already the best value. Preloading Figtree did not stop the shift on a slow connection and
+  made the homepage LCP worse. It stays under Google's 0.1 threshold; scenes-check flags it because its own limit is 0.02.
+- verify.js now accepts each guide's own share card (`img/og/<guide>-<lang>.jpg`) and checks those files, and the portrait
+  check looks for `christian-emerald`.

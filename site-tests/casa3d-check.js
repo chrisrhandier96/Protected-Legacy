@@ -9,7 +9,9 @@ const OUT = process.env.OUT || 'out-casa3d'; fs.mkdirSync(OUT, { recursive: true
 const PAGES = [['/guias/inundacion/', 'es', 'flo'], ['/en/guides/flood/', 'en', 'flo'], ['/guias/residencias-huracanes/', 'es', 'res'], ['/en/guides/homes-hurricanes/', 'en', 'res'],
   ['/guias/condominios-y-hoa/', 'es', 'cnd'], ['/en/guides/condos-hoa/', 'en', 'cnd'],
   ['/guias/remodelaciones/', 'es', 'ren'], ['/en/guides/renovations-builders-risk/', 'en', 'ren'], ['/guias/umbrella-responsabilidad/', 'es', 'lia'], ['/en/guides/umbrella-liability/', 'en', 'lia']];
-const TABS = { res: 6, ren: 3, mar: 3, str: 2 };
+const TABS = { res: 6, ren: 3, mar: 3, str: 2, col: 2, brd: 2 };
+PAGES.push(['/guias/colecciones-arte-joyas/', 'es', 'col'], ['/en/guides/collections-art-jewelry/', 'en', 'col'], ['/guias/ciber-proteccion-familiar/', 'es', 'cyb'], ['/en/guides/personal-cyber/', 'en', 'cyb'],
+  ['/guias/personal-del-hogar-legado/', 'es', 'emp'], ['/en/guides/household-staff-legacy/', 'en', 'emp'], ['/guias/juntas-y-fundaciones/', 'es', 'brd'], ['/en/guides/board-service-family-foundations/', 'en', 'brd']);
 PAGES.push(['/guias/embarcaciones/', 'es', 'mar'], ['/en/guides/boats/', 'en', 'mar'], ['/guias/alquiler-vacacional/', 'es', 'str'], ['/en/guides/short-term-rentals/', 'en', 'str'],
   ['/guias/secuestro-y-extorsion/', 'es', 'kr'], ['/en/guides/kidnap-ransom/', 'en', 'kr'], ['/guias/aviacion-privada/', 'es', 'avi'], ['/en/guides/private-aviation/', 'en', 'avi'],
   ['/guias/autos/', 'es', 'aut'], ['/en/guides/auto/', 'en', 'aut']);
@@ -37,7 +39,7 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
       log(await r.getAttribute('step') === '0.25' && await r.getAttribute('max') === '12', `${tag} slider continuous, 0 to 12 ft`);
       for (const [v, n] of [['0', 'tide'], ['4', '4ft'], ['12', '12ft']]) { await r.fill(v); await p.waitForTimeout(2500); await shot(n); }
       log(/12/.test(await fig.locator('.scn-out').textContent()), `${tag} readout follows the slider`);
-    } else if (key === 'kr' || key === 'avi') {
+    } else if (key === 'kr' || key === 'avi' || key === 'cyb' || key === 'emp') {
       await p.waitForTimeout(2500); await shot('view');
       log(true, `${tag} single live view rendered`);
     } else if (key === 'aut') {

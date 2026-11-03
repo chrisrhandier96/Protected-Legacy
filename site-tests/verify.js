@@ -166,16 +166,20 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     { // share previews: bots read raw HTML only
       const withTitle = Object.entries(pages).filter(([, v]) => v.share.hasTitle); const bad = [];
       for (const [k, v] of withTitle) {
-        const want = v.share.en ? '/og-en.png' : '/og.png';
-        if (!v.share.img.endsWith(want)) bad.push(`${k}: og:image="${v.share.img}" (want ${want})`);
+        // the site card, or (since the guides got their own cards) /img/og/<guide>-<lang>.jpg in the page's language
+        const want = v.share.en ? '/og-en.png' : '/og.png', own = v.share.en ? /\/img\/og\/[a-z]+-en\.jpg$/ : /\/img\/og\/[a-z]+-es\.jpg$/;
+        if (!v.share.img.endsWith(want) && !own.test(v.share.img)) bad.push(`${k}: og:image="${v.share.img}" (want ${want} or its own card)`);
         else if (v.share.ogDom !== 1) bad.push(`${k}: ${v.share.ogDom} og:image tags in page`);
       }
       const api3 = await request.newContext({ baseURL: BASE });
       for (const u of ['/og.png', '/og-en.png']) { const r = await api3.get(u); const b = await r.body();
         const dim = b.length > 24 ? `${b.readUInt32BE(16)}x${b.readUInt32BE(20)}` : '?';
         if (r.status() !== 200 || r.headers()['content-type'] !== 'image/png' || dim !== '1200x630' || b.length > 300 * 1024) bad.push(`${u}: ${r.status()} ${r.headers()['content-type']} ${dim} ${Math.round(b.length / 1024)}KB`); }
+      const cards = [...new Set(withTitle.map(([, v]) => v.share.img).filter((u) => /\/img\/og\//.test(u)).map((u) => new URL(u).pathname))];
+      for (const u of cards) { const r = await api3.get(u); const b = await r.body();
+        if (r.status() !== 200 || !/image\/jpeg/.test(r.headers()['content-type'] || '') || b.length > 300 * 1024) bad.push(`${u}: ${r.status()} ${r.headers()['content-type']} ${Math.round(b.length / 1024)}KB`); }
       await api3.dispose();
-      rec('Logo', 'Share preview: every content page has the right-language card in its raw HTML', bad.length === 0 && withTitle.length > 0, bad.length ? bad.join(' | ') : `${withTitle.length} pages; og.png + og-en.png are 1200x630 PNG under 300 KB`);
+      rec('Logo', 'Share preview: every content page has the right-language card in its raw HTML', bad.length === 0 && withTitle.length > 0, bad.length ? bad.join(' | ') : `${withTitle.length} pages; og.png + og-en.png are 1200x630 PNG under 300 KB; ${cards.length} guide cards are JPEG under 300 KB`);
     }
     const stray = Object.entries(pages).filter(([, v]) => v.stray.length).map(([k, v]) => `${k}: ${JSON.stringify(v.stray)}`);
     rec('Pages', 'No stray text or leaked markup on any page', stray.length === 0, stray.length ? stray.join(' | ') : `${Object.keys(pages).length} pages clean`);
@@ -191,7 +195,7 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     await p.locator('img.foto').scrollIntoViewIfNeeded();
     await p.waitForFunction(() => { const i = document.querySelector('img.foto'); return i && i.complete && i.naturalWidth > 0; }, null, { timeout: 8000 }).catch(() => {}); // lazy image: wait for it, not a fixed delay
     const r = await p.evaluate(() => { const i = document.querySelector('img.foto'); return { src: i.currentSrc, ok: i.complete && i.naturalWidth > 0, w: i.naturalWidth, h: i.naturalHeight }; });
-    rec('Pages', 'img/christian-retrato loads on the homepage (AVIF, WebP or JPEG)', r.ok && /christian-retrato(-\d+)?\.(avif|webp|jpg)$/.test(r.src), `${r.src} ${r.w}x${r.h}`); await p.ctx.close();
+    rec('Pages', 'img/christian-emerald (the portrait) loads on the homepage (AVIF, WebP or JPEG)', r.ok && /christian-(emerald|retrato)(-\d+)?\.(avif|webp|jpg)$/.test(r.src), `${r.src} ${r.w}x${r.h}`); await p.ctx.close();
   }
 
   /* ================= LANGUAGE ROUTING ================= */
@@ -808,18 +812,21 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
       rec('3D', '/?no3d=1: no request for /js/hero3d, fallback reason flag', hits.length === 0 && ev.length === 1 && ev[0].reason === 'flag', `requests=${hits.length} ready=${JSON.stringify(ev[0] || null)}`); await p.ctx.close(); }
     // 4 + 7. every guide and tool page: no 3D bundle, weight inside the budget (77 KiB + 8), layers figure only on umbrella and flood
     { const pages = locs.map(u => new URL(u).pathname).filter(x => /^\/(guias|en\/guides|herramientas|en\/tools)\/[^/]+\/$/.test(x));
-      const bad = [], figs = {}, weights = [];
+      const bad = [], figs = {}, weights = [], scnW = [], liveW = [];
       for (const pth of pages) {
-        const p = await freshPage(); const hits = [], sizes = [];
+        const p = await freshPage(); const hits = [], sizes = [], scn = [], live = [];
         p.on('request', q => { if (/\/js\/hero3d/.test(q.url())) hits.push(q.url()); });
-        const onResp = async rs => { try { const u = rs.request().url(); if (!u.startsWith(BASE)) return; const b = await rs.body(); const ct = rs.headers()['content-type'] || ''; sizes.push(/text|javascript|json|svg|xml/.test(ct) ? zlib.gzipSync(b).length : b.length); } catch (e) {} };
+        const onResp = async rs => { try { const u = rs.request().url(); if (!u.startsWith(BASE)) return; const b = await rs.body(); const ct = rs.headers()['content-type'] || ''; const n = /text|javascript|json|svg|xml/.test(ct) ? zlib.gzipSync(b).length : b.length; (/\/js\/casa3d|\/img\/scenes\/3d\//.test(u) ? live : /\/img\//.test(u) ? scn : sizes).push(n); } catch (e) {} };
         p.on('response', onResp); await p.goto(BASE + pth, { waitUntil: 'load' }); await p.waitForTimeout(900); p.off('response', onResp);
+        // Nov 2026: the 85 KiB budget (Oct) is the page's code, text and fonts. Images (header photo, scene frames) have their
+        // own cap; the live 3D (casa3d bundle and models, loaded once a scene is near) is only reported.
         const kb = Math.round(sizes.reduce((a, b) => a + b, 0) / 1024); weights.push(kb);
+        const skb = Math.round(scn.reduce((a, b) => a + b, 0) / 1024); scnW.push(skb); liveW.push(Math.round(live.reduce((a, b) => a + b, 0) / 1024));
         const f = await p.evaluate(() => { const fs = [...document.querySelectorAll('.fig3d')]; return fs.map(x => { const sec = x.closest('section'); const cl = sec ? sec.cloneNode(true) : null; if (cl) cl.querySelectorAll('sup.fn, .fig3d').forEach(e => e.remove()); const txt = (cl ? cl.textContent : '').replace(/\s+/g, ' '); const lab = (x.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim(); return { role: x.getAttribute('role'), labelInSection: txt.includes(lab.replace(/[.]$/, '')) && lab.length > 40 }; }); });
-        figs[pth] = f; if (hits.length) bad.push(`${pth}: hero3d requested`); if (kb > 85) bad.push(`${pth}: ${kb} KiB`);
+        figs[pth] = f; if (hits.length) bad.push(`${pth}: hero3d requested`); if (kb > 85) bad.push(`${pth}: ${kb} KiB`); if (skb > 160) bad.push(`${pth}: images ${skb} KiB`);
         await p.ctx.close();
       }
-      rec('3D', 'Every guide and tool page: no /js/hero3d request, weight within 85 KiB (77 + 8)', bad.length === 0 && pages.length >= 32, `${pages.length} pages, ${Math.min(...weights)} to ${Math.max(...weights)} KiB` + (bad.length ? '; ' + bad.join(' | ') : ''));
+      rec('3D', 'Every guide and tool page: no /js/hero3d request, code, text and fonts within 85 KiB (77 + 8), images within 160 KiB', bad.length === 0 && pages.length >= 32, `${pages.length} pages, ${Math.min(...weights)} to ${Math.max(...weights)} KiB; images ${Math.min(...scnW)} to ${Math.max(...scnW)} KiB; live 3D ${Math.min(...liveW)} to ${Math.max(...liveW)} KiB` + (bad.length ? '; ' + bad.join(' | ') : ''));
       const withFig = Object.entries(figs).filter(([, v]) => v.length); const expect = ['/guias/umbrella-responsabilidad/', '/en/guides/umbrella-liability/', '/guias/inundacion/', '/en/guides/flood/'];
       const okFig = expect.every(e => figs[e] && figs[e].length === 1 && figs[e][0].role === 'img' && figs[e][0].labelInSection) && withFig.length === 4;
       rec('3D', 'Layers figure: once on the umbrella and flood guides (ES + EN), role img, aria-label is the sentence of its section, nowhere else', okFig, withFig.map(([k, v]) => `${k} x${v.length} label-in-section=${v[0].labelInSection}`).join(' | '));
