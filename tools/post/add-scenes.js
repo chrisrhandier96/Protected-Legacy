@@ -39,9 +39,30 @@ const CSS = '<style id="pp-scenes">'
   + '.scn-notes b{font-weight:600}'
   + '.scn figcaption{padding:12px 20px 18px;font:400 .86rem/1.5 var(--body,sans-serif);color:var(--humo-tx,#5F665A)}'
   + '@media(max-width:560px){.scn-head,.scn-ctl,.scn figcaption{padding-left:14px;padding-right:14px}.scn-notes{margin-left:14px;margin-right:14px}.scn-pin{width:28px;height:28px;font-size:.8rem}.scn-tab,.scn-lbtn{font-size:.84rem;padding:7px 11px}.scn-notes{gap:6px}.scn-notes li{padding:8px 10px 8px 40px;font-size:.84rem;line-height:1.4}.scn-notes li::before{left:10px;top:8px;width:22px;height:22px;line-height:22px;font-size:.75rem}}'
-  + '@media(prefers-reduced-motion:reduce){.scn-layer{transition:none}}'
+  + '.scn-3d{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;opacity:0;transition:opacity .7s ease;cursor:grab}'
+  + '.scn-3d.on{opacity:1}.scn-3d:active{cursor:grabbing}'
+  + '.scn-badge,.scn-hint{z-index:2}'
+  + '.scn-hint{position:absolute;right:10px;top:10px;padding:4px 9px;border-radius:999px;background:rgba(13,36,28,.72);color:#FDFBF6;font:600 .7rem/1.3 var(--body,sans-serif);pointer-events:none}'
+  + '@media(prefers-reduced-motion:reduce){.scn-layer,.scn-3d{transition:none}}'
   + '@media print{.scn{display:none}}'
   + '</style>';
+
+// Live 3D loader (2026-11-03): upgrades a scene that has data-3d once it is 800 px from the viewport, with the same gates
+// as the homepage hero: ?no3d=1, save-data or 2G/3G, under 4 GB memory or 4 cores, no WebGL2, or a software renderer keep
+// the rendered frames. ?3d=1 forces it (tests). Reduced motion still gets the model, with still water and no sway.
+const LOADER3D = '<script id="pp-scene3d-loader">(function(){var f=document.querySelector("figure.scn[data-3d]");if(!f||!("IntersectionObserver" in window))return;'
+  + 'var q=location.search,force=/[?&]3d=1/.test(q),n=navigator,c=n.connection||{};'
+  + 'var dl=function(o){o.page_type="guide";o.language=document.documentElement.lang;window.dataLayer=window.dataLayer||[];window.dataLayer.push(o);};'
+  + 'function off(r){dl({event:"scene3d_ready",scene:f.getAttribute("data-scene"),mode:"fallback",reason:r});}'
+  + 'if(/[?&]no3d=1/.test(q))return off("flag");'
+  + 'if(!force){if(c.saveData||/(^|[^4])[23]g$/.test(c.effectiveType||""))return off("save-data");if((n.deviceMemory&&n.deviceMemory<4)||(n.hardwareConcurrency&&n.hardwareConcurrency<4))return off("low-device");}'
+  + 'var rm=matchMedia("(prefers-reduced-motion: reduce)").matches,lite=matchMedia("(max-width:820px),(pointer:coarse)").matches;'
+  + 'function load(){import(f.getAttribute("data-3d")).then(function(m){return m.start({fig:f,dl:dl,lite:lite,reduced:rm});}).catch(function(){off("load-error");});}'
+  + 'function gpu(){if(!window.WebGL2RenderingContext)return off("no-webgl");if(force)return load();var ok=false;'
+  + 'try{var w=new Worker(URL.createObjectURL(new Blob(["try{var g=new OffscreenCanvas(1,1).getContext(\'webgl2\'),d=g&&g.getExtension(\'WEBGL_debug_renderer_info\');postMessage(g?String(d?g.getParameter(d.UNMASKED_RENDERER_WEBGL):\'gpu\'):\'\')}catch(e){postMessage(\'\')}"],{type:"text/javascript"})));'
+  + 'w.onmessage=function(e){ok=true;w.terminate();var r=e.data;if(!r)return off("no-webgl");if(/swiftshader|llvmpipe|softpipe|software|basic render/i.test(r))return off("low-device");load();};'
+  + 'setTimeout(function(){if(!ok){w.terminate();load();}},3000);}catch(e){load();}}'
+  + 'var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();gpu();}},{rootMargin:"800px 0px"});io.observe(f);})();</script>';
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const attrJson = v => esc(JSON.stringify(v));
@@ -88,7 +109,7 @@ function scene(key, l) {
     notes = `<ol class="scn-notes" aria-label="${esc(ui.spots)}">`
       + spots.map(s => `<li data-id="${s.id}"><b>${esc(s[l][0])}.</b> ${esc(s[l][1])}</li>`).join('') + '</ol>';
   }
-  return `<figure class="scn scn-${sc.kind} no-print" id="${id}" data-scene="${key}" data-kind="${sc.kind}" data-frames="${attrJson(frames)}" data-labels="${attrJson(labels)}" data-alt="${esc(t.alt)}">`
+  return `<figure class="scn scn-${sc.kind} no-print" id="${id}" data-scene="${key}" data-kind="${sc.kind}"${sc.live3d ? ` data-3d="${sc.live3d}"` : ''} data-frames="${attrJson(frames)}" data-labels="${attrJson(labels)}" data-alt="${esc(t.alt)}">`
     + `<div class="scn-head"><span class="scn-kick">${esc(ui.kicker)}</span><p class="scn-t">${esc(t.title)}</p></div>`
     + `<div class="scn-stage">${stage}<span class="scn-badge" aria-hidden="true">${esc(ui.badge)}</span></div>`
     + ctl + notes + `<figcaption>${esc(t.caption)}</figcaption></figure>`;
@@ -112,6 +133,7 @@ for (const f of fs.readdirSync(ROOT)) {
     h = h.slice(0, at) + '\n    ' + scene(info.key, info.l) + h.slice(at);
   }
   if (!h.includes('/js/scenes.v2.js')) h = h.replace(/<\/body>/, SCRIPT + '\n</body>');
+  if (CFG.scenes[info.key].live3d && !h.includes('id="pp-scene3d-loader"')) h = h.replace(/<\/body>/, LOADER3D + '\n</body>');
   if (!h.includes('id="pp-scenes"')) h = h.replace(/<\/head>/, CSS + '\n</head>');
   if (h !== before) { fs.writeFileSync(p, h); touched++; } else skipped++;
 }
