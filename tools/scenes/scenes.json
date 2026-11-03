@@ -78,7 +78,7 @@
           "en": "12 ft"
         }
       ],
-      "live3d": "/js/flood3d.v1.js"
+      "live3d": "/js/casa3d.v1.js"
     },
     "res": {
       "kind": "tabs",
@@ -123,7 +123,8 @@
           "es": "Después",
           "en": "After"
         }
-      ]
+      ],
+      "live3d": "/js/casa3d.v1.js"
     },
     "cnd": {
       "kind": "layers",
@@ -178,7 +179,8 @@
           "es": "Propietario (HO-6): sus bienes",
           "en": "Owner (HO-6): your belongings"
         }
-      ]
+      ],
+      "live3d": "/js/casa3d.v1.js"
     },
     "lia": {
       "kind": "hotspots",
@@ -273,7 +275,8 @@
             "People who work at the home are another exposure many families review with their agent and attorney."
           ]
         }
-      ]
+      ],
+      "live3d": "/js/casa3d.v1.js"
     },
     "ren": {
       "kind": "tabs",
@@ -303,7 +306,8 @@
           "es": "Después",
           "en": "After"
         }
-      ]
+      ],
+      "live3d": "/js/casa3d.v1.js"
     }
   }
 }

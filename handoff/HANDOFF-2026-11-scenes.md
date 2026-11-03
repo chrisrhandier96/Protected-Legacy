@@ -27,27 +27,36 @@ Results before the merge (local build, Chrome):
 
 After the deploy (Nov 3): `/js/scenes.v1.js` answered 404 from Cloudflare on the live domain. A poll made before the deploy finished had stored the 404 under the `/js/*` one-year immutable header. Fix: the pages now load `/js/scenes.v2.js` (same code, new name). `scenes.v1.js` stays for any copy of a page cached with the old name. Rule: never request a new `/js/` URL on www.protectedlegacyfl.com until the HTML that references it is live. Watch the HTML, not the script.
 
-## Live 3D flood viewer (Nov 3, second deploy)
+## Live 3D scenes (Nov 3)
 
-The flood guides (ES + EN) now upgrade their scene to a live 3D model of Casa Patrimonio when the device can take it:
-drag to turn on laptops, a gentle sway on phones (one finger still scrolls the page), and the figure's own slider becomes
-continuous from normal tide to 12 ft. The water eases to the level, turns from teal to muddy brown green once it is over
-the land, the boat floats up, debris appears from 3 ft, the windows glow at dusk. The nine rendered frames stay as the
-fallback and come back if anything fails.
+Five guides (ES + EN) upgrade their scene to live 3D when the device can take it. The rendered frames stay as the fallback
+and come back if anything fails. Laptops can drag to turn; phones get a gentle sway (one finger still scrolls the page).
 
-- Model: `img/scenes/flo3d/casa.glb`, 95 KB (27 KB gzip), meshopt and quantized. Exported from Unreal by
-  `ue-renders/export_casa_glb.py` (a custom exporter: the stock glTF exporter skips Geometry Script meshes), then
-  `npx gltf-transform meshopt in.glb img/scenes/flo3d/casa.glb --level medium` from `tools/flood3d`.
-- Code: `tools/flood3d/src/main.js` (three.js r186 + GLTFLoader + OrbitControls + meshopt decoder), built by
-  `cd tools/flood3d && npm install && node build.mjs` into `js/flood3d.v1.js` (169.8 KB gzip, loaded only near the scene).
+| Guide | Model | What the visitor does |
+|---|---|---|
+| Flood (`flo`) | casa.glb | The slider turns continuous, tide to 12 ft. Water eases to the level, teal then muddy brown green over land; the boat floats up; debris from 3 ft. |
+| Hurricanes (`res`) | casa.glb + casa-props.glb | The six tabs: prepared (shutters closed, furniture stored, pool covered, boat on the trailer), not prepared, tropical storm, Category 1, Category 3 (wind bends the palms, rain, surge, flying debris, lightning, torn shutter and lifted tiles at Cat 3), the morning after (dawn, boat on the lawn, debris on the grass). |
+| Renovations (`ren`) | casa.glb + casa-props.glb | The three tabs, seen from the addition's side: before, during (scaffolding, framed addition, dumpster, materials under tarps, new pilings), after (finished addition, new dock). |
+| Umbrella (`lia`) | casa.glb | The drone view, turnable; the six numbered pins ride on the pool, boat, PWC, cars, outdoor kitchen and service gate, and still highlight their notes. |
+| Condos (`cnd`) | condo.glb | The unit cutaway, turnable; the three coverage toggles tint the real parts (association: structure, railing, windows; owner: finishes; owner: belongings). |
+
+- Models in `img/scenes/flo3d/`: casa.glb 95 KB, casa-props.glb 50 KB, condo.glb 37 KB (meshopt, quantized). Exported from
+  Unreal by `ue-renders/export_casa_glb.py` (custom: the stock glTF exporter skips Geometry Script meshes). Base estate:
+  run after `RUN = ["build"]` of full_casa.py. Props: `PROPS = ["prep_on", "prep_off", "storm_ts", "storm_c1", "storm_c3",
+  "ren_during", "ren_after"]`. Condo: `LEVEL = "/Game/UE_Renders/L_Condo_Unit"; OUT_NAME = "condo"; CAMS = {"cam_hero": "CAM_cnd_unit"}`.
+  Then `npx gltf-transform meshopt in.glb img/scenes/flo3d/<name>.glb --level medium` from `tools/casa3d`.
+- Code: `tools/casa3d/src/casa3d.js` (three.js r186, GLTFLoader, OrbitControls, meshopt decoder), one bundle for all five:
+  `cd tools/casa3d && npm install && node build.mjs` writes `js/casa3d.v1.js` (174 KB gzip, loaded only near a scene).
   /js/ is immutable: change the content, bump the version (`--version 2`) and `live3d` in `tools/scenes/scenes.json`.
+  `js/flood3d.v1.js` (the first flood-only build, live for a few hours on Nov 3) is kept for cached pages; nothing loads it now.
 - Loader: inline `pp-scene3d-loader`, written by `tools/post/add-scenes.js` for any scene with `live3d`. Same gates as the
   homepage hero: `?no3d=1`, save-data or 2G/3G, under 4 GB or 4 cores, no WebGL2, software renderer. `?3d=1` forces it.
-  Reduced motion gets the model with still water and no sway.
-- Performance: one render loop, render only on screen and while the page is visible, shadows drawn only when the boat
-  moves, a quality guard drops to phone settings if the first 90 frames average over 28 ms. Measured 60 fps on an
-  Intel HD 530 at full quality.
-- dataLayer: `scene3d_ready` (mode full, lite or fallback with a reason), `scene3d_level` on slider use,
-  `scene3d_quality` when the guard steps down.
-- Test: `BASE=http://localhost:8787 OUT=out-flood3d CHANNEL=chrome node flood3d-check.js` (both languages, laptop and
-  phone: mounts, continuous slider, readout, badge, no console errors, screenshots at tide, 4 ft, 12 ft).
+  Reduced motion gets the models with still water, no sway, no lightning.
+- Performance: one render loop (a duplicate-loop bug made it crawl at 1 to 7 fps before the fix), renders only on screen and
+  while the page is visible, shadows redrawn only when something moves, a quality guard drops to phone settings if the first
+  90 frames average over 28 ms. Measured 60 fps on an Intel HD 530 at full quality.
+- dataLayer: `scene3d_ready` (full, lite, or fallback with a reason), `scene3d_level`, `scene3d_tab`, `scene3d_layer`,
+  `scene3d_quality`.
+- Tests: `BASE=http://localhost:8787 OUT=out-casa3d CHANNEL=chrome node casa3d-check.js` (all five guides, both languages,
+  laptop and phone; `ONLY=flo,res,ren,lia,cnd` to narrow). `scenes-check.js` checks the frames path (`?no3d=1`). Long runs on
+  a low-memory laptop can hit ERR_INSUFFICIENT_RESOURCES in Chrome; rerun the one guide with ONLY.
