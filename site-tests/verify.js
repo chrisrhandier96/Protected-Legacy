@@ -65,7 +65,7 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
 
 (async () => {
   // software WebGL so the 3D hero can be exercised headless (harmless for everything else)
-  browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
+  browser = await chromium.launch({ ...(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {}), args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
   const http = await request.newContext({ baseURL: BASE });
   const smText = await (await http.get('/sitemap.xml')).text();
   // sitemap holds production URLs; test them on BASE (same thing when BASE is production)

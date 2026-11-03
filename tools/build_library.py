@@ -355,7 +355,7 @@ def og_tags(img, alt):
     return (f'<meta property="og:image" content="{BASE}{img}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
             f'<meta property="og:image:alt" content="{esc(alt)}">\n<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:image" content="{BASE}{img}">\n')
 
-def page(l, path, alt_path, title, meta, body, ptype, jsonld=None, extra_js="", noindex=False, og_img=None, og_alt=""):
+def page(l, path, alt_path, title, meta, body, ptype, jsonld=None, extra_js="", noindex=False, og_img=None, og_alt="", head_extra=""):
     other = "en" if l == "es" else "es"
     es_path, en_path = (path, alt_path) if l == "es" else (alt_path, path)
     t = T[l]
@@ -406,7 +406,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style>
-{ld}</head>
+{ld}{head_extra}</head>
 <body data-type="{ptype}">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={GTM}"
@@ -572,7 +572,14 @@ for k in ORDER:
 <p class="gf-err" id="gf-err" role="alert" data-req="{t['f_err_req']}" data-mail="{t['f_err_mail']}" data-consent="{t['f_err_consent']}" data-send="{t['f_err_send']}"></p>
 <p class="gf-priv"><a href="/privacidad.html">{t['f_priv']}</a></p>
 </form></section>"""
+        head_extra = ""
         if k == "lia":  # guided path (2026-10-26; replaced the 4-question quick check): /js/guide-path.v1.js draws the card, its two top-card links included
+            # Layout-shift guard (2026-11-03): guide-path.v1.js fills the slot after the first paint, which pushed the page
+            # down (up to 0.55 CLS on phones when a visitor scrolled early). Heights measured with Playwright in Chrome on the
+            # v1 copy, per language, at every width from 300 to 760 px (constant above 670 es / 642 en). Measure again if the
+            # guided path's copy or CSS changes. order:-3 is the script's own .gpath rule, set here so the card is in place before it runs.
+            GP_RESERVE = '<style id="gp-reserve">#guidePath{order:-3}html[lang="es"] #guidePath{min-height:619px}@media(min-width:315px){html[lang="es"] #guidePath{min-height:597px}}@media(min-width:318px){html[lang="es"] #guidePath{min-height:592px}}@media(min-width:351px){html[lang="es"] #guidePath{min-height:580px}}@media(min-width:370px){html[lang="es"] #guidePath{min-height:554px}}@media(min-width:557px){html[lang="es"] #guidePath{min-height:532px}}@media(min-width:561px){html[lang="es"] #guidePath{min-height:382px}}@media(min-width:583px){html[lang="es"] #guidePath{min-height:334px}}@media(min-width:670px){html[lang="es"] #guidePath{min-height:322px}}html[lang="en"] #guidePath{min-height:625px}@media(min-width:306px){html[lang="en"] #guidePath{min-height:613px}}@media(min-width:337px){html[lang="en"] #guidePath{min-height:580px}}@media(min-width:473px){html[lang="en"] #guidePath{min-height:532px}}@media(min-width:500px){html[lang="en"] #guidePath{min-height:506px}}@media(min-width:561px){html[lang="en"] #guidePath{min-height:367px}}@media(min-width:580px){html[lang="en"] #guidePath{min-height:355px}}@media(min-width:634px){html[lang="en"] #guidePath{min-height:334px}}@media(min-width:642px){html[lang="en"] #guidePath{min-height:322px}}</style>'
+            head_extra = GP_RESERVE + chr(10)
             topcard = '<div class="topcta gpath no-print" id="guidePath"></div>\n    <script src="/js/guide-path.v1.js" defer></script>'
         else:
             topcard = (f'<div class="topcta no-print">\n      <p class="topcta-t">{t["top_t"]}</p>\n      <p class="topcta-p">{t["top_p"]}</p>\n'
@@ -656,7 +663,7 @@ fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlenco
 var gone=false,go=function(){if(gone)return;gone=true;location.href='/gracias.html?lang='+L;};
 try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'generate_lead',lead_source:'guia_'+K,form_id:'guia',language:L,page_type:'guide',quiz_score:'',eventCallback:go,eventTimeout:1500});}catch(x){}
 setTimeout(go,1700);}).catch(function(){B.disabled=false;B.textContent=T;err(E.getAttribute('data-send'),true);});});})();"""
-        written.append(write(path, page(l, path, alt, c["title"], c["meta"], body, "guide", ld, js, og_img=f"/img/og/{k}-{l}.jpg", og_alt=plain(c["h1"]))))
+        written.append(write(path, page(l, path, alt, c["title"], c["meta"], body, "guide", ld, js, og_img=f"/img/og/{k}-{l}.jpg", og_alt=plain(c["h1"]), head_extra=head_extra)))
         if l == "es": sitemap.append((path, alt))
 
 # ---------- hub ----------
