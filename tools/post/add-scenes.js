@@ -90,9 +90,11 @@ function scene(key, l) {
   const id = `scn-${key}`;
   let stage = picture(key, frames[0], alt0, false), ctl = '', notes = '';
   if (sc.kind === 'slider') {
-    ctl = `<div class="scn-ctl"><label for="${id}-r">${esc(ui.slider)}</label>`
+    ctl = `<div class="scn-ctl"><label for="${id}-r">${esc(t.slider || ui.slider)}</label>`
       + `<input class="scn-range" id="${id}-r" type="range" min="0" max="${frames.length - 1}" step="1" value="0" aria-valuetext="${esc(labels[0])}">`
       + `<output class="scn-out" for="${id}-r" aria-live="polite">${esc(labels[0])}</output></div>`;
+  } else if (sc.kind === 'single') {
+    // one picture, no controls (the live 3D scene, when it loads, is the interaction)
   } else if (sc.kind === 'tabs') {
     ctl = `<div class="scn-ctl" role="group" aria-label="${esc(t.title)}">`
       + labels.map((x, i) => `<button type="button" class="scn-tab" data-i="${i}" aria-pressed="${i ? 'false' : 'true'}">${esc(x)}</button>`).join('')
