@@ -9,6 +9,12 @@
      objects (pool, boat, PWC, cars, outdoor kitchen, service gate).
    - cnd (condos guide): the condo unit cutaway, turnable; the figure's three coverage toggles tint the real parts in
      3D (the association's structure, railing and windows; the owner's finishes; the owner's belongings).
+   - mar (boats): tabs fly the camera between the dock, the boat on its trailer by the gate, and the PWC on its lift.
+   - str (short-term rentals): tabs for the guests' arrival at the gate (suitcases, lockbox, welcome mat) and out back
+     (towels on the loungers, pool toys, the dock chained off).
+   - kr (kidnap and ransom): the gate at night: moonlight, lit windows, headlights inside the gate, cameras on the posts.
+   - avi (aviation): a drone hovering and circling over the pool.
+   - aut (auto): a generic sports car on a studio floor; the figure's slider turns it through 360 degrees.
    - res (homes and hurricanes guide): the figure's six tabs drive the scene: prepared (shutters closed, furniture
      stored, pool covered, the boat on its trailer), not prepared, tropical storm, Category 1, Category 3 (wind bends
      the palms, rain, surge over the seawall, flying debris, lightning; at Category 3 a torn shutter and lifted tiles),
@@ -21,14 +27,14 @@
 import {
   WebGLRenderer, Scene, PerspectiveCamera, Color, Fog, HemisphereLight, DirectionalLight, Mesh, PlaneGeometry, SphereGeometry,
   BoxGeometry, TorusGeometry, CylinderGeometry, ShaderMaterial, MeshStandardMaterial, BackSide, Vector3, Group, SRGBColorSpace,
-  ACESFilmicToneMapping, PCFShadowMap, MathUtils, TOUCH, Box3, BufferGeometry, Float32BufferAttribute, LineSegments, AdditiveBlending
+  ACESFilmicToneMapping, PCFShadowMap, MathUtils, TOUCH, Box3, PointLight, BufferGeometry, Float32BufferAttribute, LineSegments, AdditiveBlending
 } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
-const MODEL = '/img/scenes/flo3d/casa.glb', PROPS = '/img/scenes/flo3d/casa-props.glb', CONDO = '/img/scenes/flo3d/condo.glb';
+const MODEL = '/img/scenes/3d/casa.glb', PROPS = '/img/scenes/3d/casa-props.glb', CONDO = '/img/scenes/3d/condo.glb', CAR = '/img/scenes/3d/car.glb';
 const FT_MAX = 12;
 const C = (h) => new Color(h);
 
@@ -38,6 +44,7 @@ const SKIES = {
   gray:  { top: C('#36424b'), mid: C('#68737b'), low: C('#a49f94'), sun: 0.7, hemi: 1.25, fog: C('#848a8c'), near: 50, far: 230 },
   storm: { top: C('#161c21'), mid: C('#323c42'), low: C('#4d5757'), sun: 0.12, hemi: 0.85, fog: C('#454e51'), near: 18, far: 120 },
   dawn:  { top: C('#3b5873'), mid: C('#9cb2bd'), low: C('#f0c29a'), sun: 1.7, hemi: 1.35, fog: C('#c8b9a6'), near: 60, far: 260 },
+  night: { top: C('#04060c'), mid: C('#0c1424'), low: C('#1a2436'), sun: 0.25, hemi: 0.45, fog: C('#0e1626'), near: 40, far: 220 },
   studio:{ top: C('#3c5163'), mid: C('#6d8594'), low: C('#a9bcc6'), sun: 2.2, hemi: 1.6, fog: C('#a9bcc6'), near: 200, far: 900 },
   day:   { top: C('#3d6f95'), mid: C('#8fb6cf'), low: C('#e6dcc8'), sun: 2.5, hemi: 1.45, fog: C('#c3cfd4'), near: 80, far: 320 }
 };
@@ -60,20 +67,33 @@ const REN_STAGES = [
 ];
 const AERIAL_STAGES = [{ key: 'aerial', sky: 'day', storm: 0, water: 'tide', boat: 'dock' }];
 const CONDO_STAGES = [{ key: 'condo', sky: 'studio', storm: 0, water: 'tide', boat: 'dock' }];
+const MAR_STAGES = [
+  { key: 'mar_dock', show: 'none', sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_dock' },
+  { key: 'mar_trailer', show: 'mar_trailer', sky: 'day', storm: 0, water: 'tide', boat: 'trailer', cam: 'cam_gate' },
+  { key: 'mar_lift', show: 'none', sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_lift' }
+];
+const STR_STAGES = [
+  { key: 'str_arrival', show: 'str_arrival', sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_gate' },
+  { key: 'str_back', show: 'str_back', sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_hero' }
+];
+const KR_STAGES = [{ key: 'kr_night', show: 'kr_night', sky: 'night', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_gate' }];
+const AVI_STAGES = [{ key: 'avi', show: 'avi', sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_avi' }];
+const CAR_STAGES = [{ key: 'car', show: 'none', sky: 'studio', storm: 0, water: 'tide', boat: 'dock' }];
 const LAYER_GROUPS = { assoc: ['structure', 'railing', 'window'], finish: ['finishes'], contents: ['contents'] };
 const PIN_GROUPS = { pool: 'pool', boat: 'boat', pwc: 'pwc', cars: 'car', events: 'kitchen', staff: 'gate' };
 
 export function start(o) {
   const fig = o.fig, stage = fig.querySelector('.scn-stage');
   const SC = fig.getAttribute('data-scene');
-  const MODE = SC === 'res' ? 'storm' : SC === 'ren' ? 'reno' : SC === 'lia' ? 'aerial' : SC === 'cnd' ? 'condo' : 'flood';
-  const STAGES = MODE === 'reno' ? REN_STAGES : MODE === 'aerial' ? AERIAL_STAGES : MODE === 'condo' ? CONDO_STAGES : STORM_STAGES;
+  const MODE = { res: 'storm', ren: 'reno', lia: 'aerial', cnd: 'condo', mar: 'marine', str: 'rental', kr: 'gate', avi: 'drone', aut: 'car' }[SC] || 'flood';
+  const STAGES = { reno: REN_STAGES, aerial: AERIAL_STAGES, condo: CONDO_STAGES, marine: MAR_STAGES, rental: STR_STAGES, gate: KR_STAGES, drone: AVI_STAGES, car: CAR_STAGES }[MODE] || STORM_STAGES;
+  const SLIDER = MODE === 'flood' || MODE === 'car', FRAMED = ['marine', 'rental', 'gate', 'drone', 'car'].indexOf(MODE) >= 0;
   const lbtns = Array.prototype.slice.call(fig.querySelectorAll('.scn-lbtn'));
-  const TABBED = MODE === 'storm' || MODE === 'reno';
+  const TABBED = ['storm', 'reno', 'marine', 'rental'].indexOf(MODE) >= 0;
   const pins = Array.prototype.slice.call(fig.querySelectorAll('.scn-pin'));
   const range0 = fig.querySelector('input.scn-range'), out = fig.querySelector('.scn-out');
   const tabs0 = Array.prototype.slice.call(fig.querySelectorAll('.scn-tab'));
-  if (!stage || (MODE === 'flood' && !range0) || (TABBED && tabs0.length < STAGES.length) || (MODE === 'aerial' && !pins.length) || (MODE === 'condo' && !lbtns.length)) return Promise.reject(new Error('no stage'));
+  if (!stage || (SLIDER && !range0) || (TABBED && tabs0.length < STAGES.length) || (MODE === 'aerial' && !pins.length) || (MODE === 'condo' && !lbtns.length)) return Promise.reject(new Error('no stage'));
   const L = document.documentElement.lang === 'en' ? 'en' : 'es';
   const lite = !!o.lite, reduced = !!o.reduced, SCENE = SC || 'flo';
   const AA = o.aa != null ? !!o.aa : !lite, SHADOWS = o.shadows != null ? !!o.shadows : !lite;   // o.aa / o.shadows: test overrides
@@ -92,7 +112,7 @@ export function start(o) {
 
   const scene = new Scene();
   if (o.debug) window.__casa3d = { renderer, scene };   // tests only
-  const start0 = MODE === 'flood' ? SKIES.dusk : MODE === 'storm' ? SKIES.gray : MODE === 'condo' ? SKIES.studio : SKIES.day;
+  const start0 = MODE === 'flood' ? SKIES.dusk : MODE === 'storm' ? SKIES.gray : (MODE === 'condo' || MODE === 'car') ? SKIES.studio : MODE === 'gate' ? SKIES.night : SKIES.day;
   scene.fog = new Fog(start0.fog.clone(), start0.near, start0.far);
   const look = { top: start0.top.clone(), mid: start0.mid.clone(), low: start0.low.clone(), sun: start0.sun, hemi: start0.hemi };
 
@@ -226,7 +246,8 @@ export function start(o) {
     extras: null, disposed: false, levelY: 0,
     ft: 0,                                   // flood: feet over the slab (0 = normal tide)
     stage: 0, storm: 0, flash: 0, nextBolt: 0, // storm: tab index, eased storm strength, lightning
-    boatPivot: null, boatHome: new Vector3(), boatPos: new Vector3(), props: [], palmMats: [], groups: {}, anchors: [], byGroup: {}
+    boatPivot: null, boatHome: new Vector3(), boatPos: new Vector3(), props: [], palmMats: [], groups: {}, anchors: [], byGroup: {},
+    camGoal: null, deg: 0, degNow: 0, carPivot: null, dronePivot: null, droneHome: new Vector3()
   };
 
   function levelOf(ft, ex) {   // 0 = normal tide; 0 to 1 ft runs from the tide up to 1 ft over the slab; then feet over the slab
@@ -250,13 +271,19 @@ export function start(o) {
   const range = range0 ? range0.cloneNode(true) : null;
   const tabs = tabs0.map((b) => b.cloneNode(true));
   function wireControls() {
-    if (MODE === 'flood') {
+    if (MODE === 'car') {   // the slider turns the car through 360 degrees
+      const idx = +range0.value || 0;
+      range.min = '0'; range.max = '359'; range.step = '1'; range.value = String(idx * 30);
+      range0.replaceWith(range);
+      range.addEventListener('input', () => { setDeg(+range.value); kick(); try { o.dl && o.dl({ event: 'scene3d_level', scene: SCENE }); } catch (e) { /* analytics only */ } }, { passive: true });
+      setDeg(+range.value);
+    } else if (MODE === 'flood') {
       const idx = +range0.value || 0;
       range.min = '0'; range.max = String(FT_MAX); range.step = '0.25'; range.value = String(FRAME_FT[idx] || 0);
       range0.replaceWith(range);
       range.addEventListener('input', () => { setFt(+range.value); kick(); try { o.dl && o.dl({ event: 'scene3d_level', scene: SCENE }); } catch (e) { /* analytics only */ } }, { passive: true });
       setFt(+range.value);
-    } else if (MODE === 'aerial' || MODE === 'condo') {
+    } else if (MODE === 'aerial' || MODE === 'condo' || MODE === 'gate' || MODE === 'drone') {
       cv.setAttribute('aria-label', fig.getAttribute('data-alt') || '');
       setStage(0);
       if (MODE === 'condo') {   // the figure's own toggles keep working; the scene reads their pressed state after each click
@@ -281,6 +308,19 @@ export function start(o) {
     if (out) out.textContent = txt;
     cv.setAttribute('aria-label', (L === 'es' ? 'Casa hipotética en 3D: ' : 'Hypothetical home in 3D: ') + txt);
   }
+  function setDeg(d) {
+    state.deg = d;
+    const txt = Math.round(d) + '\u00b0';
+    range.setAttribute('aria-valuetext', txt);
+    if (out) out.textContent = txt;
+    cv.setAttribute('aria-label', (fig.getAttribute('data-alt') || '').replace('{label}', txt));
+  }
+  // where a camera from the Unreal scene really looks: its line of sight meets the ground (or the car's height)
+  function camGoal(ch, planeY) {
+    const cp = new Vector3().fromArray(ch.position), d = new Vector3().fromArray(ch.target).sub(cp).normalize(), py = planeY || 0;
+    const dist = d.y < -0.03 ? Math.min(70, (cp.y - py) / -d.y) : 20;
+    return { pos: cp, target: cp.clone().addScaledVector(d, dist) };
+  }
   function setStage(i) {
     state.stage = i;
     const s = STAGES[i], name = tabs[i] ? tabs[i].textContent : s.key;
@@ -289,7 +329,10 @@ export function start(o) {
       cv.setAttribute('aria-label', (L === 'es' ? 'Casa hipotética en 3D: ' : 'Hypothetical home in 3D: ') + name);
     }
     // props: closed or open shutters, furniture, pool cover, generator, trailer, damage
-    const show = s.key === 'after' ? 'storm_c3' : s.key;
+    const show = s.show || (s.key === 'after' ? 'storm_c3' : s.key);
+    if (FRAMED && s.cam && state.extras && state.extras[s.cam] && state.camReady) {   // fly to this tab's camera
+      state.camGoal = camGoal(state.extras[s.cam]); state.cam = state.extras[s.cam]; state.lastUser = performance.now();
+    }
     state.props.forEach((n) => { n.visible = n.userData.sets.indexOf(show) >= 0; });
     if (lawnDebris) lawnDebris.visible = s.key === 'after';
     renderer.shadowMap.needsUpdate = true;
@@ -365,17 +408,31 @@ export function start(o) {
   }
 
   const ready = new Promise((resolve, reject) => {   // returned at the end, after the loop and listeners below exist
-    Promise.all([loadGltf(MODE === 'condo' ? CONDO : MODEL), TABBED ? loadGltf(PROPS) : Promise.resolve(null)]).then(([gltf, props]) => {
+    Promise.all([loadGltf(MODE === 'condo' ? CONDO : MODE === 'car' ? CAR : MODEL), (TABBED || MODE === 'gate' || MODE === 'drone') ? loadGltf(PROPS) : Promise.resolve(null)]).then(([gltf, props]) => {
       try {
         const root = gltf.scene, ex = (gltf.scenes[0] && gltf.scenes[0].userData) || {};
         if (ex.tide_m == null) throw new Error('model without metadata');
         state.extras = ex; state.levelY = ex.tide_m;
         prepare(root, false); scene.add(root);
         if (props) { prepare(props.scene, true); scene.add(props.scene); }
-        const ch = MODE === 'aerial' ? ex.cam_aerial : ex.cam_hero;
+        const ch = ex[MODE === 'aerial' ? 'cam_aerial' : (STAGES[0].cam || 'cam_hero')] || ex.cam_hero;
         state.cam = ch;
         camera.position.fromArray(ch.position); controls.target.fromArray(ch.target);
-        if (MODE === 'condo') {   // the cutaway: aim at the unit's centre from the render's direction
+        if (FRAMED) {   // start exactly where the Unreal camera stood, looking where it looked
+          const g = camGoal(ch, MODE === 'car' ? 0.55 : 0);
+          camera.position.copy(g.pos); controls.target.copy(g.target);
+          if (MODE === 'car') {   // a studio: key light from the camera side, a cool rim behind, a brighter exposure
+            water.visible = false; controls.minPolarAngle = 0.6; controls.maxPolarAngle = 1.5;
+            renderer.toneMappingExposure = 1.5;
+            const key = new DirectionalLight(C('#fff2e0'), 2.6); key.position.copy(g.pos).add(new Vector3(0, 6, 0)); key.target.position.copy(g.target); scene.add(key); scene.add(key.target);
+            const rim = new DirectionalLight(C('#bcd4ff'), 1.8); rim.position.copy(g.target).sub(g.pos).setY(0).normalize().multiplyScalar(10).add(g.target).add(new Vector3(0, 4, 0)); rim.target.position.copy(g.target); scene.add(rim); scene.add(rim.target);
+          }
+          if (MODE === 'gate') {   // night: brighter windows, warm light at the gate and porch
+            scene.traverse((n) => { if (n.isMesh && n.material && n.material.emissive && n.material.emissive.getHex()) n.material.emissiveIntensity = (n.material.emissiveIntensity || 1) * 1.6; });
+            const pl = new PointLight(C('#ffcf8a'), 34, 18, 2); pl.position.copy(g.target).add(new Vector3(0, 3.2, 0)); scene.add(pl);
+            const pl2 = new PointLight(C('#ffd9a8'), 18, 14, 2); pl2.position.copy(g.target).lerp(g.pos, 0.35).add(new Vector3(0, 2.5, 0)); scene.add(pl2);
+          }
+        } else if (MODE === 'condo') {   // the cutaway: aim at the unit's centre from the render's direction
           const c = new Box3(); Object.keys(state.groups).forEach((g) => c.union(state.groups[g]));
           const cp = new Vector3().fromArray(ch.position), ctr = c.getCenter(new Vector3());
           controls.target.copy(ctr);
@@ -411,6 +468,19 @@ export function start(o) {
         }
         controls.minDistance = controls.maxDistance = camera.position.distanceTo(controls.target);
         controls.update();
+        state.camReady = true;
+        const pivotOf = (pick) => {   // one group at the picked nodes' centre, so they turn or fly as one piece
+          const nodes = []; scene.traverse((n) => { if (n.isMesh && pick(n)) nodes.push(n); });
+          if (!nodes.length) return null;
+          const b = new Box3(); nodes.forEach((n) => b.expandByObject(n));
+          const pv = new Group(); pv.position.copy(b.getCenter(new Vector3())); scene.add(pv); nodes.forEach((n) => pv.attach(n));
+          return pv;
+        };
+        if (MODE === 'car') state.carPivot = pivotOf((n) => { const g = (n.userData.group || (n.parent && n.parent.userData.group) || ''); return g === 'car' || g === 'spin'; });
+        if (MODE === 'drone') {   // shown a little larger than life so it reads as the subject
+          state.dronePivot = pivotOf((n) => n.userData.grp === 'drone');
+          if (state.dronePivot) { state.droneHome.copy(state.dronePivot.position); state.dronePivot.scale.setScalar(2.4); }
+        }
         controls.addEventListener('start', () => { state.drag = true; state.lastUser = performance.now(); kick(); });
         controls.addEventListener('end', () => { state.drag = false; state.lastUser = performance.now(); });
         controls.addEventListener('change', () => { if (state.drag) state.lastUser = performance.now(); kick(); });
@@ -476,7 +546,8 @@ export function start(o) {
       sky.material.uniforms.flash.value = state.flash * 0.45;
       sky.material.uniforms.glow.value = ease(sky.material.uniforms.glow.value, s.sky === 'dawn' ? 0.6 : s.sky === 'gray' ? 0.12 : 0.0, k);
       // the sun swings to the east for the morning after
-      const sd = s.sky === 'dawn' ? new Vector3(0.9, 0.18, -0.35).normalize() : s.sky === 'day' ? new Vector3(-0.45, 0.8, 0.4).normalize() : SUN_DIR;
+      const sd = s.sky === 'dawn' ? new Vector3(0.9, 0.18, -0.35).normalize() : (s.sky === 'day' || s.sky === 'studio') ? new Vector3(-0.45, 0.8, 0.4).normalize()
+        : s.sky === 'night' ? new Vector3(0.35, 0.55, 0.6).normalize() : SUN_DIR;
       sun.position.lerp(sd.clone().multiplyScalar(60), k);
       water.material.uniforms.sun.value.copy(sun.position).normalize();
       sky.material.uniforms.sun.value.copy(sun.position).normalize();
@@ -530,8 +601,24 @@ export function start(o) {
       if (key !== state.shadowKey) { state.shadowKey = key; renderer.shadowMap.needsUpdate = true; }
     }
 
+    if (state.camGoal && !state.drag) {   // fly to the tab's camera
+      const kc = reduced ? 1 : 0.07;
+      camera.position.lerp(state.camGoal.pos, kc); controls.target.lerp(state.camGoal.target, kc);
+      controls.minDistance = controls.maxDistance = camera.position.distanceTo(controls.target);
+      if (camera.position.distanceTo(state.camGoal.pos) < 0.02 && controls.target.distanceTo(state.camGoal.target) < 0.02) state.camGoal = null; else settled = false;
+    }
+    if (state.dronePivot) {   // the drone hovers and circles slowly over the pool
+      const tt = reduced ? 0 : t;
+      state.dronePivot.position.set(state.droneHome.x + Math.sin(tt * 0.35) * 1.4, state.droneHome.y + Math.sin(tt * 1.4) * 0.12, state.droneHome.z + Math.cos(tt * 0.35) * 1.4 - 1.4);
+      state.dronePivot.rotation.set(Math.sin(tt * 0.9) * 0.04, tt * 0.35, Math.cos(tt * 0.7) * 0.04);
+    }
+    if (state.carPivot) {   // the slider's angle, eased
+      state.degNow += (state.deg - state.degNow) * (reduced ? 1 : 0.15);
+      if (Math.abs(state.deg - state.degNow) < 0.05) state.degNow = state.deg; else settled = false;
+      state.carPivot.rotation.y = MathUtils.degToRad(state.degNow);
+    }
     // idle sway when nobody is dragging (never with reduced motion); a shake at Category 3
-    if (!reduced && !state.drag && now - state.lastUser > 4000) {
+    if (!reduced && !state.drag && !state.camGoal && now - state.lastUser > 4000) {
       const off = Math.sin(t * 0.12) * 0.06;
       const r = controls.minDistance, tg = controls.target, base = Math.atan2(state.cam.position[0] - tg.x, state.cam.position[2] - tg.z);
       const yy = camera.position.y, rr = Math.sqrt(Math.max(1, r * r - (yy - tg.y) * (yy - tg.y)));
@@ -580,6 +667,7 @@ export function start(o) {
     fig.classList.remove('scn-is-3d');
     if (range && range !== range0 && range.parentNode) {   // give the frames back their own slider
       let best = 0; FRAME_FT.forEach((f, i) => { if (Math.abs(f - state.ft) < Math.abs(FRAME_FT[best] - state.ft)) best = i; });
+      if (MODE === 'car') best = Math.round(state.deg / 30) % 12;
       range0.value = String(best); range.replaceWith(range0); range0.dispatchEvent(new Event('input'));
     }
     tabs.forEach((b, i) => { if (b.parentNode) b.replaceWith(tabs0[i]); });

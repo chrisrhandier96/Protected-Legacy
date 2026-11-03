@@ -13,6 +13,9 @@ const PAGES = [
   ['/guias/condominios-y-hoa/', 'cnd'], ['/en/guides/condos-hoa/', 'cnd'],
   ['/guias/umbrella-responsabilidad/', 'lia'], ['/en/guides/umbrella-liability/', 'lia'],
   ['/guias/remodelaciones/', 'ren'], ['/en/guides/renovations-builders-risk/', 'ren'],
+  ['/guias/embarcaciones/', 'mar'], ['/en/guides/boats/', 'mar'], ['/guias/alquiler-vacacional/', 'str'], ['/en/guides/short-term-rentals/', 'str'],
+  ['/guias/secuestro-y-extorsion/', 'kr'], ['/en/guides/kidnap-ransom/', 'kr'], ['/guias/aviacion-privada/', 'avi'], ['/en/guides/private-aviation/', 'avi'],
+  ['/guias/autos/', 'aut'], ['/en/guides/auto/', 'aut'],
 ];
 const VIEWS = { phone: { width: 390, height: 844 }, laptop: { width: 1366, height: 820 } };
 let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PASS ' : 'FAIL ') + m); };
@@ -21,6 +24,7 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
   const browser = await chromium.launch(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {});
   for (const [vname, vp] of Object.entries(VIEWS)) {
     for (const [url, key] of PAGES) {
+      if (process.env.ONLY && process.env.ONLY.split(',').indexOf(key) < 0) continue;
       const ctx = await browser.newContext({ viewport: vp, deviceScaleFactor: vname === 'phone' ? 2 : 1 });
       const page = await ctx.newPage(); const errs = [];
       page.on('pageerror', e => errs.push(e.message));
@@ -46,7 +50,7 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
       if (kind === 'slider') {
         const a = await srcOf(); await fig.locator('input.scn-range').fill('4'); await page.waitForTimeout(700);
         const b = await srcOf(); const out = await fig.locator('.scn-out').textContent();
-        log(a !== b && /water-04/.test(b), `${tag} slider to step 4 swaps the frame (${out})`);
+        log(a !== b && /(water|spin)-0?[45]/.test(b), `${tag} slider to step 4 swaps the frame (${out})`);
         await fig.locator('input.scn-range').fill('8'); await page.waitForTimeout(500);
       } else if (kind === 'tabs') {
         const tabs = fig.locator('.scn-tab'); const n = await tabs.count();

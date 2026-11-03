@@ -89,7 +89,10 @@ def hotspot_centres(key, frame, spots):
 
 def main():
     report = {}
+    only = [k for k in os.environ.get("ONLY", "").split(",") if k]   # ONLY=mar,str to encode just those scenes
     for key, sc in CFG["scenes"].items():
+        if only and key not in only:
+            continue
         print(key)
         for f in sc["frames"]:
             sizes = save_frame(key, f["name"])

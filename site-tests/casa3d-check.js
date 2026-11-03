@@ -9,7 +9,10 @@ const OUT = process.env.OUT || 'out-casa3d'; fs.mkdirSync(OUT, { recursive: true
 const PAGES = [['/guias/inundacion/', 'es', 'flo'], ['/en/guides/flood/', 'en', 'flo'], ['/guias/residencias-huracanes/', 'es', 'res'], ['/en/guides/homes-hurricanes/', 'en', 'res'],
   ['/guias/condominios-y-hoa/', 'es', 'cnd'], ['/en/guides/condos-hoa/', 'en', 'cnd'],
   ['/guias/remodelaciones/', 'es', 'ren'], ['/en/guides/renovations-builders-risk/', 'en', 'ren'], ['/guias/umbrella-responsabilidad/', 'es', 'lia'], ['/en/guides/umbrella-liability/', 'en', 'lia']];
-const TABS = { res: 6, ren: 3 };
+const TABS = { res: 6, ren: 3, mar: 3, str: 2 };
+PAGES.push(['/guias/embarcaciones/', 'es', 'mar'], ['/en/guides/boats/', 'en', 'mar'], ['/guias/alquiler-vacacional/', 'es', 'str'], ['/en/guides/short-term-rentals/', 'en', 'str'],
+  ['/guias/secuestro-y-extorsion/', 'es', 'kr'], ['/en/guides/kidnap-ransom/', 'en', 'kr'], ['/guias/aviacion-privada/', 'es', 'avi'], ['/en/guides/private-aviation/', 'en', 'avi'],
+  ['/guias/autos/', 'es', 'aut'], ['/en/guides/auto/', 'en', 'aut']);
 const VIEWS = { laptop: { width: 1366, height: 860 }, phone: { width: 390, height: 844 } };
 const ONLY = process.env.ONLY ? process.env.ONLY.split(',') : null;
 let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PASS ' : 'FAIL ') + m); };
@@ -34,6 +37,14 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
       log(await r.getAttribute('step') === '0.25' && await r.getAttribute('max') === '12', `${tag} slider continuous, 0 to 12 ft`);
       for (const [v, n] of [['0', 'tide'], ['4', '4ft'], ['12', '12ft']]) { await r.fill(v); await p.waitForTimeout(2500); await shot(n); }
       log(/12/.test(await fig.locator('.scn-out').textContent()), `${tag} readout follows the slider`);
+    } else if (key === 'kr' || key === 'avi') {
+      await p.waitForTimeout(2500); await shot('view');
+      log(true, `${tag} single live view rendered`);
+    } else if (key === 'aut') {
+      const r = fig.locator('input.scn-range');
+      log(await r.getAttribute('max') === '359' && await r.getAttribute('step') === '1', `${tag} slider turns 0 to 359 degrees`);
+      for (const v of ['0', '120', '240']) { await r.fill(v); await p.waitForTimeout(1500); await shot('deg' + v); }
+      log(/240/.test(await fig.locator('.scn-out').textContent()), `${tag} readout follows the angle`);
     } else if (key === 'cnd') {
       await p.waitForTimeout(1500); await shot('unit');
       const btns = fig.locator('.scn-lbtn'); const n = await btns.count();

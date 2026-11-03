@@ -39,6 +39,11 @@ and come back if anything fails. Laptops can drag to turn; phones get a gentle s
 | Renovations (`ren`) | casa.glb + casa-props.glb | The three tabs, seen from the addition's side: before, during (scaffolding, framed addition, dumpster, materials under tarps, new pilings), after (finished addition, new dock). |
 | Umbrella (`lia`) | casa.glb | The drone view, turnable; the six numbered pins ride on the pool, boat, PWC, cars, outdoor kitchen and service gate, and still highlight their notes. |
 | Condos (`cnd`) | condo.glb | The unit cutaway, turnable; the three coverage toggles tint the real parts (association: structure, railing, windows; owner: finishes; owner: belongings). |
+| Boats (`mar`) | casa.glb + casa-props.glb | Three tabs fly the camera between the dock, the boat on its trailer by the gate, and the PWC on its lift. |
+| Short-term rentals (`str`) | casa.glb + casa-props.glb | Two tabs: the guests' arrival at the gate (suitcases, lockbox, welcome mat) and out back (towels, pool toys, the dock chained off). |
+| Kidnap and ransom (`kr`) | casa.glb + casa-props.glb | The gate at night: moonlight, lit windows, headlights inside the gate, cameras on the posts. |
+| Aviation (`avi`) | casa.glb + casa-props.glb | A drone hovering and circling over the pool (shown larger than life). |
+| Auto (`aut`) | car.glb | A generic sports car in a studio; the slider turns it through 360 degrees (the 12 turntable frames are the fallback). |
 
 - Models in `img/scenes/flo3d/`: casa.glb 95 KB, casa-props.glb 50 KB, condo.glb 37 KB (meshopt, quantized). Exported from
   Unreal by `ue-renders/export_casa_glb.py` (custom: the stock glTF exporter skips Geometry Script meshes). Base estate:
@@ -60,3 +65,8 @@ and come back if anything fails. Laptops can drag to turn; phones get a gentle s
 - Tests: `BASE=http://localhost:8787 OUT=out-casa3d CHANNEL=chrome node casa3d-check.js` (all five guides, both languages,
   laptop and phone; `ONLY=flo,res,ren,lia,cnd` to narrow). `scenes-check.js` checks the frames path (`?no3d=1`). Long runs on
   a low-memory laptop can hit ERR_INSUFFICIENT_RESOURCES in Chrome; rerun the one guide with ONLY.
+
+v2 (Nov 3, same day): all ten scenes load `js/casa3d.v2.js` and the models in `img/scenes/3d/` (casa, casa-props, condo,
+car). New path because /img/ is cached for a week and the models gained cameras (dock, gate, PWC lift, drone). Re-export
+every model with `bash tools/export_web3d.sh` in the ue-renders repo. v1 files (`js/casa3d.v1.js`, `img/scenes/flo3d/`) stay
+for cached pages. New scene kind `single` (one picture, no controls) and a per-scene `slider` label in scenes.json.

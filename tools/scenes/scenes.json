@@ -78,7 +78,7 @@
           "en": "12 ft"
         }
       ],
-      "live3d": "/js/casa3d.v1.js"
+      "live3d": "/js/casa3d.v2.js"
     },
     "res": {
       "kind": "tabs",
@@ -124,7 +124,7 @@
           "en": "After"
         }
       ],
-      "live3d": "/js/casa3d.v1.js"
+      "live3d": "/js/casa3d.v2.js"
     },
     "cnd": {
       "kind": "layers",
@@ -180,7 +180,7 @@
           "en": "Owner (HO-6): your belongings"
         }
       ],
-      "live3d": "/js/casa3d.v1.js"
+      "live3d": "/js/casa3d.v2.js"
     },
     "lia": {
       "kind": "hotspots",
@@ -276,7 +276,7 @@
           ]
         }
       ],
-      "live3d": "/js/casa3d.v1.js"
+      "live3d": "/js/casa3d.v2.js"
     },
     "ren": {
       "kind": "tabs",
@@ -307,7 +307,184 @@
           "en": "After"
         }
       ],
-      "live3d": "/js/casa3d.v1.js"
+      "live3d": "/js/casa3d.v2.js"
+    },
+    "mar": {
+      "kind": "tabs",
+      "live3d": "/js/casa3d.v2.js",
+      "es": {
+        "title": "Dónde está la embarcación",
+        "caption": "Ilustración 3D hipotética. Prestar un bote o una moto de agua puede generar reclamos por entrega negligente, y en Florida un menor de 14 años no puede operar una moto de agua.",
+        "alt": "Ilustración 3D de una embarcación en una casa frente al agua: {label}"
+      },
+      "en": {
+        "title": "Where the boat is",
+        "caption": "Hypothetical 3D illustration. Lending a boat or PWC can lead to negligent entrustment claims, and in Florida no one under 14 may operate a personal watercraft.",
+        "alt": "3D illustration of a boat at a waterfront home: {label}"
+      },
+      "frames": [
+        {
+          "name": "mar-dock",
+          "es": "En el muelle",
+          "en": "At the dock"
+        },
+        {
+          "name": "mar-trailer",
+          "es": "En el remolque",
+          "en": "On the trailer"
+        },
+        {
+          "name": "mar-lift",
+          "es": "La moto de agua en su elevador",
+          "en": "The PWC on its lift"
+        }
+      ]
+    },
+    "str": {
+      "kind": "tabs",
+      "live3d": "/js/casa3d.v2.js",
+      "es": {
+        "title": "La casa cuando recibe huéspedes",
+        "caption": "Ilustración 3D hipotética. Qué cambia cuando su casa o su apartamento recibe huéspedes que pagan, y cómo revisar la protección antes de publicar el anuncio.",
+        "alt": "Ilustración 3D de una casa de alquiler vacacional: {label}"
+      },
+      "en": {
+        "title": "The home when guests arrive",
+        "caption": "Hypothetical 3D illustration. What changes when your home or condo hosts paying guests, and how to review your protection before you publish the listing.",
+        "alt": "3D illustration of a short-term rental home: {label}"
+      },
+      "frames": [
+        {
+          "name": "str-arrival",
+          "es": "Llegada",
+          "en": "Arrival"
+        },
+        {
+          "name": "str-back",
+          "es": "La parte de atrás",
+          "en": "Out back"
+        }
+      ]
+    },
+    "kr": {
+      "kind": "single",
+      "live3d": "/js/casa3d.v2.js",
+      "es": {
+        "title": "El portón de noche",
+        "caption": "Ilustración 3D hipotética. Limite lo que la familia publica sobre viajes, rutinas, vehículos y ubicación en tiempo real.",
+        "alt": "Ilustración 3D del portón de una casa de noche"
+      },
+      "en": {
+        "title": "The gate at night",
+        "caption": "Hypothetical 3D illustration. Limit what the family posts about trips, routines, vehicles and real-time location.",
+        "alt": "3D illustration of a home's gate at night"
+      },
+      "frames": [
+        {
+          "name": "kr-gate-night",
+          "es": "De noche",
+          "en": "At night"
+        }
+      ]
+    },
+    "avi": {
+      "kind": "single",
+      "live3d": "/js/casa3d.v2.js",
+      "es": {
+        "title": "Un dron sobre la propiedad",
+        "caption": "Ilustración 3D hipotética. Esta guía explica qué cambia si la familia vuela en propiedad fraccionada, con jet card, en chárter o con drones.",
+        "alt": "Ilustración 3D de un dron sobre la piscina de una casa"
+      },
+      "en": {
+        "title": "A drone over the property",
+        "caption": "Hypothetical 3D illustration. This guide explains what changes when the family flies fractional, on a jet card, by charter or with drones.",
+        "alt": "3D illustration of a drone over a home's pool"
+      },
+      "frames": [
+        {
+          "name": "avi-drone",
+          "es": "Dron",
+          "en": "Drone"
+        }
+      ]
+    },
+    "aut": {
+      "kind": "slider",
+      "live3d": "/js/casa3d.v2.js",
+      "es": {
+        "title": "Un auto de colección",
+        "slider": "Girar el auto",
+        "caption": "Ilustración 3D hipotética. Autos de colección, empleados domésticos al volante y el uso en plataformas de viajes compartidos tienen reglas propias que conviene revisar.",
+        "alt": "Ilustración 3D de un auto deportivo genérico: {label}"
+      },
+      "en": {
+        "title": "A collector car",
+        "slider": "Turn the car",
+        "caption": "Hypothetical 3D illustration. Collector cars, household employees behind the wheel and rideshare use each have their own rules worth reviewing.",
+        "alt": "3D illustration of a generic sports car: {label}"
+      },
+      "frames": [
+        {
+          "name": "aut-spin-01",
+          "es": "0°",
+          "en": "0°"
+        },
+        {
+          "name": "aut-spin-02",
+          "es": "30°",
+          "en": "30°"
+        },
+        {
+          "name": "aut-spin-03",
+          "es": "60°",
+          "en": "60°"
+        },
+        {
+          "name": "aut-spin-04",
+          "es": "90°",
+          "en": "90°"
+        },
+        {
+          "name": "aut-spin-05",
+          "es": "120°",
+          "en": "120°"
+        },
+        {
+          "name": "aut-spin-06",
+          "es": "150°",
+          "en": "150°"
+        },
+        {
+          "name": "aut-spin-07",
+          "es": "180°",
+          "en": "180°"
+        },
+        {
+          "name": "aut-spin-08",
+          "es": "210°",
+          "en": "210°"
+        },
+        {
+          "name": "aut-spin-09",
+          "es": "240°",
+          "en": "240°"
+        },
+        {
+          "name": "aut-spin-10",
+          "es": "270°",
+          "en": "270°"
+        },
+        {
+          "name": "aut-spin-11",
+          "es": "300°",
+          "en": "300°"
+        },
+        {
+          "name": "aut-spin-12",
+          "es": "330°",
+          "en": "330°"
+        }
+      ]
     }
   }
 }
