@@ -48,12 +48,17 @@ authorized through Dec 11, 2026 (P.L. 119-103); Florida auto minimums (both 2026
 SIRS and milestone rules (no 2026 change); construction lien and owner-builder rules; 2026 domestic employee
 thresholds.
 
-## Open items (owner's call, not edited)
+## Owner decisions applied (Nov 3, 2026, same PR)
 
-- License W606240: the DFS licensee search could not be reached by the checkers; confirm in a browser.
-- Umbrella sizing language on the homepage ("limits at least comparable to net worth", quiz question 9).
-- "Every 3 to 5 years" appraisal advice on the homepage vs "every few years" in the col guide.
+- License W606240: confirmed active by Christian.
+- Umbrella sizing on the homepage: idea kept, numbers dropped ("a limit in proportion to your net worth"; "a large estate behind a small umbrella").
+- Appraisal frequency on the homepage now matches the col guide: "every few years", no fixed 3 to 5 year rule.
+- Bio: "bilingual from birth" and "Native bilingual" replaced with "I work in both Spanish and English" and "Bilingual, Spanish and English".
+
+## Still open
+
 - 627.701 also lets insurers offer 3% instead of 2% for dwelling limits from $1M to under $3M (res now says "for example").
 - NFIP authorization ends Dec 11, 2026: re-check on Dec 12.
 - tools/build_en.py does not write the English title, description, og:url, og:image (og-en.png) or the honeypot
   label that en.html carries; they were restored by hand after this rebuild. Fix the generator before the next run.
+  Run the full build chain (build_library, build_en, flatten, postbuild) together: flatten.py alone breaks the pages.
