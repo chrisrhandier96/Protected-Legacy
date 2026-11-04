@@ -2,7 +2,7 @@
   "key": "emp",
   "slug_es": "personal-del-hogar-legado",
   "slug_en": "household-staff-legacy",
-  "updated": "2026-09-25",
+  "updated": "2026-11-03",
   "es": {
     "title": "Empleada doméstica y seguro: personal del hogar y legado",
     "meta": "Empleada doméstica, niñera o chofer en Florida: obligaciones del empleador, compensación laboral, reclamos laborales y planificación patrimonial y seguros.",
@@ -159,7 +159,7 @@
               "Pague mediante un proceso de nómina que maneje los impuestos del empleador del hogar ante el IRS [1].",
               "Confirme su registro del impuesto de reempleo ante el Departamento de Ingresos de Florida [4].",
               "Incluya a los choferes y a quienes llevan a los niños en la revisión de su póliza de auto, con reglas claras de manejo.",
-              "Limite el acceso del personal a documentos financieros y contraseñas, y guarde los objetos de valor en una caja fuerte [6].",
+              "Limite el acceso del personal a documentos financieros y contraseñas, y guarde los objetos de valor en una caja fuerte.",
               "Explique al personal el plan de emergencias y de huracanes de la familia."
             ]
           },
@@ -349,7 +349,7 @@
               "Pay through a payroll process that handles household employer taxes with the IRS [1].",
               "Confirm your reemployment tax registration with the Florida Department of Revenue [4].",
               "Include drivers and anyone who drives the children in your auto policy review, with clear driving rules.",
-              "Limit staff access to financial documents and passwords, and keep valuables in a safe [6].",
+              "Limit staff access to financial documents and passwords, and keep valuables in a safe.",
               "Walk your staff through the family's emergency and hurricane plan."
             ]
           },
@@ -392,12 +392,12 @@
     {
       "n": 2,
       "label": "Florida Statutes, s. 440.02, Definitions (domestic servants in private homes excluded from employment)",
-      "url": "https://www.flsenate.gov/Laws/Statutes/2025/440.02"
+      "url": "https://www.flsenate.gov/Laws/Statutes/2026/440.02"
     },
     {
       "n": 3,
       "label": "Florida Statutes, s. 440.04, Waiver of exemption",
-      "url": "https://www.flsenate.gov/Laws/Statutes/2025/440.04"
+      "url": "https://www.flsenate.gov/Laws/Statutes/2026/440.04"
     },
     {
       "n": 4,

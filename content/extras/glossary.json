@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-25",
+ "updated": "2026-11-03",
  "terms": [
   {
    "id": "deducible",
@@ -258,8 +258,8 @@
    "es": "Infraseguro",
    "en": "Underinsurance",
    "cat": "hogar",
-   "def_es": "Cuando el límite asegurado es menor que el costo real de reconstruir o reemplazar. Cotality (antes CoreLogic) estimó que cerca del 64% de las viviendas en Estados Unidos están infraseguradas, y los costos de reconstrucción subieron 25.9% entre marzo de 2020 y mayo de 2023 (Verisk).",
-   "def_en": "When the insured limit is lower than the real cost to rebuild or replace. Cotality (formerly CoreLogic) estimated about 64% of U.S. homes are underinsured, and residential reconstruction costs rose 25.9% from March 2020 to May 2023 (Verisk).",
+   "def_es": "Cuando el límite asegurado es menor que el costo real de reconstruir o reemplazar. En Estados Unidos, los costos de reconstrucción residencial subieron 25.9% entre marzo de 2020 y mayo de 2023 (Verisk).",
+   "def_en": "When the insured limit is lower than the real cost to rebuild or replace. U.S. residential reconstruction costs rose 25.9% from March 2020 to May 2023 (Verisk).",
    "guide": "res"
   },
   {
@@ -726,8 +726,8 @@
    "es": "Alquiler vacacional",
    "en": "Vacation rental",
    "cat": "alquiler",
-   "def_es": "En Florida, una unidad de condominio o una casa de hasta cuatro unidades que funciona como alojamiento público transitorio. El DBPR exige licencia si se alquila completa más de tres veces al año por menos de 30 días o un mes, o si se anuncia como alquiler habitual.",
-   "def_en": "In Florida, a condominium unit or a home with up to four units that operates as transient public lodging. DBPR requires a license if it is rented in full more than three times a year for less than 30 days or one month, or advertised as regularly rented.",
+   "def_es": "En Florida, una unidad de condominio o una casa de hasta cuatro unidades que funciona como alojamiento público transitorio. El DBPR exige licencia si se alquila completa más de tres veces al año por períodos de menos de 30 días consecutivos, o si se anuncia como alquiler habitual.",
+   "def_en": "In Florida, a condominium unit or a home with up to four units that operates as transient public lodging. DBPR requires a license if it is rented in full more than three times a year for periods of less than 30 consecutive days, or advertised as regularly rented.",
    "guide": "str"
   },
   {

@@ -2,7 +2,7 @@
   "key": "res",
   "slug_es": "residencias-huracanes",
   "slug_en": "homes-hurricanes",
-  "updated": "2026-09-25",
+  "updated": "2026-11-03",
   "es": {
     "title": "Seguro de casa en Florida de alto valor y huracanes",
     "meta": "Seguro de casa en Florida de alto valor: costo de reemplazo, cómo se calcula el deducible de huracán, ley u ordenanza, edad del techo y plazos de reclamo.",
@@ -25,7 +25,7 @@
             "p": "La primera cifra de una póliza de propietario es el límite de la vivienda, conocido como Cobertura A. En una residencia de alto valor en Florida, ese límite debería reflejar lo que costaría reconstruir la casa con materiales y mano de obra de tipo y calidad similares, no el precio al que se vendería [5]. El valor de mercado incluye el terreno, la vista y la ubicación, y nada de eso hay que reconstruirlo. El costo de reconstrucción, en cambio, refleja acabados a la medida, vidrios de impacto y el sobreprecio de mano de obra que suele seguir a un huracán fuerte."
           },
           {
-            "p": "Además, el costo de reconstruir cambia. Verisk estimó que el costo de reconstrucción residencial en Estados Unidos subió alrededor de 25.9% entre marzo de 2020 y mayo de 2023 [6]. Un límite fijado hace años puede quedarse atrás. Un estudio sobre el incendio Marshall de 2021 en Colorado encontró que el 74% de los asegurados que perdieron su casa estaban infraasegurados, y el 36% de forma severa [7]. Fue un incendio forestal, pero la lección aplica a los huracanes: una pérdida total revela límites que parecían suficientes en el papel."
+            "p": "Además, el costo de reconstruir cambia. Verisk estimó que el costo de reconstrucción residencial en Estados Unidos subió alrededor de 25.9% entre marzo de 2020 y mayo de 2023 [6]. Un límite fijado hace años puede quedarse atrás. Un estudio sobre el incendio Marshall de 2021 en Colorado encontró que el 74% de los asegurados que presentaron reclamos tras el incendio estaban infraasegurados, y el 36% de forma severa [7]. Fue un incendio forestal, pero la lección aplica a los huracanes: una pérdida total revela límites que parecían suficientes en el papel."
           },
           {
             "table": {
@@ -75,7 +75,7 @@
         "h2": "El deducible de huracán en Florida: cómo funcionan los números",
         "blocks": [
           {
-            "p": "Según el estatuto 627.701, las aseguradoras deben ofrecer opciones de deducible de huracán de $500, 2%, 5% y 10% del límite de la vivienda, con variaciones para casas de mayor valor: la opción de $500 no es obligatoria cuando el límite es de $250,000 o más, y la de 2% no es obligatoria desde $3 millones [1]. El deducible se aplica una vez por año calendario a las pérdidas por huracán con la misma aseguradora o grupo asegurador. Si un segundo huracán causa daños el mismo año, el deducible para ese evento es el mayor entre el saldo pendiente del deducible de huracán y el deducible de otros riesgos [1][2]. Cuando se aplica el deducible de huracán, no se aplica ningún otro deducible de la póliza [2]."
+            "p": "Según el estatuto 627.701, las aseguradoras deben ofrecer opciones de deducible de huracán de $500, 2%, 5% y 10% del límite de la vivienda, con variaciones para casas de mayor valor; por ejemplo, la opción de $500 no es obligatoria cuando el límite es de $250,000 o más, y la de 2% no es obligatoria desde $3 millones [1]. El deducible se aplica una vez por año calendario a las pérdidas por huracán con la misma aseguradora o grupo asegurador. Si un segundo huracán causa daños el mismo año, el deducible para ese evento es el mayor entre el saldo pendiente del deducible de huracán y el deducible de otros riesgos [1][2]. Cuando se aplica el deducible de huracán, no se aplica ningún otro deducible de la póliza [2]."
           },
           {
             "p": "La ley de Florida define el período del huracán desde que el Centro Nacional de Huracanes emite un aviso de huracán para cualquier parte de Florida hasta 72 horas después de que termine la última vigilancia o aviso de huracán para cualquier parte del estado [12]. Como el deducible es un porcentaje, la cifra en dólares crece con la casa. Imagine una residencia hipotética con un límite de vivienda de $3,000,000:"
@@ -310,7 +310,7 @@
             "p": "The first number on a homeowners policy is the dwelling limit, often called Coverage A. For a high-value home in Florida, that limit should reflect what it would cost to rebuild the house with materials and workmanship of similar kind and quality, not the price it would sell for [5]. Market value includes the land, the view and the location, none of which needs to be rebuilt. Rebuilding cost, by contrast, reflects custom finishes, impact-rated glass and the labor premium that tends to follow a major hurricane."
           },
           {
-            "p": "Rebuilding costs also move. Verisk estimated that U.S. residential reconstruction costs rose about 25.9% from March 2020 to May 2023 [6]. A limit set years ago can fall behind. Research on the 2021 Marshall Fire in Colorado found that 74% of policyholders who lost their homes were underinsured, and 36% were severely underinsured [7]. The event was a wildfire, but the lesson applies to hurricanes: a total loss exposes limits that looked adequate on paper."
+            "p": "Rebuilding costs also move. Verisk estimated that U.S. residential reconstruction costs rose about 25.9% from March 2020 to May 2023 [6]. A limit set years ago can fall behind. Research on the 2021 Marshall Fire in Colorado found that 74% of policyholders who filed claims after the fire were underinsured, and 36% were severely underinsured [7]. The event was a wildfire, but the lesson applies to hurricanes: a total loss exposes limits that looked adequate on paper."
           },
           {
             "table": {
@@ -360,7 +360,7 @@
         "h2": "The Florida hurricane deductible: how the math works",
         "blocks": [
           {
-            "p": "Under Fla. Stat. 627.701, insurers must offer hurricane deductible options of $500, 2%, 5% and 10% of the dwelling limit, with variations for higher-value homes: the $500 option is not required when the dwelling limit is $250,000 or more, and the 2% option is not required at $3 million or more [1]. The deductible applies once per calendar year to hurricane losses with the same insurer or insurer group. If a second hurricane causes a loss in the same year, the deductible for it is the greater of the remaining hurricane deductible or the deductible for other perils [1][2]. When a hurricane deductible applies, no other deductible under the policy applies [2]."
+            "p": "Under Fla. Stat. 627.701, insurers must offer hurricane deductible options of $500, 2%, 5% and 10% of the dwelling limit, with variations for higher-value homes; for example, the $500 option is not required when the dwelling limit is $250,000 or more, and the 2% option is not required at $3 million or more [1]. The deductible applies once per calendar year to hurricane losses with the same insurer or insurer group. If a second hurricane causes a loss in the same year, the deductible for it is the greater of the remaining hurricane deductible or the deductible for other perils [1][2]. When a hurricane deductible applies, no other deductible under the policy applies [2]."
           },
           {
             "p": "Florida law defines the hurricane period as beginning when the National Hurricane Center issues a hurricane warning for any part of Florida and ending 72 hours after the last hurricane watch or warning for any part of the state ends [12]. Because the deductible is a percentage, the dollar amount grows with the home. Imagine a hypothetical home with a dwelling limit of $3,000,000:"

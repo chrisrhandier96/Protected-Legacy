@@ -76,7 +76,7 @@ d0 = d0[:d0.find(">") + 1]
 rep(d0, '<meta name="description" content="Bilingual education on protecting what your family built in Florida: homes, collections, boats, aviation, liability and legacy. Verifiable data, in your language. Licensed Florida agent.">')
 o0 = html[html.find('<meta property="og:description"'):]
 o0 = o0[:o0.find(">") + 1]
-rep(o0, '<meta property="og:description" content="Hispanic wealth in the U.S. tripled in a decade. Protection did not keep up. Risk education in your language, backed by verifiable data.">')
+rep(o0, '<meta property="og:description" content="Hispanic wealth in the U.S. keeps growing. Protection did not keep up. Risk education in your language, backed by verifiable data.">')
 rep('<meta property="og:locale" content="es_US">', '<meta property="og:locale" content="en_US">\n<meta property="og:locale:alternate" content="es_US">')
 rep('<link rel="canonical" href="' + BASE + '/">', '<link rel="canonical" href="' + BASE + '/en/">')
 rep('<button id="btn-es" class="active" onclick="setLang(\'es\')">ES</button>', '<button id="btn-es" onclick="setLang(\'es\')">ES</button>')

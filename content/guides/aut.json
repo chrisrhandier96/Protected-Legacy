@@ -2,7 +2,7 @@
   "key": "aut",
   "slug_es": "autos",
   "slug_en": "auto",
-  "updated": "2026-09-25",
+  "updated": "2026-11-03",
   "es": {
     "title": "Seguro de auto en Florida para familias con patrimonio",
     "meta": "Seguro de auto en Florida: mínimos legales, responsabilidad por lesiones, cobertura UM, conductores jóvenes, responsabilidad del dueño y autos de colección.",
@@ -36,7 +36,7 @@
         "h2": "Por qué importa la responsabilidad por lesiones aunque no sea obligatoria",
         "blocks": [
           {"p": "Si un miembro de la familia causa un accidente con lesiones graves y no hay cobertura BI, el reclamo se dirige a la persona responsable y, con ella, a su patrimonio. Además de pagar hasta el límite, la póliza de auto con BI normalmente incluye la defensa legal del asegurado, algo que en un litigio puede costar tanto como la indemnización."},
-          {"p": "La cobertura BI también es la base de otras protecciones. La mayoría de las pólizas umbrella exige un límite mínimo de responsabilidad en auto, y cada aseguradora fija su propio monto [9]. Y en Florida, las reglas de cobertura UM no se aplican a pólizas que no incluyen responsabilidad primaria [3], por lo que una póliza con solo PIP y PDL deja a la familia sin esa protección. La ley de responsabilidad financiera de Florida también puede exigir prueba de cobertura BI después de ciertos accidentes o condenas."},
+          {"p": "La cobertura BI también es la base de otras protecciones. La mayoría de las pólizas umbrella exige un límite mínimo de responsabilidad en auto, y cada aseguradora fija su propio monto [9]. Y en Florida, la obligación de incluir cobertura UM se aplica solo a pólizas con responsabilidad por lesiones corporales [3], por lo que una póliza con solo PIP y PDL normalmente deja a la familia sin esa protección. La ley de responsabilidad financiera de Florida también puede exigir prueba de cobertura BI después de ciertos accidentes o condenas."},
           {"callout": "Para una familia con patrimonio, el mínimo legal de Florida responde a una pregunta distinta a la suya: la ley busca que exista algún seguro; usted busca que un accidente no alcance su patrimonio."}
         ]
       },
@@ -82,7 +82,7 @@
         "h2": "Empleados domésticos al volante y viajes compartidos",
         "blocks": [
           {"p": "Cuando un chofer, una niñera o un asistente maneja los autos de la familia, surgen preguntas propias: si está incluido como conductor en la póliza, si la póliza cubre su uso habitual del vehículo y si sus propios límites importan cuando usa su auto para mandados de la familia. Si maneja como parte de su trabajo, pueden aplicarse además reglas de responsabilidad del empleador. En Florida, los empleados domésticos en casas particulares están excluidos de la definición de empleo de la ley de compensación laboral (sección 440.02), aunque el empleador puede elegir voluntariamente esa cobertura (sección 440.04) [8][10]."},
-          {"p": "El uso en plataformas de transporte o entregas es otra brecha frecuente. La sección 627.748 permite que la aseguradora de una póliza personal excluya toda cobertura, incluidas responsabilidad, UM, PIP, colisión y comprensiva, mientras el conductor está conectado a la plataforma o realiza un viaje contratado [7]. La ley exige cobertura de la plataforma o del conductor: $50,000 por persona, $100,000 por incidente y $25,000 por daños a la propiedad mientras está conectado sin pasajero, y $1 millón durante un viaje contratado [7]."},
+          {"p": "El uso en plataformas de transporte o entregas es otra brecha frecuente. La sección 627.748 permite que la aseguradora de una póliza personal excluya toda cobertura, incluidas responsabilidad, UM, PIP, colisión y comprensiva, mientras el conductor está conectado a la plataforma o realiza un viaje contratado [7]. La ley exige cobertura de la plataforma o del conductor: $50,000 por persona, $100,000 por incidente y $25,000 por daños a la propiedad mientras está conectado sin un viaje contratado en curso, y $1 millón durante un viaje contratado, que comienza cuando el conductor acepta la solicitud de viaje [7]."},
           {"callout": "Si un hijo universitario usa el auto familiar para hacer entregas o viajes por aplicación, revise la póliza personal y la umbrella: ambas pueden excluir ese uso."}
         ]
       },
@@ -168,7 +168,7 @@
         "h2": "Why bodily injury liability matters even though it is not required",
         "blocks": [
           {"p": "If a family member causes a crash with serious injuries and there is no BI coverage, the claim goes to the responsible person and, with them, to their assets. Besides paying up to the limit, an auto policy with BI typically includes the insured's legal defense, which in a lawsuit can cost as much as the award itself."},
-          {"p": "BI is also the foundation for other protections. Most umbrella policies require a minimum auto liability limit, and each insurer sets its own amount [9]. And in Florida, the UM coverage rules do not apply to policies without primary liability coverage [3], so a PIP and PDL only policy leaves the family without that protection. Florida's financial responsibility law can also require proof of BI coverage after certain crashes or convictions."},
+          {"p": "BI is also the foundation for other protections. Most umbrella policies require a minimum auto liability limit, and each insurer sets its own amount [9]. And in Florida, the requirement to include UM coverage applies only to policies with bodily injury liability [3], so a PIP and PDL only policy typically leaves the family without that protection. Florida's financial responsibility law can also require proof of BI coverage after certain crashes or convictions."},
           {"callout": "For a family with significant assets, Florida's legal minimum answers a different question than yours: the law wants some insurance to exist; you want a crash not to reach your balance sheet."}
         ]
       },
@@ -214,7 +214,7 @@
         "h2": "Household employees behind the wheel and rideshare use",
         "blocks": [
           {"p": "When a driver, nanny or assistant drives the family's cars, specific questions come up: whether that person is listed as a driver, whether the policy covers regular use of the vehicle, and whether their own limits matter when they use their own car for family errands. If they drive as part of the job, employer liability rules may also apply. In Florida, domestic servants in private homes are excluded from the definition of employment under the workers' compensation law (section 440.02), although an employer may voluntarily elect that coverage (section 440.04) [8][10]."},
-          {"p": "Rideshare and delivery use is another common gap. Section 627.748 lets the insurer of a personal auto policy exclude all coverage, including liability, UM, PIP, collision and comprehensive, while the driver is logged on to the platform or providing a prearranged ride [7]. The law requires platform or driver coverage of $50,000 per person, $100,000 per incident and $25,000 for property damage while logged on without a passenger, and $1 million during a prearranged ride [7]."},
+          {"p": "Rideshare and delivery use is another common gap. Section 627.748 lets the insurer of a personal auto policy exclude all coverage, including liability, UM, PIP, collision and comprehensive, while the driver is logged on to the platform or providing a prearranged ride [7]. The law requires platform or driver coverage of $50,000 per person, $100,000 per incident and $25,000 for property damage while logged on but not engaged in a prearranged ride, and $1 million during a prearranged ride, which begins when the driver accepts a ride request [7]."},
           {"callout": "If a college-age child uses a family car to make deliveries or give app-based rides, review both the personal auto policy and the umbrella: either may exclude that use."}
         ]
       },
@@ -270,13 +270,13 @@
   "sources": [
     {"n": 1, "label": "Florida Department of Highway Safety and Motor Vehicles (FLHSMV), Florida Insurance Requirements", "url": "https://www.flhsmv.gov/insurance/"},
     {"n": 2, "label": "Insurance Information Institute (Triple-I), Facts + Statistics: Uninsured motorists (Insurance Research Council data, 2023)", "url": "https://www.iii.org/fact-statistic/facts-statistics-uninsured-motorists"},
-    {"n": 3, "label": "Florida Statutes, section 627.727 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/627.727"},
-    {"n": 4, "label": "Florida Statutes, section 322.09 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/322.09"},
-    {"n": 5, "label": "Florida Statutes, section 324.021 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/324.021"},
+    {"n": 3, "label": "Florida Statutes, section 627.727 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/627.727"},
+    {"n": 4, "label": "Florida Statutes, section 322.09 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/322.09"},
+    {"n": 5, "label": "Florida Statutes, section 324.021 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/324.021"},
     {"n": 6, "label": "Insurance Information Institute (Triple-I), Insuring your classic car", "url": "https://www.iii.org/article/insuring-your-classic-car"},
-    {"n": 7, "label": "Florida Statutes, section 627.748 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/627.748"},
-    {"n": 8, "label": "Florida Statutes, section 440.02 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/440.02"},
+    {"n": 7, "label": "Florida Statutes, section 627.748 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/627.748"},
+    {"n": 8, "label": "Florida Statutes, section 440.02 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/440.02"},
     {"n": 9, "label": "Insurance Information Institute (Triple-I), Should I purchase an umbrella liability policy?", "url": "https://www.iii.org/article/should-i-purchase-an-umbrella-liability-policy"},
-    {"n": 10, "label": "Florida Statutes, section 440.04 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/440.04"}
+    {"n": 10, "label": "Florida Statutes, section 440.04 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/440.04"}
   ]
 }
