@@ -28,14 +28,14 @@ family offices and their advisors (CPAs, attorneys) in Florida. The site is EDUC
 - NFIP: residential building max $250,000; contents max $100,000. Average NFIP claim paid 2020 to 2024: $63,691 (median $20,272) (FEMA NFIP Media Toolkit, July 2025).
 - Almost one-third of NFIP claims from 2014 to 2024 came from outside high-risk flood areas (FEMA).
 - FEMA: "just one inch of water can cause $25,000 in damages" (say "$25,000", not "more than").
-- NFIP policies generally have a 30-day waiting period; exceptions: bought with a mortgage loan transaction (no wait), 1 day within 13 months of a flood map revision. Private flood waits vary, often about two weeks.
+- NFIP policies generally have a 30-day waiting period; exceptions: bought with a mortgage loan transaction (no wait), 1 day within 13 months of a map revision that newly places the building in a high-risk area. Private flood waits vary, often about two weeks.
 - Standard homeowners policies exclude flood; storm surge counts as flood. Florida law (627.715) allows insurers to offer flood coverage by policy or endorsement.
 - Florida hurricane deductible (627.701): insurers must offer $500, 2%, 5% and 10% of the dwelling (Coverage A) limit, with variations for higher-value homes (e.g., $500 not required at $250,000+ dwelling; at $3M+ the 2% option is not required); applies once per calendar year (hurricane season).
 - Extended replacement cost: pays a percentage above the dwelling limit that varies by policy (do not state the percentage).
 - Jewelry theft: a standard homeowners policy has a relatively low theft limit for jewelry (III). Do not state the amount.
 - Residential reconstruction costs rose 25.9% from March 2020 to May 2023 (Verisk via Carrier Management).
-- 2021 Marshall Fire (Colorado): 74% of policyholders who lost homes were underinsured, 36% severely (Cookson, Gallagher, Mulder, Philadelphia Fed WP 25-09, 2025).
-- CoreLogic (now Cotality) estimated about 64% of U.S. homes are underinsured.
+- 2021 Marshall Fire (Colorado): 74% of policyholders who filed claims after the fire were underinsured, 36% severely (Cookson, Gallagher, Mulder, Philadelphia Fed WP 25-09, 2025).
+- Do not use the CoreLogic/Cotality "64% of homes underinsured" figure: no dated primary source was found (fact-check 2026-11-03).
 - Florida auto minimums: $10,000 PIP and $10,000 property damage liability; no bodily-injury liability requirement for private passenger cars. Repeal-PIP bills died in 2025 and 2026.
 - About 1 in 5 Florida drivers (20.6%) was uninsured in 2023, 7th highest (Insurance Research Council, 2025).
 - Fla. Stat. 322.09: an adult who signs a minor's license application is jointly and severally liable for the minor's negligent driving. Vehicle owners also face liability under Florida's dangerous instrumentality doctrine.
@@ -43,7 +43,7 @@ family offices and their advisors (CPAs, attorneys) in Florida. The site is EDUC
 - FWC 2025: 1,027,742 registered vessels; 694 reportable accidents; 51 fatalities; PWCs were 17% of registered vessels and 23% of reportable accidents. FWC calls Florida the "Boating Capital of the World". Florida recorded the most recreational boating deaths of any state in recent USCG reports (75 in 2024).
 - Fla. Stat. 768.125: serving alcohol to a person of lawful drinking age generally creates no liability for what they do after; exceptions: willfully and unlawfully serving someone under 21, or knowingly serving someone habitually addicted to alcohol.
 - Florida workers' comp (440.02): domestic servants in private homes are excluded from "employment"; an employer may voluntarily elect coverage (440.04).
-- Hispanic median wealth more than tripled after inflation from about $18,000 (2013) to $61,600 (2022) (Fed SCF). Hispanic life insurance ownership 51% (2021) to 40% (2025), lowest of any ethnic group (LIMRA/Life Happens 2025). 72% of Hispanics overestimate the cost of term life (LIMRA 2024).
+- Hispanic family median net worth $79,600 in 2025, up 18% from $67,400 in 2022, both in 2025 dollars (Fed SCF 2025, "Changes in U.S. Family Finances from 2022 to 2025", Table 2). Hispanic life insurance ownership 51% (2021) to 40% (2025), lowest of any ethnic group (LIMRA/Life Happens 2025). 72% of Hispanics overestimate the cost of term life (LIMRA 2024).
 - Most personal umbrella policies exclude aviation liability; umbrellas require minimum underlying limits.
 
 ## New facts
