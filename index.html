@@ -168,7 +168,7 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 /* HERO */
 .hero{background:linear-gradient(180deg,var(--verde) 0%,var(--verde) 62%,var(--verde-oscuro) 100%);color:var(--blanco);padding:96px 0 0;position:relative;overflow:hidden}
 .hero .wrap{position:relative;z-index:2}
-.hero h1{font-size:clamp(38px,6vw,64px);max-width:16ch;margin:22px 0 26px}
+.hero h1{font-size:clamp(38px,6vw,64px);max-width:16ch;margin:22px 0 26px}.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.45em);animation:ppWordIn .8s cubic-bezier(.22,.8,.24,1) forwards;animation-delay:calc(.25s + var(--i,0)*.11s)}@keyframes ppWordIn{to{opacity:1;transform:none}}@supports (animation-timeline:scroll()){@media (min-width:981px){.hero-ph video,.hero-ph img{animation:ppHeroDrift linear both;animation-timeline:scroll();animation-range:0 120vh}}}@keyframes ppHeroDrift{from{transform:translateY(0) scale(1.04)}to{transform:translateY(9%) scale(1.04)}}@media (prefers-reduced-motion:reduce){.hero h1 .w{animation:none;opacity:1;transform:none}.hero-ph video,.hero-ph img{animation:none}}
 .hero h1 em{font-family:var(--accent);font-style:italic;font-weight:600;color:var(--oro-claro)}
 .hero p.lead{font-size:19px;font-weight:300;max-width:56ch;color:#DCE5DD;margin-bottom:18px}
 .hero .qualifier{font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-claro);margin-bottom:36px;font-weight:600}
@@ -699,11 +699,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="rule"></div>
     <h2 class="reveal" data-es='Las brechas de protección son <span class="hl-dark">la Regla, no la Excepción.</span>' data-en='Protection gaps are <span class="hl-dark">the Rule, not the Exception.</span>'>Las brechas de protección son <span class="hl-dark">la Regla, no la Excepción.</span></h2>
     <div class="facts-grid">
-      <div class="fact reveal"><div class="num">25.9<sup>%</sup></div>
+      <div class="fact reveal"><div class="num" data-count="25.9">0<sup>%</sup></div>
         <p class="txt" data-es='de aumento en el costo de reconstrucción residencial en EE. UU. entre marzo de 2020 y mayo de 2023, según Verisk. Un límite fijado hace años puede ya no alcanzar para reconstruir por completo.<a class="fn" href="#fuentes">1</a>' data-en='rise in U.S. residential reconstruction costs from March 2020 to May 2023, per Verisk. A limit set years ago may no longer cover a full rebuild.<a class="fn" href="#fuentes">1</a>'>de aumento en el costo de reconstrucción residencial en EE. UU. entre marzo de 2020 y mayo de 2023, según Verisk. Un límite fijado hace años puede ya no alcanzar para reconstruir por completo.<a class="fn" href="#fuentes">1</a></p></div>
       <div class="fact reveal"><div class="num" data-count="74">0<sup>%</sup></div>
         <p class="txt" data-es='de los asegurados que presentaron reclamos tras el incendio Marshall de 2021, en Colorado, estaban subasegurados; el 36%, de forma grave.<a class="fn" href="#fuentes">2</a>' data-en='of policyholders who filed claims after the 2021 Marshall Fire in Colorado were underinsured; 36% severely.<a class="fn" href="#fuentes">2</a>'>de los asegurados que presentaron reclamos tras el incendio Marshall de 2021, en Colorado, estaban subasegurados; el 36%, de forma grave.<a class="fn" href="#fuentes">2</a></p></div>
-      <div class="fact reveal"><div class="num" data-es="$63<sup>mil+</sup>" data-en="$63<sup>K+</sup>">$63<sup>mil+</sup></div>
+      <div class="fact reveal"><div class="num" data-count="63" data-prefix="$" data-es="$63<sup>mil+</sup>" data-en="$63<sup>K+</sup>">$63<sup>mil+</sup></div>
         <p class="txt" data-es='fue el pago promedio por reclamo de inundación del NFIP entre 2020 y 2024 ($63,691, según FEMA). Una sola pulgada de agua puede causar $25,000 en daños.<a class="fn" href="#fuentes">3</a>' data-en='was the average NFIP flood claim payment from 2020 to 2024 ($63,691, per FEMA). A single inch of water can cause $25,000 in damage.<a class="fn" href="#fuentes">3</a>'>fue el pago promedio por reclamo de inundación del NFIP entre 2020 y 2024 ($63,691, según FEMA). Una sola pulgada de agua puede causar $25,000 en daños.<a class="fn" href="#fuentes">3</a></p></div>
       <div class="fact reveal"><div class="num" data-count="1">0<sup>M+</sup></div>
         <p class="txt" data-es='de embarcaciones registradas hacen de la Florida el líder nacional, y también el estado con más muertes náuticas en los reportes recientes de la Guardia Costera.<a class="fn" href="#fuentes">4</a>' data-en='registered vessels make Florida the national leader, and also the state with the most boating deaths in recent U.S. Coast Guard reports.<a class="fn" href="#fuentes">4</a>'>de embarcaciones registradas hacen de la Florida el líder nacional, y también el estado con más muertes náuticas en los reportes recientes de la Guardia Costera.<a class="fn" href="#fuentes">4</a></p></div>
@@ -1247,11 +1247,12 @@ let lang=document.documentElement.lang==='en'?'en':'es';
 const GUIDE_URL={"res": {"es": "/guias/residencias-huracanes/", "en": "/en/guides/homes-hurricanes/"}, "flo": {"es": "/guias/inundacion/", "en": "/en/guides/flood/"}, "aut": {"es": "/guias/autos/", "en": "/en/guides/auto/"}, "mar": {"es": "/guias/embarcaciones/", "en": "/en/guides/boats/"}, "avi": {"es": "/guias/aviacion-privada/", "en": "/en/guides/private-aviation/"}, "col": {"es": "/guias/colecciones-arte-joyas/", "en": "/en/guides/collections-art-jewelry/"}, "lia": {"es": "/guias/umbrella-responsabilidad/", "en": "/en/guides/umbrella-liability/"}, "emp": {"es": "/guias/personal-del-hogar-legado/", "en": "/en/guides/household-staff-legacy/"}, "cyb": {"es": "/guias/ciber-proteccion-familiar/", "en": "/en/guides/personal-cyber/"}, "kr": {"es": "/guias/secuestro-y-extorsion/", "en": "/en/guides/kidnap-ransom/"}, "str": {"es": "/guias/alquiler-vacacional/", "en": "/en/guides/short-term-rentals/"}, "ren": {"es": "/guias/remodelaciones/", "en": "/en/guides/renovations-builders-risk/"}, "brd": {"es": "/guias/juntas-y-fundaciones/", "en": "/en/guides/board-service-family-foundations/"}, "cnd": {"es": "/guias/condominios-y-hoa/", "en": "/en/guides/condos-hoa/"}};
 function buildDomains(){
   const g=document.getElementById('domGrid');
-  g.innerHTML=DOMS.map(d=>{
+  g.innerHTML=DOMS.map((d,i)=>{
     const lis=d.li[lang].map(x=>'<li>'+x+'</li>').join('');
     const chips=d.chips[lang].map(c=>'<span class="stat-chip">'+c+'</span>').join('');
-    return '<div class="dom"><button class="dom-head" onclick="toggleDom(this)" aria-expanded="false"><div class="lft"><div class="dom-ico"><svg viewBox="0 0 24 24">'+ICONS[d.k]+'</svg></div><div><span class="dom-tag">'+d.tag[lang]+'</span><h3>'+d.t[lang]+'</h3></div></div><span class="icon">+</span></button><div class="dom-body"><p>'+d.p[lang]+'</p><ul>'+lis+'</ul><div class="gap-box"><span class="gb-t">'+(lang==='es'?'Brecha común':'Common gap')+'</span><p>'+d.gap[lang]+'</p></div>'+chips+'<a class="dom-guide" href="'+GUIDE_URL[d.k][lang]+'">'+(lang==='es'?'Leer la guía completa':'Read the full guide')+' &rarr;</a></div></div>';
+    return '<div class="dom reveal" style="--d:'+(i*.06)+'s"><button class="dom-head" onclick="toggleDom(this)" aria-expanded="false"><div class="lft"><div class="dom-ico"><svg viewBox="0 0 24 24">'+ICONS[d.k]+'</svg></div><div><span class="dom-tag">'+d.tag[lang]+'</span><h3>'+d.t[lang]+'</h3></div></div><span class="icon">+</span></button><div class="dom-body"><p>'+d.p[lang]+'</p><ul>'+lis+'</ul><div class="gap-box"><span class="gb-t">'+(lang==='es'?'Brecha común':'Common gap')+'</span><p>'+d.gap[lang]+'</p></div>'+chips+'<a class="dom-guide" href="'+GUIDE_URL[d.k][lang]+'">'+(lang==='es'?'Leer la guía completa':'Read the full guide')+' &rarr;</a></div></div>';
   }).join('');
+  if(window.ppObserve)g.querySelectorAll('.reveal').forEach(el=>window.ppObserve(el));
 }
 function toggleDom(btn){const c=btn.closest('.dom');const o=c.classList.toggle('open');btn.setAttribute('aria-expanded',o);}
 function toggleVida(btn){const c=btn.closest('.vcard');const o=c.classList.toggle('open');btn.setAttribute('aria-expanded',o);}
@@ -1273,6 +1274,7 @@ function setLang(l){
   document.getElementById('btn-es').classList.toggle('active',l==='es');
   document.getElementById('btn-en').classList.toggle('active',l==='en');
   document.querySelectorAll('[data-es]').forEach(el=>{const v=el.getAttribute('data-'+l);if(v!==null)el.innerHTML=v;});
+  if(window.ppWords)ppWords();
   document.querySelectorAll('[data-href-en]').forEach(a=>{a.setAttribute('href',a.getAttribute('data-href-'+l));});
   buildTicker();buildDomains();renderQuestion();
 }
@@ -1532,8 +1534,9 @@ const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.
 document.querySelectorAll('.facts-grid,.mitos-grid,.vida-grid,.pro-grid').forEach(grid=>{
   [...grid.children].forEach((c,i)=>{c.style.setProperty('--d',(i*.09)+'s');});
 });
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-function animCount(el){const target=parseInt(el.dataset.count,10);const sup=el.querySelector('sup')?el.querySelector('sup').outerHTML:'';let c=0;const step=Math.max(1,Math.round(target/40));const t=setInterval(()=>{c+=step;if(c>=target){c=target;clearInterval(t);}el.innerHTML=c+sup;},28);}
+window.ppObserve=el=>io.observe(el);document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+window.ppWords=function(){const h=document.querySelector('.hero h1');if(!h)return;let i=0;const wrap=node=>{if(node.nodeType===3){const parts=node.textContent.split(/(\s+)/);const frag=document.createDocumentFragment();parts.forEach(p=>{if(!p)return;if(/^\s+$/.test(p)){frag.appendChild(document.createTextNode(p));return;}const sp=document.createElement('span');sp.className='w';sp.style.setProperty('--i',i++);sp.textContent=p;frag.appendChild(sp);});node.parentNode.replaceChild(frag,node);}else if(node.nodeType===1&&!node.classList.contains('w')){[...node.childNodes].forEach(wrap);}};[...h.childNodes].forEach(wrap);};ppWords();
+function animCount(el){const target=parseFloat(el.dataset.count);const dec=(String(el.dataset.count).split('.')[1]||'').length;const pre=el.dataset.prefix||'';const sup=el.querySelector('sup')?el.querySelector('sup').outerHTML:'';const fmt=v=>pre+v.toFixed(dec)+sup;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.innerHTML=fmt(target);return;}const t0=performance.now(),dur=1100;const tick=now=>{const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);el.innerHTML=fmt(target*e);if(p<1)requestAnimationFrame(tick);};requestAnimationFrame(tick);}
 
 /* ===== DYNAMIC LAYER ===== */
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
