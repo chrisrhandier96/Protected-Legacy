@@ -2,7 +2,7 @@
   "key": "brd",
   "slug_es": "juntas-y-fundaciones",
   "slug_en": "board-service-family-foundations",
-  "updated": "2026-09-25",
+  "updated": "2026-11-03",
   "related": ["lia", "cnd", "emp"],
   "es": {
     "title": "Juntas directivas y fundaciones familiares: seguro D&O",
@@ -22,7 +22,7 @@
         {"p": "El seguro de directores y funcionarios (D&O) está diseñado para ese riesgo. El Instituto de Información de Seguros (III) explica que cubre a las personas por reclamos presentados en su contra mientras sirven en una junta o como funcionarios, y que puede emitirse para empresas con fines de lucro, empresas privadas, organizaciones sin fines de lucro e instituciones educativas [1]."}
       ]},
       {"id": "protecciones-legales", "h2": "Qué protege la ley a quien sirve en una junta", "blocks": [
-        {"p": "En Florida, la sección 617.0834 establece que los directores y funcionarios de corporaciones sin fines de lucro, por lo general, no responden personalmente por daños monetarios derivados de sus decisiones en el cargo, salvo que el incumplimiento de sus deberes constituya, entre otros supuestos, una violación penal, una transacción con beneficio personal indebido, o una conducta imprudente, de mala fe o con desprecio deliberado y temerario [2]. Esta sección se reformó en 2026, así que conviene confirmar con su abogado el texto que aplica a su organización."},
+        {"p": "En Florida, la sección 617.0834 establece que los directores y los funcionarios no remunerados de corporaciones sin fines de lucro, por lo general, no responden personalmente por daños monetarios derivados de sus decisiones en el cargo, salvo que el incumplimiento de sus deberes constituya, entre otros supuestos, una violación penal, una transacción con beneficio personal indebido, o una conducta imprudente, de mala fe o con desprecio deliberado y temerario [2]. Esta sección se reformó en 2026, así que conviene confirmar con su abogado el texto que aplica a su organización."},
         {"p": "A nivel federal, la Ley de Protección al Voluntario limita la responsabilidad de los voluntarios de organizaciones sin fines de lucro que actúan dentro de sus funciones y cuentan con la licencia o autorización necesaria, siempre que el daño no se deba a mala conducta intencional o criminal, negligencia grave, conducta temeraria o indiferencia consciente y flagrante, ni a la operación de un vehículo, embarcación o aeronave para la que el estado exige licencia o seguro [3]. La misma ley aclara que no cambia la responsabilidad de la organización [3]."},
         {"p": "Para las asociaciones de condominio, la sección 718.111 remite a esos estándares para la responsabilidad personal de los directores y exige a la asociación mantener seguro o fianza de fidelidad para quienes controlan o desembolsan fondos [4]. Esa fianza protege el dinero de la asociación, no al director."},
         {"callout": "Una protección legal ayuda a ganar un caso, pero no evita que se presente. Los costos de defensa pueden ser altos aunque la junta haya actuado bien."}
@@ -94,7 +94,7 @@
         {"p": "Directors and officers (D&O) insurance is designed for that risk. The Insurance Information Institute (III) explains that it covers individuals for claims made against them while serving on a board of directors or as an officer, and that it can be written for for-profit businesses, privately held firms, not-for-profit organizations and educational institutions [1]."}
       ]},
       {"id": "legal-protections", "h2": "What the law protects when you serve on a board", "blocks": [
-        {"p": "In Florida, section 617.0834 provides that directors and officers of not-for-profit corporations generally are not personally liable for monetary damages arising from their decisions in office, unless the breach of their duties amounts to, among other things, a criminal violation, a transaction with an improper personal benefit, or reckless, bad-faith or wanton and willful conduct [2]. The section was revised in 2026, so confirm the text that applies to your organization with your attorney."},
+        {"p": "In Florida, section 617.0834 provides that directors and uncompensated officers of not-for-profit corporations generally are not personally liable for monetary damages arising from their decisions in office, unless the breach of their duties amounts to, among other things, a criminal violation, a transaction with an improper personal benefit, or reckless, bad-faith or wanton and willful conduct [2]. The section was revised in 2026, so confirm the text that applies to your organization with your attorney."},
         {"p": "At the federal level, the Volunteer Protection Act limits the liability of volunteers of nonprofit organizations who act within the scope of their responsibilities and are properly licensed or authorized where required, as long as the harm was not caused by willful or criminal misconduct, gross negligence, reckless misconduct or a conscious, flagrant indifference, and did not arise from operating a vehicle, boat or aircraft for which the state requires a license or insurance [3]. The same law states that it does not change the organization's own liability [3]."},
         {"p": "For condominium associations, section 718.111 refers to those standards for directors' personal liability and requires the association to maintain insurance or fidelity bonding for everyone who controls or disburses association funds [4]. That bond protects the association's money, not the director."},
         {"callout": "A legal protection helps win a case, but it does not stop one from being filed. Defense costs can be high even when the board acted properly."}
@@ -152,7 +152,7 @@
     {"n": 1, "label": "Insurance Information Institute (Triple-I), Directors and Officers insurance", "url": "https://www.iii.org/article/directors-and-officers-insurance"},
     {"n": 2, "label": "Florida Statutes, section 617.0834 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/617.0834"},
     {"n": 3, "label": "Volunteer Protection Act, 42 U.S.C. 14503 (Cornell Legal Information Institute)", "url": "https://www.law.cornell.edu/uscode/text/42/14503"},
-    {"n": 4, "label": "Florida Statutes, section 718.111 (2025)", "url": "https://www.flsenate.gov/Laws/Statutes/2025/718.111"},
+    {"n": 4, "label": "Florida Statutes, section 718.111 (2026)", "url": "https://www.flsenate.gov/Laws/Statutes/2026/718.111"},
     {"n": 5, "label": "IRS, Acts of self-dealing by private foundation", "url": "https://www.irs.gov/charities-non-profits/private-foundations/acts-of-self-dealing-by-private-foundation"},
     {"n": 6, "label": "IRS, Taxes on self-dealing: private foundations", "url": "https://www.irs.gov/charities-non-profits/private-foundations/taxes-on-self-dealing-private-foundations"},
     {"n": 7, "label": "Insurance Information Institute (Triple-I), Employment practices liability insurance", "url": "https://www.iii.org/article/employment-practices-liability-insurance"}

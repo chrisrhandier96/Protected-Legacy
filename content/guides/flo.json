@@ -2,7 +2,7 @@
   "key": "flo",
   "slug_es": "inundacion",
   "slug_en": "flood",
-  "updated": "2026-09-25",
+  "updated": "2026-11-03",
   "es": {
     "title": "Seguro de inundación en Florida: NFIP y exceso",
     "meta": "Cómo funciona el seguro de inundación en Florida: por qué la póliza de propietario lo excluye, límites del NFIP, exceso, período de espera y exclusiones.",
@@ -99,7 +99,7 @@
         "h2": "El período de espera del seguro de inundación y sus excepciones",
         "blocks": [
           {
-            "p": "La mayoría de las pólizas del NFIP entran en vigor 30 días después de la compra [1][3]. Las principales excepciones: la cobertura comprada en relación con otorgar, aumentar, extender o renovar un préstamo entra en vigor sin espera, y la comprada dentro de los 13 meses siguientes a una revisión del mapa de inundación tiene un período de espera de 1 día [3][7]. En las pólizas privadas la espera varía, a menudo alrededor de dos semanas."
+            "p": "La mayoría de las pólizas del NFIP entran en vigor 30 días después de la compra [1][3]. Las principales excepciones: la cobertura comprada en relación con otorgar, aumentar, extender o renovar un préstamo entra en vigor sin espera, y la comprada dentro de los 13 meses siguientes a una revisión del mapa de inundación que ubica el edificio por primera vez en una zona de alto riesgo tiene un período de espera de 1 día [3][7]. En las pólizas privadas la espera varía, a menudo alrededor de dos semanas."
           },
           {
             "table": {
@@ -117,7 +117,7 @@
                   "Sin período de espera"
                 ],
                 [
-                  "NFIP comprado dentro de 13 meses de una revisión del mapa",
+                  "NFIP comprado dentro de 13 meses de una revisión del mapa que ubica el edificio por primera vez en una zona de alto riesgo",
                   "1 día"
                 ],
                 [
@@ -273,7 +273,7 @@
       },
       {
         "q": "¿Cuál es el período de espera del seguro de inundación?",
-        "a": "La mayoría de las pólizas del NFIP entran en vigor 30 días después de la compra. Entre las excepciones están la cobertura comprada en relación con un préstamo nuevo, aumentado, extendido o renovado, que no tiene espera, y la comprada dentro de los 13 meses siguientes a una revisión del mapa de inundación, con espera de 1 día. En las pólizas privadas la espera varía, a menudo unas dos semanas."
+        "a": "La mayoría de las pólizas del NFIP entran en vigor 30 días después de la compra. Entre las excepciones están la cobertura comprada en relación con un préstamo nuevo, aumentado, extendido o renovado, que no tiene espera, y la comprada dentro de los 13 meses siguientes a una revisión del mapa que ubica el edificio por primera vez en zona de alto riesgo, con espera de 1 día. En las pólizas privadas la espera varía, a menudo unas dos semanas."
       },
       {
         "q": "¿Qué es el seguro de inundación de exceso?",
@@ -377,7 +377,7 @@
         "h2": "The flood insurance waiting period and its exceptions",
         "blocks": [
           {
-            "p": "Most NFIP policies begin 30 days after purchase [1][3]. The main exceptions: coverage bought in connection with making, increasing, extending or renewing a loan takes effect without the wait, and coverage bought within 13 months of a flood map revision has a 1-day waiting period [3][7]. Private flood waiting periods vary by policy, often about two weeks."
+            "p": "Most NFIP policies begin 30 days after purchase [1][3]. The main exceptions: coverage bought in connection with making, increasing, extending or renewing a loan takes effect without the wait, and coverage bought within 13 months of a flood map revision that newly places the building in a high-risk area has a 1-day waiting period [3][7]. Private flood waiting periods vary by policy, often about two weeks."
           },
           {
             "table": {
@@ -395,7 +395,7 @@
                   "No waiting period"
                 ],
                 [
-                  "NFIP bought within 13 months of a flood map revision",
+                  "NFIP bought within 13 months of a map revision that newly places the building in a high-risk area",
                   "1 day"
                 ],
                 [
@@ -551,7 +551,7 @@
       },
       {
         "q": "What is the flood insurance waiting period?",
-        "a": "Most NFIP policies take effect 30 days after purchase. Exceptions include coverage bought in connection with a new, increased, extended or renewed loan, which has no waiting period, and coverage bought within 13 months of a flood map revision, which has a 1-day wait. Private flood waiting periods vary, often about two weeks."
+        "a": "Most NFIP policies take effect 30 days after purchase. Exceptions include coverage bought in connection with a new, increased, extended or renewed loan, which has no waiting period, and coverage bought within 13 months of a flood map revision that newly places the building in a high-risk area, which has a 1-day wait. Private flood waiting periods vary, often about two weeks."
       },
       {
         "q": "What is excess flood insurance?",
