@@ -310,47 +310,156 @@
       ]
     },
     "str": {
-      "kind": "tabs",
+      "kind": "hotspots",
       "es": {
-        "title": "La casa cuando recibe huéspedes",
-        "caption": "Imagen ilustrativa de una casa hipotética. Qué cambia cuando su casa o su apartamento recibe huéspedes que pagan, y cómo revisar la protección antes de publicar el anuncio.",
-        "alt": "Imagen ilustrativa de una casa de alquiler vacacional: {label}"
+        "title": "Dónde está el riesgo en una casa que se alquila",
+        "caption": "Imagen ilustrativa de una casa hipotética. Las casas de temporada en Florida suelen tener piscinas, muelles, embarcaciones, motos de agua o carritos de golf. Para un huésped que no conoce la propiedad, cada uno es un riesgo distinto.",
+        "alt": "Imagen aérea ilustrativa de una casa de alquiler vacacional junto a un canal"
       },
       "en": {
-        "title": "The home when guests arrive",
-        "caption": "Illustrative image of a hypothetical home. What changes when your home or condo hosts paying guests, and how to review your protection before you publish the listing.",
-        "alt": "Illustrative image of a short-term rental home: {label}"
+        "title": "Where the risk sits in a rental home",
+        "caption": "Illustrative image of a hypothetical home. Seasonal homes in Florida often come with pools, docks, boats, personal watercraft or golf carts. For a guest who does not know the property, each one is a separate risk.",
+        "alt": "Illustrative aerial image of a vacation rental home on a canal"
       },
       "frames": [
         {
-          "name": "str-front-dusk",
-          "es": "Llegada",
-          "en": "Arrival"
+          "name": "str-canal-home",
+          "es": "Propiedad",
+          "en": "Property"
+        }
+      ],
+      "hotspots_frame": "str-canal-home",
+      "hotspots": [
+        {
+          "id": "house",
+          "mask_colour": "#FF0000",
+          "es": [
+            "La casa",
+            "La Asociación Nacional de Comisionados de Seguros (NAIC) advierte que la mayoría de las pólizas de hogar o de vivienda no están diseñadas para cubrir accidentes derivados de alquileres de corto plazo."
+          ],
+          "en": [
+            "The house",
+            "The National Association of Insurance Commissioners (NAIC) warns that most homeowners or dwelling policies are not designed to cover accidents arising from short-term rentals."
+          ]
         },
         {
-          "name": "str-pool-ready",
-          "es": "La parte de atrás",
-          "en": "Out back"
+          "id": "pool",
+          "mask_colour": "#00FF00",
+          "es": [
+            "Piscina",
+            "Instale barreras, alarmas o cubiertas de piscina, y deje instrucciones claras de seguridad para los huéspedes."
+          ],
+          "en": [
+            "Pool",
+            "Install pool barriers, alarms or covers, and leave clear safety instructions for guests."
+          ]
+        },
+        {
+          "id": "deck",
+          "mask_colour": "#0000FF",
+          "es": [
+            "La terraza",
+            "Defina reglas escritas sobre ocupación máxima, fiestas, mascotas y uso del muelle."
+          ],
+          "en": [
+            "The deck",
+            "Set written rules on maximum occupancy, parties, pets and dock use."
+          ]
+        },
+        {
+          "id": "boat",
+          "mask_colour": "#FFFF00",
+          "es": [
+            "Embarcación y motos de agua",
+            "Prestar la embarcación o el carrito a un huésped puede quedar fuera tanto de la póliza de hogar como de la póliza de alquiler, por lo que conviene definir por escrito qué equipos no forman parte del alquiler."
+          ],
+          "en": [
+            "Boat and personal watercraft",
+            "Lending the boat or the golf cart to a guest can fall outside both the homeowners policy and the rental policy, so put in writing which equipment is not part of the rental."
+          ]
+        },
+        {
+          "id": "cart",
+          "mask_colour": "#FF8000",
+          "es": [
+            "Carrito de golf",
+            "Guarde bajo llave las embarcaciones, las motos de agua, los carritos de golf y sus llaves."
+          ],
+          "en": [
+            "Golf cart",
+            "Lock away boats, personal watercraft, golf carts and their keys."
+          ]
         }
       ]
     },
     "kr": {
-      "kind": "single",
+      "kind": "hotspots",
       "es": {
-        "title": "El portón de noche",
-        "caption": "Imagen ilustrativa de una casa hipotética. Limite lo que la familia publica sobre viajes, rutinas, vehículos y ubicación en tiempo real.",
-        "alt": "Imagen ilustrativa del portón de una casa de noche"
+        "title": "Lo que se ve desde la calle",
+        "caption": "Imagen ilustrativa de una casa hipotética. Para muchas otras familias, la prioridad está en la prevención y en las coberturas cibernéticas, que responden a las extorsiones más comunes.",
+        "alt": "Imagen ilustrativa de la entrada de una casa al anochecer, con maletas junto a la puerta"
       },
       "en": {
-        "title": "The gate at night",
-        "caption": "Illustrative image of a hypothetical home. Limit what the family posts about trips, routines, vehicles and real-time location.",
-        "alt": "Illustrative image of a home's gate at night"
+        "title": "What shows from the street",
+        "caption": "Illustrative image of a hypothetical home. For many other families, the priority is prevention and cyber coverage, which responds to the most common extortion attempts.",
+        "alt": "Illustrative image of a home's entrance at dusk, with luggage by the door"
       },
       "frames": [
         {
-          "name": "kr-gate-dusk-night",
-          "es": "De noche",
-          "en": "At night"
+          "name": "kr-home-street",
+          "es": "La casa",
+          "en": "The home"
+        }
+      ],
+      "hotspots_frame": "kr-home-street",
+      "hotspots": [
+        {
+          "id": "car",
+          "mask_colour": "#FF0000",
+          "es": [
+            "Vehículos y rutinas",
+            "Limite lo que la familia publica sobre viajes, rutinas, vehículos y ubicación en tiempo real."
+          ],
+          "en": [
+            "Vehicles and routines",
+            "Limit what the family posts about trips, routines, vehicles and real-time location."
+          ]
+        },
+        {
+          "id": "staff",
+          "mask_colour": "#00FF00",
+          "es": [
+            "Personal del hogar",
+            "Pida al personal del hogar discreción sobre la agenda y los viajes de la familia."
+          ],
+          "en": [
+            "Household staff",
+            "Ask household staff to keep the family's schedule and travel plans confidential."
+          ]
+        },
+        {
+          "id": "luggage",
+          "mask_colour": "#0000FF",
+          "es": [
+            "Viajes",
+            "Revise el aviso de viaje del Departamento de Estado de cada destino antes de reservar."
+          ],
+          "en": [
+            "Trips",
+            "Check the State Department travel advisory for each destination before booking."
+          ]
+        },
+        {
+          "id": "call",
+          "mask_colour": "#FFFF00",
+          "es": [
+            "La llamada",
+            "Acuerde una palabra clave familiar para emergencias, como recomienda el FBI. Ante una llamada de secuestro, intente siempre comunicarse con su ser querido antes de considerar cualquier pago."
+          ],
+          "en": [
+            "The call",
+            "Agree on a family code word for emergencies, as the FBI recommends. When you receive a kidnapping call, always try to reach your loved one before considering any payment."
+          ]
         }
       ]
     },
@@ -390,74 +499,54 @@
         "title": "Un auto de colección",
         "slider": "Girar el auto",
         "caption": "Imagen ilustrativa de un auto de colección hipotético. Autos de colección, empleados domésticos al volante y el uso en plataformas de viajes compartidos tienen reglas propias que conviene revisar.",
-        "alt": "Cupé clásico verde esmeralda en un garaje privado de coleccionista, visto a {label}"
+        "alt": "Cupé clásico verde esmeralda en un garaje privado de coleccionista. Vista: {label}"
       },
       "en": {
         "title": "A collector car",
         "slider": "Turn the car",
         "caption": "Illustrative image of a hypothetical collector car. Collector cars, household employees behind the wheel and rideshare use each have their own rules worth reviewing.",
-        "alt": "Emerald green classic coupe in a private collector's garage, seen at {label}"
+        "alt": "Emerald green classic coupe in a private collector's garage. View: {label}"
       },
       "frames": [
         {
           "name": "aut-orbit-01",
-          "es": "0°",
-          "en": "0°"
+          "es": "Frente",
+          "en": "Front"
         },
         {
           "name": "aut-orbit-02",
-          "es": "30°",
-          "en": "30°"
+          "es": "Frente y lateral",
+          "en": "Front and side"
         },
         {
           "name": "aut-orbit-03",
-          "es": "60°",
-          "en": "60°"
+          "es": "Lateral",
+          "en": "Side"
         },
         {
           "name": "aut-orbit-04",
-          "es": "90°",
-          "en": "90°"
+          "es": "Perfil",
+          "en": "Profile"
         },
         {
           "name": "aut-orbit-05",
-          "es": "120°",
-          "en": "120°"
+          "es": "Perfil trasero",
+          "en": "Rear profile"
         },
         {
           "name": "aut-orbit-06",
-          "es": "150°",
-          "en": "150°"
+          "es": "Lateral trasero",
+          "en": "Rear side"
         },
         {
           "name": "aut-orbit-07",
-          "es": "180°",
-          "en": "180°"
+          "es": "Trasera, tres cuartos",
+          "en": "Rear three-quarter"
         },
         {
           "name": "aut-orbit-08",
-          "es": "210°",
-          "en": "210°"
-        },
-        {
-          "name": "aut-orbit-09",
-          "es": "240°",
-          "en": "240°"
-        },
-        {
-          "name": "aut-orbit-10",
-          "es": "270°",
-          "en": "270°"
-        },
-        {
-          "name": "aut-orbit-11",
-          "es": "300°",
-          "en": "300°"
-        },
-        {
-          "name": "aut-orbit-12",
-          "es": "330°",
-          "en": "330°"
+          "es": "Trasera",
+          "en": "Rear"
         }
       ]
     },
@@ -527,27 +616,85 @@
       ]
     },
     "brd": {
-      "kind": "tabs",
+      "kind": "hotspots",
       "es": {
-        "title": "Servir en una junta",
-        "caption": "Imagen ilustrativa de una sala hipotética. Esta guía explica las protecciones legales al servir en juntas de fundaciones, escuelas o condominios en Florida, el seguro de directores y funcionarios (D&O) y las reglas de fundaciones privadas.",
-        "alt": "Imagen ilustrativa de una sala de juntas al atardecer: {label}"
+        "title": "Lo que protege a quien sirve en una junta",
+        "caption": "Imagen ilustrativa de una sala hipotética. Una buena gobernanza es la mejor protección para la junta y para cada director.",
+        "alt": "Imagen ilustrativa de una mesa de juntas con actas, una póliza y la carpeta de una fundación"
       },
       "en": {
-        "title": "Serving on a board",
-        "caption": "Illustrative image of a hypothetical boardroom. This guide covers the legal protections for serving on foundation, school or condo boards in Florida, directors and officers (D&O) insurance and private foundation rules.",
-        "alt": "Illustrative image of a boardroom at dusk: {label}"
+        "title": "What protects a board member",
+        "caption": "Illustrative image of a hypothetical room. Good governance is the best protection for the board and for each director.",
+        "alt": "Illustrative image of a boardroom table with minutes, a policy and a foundation folder"
       },
       "frames": [
         {
-          "name": "brd-room-dusk",
-          "es": "La sala de juntas",
-          "en": "The boardroom"
+          "name": "brd-table-governance",
+          "es": "La mesa",
+          "en": "The table"
+        }
+      ],
+      "hotspots_frame": "brd-table-governance",
+      "hotspots": [
+        {
+          "id": "policy",
+          "mask_colour": "#FF0000",
+          "es": [
+            "La póliza D&O",
+            "Antes de aceptar un cargo, pida copia de la póliza D&O de la organización y de sus estatutos sobre indemnización."
+          ],
+          "en": [
+            "The D&O policy",
+            "Before accepting a seat, ask for a copy of the organization's D&O policy and its bylaws on indemnification."
+          ]
         },
         {
-          "name": "brd-table-close",
-          "es": "La mesa",
-          "en": "At the table"
+          "id": "conflict",
+          "mask_colour": "#00FF00",
+          "es": [
+            "Conflicto de interés",
+            "Declare por escrito cualquier conflicto de interés y absténgase de votar en esos temas."
+          ],
+          "en": [
+            "Conflict of interest",
+            "Disclose any conflict of interest in writing and abstain from voting on those matters."
+          ]
+        },
+        {
+          "id": "minutes",
+          "mask_colour": "#0000FF",
+          "es": [
+            "Las actas",
+            "Exija actas claras que reflejen la información revisada y la base de cada decisión."
+          ],
+          "en": [
+            "The minutes",
+            "Insist on clear minutes that reflect the information reviewed and the basis for each decision."
+          ]
+        },
+        {
+          "id": "foundation",
+          "mask_colour": "#FFFF00",
+          "es": [
+            "La fundación familiar",
+            "Separe con claridad las cuentas, los bienes y los gastos de la fundación de los de la familia."
+          ],
+          "en": [
+            "The family foundation",
+            "Keep the foundation's accounts, assets and expenses clearly separate from the family's."
+          ]
+        },
+        {
+          "id": "seats",
+          "mask_colour": "#FF8000",
+          "es": [
+            "Cada cargo",
+            "Mantenga una lista de todos los cargos que ocupa y compártala con su agente."
+          ],
+          "en": [
+            "Every seat",
+            "Keep a list of every board seat you hold and share it with your agent."
+          ]
         }
       ]
     }
