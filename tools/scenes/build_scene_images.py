@@ -1,6 +1,6 @@
 """Interactive 3D scenes (2026-11): turns the Unreal masters into web images.
 
-Reads the PNG masters and ID masks from the Unreal session's folder (default C:\\Users\\rhand\\Downloads\\ue-renders\\pp)
+Reads the PNG masters (Google Flow stills since Nov 2026, Unreal renders before) from a source folder
 and writes, for every frame listed in tools/scenes/scenes.json:
   img/scenes/<key>/<frame>-{480,960,1600}.{avif,webp}
 plus, from the ID masks:
@@ -98,9 +98,10 @@ def main():
             sizes = save_frame(key, f["name"])
             report["%s/%s" % (key, f["name"])] = sizes
             print("  %-16s 960 webp %5.1f KB  avif %5.1f KB" % (f["name"], sizes["960.webp"] / 1024, sizes["960.avif"] / 1024))
-        if sc.get("layers"):
+        if sc.get("layers") and os.path.exists(os.path.join(SRC, key, sc["layers_frame"] + "-ids.png")):
             tint_layers(key, sc["layers_frame"], sc["layers"])
-        if sc.get("hotspots"):
+        if sc.get("hotspots") and os.path.exists(os.path.join(SRC, key, sc["hotspots_frame"] + "-ids.png")):
+            # no ID mask (Flow stills): keep the hand-placed hotspots-<key>.json
             pos = hotspot_centres(key, sc["hotspots_frame"], sc["hotspots"])
             json.dump(pos, open(os.path.join(os.path.dirname(__file__), "hotspots-%s.json" % key), "w"), indent=1)
             print("  hotspots:", pos)

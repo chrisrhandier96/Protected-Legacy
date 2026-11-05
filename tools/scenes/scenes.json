@@ -1,5 +1,5 @@
 {
-  "_note": "Interactive scenes (2026-11). Frames: Google Flow photoreal stills (aut, mar, avi, Nov 4) and the Unreal renders for the rest (Casa Patrimonio, a hypothetical home). Every claim in a caption or hotspot is already in that guide or in content/BRIEF.md's verified facts. Voice rules apply: no selling, no carriers, no limits, no em dashes. Build images with tools/scenes/build_scene_images.py [source_dir]; tools/post/add-scenes.js injects the markup after the guide's summary box.",
+  "_note": "Interactive scenes (2026-11). Frames: Google Flow photoreal stills for every guide (Nov 4-5, 2026; the flood slider's levels above the floor are composited from one Flow still so the camera never moves). Every claim in a caption or hotspot is already in that guide or in content/BRIEF.md's verified facts. Voice rules apply: no selling, no carrier names, usted. Hotspot pins for lia are placed by eye in tools/scenes/hotspots-lia.json (percent of the frame). Replaced frames always get new file names (/img/ is cached 7 days).",
   "ui": {
     "es": {
       "badge": "Ilustración",
@@ -23,185 +23,157 @@
       "kind": "slider",
       "es": {
         "title": "¿Hasta dónde llega el agua?",
-        "caption": "Ilustración 3D de una casa hipotética frente al agua, con el nivel de la inundación medido sobre el piso de la planta baja. FEMA estima que apenas una pulgada de agua puede causar $25,000 en daños a una vivienda.",
-        "alt": "Ilustración 3D de una casa frente al agua: {label}"
+        "caption": "Imagen ilustrativa de una casa hipotética frente al agua, con el nivel de la inundación medido sobre el piso de la planta baja. FEMA estima que apenas una pulgada de agua puede causar $25,000 en daños a una vivienda.",
+        "alt": "Imagen ilustrativa de una casa frente al agua: {label}"
       },
       "en": {
         "title": "How high is the water?",
-        "caption": "3D illustration of a hypothetical waterfront home, with the flood level measured above the first floor. FEMA estimates that just one inch of water can cause $25,000 in damage to a home.",
-        "alt": "3D illustration of a waterfront home: {label}"
+        "caption": "Illustrative image of a hypothetical waterfront home, with the flood level measured above the first floor. FEMA estimates that just one inch of water can cause $25,000 in damage to a home.",
+        "alt": "Illustrative image of a waterfront home: {label}"
       },
       "frames": [
         {
-          "name": "flo-water-00",
+          "name": "flo-rise-00",
           "es": "Marea normal",
           "en": "Normal tide"
         },
         {
-          "name": "flo-water-01",
+          "name": "flo-rise-01",
           "es": "1 pie",
           "en": "1 ft"
         },
         {
-          "name": "flo-water-02",
+          "name": "flo-rise-02",
           "es": "2 pies",
           "en": "2 ft"
         },
         {
-          "name": "flo-water-03",
+          "name": "flo-rise-03",
           "es": "3 pies",
           "en": "3 ft"
         },
         {
-          "name": "flo-water-04",
+          "name": "flo-rise-04",
           "es": "4 pies",
           "en": "4 ft"
         },
         {
-          "name": "flo-water-06",
+          "name": "flo-rise-06",
           "es": "6 pies",
           "en": "6 ft"
         },
         {
-          "name": "flo-water-08",
+          "name": "flo-rise-08",
           "es": "8 pies",
           "en": "8 ft"
         },
         {
-          "name": "flo-water-10",
+          "name": "flo-rise-10",
           "es": "10 pies",
           "en": "10 ft"
         },
         {
-          "name": "flo-water-12",
+          "name": "flo-rise-12",
           "es": "12 pies",
           "en": "12 ft"
         }
-      ],
-      "live3d": "/js/casa3d.v3.js"
+      ]
     },
     "res": {
       "kind": "tabs",
       "es": {
         "title": "La misma casa, antes y durante un huracán",
-        "caption": "Ilustración 3D hipotética. Preparada: contraventanas cerradas, muebles de patio guardados y la embarcación fuera del agua. Las escenas de tormenta son simplificadas y no muestran daños reales ni el resultado de un reclamo.",
-        "alt": "Ilustración 3D de una casa frente al agua: {label}"
+        "caption": "Imagen ilustrativa de una casa hipotética. Preparada: contraventanas cerradas, muebles de patio guardados y la embarcación fuera del agua. Las escenas de tormenta son simplificadas y no muestran daños reales ni el resultado de un reclamo.",
+        "alt": "Imagen ilustrativa de una casa frente al agua: {label}"
       },
       "en": {
         "title": "The same home, before and during a hurricane",
-        "caption": "Hypothetical 3D illustration. Prepared: shutters closed, patio furniture stored and the boat out of the water. The storm scenes are simplified and do not show real damage or the outcome of a claim.",
-        "alt": "3D illustration of a waterfront home: {label}"
+        "caption": "Illustrative image of a hypothetical home. Prepared: shutters closed, patio furniture stored and the boat out of the water. The storm scenes are simplified and do not show real damage or the outcome of a claim.",
+        "alt": "Illustrative image of a waterfront home: {label}"
       },
       "frames": [
         {
-          "name": "res-prep-on",
+          "name": "res-sun-shut",
           "es": "Preparada",
           "en": "Prepared"
         },
         {
-          "name": "res-prep-off",
+          "name": "res-sun-open",
           "es": "Sin preparar",
           "en": "Not prepared"
         },
         {
-          "name": "res-storm-ts",
+          "name": "res-ts",
           "es": "Tormenta tropical",
           "en": "Tropical storm"
         },
         {
-          "name": "res-storm-c1",
+          "name": "res-c1",
           "es": "Categoría 1",
           "en": "Category 1"
         },
         {
-          "name": "res-storm-c3",
+          "name": "res-c3",
           "es": "Categoría 3",
           "en": "Category 3"
         },
         {
-          "name": "res-after",
+          "name": "res-calm",
           "es": "Después",
           "en": "After"
         }
-      ],
-      "live3d": "/js/casa3d.v3.js"
+      ]
     },
     "cnd": {
-      "kind": "layers",
+      "kind": "tabs",
       "es": {
         "title": "¿Quién asegura qué en un condominio?",
-        "caption": "Ilustración 3D simplificada de una unidad en corte. La ley de Florida exige que la póliza de la asociación cubra la propiedad tal como se instaló originalmente, y excluye los acabados y bienes dentro de cada unidad, que son responsabilidad del propietario. Cada declaración de condominio y cada póliza tienen sus propios términos.",
-        "alt": "Ilustración 3D de una unidad de condominio en corte"
+        "caption": "Imagen ilustrativa de una unidad hipotética. La ley de Florida exige que la póliza de la asociación cubra la propiedad tal como se instaló originalmente, y excluye los acabados y bienes dentro de cada unidad, que son responsabilidad del propietario. Cada declaración de condominio y cada póliza tienen sus propios términos.",
+        "alt": "Imagen ilustrativa de una unidad de condominio: {label}"
       },
       "en": {
         "title": "Who insures what in a condo?",
-        "caption": "Simplified 3D cutaway of a unit. Florida law requires a condominium association's policy to cover the property as originally installed, and excludes the finishes and belongings inside each unit, which are the owner's responsibility. Every condominium declaration and every policy has its own terms.",
-        "alt": "3D cutaway illustration of a condominium unit"
+        "caption": "Illustrative image of a hypothetical unit. Florida law requires a condominium association's policy to cover the property as originally installed, and excludes the finishes and belongings inside each unit, which are the owner's responsibility. Every condominium declaration and every policy has its own terms.",
+        "alt": "Illustrative image of a condominium unit: {label}"
       },
       "frames": [
         {
-          "name": "cnd-unit",
-          "es": "Unidad",
-          "en": "Unit"
-        }
-      ],
-      "layers_frame": "cnd-unit",
-      "layers": [
-        {
-          "id": "assoc",
-          "tint": "#1E8A72",
-          "alpha": 0.62,
-          "mask_colours": [
-            "#FF0000",
-            "#FFFF00",
-            "#00FFFF"
-          ],
-          "es": "Póliza de la asociación: la estructura tal como se instaló",
-          "en": "Association policy: the structure as originally installed"
+          "name": "cnd-shell",
+          "es": "La estructura (asociación)",
+          "en": "The structure (association)"
         },
         {
-          "id": "finish",
-          "tint": "#C29B40",
-          "alpha": 0.66,
-          "mask_colours": [
-            "#00FF00"
-          ],
-          "es": "Propietario (HO-6): acabados de la unidad",
-          "en": "Owner (HO-6): the unit's finishes"
+          "name": "cnd-finishes",
+          "es": "Los acabados (HO-6)",
+          "en": "The finishes (HO-6)"
         },
         {
-          "id": "contents",
-          "tint": "#C2563F",
-          "alpha": 0.7,
-          "mask_colours": [
-            "#0000FF"
-          ],
-          "es": "Propietario (HO-6): sus bienes",
-          "en": "Owner (HO-6): your belongings"
+          "name": "cnd-furnished",
+          "es": "Sus bienes (HO-6)",
+          "en": "Your belongings (HO-6)"
         }
-      ],
-      "live3d": "/js/casa3d.v3.js"
+      ]
     },
     "lia": {
       "kind": "hotspots",
       "es": {
         "title": "Dónde vive la responsabilidad civil en una propiedad",
-        "caption": "Ilustración 3D de una propiedad hipotética. No existe una fórmula oficial para escoger el límite de una póliza umbrella: muchas familias parten del patrimonio neto y ajustan según exposiciones como estas.",
-        "alt": "Ilustración 3D aérea de una propiedad frente al agua"
+        "caption": "Imagen ilustrativa de una propiedad hipotética. No existe una fórmula oficial para escoger el límite de una póliza umbrella: muchas familias parten del patrimonio neto y ajustan según exposiciones como estas.",
+        "alt": "Imagen aérea ilustrativa de una propiedad frente al agua"
       },
       "en": {
         "title": "Where liability lives on a property",
-        "caption": "3D illustration of a hypothetical property. There is no official formula for choosing an umbrella limit: many families start from net worth and adjust for exposures like these.",
-        "alt": "3D aerial illustration of a waterfront property"
+        "caption": "Illustrative image of a hypothetical property. There is no official formula for choosing an umbrella limit: many families start from net worth and adjust for exposures like these.",
+        "alt": "Illustrative aerial image of a waterfront property"
       },
       "frames": [
         {
-          "name": "lia-aerial",
+          "name": "lia-estate-aerial",
           "es": "Propiedad",
           "en": "Property"
         }
       ],
-      "hotspots_frame": "lia-aerial",
+      "hotspots_frame": "lia-estate-aerial",
       "hotspots": [
         {
           "id": "pool",
@@ -275,39 +247,37 @@
             "People who work at the home are another exposure many families review with their agent and attorney."
           ]
         }
-      ],
-      "live3d": "/js/casa3d.v3.js"
+      ]
     },
     "ren": {
       "kind": "tabs",
       "es": {
         "title": "Una remodelación cambia el riesgo",
-        "caption": "Ilustración 3D hipotética. En Florida, pregunte en qué fecha empieza la cobertura de viento de su póliza de construcción y compárela con el calendario de la obra y con la temporada de huracanes.",
-        "alt": "Ilustración 3D de una casa en remodelación: {label}"
+        "caption": "Imagen ilustrativa de una casa hipotética. En Florida, pregunte en qué fecha empieza la cobertura de viento de su póliza de construcción y compárela con el calendario de la obra y con la temporada de huracanes.",
+        "alt": "Imagen ilustrativa de una casa en remodelación: {label}"
       },
       "en": {
         "title": "A renovation changes the risk",
-        "caption": "Hypothetical 3D illustration. In Florida, ask on what date your builder's risk wind coverage begins, and compare it with the construction schedule and with hurricane season.",
-        "alt": "3D illustration of a home under renovation: {label}"
+        "caption": "Illustrative image of a hypothetical home. In Florida, ask on what date your builder's risk wind coverage begins, and compare it with the construction schedule and with hurricane season.",
+        "alt": "Illustrative image of a home under renovation: {label}"
       },
       "frames": [
         {
-          "name": "ren-before",
+          "name": "ren-home-before",
           "es": "Antes",
           "en": "Before"
         },
         {
-          "name": "ren-during",
+          "name": "ren-home-work",
           "es": "Durante la obra",
           "en": "During the work"
         },
         {
-          "name": "ren-after",
+          "name": "ren-home-after",
           "es": "Después",
           "en": "After"
         }
-      ],
-      "live3d": "/js/casa3d.v3.js"
+      ]
     },
     "mar": {
       "kind": "tabs",
@@ -341,25 +311,24 @@
     },
     "str": {
       "kind": "tabs",
-      "live3d": "/js/casa3d.v3.js",
       "es": {
         "title": "La casa cuando recibe huéspedes",
-        "caption": "Ilustración 3D hipotética. Qué cambia cuando su casa o su apartamento recibe huéspedes que pagan, y cómo revisar la protección antes de publicar el anuncio.",
-        "alt": "Ilustración 3D de una casa de alquiler vacacional: {label}"
+        "caption": "Imagen ilustrativa de una casa hipotética. Qué cambia cuando su casa o su apartamento recibe huéspedes que pagan, y cómo revisar la protección antes de publicar el anuncio.",
+        "alt": "Imagen ilustrativa de una casa de alquiler vacacional: {label}"
       },
       "en": {
         "title": "The home when guests arrive",
-        "caption": "Hypothetical 3D illustration. What changes when your home or condo hosts paying guests, and how to review your protection before you publish the listing.",
-        "alt": "3D illustration of a short-term rental home: {label}"
+        "caption": "Illustrative image of a hypothetical home. What changes when your home or condo hosts paying guests, and how to review your protection before you publish the listing.",
+        "alt": "Illustrative image of a short-term rental home: {label}"
       },
       "frames": [
         {
-          "name": "str-arrival",
+          "name": "str-front-dusk",
           "es": "Llegada",
           "en": "Arrival"
         },
         {
-          "name": "str-back",
+          "name": "str-pool-ready",
           "es": "La parte de atrás",
           "en": "Out back"
         }
@@ -367,20 +336,19 @@
     },
     "kr": {
       "kind": "single",
-      "live3d": "/js/casa3d.v3.js",
       "es": {
         "title": "El portón de noche",
-        "caption": "Ilustración 3D hipotética. Limite lo que la familia publica sobre viajes, rutinas, vehículos y ubicación en tiempo real.",
-        "alt": "Ilustración 3D del portón de una casa de noche"
+        "caption": "Imagen ilustrativa de una casa hipotética. Limite lo que la familia publica sobre viajes, rutinas, vehículos y ubicación en tiempo real.",
+        "alt": "Imagen ilustrativa del portón de una casa de noche"
       },
       "en": {
         "title": "The gate at night",
-        "caption": "Hypothetical 3D illustration. Limit what the family posts about trips, routines, vehicles and real-time location.",
-        "alt": "3D illustration of a home's gate at night"
+        "caption": "Illustrative image of a hypothetical home. Limit what the family posts about trips, routines, vehicles and real-time location.",
+        "alt": "Illustrative image of a home's gate at night"
       },
       "frames": [
         {
-          "name": "kr-gate-night",
+          "name": "kr-gate-dusk-night",
           "es": "De noche",
           "en": "At night"
         }
@@ -495,25 +463,24 @@
     },
     "col": {
       "kind": "tabs",
-      "live3d": "/js/casa3d.v3.js",
       "es": {
         "title": "Lo que guarda la casa",
-        "caption": "Ilustración 3D hipotética. La póliza de hogar estándar suele tener un límite total bajo para el robo de joyas, sin importar el valor real de las piezas.",
-        "alt": "Ilustración 3D de una galería en casa: {label}"
+        "caption": "Imagen ilustrativa de una casa hipotética. La póliza de hogar estándar suele tener un límite total bajo para el robo de joyas, sin importar el valor real de las piezas.",
+        "alt": "Imagen ilustrativa de una galería en casa: {label}"
       },
       "en": {
         "title": "What the house holds",
-        "caption": "Hypothetical 3D illustration. A standard homeowners policy often sets a low total limit for jewelry theft, no matter what the pieces are worth.",
-        "alt": "3D illustration of a home gallery: {label}"
+        "caption": "Illustrative image of a hypothetical home. A standard homeowners policy often sets a low total limit for jewelry theft, no matter what the pieces are worth.",
+        "alt": "Illustrative image of a home gallery: {label}"
       },
       "frames": [
         {
-          "name": "col-gallery",
+          "name": "col-wall",
           "es": "La galería",
           "en": "The gallery"
         },
         {
-          "name": "col-case",
+          "name": "col-vitrine",
           "es": "La vitrina",
           "en": "The display case"
         }
@@ -521,20 +488,19 @@
     },
     "cyb": {
       "kind": "single",
-      "live3d": "/js/casa3d.v3.js",
       "es": {
         "title": "La oficina de noche",
-        "caption": "Ilustración 3D hipotética de un hogar conectado. Esta guía explica el fraude de transferencias en cierres, la ciberextorsión y el robo de identidad, con una lista de prevención.",
-        "alt": "Ilustración 3D de una oficina en casa de noche, con pantallas encendidas"
+        "caption": "Imagen ilustrativa de un hogar conectado hipotético. Esta guía explica el fraude de transferencias en cierres, la ciberextorsión y el robo de identidad, con una lista de prevención.",
+        "alt": "Imagen ilustrativa de una oficina en casa de noche, con pantallas encendidas"
       },
       "en": {
         "title": "The home office at night",
-        "caption": "Hypothetical 3D illustration of a connected home. This guide covers closing wire fraud, cyber extortion and identity theft, with a prevention checklist.",
-        "alt": "3D illustration of a home office at night with screens on"
+        "caption": "Illustrative image of a hypothetical connected home. This guide covers closing wire fraud, cyber extortion and identity theft, with a prevention checklist.",
+        "alt": "Illustrative image of a home office at night with screens on"
       },
       "frames": [
         {
-          "name": "cyb-office",
+          "name": "cyb-office-screens",
           "es": "Oficina",
           "en": "Office"
         }
@@ -542,20 +508,19 @@
     },
     "emp": {
       "kind": "single",
-      "live3d": "/js/casa3d.v3.js",
       "es": {
         "title": "Una casa con personal",
-        "caption": "Ilustración 3D hipotética. La ley de compensación laboral de Florida excluye a los empleados domésticos en hogares privados, pero el empleador puede elegir cubrirlos de forma voluntaria.",
-        "alt": "Ilustración 3D de una cocina a las 7 de la mañana, con señales de personal del hogar"
+        "caption": "Imagen ilustrativa de una casa hipotética. La ley de compensación laboral de Florida excluye a los empleados domésticos en hogares privados, pero el empleador puede elegir cubrirlos de forma voluntaria.",
+        "alt": "Imagen ilustrativa de una cocina a las 7 de la mañana, con señales de personal del hogar"
       },
       "en": {
         "title": "A staffed home",
-        "caption": "Hypothetical 3D illustration. Florida's workers' compensation law excludes domestic servants in private homes, but an employer can elect coverage voluntarily.",
-        "alt": "3D illustration of a kitchen at 7 a.m. with signs of household staff"
+        "caption": "Illustrative image of a hypothetical home. Florida's workers' compensation law excludes domestic servants in private homes, but an employer can elect coverage voluntarily.",
+        "alt": "Illustrative image of a kitchen at 7 a.m. with signs of household staff"
       },
       "frames": [
         {
-          "name": "emp-kitchen",
+          "name": "emp-kitchen-morning",
           "es": "Cocina",
           "en": "Kitchen"
         }
@@ -563,25 +528,24 @@
     },
     "brd": {
       "kind": "tabs",
-      "live3d": "/js/casa3d.v3.js",
       "es": {
         "title": "Servir en una junta",
-        "caption": "Ilustración 3D hipotética. Esta guía explica las protecciones legales al servir en juntas de fundaciones, escuelas o condominios en Florida, el seguro de directores y funcionarios (D&O) y las reglas de fundaciones privadas.",
-        "alt": "Ilustración 3D de una sala de juntas al atardecer: {label}"
+        "caption": "Imagen ilustrativa de una sala hipotética. Esta guía explica las protecciones legales al servir en juntas de fundaciones, escuelas o condominios en Florida, el seguro de directores y funcionarios (D&O) y las reglas de fundaciones privadas.",
+        "alt": "Imagen ilustrativa de una sala de juntas al atardecer: {label}"
       },
       "en": {
         "title": "Serving on a board",
-        "caption": "Hypothetical 3D illustration. This guide covers the legal protections for serving on foundation, school or condo boards in Florida, directors and officers (D&O) insurance and private foundation rules.",
-        "alt": "3D illustration of a boardroom at dusk: {label}"
+        "caption": "Illustrative image of a hypothetical boardroom. This guide covers the legal protections for serving on foundation, school or condo boards in Florida, directors and officers (D&O) insurance and private foundation rules.",
+        "alt": "Illustrative image of a boardroom at dusk: {label}"
       },
       "frames": [
         {
-          "name": "brd-room",
+          "name": "brd-room-dusk",
           "es": "La sala de juntas",
           "en": "The boardroom"
         },
         {
-          "name": "brd-table",
+          "name": "brd-table-close",
           "es": "La mesa",
           "en": "At the table"
         }
