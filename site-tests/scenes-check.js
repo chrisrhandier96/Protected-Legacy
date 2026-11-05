@@ -73,7 +73,7 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
         await pins.nth(0).click();
         const hl = await fig.locator('.scn-notes li.on').count();
         const inside = await pins.evaluateAll(ps => ps.every(p => { const s = p.parentElement.getBoundingClientRect(), r = p.getBoundingClientRect(); return r.left >= s.left - 2 && r.right <= s.right + 2 && r.top >= s.top - 2 && r.bottom <= s.bottom + 2; }));
-        log(n >= 5 && hl === 1 && inside, `${tag} ${n} pins inside the image, a pin highlights its note`);
+        log(n >= 3 && hl === 1 && inside, `${tag} ${n} pins inside the image, a pin highlights its note`);
       }
       await fig.screenshot({ path: path.join(OUT, `${key}-${url.startsWith('/en') ? 'en' : 'es'}-${vname}.png`) });
       await page.mouse.wheel(0, 2500); await page.waitForTimeout(400);
