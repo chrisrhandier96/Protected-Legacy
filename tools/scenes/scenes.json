@@ -1,8 +1,8 @@
 {
-  "_note": "Interactive 3D scenes (2026-11). Frames come from the Unreal renders (Casa Patrimonio, a hypothetical home). Every claim in a caption or hotspot is already in that guide or in content/BRIEF.md's verified facts. Voice rules apply: no selling, no carriers, no limits, no em dashes. Build images with tools/scenes/build_scene_images.py; tools/post/add-scenes.js injects the markup after the guide's summary box.",
+  "_note": "Interactive scenes (2026-11). Frames: Google Flow photoreal stills (aut, mar, avi, Nov 4) and the Unreal renders for the rest (Casa Patrimonio, a hypothetical home). Every claim in a caption or hotspot is already in that guide or in content/BRIEF.md's verified facts. Voice rules apply: no selling, no carriers, no limits, no em dashes. Build images with tools/scenes/build_scene_images.py [source_dir]; tools/post/add-scenes.js injects the markup after the guide's summary box.",
   "ui": {
     "es": {
-      "badge": "Ilustración 3D",
+      "badge": "Ilustración",
       "kicker": "Escena interactiva",
       "slider": "Nivel del agua sobre el piso",
       "layers": "Mostrar",
@@ -10,7 +10,7 @@
       "close": "Cerrar"
     },
     "en": {
-      "badge": "3D illustration",
+      "badge": "Illustration",
       "kicker": "Interactive scene",
       "slider": "Water level above the floor",
       "layers": "Show",
@@ -311,16 +311,15 @@
     },
     "mar": {
       "kind": "tabs",
-      "live3d": "/js/casa3d.v3.js",
       "es": {
         "title": "Dónde está la embarcación",
-        "caption": "Ilustración 3D hipotética. Prestar un bote o una moto de agua puede generar reclamos por entrega negligente, y en Florida un menor de 14 años no puede operar una moto de agua.",
-        "alt": "Ilustración 3D de una embarcación en una casa frente al agua: {label}"
+        "caption": "Imagen ilustrativa de una casa hipotética frente al agua. Prestar un bote o una moto de agua puede generar reclamos por entrega negligente, y en Florida un menor de 14 años no puede operar una moto de agua.",
+        "alt": "Embarcación en una casa frente al agua: {label}"
       },
       "en": {
         "title": "Where the boat is",
-        "caption": "Hypothetical 3D illustration. Lending a boat or PWC can lead to negligent entrustment claims, and in Florida no one under 14 may operate a personal watercraft.",
-        "alt": "3D illustration of a boat at a waterfront home: {label}"
+        "caption": "Illustrative image of a hypothetical waterfront home. Lending a boat or PWC can lead to negligent entrustment claims, and in Florida no one under 14 may operate a personal watercraft.",
+        "alt": "A boat at a waterfront home: {label}"
       },
       "frames": [
         {
@@ -388,40 +387,48 @@
       ]
     },
     "avi": {
-      "kind": "single",
-      "live3d": "/js/casa3d.v3.js",
+      "kind": "tabs",
       "es": {
-        "title": "Un dron sobre la propiedad",
-        "caption": "Ilustración 3D hipotética. Esta guía explica qué cambia si la familia vuela en propiedad fraccionada, con jet card, en chárter o con drones.",
-        "alt": "Ilustración 3D de un dron sobre la piscina de una casa"
+        "title": "Cómo vuela la familia",
+        "caption": "Imagen ilustrativa. Esta guía explica qué cambia si la familia vuela en propiedad fraccionada, con jet card, en chárter o con drones.",
+        "alt": "Aviación privada de una familia: {label}"
       },
       "en": {
-        "title": "A drone over the property",
-        "caption": "Hypothetical 3D illustration. This guide explains what changes when the family flies fractional, on a jet card, by charter or with drones.",
-        "alt": "3D illustration of a drone over a home's pool"
+        "title": "How the family flies",
+        "caption": "Illustrative image. This guide explains what changes when the family flies fractional, on a jet card, by charter or with drones.",
+        "alt": "A family's private aviation: {label}"
       },
       "frames": [
         {
+          "name": "avi-hangar",
+          "es": "En el hangar",
+          "en": "In the hangar"
+        },
+        {
+          "name": "avi-ramp",
+          "es": "En la pista",
+          "en": "On the ramp"
+        },
+        {
           "name": "avi-drone",
-          "es": "Dron",
-          "en": "Drone"
+          "es": "Un dron sobre la propiedad",
+          "en": "A drone over the property"
         }
       ]
     },
     "aut": {
       "kind": "slider",
-      "live3d": "/js/casa3d.v3.js",
       "es": {
         "title": "Un auto de colección",
         "slider": "Girar el auto",
-        "caption": "Ilustración 3D hipotética. Autos de colección, empleados domésticos al volante y el uso en plataformas de viajes compartidos tienen reglas propias que conviene revisar.",
-        "alt": "Ilustración 3D de un auto deportivo genérico: {label}"
+        "caption": "Imagen ilustrativa de un auto de colección hipotético. Autos de colección, empleados domésticos al volante y el uso en plataformas de viajes compartidos tienen reglas propias que conviene revisar.",
+        "alt": "Cupé clásico verde esmeralda en un garaje privado de coleccionista, visto a {label}"
       },
       "en": {
         "title": "A collector car",
         "slider": "Turn the car",
-        "caption": "Hypothetical 3D illustration. Collector cars, household employees behind the wheel and rideshare use each have their own rules worth reviewing.",
-        "alt": "3D illustration of a generic sports car: {label}"
+        "caption": "Illustrative image of a hypothetical collector car. Collector cars, household employees behind the wheel and rideshare use each have their own rules worth reviewing.",
+        "alt": "Emerald green classic coupe in a private collector's garage, seen at {label}"
       },
       "frames": [
         {
