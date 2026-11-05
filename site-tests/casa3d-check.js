@@ -9,7 +9,8 @@ const OUT = process.env.OUT || 'out-casa3d'; fs.mkdirSync(OUT, { recursive: true
 const PAGES = [['/guias/inundacion/', 'es', 'flo'], ['/en/guides/flood/', 'en', 'flo'], ['/guias/residencias-huracanes/', 'es', 'res'], ['/en/guides/homes-hurricanes/', 'en', 'res'],
   ['/guias/condominios-y-hoa/', 'es', 'cnd'], ['/en/guides/condos-hoa/', 'en', 'cnd'],
   ['/guias/remodelaciones/', 'es', 'ren'], ['/en/guides/renovations-builders-risk/', 'en', 'ren'], ['/guias/umbrella-responsabilidad/', 'es', 'lia'], ['/en/guides/umbrella-liability/', 'en', 'lia']];
-const TABS = { res: 6, ren: 3, mar: 3, str: 2, col: 2, brd: 2 };
+const TABS = { res: 6, ren: 3, mar: 3, str: 2, emp: 2 };
+const LAYERS = { cnd: 3, cyb: 2, brd: 3 };   // v4 (work order Nov 4): toggles on the office and boardroom too
 PAGES.push(['/guias/colecciones-arte-joyas/', 'es', 'col'], ['/en/guides/collections-art-jewelry/', 'en', 'col'], ['/guias/ciber-proteccion-familiar/', 'es', 'cyb'], ['/en/guides/personal-cyber/', 'en', 'cyb'],
   ['/guias/personal-del-hogar-legado/', 'es', 'emp'], ['/en/guides/household-staff-legacy/', 'en', 'emp'], ['/guias/juntas-y-fundaciones/', 'es', 'brd'], ['/en/guides/board-service-family-foundations/', 'en', 'brd']);
 PAGES.push(['/guias/embarcaciones/', 'es', 'mar'], ['/en/guides/boats/', 'en', 'mar'], ['/guias/alquiler-vacacional/', 'es', 'str'], ['/en/guides/short-term-rentals/', 'en', 'str'],
@@ -39,7 +40,17 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
       log(await r.getAttribute('step') === '0.25' && await r.getAttribute('max') === '12', `${tag} slider continuous, 0 to 12 ft`);
       for (const [v, n] of [['0', 'tide'], ['4', '4ft'], ['12', '12ft']]) { await r.fill(v); await p.waitForTimeout(2500); await shot(n); }
       log(/12/.test(await fig.locator('.scn-out').textContent()), `${tag} readout follows the slider`);
-    } else if (key === 'kr' || key === 'avi' || key === 'cyb' || key === 'emp') {
+    } else if (key === 'col') {   // appraisal age: continuous slider, the frame greys; pins on the case, the wall, the safe
+      const r = fig.locator('input.scn-range');
+      log(await r.getAttribute('max') === '100' && await r.getAttribute('step') === '1', `${tag} appraisal slider continuous, 0 to 100`);
+      await p.waitForTimeout(2000); await shot('age0'); await r.fill('100'); await p.waitForTimeout(1500); await shot('age100');
+      const a = fs.readFileSync(path.join(OUT, `${key}-${l}-${vn}-age0.png`)), b2 = fs.readFileSync(path.join(OUT, `${key}-${l}-${vn}-age100.png`));
+      const outTxt = (await fig.locator('.scn-out').textContent()).trim();
+      const pins = fig.locator('.scn-pin'); const n = await pins.count();
+      const vis = await pins.evaluateAll(ps => ps.filter(x => x.style.visibility !== 'hidden').length);
+      await pins.nth(0).click({ force: true }); const hl = await fig.locator('.scn-notes li.on').count();
+      log(!a.equals(b2) && /date|Desactualizada/.test(outTxt) && n === 3 && vis === 3 && hl === 1, `${tag} the frame greys with age (${outTxt}), ${vis}/${n} pins on the pieces, a pin highlights its note`);
+    } else if (key === 'kr' || key === 'avi') {
       await p.waitForTimeout(2500); await shot('view');
       log(true, `${tag} single live view rendered`);
     } else if (key === 'aut') {
@@ -47,14 +58,14 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
       log(await r.getAttribute('max') === '359' && await r.getAttribute('step') === '1', `${tag} slider turns 0 to 359 degrees`);
       for (const v of ['0', '120', '240']) { await r.fill(v); await p.waitForTimeout(1500); await shot('deg' + v); }
       log(/240/.test(await fig.locator('.scn-out').textContent()), `${tag} readout follows the angle`);
-    } else if (key === 'cnd') {
+    } else if (LAYERS[key]) {
       await p.waitForTimeout(1500); await shot('unit');
       const btns = fig.locator('.scn-lbtn'); const n = await btns.count();
       for (let i = 0; i < n; i++) await btns.nth(i).click();
       await p.waitForTimeout(1500); await shot('unit-layers');
       const on = await btns.evaluateAll(bs => bs.filter(b => b.getAttribute('aria-pressed') === 'true').length);
       const a = fs.readFileSync(path.join(OUT, `${key}-${l}-${vn}-unit.png`)), b2 = fs.readFileSync(path.join(OUT, `${key}-${l}-${vn}-unit-layers.png`));
-      log(n === 3 && on === 3 && !a.equals(b2), `${tag} the 3 coverage toggles press and tint the 3D unit`);
+      log(n === LAYERS[key] && on === n && !a.equals(b2), `${tag} the ${n} toggles press and tint the 3D scene`);
     } else if (key === 'lia') {
       await p.waitForTimeout(2000);
       const pins = fig.locator('.scn-pin'); const n = await pins.count();
@@ -77,6 +88,12 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
         await shot(String(i + 1) + '-' + name.toLowerCase().replace(/[^a-z0-9]+/g, '-'));
       }
       log(good === n && n === TABS[key], `${tag} all ${n} tabs drive the scene (${good} ok)`);
+      if (key === 'emp') {   // the figures' pins belong to the second tab
+        const vis = await fig.locator('.scn-pin').evaluateAll(ps => ps.filter(x => !x.hidden && x.style.visibility !== 'hidden').length);
+        await tabs.nth(0).click(); await p.waitForTimeout(600);
+        const hid = await fig.locator('.scn-pin').evaluateAll(ps => ps.every(x => x.hidden));
+        log(vis === 4 && hid, `${tag} ${vis} pins ride on the figures in the second tab, hidden in the first`);
+      }
     }
     log(/3D/.test(await fig.locator('.scn-badge').textContent()), `${tag} badge relabelled`);
     log(errs.length === 0, `${tag} console errors: ${errs.length ? errs.join(' | ').slice(0, 300) : 'none'}`);

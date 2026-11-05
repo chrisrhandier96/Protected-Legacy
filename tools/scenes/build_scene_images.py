@@ -5,7 +5,9 @@ and writes, for every frame listed in tools/scenes/scenes.json:
   img/scenes/<key>/<frame>-{480,960,1600}.{avif,webp}
 plus, from the ID masks:
   - condo toggles: img/scenes/cnd/cnd-unit-<layer>-960.webp (transparent tint over one coverage group, one per layer)
-  - umbrella hotspots: hotspot centres (percent of the frame) written back into tools/scenes/hotspots.json
+  - hotspots (pins, in any kind of scene): centres (percent of the frame) written to tools/scenes/hotspots-<key>.json
+  - derived frames (work order Nov 4): a frame with "derive" is made from another render and its mask, the masked
+    pixels pushed toward grey by "grey" (0 to 1): the collections slider's appraisal age fades the gold frame
 Masks are flat-colour PNGs from the same camera and resolution as their frame (see the .json beside each mask).
 Usage (repo root): python tools/scenes/build_scene_images.py [source_dir]
 Needs Pillow with AVIF support (pip install pillow, 11.3 or later) and numpy.
@@ -15,7 +17,7 @@ import os
 import sys
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 SRC = sys.argv[1] if len(sys.argv) > 1 else r"C:\Users\rhand\Downloads\ue-renders\pp"
@@ -43,6 +45,23 @@ def save_frame(key, name):
                 r.save(p, "AVIF", quality=q, speed=4)
             sizes["%d.%s" % (w, fmt)] = os.path.getsize(p)
     return sizes
+
+
+def derive_frame(key, f):
+    """Write SRC/<key>/<name>.png from the "from" render: the mask's pixels move toward a neutral grey by "grey"."""
+    dv = f["derive"]
+    im = np.asarray(Image.open(os.path.join(SRC, key, dv["from"] + ".png")).convert("RGB")).astype(np.float32)
+    m = mask_array(key, dv["from"])
+    sel = np.zeros(m.shape, bool)
+    for c in dv["mask_colours"]:
+        sel |= (m == hexint(c))
+    a = np.asarray(Image.fromarray((sel * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.2))).astype(np.float32) / 255.0
+    lum = im @ np.array([0.299, 0.587, 0.114], np.float32)
+    grey = np.dstack([lum * 0.96, lum * 0.96, lum * 0.98]) * 0.74   # a cool, darker grey: the gold goes dull
+    t = (a * float(dv["grey"]))[..., None]
+    out = im * (1 - t) + grey * t
+    Image.fromarray(np.clip(out, 0, 255).astype(np.uint8), "RGB").save(os.path.join(SRC, key, f["name"] + ".png"))
+    print("  derived %-14s from %s, %d mask px, grey %.2f" % (f["name"], dv["from"], int(sel.sum()), dv["grey"]))
 
 
 def mask_array(key, name):
@@ -88,13 +107,16 @@ def hotspot_centres(key, frame, spots):
 
 
 def main():
-    report = {}
+    sp = os.path.join(os.path.dirname(__file__), "sizes.json")
+    report = json.load(open(sp)) if os.path.exists(sp) else {}   # merged: an ONLY run keeps the other scenes' sizes
     only = [k for k in os.environ.get("ONLY", "").split(",") if k]   # ONLY=mar,str to encode just those scenes
     for key, sc in CFG["scenes"].items():
         if only and key not in only:
             continue
         print(key)
         for f in sc["frames"]:
+            if f.get("derive"):
+                derive_frame(key, f)
             sizes = save_frame(key, f["name"])
             report["%s/%s" % (key, f["name"])] = sizes
             print("  %-16s 960 webp %5.1f KB  avif %5.1f KB" % (f["name"], sizes["960.webp"] / 1024, sizes["960.avif"] / 1024))
@@ -104,7 +126,7 @@ def main():
             pos = hotspot_centres(key, sc["hotspots_frame"], sc["hotspots"])
             json.dump(pos, open(os.path.join(os.path.dirname(__file__), "hotspots-%s.json" % key), "w"), indent=1)
             print("  hotspots:", pos)
-    json.dump(report, open(os.path.join(os.path.dirname(__file__), "sizes.json"), "w"), indent=1)
+    json.dump(report, open(sp, "w"), indent=1)
 
 
 if __name__ == "__main__":

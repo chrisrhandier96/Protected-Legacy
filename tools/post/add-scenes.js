@@ -2,11 +2,13 @@
 // "In short") on the flood, hurricane, condo, umbrella and renovation guides, both languages, and loads
 // /js/scenes.v2.js. Copy and frames come from tools/scenes/scenes.json; images from tools/scenes/build_scene_images.py.
 // The scene box has a fixed 16:9 aspect ratio and static controls, so it adds no layout shift.
-// Idempotent: a page that already has a scene is left alone. Usage: node tools/post/add-scenes.js <repo root>
+// Idempotent: a page whose scene matches scenes.json is left alone; a scene whose markup changed is rewritten in place
+// (work order Nov 4). Pins (hotspots) can sit in any kind of scene; pins_frame ties them to one frame.
+// Usage: node tools/post/add-scenes.js <repo root>
 const fs = require('fs'); const path = require('path');
 const ROOT = path.resolve(process.argv[2] || path.join(__dirname, '..', '..'));
 const CFG = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools', 'scenes', 'scenes.json'), 'utf8'));
-const SCRIPT = '<script src="/js/scenes.v2.js" defer></script>';
+const SCRIPT = '<script src="/js/scenes.v3.js" defer></script>';
 const SIZES = '(min-width:1100px) 720px, (min-width:760px) 66vw, 100vw';
 
 const CSS = '<style id="pp-scenes">'
@@ -104,12 +106,14 @@ function scene(key, l) {
     ctl = `<div class="scn-ctl" role="group" aria-label="${esc(ui.layers)}">`
       + sc.layers.map(y => `<button type="button" class="scn-lbtn" data-layer="${y.id}" aria-pressed="false" style="--sw:${y.tint}"><i aria-hidden="true"></i>${esc(y[l])}</button>`).join('')
       + '</div>';
-  } else if (sc.kind === 'hotspots') {
+  }
+  if (sc.hotspots) {   // pins with numbered notes: the whole scene for hotspots, or on top of a slider, tabs or layers
     const pos = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools', 'scenes', `hotspots-${key}.json`), 'utf8'));
     const spots = sc.hotspots.filter(s => pos[s.id]);
-    stage += spots.map((s, i) => `<button type="button" class="scn-pin" data-id="${s.id}" aria-pressed="false" style="left:${pos[s.id].x}%;top:${pos[s.id].y}%" aria-label="${i + 1}. ${esc(s[l][0])}">${i + 1}</button>`).join('');
+    const fr = sc.pins_frame != null ? ` data-frame="${sc.pins_frame}"${sc.pins_frame ? ' hidden' : ''}` : '';
+    stage += spots.map((s, i) => `<button type="button" class="scn-pin" data-id="${s.id}"${fr} aria-pressed="false" style="left:${pos[s.id].x}%;top:${pos[s.id].y}%" aria-label="${i + 1}. ${esc(s[l][0])}">${i + 1}</button>`).join('');
     notes = `<ol class="scn-notes" aria-label="${esc(ui.spots)}">`
-      + spots.map(s => `<li data-id="${s.id}"><b>${esc(s[l][0])}.</b> ${esc(s[l][1])}</li>`).join('') + '</ol>';
+      + spots.map(s => `<li data-id="${s.id}"${fr}><b>${esc(s[l][0])}.</b> ${esc(s[l][1])}</li>`).join('') + '</ol>';
   }
   return `<figure class="scn scn-${sc.kind} no-print" id="${id}" data-scene="${key}" data-kind="${sc.kind}"${sc.live3d ? ` data-3d="${sc.live3d}"` : ''} data-frames="${attrJson(frames)}" data-labels="${attrJson(labels)}" data-alt="${esc(t.alt)}">`
     + `<div class="scn-head"><span class="scn-kick">${esc(ui.kicker)}</span><p class="scn-t">${esc(t.title)}</p></div>`
@@ -129,12 +133,17 @@ let touched = 0, skipped = 0, missing = [];
 for (const f of fs.readdirSync(ROOT)) {
   const info = BY_FILE[f]; if (!info || !CFG.scenes[info.key]) continue;
   const p = path.join(ROOT, f); let h = fs.readFileSync(p, 'utf8'); const before = h;
+  const fresh = scene(info.key, info.l);
   if (!h.includes('data-scene=')) {
     const at = afterSumbox(h);
     if (at < 0) { missing.push(f); continue; }
-    h = h.slice(0, at) + '\n    ' + scene(info.key, info.l) + h.slice(at);
+    h = h.slice(0, at) + '\n    ' + fresh + h.slice(at);
+  } else {   // rewrite a scene whose markup changed (copy, frames, controls, the live 3D bundle)
+    const a = h.indexOf('<figure class="scn '), b = h.indexOf('</figure>', a);
+    if (a >= 0 && b > a && h.slice(a, b + 9) !== fresh) h = h.slice(0, a) + fresh + h.slice(b + 9);
   }
-  if (!h.includes('/js/scenes.v2.js')) h = h.replace(/<\/body>/, SCRIPT + '\n</body>');
+  h = h.replace(/<script src="\/js\/scenes\.v[12]\.js" defer><\/script>/, SCRIPT);
+  if (!h.includes(SCRIPT)) h = h.replace(/<\/body>/, SCRIPT + '\n</body>');
   if (CFG.scenes[info.key].live3d && !h.includes('id="pp-scene3d-loader"')) h = h.replace(/<\/body>/, LOADER3D + '\n</body>');
   if (!h.includes('id="pp-scenes"')) h = h.replace(/<\/head>/, CSS + '\n</head>');
   if (h !== before) { fs.writeFileSync(p, h); touched++; } else skipped++;

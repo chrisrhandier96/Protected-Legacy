@@ -100,3 +100,41 @@ Layout-shift fixes (Nov 3):
   made the homepage LCP worse. It stays under Google's 0.1 threshold; scenes-check flags it because its own limit is 0.02.
 - verify.js now accepts each guide's own share card (`img/og/<guide>-<lang>.jpg`) and checks those files, and the portrait
   check looks for `christian-emerald`.
+
+v4 (Nov 4, work order handoff/WORK-ORDER-unreal-2026-11.md, branch unreal-wo-2026-11): the four interiors are interactive.
+
+| Guide | Kind | What the reader does |
+|---|---|---|
+| Collections (`col`) | slider + pins | "Appraisal age" fades the appraised painting's gold frame to grey (4 frames derived from one render and its mask; continuous in 3D). Pins on the case, the wall and the safe. |
+| Personal cyber (`cyb`) | layers | "Devices on the home network" lights the devices one by one; "What a breach touches" turns them coral. |
+| Household staff (`emp`) | tabs + pins | "A normal day" and "Who is on the property": four neutral, faceless figures, each with a pin to a guide sentence. |
+| Boards (`brd`) | layers | Directors, uncompensated officers and volunteers: each toggle lights that role's chairs. |
+
+- Every caption and note is a sentence the guide already says (scenes.json). The emp pins use the guide's role nouns.
+- Models: room-gallery.glb 72 KB, room-office.glb 66 KB, room-kitchen.glb 68 KB, room-props.glb 44 KB, boardroom.glb 87 KB
+  (new names; interior*.glb and board.glb stay for cached v3 pages). Re-export with `bash tools/export_rooms.sh` in ue-renders.
+- Indoors the 3D camera now uses the Unreal camera's focal length (16:9 sensor), so the live view frames what the render frames.
+- Frames runtime `js/scenes.v3.js`: pins can sit on any kind of scene; `pins_frame` ties pins and notes to one frame.
+  add-scenes.js rewrites a scene in place when its markup changes (no more "left alone" for stale figures).
+- build_scene_images.py: frames with `derive` are made from another render and its mask (the appraisal fade);
+  sizes.json is merged on ONLY runs. The boardroom frame is `brd-roles` (brd-room files stay as they were).
+
+One build for every 3D entry: `cd tools/casa3d && node build-shared.mjs --casa 4 --hero 2 --domains 1`.
+- js/casa3d.v4.js (guides), js/hero3d.v2.js (homepage hero), js/domains3d.v1.js (homepage domains map), and the shared
+  chunks js/three-<hash>.js (immutable by hash). casa3d 177.8 KiB gzip with its chunk; hero 152.0; domains 151.9.
+- The hero and the map read the GLB with a small reader (src/glb.js, about 22 KiB less than GLTFLoader).
+- Budget note: the work order asked for the hero at or under 141 KiB (hero3d.v1) and a shared core. esbuild splits by
+  file, so the shared chunk carries every three.js class either side uses: 152 KiB on a first homepage visit, then
+  2.3 KiB of its own (a guide visit after the homepage reuses the chunk). A standalone hero would be about 143 KiB.
+
+Homepage (index.html and en.html, edited by hand):
+- Hero: the Casa Patrimonio estate at dusk (lit windows, low warm sun, fog into the page green, gold edge lines on
+  laptops) turns slowly in the band at the foot of the hero, where the gold skyline drawing was. Same loader and gates,
+  same `window.ppHero3d` and dataLayer events; the SVG skyline stays as first paint and fallback; the Flow video stays.
+- Domains map: at 1200 px and wider with a fine pointer, the cards share the row with a sticky panel (static CSS,
+  `pp-dom-map`). The panel shows the Unreal aerial still first; `js/domains3d.v1.js` loads near the section and lights the
+  part of the estate for the hovered or focused card (roof, seawall, garage, dock, gate, pool...). dataLayer:
+  domains3d_ready. Phones and touch screens keep the plain list and load nothing.
+- Also fixed on the homepages: the word-by-word headline (commit b1de6b6) wrapped "Extraordinario." / "Extraordinary."
+  in an animated span, and the gold gradient clipped to the em's text no longer painted, so the word was invisible on
+  main (not yet live). One rule lets the span mirror its parent's gradient and clipping.

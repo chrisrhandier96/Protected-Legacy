@@ -16,6 +16,8 @@ const PAGES = [
   ['/guias/embarcaciones/', 'mar'], ['/en/guides/boats/', 'mar'], ['/guias/alquiler-vacacional/', 'str'], ['/en/guides/short-term-rentals/', 'str'],
   ['/guias/secuestro-y-extorsion/', 'kr'], ['/en/guides/kidnap-ransom/', 'kr'], ['/guias/aviacion-privada/', 'avi'], ['/en/guides/private-aviation/', 'avi'],
   ['/guias/autos/', 'aut'], ['/en/guides/auto/', 'aut'],
+  ['/guias/colecciones-arte-joyas/', 'col'], ['/en/guides/collections-art-jewelry/', 'col'], ['/guias/ciber-proteccion-familiar/', 'cyb'], ['/en/guides/personal-cyber/', 'cyb'],
+  ['/guias/personal-del-hogar-legado/', 'emp'], ['/en/guides/household-staff-legacy/', 'emp'], ['/guias/juntas-y-fundaciones/', 'brd'], ['/en/guides/board-service-family-foundations/', 'brd'],
 ];
 const VIEWS = { phone: { width: 390, height: 844 }, laptop: { width: 1366, height: 820 } };
 let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PASS ' : 'FAIL ') + m); };
@@ -48,15 +50,17 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
       const kind = await fig.getAttribute('data-kind');
       const srcOf = () => img.evaluate(i => i.currentSrc);
       if (kind === 'slider') {
-        const a = await srcOf(); await fig.locator('input.scn-range').fill('4'); await page.waitForTimeout(700);
+        const mx = +(await fig.locator('input.scn-range').getAttribute('max')), st = Math.min(4, mx);
+        const a = await srcOf(); await fig.locator('input.scn-range').fill(String(st)); await page.waitForTimeout(700);
         const b = await srcOf(); const out = await fig.locator('.scn-out').textContent();
-        log(a !== b && /(water|spin)-0?[45]/.test(b), `${tag} slider to step 4 swaps the frame (${out})`);
-        await fig.locator('input.scn-range').fill('8'); await page.waitForTimeout(500);
+        log(a !== b && /(water|spin)-0?[45]|age-[1-4]/.test(b), `${tag} slider to step ${st} swaps the frame (${out})`);
+        await fig.locator('input.scn-range').fill(String(Math.min(8, mx))); await page.waitForTimeout(500);
       } else if (kind === 'tabs') {
         const tabs = fig.locator('.scn-tab'); const n = await tabs.count();
-        await tabs.nth(n - 2).click(); await page.waitForTimeout(700);
-        const b = await srcOf(); const pressed = await tabs.nth(n - 2).getAttribute('aria-pressed');
-        log(pressed === 'true' && !/(prep-on|ren-before)/.test(b), `${tag} tab ${n - 1} of ${n} swaps the frame`);
+        const ti = n === 2 ? 1 : n - 2;   // with two tabs, the second (household staff: its pins belong to it)
+        await tabs.nth(ti).click(); await page.waitForTimeout(700);
+        const b = await srcOf(); const pressed = await tabs.nth(ti).getAttribute('aria-pressed');
+        log(pressed === 'true' && !/(prep-on|ren-before)/.test(b), `${tag} tab ${ti + 1} of ${n} swaps the frame`);
       } else if (kind === 'layers') {
         const btns = fig.locator('.scn-lbtn'); const n = await btns.count();
         for (let i = 0; i < n; i++) await btns.nth(i).click();
@@ -69,6 +73,12 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
         const hl = await fig.locator('.scn-notes li.on').count();
         const inside = await pins.evaluateAll(ps => ps.every(p => { const s = p.parentElement.getBoundingClientRect(), r = p.getBoundingClientRect(); return r.left >= s.left - 2 && r.right <= s.right + 2 && r.top >= s.top - 2 && r.bottom <= s.bottom + 2; }));
         log(n >= 5 && hl === 1 && inside, `${tag} ${n} pins inside the image, a pin highlights its note`);
+      }
+      if (kind !== 'hotspots' && await fig.locator('.scn-pin').count()) {   // pins on top of another kind (v3 runtime)
+        const pins = fig.locator('.scn-pin:not([hidden])'); const n = await pins.count();
+        if (n) await pins.nth(0).click();
+        const hl = await fig.locator('.scn-notes li.on:not([hidden])').count();
+        log(n >= 3 && hl === 1, `${tag} ${n} pins shown with this frame, a pin highlights its note`);
       }
       await fig.screenshot({ path: path.join(OUT, `${key}-${url.startsWith('/en') ? 'en' : 'es'}-${vname}.png`) });
       await page.mouse.wheel(0, 2500); await page.waitForTimeout(400);

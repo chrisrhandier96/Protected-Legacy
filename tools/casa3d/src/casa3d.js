@@ -16,8 +16,12 @@
    - avi (aviation): a drone hovering and circling over the pool.
    - aut (auto): a generic sports car on a studio floor; the figure's slider turns it through 360 degrees.
    - col, cyb, emp, brd (collections, personal cyber, household staff, boards): the interiors, seen from the renders'
-     cameras, turnable a little (look around, never through a wall): the gallery and its display case, the home office
-     at night with its screens on, the kitchen at 7 a.m. with the signs of household staff, the boardroom and its table.
+     cameras, turnable a little (look around, never through a wall). v4 (work order Nov 4) makes them interactive:
+     col: the figure's appraisal-age slider fades the appraised painting's gold frame to grey, and pins ride on the
+     case, the wall and the safe; cyb: one toggle lights the devices on the home network one by one, the other turns
+     what a breach touches coral; emp: tabs for a normal day and for who is on the property (neutral figures, no faces),
+     with a pin on each figure; brd: toggles light the chairs of directors, uncompensated officers and volunteers.
+     Each room loads its own model (room-gallery, room-office, room-kitchen, boardroom).
    - res (homes and hurricanes guide): the figure's six tabs drive the scene: prepared (shutters closed, furniture
      stored, pool covered, the boat on its trailer), not prepared, tropical storm, Category 1, Category 3 (wind bends
      the palms, rain, surge over the seawall, flying debris, lightning; at Category 3 a torn shutter and lifted tiles),
@@ -38,7 +42,8 @@ import { toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
 const MODEL = '/img/scenes/3d/casa.glb', PROPS = '/img/scenes/3d/casa-props.glb', CONDO = '/img/scenes/3d/condo.glb', CAR = '/img/scenes/3d/car.glb';
-const INTERIOR = '/img/scenes/3d/interior.glb', INTERIOR_PROPS = '/img/scenes/3d/interior-props.glb', BOARD = '/img/scenes/3d/board.glb';
+const ROOMS = { gallery: '/img/scenes/3d/room-gallery.glb', office: '/img/scenes/3d/room-office.glb', kitchen: '/img/scenes/3d/room-kitchen.glb', board: '/img/scenes/3d/boardroom.glb' };
+const ROOM_PROPS = '/img/scenes/3d/room-props.glb';
 const FT_MAX = 12;
 const C = (h) => new Color(h);
 
@@ -83,18 +88,20 @@ const STR_STAGES = [
 const KR_STAGES = [{ key: 'kr_night', show: 'kr_night', sky: 'night', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_gate' }];
 const AVI_STAGES = [{ key: 'avi', show: 'avi', sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_avi' }];
 const CAR_STAGES = [{ key: 'car', show: 'none', sky: 'studio', storm: 0, water: 'tide', boat: 'dock' }];
-const COL_STAGES = [
-  { key: 'col_gallery', show: 'none', sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_gallery', rig: 'museum' },
-  { key: 'col_case', show: 'none', sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_case', rig: 'museum' }
-];
+const COL_STAGES = [{ key: 'col_gallery', show: 'none', sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_gallery', rig: 'museum' }];
 const CYB_STAGES = [{ key: 'cyb', show: 'cyb', sky: 'night', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_office', rig: 'screens' }];
-const EMP_STAGES = [{ key: 'emp', show: 'emp', sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_kitchen', rig: 'morning' }];
-const BRD_STAGES = [
-  { key: 'brd_room', show: 'none', sky: 'dusk', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_room', rig: 'lamps' },
-  { key: 'brd_table', show: 'none', sky: 'dusk', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_table', rig: 'lamps' }
+const EMP_STAGES = [
+  { key: 'emp', show: 'emp', sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_kitchen', rig: 'morning' },
+  { key: 'emp_who', show: ['emp', 'emp_who'], sky: 'day', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_kitchen', rig: 'morning' }
 ];
-const LAYER_GROUPS = { assoc: ['structure', 'railing', 'window'], finish: ['finishes'], contents: ['contents'] };
-const PIN_GROUPS = { pool: 'pool', boat: 'boat', pwc: 'pwc', cars: 'car', events: 'kitchen', staff: 'gate' };
+const BRD_STAGES = [{ key: 'brd_room', show: 'none', sky: 'dusk', storm: 0, water: 'tide', boat: 'dock', cam: 'cam_room', rig: 'lamps' }];
+const DEVICES = ['router', 'laptop', 'monitor', 'phone', 'tablet', 'speaker', 'thermostat', 'lockpanel', 'cctv'];
+const LAYER_GROUPS = { assoc: ['structure', 'railing', 'window'], finish: ['finishes'], contents: ['contents'],
+  net: DEVICES, breach: DEVICES, dir: ['chair_dir'], off: ['chair_off'], vol: ['chair_vol'] };
+const PIN_GROUPS = { pool: 'pool', boat: 'boat', pwc: 'pwc', cars: 'car', events: 'kitchen', staff: 'gate',
+  case: 'case', wall: 'appraised_frame', safe: 'safe',
+  housekeeper: 'staff_housekeeper', nanny: 'staff_nanny', driver: 'staff_driver', gardener: 'staff_gardener' };
+const AGE_GREY = new Color('#8f8d88');
 
 export function start(o) {
   const fig = o.fig, stage = fig.querySelector('.scn-stage');
@@ -102,13 +109,16 @@ export function start(o) {
   const MODE = { res: 'storm', ren: 'reno', lia: 'aerial', cnd: 'condo', mar: 'marine', str: 'rental', kr: 'gate', avi: 'drone', aut: 'car', col: 'gallery', cyb: 'office', emp: 'kitchen', brd: 'board' }[SC] || 'flood';
   const STAGES = { reno: REN_STAGES, aerial: AERIAL_STAGES, condo: CONDO_STAGES, marine: MAR_STAGES, rental: STR_STAGES, gate: KR_STAGES, drone: AVI_STAGES, car: CAR_STAGES, gallery: COL_STAGES, office: CYB_STAGES, kitchen: EMP_STAGES, board: BRD_STAGES }[MODE] || STORM_STAGES;
   const INDOOR = ['gallery', 'office', 'kitchen', 'board'].indexOf(MODE) >= 0;
-  const SLIDER = MODE === 'flood' || MODE === 'car', FRAMED = ['marine', 'rental', 'gate', 'drone', 'car', 'gallery', 'office', 'kitchen', 'board'].indexOf(MODE) >= 0;
+  const SLIDER = MODE === 'flood' || MODE === 'car' || MODE === 'gallery', FRAMED = ['marine', 'rental', 'gate', 'drone', 'car', 'gallery', 'office', 'kitchen', 'board'].indexOf(MODE) >= 0;
   const lbtns = Array.prototype.slice.call(fig.querySelectorAll('.scn-lbtn'));
-  const TABBED = ['storm', 'reno', 'marine', 'rental', 'gallery', 'board'].indexOf(MODE) >= 0;
+  const TABBED = ['storm', 'reno', 'marine', 'rental', 'kitchen'].indexOf(MODE) >= 0;
+  const LAYERED = MODE === 'condo' || MODE === 'office' || MODE === 'board';
+  const labels = JSON.parse(fig.getAttribute('data-labels') || '[]');
   const pins = Array.prototype.slice.call(fig.querySelectorAll('.scn-pin'));
+  const notes = Array.prototype.slice.call(fig.querySelectorAll('.scn-notes li'));
   const range0 = fig.querySelector('input.scn-range'), out = fig.querySelector('.scn-out');
   const tabs0 = Array.prototype.slice.call(fig.querySelectorAll('.scn-tab'));
-  if (!stage || (SLIDER && !range0) || (TABBED && tabs0.length < STAGES.length) || (MODE === 'aerial' && !pins.length) || (MODE === 'condo' && !lbtns.length)) return Promise.reject(new Error('no stage'));
+  if (!stage || (SLIDER && !range0) || (TABBED && tabs0.length < STAGES.length) || (MODE === 'aerial' && !pins.length) || (LAYERED && !lbtns.length)) return Promise.reject(new Error('no stage'));
   const L = document.documentElement.lang === 'en' ? 'en' : 'es';
   const lite = !!o.lite, reduced = !!o.reduced, SCENE = SC || 'flo';
   const AA = o.aa != null ? !!o.aa : !lite, SHADOWS = o.shadows != null ? !!o.shadows : !lite && !INDOOR;   // o.aa / o.shadows: test overrides
@@ -261,7 +271,8 @@ export function start(o) {
     extras: null, disposed: false, levelY: 0,
     ft: 0,                                   // flood: feet over the slab (0 = normal tide)
     stage: 0, storm: 0, flash: 0, nextBolt: 0, // storm: tab index, eased storm strength, lightning
-    boatPivot: null, boatHome: new Vector3(), boatPos: new Vector3(), props: [], palmMats: [], groups: {}, anchors: [], byGroup: {},
+    boatPivot: null, boatHome: new Vector3(), boatPos: new Vector3(), props: [], palmMats: [], groups: {}, pgroups: {}, anchors: [], byGroup: {},
+    age: 0, lit: [], litTimers: [],
     camGoal: null, deg: 0, degNow: 0, carPivot: null, dronePivot: null, droneHome: new Vector3()
   };
 
@@ -298,11 +309,17 @@ export function start(o) {
       range0.replaceWith(range);
       range.addEventListener('input', () => { setFt(+range.value); kick(); try { o.dl && o.dl({ event: 'scene3d_level', scene: SCENE }); } catch (e) { /* analytics only */ } }, { passive: true });
       setFt(+range.value);
-    } else if (MODE === 'aerial' || MODE === 'condo' || MODE === 'gate' || MODE === 'drone' || MODE === 'office' || MODE === 'kitchen') {
-      cv.setAttribute('aria-label', fig.getAttribute('data-alt') || '');
+    } else if (MODE === 'gallery') {   // appraisal age: the gold frame greys continuously, the label follows the nearest frame
+      const idx = +range0.value || 0, n = Math.max(1, labels.length - 1);
+      range.min = '0'; range.max = '100'; range.step = '1'; range.value = String(Math.round(idx * 100 / n));
+      range0.replaceWith(range);
+      range.addEventListener('input', () => { setAge(+range.value); kick(); try { o.dl && o.dl({ event: 'scene3d_level', scene: SCENE }); } catch (e) { /* analytics only */ } }, { passive: true });
+      setStage(0); setAge(+range.value);
+    } else if (MODE === 'aerial' || MODE === 'condo' || MODE === 'gate' || MODE === 'drone' || MODE === 'office' || MODE === 'board') {
+      cv.setAttribute('aria-label', (fig.getAttribute('data-alt') || '').replace('{label}', labels[0] || ''));
       setStage(0);
-      if (MODE === 'condo') {   // the figure's own toggles keep working; the scene reads their pressed state after each click
-        lbtns.forEach((b) => b.addEventListener('click', () => { setTimeout(() => { applyLayers(); kick(); try { o.dl && o.dl({ event: 'scene3d_layer', scene: SCENE, layer: b.getAttribute('data-layer') }); } catch (e) { /* analytics only */ } }, 0); }));
+      if (LAYERED) {   // the figure's own toggles keep working; the scene reads their pressed state after each click
+        lbtns.forEach((b) => b.addEventListener('click', () => { setTimeout(() => { if (b.getAttribute('data-layer') === 'net') lightNetwork(b.getAttribute('aria-pressed') === 'true'); applyLayers(); kick(); try { o.dl && o.dl({ event: 'scene3d_layer', scene: SCENE, layer: b.getAttribute('data-layer') }); } catch (e) { /* analytics only */ } }, 0); }));
         applyLayers();
       }
     } else {
@@ -322,6 +339,14 @@ export function start(o) {
     range.setAttribute('aria-valuetext', txt);
     if (out) out.textContent = txt;
     cv.setAttribute('aria-label', (L === 'es' ? 'Casa hipotética en 3D: ' : 'Hypothetical home in 3D: ') + txt);
+  }
+  function setAge(v) {
+    state.age = v;
+    const txt = labels[Math.round(v / 100 * Math.max(0, labels.length - 1))] || '';
+    range.setAttribute('aria-valuetext', txt);
+    if (out) out.textContent = txt;
+    cv.setAttribute('aria-label', (fig.getAttribute('data-alt') || '').replace('{label}', txt));
+    (state.byGroup.appraised_frame || []).forEach((n) => { n.material.color.copy(n.material.userData.base).lerp(AGE_GREY, v / 100); n.material.metalness = 0.6 * (1 - v / 100); n.material.roughness = 0.3 + 0.5 * v / 100; });
   }
   function setDeg(d) {
     state.deg = d;
@@ -367,20 +392,36 @@ export function start(o) {
       if (INDOOR) { controls.minAzimuthAngle = -Infinity; controls.maxAzimuthAngle = Infinity; controls.minPolarAngle = 0.1; controls.maxPolarAngle = 3.0; }
       state.camGoal = camGoal(state.extras[s.cam]); state.cam = state.extras[s.cam]; state.lastUser = performance.now();
     }
-    state.props.forEach((n) => { n.visible = n.userData.sets.indexOf(show) >= 0; });
+    const shows = [].concat(show);
+    state.props.forEach((n) => { n.visible = n.userData.sets.some((x) => shows.indexOf(x) >= 0); });
+    pins.forEach((pn) => { const f = pn.getAttribute('data-frame'); if (f != null) pn.hidden = +f !== i; });
+    notes.forEach((li) => { const f = li.getAttribute('data-frame'); if (f != null) li.hidden = +f !== i; });
     if (lawnDebris) lawnDebris.visible = s.key === 'after';
     renderer.shadowMap.needsUpdate = true;
   }
 
   /* ---- condo layers: tint the parts each pressed toggle covers, in the toggle's own colour ---- */
   function applyLayers() {
-    Object.keys(state.byGroup).forEach((g) => state.byGroup[g].forEach((n) => { n.material.color.copy(n.material.userData.base); n.material.emissive.copy(n.material.userData.baseE); }));
+    Object.keys(state.byGroup).forEach((g) => { if (g !== 'appraised_frame') state.byGroup[g].forEach((n) => { n.material.color.copy(n.material.userData.base); n.material.emissive.copy(n.material.userData.baseE); }); });
     lbtns.forEach((b) => {
       if (b.getAttribute('aria-pressed') !== 'true') return;
-      const tint = new Color((b.style.getPropertyValue('--sw') || '#C29B40').trim());
-      (LAYER_GROUPS[b.getAttribute('data-layer')] || []).forEach((g) => (state.byGroup[g] || []).forEach((n) => {
-        n.material.color.copy(n.material.userData.base).lerp(tint, 0.55); n.material.emissive.copy(tint).multiplyScalar(0.35);
-      }));
+      const id = b.getAttribute('data-layer'), tint = new Color((b.style.getPropertyValue('--sw') || '#C29B40').trim());
+      (LAYER_GROUPS[id] || []).forEach((g, k) => {
+        if (id === 'net' && !state.lit[k]) return;   // the network lights up device by device
+        (state.byGroup[g] || []).forEach((n) => {
+          n.material.color.copy(n.material.userData.base).lerp(tint, id === 'breach' ? 0.7 : 0.55);
+          n.material.emissive.copy(tint).multiplyScalar(MODE === 'office' ? 0.9 : 0.35);
+        });
+      });
+    });
+  }
+  // the office's network toggle: each device joins a beat after the one before (all at once with reduced motion)
+  function lightNetwork(on) {
+    state.litTimers.forEach(clearTimeout); state.litTimers = []; state.lit = [];
+    if (!on) return;
+    DEVICES.forEach((g, k) => {
+      const t = setTimeout(() => { state.lit[k] = true; applyLayers(); kick(); }, reduced ? 0 : 140 + k * 260);
+      state.litTimers.push(t);
     });
   }
 
@@ -418,14 +459,17 @@ export function start(o) {
       const m = n.material;
       if (m) { m.side = 0; if (g === 'glass') { m.roughness = 0.08; m.metalness = 0.0; } }
       if (m && g === 'palms' && MODE === 'storm') { n.material = m.clone(); windPalms(n.material); }   // own copy: only palms bend
-      if (m && MODE === 'condo') {   // own copy per part, so a layer can tint its parts only
+      if (m && (LAYERED || MODE === 'gallery')) {   // own copy per part, so a layer (or the age slider) recolours its parts only
         n.material = m.clone(); n.material.userData.base = n.material.color.clone(); n.material.userData.baseE = n.material.emissive.clone();
         if (/glass/i.test(m.name || '')) { n.material.transparent = true; n.material.opacity = 0.32; n.material.depthWrite = false; n.castShadow = false; }   // see into the unit
         (state.byGroup[g] = state.byGroup[g] || []).push(n);
       }
       n.castShadow = SHADOWS && g !== 'lawn' && g !== 'street' && g !== 'skyline';
       n.receiveShadow = SHADOWS;
-      if (isProps) { n.userData.sets = ud.sets || []; n.userData.grp = g; n.visible = false; state.props.push(n); }
+      if (isProps) {
+        n.userData.sets = ud.sets || []; n.userData.grp = g; n.visible = false; state.props.push(n);
+        n.updateWorldMatrix(true, false); (state.pgroups[g] = state.pgroups[g] || new Box3()).expandByObject(n);
+      }
       else {
         if (g === 'boat' || g === 'engine') boatNodes.push(n);
         n.updateWorldMatrix(true, false);
@@ -442,8 +486,8 @@ export function start(o) {
   }
 
   const ready = new Promise((resolve, reject) => {   // returned at the end, after the loop and listeners below exist
-    const mainUrl = MODE === 'condo' ? CONDO : MODE === 'car' ? CAR : MODE === 'board' ? BOARD : INDOOR ? INTERIOR : MODEL;
-    const propsUrl = (MODE === 'office' || MODE === 'kitchen') ? INTERIOR_PROPS : (TABBED && !INDOOR) || MODE === 'gate' || MODE === 'drone' ? PROPS : null;
+    const mainUrl = MODE === 'condo' ? CONDO : MODE === 'car' ? CAR : INDOOR ? ROOMS[MODE] : MODEL;
+    const propsUrl = (MODE === 'office' || MODE === 'kitchen') ? ROOM_PROPS : (TABBED && !INDOOR) || MODE === 'gate' || MODE === 'drone' ? PROPS : null;
     Promise.all([loadGltf(mainUrl), propsUrl ? loadGltf(propsUrl) : Promise.resolve(null)]).then(([gltf, props]) => {
       try {
         const root = gltf.scene, ex = (gltf.scenes[0] && gltf.scenes[0].userData) || {};
@@ -458,7 +502,10 @@ export function start(o) {
         if (FRAMED) {   // start exactly where the Unreal camera stood, looking where it looked
           const g = camGoal(ch, MODE === 'car' ? 0.55 : 0);
           camera.position.copy(g.pos); controls.target.copy(g.target);
-          if (INDOOR) { water.visible = false; lookLimits(); rig(STAGES[0].rig, g); }
+          if (INDOOR) {   // the room as the render framed it: Unreal's focal length on its default 16:9 sensor (13.365 mm tall)
+            if (ch.focal_mm) { camera.fov = 2 * Math.atan(13.365 / (2 * ch.focal_mm)) * 180 / Math.PI; camera.near = 0.1; camera.updateProjectionMatrix(); }
+            water.visible = false; lookLimits(); rig(STAGES[0].rig, g);
+          }
           if (MODE === 'car') {   // a studio: key light from the camera side, a cool rim behind, a brighter exposure
             water.visible = false; controls.minPolarAngle = 0.6; controls.maxPolarAngle = 1.5;
             renderer.toneMappingExposure = 1.5;
@@ -504,6 +551,10 @@ export function start(o) {
             state.cam = { position: camera.position.toArray(), target: controls.target.toArray() };
           }
         }
+        if (INDOOR) pins.forEach((pn) => {
+          const gname = PIN_GROUPS[pn.getAttribute('data-id')], b = state.groups[gname] || state.pgroups[gname];
+          if (b) state.anchors.push({ el: pn, p: new Vector3((b.min.x + b.max.x) / 2, gname === 'appraised_frame' ? (b.min.y + b.max.y) / 2 : b.max.y + 0.14, (b.min.z + b.max.z) / 2), left: pn.style.left, top: pn.style.top });
+        });
         controls.minDistance = controls.maxDistance = camera.position.distanceTo(controls.target);
         controls.update();
         state.camReady = true;
@@ -709,11 +760,13 @@ export function start(o) {
     if (range && range !== range0 && range.parentNode) {   // give the frames back their own slider
       let best = 0; FRAME_FT.forEach((f, i) => { if (Math.abs(f - state.ft) < Math.abs(FRAME_FT[best] - state.ft)) best = i; });
       if (MODE === 'car') best = Math.round(state.deg / 30) % 12;
+      if (MODE === 'gallery') best = Math.round(state.age / 100 * Math.max(0, labels.length - 1));
       range0.value = String(best); range.replaceWith(range0); range0.dispatchEvent(new Event('input'));
     }
     tabs.forEach((b, i) => { if (b.parentNode) b.replaceWith(tabs0[i]); });
     if (TABBED && tabs0[state.stage]) tabs0[state.stage].click();
     state.anchors.forEach((a) => { a.el.style.left = a.left; a.el.style.top = a.top; a.el.style.visibility = ''; });
+    state.litTimers.forEach(clearTimeout);
     if (badge) badge.textContent = badgeText;
     if (hint) hint.remove();
   }
