@@ -1,12 +1,12 @@
 // Interactive 3D scenes (2026-11): puts one Unreal illustration right after the summary box ("En resumen" /
 // "In short") on the flood, hurricane, condo, umbrella and renovation guides, both languages, and loads
-// /js/scenes.v2.js. Copy and frames come from tools/scenes/scenes.json; images from tools/scenes/build_scene_images.py.
+// /js/scenes.v3.js. Copy and frames come from tools/scenes/scenes.json; images from tools/scenes/build_scene_images.py.
 // The scene box has a fixed 16:9 aspect ratio and static controls, so it adds no layout shift.
 // Idempotent: a page that already has a scene is left alone. Usage: node tools/post/add-scenes.js <repo root>
 const fs = require('fs'); const path = require('path');
 const ROOT = path.resolve(process.argv[2] || path.join(__dirname, '..', '..'));
 const CFG = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools', 'scenes', 'scenes.json'), 'utf8'));
-const SCRIPT = '<script src="/js/scenes.v2.js" defer></script>';
+const SCRIPT = '<script src="/js/scenes.v3.js" defer></script>';
 const SIZES = '(min-width:1100px) 720px, (min-width:760px) 66vw, 100vw';
 
 const CSS = '<style id="pp-scenes">'
@@ -134,7 +134,7 @@ for (const f of fs.readdirSync(ROOT)) {
     if (at < 0) { missing.push(f); continue; }
     h = h.slice(0, at) + '\n    ' + scene(info.key, info.l) + h.slice(at);
   }
-  if (!h.includes('/js/scenes.v2.js')) h = h.replace(/<\/body>/, SCRIPT + '\n</body>');
+  if (!h.includes('/js/scenes.v3.js')) h = h.replace(/<\/body>/, SCRIPT + '\n</body>');
   if (CFG.scenes[info.key].live3d && !h.includes('id="pp-scene3d-loader"')) h = h.replace(/<\/body>/, LOADER3D + '\n</body>');
   if (!h.includes('id="pp-scenes"')) h = h.replace(/<\/head>/, CSS + '\n</head>');
   if (h !== before) { fs.writeFileSync(p, h); touched++; } else skipped++;
