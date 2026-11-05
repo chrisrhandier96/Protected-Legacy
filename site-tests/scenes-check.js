@@ -50,7 +50,7 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
       if (kind === 'slider') {
         const a = await srcOf(); await fig.locator('input.scn-range').fill('4'); await page.waitForTimeout(700);
         const b = await srcOf(); const out = await fig.locator('.scn-out').textContent();
-        log(a !== b && /(water|spin)-0?[45]/.test(b), `${tag} slider to step 4 swaps the frame (${out})`);
+        log(a !== b && /(water|spin|orbit)-0?[45]/.test(b), `${tag} slider to step 4 swaps the frame (${out})`);
         await fig.locator('input.scn-range').fill('8'); await page.waitForTimeout(500);
       } else if (kind === 'tabs') {
         const tabs = fig.locator('.scn-tab'); const n = await tabs.count();
