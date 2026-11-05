@@ -1,4 +1,4 @@
-// Scenes check (2026-11): loads each guide that carries an interactive 3D scene, in both languages, on a phone
+// Scenes check (2026-11): loads each guide that carries an interactive scene (Flow stills), in both languages, on a phone
 // and a laptop viewport. Checks: the scene exists after the summary box, its first frame loads, every control
 // works (slider/tabs swap the frame, layers show, pins highlight notes), no console errors, layout shift under
 // 0.02 over load + scroll + interaction. Saves one screenshot per scene and viewport to OUT.
@@ -16,6 +16,10 @@ const PAGES = [
   ['/guias/embarcaciones/', 'mar'], ['/en/guides/boats/', 'mar'], ['/guias/alquiler-vacacional/', 'str'], ['/en/guides/short-term-rentals/', 'str'],
   ['/guias/secuestro-y-extorsion/', 'kr'], ['/en/guides/kidnap-ransom/', 'kr'], ['/guias/aviacion-privada/', 'avi'], ['/en/guides/private-aviation/', 'avi'],
   ['/guias/autos/', 'aut'], ['/en/guides/auto/', 'aut'],
+  ['/guias/colecciones-arte-joyas/', 'col'], ['/en/guides/collections-art-jewelry/', 'col'],
+  ['/guias/juntas-y-fundaciones/', 'brd'], ['/en/guides/board-service-family-foundations/', 'brd'],
+  ['/guias/ciber-proteccion-familiar/', 'cyb'], ['/en/guides/personal-cyber/', 'cyb'],
+  ['/guias/personal-del-hogar-legado/', 'emp'], ['/en/guides/household-staff-legacy/', 'emp'],
 ];
 const VIEWS = { phone: { width: 390, height: 844 }, laptop: { width: 1366, height: 820 } };
 let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PASS ' : 'FAIL ') + m); };
@@ -35,7 +39,7 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
           .observe({ type: 'layout-shift', buffered: true });
       });
       const tag = `[${vname}] ${url}`;
-      const res = await page.goto(BASE + url + '?no3d=1', { waitUntil: 'load' });   // the frames path (flood3d-check.js covers the live 3D one)
+      const res = await page.goto(BASE + url, { waitUntil: 'load' });
       log(res.status() === 200, `${tag} status ${res.status()}`);
       const fig = page.locator(`figure.scn[data-scene="${key}"]`);
       log(await fig.count() === 1, `${tag} one scene`);
@@ -50,13 +54,14 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
       if (kind === 'slider') {
         const a = await srcOf(); await fig.locator('input.scn-range').fill('4'); await page.waitForTimeout(700);
         const b = await srcOf(); const out = await fig.locator('.scn-out').textContent();
-        log(a !== b && /(water|spin|orbit)-0?[45]/.test(b), `${tag} slider to step 4 swaps the frame (${out})`);
+        log(a !== b && /(water|spin|orbit|rise)-0?[45]/.test(b), `${tag} slider to step 4 swaps the frame (${out})`);
         await fig.locator('input.scn-range').fill('8'); await page.waitForTimeout(500);
       } else if (kind === 'tabs') {
-        const tabs = fig.locator('.scn-tab'); const n = await tabs.count();
-        await tabs.nth(n - 2).click(); await page.waitForTimeout(700);
-        const b = await srcOf(); const pressed = await tabs.nth(n - 2).getAttribute('aria-pressed');
-        log(pressed === 'true' && !/(prep-on|ren-before)/.test(b), `${tag} tab ${n - 1} of ${n} swaps the frame`);
+        const tabs = fig.locator('.scn-tab'); const n = await tabs.count(); const a = await srcOf();
+        const i = n >= 3 ? n - 2 : n - 1;   // a tab that is not the first one
+        await tabs.nth(i).click(); await page.waitForTimeout(700);
+        const b = await srcOf(); const pressed = await tabs.nth(i).getAttribute('aria-pressed');
+        log(pressed === 'true' && b !== a, `${tag} tab ${i + 1} of ${n} swaps the frame (${b.split('/').pop()})`);
       } else if (kind === 'layers') {
         const btns = fig.locator('.scn-lbtn'); const n = await btns.count();
         for (let i = 0; i < n; i++) await btns.nth(i).click();
