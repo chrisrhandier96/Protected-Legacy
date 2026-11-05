@@ -294,7 +294,7 @@ th,td{border:1px solid var(--arena-oscura);padding:10px 12px;text-align:left;ver
 .search{width:100%;max-width:520px;padding:14px 16px;border:1px solid var(--arena-oscura);border-radius:3px;font-size:16px;font-family:var(--body);background:var(--blanco)}
 .terms{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
 .term{background:var(--blanco);border:1px solid var(--arena-oscura);border-radius:3px;padding:18px 20px;scroll-margin-top:90px}
-.term h3{font-size:20px;color:var(--verde)}.term .alt{font-size:13px;color:var(--oro);font-weight:600;letter-spacing:.02em;margin:2px 0 8px}
+.term h2{font-size:20px;color:var(--verde);margin:0}.term .alt{font-size:13px;color:var(--oro);font-weight:600;letter-spacing:.02em;margin:2px 0 8px}
 .term p{font-size:15px;color:#3B4237;margin:0}.term a{font-size:13px;font-weight:600;color:var(--oro);text-decoration:none;display:inline-block;margin-top:8px}
 .term:target{border-color:var(--oro);box-shadow:0 0 0 3px rgba(194,155,64,.2)}.empty{color:var(--humo);display:none}
 .letters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}.letters a{font-family:var(--display);color:var(--verde);text-decoration:none;padding:2px 8px;border:1px solid var(--arena-oscura);border-radius:3px;font-size:15px}
@@ -689,7 +689,7 @@ for l in ("es", "en"):
     tcards = "".join(f'<a class="card" href="{h}">{ico(ICON_EXTRA[ic])}<h3>{esc(n)}</h3><p>{esc(d)}</p><span class="go">→</span></a>' for h, ic, n, d in tools_meta[l])
     if l == "es":
         h1, dek, title = "Biblioteca de protección patrimonial", f"{NUM['es'].get(len(ORDER), len(ORDER))} guías a fondo, un glosario bilingüe y herramientas prácticas para familias que construyeron algo en la Florida.", "Guías de seguros en español para familias en la Florida"
-        meta = "Guías en español sobre casa, inundación, autos, embarcaciones, aviación, colecciones, umbrella, personal del hogar, ciberseguridad, condominios y más en la Florida."
+        meta = "Guías en español sobre casa, inundación, autos, embarcaciones, aviación, colecciones, umbrella, personal del hogar, ciberseguridad y condominios en Florida."
         th, tl = "Herramientas y referencias", "Para consultar, imprimir y compartir con su familia o sus asesores."
     else:
         h1, dek, title = "The protection library", f"{NUM['en'].get(len(ORDER), len(ORDER))} in-depth guides, a bilingual glossary and practical tools for families who built something in Florida.", "Insurance guides for Florida families | Patrimonio Protegido"
@@ -745,7 +745,7 @@ for l in ("es", "en"):
         if x.get("guide") and x["guide"] in GUIDE_BY_KEY:
             link = f'<a href="{p_guide(GUIDE_BY_KEY[x["guide"]], l)}">{t["seeguide"]} →</a>'
         lid = f' id="letra-{first}"' if anchor else ""
-        items.append(f'<div class="term"{lid} data-cat="{x["cat"]}" data-q="{esc((x["es"] + " " + x["en"] + " " + x["def_" + l]).lower())}"><h3 id="{x["id"]}">{esc(x[l])}</h3><div class="alt" lang="{o}">{esc(x[o])}</div><p>{esc(x["def_" + l])}</p>{link}</div>')
+        items.append(f'<div class="term"{lid} data-cat="{x["cat"]}" data-q="{esc((x["es"] + " " + x["en"] + " " + x["def_" + l]).lower())}"><h2 id="{x["id"]}">{esc(x[l])}</h2><div class="alt" lang="{o}">{esc(x[o])}</div><p>{esc(x["def_" + l])}</p>{link}</div>')
     if l == "es":
         h1, dek = "Glosario de seguros en español e inglés", "Los términos que aparecen en sus pólizas, explicados en su idioma y con su equivalente en inglés, para que ninguna conversación con su agente se pierda en la traducción."
         title, meta = "Glosario de seguros español e inglés | Patrimonio Protegido", f"{len(terms)} términos de seguros explicados en español con su equivalente en inglés: deducible por huracán, póliza umbrella, NFIP, valor acordado y más."
