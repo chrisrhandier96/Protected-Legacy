@@ -323,17 +323,17 @@
       },
       "frames": [
         {
-          "name": "mar-dock",
+          "name": "mar-dock-ph",
           "es": "En el muelle",
           "en": "At the dock"
         },
         {
-          "name": "mar-trailer",
+          "name": "mar-trailer-ph",
           "es": "En el remolque",
           "en": "On the trailer"
         },
         {
-          "name": "mar-lift",
+          "name": "mar-lift-ph",
           "es": "La moto de agua en su elevador",
           "en": "The PWC on its lift"
         }
@@ -410,7 +410,7 @@
           "en": "On the ramp"
         },
         {
-          "name": "avi-drone",
+          "name": "avi-drone-ph",
           "es": "Un dron sobre la propiedad",
           "en": "A drone over the property"
         }
@@ -432,62 +432,62 @@
       },
       "frames": [
         {
-          "name": "aut-spin-01",
+          "name": "aut-orbit-01",
           "es": "0°",
           "en": "0°"
         },
         {
-          "name": "aut-spin-02",
+          "name": "aut-orbit-02",
           "es": "30°",
           "en": "30°"
         },
         {
-          "name": "aut-spin-03",
+          "name": "aut-orbit-03",
           "es": "60°",
           "en": "60°"
         },
         {
-          "name": "aut-spin-04",
+          "name": "aut-orbit-04",
           "es": "90°",
           "en": "90°"
         },
         {
-          "name": "aut-spin-05",
+          "name": "aut-orbit-05",
           "es": "120°",
           "en": "120°"
         },
         {
-          "name": "aut-spin-06",
+          "name": "aut-orbit-06",
           "es": "150°",
           "en": "150°"
         },
         {
-          "name": "aut-spin-07",
+          "name": "aut-orbit-07",
           "es": "180°",
           "en": "180°"
         },
         {
-          "name": "aut-spin-08",
+          "name": "aut-orbit-08",
           "es": "210°",
           "en": "210°"
         },
         {
-          "name": "aut-spin-09",
+          "name": "aut-orbit-09",
           "es": "240°",
           "en": "240°"
         },
         {
-          "name": "aut-spin-10",
+          "name": "aut-orbit-10",
           "es": "270°",
           "en": "270°"
         },
         {
-          "name": "aut-spin-11",
+          "name": "aut-orbit-11",
           "es": "300°",
           "en": "300°"
         },
         {
-          "name": "aut-spin-12",
+          "name": "aut-orbit-12",
           "es": "330°",
           "en": "330°"
         }
