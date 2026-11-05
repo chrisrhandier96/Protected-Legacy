@@ -2,3 +2,6 @@ node_modules/
 site-tests/out*/
 site-tests/shots*/
 __pycache__/
+
+# Unreal editor MCP config (local machine only)
+.mcp.json
