@@ -324,4 +324,9 @@
     <loc>https://www.protectedlegacyfl.com/privacidad.html</loc>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/terminos.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.3</priority>
+  </url>
 </urlset>
