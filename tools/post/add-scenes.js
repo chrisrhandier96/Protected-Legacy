@@ -27,6 +27,9 @@ const CSS = '<style id="pp-scenes">'
   // QA Nov 9: on narrow screens the slider readout always takes its own line, so a long label (the car's 17 sides) never
   // changes the control row's height while the reader drags (it jumped 76 to 105 px on a phone)
   + '@media(max-width:700px){.scn-slider .scn-out{flex:1 1 100%;min-width:0;text-align:left}}'
+  // QA Nov 9 (reel item 14): every scene control is at least 44 px to tap; the pins keep their look and gain an
+  // invisible 8 px ring, the slider gets a 44 px track area, tabs and toggles a 44 px minimum height
+  + '.scn .scn-tab,.scn .scn-lbtn{min-height:44px}.scn .scn-range{height:44px}.scn-pin::after{content:"";position:absolute;inset:-8px;border-radius:50%}'
   + '.scn-tab,.scn-lbtn{min-height:40px;padding:8px 14px;border-radius:999px;border:1px solid var(--arena-oscura,#E7DDC7);background:#fff;color:var(--tinta,#22271F);font:500 .9rem/1.2 var(--body,sans-serif);cursor:pointer}'
   + '.scn-tab[aria-pressed="true"]{background:var(--verde,#14352A);border-color:var(--verde,#14352A);color:#FDFBF6}'
   + '.scn-lbtn{display:inline-flex;align-items:center;gap:8px;text-align:left}'
