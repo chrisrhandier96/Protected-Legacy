@@ -39,7 +39,9 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
           .observe({ type: 'layout-shift', buffered: true });
       });
       const tag = `[${vname}] ${url}`;
-      const res = await page.goto(BASE + url, { waitUntil: 'load' });
+      let res = null;   // up to three tries: a live run on an unsteady connection can drop a page load
+      for (let t = 0; t < 3 && !res; t++) { try { res = await page.goto(BASE + url, { waitUntil: 'load', timeout: 60000 }); } catch (e) { await page.waitForTimeout(3000); } }
+      if (!res) { log(false, `${tag} could not load after 3 tries (network)`); await ctx.close(); continue; }
       log(res.status() === 200, `${tag} status ${res.status()}`);
       const fig = page.locator(`figure.scn[data-scene="${key}"]`);
       log(await fig.count() === 1, `${tag} one scene`);
@@ -58,7 +60,9 @@ let fails = 0; const log = (ok, m) => { if (!ok) fails++; console.log((ok ? 'PAS
         const max = +(await fig.locator('input.scn-range').getAttribute('max'));
         let good = 0; const bad = [];
         for (let i = 1; i <= max; i++) {
-          await fig.locator('input.scn-range').fill(String(i)); await page.waitForTimeout(450);
+          await fig.locator('input.scn-range').fill(String(i));
+          // the first move fetches the frames (scenes.v3.js loads them on reader intent): wait for the swap, up to 4 s
+          await img.evaluate((el, want) => new Promise((res) => { const t0 = Date.now(); (function w() { if ((el.currentSrc.includes('/' + want + '-') && el.complete) || Date.now() - t0 > 4000) res(); else setTimeout(w, 50); })(); }), frames[i]);
           const st = await img.evaluate(el => ({ src: el.currentSrc, ok: el.complete && el.naturalWidth > 0, alt: el.alt }));
           const out = (await fig.locator('.scn-out').textContent()).trim();
           if (st.src.includes('/' + frames[i] + '-') && st.ok && out === labels[i] && st.alt.includes(labels[i])) good++; else bad.push(`${i}:${st.src.split('/').pop()}|${out}`);
