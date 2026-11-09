@@ -510,43 +510,88 @@
       "frames": [
         {
           "name": "aut-orbit-01",
-          "es": "Frente",
-          "en": "Front"
+          "es": "Frente, lado derecho",
+          "en": "Front, right side"
         },
         {
           "name": "aut-orbit-02",
-          "es": "Frente y lateral",
-          "en": "Front and side"
+          "es": "Frente y lateral derecho",
+          "en": "Front and right side"
         },
         {
           "name": "aut-orbit-03",
-          "es": "Lateral",
-          "en": "Side"
+          "es": "Lateral derecho",
+          "en": "Right side"
         },
         {
           "name": "aut-orbit-04",
-          "es": "Perfil",
-          "en": "Profile"
+          "es": "Perfil derecho",
+          "en": "Right profile"
         },
         {
           "name": "aut-orbit-05",
-          "es": "Perfil trasero",
-          "en": "Rear profile"
+          "es": "Perfil trasero derecho",
+          "en": "Right rear profile"
         },
         {
           "name": "aut-orbit-06",
-          "es": "Lateral trasero",
-          "en": "Rear side"
+          "es": "Lateral trasero derecho",
+          "en": "Right rear side"
         },
         {
           "name": "aut-orbit-07",
-          "es": "Trasera, tres cuartos",
-          "en": "Rear three-quarter"
+          "es": "Trasera, tres cuartos derecho",
+          "en": "Rear three-quarter, right"
         },
         {
           "name": "aut-orbit-08",
           "es": "Trasera",
           "en": "Rear"
+        },
+        {
+          "name": "aut-orbit-13",
+          "es": "Trasera, tres cuartos izquierdo",
+          "en": "Rear three-quarter, left"
+        },
+        {
+          "name": "aut-orbit-14",
+          "es": "Lateral trasero izquierdo",
+          "en": "Left rear side"
+        },
+        {
+          "name": "aut-orbit-15",
+          "es": "Perfil trasero izquierdo",
+          "en": "Left rear profile"
+        },
+        {
+          "name": "aut-orbit-16",
+          "es": "Perfil izquierdo",
+          "en": "Left profile"
+        },
+        {
+          "name": "aut-orbit-17",
+          "es": "Lateral izquierdo",
+          "en": "Left side"
+        },
+        {
+          "name": "aut-orbit-18",
+          "es": "Frente y lateral izquierdo",
+          "en": "Front and left side"
+        },
+        {
+          "name": "aut-orbit-19",
+          "es": "Frente, lado izquierdo",
+          "en": "Front, left side"
+        },
+        {
+          "name": "aut-orbit-20",
+          "es": "Casi de frente",
+          "en": "Nearly head-on"
+        },
+        {
+          "name": "aut-orbit-21",
+          "es": "Frente",
+          "en": "Front"
         }
       ]
     },
