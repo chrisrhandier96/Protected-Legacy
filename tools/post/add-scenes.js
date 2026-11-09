@@ -24,6 +24,9 @@ const CSS = '<style id="pp-scenes">'
   + '.scn-ctl label{flex:1 1 100%;font:600 .86rem/1.3 var(--body,sans-serif);color:var(--tinta,#22271F)}'
   + '.scn-range{flex:1 1 220px;accent-color:var(--oro,#C29B40);height:32px;margin:0}'
   + '.scn-out{flex:0 0 auto;min-width:7.5em;text-align:right;font:600 1rem/1.3 var(--body,sans-serif);color:var(--verde,#14352A)}'
+  // QA Nov 9: on narrow screens the slider readout always takes its own line, so a long label (the car's 17 sides) never
+  // changes the control row's height while the reader drags (it jumped 76 to 105 px on a phone)
+  + '@media(max-width:700px){.scn-slider .scn-out{flex:1 1 100%;min-width:0;text-align:left}}'
   + '.scn-tab,.scn-lbtn{min-height:40px;padding:8px 14px;border-radius:999px;border:1px solid var(--arena-oscura,#E7DDC7);background:#fff;color:var(--tinta,#22271F);font:500 .9rem/1.2 var(--body,sans-serif);cursor:pointer}'
   + '.scn-tab[aria-pressed="true"]{background:var(--verde,#14352A);border-color:var(--verde,#14352A);color:#FDFBF6}'
   + '.scn-lbtn{display:inline-flex;align-items:center;gap:8px;text-align:left}'
@@ -137,6 +140,7 @@ for (const f of fs.readdirSync(ROOT)) {
   if (!h.includes('/js/scenes.v3.js')) h = h.replace(/<\/body>/, SCRIPT + '\n</body>');
   if (CFG.scenes[info.key].live3d && !h.includes('id="pp-scene3d-loader"')) h = h.replace(/<\/body>/, LOADER3D + '\n</body>');
   if (!h.includes('id="pp-scenes"')) h = h.replace(/<\/head>/, CSS + '\n</head>');
+  else h = h.replace(/<style id="pp-scenes">[\s\S]*?<\/style>/, (m) => (m === CSS ? m : CSS));   // an older scene style is replaced
   if (h !== before) { fs.writeFileSync(p, h); touched++; } else skipped++;
 }
 process.stdout.write(`add-scenes: ${touched} page(s) changed, ${skipped} already done${missing.length ? ', NO SUMMARY BOX: ' + missing.join(' ') : ''}\n`);
