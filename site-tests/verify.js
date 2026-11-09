@@ -190,6 +190,10 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     fs.writeFileSync(path.join(OUT, 'crawl.json'), JSON.stringify({ pages: Object.fromEntries(Object.entries(pages).map(([k, v]) => [k, { ...v, ids: v.ids.size }])), linkStatus: st }, null, 1));
   }
 
+  if (want('imgclean')) {   // QA Nov 9, 2.1: no C2PA provenance manifest in any image (site-tests/img-clean.js)
+    const r = require('./img-clean.js').scan(path.join(__dirname, '..'));
+    rec('Images', 'No image carries a C2PA provenance manifest (img/ and the share cards)', r.hits.length === 0, r.hits.length ? r.hits.slice(0, 20).join(', ') : `${r.files} images clean`);
+  }
   if (want('img')) {
     const p = await freshPage(); await p.goto(BASE + '/');
     await p.locator('img.foto').scrollIntoViewIfNeeded();
