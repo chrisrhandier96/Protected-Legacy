@@ -752,7 +752,7 @@ for l in ("es", "en"):
         emp = "No encontramos ese término. Pruebe con otra palabra o en inglés."
     else:
         h1, dek = "Insurance glossary in English and Spanish", "The terms in your policies, explained in plain English with their Spanish equivalent, so nothing gets lost in translation between your family and your advisors."
-        title, meta = "English and Spanish insurance glossary | Patrimonio Protegido", f"{len(terms)} insurance terms explained in English with their Spanish equivalent: hurricane deductible, umbrella policy, NFIP, agreed value and more."
+        title, meta = "English-Spanish insurance glossary | Patrimonio Protegido", f"{len(terms)} insurance terms explained in English with their Spanish equivalent: hurricane deductible, umbrella policy, NFIP, agreed value and more."
         emp = "No term matches. Try another word or search in Spanish."
     body = f"""
 <header class="head"><div class="wrap">{crumbs(l, [(p_hub(l), t['guides']), (None, t['glossary'])])}<span class="kicker">{t['glossary']} · {len(terms)}</span><h1>{h1}</h1><p class="dek">{dek}</p></div></header>
@@ -840,7 +840,7 @@ function upd(){var d=0;box.forEach(function(b){b.closest('li').classList.toggle(
 box.forEach(function(b){b.checked=!!s[b.dataset.i];b.addEventListener('change',function(){s[b.dataset.i]=b.checked;try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}upd();});});
 document.getElementById('clr').addEventListener('click',function(){s={};try{localStorage.removeItem(K)}catch(e){}box.forEach(function(b){b.checked=false});upd();});upd();})();"""
     ld = [bc_ld(l, [(p_hub(l), t["guides"]), (path, tl)])]
-    written.append(write(path, page(l, path, alt, title + " | Patrimonio Protegido", meta, body, "tool", ld, js)))
+    written.append(write(path, page(l, path, alt, hur.get("seo_title_" + l, title) + " | Patrimonio Protegido", meta, body, "tool", ld, js)))
     if l == "es": sitemap.append((path, alt))
 
 # ---------- family inventory ----------
