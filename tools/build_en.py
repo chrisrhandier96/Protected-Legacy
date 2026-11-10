@@ -70,7 +70,10 @@ def rep(old, new, count=1):
 
 rep('<html lang="es">', '<html lang="en">')
 t0 = html[html.find("<title>"):html.find("</title>") + 8]
-rep(t0, "<title>Patrimonio Protegido | Christian R. González · FL Insurance</title>")   # 60 characters or less (Nov 9)
+EN_TITLE = "Patrimonio Protegido | Christian R. González · FL Insurance"   # 60 characters or less (Nov 9)
+if "en:'" + EN_TITLE + "'" not in html:
+    sys.exit("build_en: the English title in setLang's PP_TITLE (index.html) does not match EN_TITLE")
+rep(t0, "<title>" + EN_TITLE + "</title>")
 d0 = html[html.find('<meta name="description"'):]
 d0 = d0[:d0.find(">") + 1]
 rep(d0, '<meta name="description" content="Guides in English and Spanish to protect what your family built in Florida: home, flood, auto, boats, collections and legacy.">')
@@ -99,5 +102,5 @@ html = re.sub(r'<a\b[^>]*data-href-en="[^"]+"[^>]*>', _swap_href, html)
 
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 header = "<!-- GENERATED from /index.html by tools/build_en.py. Do not edit by hand. -->\n"
-open(OUT, "w", encoding="utf-8").write(html.replace("<!DOCTYPE html>\n", "<!DOCTYPE html>\n" + header, 1))
+open(OUT, "w", encoding="utf-8", newline="\n").write(html.replace("<!DOCTYPE html>\n", "<!DOCTYPE html>\n" + header, 1))
 print(f"en.html written: {len(kept)} elements translated, {len(jobs) - len(kept)} nested skipped")
