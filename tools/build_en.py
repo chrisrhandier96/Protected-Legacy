@@ -70,15 +70,23 @@ def rep(old, new, count=1):
 
 rep('<html lang="es">', '<html lang="en">')
 t0 = html[html.find("<title>"):html.find("</title>") + 8]
-rep(t0, "<title>Patrimonio Protegido | Christian R. González · Risk education for high-net-worth Hispanic families in Florida</title>")
+rep(t0, "<title>Patrimonio Protegido | Christian R. González · FL Insurance</title>")   # 60 characters or less (Nov 9)
 d0 = html[html.find('<meta name="description"'):]
 d0 = d0[:d0.find(">") + 1]
-rep(d0, '<meta name="description" content="Bilingual education on protecting what your family built in Florida: homes, collections, boats, aviation, liability and legacy. Verifiable data, in your language. Licensed Florida agent.">')
+rep(d0, '<meta name="description" content="Guides in English and Spanish to protect what your family built in Florida: home, flood, auto, boats, collections and legacy.">')
 o0 = html[html.find('<meta property="og:description"'):]
 o0 = o0[:o0.find(">") + 1]
 rep(o0, '<meta property="og:description" content="Hispanic wealth in the U.S. keeps growing. Protection did not keep up. Risk education in your language, backed by verifiable data.">')
 rep('<meta property="og:locale" content="es_US">', '<meta property="og:locale" content="en_US">\n<meta property="og:locale:alternate" content="es_US">')
 rep('<link rel="canonical" href="' + BASE + '/">', '<link rel="canonical" href="' + BASE + '/en/">')
+# the share tags, the honeypot label and the plates' alt text (were restored by hand after every build until Nov 9)
+rep('<meta property="og:url" content="' + BASE + '/">', '<meta property="og:url" content="' + BASE + '/en/">')
+rep('<meta property="og:image" content="' + BASE + '/og.png">', '<meta property="og:image" content="' + BASE + '/og-en.png">')
+rep('<meta name="twitter:image" content="' + BASE + '/og.png">', '<meta name="twitter:image" content="' + BASE + '/og-en.png">')
+rep('<label>No llenar <input name="bot-field"', '<label>Do not fill <input name="bot-field"')
+html, _n_alt = re.subn(r'alt="[^"]*"( data-alt-en="([^"]*)")', lambda m: 'alt="' + m.group(2) + '"' + m.group(1), html)
+if _n_alt != 5:
+    sys.exit(f'build_en: expected 5 plates with data-alt-en, found {_n_alt}')
 rep('<button id="btn-es" class="active" onclick="setLang(\'es\')">ES</button>', '<button id="btn-es" onclick="setLang(\'es\')">ES</button>')
 rep('<button id="btn-en" onclick="setLang(\'en\')">EN</button>', '<button id="btn-en" class="active" onclick="setLang(\'en\')">EN</button>')
 

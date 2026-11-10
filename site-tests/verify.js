@@ -190,6 +190,46 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
     fs.writeFileSync(path.join(OUT, 'crawl.json'), JSON.stringify({ pages: Object.fromEntries(Object.entries(pages).map(([k, v]) => [k, { ...v, ids: v.ids.size }])), linkStatus: st }, null, 1));
   }
 
+  if (want('imgclean')) {   // QA Nov 9, 2.1: no C2PA provenance manifest in any image (site-tests/img-clean.js)
+    const r = require('./img-clean.js').scan(path.join(__dirname, '..'));
+    rec('Images', 'No image carries a C2PA provenance manifest (img/ and the share cards)', r.hits.length === 0, r.hits.length ? r.hits.slice(0, 20).join(', ') : `${r.files} images clean`);
+  }
+  if (want('csp')) {   // QA Nov 9, 7.3: the enforced Content Security Policy blocks nothing the site itself needs
+    // The header comes from netlify.toml (the local server does not send it), added here to every HTML response.
+    // External hosts are blocked so the run stays offline; a blocked request is a network failure, not a violation.
+    // upgrade-insecure-requests is left out on plain-http localhost runs (it would rewrite every local URL to https).
+    const toml = fs.readFileSync(path.join(__dirname, '..', 'netlify.toml'), 'utf8');
+    let csp = (toml.match(/^\s*Content-Security-Policy\s*=\s*"([^"]+)"/m) || [])[1];
+    if (!csp) rec('CSP', 'netlify.toml has a Content-Security-Policy header', false, 'not found');
+    else {
+      if (BASE.startsWith('http://')) csp = csp.split(';').map((d) => d.trim()).filter((d) => d && d !== 'upgrade-insecure-requests').join('; ');
+      const host = new URL(BASE).host;
+      const urls = [...new Set([...locs.map((u) => new URL(u).pathname), '/gracias.html', '/pp-csp-check-404'])];
+      const bad = []; let pages = 0, blocked = 0;
+      for (const u of urls) {
+        const c = await browser.newContext({ ...DESKTOP, locale: 'es-US' });
+        await c.route('**/*', async (route) => {
+          const r = route.request(), url = new URL(r.url());
+          if (url.host !== host) { blocked++; return route.abort(); }
+          if (!['GET', 'HEAD'].includes(r.method())) return route.abort();
+          if (r.resourceType() !== 'document') return route.continue();
+          const resp = await route.fetch();
+          return route.fulfill({ response: resp, headers: { ...resp.headers(), 'content-security-policy': csp } });
+        });
+        await c.addInitScript(() => { window.__cspv = []; document.addEventListener('securitypolicyviolation', (e) => window.__cspv.push(`${e.effectiveDirective} ${e.blockedURI || '(inline)'} ${e.sourceFile ? e.sourceFile.split('/').pop() + ':' + e.lineNumber : ''}`.trim())); });
+        const p = await c.newPage(); const cons = [];
+        p.on('console', (m) => { if (/Content Security Policy/i.test(m.text())) cons.push(m.text().slice(0, 160)); });
+        try {
+          await p.goto(BASE + u, { waitUntil: 'load', timeout: 30000 }); await sweep(p); await p.waitForTimeout(600);
+          const v = await p.evaluate(() => window.__cspv);
+          if (v.length || cons.length) bad.push(`${u}: ${[...new Set([...v, ...cons])].slice(0, 4).join(' | ')}`);
+          pages++;
+        } catch (e) { bad.push(`${u}: ${e.message.split('\n')[0]}`); }
+        await c.close();
+      }
+      rec('CSP', `No Content Security Policy violation on any page (header from netlify.toml, external hosts blocked)`, bad.length === 0 && pages === urls.length, `${pages}/${urls.length} pages, ${blocked} external requests blocked` + (bad.length ? '; ' + bad.slice(0, 12).join(' || ') : ''));
+    }
+  }
   if (want('img')) {
     const p = await freshPage(); await p.goto(BASE + '/');
     await p.locator('img.foto').scrollIntoViewIfNeeded();
