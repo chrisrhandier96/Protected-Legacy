@@ -2,7 +2,7 @@
   "key": "avi",
   "slug_es": "aviacion-privada",
   "slug_en": "private-aviation",
-  "updated": "2026-11-03",
+  "updated": "2026-11-10",
   "es": {
     "title": "Seguro de avión privado y drones: guía para familias",
     "meta": "Seguro de avión privado: casco, responsabilidad por pasajero, garantías de piloto, propiedad fraccionada, jet cards, chárter y drones con las reglas de la FAA.",
@@ -106,6 +106,9 @@
           },
           {
             "p": "En un vuelo chárter, en cambio, el titular del certificado de la Parte 135 es responsable del control operacional [5]. La familia viaja como cliente y pasajera, y su protección principal es el seguro de responsabilidad del operador. Las jet cards varían: muchas son acceso prepagado a vuelos que realiza un operador certificado, otras están ligadas a un programa fraccionado y algunas las vende un intermediario que no opera aviones. El contrato indica quién opera cada vuelo."
+          },
+          {
+            "p": "Las normas federales fijan un mínimo de lo que debe tener un operador de vuelos chárter. Según el Título 14 del CFR, Parte 205, un operador de taxi aéreo debe tener un seguro de responsabilidad civil de al menos $75,000 por pasajero (hasta $75,000 por el 75% de los asientos de pasajeros de la aeronave), $75,000 por persona y $300,000 por aeronave para terceros, y $100,000 por daños a la propiedad en cada evento [14]. Son mínimos legales, no una medida de lo que cuesta un accidente grave, así que es razonable preguntarle al operador qué límites tiene en realidad."
           },
           {
             "table": {
@@ -317,6 +320,9 @@
             "p": "On a charter flight, by contrast, the Part 135 certificate holder is responsible for operational control [5]. The family travels as a customer and passenger, and its main protection is the operator's liability insurance. Jet cards vary: many are prepaid access to flights run by a certificated operator, others are tied to a fractional program, and some are sold by a broker that does not operate aircraft. The contract states who operates each flight."
           },
           {
+            "p": "Federal rules set a floor for what a charter operator must carry. Under 14 CFR Part 205, an air taxi operator must hold liability insurance of at least $75,000 per passenger (up to $75,000 times 75% of the aircraft's passenger seats), $75,000 per person and $300,000 per aircraft for third parties, and $100,000 for property damage in each occurrence [14]. Those are legal minimums, not a measure of what a serious accident costs, so it is reasonable to ask the operator what limits it actually carries."
+          },
+          {
             "table": {
               "head": [
                 "Model",
@@ -486,6 +492,11 @@
       "n": 13,
       "label": "FAA, Certificated Remote Pilots including Commercial Operators (Part 107)",
       "url": "https://www.faa.gov/uas/commercial_operators"
+    },
+    {
+      "n": 14,
+      "label": "eCFR, 14 CFR Part 205, Aircraft Accident Liability Insurance (current as of Oct 15, 2026)",
+      "url": "https://www.ecfr.gov/current/title-14/chapter-II/subchapter-A/part-205"
     }
   ]
 }

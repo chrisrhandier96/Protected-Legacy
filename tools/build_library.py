@@ -471,6 +471,7 @@ faq = load("content/extras/faq.json")
 hur = load("content/extras/hurricane.json")
 inv = load("content/extras/inventory.json")
 written, sitemap = [], []
+UPD = {}  # a guide's own "updated" date, used as its sitemap lastmod
 
 def minutes(g, l):
     txt = " ".join(plain(json.dumps(g[l], ensure_ascii=False)).split())
@@ -673,6 +674,7 @@ setTimeout(go,1700);}).catch(function(){B.disabled=false;B.textContent=T;err(E.g
         if '"video"' in json.dumps(c["sections"]): body += '\n<script src="/js/vexp.v1.js" defer></script>'
         written.append(write(path, page(l, path, alt, c["title"], c["meta"], body, "guide", ld, js, og_img=f"/img/og/{k}-{l}.jpg", og_alt=plain(c["h1"]), head_extra=head_extra)))
         if l == "es": sitemap.append((path, alt))
+        UPD[path] = g["updated"]
 
 # ---------- hub ----------
 tools_meta = {
@@ -885,7 +887,7 @@ LASTMOD = datetime.date.today().isoformat()  # build date
 def url_block(loc, es, en, pri):
     return (f"  <url>\n    <loc>{BASE}{loc}</loc>\n    <xhtml:link rel=\"alternate\" hreflang=\"es\" href=\"{BASE}{es}\"/>\n"
             f"    <xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"{BASE}{en}\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"{BASE}{es}\"/>\n"
-            f"    <lastmod>{LASTMOD}</lastmod>\n    <priority>{pri}</priority>\n  </url>\n")
+            f"    <lastmod>{UPD.get(loc, LASTMOD)}</lastmod>\n    <priority>{pri}</priority>\n  </url>\n")
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
 sm += url_block("/", "/", "/en/", "1.0") + url_block("/en/", "/", "/en/", "1.0")
 for es, en in sitemap:
@@ -895,3 +897,22 @@ sm += f"  <url>\n    <loc>{BASE}/privacidad.html</loc>\n    <priority>0.3</prior
 sm += f"  <url>\n    <loc>{BASE}/terminos.html</loc>\n    <lastmod>2026-11-04</lastmod>\n    <priority>0.3</priority>\n  </url>\n</urlset>\n"   # one bilingual page, written by hand on Nov 4
 open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8", newline="\n").write(sm)  # LF on every OS
 print(f"library written: {len(written)} pages, sitemap {sm.count('<url>')} urls")
+
+# ---------- llms.txt: a plain map of the library for AI search assistants ----------
+L = ["# Patrimonio Protegido (Protected Legacy)", "",
+     "> Bilingual (Spanish first, English) educational guides on property and casualty risk for families with significant assets in Florida. "
+     "Written by Christian R. González, licensed Florida insurance agent (license W606240). Every number carries a footnote to a primary source. "
+     "Educational content, not insurance advice: coverage varies by policy.", "",
+     f"- [Inicio (español)]({BASE}/): self-assessment, data and the 14 domains of family risk",
+     f"- [Home (English)]({BASE}/en/)", ""]
+for l, head in (("en", "## Guides (English)"), ("es", "## Guías (español)")):
+    L.append(head)
+    for k in ORDER:
+        c = guides[k][l]
+        L.append(f"- [{plain(c['h1'])}]({BASE}{p_guide(guides[k], l)}): {plain(c['meta'])}")
+    L.append("")
+L += ["## Reference",
+      f"- [Glosario español e inglés]({BASE}/glosario/)", f"- [English-Spanish glossary]({BASE}/en/glossary/)",
+      f"- [Preguntas frecuentes]({BASE}/preguntas-frecuentes/)", f"- [FAQ]({BASE}/en/faq/)", ""]
+open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8", newline="\n").write("\n".join(L))
+print(f"llms.txt written: {len(ORDER) * 2} guides")
