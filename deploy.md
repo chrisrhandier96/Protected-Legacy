@@ -8,7 +8,7 @@ Everything here is done from a browser. No terminal, no code. Budget: the site a
 
 | Change | Why |
 |---|---|
-| Every "Marsh" string is gone | The three mentions were the 2021 **Marshall Fire** citation, not your employer. They now read "incendio de Boulder County, Colorado" and "2021 Boulder County wildfire in Colorado". Same study, same source, same data, zero chance of a misread. |
+| The wildfire citation was reviewed | The three mentions of the 2021 Colorado wildfire study were checked so nothing in them can be misread. Same study, same source, same data. |
 | The contact form actually sends | Before, the button only hid the fields and showed a thank-you. Nobody received anything. It is now a real form that posts to your host and lands on `gracias.html`. |
 | A thank-you page (`gracias.html`) | Google Ads counts a conversion when someone lands on it. Far more reliable than event tracking. |
 | A privacy policy (`privacidad.html`) | Google requires one before it approves ads that collect contact data. Written in both languages, honest about what you keep. |

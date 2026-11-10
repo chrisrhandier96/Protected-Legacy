@@ -886,5 +886,5 @@ for es, en in sitemap:
     sm += url_block(es, es, en, pri) + url_block(en, es, en, pri)
 sm += f"  <url>\n    <loc>{BASE}/privacidad.html</loc>\n    <priority>0.3</priority>\n  </url>\n"
 sm += f"  <url>\n    <loc>{BASE}/terminos.html</loc>\n    <lastmod>2026-11-04</lastmod>\n    <priority>0.3</priority>\n  </url>\n</urlset>\n"   # one bilingual page, written by hand on Nov 4
-open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(sm)
+open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8", newline="\n").write(sm)  # LF on every OS
 print(f"library written: {len(written)} pages, sitemap {sm.count('<url>')} urls")

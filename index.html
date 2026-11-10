@@ -1270,8 +1270,10 @@ function toggleMenu(){
 }
 
 /* ===== LANGUAGE ===== */
+var PP_TITLE={es:'Patrimonio Protegido | Christian R. González · Seguros en FL',en:'Patrimonio Protegido | Christian R. González · FL Insurance'};
 function setLang(l){
   lang=l;document.documentElement.lang=l;
+  if(PP_TITLE[l])document.title=PP_TITLE[l]; /* el titulo de la pestana sigue al idioma */
   /* la direccion sigue al idioma: / en espanol, /en/ en ingles */
   try{var want=l==='en'?'/en/':'/';if(location.pathname!==want&&(location.pathname==='/'||location.pathname==='/index.html'||location.pathname.indexOf('/en')===0)){
     var q=location.search.replace(/([?&])lang=(en|es)(&|$)/,'$1').replace(/[?&]$/,'');history.replaceState(null,'',want+q+location.hash);}}catch(e){}

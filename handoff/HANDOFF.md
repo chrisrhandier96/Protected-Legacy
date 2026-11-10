@@ -27,7 +27,7 @@ The work order itself is in `handoff/work-order-pp-library-expansion.md` (Parts 
 4. **No underwriting acceptance:**
    - Nothing about who insurers accept, decline or find eligible, or what it takes to qualify.
    - Legal consumer rights are fine: the Fla. Stat. 627.7011 roof-age rule, written UM rejection.
-5. **Employer name:** never name Christian's employer. "Marshall Fire" (the 2021 Colorado wildfire) is **not** the employer; scan with `\bMarsh\b`.
+5. **Employer name:** never name Christian's employer, on the site or in this repo's notes, commit messages and pull requests. The name check in `tools/check_content.py` (it gates every build) and `site-tests/verify.js` already scans every page for it, together with insurer brands.
 6. **Fact-checked wording:** don't change wording, numbers or legal/insurance statements that were already fact-checked unless a fact-check or Christian's rules require it, and report every such change.
 7. **The contact form:** never submit it, in any test. It fires a Google Ads conversion. The test suite already aborts POSTs and analytics beacons.
 8. **House style:**
@@ -46,12 +46,13 @@ The work order itself is in `handoff/work-order-pp-library-expansion.md` (Parts 
 - `tools/check_content.py`: schema, parity, footnote and word checks, plus scans for carriers, sales phrases, insurer limits and acceptance. **Run it before every build:** `python3 tools/check_content.py`.
 - Build (never hand-write guide HTML):
   ```
-  python3 tools/build_library.py && python3 tools/flatten.py && node tools/postbuild.js
+  python3 tools/build_library.py && python3 tools/build_en.py && python3 tools/flatten.py && node tools/postbuild.js
   ```
+  - Since Nov 9, 2026 this chain is reproducible: a second run changes nothing, on Windows and on Linux (every writer uses LF, and `.gitattributes` keeps text files LF).
   - `flatten.py` writes the flat `*.html` files and the rewrites block in `netlify.toml`.
   - `postbuild.js` runs the injectors in `tools/post/`: the side panel (`library-panel.html`), logo, og tags, fixes and CSS layers. It needs only Node's built-in modules.
-- **Homepages `index.html` and `en.html` are edited directly, with the same edit in both files.**
-  - Do **not** run `tools/build_en.py`: it would drop the EN-specific tags in `en.html`.
+- **Homepage: edit `index.html` only.** `en.html` is generated from it by `tools/build_en.py` (English title, description, share tags, honeypot label and plate alts are set there since Nov 9, 2026). Never edit `en.html` by hand.
+  - The tab title follows the language switch: the two titles live in `PP_TITLE` next to `setLang` in `index.html`; `build_en.py` stops if its English title does not match.
 - `netlify.toml`:
   - Security and cache headers, 200 rewrites, and 404 rules for `/content/* /tools/* /ads/* /site-tests/* /handoff/*`.
   - **Never add `/x -> /x/` 301 rules**: Netlify matches with or without the slash, so they loop.

@@ -852,21 +852,23 @@ const inView = (p, sel) => p.evaluate(s => { const r = document.querySelector(s)
       rec('3D', '/?no3d=1: no request for /js/hero3d, fallback reason flag', hits.length === 0 && ev.length === 1 && ev[0].reason === 'flag', `requests=${hits.length} ready=${JSON.stringify(ev[0] || null)}`); await p.ctx.close(); }
     // 4 + 7. every guide and tool page: no 3D bundle, weight inside the budget (77 KiB + 8), layers figure only on umbrella and flood
     { const pages = locs.map(u => new URL(u).pathname).filter(x => /^\/(guias|en\/guides|herramientas|en\/tools)\/[^/]+\/$/.test(x));
-      const bad = [], figs = {}, weights = [], scnW = [], liveW = [];
+      const bad = [], figs = {}, weights = [], scnW = [], liveW = [], cfW = [];
       for (const pth of pages) {
-        const p = await freshPage(); const hits = [], sizes = [], scn = [], live = [];
+        const p = await freshPage(); const hits = [], sizes = [], scn = [], live = [], cf = [];
         p.on('request', q => { if (/\/js\/hero3d/.test(q.url())) hits.push(q.url()); });
-        const onResp = async rs => { try { const u = rs.request().url(); if (!u.startsWith(BASE)) return; const b = await rs.body(); const ct = rs.headers()['content-type'] || ''; const n = /text|javascript|json|svg|xml/.test(ct) ? zlib.gzipSync(b).length : b.length; (/\/js\/casa3d|\/img\/scenes\/3d\//.test(u) ? live : /\/img\//.test(u) ? scn : sizes).push(n); } catch (e) {} };
+        const onResp = async rs => { try { const u = rs.request().url(); if (!u.startsWith(BASE)) return; const b = await rs.body(); const ct = rs.headers()['content-type'] || ''; const n = /text|javascript|json|svg|xml/.test(ct) ? zlib.gzipSync(b).length : b.length; (u.startsWith(BASE + '/cdn-cgi/') ? cf : /\/js\/casa3d|\/img\/scenes\/3d\//.test(u) ? live : /\/img\//.test(u) ? scn : sizes).push(n); } catch (e) {} };
         p.on('response', onResp); await p.goto(BASE + pth, { waitUntil: 'load' }); await p.waitForTimeout(900); p.off('response', onResp);
         // Nov 2026: the 85 KiB budget (Oct) is the page's code, text and fonts. Images (header photo, scene frames) have their
         // own cap; the live 3D (casa3d bundle and models, loaded once a scene is near) is only reported.
+        // Nov 10 2026: on the live site Cloudflare adds its own files under /cdn-cgi/ to every page (its bot check script,
+        // about 16 KiB). No build of the site can change them, so they are reported and not counted in the budget.
         const kb = Math.round(sizes.reduce((a, b) => a + b, 0) / 1024); weights.push(kb);
-        const skb = Math.round(scn.reduce((a, b) => a + b, 0) / 1024); scnW.push(skb); liveW.push(Math.round(live.reduce((a, b) => a + b, 0) / 1024));
+        const skb = Math.round(scn.reduce((a, b) => a + b, 0) / 1024); scnW.push(skb); liveW.push(Math.round(live.reduce((a, b) => a + b, 0) / 1024)); cfW.push(Math.round(cf.reduce((a, b) => a + b, 0) / 1024));
         const f = await p.evaluate(() => { const fs = [...document.querySelectorAll('.fig3d')]; return fs.map(x => { const sec = x.closest('section'); const cl = sec ? sec.cloneNode(true) : null; if (cl) cl.querySelectorAll('sup.fn, .fig3d').forEach(e => e.remove()); const txt = (cl ? cl.textContent : '').replace(/\s+/g, ' '); const lab = (x.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim(); return { role: x.getAttribute('role'), labelInSection: txt.includes(lab.replace(/[.]$/, '')) && lab.length > 40 }; }); });
         figs[pth] = f; if (hits.length) bad.push(`${pth}: hero3d requested`); if (kb > 85) bad.push(`${pth}: ${kb} KiB`); if (skb > 160) bad.push(`${pth}: images ${skb} KiB`);
         await p.ctx.close();
       }
-      rec('3D', 'Every guide and tool page: no /js/hero3d request, code, text and fonts within 85 KiB (77 + 8), images within 160 KiB', bad.length === 0 && pages.length >= 32, `${pages.length} pages, ${Math.min(...weights)} to ${Math.max(...weights)} KiB; images ${Math.min(...scnW)} to ${Math.max(...scnW)} KiB; live 3D ${Math.min(...liveW)} to ${Math.max(...liveW)} KiB` + (bad.length ? '; ' + bad.join(' | ') : ''));
+      rec('3D', 'Every guide and tool page: no /js/hero3d request, own code, text and fonts within 85 KiB (77 + 8), images within 160 KiB', bad.length === 0 && pages.length >= 32, `${pages.length} pages, ${Math.min(...weights)} to ${Math.max(...weights)} KiB; images ${Math.min(...scnW)} to ${Math.max(...scnW)} KiB; live 3D ${Math.min(...liveW)} to ${Math.max(...liveW)} KiB; Cloudflare /cdn-cgi/ files (reported, not counted) ${Math.min(...cfW)} to ${Math.max(...cfW)} KiB` + (bad.length ? '; ' + bad.join(' | ') : ''));
       const withFig = Object.entries(figs).filter(([, v]) => v.length); const expect = ['/guias/umbrella-responsabilidad/', '/en/guides/umbrella-liability/', '/guias/inundacion/', '/en/guides/flood/'];
       const okFig = expect.every(e => figs[e] && figs[e].length === 1 && figs[e][0].role === 'img' && figs[e][0].labelInSection) && withFig.length === 4;
       rec('3D', 'Layers figure: once on the umbrella and flood guides (ES + EN), role img, aria-label is the sentence of its section, nowhere else', okFig, withFig.map(([k, v]) => `${k} x${v.length} label-in-section=${v[0].labelInSection}`).join(' | '));
