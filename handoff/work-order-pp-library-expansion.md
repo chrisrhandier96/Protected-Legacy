@@ -14,7 +14,7 @@
 ## 1. House rules (apply to every word you write)
 
 - **Educational first, sales quiet.** Christian is a licensed Florida agent (license W606240). He *is* open to quotes and to selling, but it should never be loud. Allowed: one soft closing line per guide such as "If you want a second look at how your family is set up, write to me." Not allowed: "call now", "get a quote today", discounts, urgency, pricing promises.
-- **No carrier names. No employer name.** No "Marsh", no insurer brands, anywhere.
+- **No carrier names. No employer name.** No insurer or broker brands, anywhere.
 - **No em dashes** in site copy. Formal *usted* in Spanish. Full ES/EN parity (same sections, same facts, same numbers).
 - **Every number and every statute gets a footnote** to a primary source: FEMA, NFIP, the Florida Statutes, the Florida OIR, FBI IC3, FTC, the U.S. State Department, NAIC, III. If a figure can't be verified from a primary source, leave it out and list it in the report as "dropped: unverified".
 - **Florida-specific** wherever the law or rules are state-specific.

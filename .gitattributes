@@ -1,0 +1,21 @@
+# Text files are stored and checked out with LF on every OS, so a build on Windows and a build on Linux give the same bytes.
+*.html  text eol=lf
+*.xml   text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.mjs   text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.py    text eol=lf
+*.toml  text eol=lf
+*.txt   text eol=lf
+*.svg   text eol=lf
+# Binary assets: never converted
+*.avif  binary
+*.webp  binary
+*.png   binary
+*.jpg   binary
+*.glb   binary
+*.woff2 binary
+*.mp4   binary
+*.webm  binary
