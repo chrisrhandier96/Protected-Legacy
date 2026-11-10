@@ -4,7 +4,7 @@
   "slug_en": "flood",
   "updated": "2026-11-03",
   "es": {
-    "title": "Seguro de inundación en Florida: NFIP y exceso",
+    "title": "Póliza de inundación residencial en Florida: NFIP y exceso",
     "meta": "Cómo funciona el seguro de inundación en Florida: por qué la póliza de propietario lo excluye, límites del NFIP, exceso, período de espera y exclusiones.",
     "kicker": "Guía · Inundación",
     "h1": "Inundación y marejada ciclónica: cómo funciona el seguro de inundación en Florida",
@@ -76,6 +76,12 @@
         "blocks": [
           {
             "p": "En una casa cuya reconstrucción costaría $2 millones, un límite de $250,000 para el edificio cubre una fracción de una pérdida total. El seguro de inundación de exceso se ubica por encima de una póliza primaria, por lo general la del NFIP, y paga las pérdidas cubiertas que superan el límite primario. Una póliza privada primaria puede reemplazar la del NFIP y, según sus términos, ofrecer límites más altos, costo de reemplazo para el contenido o cobertura de gastos de vida. Los prestamistas suelen exigir solo el monto del préstamo, hasta el máximo del NFIP, que puede quedar muy por debajo del valor de la casa [3]."
+          },
+          {
+            "video": {
+              "src": "flood-gap.v1",
+              "cap": "Una reconstrucción de $2,000,000 frente al límite de $250,000 del NFIP para el edificio de una vivienda [1]: la diferencia es lo que el seguro de exceso o privado busca cubrir."
+            }
           },
           {
             "p": "Las pólizas difieren en aspectos importantes, así que compárelas en los mismos puntos:"
@@ -354,6 +360,12 @@
         "blocks": [
           {
             "p": "On a home that would cost $2 million to rebuild, a $250,000 building limit covers a fraction of a total loss. Excess flood insurance sits above a primary flood policy, usually the NFIP, and pays covered losses beyond the primary limit. A private primary flood policy can replace the NFIP policy and, depending on its terms, may offer higher limits, replacement cost on contents or coverage for living expenses. Lenders typically require only the loan amount, up to the NFIP maximum, which can be far below the value of the home [3]."
+          },
+          {
+            "video": {
+              "src": "flood-gap.v1",
+              "cap": "A $2,000,000 rebuild against the NFIP's $250,000 building limit for a home [1]: the difference is what excess or private flood insurance is meant to cover."
+            }
           },
           {
             "p": "Policies differ in ways that matter, so compare them on the same points:"

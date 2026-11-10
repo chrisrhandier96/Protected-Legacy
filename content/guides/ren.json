@@ -28,6 +28,7 @@
       ]},
       {"id": "desocupacion", "h2": "Cuando la casa queda vacía durante la obra", "blocks": [
         {"p": "El III explica que la mayoría de las pólizas de hogar incluyen una cláusula de desocupación, que limita o excluye la cobertura si la propiedad queda sin ocupantes, por lo general, entre 30 y 60 días consecutivos [3]. Una familia que se muda a otra casa durante una remodelación larga puede caer en ese supuesto sin darse cuenta."},
+        {"video": {"src": "vacancy.v1", "cap": "La mayoría de las pólizas de hogar limitan o excluyen la cobertura si la propiedad queda sin ocupantes, por lo general entre 30 y 60 días consecutivos [3]."}},
         {"p": "El III recomienda avisar siempre a la aseguradora si la casa estará desocupada por un período prolongado, y explica que existen pólizas para viviendas desocupadas y endosos de desocupación diseñados para esos casos [3]. Revise también si la póliza exige cerrar el agua, mantener la temperatura o hacer visitas regulares mientras nadie vive en la casa."}
       ]},
       {"id": "contratistas", "h2": "Contratistas, subcontratistas y trabajadores en la obra", "blocks": [
@@ -104,6 +105,7 @@
       ]},
       {"id": "vacancy", "h2": "When the home sits empty during construction", "blocks": [
         {"p": "The III explains that most homeowners policies include a vacancy clause, which limits or excludes coverage if the property is unoccupied for typically 30 to 60 consecutive days [3]. A family that moves to another home during a long renovation can fall into that situation without noticing."},
+        {"video": {"src": "vacancy.v1", "cap": "Most homeowners policies limit or exclude coverage once the home is unoccupied, usually for 30 to 60 consecutive days [3]."}},
         {"p": "The III advises always notifying the insurer if the home will be unoccupied for an extended period, and explains that vacant home policies and vacancy endorsements exist for those cases [3]. Also check whether the policy requires shutting off the water, maintaining the temperature or making regular visits while no one lives in the home."}
       ]},
       {"id": "contractors", "h2": "Contractors, subcontractors and workers on site", "blocks": [
