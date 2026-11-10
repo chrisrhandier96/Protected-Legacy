@@ -2,7 +2,7 @@
   "key": "kr",
   "slug_es": "secuestro-y-extorsion",
   "slug_en": "kidnap-ransom",
-  "updated": "2026-09-25",
+  "updated": "2026-11-10",
   "related": ["cyb", "lia", "emp"],
   "es": {
     "title": "Seguro de secuestro y extorsión (K&R) para familias",
@@ -43,6 +43,7 @@
       ]},
       {"id": "viajes", "h2": "Viajes y niveles de alerta del Departamento de Estado", "blocks": [
         {"p": "El Departamento de Estado de EE. UU. clasifica cada destino en cuatro niveles: 1, tomar precauciones normales; 2, mayor precaución; 3, reconsiderar el viaje; y 4, no viajar [4]. Además, usa indicadores de riesgo específicos, entre ellos uno de secuestro o toma de rehenes, marcado con la letra K [4]."},
+        {"video": {"src": "travel-levels.v1", "cap": "El Departamento de Estado clasifica cada destino en cuatro niveles y marca el riesgo de secuestro con una K [4]; algunas pólizas excluyen o limitan países con ciertos niveles de alerta."}},
         {"p": "Estos avisos son un buen punto de partida para conversar con su agente: algunas pólizas excluyen o limitan países con ciertos niveles de alerta, y otras piden avisar antes de viajar a ellos. Para la familia, también son una guía para decidir qué viajes requieren preparación adicional."},
         {"ul": [
           "Revise el aviso del Departamento de Estado de cada destino antes de reservar.",
@@ -85,7 +86,7 @@
     ]
   },
   "en": {
-    "title": "Kidnap and Ransom (K&R) Insurance for Families",
+    "title": "K&R Insurance: Kidnap and Ransom Coverage for Families",
     "meta": "What kidnap, ransom and extortion (K&R) insurance is, who it is for, which events it covers, why response consultants and policy confidentiality matter.",
     "kicker": "Guide · Kidnap and ransom",
     "h1": "Kidnap and ransom insurance: what it is, who it is for and how it works",
@@ -123,6 +124,7 @@
       ]},
       {"id": "travel", "h2": "Travel and State Department advisory levels", "blocks": [
         {"p": "The U.S. State Department rates each destination on four levels: 1, exercise normal precautions; 2, exercise increased caution; 3, reconsider travel; and 4, do not travel [4]. It also uses specific risk indicators, including one for kidnapping or hostage taking, marked with the letter K [4]."},
+        {"video": {"src": "travel-levels.v1", "cap": "The State Department rates each destination on four levels and marks kidnapping risk with a K [4]; some policies exclude or limit countries at certain levels."}},
         {"p": "These advisories are a good starting point for a conversation with your agent: some policies exclude or limit countries at certain advisory levels, and others ask you to give notice before traveling there. For the family, they are also a guide to which trips need extra preparation."},
         {"ul": [
           "Check the State Department advisory for each destination before booking.",

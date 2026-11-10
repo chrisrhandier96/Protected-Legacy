@@ -2,7 +2,7 @@
   "key": "brd",
   "slug_es": "juntas-y-fundaciones",
   "slug_en": "board-service-family-foundations",
-  "updated": "2026-11-03",
+  "updated": "2026-11-10",
   "related": ["lia", "cnd", "emp"],
   "es": {
     "title": "Juntas directivas y fundaciones familiares: seguro D&O",
@@ -43,6 +43,7 @@
       ]},
       {"id": "encaje-personal", "h2": "Cómo encaja con su umbrella y su protección personal", "blocks": [
         {"p": "Muchas pólizas umbrella personales excluyen o limitan la responsabilidad derivada de servir en juntas, sobre todo en empresas con fines de lucro. Algunas incluyen cierta protección para juntas sin fines de lucro, con condiciones propias. Antes de aceptar un cargo, pregunte a la organización qué D&O mantiene, quién está asegurado y si sus estatutos prevén indemnizar a los directores, y pregunte a su agente cómo responde su propia umbrella."},
+        {"video": {"src": "edge-board.v1", "cap": "Muchas pólizas umbrella personales excluyen o limitan la responsabilidad derivada de servir en juntas, sobre todo en empresas con fines de lucro."}},
         {"p": "Para las juntas de empresas familiares, las reglas y las pólizas son distintas a las de una organización sin fines de lucro. Conviene revisar esos cargos por separado con su abogado y con su agente."},
         {"p": "Tenga en cuenta además que las pólizas D&O suelen emitirse sobre la base de reclamos presentados (claims-made): responde la póliza vigente cuando se presenta el reclamo, no la que existía cuando se tomó la decisión. Si deja una junta, o si la organización cambia de póliza, pregunte cómo quedan cubiertos los actos anteriores y si existe un período extendido para reportar reclamos."}
       ]},
@@ -115,6 +116,7 @@
       ]},
       {"id": "personal-fit", "h2": "How it fits with your umbrella and personal protection", "blocks": [
         {"p": "Many personal umbrella policies exclude or limit liability arising from board service, especially on for-profit boards. Some include certain protection for not-for-profit boards, with their own conditions. Before accepting a seat, ask the organization what D&O it carries, who is insured and whether its bylaws provide for indemnifying directors, and ask your agent how your own umbrella responds."},
+        {"video": {"src": "edge-board.v1", "cap": "Many personal umbrella policies exclude or limit liability arising from board service, especially on for-profit boards."}},
         {"p": "For family business boards, the rules and the policies are different from those of a not-for-profit organization. Review those seats separately with your attorney and your agent."},
         {"p": "Keep in mind too that D&O policies are usually written on a claims-made basis: the policy in force when the claim is made responds, not the one in force when the decision was made. If you leave a board, or the organization changes policies, ask how prior acts remain covered and whether there is an extended period to report claims."}
       ]},

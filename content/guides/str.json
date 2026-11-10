@@ -2,7 +2,7 @@
   "key": "str",
   "slug_es": "alquiler-vacacional",
   "slug_en": "short-term-rentals",
-  "updated": "2026-11-03",
+  "updated": "2026-11-10",
   "related": ["res", "lia", "cnd"],
   "es": {
     "title": "Seguro para alquiler vacacional en Florida",
@@ -29,6 +29,7 @@
       ]},
       {"id": "poliza-de-hogar", "h2": "Por qué la póliza de hogar puede no responder", "blocks": [
         {"p": "La Asociación Nacional de Comisionados de Seguros (NAIC) advierte que la mayoría de las pólizas de hogar o de vivienda no están diseñadas para cubrir accidentes derivados de alquileres de corto plazo [4]. Explica que una póliza de hogar suele cubrir la caída de un visitante, pero que, si esa persona es un huésped que paga, el caso podría quedar excluido [4]."},
+        {"video": {"src": "edge-rental.v1", "cap": "Una póliza de hogar suele cubrir la caída de un visitante, pero si esa persona es un huésped que paga, el caso podría quedar excluido [4]."}},
         {"p": "La NAIC agrega que, si la propiedad se anuncia con cierta frecuencia, es probable que la póliza considere la actividad como un negocio en el hogar, y que las pólizas de hogar suelen excluir o limitar esa cobertura [4]. También señala que algunas plataformas ofrecen seguros a los anfitriones, mientras que otras recomiendan consultar a su agente [4]. Lo que ofrece una plataforma tiene sus propios términos y no reemplaza la revisión de sus pólizas."},
         {"table": {"head": ["Riesgo", "Qué puede pasar con una póliza de hogar común", "Qué revisar"], "rows": [
           ["Lesión de un huésped", "Puede excluirse si el huésped paga", "Responsabilidad civil para alquiler de corto plazo"],
@@ -83,7 +84,7 @@
     ]
   },
   "en": {
-    "title": "Short-Term Rental Insurance in Florida",
+    "title": "Short-Term Rental Insurance in Florida: Licenses and Taxes",
     "meta": "Short-term rentals in Florida: when you need a state license, local and condo rules, taxes, why a homeowners policy may not respond and what to review.",
     "kicker": "Guide · Short-term rentals",
     "h1": "Short-term rentals in Florida: licensing, taxes and the policy that actually responds",
@@ -107,6 +108,7 @@
       ]},
       {"id": "homeowners-gap", "h2": "Why a homeowners policy may not respond", "blocks": [
         {"p": "The National Association of Insurance Commissioners (NAIC) warns that most homeowners or dwelling policies are not designed to cover accidents arising from short-term rentals [4]. It explains that a homeowners policy usually covers a visitor's fall, but that if the person is a paying guest, the claim might be excluded [4]."},
+        {"video": {"src": "edge-rental.v1", "cap": "A homeowners policy usually covers a visitor's fall, but if the person is a paying guest, the claim might be excluded [4]."}},
         {"p": "The NAIC adds that if the property is listed with any frequency, the policy will likely treat the activity as a home-based business, and homeowners policies usually exclude or limit that coverage [4]. It also notes that some platforms offer insurance to hosts, while others recommend contacting your agent [4]. Whatever a platform provides comes with its own terms and does not replace a review of your own policies."},
         {"table": {"head": ["Risk", "What can happen with a typical homeowners policy", "What to check"], "rows": [
           ["Guest injury", "May be excluded when the guest pays", "Liability that applies to short-term rentals"],

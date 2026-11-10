@@ -2,7 +2,7 @@
   "key": "cnd",
   "slug_es": "condominios-y-hoa",
   "slug_en": "condos-hoa",
-  "updated": "2026-09-25",
+  "updated": "2026-11-10",
   "related": ["res", "brd", "str"],
   "es": {
     "title": "Seguro de condominio en Florida: póliza maestra y HO-6",
@@ -31,6 +31,7 @@
       {"id": "poliza-ho6", "h2": "La póliza de unidad (HO-6) y la cobertura de evaluación por pérdida", "blocks": [
         {"p": "La póliza de unidad, conocida como HO-6, cubre lo que la ley deja a cargo del propietario: los acabados y bienes dentro de la unidad, las mejoras, la responsabilidad civil personal y, según la póliza, los gastos adicionales de vivienda si la unidad queda inhabitable."},
         {"p": "La sección 627.714 exige que las pólizas de unidad de condominio en Florida incluyan al menos $2,000 de cobertura de evaluación por pérdida para todas las evaluaciones derivadas de la misma pérdida directa a la propiedad, con un deducible de no más de $250 por pérdida directa [2]. Si ya se aplicó un deducible a otra pérdida de la unidad en el mismo evento, no se aplica otro a esta cobertura [2]. La ley también exige que la póliza del propietario funcione como exceso sobre otras pólizas que cubran la misma propiedad [2]."},
+        {"video": {"src": "condo-assessment.v1", "cap": "En Florida, la póliza de unidad (HO-6) debe incluir al menos $2,000 de cobertura de evaluación por pérdida, con un deducible de no más de $250 [2]."}},
         {"callout": "El mínimo de $2,000 lo fija la ley. En un edificio con un deducible alto de huracán, su parte de una evaluación puede ser mucho mayor, así que pregunte a su agente qué límite de evaluación tiene su póliza."}
       ]},
       {"id": "evaluaciones", "h2": "Deducibles y evaluaciones especiales", "blocks": [
@@ -106,6 +107,7 @@
       {"id": "unit-owner-policy", "h2": "The unit owner policy (HO-6) and loss assessment coverage", "blocks": [
         {"p": "The unit owner policy, known as HO-6, covers what the law leaves to the owner: the finishes and belongings inside the unit, improvements, personal liability and, depending on the policy, additional living expenses if the unit becomes uninhabitable."},
         {"p": "Section 627.714 requires Florida condominium unit owner policies to include at least $2,000 of loss assessment coverage for all assessments made as a result of the same direct loss to the property, with a deductible of no more than $250 per direct property loss [2]. If a deductible was already applied to another loss to the unit from the same event, no separate deductible applies to this coverage [2]. The law also requires the owner's policy to apply as excess over other policies covering the same property [2]."},
+        {"video": {"src": "condo-assessment.v1", "cap": "In Florida, the unit owner (HO-6) policy must include at least $2,000 of loss assessment coverage, with a deductible of no more than $250 [2]."}},
         {"callout": "The $2,000 minimum is set by law. In a building with a large hurricane deductible, your share of an assessment can be much larger, so ask your agent what loss assessment limit your policy carries."}
       ]},
       {"id": "assessments", "h2": "Deductibles and special assessments", "blocks": [

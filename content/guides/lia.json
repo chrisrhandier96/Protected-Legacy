@@ -2,7 +2,7 @@
   "key": "lia",
   "slug_es": "umbrella-responsabilidad",
   "slug_en": "umbrella-liability",
-  "updated": "2026-11-03",
+  "updated": "2026-11-10",
   "es": {
     "title": "Póliza umbrella en Florida: responsabilidad civil",
     "meta": "Cómo funciona una póliza umbrella en Florida: límites subyacentes, exclusiones, defensa legal, cobertura UM, riesgos digitales y juntas directivas.",
@@ -80,6 +80,7 @@
         "h2": "Cobertura UM en la umbrella y responsabilidad como anfitrión",
         "blocks": [
           {"p": "La cobertura de conductor sin seguro o con seguro insuficiente (UM/UIM) en una umbrella varía mucho. En Florida, la ley establece que las reglas de UM no se aplican a pólizas que no proveen responsabilidad primaria de auto, como muchas umbrellas; sin embargo, la aseguradora debe poner a disposición, como parte de la solicitud y a petición escrita de un asegurado, límites de UM hasta los límites de responsabilidad por lesiones de esa póliza o $1 millón, lo que sea menor [6]. El tema importa en un estado donde alrededor de 1 de cada 5 conductores (20.6%) no tenía seguro en 2023 [10]."},
+          {"video": {"src": "one-in-five.v1", "cap": "Alrededor de 1 de cada 5 conductores en Florida (20.6%) no tenía seguro en 2023 [10]."}},
           {"p": "En reuniones familiares, la ley de Florida (sección 768.125) dispone que quien sirve o suministra bebidas alcohólicas a una persona en edad legal para beber generalmente no se vuelve responsable por las lesiones o daños causados por la embriaguez de esa persona [5]. Las excepciones son servir de forma deliberada e ilegal a alguien menor de 21 años, o servir a sabiendas a una persona habitualmente adicta al alcohol [5]."},
           {"callout": "Imagine una fiesta de graduación en casa con invitados menores de 21 años: es justamente el tipo de situación que la excepción de la ley contempla. La responsabilidad por lesiones en la propiedad, como en la piscina, es un tema aparte."}
         ]
@@ -223,6 +224,7 @@
         "h2": "UM coverage on the umbrella and host liquor liability",
         "blocks": [
           {"p": "Uninsured and underinsured motorist (UM/UIM) coverage on an umbrella varies widely. In Florida, the law says the UM requirements do not apply to policies that do not provide primary auto liability, such as many umbrellas; however, the insurer must make available, as part of the application and at the written request of an insured, UM limits up to that policy's bodily injury limits or $1 million, whichever is less [6]. This matters in a state where about 1 in 5 drivers (20.6%) was uninsured in 2023 [10]."},
+          {"video": {"src": "one-in-five.v1", "cap": "About 1 in 5 Florida drivers (20.6%) was uninsured in 2023 [10]."}},
           {"p": "For family gatherings, Florida law (section 768.125) provides that a person who serves or furnishes alcoholic beverages to someone of lawful drinking age generally does not become liable for injury or damage caused by that person's intoxication [5]. The exceptions are willfully and unlawfully serving someone under 21, or knowingly serving a person habitually addicted to alcohol [5]."},
           {"callout": "Imagine a graduation party at home with guests under 21: that is exactly the kind of situation the statute's exception reaches. Liability for injuries on the property, such as at the pool, is a separate issue."}
         ]

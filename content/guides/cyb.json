@@ -2,7 +2,7 @@
   "key": "cyb",
   "slug_es": "ciber-proteccion-familiar",
   "slug_en": "personal-cyber",
-  "updated": "2026-09-25",
+  "updated": "2026-11-10",
   "related": ["lia", "kr", "emp"],
   "es": {
     "title": "Ciberseguro personal en Florida: fraude y extorsión",
@@ -33,6 +33,7 @@
         {"p": "El patrón típico en un cierre es simple: días antes de firmar, llega un correo que parece de la compañía de títulos o del abogado, con instrucciones de transferencia actualizadas. El FBI describe un caso de agosto de 2025 en el que unos compradores que cerraban la compra de su casa recibieron un correo que imitaba a sus abogados y enviaron más de $449,000 a una cuenta fraudulenta; tras una denuncia rápida ante el IC3, los fondos quedaron congelados en el banco receptor [1]."},
         {"callout": "Regla del cierre: nunca envíe dinero siguiendo instrucciones que llegaron por correo. Llame a un número que usted ya tenía o que confirmó por su cuenta, no al que aparece en el mensaje, y confirme cuenta y monto antes de transferir."},
         {"p": "Si ya envió el dinero, cada hora cuenta. El proceso de recuperación del IC3 (Financial Fraud Kill Chain) intervino en 3,900 casos en 2025 y ayudó a congelar $679,013,183 de $1,163,919,846 que los delincuentes intentaron robar, una tasa de éxito del 58% [1]. El FBI recomienda llamar de inmediato a su banco para pedir que revierta la transferencia y presentar la denuncia en ic3.gov con todos los detalles de la transacción [1]."},
+        {"video": {"src": "frozen-funds.v1", "cap": "En 2025, el IC3 del FBI ayudó a congelar $679,013,183 de los $1,163,919,846 que los delincuentes intentaron robar, una tasa de éxito del 58% [1]."}},
         {"p": "Del lado del seguro, muchas pólizas personales excluyen o limitan con sublímites las pérdidas en las que usted mismo autorizó la transferencia, aunque lo hayan engañado. Pregunte específicamente cómo trata su póliza la ingeniería social."}
       ]},
       {"id": "ciberextorsion", "h2": "Ciberextorsión, secuestro de datos y sextorsión en el hogar", "blocks": [
@@ -121,6 +122,7 @@
         {"p": "The typical closing pattern is simple: days before signing, an email that seems to come from the title company or the attorney arrives with updated wiring instructions. The FBI describes an August 2025 case in which buyers closing on a home received an email impersonating their attorneys and wired more than $449,000 to a fraudulent account; after a prompt IC3 complaint, the funds were frozen at the receiving bank [1]."},
         {"callout": "The closing rule: never send money based on instructions that arrived by email. Call a number you already had or confirmed on your own, not the one in the message, and confirm the account and the amount before you wire."},
         {"p": "If the money is already gone, every hour counts. The IC3 recovery process (the Financial Fraud Kill Chain) acted on 3,900 incidents in 2025 and helped freeze $679,013,183 of the $1,163,919,846 criminals attempted to steal, a 58% success rate [1]. The FBI advises calling your bank immediately to request a recall of the funds and filing a complaint at ic3.gov with the full transaction details [1]."},
+        {"video": {"src": "frozen-funds.v1", "cap": "In 2025 the FBI's IC3 helped freeze $679,013,183 of the $1,163,919,846 criminals tried to steal, a 58% success rate [1]."}},
         {"p": "On the insurance side, many personal policies exclude, or cap with sublimits, losses where you authorized the transfer yourself, even though you were deceived. Ask specifically how your policy treats social engineering."}
       ]},
       {"id": "cyber-extortion", "h2": "Cyber extortion, ransomware and sextortion at home", "blocks": [

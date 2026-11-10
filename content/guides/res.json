@@ -2,7 +2,7 @@
   "key": "res",
   "slug_es": "residencias-huracanes",
   "slug_en": "homes-hurricanes",
-  "updated": "2026-11-03",
+  "updated": "2026-11-10",
   "es": {
     "title": "Seguro de casa en Florida de alto valor y huracanes",
     "meta": "Seguro de casa en Florida de alto valor: costo de reemplazo, cómo se calcula el deducible de huracán, ley u ordenanza, edad del techo y plazos de reclamo.",
@@ -26,6 +26,12 @@
           },
           {
             "p": "Además, el costo de reconstruir cambia. Verisk estimó que el costo de reconstrucción residencial en Estados Unidos subió alrededor de 25.9% entre marzo de 2020 y mayo de 2023 [6]. Un límite fijado hace años puede quedarse atrás. Un estudio sobre el incendio Marshall de 2021 en Colorado encontró que el 74% de los asegurados que presentaron reclamos tras el incendio estaban infraasegurados, y el 36% de forma severa [7]. Fue un incendio forestal, pero la lección aplica a los huracanes: una pérdida total revela límites que parecían suficientes en el papel."
+          },
+          {
+            "video": {
+              "src": "underinsured.v1",
+              "cap": "Tras el incendio Marshall de 2021 en Colorado, el 74% de los asegurados que presentaron reclamos estaba infraasegurado, y el 36% de forma severa [7]."
+            }
           },
           {
             "table": {
@@ -311,6 +317,12 @@
           },
           {
             "p": "Rebuilding costs also move. Verisk estimated that U.S. residential reconstruction costs rose about 25.9% from March 2020 to May 2023 [6]. A limit set years ago can fall behind. Research on the 2021 Marshall Fire in Colorado found that 74% of policyholders who filed claims after the fire were underinsured, and 36% were severely underinsured [7]. The event was a wildfire, but the lesson applies to hurricanes: a total loss exposes limits that looked adequate on paper."
+          },
+          {
+            "video": {
+              "src": "underinsured.v1",
+              "cap": "After the 2021 Marshall Fire in Colorado, 74% of policyholders who filed claims were underinsured, and 36% severely [7]."
+            }
           },
           {
             "table": {

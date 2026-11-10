@@ -2,7 +2,7 @@
   "key": "mar",
   "slug_es": "embarcaciones",
   "slug_en": "boats",
-  "updated": "2026-11-03",
+  "updated": "2026-11-10",
   "es": {
     "title": "Seguro de embarcación en Florida: yates, botes y motos",
     "meta": "Seguro de embarcación en Florida: valor acordado, responsabilidad civil, motos de agua, tripulación, huracanes y límites de navegación, explicados con calma.",
@@ -23,6 +23,12 @@
         "blocks": [
           {
             "p": "Florida se presenta como la capital mundial de la navegación. Según la Comisión de Conservación de Pesca y Vida Silvestre (FWC), en 2025 había 1,027,742 embarcaciones registradas en el estado, con 694 accidentes reportables y 51 muertes [1]. Las motos de agua (PWC) eran el 17% de las embarcaciones registradas, pero el 23% de los accidentes reportables [1]. En los informes recientes de la Guardia Costera de los Estados Unidos (USCG), Florida registró más muertes en navegación recreativa que cualquier otro estado: 75 en 2024 [2]."
+          },
+          {
+            "video": {
+              "src": "pwc-share.v1",
+              "cap": "Las motos de agua (PWC) eran el 17% de las embarcaciones registradas en Florida en 2025, pero el 23% de los accidentes reportables [1]."
+            }
           },
           {
             "p": "Aun así, la ley de Florida no obliga a los dueños privados de embarcaciones recreativas a tener un seguro de embarcación. Sí lo exige a las empresas de alquiler, y con frecuencia lo piden las marinas y los prestamistas. Muchas familias suponen que su póliza de hogar o su póliza paraguas las protege en el agua. En la práctica, muchas pólizas de hogar solo dan una cobertura limitada de daños a botes pequeños, como canoas, veleros pequeños o lanchas de poca potencia, y normalmente no incluyen responsabilidad civil por embarcaciones [3]. Las motos de agua, en general, no están cubiertas por el seguro de hogar, y cuando lo están los límites son bajos [4]."
@@ -196,7 +202,7 @@
     ]
   },
   "en": {
-    "title": "Boat, Yacht and Personal Watercraft Insurance in Florida",
+    "title": "Florida Boat Insurance Requirements: Yachts and PWCs",
     "meta": "Boat insurance in Florida: agreed value hulls, liability, personal watercraft (PWC), crew and the Jones Act, hurricane plans and navigation limits.",
     "kicker": "Guide · Boats",
     "h1": "Boat insurance in Florida: what your homeowners policy leaves on the dock",
@@ -215,6 +221,12 @@
         "blocks": [
           {
             "p": "Florida calls itself the Boating Capital of the World. According to the Florida Fish and Wildlife Conservation Commission (FWC), the state had 1,027,742 registered vessels in 2025, with 694 reportable accidents and 51 fatalities [1]. Personal watercraft (PWCs) were 17% of registered vessels but 23% of reportable accidents [1]. In recent U.S. Coast Guard (USCG) reports, Florida recorded the most recreational boating deaths of any state: 75 in 2024 [2]."
+          },
+          {
+            "video": {
+              "src": "pwc-share.v1",
+              "cap": "Personal watercraft (PWCs) were 17% of Florida's registered vessels in 2025 but 23% of reportable accidents [1]."
+            }
           },
           {
             "p": "Even so, Florida law does not require private recreational owners to carry boat insurance. Rental businesses (liveries) must carry it, and marinas and lenders often require it. Many families assume their homeowners or umbrella policy protects them on the water. In practice, many homeowners policies give only limited property coverage for small boats such as canoes, small sailboats or low-powered boats, and they typically do not include boat liability [3]. Personal watercraft are generally not covered by homeowners insurance, and when they are, the limits are low [4]."
