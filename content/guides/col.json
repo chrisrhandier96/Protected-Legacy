@@ -25,6 +25,12 @@
             "p": "Quien busca un seguro de joyas o se pregunta cómo asegurar obras de arte suele partir de la póliza de hogar. Esa póliza sí cubre joyas, relojes, arte y objetos de colección, pero con reglas distintas a las del resto del contenido. Según el Insurance Information Institute (III), la póliza estándar tiene un límite de robo para joyas relativamente bajo [1]. El III añade que joyas, pieles, arte, objetos de colección y platería están cubiertos, pero normalmente con topes en dólares cuando son robados [2]."
           },
           {
+            "video": {
+              "src": "edge-collections.v1",
+              "cap": "La póliza de hogar estándar tiene un límite de robo para joyas relativamente bajo; programar las piezas en un flotante da la protección más amplia [1]."
+            }
+          },
+          {
             "p": "Estos topes se llaman límites especiales (special limits of liability) y, en los formularios estándar más usados, aplican a toda la categoría en cada pérdida, no a cada pieza. Una familia con un reloj de alto valor y varias joyas heredadas puede descubrir, después de un robo, que todo el grupo comparte un solo tope. El regulador de Nueva York enumera las categorías que suelen tener estos topes: dinero y lingotes, valores y documentos, joyas y relojes, platería y armas de fuego [3]."
           },
           {
@@ -264,6 +270,12 @@
         "blocks": [
           {
             "p": "Anyone looking into jewelry insurance or art collection insurance usually starts with the homeowners policy. That policy does cover jewelry, watches, art and collectibles, but under different rules than the rest of your belongings. According to the Insurance Information Institute (III), the standard policy has a relatively low theft limit for jewelry [1]. The III adds that jewelry, furs, art, collectibles and silverware are covered, but there are usually dollar limits if they are stolen [2]."
+          },
+          {
+            "video": {
+              "src": "edge-collections.v1",
+              "cap": "The standard homeowners policy has a relatively low theft limit for jewelry; scheduling pieces on a floater gives the broadest protection [1]."
+            }
           },
           {
             "p": "These caps are called special limits of liability. On the most widely used standard forms, they apply to the whole category in each loss, not to each piece. A family with a valuable watch and several inherited pieces of jewelry can learn after a burglary that the entire group shares one cap. The New York regulator lists the categories these caps usually apply to: money and bullion, securities and documents, jewelry and watches, silverware and firearms [3]."
