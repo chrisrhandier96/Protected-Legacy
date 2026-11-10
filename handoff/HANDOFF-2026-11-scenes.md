@@ -1,5 +1,7 @@
 # Interactive 3D scenes, Nov 3 2026
 
+Update, Nov 10 2026: the live 3D files described under "Live 3D scenes (Nov 3)" below are no longer in the repo (removed by commit 508f0fd): the models in `img/scenes/3d/` and `img/scenes/flo3d/`, `js/casa3d.v1.js`, `js/casa3d.v2.js`, `js/casa3d.v3.js`, `js/flood3d.v1.js`, `tools/casa3d/` and `site-tests/casa3d-check.js`. No page has referred to them since commit e45d25c (Nov 5 2026), when the guide pages switched to the photo scenes. They stay in git history up to commit dc41ce7 (`git checkout dc41ce7 -- <path>`). Do not use those file names again: `/js/` is cached forever and `/img/` for 7 days. That section is kept as the record of what was built.
+
 What changed:
 
 1. Five guides now carry one interactive 3D illustration each, both languages, right after the summary box ("En resumen" / "In short"). The frames are Unreal renders of Casa Patrimonio, a hypothetical waterfront home (Unreal session, `Downloads\ue-renders\pp\`). Every scene is labelled "Ilustración 3D / 3D illustration".
