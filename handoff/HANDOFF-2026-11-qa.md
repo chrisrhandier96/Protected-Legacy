@@ -26,19 +26,41 @@ Result with the change, group `three`, Nov 10:
 - Local stand-in server: 10 of 10. `32 pages, 50 to 79 KiB; images 9 to 131 KiB; live 3D 0 to 0 KiB; Cloudflare /cdn-cgi/ files (reported, not counted) 0 to 0 KiB`.
 - Live: 10 of 10. `32 pages, 50 to 79 KiB; images 9 to 131 KiB; live 3D 0 to 0 KiB; Cloudflare /cdn-cgi/ files (reported, not counted) 15 to 18 KiB`. The other groups were not run again; they passed in the full live run after the deploy.
 
+## Nov 10, second batch: pull request #9 and this branch in one deploy
+Christian's word: "merge branch pass-2026-11-10 into your work, then deploy once". Branch `pass-2026-11-10` (pull request #9, the work of another session) was merged into this branch, `post-deploy-2026-11-10`, unchanged (merge commit d28f82a), so that both go live in one production deploy.
+
+What pull request #9 brings (details in that pull request):
+- Flood guide, both languages: the slider frames from 2 ft up were rebuilt without the vertical streaks in the reflection (`flo-rise-02b` to `flo-rise-12b`, 42 files, 2617 KiB). The frames for normal tide and 1 ft are unchanged.
+- Homepage: the tab title follows the language switch. Two lines in `setLang` in `index.html`; `tools/build_en.py` stops if the English title does not match. The language switch is protected: Christian's instruction to merge that branch and deploy is the yes.
+- Two sources that had moved: guide key `col` (iii.org) and guide key `str` (floridarevenue.com, GT-800034).
+- Privacy page: the cookies sentence now says that the tags can store cookies in the browser, this site's own and ones on Google domains such as doubleclick.net.
+- `.gitattributes` keeps text files on LF, the build tools write LF, and the notes carry the full build command with `build_en.py`.
+
+Checks on the merged tree before the deploy (Nov 10, local stand-in server):
+- Build chain: every step exit 0, and a run changes nothing.
+- `verify.js`, every group: 98 of 99 passed. The 1 is the known local only check that `/netlify.toml` is not served. Page weight line: `32 pages, 50 to 79 KiB; images 9 to 131 KiB; live 3D 0 to 0 KiB; Cloudflare /cdn-cgi/ files (reported, not counted) 0 to 0 KiB`.
+- `scenes-check.js`: 384 passed, 0 failed.
+- One-off check, not part of the suite: 10 of 10. The tab title follows ES and EN on `/` and on `/en/`. The flood slider in both languages lists the 9 frames and loads each one when moved, and no old frame is requested.
+- Before and after, looked at by eye at 960 px: the old 10 ft frame has the streaks in the bottom third of the picture; the new 2, 6, 10 and 12 ft frames do not.
+- Source links: the iii.org page answers 200. The floridarevenue.com link answers 401 to a script, and the old address without `www` answers 404: that server turns scripts away. Pull request #9 states that both pages were opened and checked against the sentences they support. The Florida page was not opened in a browser in this session.
+
+Live results of this batch: in a comment on the pull request of this branch.
+
 ## Not done, Christian's call
 - Turning off Cloudflare's bot protection would remove its script from the pages. Not recommended. It is a setting in his Cloudflare account.
 - Trimming pages to make room for Cloudflare's script would cost a deploy and change nothing for a visitor.
 
-## Still open from pull request #8 (Christian's call, details in the pull request)
-1. Hero LCP on the homepage: showing the eyebrow without the fade does not move LCP (3.1 s as built and in the three variants tested, on the local build). What would move it is deferring the homepage's own script work, to be tried on a deploy preview. The hero animation is protected and was not changed.
-2. The tab title stays Spanish after switching to English on the same page. Fix: set `document.title` in `setLang`. Needs his yes, the language toggle is protected.
-3. About 3.3 MB of 3D files are deployed and nothing loads them (list in section 8 of the pull request). Recommendation: remove them in one commit. Nothing was deleted.
-4. Cookies: Google Ads sets a third-party test cookie on doubleclick.net and fires remarketing calls, while the privacy page says the tags keep first-party cookies. Either the wording or the Ads settings (remarketing off) would close the gap. No banner was added.
-5. `http://` on the bare domain takes 2 redirects to reach `https://www` (a dashboard setting).
-6. Two broken external sources with no verified replacement: floridarevenue.com gt800034.pdf (guide key `str`) and iii.org floaters-and-endorsements (guide key `col`).
-7. The form has no server-side validation beyond the honeypot.
-8. Controls under 44 px outside the scenes (list in reel item 14 of the pull request).
-9. The domain cards need JavaScript to appear.
-10. 25 scene captions and pins are paraphrases, not quotes. Every fact traces to its source.
-11. Flood pictures: from 2 ft up, the bottom of the reflection shows vertical streaks (faint at 2 ft, strong at 10 and 12 ft). Not regenerated.
+## Closed on Nov 10 by pull request #9 (item numbers as in pull request #8)
+- Item 2: the tab title now follows the language switch.
+- Item 4: cookies. The privacy page wording now matches what the tags do. No banner was added and no Ads setting was changed.
+- Item 6: the two broken sources point to where the pages moved.
+- Item 11: flood pictures. The frames from 2 ft up were rebuilt without the streaks.
+
+## Still open (Christian's call, item numbers and details as in pull request #8)
+- Item 1: hero LCP on the homepage. Showing the eyebrow without the fade does not move LCP (3.1 s as built and in the three variants tested, on the local build). What would move it is deferring the homepage's own script work, to be tried on a deploy preview. The hero animation is protected and was not changed.
+- Item 3: about 3.3 MB of 3D files are deployed and nothing loads them (list in section 8 of pull request #8). Since pull request #9 the 42 old flood frames are in the same position (`flo-rise-02` to `flo-rise-12` without the `b`, 2778 KiB): deployed, and no page uses them. Recommendation: remove both in one commit. Nothing was deleted.
+- Item 5: `http://` on the bare domain takes 2 redirects to reach `https://www` (a dashboard setting).
+- Item 7: the form has no server-side validation beyond the honeypot.
+- Item 8: controls under 44 px outside the scenes (list in reel item 14 of pull request #8).
+- Item 9: the domain cards need JavaScript to appear.
+- Item 10: 25 scene captions and pins are paraphrases, not quotes. Every fact traces to its source.
