@@ -90,6 +90,25 @@ rep('<label>No llenar <input name="bot-field"', '<label>Do not fill <input name=
 html, _n_alt = re.subn(r'alt="[^"]*"( data-alt-en="([^"]*)")', lambda m: 'alt="' + m.group(2) + '"' + m.group(1), html)
 if _n_alt != 5:
     sys.exit(f'build_en: expected 5 plates with data-alt-en, found {_n_alt}')
+# the four stat cards carry their real figure in the HTML (Nov 11): the visible number has to equal data-count
+_nums = re.findall(r'<div class="num" data-count="([^"]+)"(?: data-prefix="([^"]*)")?(?: data-es=\'[^\']*\' data-en=\'[^\']*\')?><span class="nv">([^<]+)</span>', src)
+if len(_nums) != 4 or any(pre + cnt != shown for cnt, pre, shown in _nums):
+    sys.exit(f"build_en: the stat cards in #datos must show their own data-count in <span class=nv>: {_nums}")
+# the JSON-LD block in the head (static since Nov 11): English description on the English page
+rep('"description":"Protección patrimonial, en español e inglés, para familias hispanas de alto patrimonio en la Florida."', '"description":"Wealth protection, in Spanish and English, for high net worth Hispanic families in Florida."')
+# the plain list of the 14 guides inside #domGrid (for readers without JavaScript) has to match GUIDE_URL and DOMS
+import json as _json
+_gu = _json.loads(re.search(r"const GUIDE_URL=(\{.*?\});", src).group(1))
+_doms = src[src.index("const DOMS=["):src.index("const GUIDE_URL=")]
+_st = re.findall(r'<a class="dom-static" href="([^"]+)" data-href-es="([^"]+)" data-href-en="([^"]+)"><span class="dom-tag" data-es="[^"]+" data-en="[^"]+">[^<]+</span><span data-es="([^"]+)" data-en="([^"]+)">', src)
+_pairs = {(v["es"], v["en"]) for v in _gu.values()}
+if len(_st) != 14 or len(_gu) != 14:
+    sys.exit(f"build_en: the plain list in #domGrid has {len(_st)} links and GUIDE_URL has {len(_gu)}; both must be 14")
+for _h, _es, _en, _tes, _ten in _st:
+    if _h != _es or (_es, _en) not in _pairs:
+        sys.exit(f"build_en: the plain list in #domGrid has a link that is not in GUIDE_URL: {_es} {_en}")
+    if not re.search("t:\\{es:['\"]" + re.escape(_tes) + "['\"],en:['\"]" + re.escape(_ten) + "['\"]\\}", _doms):
+        sys.exit(f"build_en: the plain list in #domGrid names a domain differently from DOMS: {_tes} / {_ten}")
 rep('<button id="btn-es" class="active" onclick="setLang(\'es\')">ES</button>', '<button id="btn-es" onclick="setLang(\'es\')">ES</button>')
 rep('<button id="btn-en" onclick="setLang(\'en\')">EN</button>', '<button id="btn-en" class="active" onclick="setLang(\'en\')">EN</button>')
 

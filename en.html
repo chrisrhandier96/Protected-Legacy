@@ -41,6 +41,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:image" content="https://www.protectedlegacyfl.com/og-en.png">
 <meta name="twitter:card" content="summary_large_image">
 
+<!-- Who publishes the site and who writes it, for search engines. Static since Nov 11 (it was added by script before). tools/build_en.py puts the English description in en.html. -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Patrimonio Protegido","url":"https://www.protectedlegacyfl.com/","inLanguage":["es","en"],"publisher":{"@type":"Organization","name":"Patrimonio Protegido","url":"https://www.protectedlegacyfl.com/","logo":"https://www.protectedlegacyfl.com/img/cg-logo-512.png"},"author":{"@type":"Person","name":"Christian R. González","jobTitle":"Licensed insurance agent (Florida)","telephone":"+1-786-671-2171","hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"license","name":"Florida insurance agent license W606240","recognizedBy":{"@type":"GovernmentOrganization","name":"Florida Department of Financial Services"}},"url":"https://www.protectedlegacyfl.com/","sameAs":["https://www.linkedin.com/in/christiangonzalez22/"],"address":{"@type":"PostalAddress","addressRegion":"FL","addressCountry":"US"}},"description":"Wealth protection, in Spanish and English, for high net worth Hispanic families in Florida."}</script>
+
 <!-- ============================================================
      CONFIGURACION / CONFIG
      Complete estos valores antes de publicar. Nada mas hay que tocar.
@@ -62,9 +65,7 @@ window.PP = {
   function meta(attr,key,val){var m=document.createElement('meta');m.setAttribute(attr,key);m.content=val;h.appendChild(m);}
   if(u){
     var pg=document.documentElement.lang==='en'?'/en/':'/';
-    var ld=document.createElement('script');ld.type='application/ld+json';
-    ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"Patrimonio Protegido","url":u+"/","inLanguage":["es","en"],"publisher":{"@type":"Organization","name":"Patrimonio Protegido","url":u+"/","logo":u+"/img/cg-logo-512.png"},"author":{"@type":"Person","name":"Christian R. González","telephone":"+1-786-671-2171","sameAs":["https://www.linkedin.com/in/christiangonzalez22/"],"address":{"@type":"PostalAddress","addressRegion":"FL","addressCountry":"US"}},"description":"Protección patrimonial, en español e inglés, para familias hispanas de alto patrimonio en la Florida."});
-    h.appendChild(ld);
+    /* Nov 11: the WebSite and author data (JSON-LD) is now written in the HTML itself, just above this script, so readers that do not run JavaScript get it too */
   }
   var id=P.GA4_ID||P.ADS_ID;
   if(!id) return;
@@ -214,6 +215,9 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 .fact:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,53,42,.12)}
 .fact .num{font-family:var(--display);font-size:44px;color:var(--verde);line-height:1}
 .fact .num sup{font-size:22px}
+/* Nov 11: the real figure stays in the page text at all times (.nv); while it counts up, the moving digits are drawn by ::before from data-live, so a reader, a crawler or a snapshot never sees a half-counted number */
+.fact .num.counting .nv{position:absolute;opacity:0}
+.fact .num.counting::before{content:attr(data-live)}
 .fact .txt{font-size:14.5px;color:#3B4237;margin-top:12px}
 @media(max-width:960px){.facts-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.facts-grid{grid-template-columns:1fr}}
@@ -246,6 +250,8 @@ nav{position:sticky;top:0;z-index:60;background:rgba(13,36,28,.97);backdrop-filt
 .dom-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:54px}
 .dom{background:var(--verde);border:1px solid rgba(194,155,64,.22);border-radius:3px;overflow:hidden;transition:border-color .25s,transform .25s}
 .dom:hover{border-color:var(--oro);transform:translateY(-2px)}
+.dom-static{display:block;background:var(--verde);border:1px solid rgba(194,155,64,.22);border-radius:16px;padding:24px 26px;color:var(--blanco);font-family:var(--display);font-size:22px;line-height:1.25;text-decoration:none}
+.dom-static:hover{border-color:var(--oro)}
 .dom-head{width:100%;background:transparent;border:none;color:var(--blanco);text-align:left;padding:26px;display:flex;justify-content:space-between;align-items:center;gap:16px}
 .dom-head .lft{display:flex;gap:18px;align-items:center}
 .dom-ico{width:52px;height:52px;flex-shrink:0;border:1px solid var(--oro);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--oro-claro);background:radial-gradient(circle at 30% 30%,rgba(194,155,64,.15),transparent 70%)}
@@ -709,13 +715,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="rule"></div>
     <h2 class="reveal" data-es='Las brechas de protección son <span class="hl-dark">la Regla, no la Excepción.</span>' data-en='Protection gaps are <span class="hl-dark">the Rule, not the Exception.</span>'>Protection gaps are <span class="hl-dark">the Rule, not the Exception.</span></h2>
     <div class="facts-grid">
-      <div class="fact reveal"><div class="num" data-count="25.9">0<sup>%</sup></div>
+      <div class="fact reveal"><div class="num" data-count="25.9"><span class="nv">25.9</span><sup>%</sup></div>
         <p class="txt" data-es='de aumento en el costo de reconstrucción residencial en EE. UU. entre marzo de 2020 y mayo de 2023, según Verisk. Un límite fijado hace años puede ya no alcanzar para reconstruir por completo.<a class="fn" href="#fuentes">1</a>' data-en='rise in U.S. residential reconstruction costs from March 2020 to May 2023, per Verisk. A limit set years ago may no longer cover a full rebuild.<a class="fn" href="#fuentes">1</a>'>rise in U.S. residential reconstruction costs from March 2020 to May 2023, per Verisk. A limit set years ago may no longer cover a full rebuild.<a class="fn" href="#fuentes">1</a></p></div>
-      <div class="fact reveal"><div class="num" data-count="74">0<sup>%</sup></div>
+      <div class="fact reveal"><div class="num" data-count="74"><span class="nv">74</span><sup>%</sup></div>
         <p class="txt" data-es='de los asegurados que presentaron reclamos tras el incendio Marshall de 2021, en Colorado, estaban subasegurados; el 36%, de forma grave.<a class="fn" href="#fuentes">2</a>' data-en='of policyholders who filed claims after the 2021 Marshall Fire in Colorado were underinsured; 36% severely.<a class="fn" href="#fuentes">2</a>'>of policyholders who filed claims after the 2021 Marshall Fire in Colorado were underinsured; 36% severely.<a class="fn" href="#fuentes">2</a></p></div>
-      <div class="fact reveal"><div class="num" data-count="63" data-prefix="$" data-es="$63<sup>mil+</sup>" data-en="$63<sup>K+</sup>">$63<sup>K+</sup></div>
+      <div class="fact reveal"><div class="num" data-count="63" data-prefix="$" data-es='<span class="nv">$63</span><sup>mil+</sup>' data-en='<span class="nv">$63</span><sup>K+</sup>'><span class="nv">$63</span><sup>K+</sup></div>
         <p class="txt" data-es='fue el pago promedio por reclamo de inundación del NFIP entre 2020 y 2024 ($63,691, según FEMA). Una sola pulgada de agua puede causar $25,000 en daños.<a class="fn" href="#fuentes">3</a>' data-en='was the average NFIP flood claim payment from 2020 to 2024 ($63,691, per FEMA). A single inch of water can cause $25,000 in damage.<a class="fn" href="#fuentes">3</a>'>was the average NFIP flood claim payment from 2020 to 2024 ($63,691, per FEMA). A single inch of water can cause $25,000 in damage.<a class="fn" href="#fuentes">3</a></p></div>
-      <div class="fact reveal"><div class="num" data-count="1">0<sup>M+</sup></div>
+      <div class="fact reveal"><div class="num" data-count="1"><span class="nv">1</span><sup>M+</sup></div>
         <p class="txt" data-es='de embarcaciones registradas hacen de la Florida el líder nacional, y también el estado con más muertes náuticas en los reportes recientes de la Guardia Costera.<a class="fn" href="#fuentes">4</a>' data-en='registered vessels make Florida the national leader, and also the state with the most boating deaths in recent U.S. Coast Guard reports.<a class="fn" href="#fuentes">4</a>'>registered vessels make Florida the national leader, and also the state with the most boating deaths in recent U.S. Coast Guard reports.<a class="fn" href="#fuentes">4</a></p></div>
     </div>
     <div class="src-strip reveal"><span class="src-lbl" data-es="Fuentes de los datos citados" data-en="Sources for cited data">Sources for cited data</span><ul class="src-list"><li>Verisk</li><li>CU Boulder</li><li>FEMA · NFIP</li><li data-es="Reserva Federal" data-en="Federal Reserve">Federal Reserve</li><li>LIMRA</li><li data-es="Guardia Costera" data-en="U.S. Coast Guard">U.S. Coast Guard</li><li>Insurance Information Institute</li></ul></div>
@@ -775,7 +781,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="reveal" data-es='Los 14 dominios de un patrimonio de <span class="hl-dark">siete cifras</span>' data-en='The 14 domains of a <span class="hl-dark">seven-figure estate</span>'>The 14 domains of a <span class="hl-dark">seven-figure estate</span></h2>
     <p class="intro reveal" data-es="Cuando el patrimonio supera el millón de dólares, la protección deja de ser una póliza y se convierte en una <span class='accent-i'>arquitectura</span>. Cada dominio tiene sus propias reglas, sus propios límites ocultos y sus propias brechas típicas. Abra cada uno y encuentre las suyas." data-en="Once wealth passes the million-dollar mark, protection stops being a policy and becomes an <span class='accent-i'>Architecture</span>. Each domain has its own rules, its own hidden limits, and its own typical gaps. Open each one and find yours.">Once wealth passes the million-dollar mark, protection stops being a policy and becomes an <span class='accent-i'>Architecture</span>. Each domain has its own rules, its own hidden limits, and its own typical gaps. Open each one and find yours.</p>
 
-    <div class="dom-grid" id="domGrid"></div>
+    <div class="dom-grid" id="domGrid">
+      <!-- Nov 11: plain links to the 14 guides, for readers and crawlers without JavaScript. buildDomains() replaces this list with the interactive cards. Same names and addresses as DOMS and GUIDE_URL below; tools/build_en.py stops the build if they drift. -->
+      <a class="dom-static" href="/en/guides/homes-hurricanes/" data-href-es="/guias/residencias-huracanes/" data-href-en="/en/guides/homes-hurricanes/"><span class="dom-tag" data-es="Dominio I" data-en="Domain I">Domain I</span><span data-es="Residencias y propiedades" data-en="Residences & properties">Residences & properties</span></a>
+      <a class="dom-static" href="/en/guides/flood/" data-href-es="/guias/inundacion/" data-href-en="/en/guides/flood/"><span class="dom-tag" data-es="Dominio II" data-en="Domain II">Domain II</span><span data-es="Inundación y marejada" data-en="Flood & storm surge">Flood & storm surge</span></a>
+      <a class="dom-static" href="/en/guides/auto/" data-href-es="/guias/autos/" data-href-en="/en/guides/auto/"><span class="dom-tag" data-es="Dominio III" data-en="Domain III">Domain III</span><span data-es="Autos de uso y de colección" data-en="Daily & collector autos">Daily & collector autos</span></a>
+      <a class="dom-static" href="/en/guides/boats/" data-href-es="/guias/embarcaciones/" data-href-en="/en/guides/boats/"><span class="dom-tag" data-es="Dominio IV" data-en="Domain IV">Domain IV</span><span data-es="Embarcaciones y motos acuáticas" data-en="Watercraft & PWCs">Watercraft & PWCs</span></a>
+      <a class="dom-static" href="/en/guides/private-aviation/" data-href-es="/guias/aviacion-privada/" data-href-en="/en/guides/private-aviation/"><span class="dom-tag" data-es="Dominio V" data-en="Domain V">Domain V</span><span data-es="Aviación privada" data-en="Private aviation">Private aviation</span></a>
+      <a class="dom-static" href="/en/guides/collections-art-jewelry/" data-href-es="/guias/colecciones-arte-joyas/" data-href-en="/en/guides/collections-art-jewelry/"><span class="dom-tag" data-es="Dominio VI" data-en="Domain VI">Domain VI</span><span data-es="Colecciones, arte y joyas" data-en="Collections, art & jewelry">Collections, art & jewelry</span></a>
+      <a class="dom-static" href="/en/guides/umbrella-liability/" data-href-es="/guias/umbrella-responsabilidad/" data-href-en="/en/guides/umbrella-liability/"><span class="dom-tag" data-es="Dominio VII" data-en="Domain VII">Domain VII</span><span data-es="Responsabilidad, umbrella y riesgo digital" data-en="Liability, umbrella & digital risk">Liability, umbrella & digital risk</span></a>
+      <a class="dom-static" href="/en/guides/household-staff-legacy/" data-href-es="/guias/personal-del-hogar-legado/" data-href-en="/en/guides/household-staff-legacy/"><span class="dom-tag" data-es="Dominio VIII" data-en="Domain VIII">Domain VIII</span><span data-es="Personal del hogar y legado" data-en="Household staff & legacy">Household staff & legacy</span></a>
+      <a class="dom-static" href="/en/guides/personal-cyber/" data-href-es="/guias/ciber-proteccion-familiar/" data-href-en="/en/guides/personal-cyber/"><span class="dom-tag" data-es="Dominio IX" data-en="Domain IX">Domain IX</span><span data-es="Ciberprotección familiar" data-en="Family cyber protection">Family cyber protection</span></a>
+      <a class="dom-static" href="/en/guides/kidnap-ransom/" data-href-es="/guias/secuestro-y-extorsion/" data-href-en="/en/guides/kidnap-ransom/"><span class="dom-tag" data-es="Dominio X" data-en="Domain X">Domain X</span><span data-es="Secuestro y extorsión" data-en="Kidnap & ransom">Kidnap & ransom</span></a>
+      <a class="dom-static" href="/en/guides/short-term-rentals/" data-href-es="/guias/alquiler-vacacional/" data-href-en="/en/guides/short-term-rentals/"><span class="dom-tag" data-es="Dominio XI" data-en="Domain XI">Domain XI</span><span data-es="Alquiler vacacional" data-en="Short-term rentals">Short-term rentals</span></a>
+      <a class="dom-static" href="/en/guides/renovations-builders-risk/" data-href-es="/guias/remodelaciones/" data-href-en="/en/guides/renovations-builders-risk/"><span class="dom-tag" data-es="Dominio XII" data-en="Domain XII">Domain XII</span><span data-es="Remodelaciones y construcción" data-en="Renovations & construction">Renovations & construction</span></a>
+      <a class="dom-static" href="/en/guides/board-service-family-foundations/" data-href-es="/guias/juntas-y-fundaciones/" data-href-en="/en/guides/board-service-family-foundations/"><span class="dom-tag" data-es="Dominio XIII" data-en="Domain XIII">Domain XIII</span><span data-es="Juntas y fundaciones" data-en="Boards & foundations">Boards & foundations</span></a>
+      <a class="dom-static" href="/en/guides/condos-hoa/" data-href-es="/guias/condominios-y-hoa/" data-href-en="/en/guides/condos-hoa/"><span class="dom-tag" data-es="Dominio XIV" data-en="Domain XIV">Domain XIV</span><span data-es="Condominios y asociaciones" data-en="Condos & HOAs">Condos & HOAs</span></a>
+    </div>
 
     <!-- LIFESTYLE subsection -->
     <div class="vida-sub" id="vida">
@@ -1545,7 +1567,7 @@ document.querySelectorAll('.facts-grid,.mitos-grid,.vida-grid,.pro-grid').forEac
 });
 window.ppObserve=el=>io.observe(el);document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 window.ppWords=function(){const h=document.querySelector('.hero h1');if(!h)return;let i=0;const wrap=node=>{if(node.nodeType===3){const parts=node.textContent.split(/(\s+)/);const frag=document.createDocumentFragment();parts.forEach(p=>{if(!p)return;if(/^\s+$/.test(p)){frag.appendChild(document.createTextNode(p));return;}const sp=document.createElement('span');sp.className='w';sp.style.setProperty('--i',i++);sp.textContent=p;frag.appendChild(sp);});node.parentNode.replaceChild(frag,node);}else if(node.nodeType===1&&!node.classList.contains('w')&&node.textContent.trim()){const sp=document.createElement('span');sp.className='w';sp.style.setProperty('--i',i++);node.parentNode.insertBefore(sp,node);sp.appendChild(node);}};[...h.childNodes].forEach(wrap);};ppWords();
-function animCount(el){const target=parseFloat(el.dataset.count);const dec=(String(el.dataset.count).split('.')[1]||'').length;const pre=el.dataset.prefix||'';const sup=el.querySelector('sup')?el.querySelector('sup').outerHTML:'';const fmt=v=>pre+v.toFixed(dec)+sup;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.innerHTML=fmt(target);return;}const t0=performance.now(),dur=1100;const tick=now=>{const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);el.innerHTML=fmt(target*e);if(p<1)requestAnimationFrame(tick);};requestAnimationFrame(tick);}
+function animCount(el){/* Nov 11: the figure in the HTML is the real one and is never rewritten; the count-up lives in data-live (drawn by .num.counting::before) */if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const target=parseFloat(el.dataset.count);const dec=(String(el.dataset.count).split('.')[1]||'').length;const pre=el.dataset.prefix||'';const t0=performance.now(),dur=1100;el.setAttribute('data-live',pre+(0).toFixed(dec));el.classList.add('counting');const tick=now=>{const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);if(p<1){el.setAttribute('data-live',pre+(target*e).toFixed(dec));requestAnimationFrame(tick);}else{el.classList.remove('counting');el.removeAttribute('data-live');}};requestAnimationFrame(tick);}
 
 /* ===== DYNAMIC LAYER ===== */
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
