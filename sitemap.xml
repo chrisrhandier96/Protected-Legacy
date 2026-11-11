@@ -321,6 +321,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.protectedlegacyfl.com/asesores/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/asesores/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/advisors/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/asesores/"/>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.protectedlegacyfl.com/en/advisors/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.protectedlegacyfl.com/asesores/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.protectedlegacyfl.com/en/advisors/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.protectedlegacyfl.com/asesores/"/>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.protectedlegacyfl.com/privacidad.html</loc>
     <priority>0.3</priority>
   </url>

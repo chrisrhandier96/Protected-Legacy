@@ -1,0 +1,316 @@
+{
+ "updated": "2026-11-11",
+ "slug_es": "asesores",
+ "slug_en": "advisors",
+ "es": {
+  "title": "Para CPA, abogados y oficinas familiares | Patrimonio Protegido",
+  "meta": "Seis preguntas que suelen quedar entre el abogado, el CPA y el agente de una familia en Florida: fideicomisos y LLC, autos, embarcaciones, personal y huracanes.",
+  "kicker": "Para asesores",
+  "h1": "Para asesores: donde el plan patrimonial y las pólizas dejan de coincidir",
+  "dek": "Seis preguntas que suelen quedar entre un asesor y otro, con la regla que hay detrás de cada una y la guía donde se explica a fondo.",
+  "intro": "Esta página es para contadores (CPA), abogados de planificación patrimonial y equipos de oficinas familiares que atienden a familias en Florida. Es contenido educativo: no ofrece asesoría legal ni fiscal, y no recomienda estructuras.",
+  "summary": [
+   "Cuando cambia el dueño legal de un bien, la póliza debe reflejar ese cambio.",
+   "La estructura la definen el abogado y el CPA; a las pólizas les toca describirla bien.",
+   "Varias reglas de Florida ponen la responsabilidad en una persona concreta: quien firma, quien presta, quien opera."
+  ],
+  "sections": [
+   {
+    "id": "dueno-y-poliza",
+    "h2": "1. ¿El dueño legal de cada bien es el mismo que figura en la póliza?",
+    "blocks": [
+     {
+      "p": "Muchas familias usan fideicomisos y LLC para ser dueñas de viviendas, autos, embarcaciones o colecciones. Si una vivienda pasa a un fideicomiso pero la póliza sigue a nombre de las personas, o si una LLC es dueña de una embarcación asegurada con una póliza personal, puede haber discusiones en un reclamo o vacíos en la cobertura de responsabilidad."
+     },
+     {
+      "ul": [
+       "Cuando una vivienda pasa a un fideicomiso, pregunte si el fideicomiso o el fideicomisario deben figurar como asegurado nombrado o adicional.",
+       "Cuando una LLC es dueña de un vehículo, una embarcación o una propiedad de alquiler, confirme que la póliza cubre a la entidad y no solo a las personas.",
+       "Revise que la póliza umbrella de la familia reconozca a las entidades que son dueñas de los bienes.",
+       "Coordine el dueño y los beneficiarios de las pólizas de vida con el plan patrimonial."
+      ]
+     }
+    ],
+    "guides": [
+     [
+      "emp",
+      "fideicomisos-llc",
+      "Personal del hogar y legado familiar: fideicomisos y LLC"
+     ]
+    ]
+   },
+   {
+    "id": "licencia-y-autos",
+    "h2": "2. ¿Quién firmó la solicitud de licencia del hijo menor y a nombre de quién están los autos?",
+    "blocks": [
+     {
+      "p": "En Florida, la persona que firma la solicitud de permiso o licencia de un menor de 18 años asume una responsabilidad directa: la negligencia o conducta intencional del menor al volante se le imputa, y responde de forma conjunta y solidaria con el menor por los daños que cause (sección 322.09) [1]. Según la sección 324.021(9)(b)3, el dueño que es persona natural y presta su vehículo a un usuario autorizado responde solo hasta $100,000 por persona y $300,000 por incidente por lesiones, y hasta $50,000 por daños a la propiedad [2]. Si el usuario autorizado no tiene seguro o tiene límites menores a $500,000 combinados, el dueño puede responder por hasta $500,000 adicionales en daños económicos, reducidos por lo que se recupere del conductor o de su seguro [2]. Si el vehículo está a nombre de una empresa o un fideicomiso, el análisis puede ser distinto y conviene revisarlo con el abogado de la familia."
+     }
+    ],
+    "guides": [
+     [
+      "aut",
+      "conductores-jovenes",
+      "Seguro de auto en Florida: conductores jóvenes"
+     ],
+     [
+      "aut",
+      "responsabilidad-dueno",
+      "Seguro de auto en Florida: responsabilidad del dueño"
+     ]
+    ]
+   },
+   {
+    "id": "embarcacion",
+    "h2": "3. ¿Quién opera la embarcación?",
+    "blocks": [
+     {
+      "p": "La ley de Florida considera toda embarcación un instrumento peligroso y exige a quien la opera el más alto grado de cuidado para evitar lesiones a otros [3]. La misma ley limita la responsabilidad por operación imprudente o descuidada al operador, salvo que el dueño sea quien opera o esté a bordo cuando ocurre el daño [3]. Eso no deja al dueño fuera de riesgo: si presta la embarcación a alguien sin experiencia, bajo los efectos del alcohol o sin la educación náutica exigida, puede enfrentar un reclamo por entrega negligente (negligent entrustment)."
+     }
+    ],
+    "guides": [
+     [
+      "mar",
+      "responsabilidad",
+      "Seguro de embarcación en Florida: responsabilidad"
+     ]
+    ]
+   },
+   {
+    "id": "empleador",
+    "h2": "4. ¿Quién es el empleador del personal del hogar?",
+    "blocks": [
+     {
+      "p": "La ley de compensación laboral de Florida (workers' comp) excluye de la definición de empleo a los empleados domésticos en hogares privados [4]. Por eso, en general, una familia no está obligada a tener esta cobertura para su niñera o su ama de llaves. Conviene definir quién es el empleador formal: la familia, un fideicomiso, una LLC o una oficina familiar. Si el personal cobra a través de una empresa con otros empleados, el análisis puede ser distinto."
+     }
+    ],
+    "guides": [
+     [
+      "emp",
+      "compensacion-laboral",
+      "Personal del hogar y legado familiar: compensación laboral"
+     ]
+    ]
+   },
+   {
+    "id": "huracan-e-inundacion",
+    "h2": "5. ¿Cuánto saldría del bolsillo de la familia después de un huracán o una inundación?",
+    "blocks": [
+     {
+      "p": "Según el estatuto 627.701, las aseguradoras deben ofrecer opciones de deducible de huracán de $500, 2%, 5% y 10% del límite de la vivienda, con variaciones para casas de mayor valor [5]. Por ejemplo, con un límite de $2,000,000, un deducible de 5% equivale a $100,000. En el programa federal de inundación (NFIP), para una vivienda el máximo es $250,000 para el edificio y $100,000 para el contenido [6]. En una casa cuya reconstrucción costaría $2 millones, un límite de $250,000 para el edificio cubre una fracción de una pérdida total."
+     }
+    ],
+    "guides": [
+     [
+      "res",
+      "deducible-de-huracan",
+      "Residencias y huracanes: deducible de huracán"
+     ],
+     [
+      "flo",
+      "exceso-y-privado",
+      "Inundación y marejada ciclónica: exceso y pólizas privadas"
+     ]
+    ]
+   },
+   {
+    "id": "juntas",
+    "h2": "6. ¿Su cliente ocupa un puesto en una junta directiva o en la fundación de la familia?",
+    "blocks": [
+     {
+      "p": "En Florida, la sección 617.0834 establece que los directores y los funcionarios no remunerados de corporaciones sin fines de lucro, por lo general, no responden personalmente por daños monetarios derivados de sus decisiones en el cargo, salvo que el incumplimiento de sus deberes constituya, entre otros supuestos, una violación penal, una transacción con beneficio personal indebido, o una conducta imprudente, de mala fe o con desprecio deliberado y temerario [7]. Esta sección se reformó en 2026, así que conviene confirmar el texto que aplica a cada organización."
+     }
+    ],
+    "guides": [
+     [
+      "brd",
+      "protecciones-legales",
+      "Juntas directivas y fundaciones familiares: protecciones legales"
+     ]
+    ]
+   }
+  ],
+  "close_h": "Para cerrar",
+  "close": "Cada una de estas preguntas se resuelve mejor con el abogado, el CPA y el agente licenciado de la familia en una misma conversación. Si alguna surge en la revisión de un cliente en común, con gusto la conversamos.",
+  "contact": "Contacto",
+  "guide_pre": "Guía completa",
+  "hub_q": "¿Es usted CPA, abogado o parte de una oficina familiar?",
+  "hub_a": "Hay una página para asesores",
+  "foot": "Para asesores",
+  "guides_pre": "Guías completas"
+ },
+ "en": {
+  "title": "For CPAs, attorneys and family offices | Patrimonio Protegido",
+  "meta": "Six questions that tend to fall between a Florida family's attorney, CPA and insurance agent: trusts and LLCs, cars, boats, household staff and hurricanes.",
+  "kicker": "For advisors",
+  "h1": "For advisors: where the estate plan and the policies stop matching",
+  "dek": "Six questions that tend to fall between one advisor and the next, with the rule behind each one and the guide that explains it in full.",
+  "intro": "This page is for CPAs, estate planning attorneys and family office teams who serve families in Florida. It is educational content: it does not offer legal or tax advice, and it does not recommend structures.",
+  "summary": [
+   "When the legal owner of an asset changes, the policy should reflect the change.",
+   "The attorney and the CPA decide the structure; the policies' job is to describe it correctly.",
+   "Several Florida rules place liability on a specific person: the one who signs, the one who lends, the one who operates."
+  ],
+  "sections": [
+   {
+    "id": "owner-and-policy",
+    "h2": "1. Is the legal owner of each asset the same as the name on the policy?",
+    "blocks": [
+     {
+      "p": "Many families use trusts and LLCs to own homes, cars, boats or collections. If a home moves into a trust but the policy stays in the individuals' names, or an LLC owns a boat insured under a personal policy, a claim can turn into a dispute or leave gaps in liability coverage."
+     },
+     {
+      "ul": [
+       "When a home moves into a trust, ask whether the trust or the trustee should appear as a named or additional insured.",
+       "When an LLC owns a vehicle, a boat or a rental property, confirm that the policy covers the entity and not only the individuals.",
+       "Check that the family umbrella policy recognizes the entities that own the assets.",
+       "Coordinate the owner and beneficiaries of life insurance policies with the estate plan."
+      ]
+     }
+    ],
+    "guides": [
+     [
+      "emp",
+      "trusts-llcs",
+      "Household staff and family legacy: trusts and LLCs"
+     ]
+    ]
+   },
+   {
+    "id": "license-and-cars",
+    "h2": "2. Who signed the teen's license application, and whose name is on the cars?",
+    "blocks": [
+     {
+      "p": "In Florida, the person who signs the permit or license application of a minor under 18 takes on direct liability: the minor's negligence or willful misconduct behind the wheel is imputed to that person, who is jointly and severally liable with the minor for the resulting damages (section 322.09) [1]. Under section 324.021(9)(b)3, an owner who is a natural person and lends a vehicle to a permissive user is liable only up to $100,000 per person and $300,000 per incident for bodily injury, and up to $50,000 for property damage [2]. If the permissive user is uninsured or has less than $500,000 of combined limits, the owner can be liable for up to an additional $500,000 in economic damages, reduced by amounts recovered from the driver or the driver's insurance [2]. If a vehicle is titled to a company or a trust, the analysis can differ and is worth reviewing with the family's attorney."
+     }
+    ],
+    "guides": [
+     [
+      "aut",
+      "teen-drivers",
+      "Florida auto insurance: teen drivers"
+     ],
+     [
+      "aut",
+      "owner-liability",
+      "Florida auto insurance: owner liability"
+     ]
+    ]
+   },
+   {
+    "id": "boat",
+    "h2": "3. Who operates the boat?",
+    "blocks": [
+     {
+      "p": "Florida law treats every vessel as a dangerous instrumentality and requires operators to use the highest degree of care to prevent injuries to others [3]. The same statute confines liability for reckless or careless operation to the operator, unless the owner is the operator or is present in the vessel when the injury occurs [3]. That does not take the owner out of the picture: lending the boat to someone inexperienced, impaired or without the required boater education can still lead to a negligent entrustment claim."
+     }
+    ],
+    "guides": [
+     [
+      "mar",
+      "liability",
+      "Boat insurance in Florida: liability"
+     ]
+    ]
+   },
+   {
+    "id": "employer",
+    "h2": "4. Who is the employer of the household staff?",
+    "blocks": [
+     {
+      "p": "Florida's workers' compensation law excludes domestic servants in private homes from the definition of employment [4]. As a result, a family generally is not required to carry this coverage for its nanny or housekeeper. It helps to settle who the formal employer is: the family, a trust, an LLC or a family office. If staff are paid through a company with other employees, the analysis may be different."
+     }
+    ],
+    "guides": [
+     [
+      "emp",
+      "workers-comp",
+      "Household staff and family legacy: workers' compensation"
+     ]
+    ]
+   },
+   {
+    "id": "hurricane-and-flood",
+    "h2": "5. How much would come out of the family's pocket after a hurricane or a flood?",
+    "blocks": [
+     {
+      "p": "Under Fla. Stat. 627.701, insurers must offer hurricane deductible options of $500, 2%, 5% and 10% of the dwelling limit, with variations for higher-value homes [5]. For example, on a $2,000,000 dwelling limit, a 5% deductible equals $100,000. In the federal flood program (NFIP), for a home the maximum is $250,000 for the building and $100,000 for contents [6]. On a home that would cost $2 million to rebuild, a $250,000 building limit covers a fraction of a total loss."
+     }
+    ],
+    "guides": [
+     [
+      "res",
+      "hurricane-deductible",
+      "Homes and hurricanes: hurricane deductible"
+     ],
+     [
+      "flo",
+      "excess-private",
+      "Flood and storm surge: excess and private flood"
+     ]
+    ]
+   },
+   {
+    "id": "boards",
+    "h2": "6. Does your client sit on a board or on the family's foundation?",
+    "blocks": [
+     {
+      "p": "In Florida, section 617.0834 provides that directors and uncompensated officers of not-for-profit corporations generally are not personally liable for monetary damages arising from their decisions in office, unless the breach of their duties amounts to, among other things, a criminal violation, a transaction with an improper personal benefit, or reckless, bad-faith or wanton and willful conduct [7]. The section was revised in 2026, so confirm the text that applies to each organization."
+     }
+    ],
+    "guides": [
+     [
+      "brd",
+      "legal-protections",
+      "Board service and family foundations: legal protections"
+     ]
+    ]
+   }
+  ],
+  "close_h": "To close",
+  "close": "Each of these questions is best settled with the family's attorney, CPA and licensed agent in the same conversation. If one comes up in the review of a shared client, I am glad to talk it through.",
+  "contact": "Contact",
+  "guide_pre": "Full guide",
+  "hub_q": "Are you a CPA, an attorney or part of a family office?",
+  "hub_a": "There is a page for advisors",
+  "foot": "For advisors",
+  "guides_pre": "Full guides"
+ },
+ "sources": [
+  {
+   "n": 1,
+   "label": "Florida Statutes, section 322.09 (2026)",
+   "url": "https://www.flsenate.gov/Laws/Statutes/2026/322.09"
+  },
+  {
+   "n": 2,
+   "label": "Florida Statutes, section 324.021 (2026)",
+   "url": "https://www.flsenate.gov/Laws/Statutes/2026/324.021"
+  },
+  {
+   "n": 3,
+   "label": "Florida Statutes, s. 327.32, Vessel declared dangerous instrumentality; civil liability (2026)",
+   "url": "https://www.flsenate.gov/Laws/Statutes/2026/0327.32"
+  },
+  {
+   "n": 4,
+   "label": "Florida Statutes, s. 440.02, Definitions (domestic servants in private homes excluded from employment)",
+   "url": "https://www.flsenate.gov/Laws/Statutes/2026/440.02"
+  },
+  {
+   "n": 5,
+   "label": "Florida Legislature, Fla. Stat. 627.701, Liability of insureds; coinsurance; deductibles",
+   "url": "https://www.flsenate.gov/Laws/Statutes/2026/627.701"
+  },
+  {
+   "n": 6,
+   "label": "FEMA, National Flood Insurance Program Media Toolkit (July 2025)",
+   "url": "https://agents.floodsmart.gov/sites/default/files/media/document/2025-08/fema_nfip_media-toolkit-brochure_07-2025.pdf"
+  },
+  {
+   "n": 7,
+   "label": "Florida Statutes, section 617.0834 (2026)",
+   "url": "https://www.flsenate.gov/Laws/Statutes/2026/617.0834"
+  }
+ ]
+}
