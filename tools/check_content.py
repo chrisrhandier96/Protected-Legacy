@@ -124,4 +124,51 @@ for k in keys:
     if miss: notes.append(f"numbers only in one language: {sorted(miss)[:8]}")
     print(f"[{k}] {'OK' if not errs else 'FAIL'}  " + "; ".join(notes) + ("" if not errs else "\n   - " + "\n   - ".join(errs)))
     fail += bool(errs)
+# ---------- the page for advisors (content/extras/advisors.json): same house rules, checked on a full run ----------
+ap = os.path.join(ROOT, "content", "extras", "advisors.json")
+if not sys.argv[1:] and os.path.exists(ap):
+    errs, notes = [], []
+    try:
+        a = json.load(open(ap, encoding="utf-8"))
+    except Exception as e:
+        a = None; errs.append(f"INVALID JSON: {e}")
+    if a:
+        src = {s["n"] for s in a.get("sources", [])}
+        blocks_text = lambda c: " ".join(x for s in c["sections"] for b in s["blocks"] for x in ([b["p"]] if "p" in b else b.get("ul", [])))
+        for l in ("es", "en"):
+            c = a[l]
+            for f in ("title", "meta", "kicker", "h1", "dek", "intro", "summary", "sections", "close_h", "close", "contact", "guide_pre", "guides_pre", "hub_q", "hub_a"):
+                if f not in c: errs.append(f"{l}: missing {f}")
+            if len(c["title"]) > 65: notes.append(f"{l} title {len(c['title'])} chars")
+            if not 120 <= len(c["meta"]) <= 165: notes.append(f"{l} meta {len(c['meta'])} chars")
+            refs = {int(n) for x in all_strings(c) for n in re.findall(r"\[(\d+)\]", x)}
+            if refs - src: errs.append(f"{l}: footnotes without source {sorted(refs - src)}")
+            if src - refs: errs.append(f"{l}: sources never cited {sorted(src - refs)}")
+            for x in all_strings(c):
+                for pat in NAMES:
+                    if re.search(pat, x): errs.append(f"{l}: name /{pat}/ in: {x[:70]}")
+                for pat in PHRASES:
+                    if re.search(pat, x, flags=re.I): errs.append(f"{l}: banned /{pat}/ in: {x[:70]}")
+                for pat in REVIEW:
+                    if re.search(pat, x, flags=re.I): notes.append(f"{l} review /{pat}/: {x[:50]}")
+            # every guide link points at a section that exists in that guide, in that language
+            for s in c["sections"]:
+                for k, anchor, _ in s["guides"]:
+                    gp = os.path.join(ROOT, "content", "guides", k + ".json")
+                    if not os.path.exists(gp) or anchor not in {x["id"] for x in json.load(open(gp, encoding="utf-8"))[l]["sections"]}:
+                        errs.append(f"{l}: guide link {k}#{anchor} does not exist")
+            notes.append(f"{l} {words(blocks_text(c))}w")
+        es, en = a["es"]["sections"], a["en"]["sections"]
+        if len(es) != len(en) or len(a["es"]["summary"]) != len(a["en"]["summary"]): errs.append("ES/EN section or summary count differs")
+        for x, y in zip(es, en):
+            if [list(b)[0] for b in x["blocks"]] != [list(b)[0] for b in y["blocks"]]: errs.append(f"block types differ: {x['id']} vs {y['id']}")
+            if [len(b.get("ul", [])) for b in x["blocks"]] != [len(b.get("ul", [])) for b in y["blocks"]]: errs.append(f"list lengths differ: {x['id']} vs {y['id']}")
+            if [g[0] for g in x["guides"]] != [g[0] for g in y["guides"]]: errs.append(f"guide links differ: {x['id']} vs {y['id']}")
+            na = re.findall(r"\[(\d+)\]", json.dumps(x, ensure_ascii=False)); nb = re.findall(r"\[(\d+)\]", json.dumps(y, ensure_ascii=False))
+            if na != nb: errs.append(f"footnotes differ: {x['id']} {na} vs {y['id']} {nb}")
+        num = lambda c: set(re.sub(r"[,.]", "", n) for n in re.findall(r"\d[\d,.]{2,}\d", blocks_text(c)))
+        miss = num(a["es"]) ^ num(a["en"])
+        if miss: errs.append(f"numbers only in one language: {sorted(miss)[:8]}")
+    print(f"[advisors] {'OK' if not errs else 'FAIL'}  " + "; ".join(notes) + ("" if not errs else "\n   - " + "\n   - ".join(errs)))
+    fail += bool(errs)
 sys.exit(1 if fail else 0)

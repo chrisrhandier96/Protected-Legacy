@@ -139,6 +139,7 @@ def p_gloss(l): return "/glosario/" if l == "es" else "/en/glossary/"
 def p_faq(l): return "/preguntas-frecuentes/" if l == "es" else "/en/faq/"
 def p_hur(l): return "/herramientas/temporada-de-huracanes/" if l == "es" else "/en/tools/hurricane-season/"
 def p_inv(l): return "/herramientas/inventario-familiar/" if l == "es" else "/en/tools/family-inventory/"
+def p_adv(l): return "/asesores/" if l == "es" else "/en/advisors/"   # page for CPAs, attorneys and family offices (Nov 2026)
 
 def load(p): return json.load(open(os.path.join(ROOT, p), encoding="utf-8"))
 def esc(s): return html.escape(s, quote=True)
@@ -373,7 +374,7 @@ def page(l, path, alt_path, title, meta, body, ptype, jsonld=None, extra_js="", 
     disc = t["disc"].replace("{LIC}", t["lic"])
     fl = [(p_home(l), t["home"]), (p_hub(l), t["guides"]), (p_gloss(l), t["glossary"]), (p_faq(l), t["faq"]),
           (p_hur(l), "Temporada de huracanes" if l == "es" else "Hurricane season"), (p_inv(l), "Inventario familiar" if l == "es" else "Family inventory"),
-          ("/privacidad.html", t["privacy"])]
+          (p_adv(l), "Para asesores" if l == "es" else "For advisors"), ("/privacidad.html", t["privacy"])]
     flinks = "".join(f'<a href="{h}">{esc(n)}</a>' for h, n in fl)
     flinks += f' · <a href="/terminos.html">{esc(t["terms"])}</a>'   # terms next to privacy (Nov 4 launch checklist; was hand-added in cd724fb)
     return f"""<!DOCTYPE html>
@@ -470,6 +471,7 @@ gloss = load("content/extras/glossary.json")
 faq = load("content/extras/faq.json")
 hur = load("content/extras/hurricane.json")
 inv = load("content/extras/inventory.json")
+adv = load("content/extras/advisors.json")
 written, sitemap = [], []
 UPD = {}  # a guide's own "updated" date, used as its sitemap lastmod
 
@@ -721,6 +723,8 @@ for l in ("es", "en"):
             + '<script>(function(){var r=document.getElementById("poll-r");if(!r)return;var a=r.querySelector("a");[].forEach.call(document.querySelectorAll(".poll-a button"),function(b){b.addEventListener("click",function(){'
               '[].forEach.call(document.querySelectorAll(".poll-a button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});a.href=b.getAttribute("data-href");a.textContent=b.getAttribute("data-t");r.hidden=false;'
               'try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:"poll_vote",poll_id:"library_concern",answer:b.getAttribute("data-k"),language:document.documentElement.lang});}catch(e){}});});})();</script>')
+    advline = (f'<p class="lede" style="margin:28px 0 0">{esc(adv[l]["hub_q"])} '
+               f'<a href="{p_adv(l)}" data-cta="hub_advisors" style="color:var(--verde);font-weight:600;text-underline-offset:3px">{esc(adv[l]["hub_a"])}</a>.</p>')
     body = f"""
 <header class="head"><div class="wrap">{crumbs(l, [(None, t['guides'])])}<span class="kicker">{t['library']}</span><h1>{h1}</h1><p class="dek">{dek}</p>
 <div class="meta"><span>{t['by']}</span></div></div></header>
@@ -728,7 +732,7 @@ for l in ("es", "en"):
 {poll}
 <section class="band"><div class="wrap"><div class="cards">{cards}</div></div></section>
 <section class="band alt"><div class="wrap">{mcard}</div></section>
-<section class="band" id="herramientas"><div class="wrap"><h2 class="sec">{th}</h2><p class="lede">{tl}</p><div class="cards">{tcards}</div></div></section>
+<section class="band" id="herramientas"><div class="wrap"><h2 class="sec">{th}</h2><p class="lede">{tl}</p><div class="cards">{tcards}</div>{advline}</div></section>
 <section class="band alt"><div class="wrap"><div class="cta" style="margin:0"><h2>{t['cta_t']}</h2><p>{t['cta_p']}</p><div class="row"><a class="btn btn-oro" href="{p_home(l)}#mapa" data-cta="hub_quiz">{t['cta_quiz']}</a></div></div></div></section>
 """
     ld = [bc_ld(l, [(path, t["guides"])]),
@@ -881,6 +885,53 @@ for l in ("es", "en"):
     written.append(write(path, page(l, path, alt, title + " | Patrimonio Protegido", meta, body, "tool", ld)))
     if l == "es": sitemap.append((path, alt))
 
+# ---------- for advisors (CPAs, estate attorneys, family offices) ----------
+# One page per language, built from content/extras/advisors.json. Every factual sentence is taken from a live guide and
+# carries that guide's source; each question links to the guide section that explains it. Linked from the footer and the
+# hub only (not the top menu, not the library panel). The build stops if a guide link points at a section that does not exist.
+ADV_CSS = ('<style id="pp-adv">.pa{max-width:776px;padding-top:44px;padding-bottom:52px}.pa-intro{font-size:18px;margin-bottom:28px}'
+           '.pa article section>h2{font-size:clamp(22px,2.6vw,27px);line-height:1.25}'
+           '.pa-g{font-size:15.5px;margin:0;color:#3B4237}.pa-g a,.pa-close a{color:var(--verde);font-weight:600;text-underline-offset:3px}'
+           '.pa .srcs{margin-top:8px;padding-top:28px;border-top:1px solid var(--arena-oscura)}</style>\n')
+for l in ("es", "en"):
+    t = T[l]; o = "en" if l == "es" else "es"; c = adv[l]
+    path, alt = p_adv(l), p_adv(o)
+    secs = ""
+    for s in c["sections"]:
+        links = []
+        for k, anchor, label in s["guides"]:
+            if anchor not in {x["id"] for x in guides[k][l]["sections"]}:
+                sys.exit(f"advisors.json ({l}): guide {k} has no section #{anchor}")
+            links.append(f'<a href="{p_guide(guides[k], l)}#{anchor}" data-cta="advisors_guide_{k}">{esc(label)}</a>')
+        pre = c["guide_pre"] if len(links) == 1 else c["guides_pre"]
+        secs += (f'<section id="{s["id"]}"><h2>{esc(plain(s["h2"]))}</h2>{render_blocks(s["blocks"])}\n'
+                 f'<p class="pa-g">{esc(pre)}: {" · ".join(links)}</p></section>\n')
+    summ = "".join(f"<li>{rich(x)}</li>" for x in c["summary"])
+    src = "".join(f'<li id="fuente-{s["n"]}">{esc(s["label"])}. <a href="{esc(s["url"])}" rel="noopener" target="_blank">{esc(s["url"])}</a></li>' for s in sorted(adv["sources"], key=lambda s: s["n"]))
+    cid = "cierre" if l == "es" else "closing"
+    body = f"""
+<header class="head"><div class="wrap">{crumbs(l, [(None, c['kicker'])])}<span class="kicker">{esc(c['kicker'])}</span><h1>{esc(c['h1'])}</h1><p class="dek">{esc(c['dek'])}</p>
+<div class="meta"><span>{t['by']}</span><span><b>{t['updated']}:</b> {fmt_date(adv['updated'], l)}</span></div></div></header>
+<div class="wrap pa">
+  <article>
+    <p class="pa-intro">{rich(c['intro'])}</p>
+    <div class="sumbox"><h2>{t['summary']}</h2><ul>{summ}</ul></div>
+    {secs}
+    <section id="{cid}" class="pa-close"><h2>{esc(c['close_h'])}</h2><p>{rich(c['close'])} <a href="{p_home(l)}#contacto" data-cta="advisors_contact">{esc(c['contact'])} →</a></p></section>
+    <div class="srcs"><h2>{t['sources']}</h2><ol>{src}</ol></div>
+  </article>
+</div>
+"""
+    ld = [{"@context": "https://schema.org", "@type": "Article", "headline": c["h1"][:110], "description": c["meta"],
+           "inLanguage": l, "datePublished": adv["updated"], "dateModified": adv["updated"], "author": AUTHOR,
+           "publisher": {"@type": "Organization", "name": "Patrimonio Protegido", "url": BASE + "/"},
+           "audience": {"@type": "Audience", "audienceType": "CPAs, estate planning attorneys and family offices"},
+           "mainEntityOfPage": BASE + path},
+          bc_ld(l, [(path, c["kicker"])])]
+    written.append(write(path, page(l, path, alt, c["title"], c["meta"], body, "advisors", ld, head_extra=ADV_CSS)))
+    if l == "es": sitemap.append((path, alt))
+    UPD[path] = adv["updated"]
+
 # ---------- sitemap ----------
 import datetime
 LASTMOD = datetime.date.today().isoformat()  # build date
@@ -913,6 +964,8 @@ for l, head in (("en", "## Guides (English)"), ("es", "## Guías (español)")):
     L.append("")
 L += ["## Reference",
       f"- [Glosario español e inglés]({BASE}/glosario/)", f"- [English-Spanish glossary]({BASE}/en/glossary/)",
-      f"- [Preguntas frecuentes]({BASE}/preguntas-frecuentes/)", f"- [FAQ]({BASE}/en/faq/)", ""]
+      f"- [Preguntas frecuentes]({BASE}/preguntas-frecuentes/)", f"- [FAQ]({BASE}/en/faq/)",
+      f"- [Para asesores (CPA, abogados, oficinas familiares)]({BASE}{p_adv('es')}): {adv['es']['meta']}",
+      f"- [For advisors (CPAs, attorneys, family offices)]({BASE}{p_adv('en')}): {adv['en']['meta']}", ""]
 open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8", newline="\n").write("\n".join(L))
 print(f"llms.txt written: {len(ORDER) * 2} guides")

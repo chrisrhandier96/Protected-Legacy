@@ -12,8 +12,8 @@ Usage (repo root): python tools/flatten.py
 import os, re, shutil
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TOP = ["guias", "glosario", "preguntas-frecuentes", "herramientas", os.path.join("en", "guides"),
-       os.path.join("en", "glossary"), os.path.join("en", "faq"), os.path.join("en", "tools")]
+TOP = ["guias", "glosario", "preguntas-frecuentes", "herramientas", "asesores", os.path.join("en", "guides"),
+       os.path.join("en", "glossary"), os.path.join("en", "faq"), os.path.join("en", "tools"), os.path.join("en", "advisors")]
 
 pages = []  # (url path, flat file)
 for top in TOP:
@@ -27,8 +27,7 @@ for top in TOP:
         flat = rel.replace("/", "-") + ".html"
         shutil.copyfile(os.path.join(dirpath, "index.html"), os.path.join(ROOT, flat))
         pages.append(("/" + rel + "/", flat))
-for top in ["guias", "glosario", "preguntas-frecuentes", "herramientas", os.path.join("en", "guides"),
-            os.path.join("en", "glossary"), os.path.join("en", "faq"), os.path.join("en", "tools")]:
+for top in TOP:
     shutil.rmtree(os.path.join(ROOT, top), ignore_errors=True)
 en_dir = os.path.join(ROOT, "en")
 if os.path.isdir(en_dir) and not os.listdir(en_dir):
