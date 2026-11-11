@@ -8,6 +8,8 @@ The work order itself is in `handoff/work-order-pp-library-expansion.md` (Parts 
 - All work so far is on branch **`work-order-2026-09`**. `main` on GitHub is still the old live site.
 - Today's date when this was written: 2026-09-25.
 
+> **Live Nov 11, 2026 (merge 386bacd, PR #13):** homepage readable without scripts (real stat figures, 14 guide links, JSON-LD in the HTML), the advisors page `/asesores/` and `/en/advisors/` linked from every footer and both hubs, and the sharper hero video (`img/ph/hero-miami-dusk-hq.*`, `js/home-media.v3.js`). Live checks: 200 with security headers, Tag Manager once, sitemap 44, IndexNow 44 sent. Details: `handoff/HANDOFF-2026-11-11-static-home.md`, `handoff/HANDOFF-2026-11-11-advisors.md`. PR #12 closed (its commit went out in #13).
+
 ---
 
 ## 1. Rules from Christian (these override the work order where they conflict)
